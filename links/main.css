@@ -2,7 +2,8 @@
 body { background:#eee; font-family: 'frank_ruhl_regular'}
 
 body navi { display: block; height:calc(100vh - 60px); width:calc(30vw - 30px); background:#eee; border-right:1px solid #ccc; left:0px; position: absolute; font-family: 'input_mono_medium'; padding:30px 15px; font-size:12px;}
-body navi li { display: block; color:#333; border-bottom:1px solid #ccc; line-height: 30px }
+body navi li { display: block; color:#333; border-bottom:1px solid #ccc; line-height: 30px;cursor:pointer; }
+body navi li:hover { border-bottom: 1px solid black }
 body navi li.note { padding-left:15px; color:#999; }
 body navi li span { float:right; }
 body navi li.stats { border-bottom: 0px; color:#ccc; }
