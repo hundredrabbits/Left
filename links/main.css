@@ -5,4 +5,5 @@ body navi { display: block; height:calc(100vh - 60px); width:calc(30vw - 30px); 
 body navi li { display: block; color:#333; border-bottom:1px solid #ccc; line-height: 30px }
 body navi li.note { padding-left:15px; color:#999; }
 body navi li span { float:right; }
+body navi li.stats { border-bottom: 0px; color:#ccc; }
 body textarea { font-size:30px; padding:30px; height:100vh; display: inline-block; background:#eee; color:black; font-family: 'input_mono_medium'; font-size:12px; width:calc(70vw); position: absolute; left:calc(30vw); line-height: 20px; padding-right:20vw;}
