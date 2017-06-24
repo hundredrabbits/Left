@@ -9,12 +9,6 @@ function Left()
   {
     document.body.appendChild(this.navi);
     document.body.appendChild(this.textarea);
-    this.start();
-  }
-
-  this.start = function()
-  {
-
   }
 
   this.parse = function(text)
@@ -62,5 +56,4 @@ function Left()
   {
     left.parse(left.textarea.value);
   }
-
 }
