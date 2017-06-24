@@ -5,39 +5,18 @@ function Left()
 
   this.textarea.addEventListener('input', input_change, false);
 
-  this.install = function()
-  {
-    document.body.appendChild(this.navi);
-    document.body.appendChild(this.textarea);
-  }
+  document.body.appendChild(this.navi);
+  document.body.appendChild(this.textarea);
 
-  this.parse = function(text)
-  {
-    this.navi.innerHTML = "";
+  this.textarea.focus();
 
-    var html = "";
-    var lines = text.split("\n");
-    var words = 0;
-    for(line_id in lines){
-      var line = lines[line_id];
-      if(line.substr(0,1) == "@"){
-        html += "<li onClick='go_to(\""+line+"\")'>"+line.replace("@ ","")+"<span>~"+line_id+"</span></li>";
-      }
-      else if(line.substr(0,1) == "$"){
-        html += "<li onClick='go_to(\""+line+"\")' class='note'>- "+line.replace("$ ","")+"<span>~"+line_id+"</span></li>";
-      }
-      words += line.split(" ").length;
-    }
-
-    html += "<li class='stats'>"+lines.length+" lines, "+words+" words</li>"
-    this.navi.innerHTML = html;
-  }
+  // document.body.className = window.location.hash.replace("#","");
 
   this.go_to = function(selection)
   {
     var oInput = this.textarea;
     var oStart = this.textarea.value.indexOf(selection);
-    var oEnd = oStart + 10;
+    var oEnd = oStart + selection.length;
 
     if( oInput.setSelectionRange ) {
      oInput.setSelectionRange(oStart,oEnd);
@@ -54,6 +33,24 @@ function Left()
 
   function input_change()
   {
-    left.parse(left.textarea.value);
+    left.navi.innerHTML = "";
+
+    var text = left.textarea.value;
+    var html = "";
+    var lines = text.split("\n");
+    var word_count = 0;
+    for(line_id in lines){
+      var line = lines[line_id];
+      if(line.substr(0,1) == "@"){
+        html += "<li onClick='go_to(\""+line+"\")'>"+line.replace("@ ","")+"<span>~"+line_id+"</span></li>";
+      }
+      else if(line.substr(0,1) == "$"){
+        html += "<li onClick='go_to(\""+line+"\")' class='note'>- "+line.replace("$ ","")+"<span>~"+line_id+"</span></li>";
+      }
+      word_count += line.split(" ").length;
+    }
+
+    html += "<div class='stats'>"+lines.length+" lines, "+word_count+" words</div>"
+    left.navi.innerHTML = html;
   }
 }
