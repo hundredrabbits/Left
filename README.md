@@ -1,6 +1,6 @@
 # Left
 
-Left is simple writing application to organize ideas, code and text. It currently does not save function, or ways to format text. Its purpose is simply to be a place to type text into, without distractions across all platforms.
+Left is a simple writing application created to help organize ideas and to write without distractions. It currently does not have a saving function, or ways to format text. Its purpose is simply to be a place to type.
 
 <img src='https://raw.githubusercontent.com/hundredrabbits/Left/master/PREVIEW.jpg' width="600"/>
 
