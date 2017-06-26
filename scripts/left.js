@@ -2,6 +2,7 @@ function Left()
 {
   this.navi      = document.createElement('navi'); 
   this.textarea  = document.createElement('textarea'); 
+  this.stats     = document.createElement('stats'); 
 
   this.dictionary = null;
   this.words_count = null;
@@ -10,10 +11,13 @@ function Left()
 
   document.body.appendChild(this.navi);
   document.body.appendChild(this.textarea);
+  document.body.appendChild(this.stats);
   document.body.className = window.location.hash.replace("#","");
+  document.onkeyup = function key_up(){ update_dict(event) };
 
   this.textarea.focus();
   this.textarea.addEventListener('input', input_change, false);
+  this.textarea.addEventListener("scroll", on_scroll);
 
   this.go_to = function(selection)
   {
@@ -31,6 +35,11 @@ function Left()
       range.select();
     }
     this.textarea.focus();
+  }
+
+  function on_scroll()
+  {
+    update_stats();
   }
 
   function input_change()
@@ -55,13 +64,22 @@ function Left()
       left.words_count += line.split(" ").length;
       left.chars_count += line.length;
     }
-    left.navi.innerHTML = html+"<div class='stats'>"+left.lines_count+"L "+left.words_count+"W "+left.chars_count+"C</div>";
+    left.navi.innerHTML = html+"";
+
+    update_stats();
   }
 
+  function update_stats()
+  {
+    var scroll_position = ((left.textarea.scrollTop + 30)/left.textarea.scrollHeight) * 100;
+    left.stats.innerHTML = "<div class='stats'>"+left.lines_count+"L "+left.words_count+"W "+(left.dictionary ? Object.keys(left.dictionary).length+'V' : '')+" "+left.chars_count+"C "+parseInt(scroll_position)+"%</div>"
+  }
   // Unused
 
-  function refresh_dict()
+  function update_dict(e)
   {
+    if(e.keyCode != 13){ return; }
+    
     var new_dict = {};
     left.words_count = 0;
 
@@ -71,12 +89,12 @@ function Left()
       // Dict
       for(word_id in line.split(" ")){
         var word = line.split(" ")[word_id].replace(/\W/g, '');
-        if(!dictionary[word]){ dictionary[word] = 0; }
-        dictionary[word] += 1;
+        if(!new_dict[word]){ new_dict[word] = 0; }
+        new_dict[word] += 1;
         left.words_count += 1;
       }
     }
-    left.dictionary = sort_val(dictionary);
+    left.dictionary = sort_val(new_dict);
   }
 
   function sort_val(map)
