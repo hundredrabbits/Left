@@ -2,7 +2,7 @@
 
 Left is simple writing application to organize ideas, code and text. It currently does not save function, or ways to format text. Its purpose is simply to be a place to type text into, without distractions across all platforms.
 
-![Preview](https://raw.githubusercontent.com/hundredrabbits/Left/master/PREVIEW.jpg "Preview")
+<img src='https://raw.githubusercontent.com/hundredrabbits/Left/master/PREVIEW.jpg' width="600"/>
 
 
 ### Options
