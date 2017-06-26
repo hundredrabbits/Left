@@ -3,6 +3,11 @@ function Left()
   this.navi      = document.createElement('navi'); 
   this.textarea  = document.createElement('textarea'); 
 
+  this.dictionary = null;
+  this.words_count = null;
+  this.lines_count = null;
+  this.chars_count = null;
+
   document.body.appendChild(this.navi);
   document.body.appendChild(this.textarea);
   document.body.className = window.location.hash.replace("#","");
@@ -28,43 +33,48 @@ function Left()
     this.textarea.focus();
   }
 
+  function refresh_dict()
+  {
+    var new_dict = {};
+    left.words_count = 0;
+
+    var lines = left.textarea.value.split("\n");
+    for(line_id in lines){
+      var line = lines[line_id];
+      // Dict
+      for(word_id in line.split(" ")){
+        var word = line.split(" ")[word_id].replace(/\W/g, '');
+        if(!dictionary[word]){ dictionary[word] = 0; }
+        dictionary[word] += 1;
+        left.words_count += 1;
+      }
+    }
+    left.dictionary = sort_val(dictionary);
+  }
+
   function input_change()
   {
     left.navi.innerHTML = "";
 
     var html = "";
     var lines = left.textarea.value.split("\n");
-    var word_count = 0;
-    var dictionary = {};
+    left.lines_count = lines.length;
+    left.words_count = 0;
+    left.chars_count = 0;
 
     for(line_id in lines){
       var line = lines[line_id];
-      // Dict
-      for(word_id in line.split(" ")){
-        var word = line.split(" ")[word_id].replace(/\W/g, '');
-        if(word.length < 5){ continue; }
-        if(!dictionary[word]){ dictionary[word] = 0; }
-        dictionary[word] += 1
-      }
       // Headers
       if(line.substr(0,2) == "@ "){ html += "<li onClick='go_to(\""+line+"\")'>"+line.replace("@ ","")+"<span>~"+line_id+"</span></li>"; }
       if(line.substr(0,6) == "class "){ html += "<li onClick='go_to(\""+line+"\")'>"+line.replace("class ","")+"<span>~"+line_id+"</span></li>"; }
       // Subs
       if(line.substr(0,2) == "$ "){ html += "<li onClick='go_to(\""+line+"\")' class='note'>- "+line.replace("$ ","")+"<span>~"+line_id+"</span></li>"; }
       if(line.substr(0,4) == "def "){ html += "<li onClick='go_to(\""+line+"\")' class='note'>- "+line.replace("def ","")+"<span>~"+line_id+"</span></li>"; }
-      word_count += line.split(" ").length;
+      left.words_count += line.split(" ").length;
+      left.chars_count += line.length;
     }
-
-    var dict = sort_val(dictionary);
-
     html += "<div class='stats'>";
-    for(word in dict){
-      var ratio = parseInt((parseInt(dict[0][1])/Object.keys(dict).length)*100);
-      if(ratio < 3){ break; }
-      html += dict[word][0]+" "+ratio+"%<br />";
-      break;
-    }
-    html += lines.length+" lines, "+word_count+" words, "+dict.length+" vocab<br />"
+    html += left.lines_count+"L"+left.words_count+"W"+left.chars_count+"C<br />"
     html += "</div>"
     left.navi.innerHTML = html;
   }
