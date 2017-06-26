@@ -1,14 +1,23 @@
-## Left
+# Left
 
-Left is simple writing application to organize ideas, code and text. It currently does not save, or format text. It's purpose is simply to be a place to type text into.
+Left is simple writing application to organize ideas, code and text. It currently does not save function, or ways to format text. Its purpose is simply to be a place to type text into, without distractions across all platforms.
 
 ### Options
 
-Lines starting with @, followed by a space, will create a header. And lines starting with $, followed by a space, will create a note.
+Lines beginning with @, followed by a space, will create a header. And lines starting with $, followed by a space, will create a note. The headers and notes are displayed on the lefthand side column of the interface.
+
+```
+@ Header
+$ Note
+```
 
 ### Noir Mode
 
 Add #noir to the header, to activate the night theme.
+
+```
+/index.html#noir
+```
 
 ### Statistics
 
