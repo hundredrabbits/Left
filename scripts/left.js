@@ -35,9 +35,17 @@ function Left()
     var html = "";
     var lines = left.textarea.value.split("\n");
     var word_count = 0;
+    var dictionary = {};
 
     for(line_id in lines){
       var line = lines[line_id];
+      // Dict
+      for(word_id in line.split(" ")){
+        var word = line.split(" ")[word_id].replace(/\W/g, '');
+        if(word.length < 5){ continue; }
+        if(!dictionary[word]){ dictionary[word] = 0; }
+        dictionary[word] += 1
+      }
       // Headers
       if(line.substr(0,2) == "@ "){ html += "<li onClick='go_to(\""+line+"\")'>"+line.replace("@ ","")+"<span>~"+line_id+"</span></li>"; }
       if(line.substr(0,6) == "class "){ html += "<li onClick='go_to(\""+line+"\")'>"+line.replace("class ","")+"<span>~"+line_id+"</span></li>"; }
@@ -47,7 +55,26 @@ function Left()
       word_count += line.split(" ").length;
     }
 
-    html += "<div class='stats'>"+lines.length+" lines, "+word_count+" words</div>"
+    var dict = sort_val(dictionary);
+
+    html += "<div class='stats'>";
+    for(word in dict){
+      var ratio = parseInt((parseInt(dict[0][1])/Object.keys(dict).length)*100);
+      if(ratio < 3){ break; }
+      html += dict[word][0]+" "+ratio+"%<br />";
+      break;
+    }
+    html += lines.length+" lines, "+word_count+" words, "+dict.length+" vocab<br />"
+    html += "</div>"
     left.navi.innerHTML = html;
   }
+
+  function sort_val(map)
+  {
+    var tupleArray = [];
+    for (var key in map) tupleArray.push([key, map[key]]);
+    tupleArray.sort(function (a, b) { return b[1] - a[1] });
+    return tupleArray;
+  }
+
 }
