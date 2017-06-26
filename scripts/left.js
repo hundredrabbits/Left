@@ -33,6 +33,33 @@ function Left()
     this.textarea.focus();
   }
 
+  function input_change()
+  {
+    left.navi.innerHTML = "";
+
+    var html = "";
+    var lines = left.textarea.value.split("\n");
+
+    left.lines_count = lines.length;
+    left.words_count = 0;
+    left.chars_count = 0;
+
+    for(line_id in lines){
+      var line = lines[line_id];
+      // Headers
+      if(line.substr(0,2) == "@ "){ html += "<li onClick='go_to(\""+line+"\")'>"+line.replace("@ ","")+"<span>~"+line_id+"</span></li>"; }
+      if(line.substr(0,6) == "class "){ html += "<li onClick='go_to(\""+line+"\")'>"+line.replace("class ","")+"<span>~"+line_id+"</span></li>"; }
+      // Subs
+      if(line.substr(0,2) == "$ "){ html += "<li onClick='go_to(\""+line+"\")' class='note'>- "+line.replace("$ ","")+"<span>~"+line_id+"</span></li>"; }
+      if(line.substr(0,4) == "def "){ html += "<li onClick='go_to(\""+line+"\")' class='note'>- "+line.replace("def ","")+"<span>~"+line_id+"</span></li>"; }
+      left.words_count += line.split(" ").length;
+      left.chars_count += line.length;
+    }
+    left.navi.innerHTML = html+"<div class='stats'>"+left.lines_count+"L"+left.words_count+"W"+left.chars_count+"C</div>";
+  }
+
+  // Unused
+  
   function refresh_dict()
   {
     var new_dict = {};
@@ -52,33 +79,6 @@ function Left()
     left.dictionary = sort_val(dictionary);
   }
 
-  function input_change()
-  {
-    left.navi.innerHTML = "";
-
-    var html = "";
-    var lines = left.textarea.value.split("\n");
-    left.lines_count = lines.length;
-    left.words_count = 0;
-    left.chars_count = 0;
-
-    for(line_id in lines){
-      var line = lines[line_id];
-      // Headers
-      if(line.substr(0,2) == "@ "){ html += "<li onClick='go_to(\""+line+"\")'>"+line.replace("@ ","")+"<span>~"+line_id+"</span></li>"; }
-      if(line.substr(0,6) == "class "){ html += "<li onClick='go_to(\""+line+"\")'>"+line.replace("class ","")+"<span>~"+line_id+"</span></li>"; }
-      // Subs
-      if(line.substr(0,2) == "$ "){ html += "<li onClick='go_to(\""+line+"\")' class='note'>- "+line.replace("$ ","")+"<span>~"+line_id+"</span></li>"; }
-      if(line.substr(0,4) == "def "){ html += "<li onClick='go_to(\""+line+"\")' class='note'>- "+line.replace("def ","")+"<span>~"+line_id+"</span></li>"; }
-      left.words_count += line.split(" ").length;
-      left.chars_count += line.length;
-    }
-    html += "<div class='stats'>";
-    html += left.lines_count+"L"+left.words_count+"W"+left.chars_count+"C<br />"
-    html += "</div>"
-    left.navi.innerHTML = html;
-  }
-
   function sort_val(map)
   {
     var tupleArray = [];
@@ -86,5 +86,4 @@ function Left()
     tupleArray.sort(function (a, b) { return b[1] - a[1] });
     return tupleArray;
   }
-
 }
