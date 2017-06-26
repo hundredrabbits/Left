@@ -2,6 +2,9 @@
 
 Left is simple writing application to organize ideas, code and text. It currently does not save function, or ways to format text. Its purpose is simply to be a place to type text into, without distractions across all platforms.
 
+![Preview](https://raw.githubusercontent.com/hundredrabbits/Left/master/PREVIEW.jpg "Preview")
+
+
 ### Options
 
 Lines beginning with @, followed by a space, will create a header. And lines starting with $, followed by a space, will create a note. The headers and notes are displayed on the lefthand side column of the interface.
