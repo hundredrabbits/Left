@@ -55,11 +55,11 @@ function Left()
       left.words_count += line.split(" ").length;
       left.chars_count += line.length;
     }
-    left.navi.innerHTML = html+"<div class='stats'>"+left.lines_count+"L"+left.words_count+"W"+left.chars_count+"C</div>";
+    left.navi.innerHTML = html+"<div class='stats'>"+left.lines_count+"L "+left.words_count+"W "+left.chars_count+"C</div>";
   }
 
   // Unused
-  
+
   function refresh_dict()
   {
     var new_dict = {};
