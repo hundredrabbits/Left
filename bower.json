@@ -1,0 +1,22 @@
+{
+  "name": "Left",
+  "homepage": "https://github.com/jakofranko/Left",
+  "authors": [
+    "Devine Lu Linvega <aliceffekt@gmail.com>",
+    "Jake Franklin <jacob.d.franklin@gmail.com>"
+  ],
+  "description": "A minimalist text editor",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "file-saver": "^1.3.3"
+  }
+}
