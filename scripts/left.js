@@ -73,7 +73,7 @@ function Left()
     left.words_count = 0;
     left.chars_count = 0;
 
-    for(line_id in lines){
+    for(var line_id in lines){
       var line = lines[line_id];
       // Headers
       if(line.substr(0,2) == "@ "){ html += "<li onClick='go_to(\""+line+"\")'>"+line.replace("@ ","")+"<span>~"+line_id+"</span></li>"; }
@@ -92,7 +92,7 @@ function Left()
   function update_stats()
   {
     var scroll_position = ((left.textarea.scrollTop + 30)/left.textarea.scrollHeight) * 100;
-    left.stats.innerHTML = "<div class='stats'>"+left.lines_count+"L "+left.words_count+"W "+(left.dictionary ? Object.keys(left.dictionary).length+'V' : '')+" "+left.chars_count+"C "+parseInt(scroll_position)+"%</div>"
+    left.stats.innerHTML = "<div class='stats'>"+left.lines_count+"L "+left.words_count+"W "+(left.dictionary ? Object.keys(left.dictionary).length+'V' : '')+" "+left.chars_count+"C "+parseInt(scroll_position)+"%</div>";
   }
   // Unused
 
@@ -104,10 +104,10 @@ function Left()
     left.words_count = 0;
 
     var lines = left.textarea.value.split("\n");
-    for(line_id in lines){
+    for(var line_id in lines){
       var line = lines[line_id];
       // Dict
-      for(word_id in line.split(" ")){
+      for(var word_id in line.split(" ")){
         var word = line.split(" ")[word_id].replace(/\W/g, '');
         if(!new_dict[word]){ new_dict[word] = 0; }
         new_dict[word] += 1;
