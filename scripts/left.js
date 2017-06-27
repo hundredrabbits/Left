@@ -2,18 +2,38 @@ function Left()
 {
   this.navi      = document.createElement('navi'); 
   this.textarea  = document.createElement('textarea'); 
-  this.stats     = document.createElement('stats'); 
+  this.stats     = document.createElement('stats');
 
   this.dictionary = null;
   this.words_count = null;
   this.lines_count = null;
   this.chars_count = null;
 
+  this.ctrlcmdPressed = false;
+
   document.body.appendChild(this.navi);
   document.body.appendChild(this.textarea);
   document.body.appendChild(this.stats);
   document.body.className = window.location.hash.replace("#","");
-  document.onkeyup = function key_up(){ update_dict(event) };
+
+  // Handle key presses 
+  document.onkeydown = function key_down(e) {
+    if(this.ctrlcmdPressed && e.key == 's') {
+      e.preventDefault();
+      var text = document.getElementsByTagName('textarea')[0].value;
+      var blob = new Blob([text], {type: "text/plain;charset=" + document.characterSet});
+      saveAs(blob, text.split("\n")[0] + ".txt");
+    }
+
+    if(e.keyCode === 224 || e.keyCode === 91 || e.keyCode === 93 || e.keyCode === 17)
+      this.ctrlcmdPressed = true;
+  };
+  document.onkeyup = function key_up(e) {
+    if(e.keyCode === 224 || e.keyCode === 91 || e.keyCode === 93 || e.keyCode === 17)
+      this.ctrlcmdPressed = false;
+
+    update_dict(event);
+  };
 
   this.textarea.focus();
   this.textarea.addEventListener('input', input_change, false);
@@ -35,7 +55,7 @@ function Left()
       range.select();
     }
     this.textarea.focus();
-  }
+  };
 
   function on_scroll()
   {
