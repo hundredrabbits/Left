@@ -23,6 +23,7 @@ function Left()
       var text = document.getElementsByTagName('textarea')[0].value;
       var blob = new Blob([text], {type: "text/plain;charset=" + document.characterSet});
       saveAs(blob, text.split("\n")[0] + ".txt");
+      this.ctrlcmdPressed = false;
     }
 
     if(e.keyCode === 224 || e.keyCode === 91 || e.keyCode === 93 || e.keyCode === 17)
