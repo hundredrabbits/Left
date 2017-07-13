@@ -1,12 +1,11 @@
-body { background:#eee; font-family: 'input_mono_medium';}
-body navi { display: block; height:calc(100vh - 60px); width:calc(30vw - 30px); background:#eee; border-right:1px solid #ccc; left:0px; position: absolute; font-family: 'input_mono_medium'; padding:30px; font-size:12px;color: #333;}
+body { background:#eee; font-family: 'input_mono_medium'; font-size: 12px; }
+body navi { display: block; height:calc(100vh - 60px); width:calc(30vw - 30px); background:#eee; border-right:1px solid #ccc; left:0px; position: absolute; padding:30px; color: #333;}
 body navi li { display: block;line-height: 20px;cursor: pointer; position: relative; text-transform: uppercase;}
 body navi li:hover::before { content:">"; position: absolute; left:-15px;}
 body navi li.note { padding-left:15px; color:#999; text-transform: capitalize;}
 body navi li span { float:right; }
-body stats { display:block; border-bottom: 0px; color:#ccc; margin-top:30px; position: absolute; bottom:30px; font-size:12px; left:30px;}
-body textarea { font-size:30px; padding:30px; height:100vh; display: inline-block; background:#eee; color:black; font-family: 'input_mono_medium'; font-size:12px; width:calc(70vw); position: absolute; left:calc(30vw); line-height: 20px; padding-right:20vw;}
-
+body stats { display:block; border-bottom: 0px; color:#ccc; margin-top:30px; position: absolute; bottom:30px; left:30px;} 
+body textarea { padding:30px; height:100vh; display: inline-block; background:#eee; color:black; width:calc(70vw); position: absolute; left:calc(30vw); line-height: 20px; padding-right:20vw;}
 body.noir navi{ background: #111; color:#ccc; }
 body.noir textarea { background: #111; color:#eee; }
 
