@@ -126,3 +126,8 @@ function Left()
     return tupleArray;
   }
 }
+
+window.onbeforeunload = function(e)
+{
+  return 'Trying to close the window';
+};
