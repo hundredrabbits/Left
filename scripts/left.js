@@ -82,7 +82,7 @@ function Left()
       // Subs
       if(line.substr(0,2) == "$ "){ html += "<li onClick='go_to(\""+line+"\")' class='note'>- "+line.replace("$ ","")+"<span>~"+line_id+"</span></li>"; }
       if(line.substr(0,4) == "def "){ html += "<li onClick='go_to(\""+line+"\")' class='note'>- "+line.replace("def ","")+"<span>~"+line_id+"</span></li>"; }
-      left.words_count += line.split(" ").length;
+      // left.words_count += line.split(" ").length;
       left.chars_count += line.length;
     }
     left.navi.innerHTML = html+"";
@@ -93,6 +93,15 @@ function Left()
 
   function update_stats()
   {
+    // Fixed word count issue. Spaces and new lines were being counted as words
+    // This was originally calculated on line 86. Had to move it here
+    // - Josh
+    var allWords = left.textarea.value
+                    .replace(/[^\w\s]|_/g, '')
+                    .replace(/\s+/g, ' ')
+                    .toLowerCase().match(/\S+/g) || [];
+    left.words_count = allWords.length;
+
     var scroll_position = ((left.textarea.scrollTop + 30)/left.textarea.scrollHeight) * 100;
     left.stats.innerHTML = "<div class='stats'>"+left.lines_count+"L "+left.words_count+"W "+(Object.keys(left.dictionary).length - 1)+'V'+" "+left.chars_count+"C "+parseInt(scroll_position)+"%</div>";
   }
