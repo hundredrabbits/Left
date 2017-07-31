@@ -1,7 +1,7 @@
 function Left()
 {
-  this.navi      = document.createElement('navi'); 
-  this.textarea  = document.createElement('textarea'); 
+  this.navi      = document.createElement('navi');
+  this.textarea  = document.createElement('textarea');
   this.stats     = document.createElement('stats');
 
   this.dictionary = null;
@@ -16,7 +16,7 @@ function Left()
   document.body.appendChild(this.stats);
   document.body.className = window.location.hash.replace("#","");
 
-  // Handle key presses 
+  // Handle key presses
   document.onkeydown = function key_down(e) {
     if(this.ctrlcmdPressed && e.key == 's') {
       e.preventDefault();
@@ -47,7 +47,7 @@ function Left()
 
     if(this.textarea.setSelectionRange){
      this.textarea.setSelectionRange(from,to);
-    } 
+    }
     else if(this.textarea.createTextRange){
       var range = this.textarea.createTextRange();
       range.collapse(true);
@@ -87,20 +87,20 @@ function Left()
     }
     left.navi.innerHTML = html+"";
 
+    update_dict();
     update_stats();
   }
 
   function update_stats()
   {
     var scroll_position = ((left.textarea.scrollTop + 30)/left.textarea.scrollHeight) * 100;
-    left.stats.innerHTML = "<div class='stats'>"+left.lines_count+"L "+left.words_count+"W "+(left.dictionary ? Object.keys(left.dictionary).length+'V' : '')+" "+left.chars_count+"C "+parseInt(scroll_position)+"%</div>";
+    left.stats.innerHTML = "<div class='stats'>"+left.lines_count+"L "+left.words_count+"W "+(Object.keys(left.dictionary).length - 1)+'V'+" "+left.chars_count+"C "+parseInt(scroll_position)+"%</div>";
   }
-  // Unused
 
-  function update_dict(e)
+  function update_dict()
   {
-    if(e.keyCode != 13){ return; }
-    
+    // Not sure what this is for lol - Josh
+    // if(e.keyCode != 13){ return; }
     var new_dict = {};
     left.words_count = 0;
 
@@ -109,7 +109,8 @@ function Left()
       var line = lines[line_id];
       // Dict
       for(var word_id in line.split(" ")){
-        var word = line.split(" ")[word_id].replace(/\W/g, '');
+        // Added .toLowerCase() otherwise word, Word, and WORD will be counted as 3 different words - Josh
+        var word = line.split(" ")[word_id].replace(/\W/g, '').toLowerCase();
         if(!new_dict[word]){ new_dict[word] = 0; }
         new_dict[word] += 1;
         left.words_count += 1;
