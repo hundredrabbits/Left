@@ -1,6 +1,6 @@
 # Left
 
-Left is a simple writing application created to help organize ideas and to write without distractions. It currently does not have a saving function, or ways to format text. Its purpose is simply to be a place to type.
+Left is a simple writing application created to help organize ideas and to write without distractions. 
 
 <img src='https://raw.githubusercontent.com/hundredrabbits/Left/master/PREVIEW.jpg' width="600"/>
 
@@ -13,6 +13,10 @@ Lines beginning with @, followed by a space, will create a header. And lines sta
 @ Header
 $ Note
 ```
+
+### Save/Load
+
+Simple press Ctrl+s to save, and drag any test file onto Left to load it.
 
 ### Noir Mode
 
