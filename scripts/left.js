@@ -122,7 +122,7 @@ function Left()
   {
     if(e.key == "s" && e.ctrlKey){
       e.preventDefault();
-      var text = target.textarea.value;
+      var text = left.textarea.value;
       var blob = new Blob([text], {type: "text/plain;charset=" + document.characterSet});
       saveAs(blob, "backup.txt");
     }
@@ -146,9 +146,39 @@ function Left()
     setTimeout(function(){ dict_refresh_loop(); }, 10000); 
   }
 
+  this.refresh = function()
+  {
+    refresh();
+  }
+
   refresh_loop();
   dict_refresh_loop();
 }
+
+window.addEventListener('dragover',function(e)
+{ 
+  e.stopPropagation(); 
+  e.preventDefault(); 
+  e.dataTransfer.dropEffect = 'copy'; 
+});
+
+window.addEventListener('drop', function(e)
+{
+  e.stopPropagation();
+  e.preventDefault();
+
+  var files = e.dataTransfer.files;
+  var file = files[0];
+
+  if (!file.type.match(/text.*/)) { console.log("Not image"); return false; }
+
+  var reader = new FileReader();
+  reader.onload = function(e){
+    left.textarea.value = e.target.result;
+    left.refresh();
+  };
+  reader.readAsText(file);
+});
 
 window.onbeforeunload = function(e)
 {
