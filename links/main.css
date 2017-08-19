@@ -5,9 +5,9 @@ body navi li:hover::before { content:">"; position: absolute; left:-15px;}
 body navi li.note { padding-left:15px; color:#999; text-transform: capitalize;}
 body navi li span { float:right; }
 body stats { display:block; border-bottom: 0px; color:#ccc; margin-top:30px; position: absolute; bottom:30px; left:30px;} 
-body synonyms { display: block; height:calc(100vh - 60px); width:calc(20vw - 30px); background:#eee; border-right:1px solid #ccc; right:0px; position: absolute; padding:30px; color: #333; line-height: 20px; color:#999;}
+body synonyms { display: block;width: calc(30vw - 30px);left: 0px;position: absolute;padding: 30px;color: #333;line-height: 20px;color: #999;bottom: 30px}
 body synonyms b { font-family: 'input_mono_regular'; text-transform: uppercase; }
-body textarea { padding:30px; height: calc(100vh - 30px); display: inline-block; background:#eee; color:black; width:calc(70vw - 30px); position: absolute; left:calc(30vw); line-height: 20px; padding-right:20vw;}
+body textarea { padding:30px; height: calc(100vh - 30px); display: inline-block; background:#eee; color:black; width:calc(70vw); position: absolute; left:calc(30vw); line-height: 20px; padding-right:20vw;}
 body.noir navi{ background: #111; color:#ccc; }
 body.noir textarea { background: #111; color:#eee; }
 
