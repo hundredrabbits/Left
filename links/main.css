@@ -7,7 +7,7 @@ body navi li span { float:right; }
 body stats { display:block; border-bottom: 0px; color:#ccc; margin-top:30px; position: absolute; bottom:30px; left:30px;} 
 body synonyms { display: block;width: calc(30vw - 30px);left: 0px;position: absolute;padding: 30px;color: #333;line-height: 20px;color: #999;bottom: 30px}
 body synonyms b { font-family: 'input_mono_regular'; text-transform: uppercase; }
-body textarea { padding:30px; height: calc(100vh - 30px); display: inline-block; background:#eee; color:black; width:calc(70vw); position: absolute; left:calc(30vw); line-height: 20px; padding-right:20vw;}
+body textarea { padding:30px; height: calc(100vh - 30px); display: inline-block; background:#eee; color:black; width:calc(70vw); position: absolute; left:calc(30vw); line-height: 20px; padding-right:20vw; resize:none;}
 body.noir navi{ background: #111; color:#ccc; }
 body.noir textarea { background: #111; color:#eee; }
 
