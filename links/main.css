@@ -1,13 +1,13 @@
 body { background:#eee; font-family: 'input_mono_medium'; font-size: 12px; }
-body navi { display: block; height:calc(100vh - 60px); width:calc(30vw - 30px); background:#eee; border-right:1px solid #ccc; left:0px; position: absolute; padding:30px; color: #333;}
+body navi { display: block;height: calc(100vh - 60px);width: calc(20vw);background: #eee;border-right: 1px solid #ccc;left: 0px;position: absolute;padding: 30px;color: #333;}
 body navi li { display: block;line-height: 20px;cursor: pointer; position: relative; text-transform: uppercase;}
 body navi li:hover::before { content:">"; position: absolute; left:-15px;}
 body navi li.note { padding-left:15px; color:#999; text-transform: capitalize;}
 body navi li span { float:right; }
-body stats { display:block; border-bottom: 0px; color:#ccc; margin-top:30px; position: absolute; bottom:30px; left:30px;} 
-body synonyms { display: block;width: calc(30vw - 30px);left: 0px;position: absolute;padding: 30px;color: #333;line-height: 20px;color: #999;bottom: 30px}
+body stats { display:block; border-bottom: 0px; color:#999; margin-top:30px; position: absolute; bottom:30px; left:30px; line-height: 20px} 
+body synonyms { display: block;width: calc(20vw);left: 0px;position: absolute;padding: 30px;line-height: 20px;color: #999;bottom: 60px;max-height: 30px;overflow: hidden;}
 body synonyms b { font-family: 'input_mono_regular'; text-transform: uppercase; }
-body textarea { padding:30px; height: calc(100vh - 30px); display: inline-block; background:#eee; color:black; width:calc(70vw); position: absolute; left:calc(30vw); line-height: 20px; padding-right:20vw; resize:none;}
+body textarea { padding: 30px;height: calc(100vh - 30px);display: inline-block;background: #eee;color: black;width: calc(80vw - 61px);position: absolute;left: calc(20vw + 61px);line-height: 20px;padding-right: 20vw;resize: none;}
 body.noir navi{ background: #111; color:#ccc; }
 body.noir textarea { background: #111; color:#eee; }
 
