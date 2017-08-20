@@ -146,7 +146,10 @@ function Left()
       e.preventDefault();
       var text = left.textarea_el.value;
       var blob = new Blob([text], {type: "text/plain;charset=" + document.characterSet});
-      saveAs(blob, "backup.txt");
+      var d = new Date(), e = new Date(d);
+      var since_midnight = e - d.setHours(0,0,0,0);
+      var timestamp = parseInt((since_midnight/864) * 10);
+      saveAs(blob, "backup."+timestamp+".txt");
     }
     if(e.key == " " || e.key == "Enter" || e.key == "." || e.key == ","){
       refresh(); 
@@ -181,6 +184,7 @@ function Left()
   this.textarea_el.value = this.splash();
   refresh_loop();
   dict_refresh_loop();
+  this.textarea_el.setSelectionRange(2,9);
 }
 
 window.addEventListener('dragover',function(e)
