@@ -84,8 +84,8 @@ function Left()
 
     for(var line_id in lines){
       var line = lines[line_id];
-      if(line.substr(0,2) == "@ "){ html += "<li onClick='go_to(\""+line+"\")'>"+line.replace("@ ","")+"<span>~"+line_id+"</span></li>"; markers.push(line); }
-      if(line.substr(0,2) == "$ "){ html += "<li onClick='go_to(\""+line+"\")' class='note'>- "+line.replace("$ ","")+"<span>~"+line_id+"</span></li>"; markers.push(line); }
+      if(line.substr(0,2) == "@ "){ html += "<li onClick='go_to(\""+line+"\")'>"+line.replace("@ ","")+"<span>"+line_id+"</span></li>"; markers.push(line); }
+      if(line.substr(0,2) == "$ "){ html += "<li onClick='go_to(\""+line+"\")' class='note'>"+line.replace("$ ","")+"<span>"+line_id+"</span></li>"; markers.push(line); }
     }
 
     if(markers.length == 0){
@@ -113,7 +113,7 @@ function Left()
 
     if(selection_length == 0){ left.synonyms_el.innerHTML = ""; return; }
 
-    var highlight = left.textarea_el.value.substr(left.textarea_el.selectionStart,selection_length).trim();
+    var highlight = left.textarea_el.value.substr(left.textarea_el.selectionStart,selection_length).trim().split(" ")[0];
     var html = "<b>"+highlight+"</b> "; html += highlight && left.dictionary[highlight] ? left.dictionary[highlight]+"x " : '';
 
     if(left.synonyms[highlight]){
@@ -175,7 +175,7 @@ function Left()
 
   this.splash = function()
   {
-    return "@ Welcome\n$ Left is a writing software.";
+    return "@ Welcome\n\n$ Controls\n\n- Create markers by beginning lines with either @ or $.\n- Overline words to look at synonyms.\n- Export a text file with ctrl+s.\n- Import a text file by dragging it on the window.\n\n$ Details\n\n- #L, stands for Lines.\n- #W, stands for Words.\n- #V, stands for Vocabulary, or unique words.\n- #C, stands for Characters.\n\n$ Enjoy.\n\n- https://github.com/hundredrabbits/Left";
   }
 
   this.textarea_el.value = this.splash();
