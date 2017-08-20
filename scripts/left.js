@@ -113,7 +113,7 @@ function Left()
 
     if(selection_length == 0){ left.synonyms_el.innerHTML = ""; return; }
 
-    var highlight = left.textarea_el.value.substr(left.textarea_el.selectionStart,selection_length).trim().split(" ")[0];
+    var highlight = left.textarea_el.value.substr(left.textarea_el.selectionStart,selection_length).trim().split(" ")[0].toLowerCase();
     var html = "<b>"+highlight+"</b> "; html += highlight && left.dictionary[highlight] ? left.dictionary[highlight]+"x " : '';
 
     if(left.synonyms[highlight]){
