@@ -140,7 +140,7 @@ function Left()
   {
     if(e.key == "s" && e.ctrlKey){
       e.preventDefault();
-      var text = left.textarea.value;
+      var text = left.textarea_el.value;
       var blob = new Blob([text], {type: "text/plain;charset=" + document.characterSet});
       saveAs(blob, "backup.txt");
     }
@@ -207,7 +207,7 @@ window.addEventListener('drop', function(e)
 
   var reader = new FileReader();
   reader.onload = function(e){
-    left.textarea.value = e.target.result;
+    left.textarea_el.value = e.target.result;
     left.refresh();
   };
   reader.readAsText(file);
