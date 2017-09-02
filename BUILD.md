@@ -39,23 +39,11 @@ rm -r /Users/VillaMoirai/Desktop/Left-darwin-x64/
 rm -r /Users/VillaMoirai/Desktop/Left-win32-x64/ 
 
 cd /Users/VillaMoirai/Github/HundredRabbits/Left/
-rm /Users/VillaMoirai/Desktop/left_lin64.zip
 electron-packager . Left --platform=linux --arch=x64 --out /Users/VillaMoirai/Desktop/ --overwrite --electron-version=1.6.2
-cd /Users/VillaMoirai/Desktop/
-zip -r left_lin64.zip Left-linux-x64/
-rm -r /Users/VillaMoirai/Desktop/Left-linux-x64/ 
 
 cd /Users/VillaMoirai/Github/HundredRabbits/Left/
-rm /Users/VillaMoirai/Desktop/left_osx64.zip
 electron-packager . Left --platform=darwin --arch=x64 --out /Users/VillaMoirai/Desktop/ --overwrite --electron-version=1.6.2
-cd /Users/VillaMoirai/Desktop/
-zip -r left_osx64.zip Left-darwin-x64/
-rm -r /Users/VillaMoirai/Desktop/Left-darwin-x64/ 
 
 cd /Users/VillaMoirai/Github/HundredRabbits/Left/
-rm /Users/VillaMoirai/Desktop/left_win64.zip
 electron-packager . Left --platform=win32 --arch=x64 --out /Users/VillaMoirai/Desktop/ --overwrite --electron-version=1.6.2
-cd /Users/VillaMoirai/Desktop/
-zip -r left_win64.zip Left-win32-x64/
-rm -r /Users/VillaMoirai/Desktop/Left-win32-x64/ 
 ```
