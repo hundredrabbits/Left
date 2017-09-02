@@ -1,0 +1,12 @@
+{
+  "name": "Left",
+  "version": "0.1.0",
+  "main": "main.js",
+  "start": "",
+  "devDependencies": {
+    "electron-prebuilt": "^1.4.13"
+  },
+  "dependencies": {
+    "electron-packager": "^8.4.0"
+  }
+}
