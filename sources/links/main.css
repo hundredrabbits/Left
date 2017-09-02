@@ -7,13 +7,17 @@ body navi li span { float:right; }
 body stats { display: block;border-bottom: 0px;color: #999;margin-top: 30px;position: absolute;bottom:10px;left: calc(20vw + 91px);line-height: 40px;width: calc(80vw - 121px);height:40px;overflow: hidden } 
 body stats .right { float:right; }
 body stats b { background:#ccc; color:#f8f8f8;}
-body synonyms { display: block;width: calc(20vw);left: 0px;position: absolute;padding: 30px;line-height: 20px;color: #999;bottom: 60px;max-height: 30px;overflow: hidden;}
-body synonyms b { font-family: 'input_mono_regular'; text-transform: uppercase; }
 body textarea { padding: 30px;height: calc(100vh - 60px);display: inline-block;color: black;width: calc(80vw - 91px);position: absolute;left: calc(20vw + 61px);line-height: 20px;resize: none; background:transparent;}
 ::selection { background:#000; color:#fff; opacity:1.0;}
 
 body.noir { background:#111; }
 body.noir navi{ background: #111; color:#ccc; border-right: 1px solid #222; }
-body.noir textarea { background: #111; color:#eee; }
+body.noir textarea { color:#eee; }
 body.noir stats { }
 body.noir ::selection { background:#888; color:#fff; opacity:1.0;}
+
+body.pale { background:#555; }
+body.pale navi{ color:#777; border-right: 1px solid #666; }
+body.pale textarea { color:#ccc; }
+body.pale stats b { background:#444; color:#fff; }
+body.pale ::selection { background:#aaa; color:#fff; opacity:1.0;}

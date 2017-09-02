@@ -3,7 +3,6 @@ function Left()
   this.navi_el        = document.createElement('navi'); 
   this.textarea_el    = document.createElement('textarea'); 
   this.stats_el       = document.createElement('stats');
-  this.synonyms_el = document.createElement('synonyms');
 
   this.dictionary = new Dict();
 
@@ -16,7 +15,6 @@ function Left()
   document.body.appendChild(this.navi_el);
   document.body.appendChild(this.textarea_el);
   document.body.appendChild(this.stats_el);
-  document.body.appendChild(this.synonyms_el);
   document.body.className = window.location.hash.replace("#","");
 
   var left = this;
@@ -85,12 +83,12 @@ function Left()
 
   this.splash = function()
   {
-    return "@ Welcome\n\n$ Controls\n\n- Create markers by beginning lines with either @ or $.\n- Overline words to look at synonyms.\n- Export a text file with ctrl+s.\n- Import a text file by dragging it on the window.\n- Press <tab> to autocomplete a word.\n- The synonyms dictionary contains "+Object.keys(left.dictionary.synonyms).length+" common words.\n\n$ Details\n\n- #L, stands for Lines.\n- #W, stands for Words.\n- #V, stands for Vocabulary, or unique words.\n- #C, stands for Characters.\n\n$ Enjoy.\n\n- https://github.com/hundredrabbits/Left";
+    return "@ Welcome\n\n$ Controls\n\n- Create markers by beginning lines with either @ or $.\n- Overline words to look at synonyms.\n- Export a text file with ctrl+s.\n- Import a text file by dragging it on the window.\n- Press <tab> to autocomplete a word.\n- The synonyms dictionary contains "+Object.keys(left.dictionary.synonyms).length+" common words.\n\n$ Details\n\n- #L, stands for Lines.\n- #W, stands for Words.\n- #V, stands for Vocabulary, or unique words.\n- #C, stands for Characters.\n\n$ Themes\n\n- left.theme=blanc for the default theme.\n- left.theme=noir for the noir theme.\n- left.theme=pale for the low-contrast theme.\n\n$ Enjoy.\n\n- https://github.com/hundredrabbits/Left";
   }
 
   this.active_word = function()
   {
-    var before = this.textarea_el.value.substr(0,left.textarea_el.selectionStart);
+    var before = this.textarea_el.value.substr(0,left.textarea_el.selectionEnd);
     var words = before.replace(/\n/g," ").split(" ");
     var last_word = words[words.length-1];
     return last_word.replace(/\W/g, '');
@@ -132,6 +130,14 @@ function Left()
     this.textarea_el.focus();
   };
 
+  this.check_cmd = function()
+  {
+    if(left.current_word == "leftthemenoir"){ document.body.className = "noir"; } // left.theme=noir
+    if(left.current_word == "leftthemeblanc"){ document.body.className = "blanc"; } // left.theme=pale
+    if(left.current_word == "leftthemepale"){ document.body.className = "pale"; } // left.theme=pale
+    console.log(left.current_word)
+  }
+
   document.onkeydown = function key_down(e)
   {
     if(e.key == "s" && e.ctrlKey){
@@ -159,6 +165,12 @@ function Left()
   };
 
   document.oninput = function on_input(e)
+  {
+    left.refresh();
+    left.check_cmd();
+  }
+
+  document.onmouseup = function on_mouseup(e)
   {
     left.refresh();
   }
