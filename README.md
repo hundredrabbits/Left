@@ -6,20 +6,22 @@ Left is a simple open-source distractionless writing application created to help
 
 ### Options
 
-Lines beginning with @, followed by a space, will create headers. And lines starting with $, followed by a space, will create sub-headers. The headers and sub-headers are displayed on the lefthand side column of the interface and be clicked for quick navigation.
+Lines beginning with @ or #, followed by a space, will create headers. And lines starting with $ or ##, followed by a space, will create sub-headers. The headers and sub-headers are displayed on the lefthand side column of the interface and can be clicked for quick navigation.
 
 ```
 @ Header
 $ Note
+# Header
+## Note
 ```
 
 ### Save/Load
 
 Simply press Ctrl+s to save, and drag any text file onto Left to load it.
 
-### Noir Mode
+### Themes
 
-Add #noir to the header, to activate the night theme. Or type, `left.theme=noir` into the textarea to change the theme. The current themes are blanc(default), noir & pale.
+Add #noir to the html header, to activate the night theme. Or type, `~ left.theme=noir` anywhere within the text to change the theme of a project. The current themes are blanc(default), noir & pale.
 
 ```
 /index.html#noir
