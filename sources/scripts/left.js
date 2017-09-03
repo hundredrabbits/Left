@@ -17,6 +17,12 @@ function Left()
   document.body.appendChild(this.stats_el);
   document.body.className = window.location.hash.replace("#","");
 
+  this.textarea_el.setAttribute("autocomplete","off");
+  this.textarea_el.setAttribute("autocorrect","off");
+  this.textarea_el.setAttribute("autocapitalize","off");
+  this.textarea_el.setAttribute("spellcheck","false");
+  this.textarea_el.setAttribute("type","text");
+
   var left = this;
 
   this.start = function()
@@ -26,6 +32,7 @@ function Left()
     this.textarea_el.setSelectionRange(2,9);
     this.dictionary.update();
     this.refresh();
+    this.refresh_settings();
   }
   
   this.refresh = function()
@@ -70,7 +77,7 @@ function Left()
     stats.w = left.words_count;
     stats.c = left.chars_count;
     stats.v = left.dictionary.vocabulary.length;
-    stats.p = (left.textarea_el.selectionStart/parseFloat(left.chars_count)) * 100; stats.p = stats.p > 100 ? 100 : parseInt(stats.p);
+    stats.p = (left.textarea_el.selectionEnd/parseFloat(left.chars_count)) * 100; stats.p = stats.p > 100 ? 100 : parseInt(stats.p);
 
     suggestion_html = (left.current_word && left.suggestion && left.current_word != left.suggestion) ? " <t>"+left.current_word+"<b>"+left.suggestion.substr(left.current_word.length,left.suggestion.length)+"</b></t>" : "";
 
@@ -78,12 +85,30 @@ function Left()
     var synonyms = this.dictionary.find_synonym(left.current_word); synonym_html = "";
     for(syn_id in synonyms){ synonym_html += synonyms[syn_id]+" "; }
 
-    left.stats_el.innerHTML = synonyms ? " <b>"+left.current_word+"</b> "+synonym_html : stats.l+"L "+stats.w+"W "+stats.v+"V "+stats.c+"C "+stats.p+"%"+suggestion_html+synonym_html;
+    left.stats_el.innerHTML = synonyms ? " <b>"+left.current_word+"</b> "+synonym_html : stats.l+"L "+stats.w+"W "+stats.v+"V "+stats.c+"C "+(stats.p > 0 && stats.p < 100 ? stats.p+"%" : "")+suggestion_html+synonym_html;
+  }
+
+  this.refresh_settings = function()
+  {
+    if(left.textarea_el.value.indexOf("~ left.theme=") >= 0){
+      var theme_name = left.textarea_el.value.split("~ left.theme=")[1].split(" ")[0];
+      document.body.className = theme_name;
+    }
+    if(left.textarea_el.value.indexOf("~ left.suggestions=") >= 0){
+      var suggestions_toggle = left.textarea_el.value.split("~ left.suggestions=")[1].split(" ")[0];
+      if(suggestions_toggle == "off"){ left.dictionary.is_suggestions_enabled = false; }
+      if(suggestions_toggle == "on"){ left.dictionary.is_suggestions_enabled = true; }
+    }
+    if(left.textarea_el.value.indexOf("~ left.synonyms=") >= 0){
+      var synonyms_toggle = left.textarea_el.value.split("~ left.synonyms=")[1].split(" ")[0];
+      if(synonyms_toggle == "off"){ left.dictionary.is_synonyms_enabled = false; }
+      if(synonyms_toggle == "on"){ left.dictionary.is_synonyms_enabled = true; }
+    }
   }
 
   this.splash = function()
   {
-    return "@ Welcome\n\n$ Controls\n\n- Create markers by beginning lines with either @ or $.\n- Overline words to look at synonyms.\n- Export a text file with ctrl+s.\n- Import a text file by dragging it on the window.\n- Press <tab> to autocomplete a word.\n- The synonyms dictionary contains "+Object.keys(left.dictionary.synonyms).length+" common words.\n\n$ Details\n\n- #L, stands for Lines.\n- #W, stands for Words.\n- #V, stands for Vocabulary, or unique words.\n- #C, stands for Characters.\n\n$ Themes\n\n- left.theme=blanc for the default theme.\n- left.theme=noir for the noir theme.\n- left.theme=pale for the low-contrast theme.\n\n$ Enjoy.\n\n- https://github.com/hundredrabbits/Left";
+    return "# Welcome\n\n## Controls\n\n- Create markers by beginning lines with either @ and $, or # and ##.\n- Overline words to look at synonyms.\n- Export a text file with ctrl+s.\n- Import a text file by dragging it on the window.\n- Press <tab> to autocomplete a word.\n- The synonyms dictionary contains "+Object.keys(left.dictionary.synonyms).length+" common words.\n\n## Details\n\n- #L, stands for Lines.\n- #W, stands for Words.\n- #V, stands for Vocabulary, or unique words.\n- #C, stands for Characters.\n\n## Themes & Settings\n\n~ left.theme=blanc     set default theme.\n~ left.theme=noir      set noir theme.\n~ left.theme=pale      set low-contrast theme.\n~ left.suggestions=off disable suggestions\n~ left.synonyms=off    disable synonyms\n\n## Enjoy.\n\n- https://github.com/hundredrabbits/Left";
   }
 
   this.active_word = function()
@@ -130,14 +155,6 @@ function Left()
     this.textarea_el.focus();
   };
 
-  this.check_cmd = function()
-  {
-    if(left.current_word == "leftthemenoir"){ document.body.className = "noir"; } // left.theme=noir
-    if(left.current_word == "leftthemeblanc"){ document.body.className = "blanc"; } // left.theme=pale
-    if(left.current_word == "leftthemepale"){ document.body.className = "pale"; } // left.theme=pale
-    console.log(left.current_word)
-  }
-
   document.onkeydown = function key_down(e)
   {
     if(e.key == "s" && e.ctrlKey){
@@ -157,6 +174,7 @@ function Left()
 
     if(e.key == "Enter" || e.key == " "){
       left.dictionary.update();
+      left.refresh_settings();
     }
 
     if(e.key.substr(0,5) == "Arrow"){
@@ -167,7 +185,6 @@ function Left()
   document.oninput = function on_input(e)
   {
     left.refresh();
-    left.check_cmd();
   }
 
   document.onmouseup = function on_mouseup(e)
@@ -198,6 +215,7 @@ window.addEventListener('drop', function(e)
     left.textarea_el.value = e.target.result;
     left.dictionary.update();
     left.refresh();
+    left.refresh_settings();
   };
   reader.readAsText(file);
 });
