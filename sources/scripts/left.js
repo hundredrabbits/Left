@@ -52,8 +52,8 @@ function Left()
 
     for(var line_id in lines){
       var line = lines[line_id];
-      if(line.substr(0,2) == "@ "){ html += "<li onClick='go_to(\""+line+"\")'>"+line.replace("@ ","")+"<span>"+line_id+"</span></li>"; markers.push(line); }
-      if(line.substr(0,2) == "$ "){ html += "<li onClick='go_to(\""+line+"\")' class='note'>"+line.replace("$ ","")+"<span>"+line_id+"</span></li>"; markers.push(line); }
+      if(line.substr(0,2) == "@ " || line.substr(0,2) == "# "){ html += "<li onClick='go_to(\""+line+"\")'>"+line.replace("@ ","").replace("# ","")+"<span>"+line_id+"</span></li>"; markers.push(line); }
+      if(line.substr(0,2) == "$ " || line.substr(0,3) == "## "){ html += "<li onClick='go_to(\""+line+"\")' class='note'>"+line.replace("$ ","").replace("## ","")+"<span>"+line_id+"</span></li>"; markers.push(line); }
     }
 
     if(markers.length == 0){
