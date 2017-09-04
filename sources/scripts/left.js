@@ -28,8 +28,15 @@ function Left()
   this.start = function()
   {
     this.textarea_el.focus();
-    this.textarea_el.value = this.splash();
-    this.textarea_el.setSelectionRange(2,9);
+
+    if(localStorage.backup){
+      this.textarea_el.value = localStorage.backup;
+    }
+    else{
+      this.textarea_el.value = this.splash();
+      this.textarea_el.setSelectionRange(2,9);
+    }
+
     this.dictionary.update();
     this.refresh();
     this.refresh_settings();
@@ -108,7 +115,7 @@ function Left()
 
   this.splash = function()
   {
-    return "# Welcome\n\n## Controls\n\n- Create markers by beginning lines with either @ and $, or # and ##.\n- Overline words to look at synonyms.\n- Export a text file with ctrl+s.\n- Import a text file by dragging it on the window.\n- Press <tab> to autocomplete a word.\n- The synonyms dictionary contains "+Object.keys(left.dictionary.synonyms).length+" common words.\n\n## Details\n\n- #L, stands for Lines.\n- #W, stands for Words.\n- #V, stands for Vocabulary, or unique words.\n- #C, stands for Characters.\n\n## Themes & Settings\n\n~ left.theme=blanc     set default theme.\n~ left.theme=noir      set noir theme.\n~ left.theme=pale      set low-contrast theme.\n~ left.suggestions=off disable suggestions\n~ left.synonyms=off    disable synonyms\n\n## Enjoy.\n\n- https://github.com/hundredrabbits/Left";
+    return "# Welcome\n\n## Controls\n\n- Create markers by beginning lines with either @ and $, or # and ##.\n- Overline words to look at synonyms.\n- Export a text file with ctrl+s.\n- Import a text file by dragging it on the window.\n- Press <tab> to autocomplete a word.\n- The synonyms dictionary contains "+Object.keys(left.dictionary.synonyms).length+" common words.\n- Automatically keeps backups, press ctrl+shift+del to erase the backups.\n\n## Details\n\n- #L, stands for Lines.\n- #W, stands for Words.\n- #V, stands for Vocabulary, or unique words.\n- #C, stands for Characters.\n\n## Themes & Settings\n\n~ left.theme=blanc     set default theme.\n~ left.theme=noir      set noir theme.\n~ left.theme=pale      set low-contrast theme.\n~ left.suggestions=off disable suggestions\n~ left.synonyms=off    disable synonyms\n\n## Enjoy.\n\n- https://github.com/hundredrabbits/Left";
   }
 
   this.active_word = function()
@@ -167,6 +174,12 @@ function Left()
       saveAs(blob, "backup."+timestamp+".txt");
     }
 
+    if((e.key == "Backspace" || e.key == "Delete") && e.ctrlKey && e.shiftKey){
+      e.preventDefault();
+      left.textarea_el.value = left.splash();
+      localStorage.setItem("backup", left.textarea_el.value);
+    }
+
     if(e.keyCode == 9 && left.suggestion){
       left.autocomplete();
       e.preventDefault();
@@ -222,5 +235,6 @@ window.addEventListener('drop', function(e)
 
 window.onbeforeunload = function(e)
 {
+  localStorage.setItem("backup", left.textarea_el.value);
   return 'Trying to close the window';
 };
