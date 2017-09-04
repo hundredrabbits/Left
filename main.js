@@ -1,4 +1,4 @@
-const {app, BrowserWindow, webFrame} = require('electron')
+const {app, BrowserWindow, webFrame, Menu} = require('electron')
 const path = require('path')
 const url = require('url')
 
@@ -16,15 +16,33 @@ function createWindow ()
   // Open the DevTools.
   // win.webContents.openDevTools()
 
+  if (process.platform === 'darwin') {
+    // Create our menu entries so that we can use MAC shortcuts
+    Menu.setApplicationMenu(Menu.buildFromTemplate([
+      {
+        label: 'Edit',
+        submenu: [
+          { role: 'undo' },
+          { role: 'redo' },
+          { type: 'separator' },
+          { role: 'cut' },
+          { role: 'copy' },
+          { role: 'paste' },
+          { role: 'pasteandmatchstyle' },
+          { role: 'delete' },
+          { role: 'selectall' }
+        ]
+      }
+    ]));
+  }
+
   // Emitted when the window is closed.
   win.on('closed', () => {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     win = null
-    if (process.platform !== 'darwin') {
-      app.quit()
-    }
+    app.quit()
   })
 }
 
@@ -37,9 +55,7 @@ app.on('ready', createWindow)
 app.on('window-all-closed', () => {
   // On macOS it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
+  app.quit()
 })
 
 app.on('activate', () => {

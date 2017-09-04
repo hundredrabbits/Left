@@ -166,12 +166,12 @@ function Left()
   {
     if(e.key == "s" && e.ctrlKey){
       e.preventDefault();
-      var text = left.textarea_el.value;
-      var blob = new Blob([text], {type: "text/plain;charset=" + document.characterSet});
-      var d = new Date(), e = new Date(d);
-      var since_midnight = e - d.setHours(0,0,0,0);
-      var timestamp = parseInt((since_midnight/864) * 10);
-      saveAs(blob, "backup."+timestamp+".txt");
+      // var text = left.textarea_el.value;
+      // var blob = new Blob([text], {type: "text/plain;charset=" + document.characterSet});
+      // var d = new Date(), e = new Date(d);
+      // var since_midnight = e - d.setHours(0,0,0,0);
+      // var timestamp = parseInt((since_midnight/864) * 10);
+      // saveAs(blob, "backup."+timestamp+".txt");
     }
 
     if((e.key == "Backspace" || e.key == "Delete") && e.ctrlKey && e.shiftKey){
