@@ -246,5 +246,4 @@ window.addEventListener('drop', function(e)
 window.onbeforeunload = function(e)
 {
   localStorage.setItem("backup", left.textarea_el.value);
-  return 'Trying to close the window';
 };
