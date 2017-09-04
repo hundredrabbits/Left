@@ -3,6 +3,7 @@ function Left()
   this.navi_el        = document.createElement('navi'); 
   this.textarea_el    = document.createElement('textarea'); 
   this.stats_el       = document.createElement('stats');
+  this.scroll_el      = document.createElement('scrollbar');
 
   this.dictionary = new Dict();
 
@@ -17,6 +18,7 @@ function Left()
   document.body.appendChild(this.navi_el);
   document.body.appendChild(this.textarea_el);
   document.body.appendChild(this.stats_el);
+  document.body.appendChild(this.scroll_el);
   document.body.className = window.location.hash.replace("#","");
 
   this.textarea_el.setAttribute("autocomplete","off");
@@ -195,8 +197,6 @@ function Left()
     var from = this.textarea_el.value.indexOf(selection);
     var to   = from + selection.length;
 
-    console.log(selection,from,to);
-
     if(this.textarea_el.setSelectionRange){
      this.textarea_el.setSelectionRange(from,to);
     } 
@@ -209,6 +209,18 @@ function Left()
     }
     this.textarea_el.focus();
   };
+
+  this.wheel = function(e)
+  {
+    var scroll_distance = left.textarea_el.scrollTop;
+    var scroll_max = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight;
+
+    left.textarea_el.scrollTop += e.wheelDeltaY * -0.25;
+    left.scroll_el.style.height = (scroll_distance/scroll_max) * window.innerHeight;
+    e.preventDefault();
+  }
+
+  left.textarea_el.addEventListener('wheel', left.wheel, false);
 
   document.oninput = function on_input(e)
   {
@@ -236,7 +248,7 @@ window.addEventListener('drop', function(e)
   var files = e.dataTransfer.files;
   var file = files[0];
 
-  if (!file.type.match(/text.*/)) { console.log("Not image"); return false; }
+  if (!file.type.match(/text.*/)) { console.log("Not text"); return false; }
 
   var reader = new FileReader();
   reader.onload = function(e){
