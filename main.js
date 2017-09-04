@@ -6,8 +6,10 @@ const url = require('url')
 // be closed automatically when the JavaScript object is garbage collected.
 let win
 
-function createWindow ()
-{
+// This method will be called when Electron has finished
+// initialization and is ready to create browser windows.
+// Some APIs can only be used after this event occurs.
+app.on('ready', () => {
   // Create the browser window.
   win = new BrowserWindow({width: 1100, height: 660, titleBarStyle: 'hidden',backgroundColor: '#ccc', resizable:true, autoHideMenuBar: true,icon: __dirname + '/icon.ico'})
 
@@ -24,13 +26,12 @@ function createWindow ()
         submenu: [
           { role: 'undo' },
           { role: 'redo' },
-          { type: 'separator' },
           { role: 'cut' },
           { role: 'copy' },
           { role: 'paste' },
-          { role: 'pasteandmatchstyle' },
           { role: 'delete' },
-          { role: 'selectall' }
+          { role: 'selectall' },
+          {label: 'Quit', accelerator: 'CmdOrCtrl+Q', click: function() { force_quit=true; app.exit();}},
         ]
       }
     ]));
@@ -44,12 +45,7 @@ function createWindow ()
     win = null
     app.quit()
   })
-}
-
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
-app.on('ready', createWindow)
+})
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
@@ -68,6 +64,3 @@ app.on('activate', () => {
     
   }
 })
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
