@@ -6,9 +6,10 @@ const url = require('url')
 // be closed automatically when the JavaScript object is garbage collected.
 let win
 
-function createWindow () {
+function createWindow ()
+{
   // Create the browser window.
-  win = new BrowserWindow({width: 1100, height: 660, backgroundColor: '#ccc', resizable:true, autoHideMenuBar: true,icon: __dirname + '/icon.ico'})
+  win = new BrowserWindow({width: 1100, height: 660, titleBarStyle: 'hidden',backgroundColor: '#ccc', resizable:true, autoHideMenuBar: true,icon: __dirname + '/icon.ico'})
 
   win.loadURL(`file://${__dirname}/sources/index.html`)
 
@@ -21,6 +22,9 @@ function createWindow () {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     win = null
+    if (process.platform !== 'darwin') {
+      app.quit()
+    }
   })
 }
 

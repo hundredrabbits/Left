@@ -34,15 +34,15 @@ rm -r /xxiivv/Nataniev/public/public.projects/builds/Left-win32-x64/
 
 ### Build Linux64 / Darwin64 / Windows64(Local)
 ```
-rm -r /Users/VillaMoirai/Desktop/Left-linux-x64/ 
 rm -r /Users/VillaMoirai/Desktop/Left-darwin-x64/ 
+rm -r /Users/VillaMoirai/Desktop/Left-linux-x64/ 
 rm -r /Users/VillaMoirai/Desktop/Left-win32-x64/ 
 
 cd /Users/VillaMoirai/Github/HundredRabbits/Left/
-electron-packager . Left --platform=linux --arch=x64 --out /Users/VillaMoirai/Desktop/ --overwrite --electron-version=1.6.2
+electron-packager . Left --platform=darwin --arch=x64 --out /Users/VillaMoirai/Desktop/ --overwrite --electron-version=1.6.2
 
 cd /Users/VillaMoirai/Github/HundredRabbits/Left/
-electron-packager . Left --platform=darwin --arch=x64 --out /Users/VillaMoirai/Desktop/ --overwrite --electron-version=1.6.2
+electron-packager . Left --platform=linux --arch=x64 --out /Users/VillaMoirai/Desktop/ --overwrite --electron-version=1.6.2
 
 cd /Users/VillaMoirai/Github/HundredRabbits/Left/
 electron-packager . Left --platform=win32 --arch=x64 --out /Users/VillaMoirai/Desktop/ --overwrite --electron-version=1.6.2

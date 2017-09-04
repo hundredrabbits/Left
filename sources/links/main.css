@@ -1,5 +1,5 @@
 body { background:#f8f8f8; font-family: 'input_mono_medium'; font-size: 12px; }
-body navi { display: block;height: calc(100vh - 60px);width: calc(20vw);border-right: 1px solid #eee;left: 0px;position: absolute;padding: 30px;color: #333;}
+body navi { display: block;height: calc(100vh - 60px);width: calc(20vw);border-right: 1px solid #eee;left: 0px;position: absolute;padding: 30px;color: #333; -webkit-user-select: none;-webkit-app-region: drag;}
 body navi li { display: block;line-height: 20px;cursor: pointer; position: relative; text-transform: uppercase;}
 body navi li:hover::before { content:">"; position: absolute; left:-15px;}
 body navi li.note { padding-left:7px; color:#999; text-transform: capitalize;}
