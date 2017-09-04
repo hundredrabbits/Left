@@ -2,8 +2,11 @@
   "name": "Left",
   "version": "0.1.0",
   "main": "main.js",
-  "start": "",
+  "scripts": {
+    "start": "electron ."
+  },
   "devDependencies": {
+    "electron": "^1.7.5",
     "electron-prebuilt": "^1.4.13"
   },
   "dependencies": {
