@@ -11,7 +11,7 @@ let win
 // Some APIs can only be used after this event occurs.
 app.on('ready', () => {
   // Create the browser window.
-  win = new BrowserWindow({width: 1100, height: 660, titleBarStyle: 'hidden',backgroundColor: '#ccc', resizable:true, autoHideMenuBar: true,icon: __dirname + '/icon.ico'})
+  win = new BrowserWindow({width: 1100, height: 660, frame:false, backgroundColor: '#ccc', resizable:true, autoHideMenuBar: true,icon: __dirname + '/icon.ico'})
 
   win.loadURL(`file://${__dirname}/sources/index.html`)
 
