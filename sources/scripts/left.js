@@ -12,6 +12,8 @@ function Left()
   this.current_word = null;
   this.suggestion = null;
 
+  this.title = null;
+
   document.body.appendChild(this.navi_el);
   document.body.appendChild(this.textarea_el);
   document.body.appendChild(this.stats_el);
@@ -24,7 +26,6 @@ function Left()
   this.textarea_el.setAttribute("type","text");
 
   var left = this;
-
 
   this.start = function()
   {
@@ -119,11 +120,15 @@ function Left()
       if(synonyms_toggle == "off"){ left.dictionary.is_synonyms_enabled = false; }
       if(synonyms_toggle == "on"){ left.dictionary.is_synonyms_enabled = true; }
     }
+    if(left.textarea_el.value.indexOf("~ left.title=") >= 0){
+      var title = left.textarea_el.value.split("~ left.title=")[1].split(" ")[0];
+      left.title = title;
+    }
   }
 
   this.splash = function()
   {
-    return "# Welcome\n\n## Controls\n\n- Create markers by beginning lines with either @ and $, or # and ##.\n- Overline words to look at synonyms.\n- Export a text file with ctrl+s.\n- Import a text file by dragging it on the window.\n- Press <tab> to autocomplete a word.\n- The synonyms dictionary contains "+Object.keys(left.dictionary.synonyms).length+" common words.\n- Automatically keeps backups, press ctrl+shift+del to erase the backups.\n\n## Details\n\n- #L, stands for Lines.\n- #W, stands for Words.\n- #V, stands for Vocabulary, or unique words.\n- #C, stands for Characters.\n\n## Themes & Settings\n\n~ left.theme=blanc     set default theme.\n~ left.theme=noir      set noir theme.\n~ left.theme=pale      set low-contrast theme.\n~ left.suggestions=on enable/disable suggestions\n~ left.synonyms=on    enable/disable synonyms\n\n## Enjoy.\n\n- https://github.com/hundredrabbits/Left";
+    return "# Welcome\n\n## Controls\n\n- Create markers by beginning lines with either @ and $, or # and ##.\n- Overline words to look at synonyms.\n- Export a text file with ctrl+s.\n- Import a text file by dragging it on the window.\n- Press <tab> to autocomplete a word.\n- The synonyms dictionary contains "+Object.keys(left.dictionary.synonyms).length+" common words.\n- Automatically keeps backups, press ctrl+shift+del to erase the backups.\n\n## Details\n\n- #L, stands for Lines.\n- #W, stands for Words.\n- #V, stands for Vocabulary, or unique words.\n- #C, stands for Characters.\n\n## Settings\n\n~ left.title=draft     set output file name\n~ left.theme=blanc     set default theme.\n~ left.theme=noir      set noir theme.\n~ left.theme=pale      set low-contrast theme.\n~ left.suggestions=on  toggle suggestions\n~ left.synonyms=on     toggle synonyms\n\n## Enjoy.\n\n- https://github.com/hundredrabbits/Left";
   }
 
   this.active_word = function()
@@ -161,7 +166,7 @@ function Left()
       var d = new Date(), e = new Date(d);
       var since_midnight = e - d.setHours(0,0,0,0);
       var timestamp = parseInt((since_midnight/864) * 10);
-      saveAs(blob, "backup."+timestamp+".txt");
+      saveAs(blob, (left.title ? left.title : "backup")+"."+timestamp+".txt");
     }
 
     if((e.key == "Backspace" || e.key == "Delete") && e.ctrlKey && e.shiftKey){
