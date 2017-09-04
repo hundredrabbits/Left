@@ -57,6 +57,7 @@ function Left()
 
     this.refresh_navi();
     this.refresh_stats();
+    left.refresh_scrollbar();
   }
 
   this.refresh_navi = function()
@@ -217,12 +218,16 @@ function Left()
 
   this.wheel = function(e)
   {
+    e.preventDefault();
+    left.textarea_el.scrollTop += e.wheelDeltaY * -0.25;
+    left.refresh_scrollbar();
+  }
+
+  this.refresh_scrollbar = function()
+  {
     var scroll_distance = left.textarea_el.scrollTop;
     var scroll_max = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight;
-
-    left.textarea_el.scrollTop += e.wheelDeltaY * -0.25;
     left.scroll_el.style.height = (scroll_distance/scroll_max) * window.innerHeight;
-    e.preventDefault();
   }
 
   left.textarea_el.addEventListener('wheel', left.wheel, false);
