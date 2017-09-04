@@ -25,6 +25,7 @@ function Left()
 
   var left = this;
 
+
   this.start = function()
   {
     this.textarea_el.focus();
@@ -66,15 +67,22 @@ function Left()
 
     for(var line_id in lines){
       var line = lines[line_id];
-      if(line.substr(0,2) == "@ " || line.substr(0,2) == "# "){ html += "<li onClick='go_to(\""+line+"\")'>"+line.replace("@ ","").replace("# ","")+"<span>"+line_id+"</span></li>"; markers.push(line); }
-      if(line.substr(0,2) == "$ " || line.substr(0,3) == "## "){ html += "<li onClick='go_to(\""+line+"\")' class='note'>"+line.replace("$ ","").replace("## ","")+"<span>"+line_id+"</span></li>"; markers.push(line); }
+      if(line.substr(0,2) == "@ " || line.substr(0,2) == "# "){ 
+        var el = document.createElement('li');
+        el.innerHTML = line.replace("@ ","").replace("# ","")+"<span>"+line_id+"</span>";
+        el.destination = line;
+        el.onmouseup = function on_mouseup(e){ go_to(e.target.destination); }
+        left.navi_el.appendChild(el);
+      }
+      if(line.substr(0,2) == "$ " || line.substr(0,3) == "## "){ 
+        var el = document.createElement('li');
+        el.innerHTML = line.replace("$ ","").replace("## ","")+"<span>"+line_id+"</span>";
+        el.destination = line;
+        el.onmouseup = function on_mouseup(e){ go_to(e.target.destination); }
+        el.className = "note";
+        left.navi_el.appendChild(el);
+      }
     }
-
-    if(markers.length == 0){
-      html = "No Markers";
-    }
-
-    left.navi_el.innerHTML = html;
   }
 
   this.refresh_stats = function()
@@ -144,34 +152,16 @@ function Left()
     this.inject(suggestion.substr(left.current_word.length,suggestion.length));
   }
 
-  this.go_to = function(selection)
-  {
-    var from = this.textarea_el.value.indexOf(selection);
-    var to   = from + selection.length;
-
-    if(this.textarea_el.setSelectionRange){
-     this.textarea_el.setSelectionRange(from,to);
-    } 
-    else if(this.textarea_el.createTextRange){
-      var range = this.textarea_el.createTextRange();
-      range.collapse(true);
-      range.moveEnd('character',to);
-      range.moveStart('character',from);
-      range.select();
-    }
-    this.textarea_el.focus();
-  };
-
   document.onkeydown = function key_down(e)
   {
     if(e.key == "s" && e.ctrlKey){
       e.preventDefault();
-      // var text = left.textarea_el.value;
-      // var blob = new Blob([text], {type: "text/plain;charset=" + document.characterSet});
-      // var d = new Date(), e = new Date(d);
-      // var since_midnight = e - d.setHours(0,0,0,0);
-      // var timestamp = parseInt((since_midnight/864) * 10);
-      // saveAs(blob, "backup."+timestamp+".txt");
+      var text = left.textarea_el.value;
+      var blob = new Blob([text], {type: "text/plain;charset=" + document.characterSet});
+      var d = new Date(), e = new Date(d);
+      var since_midnight = e - d.setHours(0,0,0,0);
+      var timestamp = parseInt((since_midnight/864) * 10);
+      saveAs(blob, "backup."+timestamp+".txt");
     }
 
     if((e.key == "Backspace" || e.key == "Delete") && e.ctrlKey && e.shiftKey){
@@ -190,9 +180,29 @@ function Left()
       left.refresh_settings();
     }
 
-    if(e.key.substr(0,5) == "Arrow"){
+    if(e.key && e.key.substr(0,5) == "Arrow"){
       left.refresh();
     }
+  };
+
+  this.go_to = function(selection)
+  {
+    var from = this.textarea_el.value.indexOf(selection);
+    var to   = from + selection.length;
+
+    console.log(selection,from,to);
+
+    if(this.textarea_el.setSelectionRange){
+     this.textarea_el.setSelectionRange(from,to);
+    } 
+    else if(this.textarea_el.createTextRange){
+      var range = this.textarea_el.createTextRange();
+      range.collapse(true);
+      range.moveEnd('character',to);
+      range.moveStart('character',from);
+      range.select();
+    }
+    this.textarea_el.focus();
   };
 
   document.oninput = function on_input(e)
