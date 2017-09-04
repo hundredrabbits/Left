@@ -29,9 +29,7 @@ function Dict()
 
     for(word_id in this.vocabulary){
       var word = this.vocabulary[word_id];
-      if(word.substr(0,to_word.length) == to_word){
-        return word;
-      }
+      if(word.substr(0,to_word.length) == to_word){ return word; }
     }
     return null;
   }
@@ -40,8 +38,10 @@ function Dict()
   {
     if(!this.is_synonyms_enabled){ return null; }
 
-    var target = this.synonyms[to_word];
-    return target && target.length > 1 ? target : null;
+    if(this.synonyms[to_word]){ return this.synonyms[to_word]; }
+    if(this.synonyms[to_word.substr(0,to_word.length-1)]){ return this.synonyms[to_word.substr(0,to_word.length-1)]; }
+
+    return null;
   }
 
   this.update = function()

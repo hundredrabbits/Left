@@ -49,7 +49,11 @@ function Left()
   this.refresh = function()
   {
     left.current_word = left.active_word();
-    left.suggestion = left.dictionary.find_suggestion(left.current_word);
+
+    // Only look for suggestion is at the end of word, or text.
+    var next_char = this.textarea_el.value.substr(left.textarea_el.selectionEnd,1);
+    
+    left.suggestion = (next_char == "" || next_char == " " || next_char == "\n") ? left.dictionary.find_suggestion(left.current_word) : null;
 
     this.refresh_navi();
     this.refresh_stats();
@@ -177,8 +181,8 @@ function Left()
       localStorage.setItem("backup", left.textarea_el.value);
     }
 
-    if(e.keyCode == 9 && left.suggestion){
-      left.autocomplete();
+    if(e.keyCode == 9){
+      if(left.suggestion){ left.autocomplete(); }
       e.preventDefault();
     }
 
