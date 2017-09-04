@@ -179,6 +179,7 @@ function Left()
       e.preventDefault();
       left.textarea_el.value = left.splash();
       localStorage.setItem("backup", left.textarea_el.value);
+      left.refresh();
     }
 
     if(e.keyCode == 9){
