@@ -175,7 +175,7 @@ function Left()
       e.preventDefault();
     }
 
-    if(e.key == "Enter" || e.key == " "){
+    if(e.key == "Enter"){
       left.dictionary.update();
       left.refresh_settings();
     }
