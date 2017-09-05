@@ -38,3 +38,7 @@ V Vocabulary count
 C Characters count
 % Scroll position
 ```
+
+## License
+
+See the [LICENSE](LICENSE.md) file for license rights and limitations (CC).

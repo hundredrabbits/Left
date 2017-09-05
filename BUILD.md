@@ -9,15 +9,15 @@ cd /xxiivv/Nataniev/public/public.projects/sources/Left/
 
 rm -r /xxiivv/Nataniev/public/public.projects/builds/Left-linux-x64/ 
 rm /xxiivv/Nataniev/public/public.projects/builds/left_lin64.zip
-electron-packager . Left --platform=linux --arch=x64 --out /xxiivv/Nataniev/public/public.projects/builds --overwrite --electron-version=1.6.2 --icon=icon.ico
+electron-packager . Left --platform=linux --arch=x64 --out /xxiivv/Nataniev/public/public.projects/builds --overwrite --electron-version=1.7.5 --icon=icon.ico
 
 rm -r /xxiivv/Nataniev/public/public.projects/builds/Left-win32-x64/ 
 rm /xxiivv/Nataniev/public/public.projects/builds/left_win64.zip
-electron-packager . Left --platform=win32 --arch=x64 --out /xxiivv/Nataniev/public/public.projects/builds --overwrite --electron-version=1.6.2 --icon=icon.ico
+electron-packager . Left --platform=win32 --arch=x64 --out /xxiivv/Nataniev/public/public.projects/builds --overwrite --electron-version=1.7.5 --icon=icon.ico
 
 rm -r /xxiivv/Nataniev/public/public.projects/builds/Left-darwin-x64/
 rm /xxiivv/Nataniev/public/public.projects/builds/left_osx64.zip
-electron-packager . Left --platform=darwin --arch=x64 --out /xxiivv/Nataniev/public/public.projects/builds --overwrite --electron-version=1.6.2 --icon=icon.icns
+electron-packager . Left --platform=darwin --arch=x64 --out /xxiivv/Nataniev/public/public.projects/builds --overwrite --electron-version=1.7.5 --icon=icon.icns
 
 cd /xxiivv/Nataniev/public/public.projects/builds/
 
@@ -43,8 +43,8 @@ cd /Users/VillaMoirai/Github/HundredRabbits/Left/
 electron-packager . Left --platform=darwin --arch=x64 --out /Users/VillaMoirai/Desktop/ --overwrite --electron-version=1.7.5 --icon=icon.icns
 
 cd /Users/VillaMoirai/Github/HundredRabbits/Left/
-electron-packager . Left --platform=linux --arch=x64 --out /Users/VillaMoirai/Desktop/ --overwrite --electron-version=1.6.2 --icon=icon.ico
+electron-packager . Left --platform=linux --arch=x64 --out /Users/VillaMoirai/Desktop/ --overwrite --electron-version=1.7.5 --icon=icon.ico
 
 cd /Users/VillaMoirai/Github/HundredRabbits/Left/
-electron-packager . Left --platform=win32 --arch=x64 --out /Users/VillaMoirai/Desktop/ --overwrite --electron-version=1.6.2 --icon=icon.ico
+electron-packager . Left --platform=win32 --arch=x64 --out /Users/VillaMoirai/Desktop/ --overwrite --electron-version=1.7.5 --icon=icon.ico
 ```
