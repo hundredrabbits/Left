@@ -18,10 +18,8 @@ app.on('ready', () => {
     win = new BrowserWindow({width: 1100, height: 660, frame:false, backgroundColor: 'rgba(0,0,0,0.1)', show:false,  resizable:true, transparent: true, autoHideMenuBar: true, icon: __dirname + '/icon.ico'})
 
     var nativeHandleBuffer = win.getNativeWindowHandle();
-    var electronVibrancy = require('electron-vibrancy');
 
     win.loadURL(`file://${__dirname}/sources/index.html`)
-
 
     // Create our menu entries so that we can use MAC shortcuts
     Menu.setApplicationMenu(Menu.buildFromTemplate([
@@ -42,9 +40,6 @@ app.on('ready', () => {
 
     win.on('ready-to-show',function() {
 
-      // change the value for different transparency options
-      electronVibrancy.SetVibrancy(win, 9);
-
       win.show();
 
     })
@@ -58,11 +53,7 @@ app.on('ready', () => {
     win.loadURL(`file://${__dirname}/sources/index.html`)
 
     var nativeHandleBuffer = win.getNativeWindowHandle();
-    var electronVibrancy = require('electron-vibrancy');
     win.on('ready-to-show',function() {
-
-      // change the value for different transparency options
-      electronVibrancy.SetVibrancy(win, 6);
 
       win.show();
 
