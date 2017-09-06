@@ -1,7 +1,7 @@
 function Left()
 {
-  this.navi_el        = document.createElement('navi'); 
-  this.textarea_el    = document.createElement('textarea'); 
+  this.navi_el        = document.createElement('navi');
+  this.textarea_el    = document.createElement('textarea');
   this.stats_el       = document.createElement('stats');
   this.scroll_el      = document.createElement('scrollbar');
 
@@ -9,7 +9,7 @@ function Left()
 
   this.words_count = null;
   this.lines_count = null;
-  this.chars_count = null;  
+  this.chars_count = null;
   this.current_word = null;
   this.suggestion = null;
   this.synonyms = null;
@@ -47,14 +47,14 @@ function Left()
     this.refresh();
     this.refresh_settings();
   }
-  
+
   this.refresh = function()
   {
     left.current_word = left.active_word();
 
     // Only look for suggestion is at the end of word, or text.
     var next_char = this.textarea_el.value.substr(left.textarea_el.selectionEnd,1);
-    
+
     left.suggestion = (next_char == "" || next_char == " " || next_char == "\n") ? left.dictionary.find_suggestion(left.current_word) : null;
 
     this.refresh_navi();
@@ -77,14 +77,14 @@ function Left()
 
     for(var line_id in lines){
       var line = lines[line_id];
-      if(line.substr(0,2) == "@ " || line.substr(0,2) == "# "){ 
+      if(line.substr(0,2) == "@ " || line.substr(0,2) == "# "){
         var el = document.createElement('li');
         el.innerHTML = line.replace("@ ","").replace("# ","")+"<span>"+line_id+"</span>";
         el.destination = line;
         el.onmouseup = function on_mouseup(e){ go_to(e.target.destination); }
         left.navi_el.appendChild(el);
       }
-      if(line.substr(0,2) == "$ " || line.substr(0,3) == "## "){ 
+      if(line.substr(0,2) == "$ " || line.substr(0,3) == "## "){
         var el = document.createElement('li');
         el.innerHTML = line.replace("$ ","").replace("## ","")+"<span>"+line_id+"</span>";
         el.destination = line;
@@ -107,10 +107,10 @@ function Left()
     suggestion_html = (left.current_word && left.suggestion && left.current_word != left.suggestion) ? " <t>"+left.current_word+"<b>"+left.suggestion.substr(left.current_word.length,left.suggestion.length)+"</b></t>" : "";
 
     // Synonyms
-    left.synonyms = this.dictionary.find_synonym(left.current_word); 
+    left.synonyms = this.dictionary.find_synonym(left.current_word);
     synonym_html = "";
 
-    for(syn_id in left.synonyms){ 
+    for(syn_id in left.synonyms){
       synonym_html += syn_id == (left.synonym_index % left.synonyms.length) ? "<i>"+left.synonyms[syn_id]+"</i> " : left.synonyms[syn_id]+" ";
     }
 
@@ -247,7 +247,7 @@ function Left()
 
     if(this.textarea_el.setSelectionRange){
      this.textarea_el.setSelectionRange(from,to);
-    } 
+    }
     else if(this.textarea_el.createTextRange){
       var range = this.textarea_el.createTextRange();
       range.collapse(true);
@@ -256,6 +256,11 @@ function Left()
       range.select();
     }
     this.textarea_el.focus();
+
+    var perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
+    var offset = 60;
+    this.textarea_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
+    // alert((this.textarea_el.scrollHeight * perc) - offset);
   };
 
   this.wheel = function(e)
@@ -283,13 +288,58 @@ function Left()
   {
     left.refresh();
   }
+
 }
 
+window.addEventListener('load',function(){
+
+
+    if (document.body.classList.contains('punk')) {
+
+      const noise1Png = require('./media/noise/noise1');
+      const noise2Png = require('./media/noise/noise2');
+      const noise3Png = require('./media/noise/noise3');
+      const HUE_SHIFT_INTENSITY = 4;
+
+      function generateBackgroundNoise() {
+        const noisePng = [noise1Png, noise2Png, noise3Png];
+        var rand = noisePng[Math.floor(Math.random() * noisePng.length)];
+        return ` background-image: ${rand}; background-size: 100px 100px; `;
+      };
+
+      function generateTextShadow() {
+        let x = -1 + 2 * Math.random();
+        x = x * x;
+        const intensity = HUE_SHIFT_INTENSITY * x;
+        return `text-shadow: ${intensity}px 0 .5px rgba(0,30,255,0.5), ${-intensity}px 0 .5px rgba(255,0,80,0.3), 0 0 3px rgba(255,255,255,0.5)!important;`;
+      };
+
+
+      var punkFX = setInterval(function() {
+        var gen = generateTextShadow();
+        var genBG = generateBackgroundNoise();
+
+        document.body.style = genBG + gen;
+        left.textarea_el.style = gen;
+
+
+      }, 100);
+    }
+
+    else {
+      punkFX = null;
+      document.body.style = 'text-shadow:none; background-image:none;';
+      left.textarea_el.style = 'text-shadow:none;';
+    }
+
+});
+
+
 window.addEventListener('dragover',function(e)
-{ 
-  e.stopPropagation(); 
-  e.preventDefault(); 
-  e.dataTransfer.dropEffect = 'copy'; 
+{
+  e.stopPropagation();
+  e.preventDefault();
+  e.dataTransfer.dropEffect = 'copy';
 });
 
 window.addEventListener('drop', function(e)

@@ -6,19 +6,23 @@ const url = require('url')
 // be closed automatically when the JavaScript object is garbage collected.
 let win
 
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', () => {
-  // Create the browser window.
-  win = new BrowserWindow({width: 1100, height: 660, frame:false, backgroundColor: '#ccc', resizable:true, autoHideMenuBar: true,icon: __dirname + '/icon.ico'})
 
-  win.loadURL(`file://${__dirname}/sources/index.html`)
-
-  // Open the DevTools.
-  // win.webContents.openDevTools()
 
   if (process.platform === 'darwin') {
+    // Create the browser window.
+    win = new BrowserWindow({width: 1100, height: 660, frame:false, backgroundColor: 'rgba(0,0,0,0.1)', show:false,  resizable:true, transparent: true, autoHideMenuBar: true, icon: __dirname + '/icon.ico'})
+
+    var nativeHandleBuffer = win.getNativeWindowHandle();
+    var electronVibrancy = require('electron-vibrancy');
+
+    win.loadURL(`file://${__dirname}/sources/index.html`)
+
+
     // Create our menu entries so that we can use MAC shortcuts
     Menu.setApplicationMenu(Menu.buildFromTemplate([
       {
@@ -35,16 +39,48 @@ app.on('ready', () => {
         ]
       }
     ]));
+
+    win.on('ready-to-show',function() {
+
+      // change the value for different transparency options
+      electronVibrancy.SetVibrancy(win, 9);
+
+      win.show();
+
+    })
+
   }
 
-  // Emitted when the window is closed.
-  win.on('closed', () => {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
-    win = null
-    app.quit()
-  })
+  else {
+    // Create the browser window.
+    win = new BrowserWindow({width: 1100, height: 660, frame:false, transparent: true, backgroundColor: 'rgba(200,200,200,.7)', show:false, resizable:true, autoHideMenuBar: true, icon: __dirname + '/icon.ico'})
+
+    win.loadURL(`file://${__dirname}/sources/index.html`)
+
+    var nativeHandleBuffer = win.getNativeWindowHandle();
+    var electronVibrancy = require('electron-vibrancy');
+    win.on('ready-to-show',function() {
+
+      // change the value for different transparency options
+      electronVibrancy.SetVibrancy(win, 6);
+
+      win.show();
+
+    })
+
+    // Emitted when the window is closed.
+    win.on('closed', () => {
+      // Dereference the window object, usually you would store windows
+      // in an array if your app supports multi windows, this is the time
+      // when you should delete the corresponding element.
+      win = null
+      app.quit()
+    })
+  }
+
+
+  // Open the DevTools.
+  // win.webContents.openDevTools()
 })
 
 // Quit when all windows are closed.
@@ -61,6 +97,6 @@ app.on('activate', () => {
     createWindow()
   }
   else{
-    
+
   }
 })
