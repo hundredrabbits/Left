@@ -45,3 +45,11 @@ body.punk stats { color:rgb(0,255,255) text-shadow: 0 1px 5px #00FFFF; }
 body.punk stats b { background:rgba(0,0,0,0); color:#FF0000; text-shadow: 0 1px 5px #ff0000; }
 body.punk scrollbar { background:#FFF;  }
 body.punk ::selection { background:#888; color:#fff; opacity:1.0;}
+
+body.blur {  background-color: rgba(0,0,0,0)!important; }
+body.blur navi{ background: rgba(0,0,0,0.5); color:#ccc; border-right: 1px solid #222; }
+body.blur textarea { color:#eee; }
+body.blur stats { }
+body.blur stats b { background:#111; }
+body.blur scrollbar { background:#ccc;  }
+body.blur ::selection { background:#888; color:#fff; opacity:1.0;}

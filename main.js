@@ -6,6 +6,7 @@ const url = require('url')
 // be closed automatically when the JavaScript object is garbage collected.
 let win
 
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
@@ -14,7 +15,10 @@ app.on('ready', () => {
 
   if (process.platform === 'darwin') {
     // Create the browser window.
-    win = new BrowserWindow({width: 1100, height: 660, frame:true, backgroundColor: '#ccc', resizable:true, autoHideMenuBar: true, icon: __dirname + '/icon.ico'})
+    win = new BrowserWindow({width: 1100, height: 660, frame:false, backgroundColor: 'rgba(0,0,0,0.1)', show:false,  resizable:true, transparent: true, autoHideMenuBar: true, icon: __dirname + '/icon.ico'})
+
+    var nativeHandleBuffer = win.getNativeWindowHandle();
+    var electronVibrancy = require('electron-vibrancy');
 
     win.loadURL(`file://${__dirname}/sources/index.html`)
 
@@ -35,13 +39,34 @@ app.on('ready', () => {
         ]
       }
     ]));
+
+    win.on('ready-to-show',function() {
+
+      // change the value for different transparency options
+      electronVibrancy.SetVibrancy(win, 9);
+
+      win.show();
+
+    })
+
   }
 
   else {
     // Create the browser window.
-    win = new BrowserWindow({width: 1100, height: 660, frame:false, backgroundColor: '#ccc', resizable:true, autoHideMenuBar: true, icon: __dirname + '/icon.ico'})
+    win = new BrowserWindow({width: 1100, height: 660, frame:false, transparent: true, backgroundColor: 'rgba(200,200,200,.7)', show:false, resizable:true, autoHideMenuBar: true, icon: __dirname + '/icon.ico'})
 
     win.loadURL(`file://${__dirname}/sources/index.html`)
+
+    var nativeHandleBuffer = win.getNativeWindowHandle();
+    var electronVibrancy = require('electron-vibrancy');
+    win.on('ready-to-show',function() {
+
+      // change the value for different transparency options
+      electronVibrancy.SetVibrancy(win, 6);
+
+      win.show();
+
+    })
 
     // Emitted when the window is closed.
     win.on('closed', () => {

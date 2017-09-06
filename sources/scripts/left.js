@@ -328,9 +328,8 @@ window.addEventListener('load',function(){
 
     else {
       punkFX = null;
-      // document.body.style = 'text-shadow:inherit; background:inherit';
-      // left.textarea_el.style = 'text-shadow:inherit; background:inherit';
-      // left.navi_el.style = 'text-shadow:inherit;background:inherit';
+      document.body.style = 'text-shadow:none; background-image:none;';
+      left.textarea_el.style = 'text-shadow:none;';
     }
 
 });
