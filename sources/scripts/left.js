@@ -12,6 +12,8 @@ function Left()
   this.chars_count = null;  
   this.current_word = null;
   this.suggestion = null;
+  this.synonyms = null;
+  this.synonym_index = 0;
 
   this.title = null;
 
@@ -105,10 +107,14 @@ function Left()
     suggestion_html = (left.current_word && left.suggestion && left.current_word != left.suggestion) ? " <t>"+left.current_word+"<b>"+left.suggestion.substr(left.current_word.length,left.suggestion.length)+"</b></t>" : "";
 
     // Synonyms
-    var synonyms = this.dictionary.find_synonym(left.current_word); synonym_html = "";
-    for(syn_id in synonyms){ synonym_html += synonyms[syn_id]+" "; }
+    left.synonyms = this.dictionary.find_synonym(left.current_word); 
+    synonym_html = "";
 
-    left.stats_el.innerHTML = synonyms ? " <b>"+left.current_word+"</b> "+synonym_html : stats.l+"L "+stats.w+"W "+stats.v+"V "+stats.c+"C "+(stats.p > 0 && stats.p < 100 ? stats.p+"%" : "")+suggestion_html+synonym_html;
+    for(syn_id in left.synonyms){ 
+      synonym_html += syn_id == (left.synonym_index % left.synonyms.length) ? "<i>"+left.synonyms[syn_id]+"</i> " : left.synonyms[syn_id]+" ";
+    }
+
+    left.stats_el.innerHTML = left.synonyms ? " <b>"+left.current_word+"</b> "+synonym_html : stats.l+"L "+stats.w+"W "+stats.v+"V "+stats.c+"C "+(stats.p > 0 && stats.p < 100 ? stats.p+"%" : "")+suggestion_html+synonym_html;
   }
 
   this.refresh_settings = function()
@@ -146,6 +152,36 @@ function Left()
     return last_word.replace(/\W/g, '');
   }
 
+  this.active_word_length = function()
+  {
+    var before = this.textarea_el.value.substr(0,left.textarea_el.selectionEnd);
+
+    var l = 0;
+    while(l < 40){
+      var char = before[before.length-(l+1)];
+      if(char.length != 1 || !char.match(/[a-z]/i)){
+        return l;
+      }
+      l += 1;
+    }
+    return null;
+  }
+
+  this.replace_active_word_with = function(word)
+  {
+    var before = this.textarea_el.value.substr(0,left.textarea_el.selectionEnd-left.active_word_length());
+    var after = this.textarea_el.value.substr(left.textarea_el.selectionEnd,this.textarea_el.value.length);
+    var target_selection = before.length+word.length;
+    this.textarea_el.value = before+word+after;
+
+    this.textarea_el.setSelectionRange(target_selection,target_selection);
+    this.textarea_el.focus();
+
+    left.synonym_index += 1;
+
+    left.refresh_stats();
+  }
+
   this.inject = function(characters = "__")
   {
     var pos = this.textarea_el.selectionStart;
@@ -164,16 +200,21 @@ function Left()
     this.inject(suggestion.substr(left.current_word.length,suggestion.length));
   }
 
+  this.save = function()
+  {
+    var text = left.textarea_el.value;
+    var blob = new Blob([text], {type: "text/plain;charset=" + document.characterSet});
+    var d = new Date(), e = new Date(d);
+    var since_midnight = e - d.setHours(0,0,0,0);
+    var timestamp = parseInt((since_midnight/864) * 10);
+    saveAs(blob, (left.title ? left.title : "backup")+"."+timestamp+".txt");
+  }
+
   document.onkeydown = function key_down(e)
   {
-    if(e.key == "s" && e.ctrlKey){
+    if(e.key == "s" && (e.ctrlKey || e.metaKey)){
       e.preventDefault();
-      var text = left.textarea_el.value;
-      var blob = new Blob([text], {type: "text/plain;charset=" + document.characterSet});
-      var d = new Date(), e = new Date(d);
-      var since_midnight = e - d.setHours(0,0,0,0);
-      var timestamp = parseInt((since_midnight/864) * 10);
-      saveAs(blob, (left.title ? left.title : "backup")+"."+timestamp+".txt");
+      left.save();
     }
 
     if((e.key == "Backspace" || e.key == "Delete") && e.ctrlKey && e.shiftKey){
@@ -185,6 +226,7 @@ function Left()
 
     if(e.keyCode == 9){
       if(left.suggestion){ left.autocomplete(); }
+      if(left.synonyms){ left.replace_active_word_with(left.synonyms[left.synonym_index % left.synonyms.length]); }
       e.preventDefault();
     }
 
