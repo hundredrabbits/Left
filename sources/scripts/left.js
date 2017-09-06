@@ -164,11 +164,6 @@ function Left()
     left.scroll_el.style.height = (scroll_distance/scroll_max) * window.innerHeight;
   }
 
-  this.splash = function()
-  {
-    return "# Welcome\n\n## Controls\n\n- Create markers by beginning lines with either @ and $, or # and ##.\n- Overline words to look at synonyms.\n- Export a text file with ctrl+s.\n- Import a text file by dragging it on the window.\n- Press <tab> to autocomplete a word.\n- The synonyms dictionary contains "+Object.keys(left.dictionary.synonyms).length+" common words.\n- Automatically keeps backups, press ctrl+shift+del to erase the backups.\n- Use square brakets to navigate between markers.\n\n## Details\n\n- #L, stands for Lines.\n- #W, stands for Words.\n- #V, stands for Vocabulary, or unique words.\n- #C, stands for Characters.\n\n## Settings\n\n~ left.title=draft     set output file name\n~ left.theme=blanc     set default theme.\n~ left.theme=noir      set noir theme.\n~ left.theme=pale      set low-contrast theme.\n~ left.suggestions=on  toggle suggestions\n~ left.synonyms=on     toggle synonyms\n\n## Enjoy.\n\n- https://github.com/hundredrabbits/Left";
-  }
-
   this.active_word = function()
   {
     var before = this.textarea_el.value.substr(0,left.textarea_el.selectionEnd);
@@ -235,6 +230,33 @@ function Left()
     saveAs(blob, (left.title ? left.title : "backup")+"."+timestamp+".txt");
   }
 
+  this.go_to_line = function(line_id)
+  {
+    this.go_to(this.textarea_el.value.split("\n")[line_id]);
+  }
+
+  this.go_to = function(selection)
+  {
+    var from = this.textarea_el.value.indexOf(selection);
+    var to   = from + selection.length;
+
+    if(this.textarea_el.setSelectionRange){
+     this.textarea_el.setSelectionRange(from,to);
+    }
+    else if(this.textarea_el.createTextRange){
+      var range = this.textarea_el.createTextRange();
+      range.collapse(true);
+      range.moveEnd('character',to);
+      range.moveStart('character',from);
+      range.select();
+    }
+    this.textarea_el.focus();
+
+    var perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
+    var offset = 60;
+    this.textarea_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
+  }
+
   this.go_to_next = function()
   {
     var markers = left.find_markers();
@@ -270,6 +292,28 @@ function Left()
     }
   }
 
+  this.reset = function()
+  {
+    left.textarea_el.value = left.splash();
+    localStorage.setItem("backup", left.textarea_el.value);
+    left.dictionary.update();
+    left.refresh();
+    left.refresh_settings();
+  }
+
+  this.splash = function()
+  {
+    var text = "# Welcome\n\n";
+    text += "Left is a simple, minimalist, open-source and cross-platform text editor. \n\n";
+    text += "## Features\n\n- Create markers by beginning lines with # or ##.\n- Load a text file by dragging it here.\n- Save a text file with ctrl+s, or cmd+s.\n- The synonyms dictionary contains "+Object.keys(left.dictionary.synonyms).length+" common words.\n\n";
+    text += "## Details\n\n- #L, stands for Lines.\n- #W, stands for Words.\n- #V, stands for Vocabulary, or unique words.\n- #C, stands for Characters.\n\n";
+    text += "## Controls\n\n- tab                  autocomplete.\n- ctrl+s               save/export.\n- ctrl+]               Jump to next marker.\n- ctrl+[               Jump to previous marker.\n- ctrl+shift+del       reset.\n\n";
+    text += "## Options\n\n~ left.title=welcome   set file name for export.\n~ left.theme=blanc     set theme(blanc, noir, pale)\n~ left.suggestions=on  toggle suggestions.\n~ left.synonyms=on     toggle synonyms\n\n";
+    text += "## Enjoy!\n\n- https://github.com/hundredrabbits/Left";
+
+    return text;
+  }
+
   document.onkeydown = function key_down(e)
   {
     // Save
@@ -281,16 +325,27 @@ function Left()
     // Reset
     if((e.key == "Backspace" || e.key == "Delete") && e.ctrlKey && e.shiftKey){
       e.preventDefault();
-      left.textarea_el.value = left.splash();
-      localStorage.setItem("backup", left.textarea_el.value);
+      left.reset();
+    }
+
+    // Autocomplete
+    if(e.keyCode == 9){
+      console.log(left.suggestion)
+      e.preventDefault();
+      if(left.suggestion && left.suggestion != left.active_word()){ left.autocomplete(); }
+      else if(left.synonyms){ left.replace_active_word_with(left.synonyms[left.synonym_index % left.synonyms.length]); }
+    }
+
+    if(e.key == "]" && (e.ctrlKey || e.metaKey)){
+      e.preventDefault();
+      left.go_to_next();
       left.refresh();
     }
 
-    // Tab
-    if(e.keyCode == 9){
-      if(left.suggestion){ left.autocomplete(); }
-      if(left.synonyms){ left.replace_active_word_with(left.synonyms[left.synonym_index % left.synonyms.length]); }
+    if(e.key == "[" && (e.ctrlKey || e.metaKey)){
       e.preventDefault();
+      left.go_to_prev();
+      left.refresh();
     }
 
     // Slower Refresh
@@ -304,57 +359,17 @@ function Left()
     }
 
     // Reset index on space
-    if(e.key == " "){
+    if(e.key == " " || e.key == "Enter"){
       left.synonym_index = 0;
     }
-
-    if(e.key == "]" && (e.ctrlKey || e.metaKey)){
-      left.go_to_next();
-      left.refresh();
-      e.preventDefault();
-    }
-    if(e.key == "[" && (e.ctrlKey || e.metaKey)){
-      left.go_to_prev();
-      left.refresh();
-      e.preventDefault();
-    }
   };
 
-  this.go_to_line = function(line_id)
-  {
-    this.go_to(this.textarea_el.value.split("\n")[line_id]);
-  }
-
-  this.go_to = function(selection)
-  {
-    var from = this.textarea_el.value.indexOf(selection);
-    var to   = from + selection.length;
-
-    if(this.textarea_el.setSelectionRange){
-     this.textarea_el.setSelectionRange(from,to);
-    }
-    else if(this.textarea_el.createTextRange){
-      var range = this.textarea_el.createTextRange();
-      range.collapse(true);
-      range.moveEnd('character',to);
-      range.moveStart('character',from);
-      range.select();
-    }
-    this.textarea_el.focus();
-
-    var perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
-    var offset = 60;
-    this.textarea_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
-  };
-
-  this.wheel = function(e)
+  left.textarea_el.addEventListener('wheel', function(e)
   {
     e.preventDefault();
     left.textarea_el.scrollTop += e.wheelDeltaY * -0.25;
     left.refresh_scrollbar();
-  }
-
-  left.textarea_el.addEventListener('wheel', left.wheel, false);
+  }, false);
 
   document.oninput = function on_input(e)
   {
