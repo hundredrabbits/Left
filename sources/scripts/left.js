@@ -288,7 +288,53 @@ function Left()
   {
     left.refresh();
   }
+
 }
+
+window.addEventListener('load',function(){
+
+
+    if (document.body.classList.contains('punk')) {
+
+      const noise1Png = require('./media/noise/noise1');
+      const noise2Png = require('./media/noise/noise2');
+      const noise3Png = require('./media/noise/noise3');
+      const HUE_SHIFT_INTENSITY = 4;
+
+      function generateBackgroundNoise() {
+        const noisePng = [noise1Png, noise2Png, noise3Png];
+        var rand = noisePng[Math.floor(Math.random() * noisePng.length)];
+        return ` background-image: ${rand}; background-size: 100px 100px; `;
+      };
+
+      function generateTextShadow() {
+        let x = -1 + 2 * Math.random();
+        x = x * x;
+        const intensity = HUE_SHIFT_INTENSITY * x;
+        return `text-shadow: ${intensity}px 0 .5px rgba(0,30,255,0.5), ${-intensity}px 0 .5px rgba(255,0,80,0.3), 0 0 3px rgba(255,255,255,0.5)!important;`;
+      };
+
+
+      var punkFX = setInterval(function() {
+        var gen = generateTextShadow();
+        var genBG = generateBackgroundNoise();
+
+        document.body.style = genBG + gen;
+        left.textarea_el.style = gen;
+
+
+      }, 100);
+    }
+
+    else {
+      punkFX = null;
+      // document.body.style = 'text-shadow:inherit; background:inherit';
+      // left.textarea_el.style = 'text-shadow:inherit; background:inherit';
+      // left.navi_el.style = 'text-shadow:inherit;background:inherit';
+    }
+
+});
+
 
 window.addEventListener('dragover',function(e)
 {
