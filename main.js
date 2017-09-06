@@ -10,15 +10,15 @@ let win
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', () => {
-  // Create the browser window.
-  win = new BrowserWindow({width: 1100, height: 660, frame:false, backgroundColor: '#ccc', resizable:true, autoHideMenuBar: true,icon: __dirname + '/icon.ico'})
 
-  win.loadURL(`file://${__dirname}/sources/index.html`)
-
-  // Open the DevTools.
-  // win.webContents.openDevTools()
 
   if (process.platform === 'darwin') {
+    // Create the browser window.
+    win = new BrowserWindow({width: 1100, height: 660, frame:true, backgroundColor: '#ccc', resizable:true, autoHideMenuBar: true, icon: __dirname + '/icon.ico'})
+
+    win.loadURL(`file://${__dirname}/sources/index.html`)
+
+
     // Create our menu entries so that we can use MAC shortcuts
     Menu.setApplicationMenu(Menu.buildFromTemplate([
       {
@@ -37,14 +37,25 @@ app.on('ready', () => {
     ]));
   }
 
-  // Emitted when the window is closed.
-  win.on('closed', () => {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
-    win = null
-    app.quit()
-  })
+  else {
+    // Create the browser window.
+    win = new BrowserWindow({width: 1100, height: 660, frame:false, backgroundColor: '#ccc', resizable:true, autoHideMenuBar: true, icon: __dirname + '/icon.ico'})
+
+    win.loadURL(`file://${__dirname}/sources/index.html`)
+
+    // Emitted when the window is closed.
+    win.on('closed', () => {
+      // Dereference the window object, usually you would store windows
+      // in an array if your app supports multi windows, this is the time
+      // when you should delete the corresponding element.
+      win = null
+      app.quit()
+    })
+  }
+
+
+  // // Open the DevTools.
+  // win.webContents.openDevTools()
 })
 
 // Quit when all windows are closed.
@@ -61,6 +72,6 @@ app.on('activate', () => {
     createWindow()
   }
   else{
-    
+
   }
 })

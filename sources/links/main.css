@@ -4,7 +4,7 @@ body navi li { display: block;line-height: 20px;cursor: pointer; position: relat
 body navi li:hover::before { content:">"; position: absolute; left:-15px;}
 body navi li.note { padding-left:7px; color:#999; text-transform: capitalize;}
 body navi li span { float:right; }
-body stats { display: block;border-bottom: 0px;color: #999;margin-top: 30px;position: absolute;bottom:10px;left: calc(20vw + 91px);line-height: 40px;width: calc(80vw - 121px);height:40px;overflow: hidden } 
+body stats { display: block;border-bottom: 0px;color: #999;margin-top: 30px;position: absolute;bottom:10px;left: calc(20vw + 91px);line-height: 40px;width: calc(80vw - 121px);height:40px;overflow: hidden }
 body stats .right { float:right; }
 body stats b { background:#ccc; color:#f8f8f8;}
 body stats i { text-decoration: underline; }
@@ -26,3 +26,13 @@ body.pale textarea { color:#ccc; }
 body.pale stats b { background:none; }
 body.pale scrollbar { background:#999;  }
 body.pale ::selection { background:#aaa; color:#fff; opacity:1.0;}
+
+body.turbo { background:#72dec2; }
+body.turbo navi{ background: rgba(255,255,255,0.1); color:#f8f8f8; border-right: 1px solid rgba(255,255,255,0.1); }
+body.turbo navi li { font-weight:600; line-height: 30px;}
+body.turbo navi li.note { color:#2c584d; font-weight:400; line-height:20px; font-size:11px}
+body.turbo textarea { background:#72dec2; color:#f8f8f8; text-shadow: 0 .5px 1px rgba(0,0,0,0.15)}
+body.turbo stats { color:#2c584d }
+body.turbo stats b { background:#111; }
+body.turbo scrollbar { background:#111;  }
+body.turbo ::selection { background:rgba(0,0,0,.5); color:#fff; opacity:1.0;}
