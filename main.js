@@ -55,7 +55,7 @@ app.on('ready', () => {
 
 
   // Open the DevTools.
-  win.webContents.openDevTools()
+  // win.webContents.openDevTools()
 })
 
 // Quit when all windows are closed.
