@@ -68,9 +68,8 @@ function Left()
     return segments.length-1;
   }
 
-  this.refresh_navi = function()
+  this.find_markers = function()
   {
-    // Find
     var text = left.textarea_el.value;
     var lines = text.split("\n");
     var markers = [];
@@ -90,8 +89,12 @@ function Left()
         markers.push({text:text,line:line_id,type:"note"});
       }
     }
+    return markers;
+  }
 
-    // Draw
+  this.refresh_navi = function()
+  {
+    var markers = left.find_markers();
     left.navi_el.innerHTML = "";
     var active_line_id = left.active_line_id();
     var i = 0;
@@ -102,8 +105,8 @@ function Left()
       var el = document.createElement('li');
       el.destination = marker.line;
       el.innerHTML = marker.text+"<span>"+marker.line+"</span>";
-      el.className = active_line_id > marker.line && (next_marker && active_line_id < next_marker.line) ? marker.type+" active" : marker.type;
-      el.onmouseup = function on_mouseup(e){ go_to(e.target.destination); }
+      el.className = active_line_id >= marker.line && (next_marker && active_line_id < next_marker.line) ? marker.type+" active" : marker.type;
+      el.onmouseup = function on_mouseup(e){ left.go_to_line(e.target.destination); }
       left.navi_el.appendChild(el);
 
       i += 1;
@@ -163,7 +166,7 @@ function Left()
 
   this.splash = function()
   {
-    return "# Welcome\n\n## Controls\n\n- Create markers by beginning lines with either @ and $, or # and ##.\n- Overline words to look at synonyms.\n- Export a text file with ctrl+s.\n- Import a text file by dragging it on the window.\n- Press <tab> to autocomplete a word.\n- The synonyms dictionary contains "+Object.keys(left.dictionary.synonyms).length+" common words.\n- Automatically keeps backups, press ctrl+shift+del to erase the backups.\n\n## Details\n\n- #L, stands for Lines.\n- #W, stands for Words.\n- #V, stands for Vocabulary, or unique words.\n- #C, stands for Characters.\n\n## Settings\n\n~ left.title=draft     set output file name\n~ left.theme=blanc     set default theme.\n~ left.theme=noir      set noir theme.\n~ left.theme=pale      set low-contrast theme.\n~ left.suggestions=on  toggle suggestions\n~ left.synonyms=on     toggle synonyms\n\n## Enjoy.\n\n- https://github.com/hundredrabbits/Left";
+    return "# Welcome\n\n## Controls\n\n- Create markers by beginning lines with either @ and $, or # and ##.\n- Overline words to look at synonyms.\n- Export a text file with ctrl+s.\n- Import a text file by dragging it on the window.\n- Press <tab> to autocomplete a word.\n- The synonyms dictionary contains "+Object.keys(left.dictionary.synonyms).length+" common words.\n- Automatically keeps backups, press ctrl+shift+del to erase the backups.\n- Use square brakets to navigate between markers.\n\n## Details\n\n- #L, stands for Lines.\n- #W, stands for Words.\n- #V, stands for Vocabulary, or unique words.\n- #C, stands for Characters.\n\n## Settings\n\n~ left.title=draft     set output file name\n~ left.theme=blanc     set default theme.\n~ left.theme=noir      set noir theme.\n~ left.theme=pale      set low-contrast theme.\n~ left.suggestions=on  toggle suggestions\n~ left.synonyms=on     toggle synonyms\n\n## Enjoy.\n\n- https://github.com/hundredrabbits/Left";
   }
 
   this.active_word = function()
@@ -232,6 +235,41 @@ function Left()
     saveAs(blob, (left.title ? left.title : "backup")+"."+timestamp+".txt");
   }
 
+  this.go_to_next = function()
+  {
+    var markers = left.find_markers();
+    var active_line_id = left.active_line_id();
+
+    for(marker_id in markers){
+      var marker = markers[marker_id];
+      if(marker.line > active_line_id){
+        left.go_to_line(marker.line);
+        break;
+      }
+    }
+  }
+
+  this.go_to_prev = function()
+  {
+    var markers = left.find_markers();
+    var active_line_id = left.active_line_id();
+
+    var i = 0;
+    for(marker_id in markers){
+      var next_marker = markers[i+1];
+
+      if(markers[i-1] && next_marker && next_marker.line > active_line_id){
+        left.go_to_line(markers[i-1].line);
+        break;
+      }
+      else if(!next_marker){
+        left.go_to_line(markers[i-1].line);
+        break;
+      }
+      i += 1;
+    }
+  }
+
   document.onkeydown = function key_down(e)
   {
     // Save
@@ -269,7 +307,23 @@ function Left()
     if(e.key == " "){
       left.synonym_index = 0;
     }
+
+    if(e.key == "]" && (e.ctrlKey || e.metaKey)){
+      left.go_to_next();
+      left.refresh();
+      e.preventDefault();
+    }
+    if(e.key == "[" && (e.ctrlKey || e.metaKey)){
+      left.go_to_prev();
+      left.refresh();
+      e.preventDefault();
+    }
   };
+
+  this.go_to_line = function(line_id)
+  {
+    this.go_to(this.textarea_el.value.split("\n")[line_id]);
+  }
 
   this.go_to = function(selection)
   {

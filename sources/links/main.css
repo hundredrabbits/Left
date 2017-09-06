@@ -3,7 +3,7 @@ body navi { display: block;height: calc(100vh - 60px);width: calc(20vw);border-r
 body navi li { display: block;line-height: 20px;cursor: pointer; position: relative; text-transform: uppercase;}
 body navi li:hover::before { content:">"; position: absolute; left:-15px;}
 body navi li.note { padding-left:7px; color:#999; text-transform: capitalize;}
-body navi li.active::before { content:"~"; position: absolute; left:-15px; }
+body navi li.active::before { content:":"; position: absolute; left:-15px; }
 body navi li span { float:right; }
 body stats { display: block;border-bottom: 0px;color: #999;margin-top: 30px;position: absolute;bottom:10px;left: calc(20vw + 91px);line-height: 40px;width: calc(80vw - 121px);height:40px;overflow: hidden }
 body stats .right { float:right; }
@@ -35,4 +35,4 @@ body.soyuz textarea { color:#fc533e; }
 body.soyuz stats { color:#555}
 body.soyuz stats b { background:rgba(0,0,0,0); color:#fc533e; }
 body.soyuz scrollbar { background:#fc533e;  }
-body.soyuz ::selection { background:#888; color:#fff; opacity:1.0;}
+body.soyuz ::selection { background:#777; color:#fff; opacity:1.0;}
