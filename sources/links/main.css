@@ -3,6 +3,7 @@ body navi { display: block;height: calc(100vh - 60px);width: calc(20vw);border-r
 body navi li { display: block;line-height: 20px;cursor: pointer; position: relative; text-transform: uppercase;}
 body navi li:hover::before { content:">"; position: absolute; left:-15px;}
 body navi li.note { padding-left:7px; color:#999; text-transform: capitalize;}
+body navi li.active::before { content:"~"; position: absolute; left:-15px; }
 body navi li span { float:right; }
 body stats { display: block;border-bottom: 0px;color: #999;margin-top: 30px;position: absolute;bottom:10px;left: calc(20vw + 91px);line-height: 40px;width: calc(80vw - 121px);height:40px;overflow: hidden }
 body stats .right { float:right; }
@@ -27,29 +28,11 @@ body.pale stats b { background:none; }
 body.pale scrollbar { background:#999;  }
 body.pale ::selection { background:#aaa; color:#fff; opacity:1.0;}
 
-body.turbo { background:#72dec2; }
-body.turbo navi{ background: rgba(255,255,255,0.1); color:#f8f8f8; border-right: 1px solid rgba(255,255,255,0.1); }
-body.turbo navi li { font-weight:600; line-height: 30px;}
-body.turbo navi li.note { color:#2c584d; font-weight:400; line-height:20px; font-size:11px}
-body.turbo textarea { background:#72dec2; color:#f8f8f8; text-shadow: 0 .5px 1px rgba(0,0,0,0.15)}
-body.turbo stats { color:#2c584d }
-body.turbo stats b { background:#111; }
-body.turbo scrollbar { background:#111;  }
-body.turbo ::selection { background:rgba(0,0,0,.5); color:#fff; opacity:1.0;}
-
-body.punk { background:#000; }
-body.punk navi{ color:#28FC91; font-weight:600; border-right: 1px solid rgba(40,252,145,1); }
-body.punk navi li.note { color:#28FC91; font-weight:400; line-height:20px; font-size:11px}
-body.punk textarea { color:#28FC91; }
-body.punk stats { color:rgb(0,255,255) text-shadow: 0 1px 5px #00FFFF; }
-body.punk stats b { background:rgba(0,0,0,0); color:#FF0000; text-shadow: 0 1px 5px #ff0000; }
-body.punk scrollbar { background:#FFF;  }
-body.punk ::selection { background:#888; color:#fff; opacity:1.0;}
-
-body.blur {  background-color: rgba(0,0,0,0)!important; }
-body.blur navi{ background: rgba(0,0,0,0.5); color:#ccc; border-right: 1px solid #222; }
-body.blur textarea { color:#eee; }
-body.blur stats { }
-body.blur stats b { background:#111; }
-body.blur scrollbar { background:#ccc;  }
-body.blur ::selection { background:#888; color:#fff; opacity:1.0;}
+body.soyuz { background:#222; }
+body.soyuz navi{ color:#fc533e; border-right: 1px solid #333; }
+body.soyuz navi li.note { color:#555;}
+body.soyuz textarea { color:#fc533e; }
+body.soyuz stats { color:#555}
+body.soyuz stats b { background:rgba(0,0,0,0); color:#fc533e; }
+body.soyuz scrollbar { background:#fc533e;  }
+body.soyuz ::selection { background:#888; color:#fff; opacity:1.0;}

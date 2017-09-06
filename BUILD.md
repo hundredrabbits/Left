@@ -7,6 +7,8 @@ Don't forget to ```npm cache clean```!
 ```
 cd /xxiivv/Nataniev/public/public.projects/sources/Left/
 
+git pull
+
 rm -r /xxiivv/Nataniev/public/public.projects/builds/Left-linux-x64/ 
 rm /xxiivv/Nataniev/public/public.projects/builds/left_lin64.zip
 electron-packager . Left --platform=linux --arch=x64 --out /xxiivv/Nataniev/public/public.projects/builds --overwrite --electron-version=1.7.5 --icon=icon.ico
