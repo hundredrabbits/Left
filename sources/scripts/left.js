@@ -1,5 +1,6 @@
 function Left()
 {
+  console.log("loaded");
   this.navi_el        = document.createElement('navi');
   this.textarea_el    = document.createElement('textarea');
   this.stats_el       = document.createElement('stats');

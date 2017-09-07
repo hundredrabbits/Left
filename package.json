@@ -10,6 +10,7 @@
     "electron-prebuilt": "^1.4.13"
   },
   "dependencies": {
-    "electron-packager": "^8.4.0"
+    "electron-packager": "^8.4.0",
+    "electron-tabs": "^0.7.1"
   }
 }
