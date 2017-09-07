@@ -301,13 +301,21 @@ function Left()
     left.refresh_settings();
   }
 
+  this.clear = function()
+  {
+    left.textarea_el.value = "";
+    left.dictionary.update();
+    left.refresh();
+    left.refresh_settings();
+  }
+
   this.splash = function()
   {
     var text = "# Welcome\n\n";
     text += "Left is a simple, minimalist, open-source and cross-platform text editor. \n\n";
     text += "## Features\n\n- Create markers by beginning lines with # or ##.\n- Load a text file by dragging it here.\n- Save a text file with ctrl+s, or cmd+s.\n- The synonyms dictionary contains "+Object.keys(left.dictionary.synonyms).length+" common words.\n\n";
     text += "## Details\n\n- #L, stands for Lines.\n- #W, stands for Words.\n- #V, stands for Vocabulary, or unique words.\n- #C, stands for Characters.\n\n";
-    text += "## Controls\n\n- tab                  autocomplete.\n- ctrl+s               save/export.\n- ctrl+]               Jump to next marker.\n- ctrl+[               Jump to previous marker.\n- ctrl+shift+del       reset.\n\n";
+    text += "## Controls\n\n- tab                  autocomplete.\n- ctrl+s               save/export.\n- ctrl+]               Jump to next marker.\n- ctrl+[               Jump to previous marker.\n- ctrl+n               Clear.\n- ctrl+shift+del       Reset.\n\n";
     text += "## Options\n\n~ left.title=welcome   set file name for export.\n~ left.theme=blanc     set theme(blanc, noir, pale)\n~ left.suggestions=on  toggle suggestions.\n~ left.synonyms=on     toggle synonyms\n\n";
     text += "## Enjoy!\n\n- https://github.com/hundredrabbits/Left";
 
@@ -346,6 +354,11 @@ function Left()
       e.preventDefault();
       left.go_to_prev();
       left.refresh();
+    }
+
+    if(e.key == "n" && (e.ctrlKey || e.metaKey)){
+      e.preventDefault();
+      left.clear();
     }
 
     // Slower Refresh
