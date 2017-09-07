@@ -158,6 +158,7 @@ function Left()
     if(left.textarea_el.value.indexOf("~ left.title=") >= 0){
       var title = left.textarea_el.value.split("~ left.title=")[1].split(" ")[0];
       left.title = title;
+      changeTitle(title);
     }
   }
 

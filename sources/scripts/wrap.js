@@ -19,7 +19,13 @@ function Wrap()
     tab.webview.setAttribute('preload','file:///Users/yameki/Gits/Left/sources/scripts/webview-preload.js');
     // listen to the webview's preload
     tab.webview.addEventListener('ipc-message', event => {
-      this.theme(event.channel);
+      if(event.channel == "title"){
+        tab.setTitle(event.args[0].title);
+        console.log(event.args[0].title);
+      }
+      if(event.channel == "theme"){
+        this.theme(event.args[0].theme);
+      }
     })
 
     tab.on("active", (tab) => {
