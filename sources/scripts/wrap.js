@@ -16,7 +16,7 @@ function Wrap()
     });
     // add attributes to the webview
     tab.webview.setAttribute('nodeintegration','');
-    tab.webview.setAttribute('preload','file:///Users/yameki/Gits/Left/sources/scripts/webview-preload.js');
+    tab.webview.setAttribute('preload',`file://${__dirname}/sources/scripts/webview-preload.js`);
     // listen to the webview's preload
     tab.webview.addEventListener('ipc-message', event => {
       if(event.channel == "title"){
