@@ -139,8 +139,11 @@ function Left()
   this.refresh_settings = function()
   {
     if(left.textarea_el.value.indexOf("~ left.theme=") >= 0){
-      var theme_name = left.textarea_el.value.split("~ left.theme=")[1].split(" ")[0];
+      var theme_name = left.textarea_el.value.split("~ left.theme=")[1].replace( /\n/g, " " ).split( " " )[0];
       document.body.className = theme_name;
+
+      pingHost(theme_name);
+
     }
     if(left.textarea_el.value.indexOf("~ left.suggestions=") >= 0){
       var suggestions_toggle = left.textarea_el.value.split("~ left.suggestions=")[1].split(" ")[0];

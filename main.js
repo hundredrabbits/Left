@@ -1,4 +1,4 @@
-const {app, BrowserWindow, webFrame, Menu} = require('electron')
+const {app, BrowserWindow, webFrame, Menu, ipcRenderer} = require('electron')
 const path = require('path')
 const url = require('url')
 
@@ -72,7 +72,7 @@ app.on('ready', () => {
 
 
   // Open the DevTools.
-  win.webContents.openDevTools()
+  // win.webContents.openDevTools()
 })
 
 // Quit when all windows are closed.

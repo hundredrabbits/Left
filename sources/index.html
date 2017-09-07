@@ -1,18 +1,18 @@
-<!DOCTYPE html>
 <html>
   <head>
     <title>Left</title>
     <link rel="stylesheet" href="links/electron-tabs.css">
+    <link rel="stylesheet" href="links/reset.css">
     <script src="scripts/wrap.js"></script>
   </head>
   <body>
-    <div class="etabs-tabgroup">
+    <div id="tabs" class="etabs-tabgroup">
         <div class="etabs-tabs"></div>
         <div class="etabs-buttons"></div>
     </div>
     <div class="etabs-views"></div>
     <script>
-      var main = new Main(); main.start();
+      var wrap = new Wrap(); wrap.start();
     </script>
   </body>
 </html>

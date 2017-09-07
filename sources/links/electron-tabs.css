@@ -8,7 +8,6 @@
     -webkit-user-select: none;
     user-select: none;
 }
-
 .etabs-tabs {
     float: left;
 }
@@ -27,6 +26,7 @@
     background-color: #ccc;
     cursor: default;
 }
+
 
 /* Dragula */
 .etabs-tab.gu-mirror {
@@ -69,7 +69,7 @@
 
 .etabs-buttons button:hover {
     color: #eee;
-    background-color: #aaa;
+    background-color: #666;
 }
 
 .etabs-tab-badge {
@@ -130,3 +130,13 @@
 .etab-view {
 
 }
+
+/* noir-theme */
+.etabs-tabgroup.noir { background-color:#434343; }
+.etabs-tabgroup.noir .etabs-tab {
+  background: linear-gradient(to bottom, rgba(120,120,120,1) 0%,rgba(24,24,24,1) 100%);
+  background-color: #323232;
+  color: #f8f8f8;
+  opacity:.5;
+}
+.etabs-tabgroup.noir .etabs-tab.active { background:#212121; color:#FFF; opacity:1 }
