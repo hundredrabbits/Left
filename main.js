@@ -1,7 +1,7 @@
 const {app, BrowserWindow, webFrame, Menu, ipcRenderer} = require('electron')
 const path = require('path')
 const url = require('url')
-
+require('dotenv').config();
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -71,8 +71,11 @@ app.on('ready', () => {
   }
 
 
-  // Open the DevTools.
-  // win.webContents.openDevTools()
+  if (process.env.NODE_ENV === "development"){
+    win.webContents.openDevTools();
+    console.log("dev");
+  }
+
 })
 
 // Quit when all windows are closed.
