@@ -156,7 +156,7 @@ function Left()
       if(synonyms_toggle == "on"){ left.dictionary.is_synonyms_enabled = true; }
     }
     if(left.textarea_el.value.indexOf("~ left.title=") >= 0){
-      var title = left.textarea_el.value.split("~ left.title=")[1].split(" ")[0];
+      var title = left.textarea_el.value.split("~ left.title=")[1].replace( /\n/g, " " ).split(" ")[0];
       left.title = title;
       changeTitle(title);
     }
