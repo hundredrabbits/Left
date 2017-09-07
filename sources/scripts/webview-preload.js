@@ -8,4 +8,5 @@ global.pingHost = (theme) => {
 ipcRenderer.on('request', function(){
   var tabTheme = document.body.className;
   ipcRenderer.sendToHost(tabTheme);
+  document.querySelectorAll('textarea').focus();
 });

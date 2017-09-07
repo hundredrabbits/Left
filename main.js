@@ -72,7 +72,7 @@ app.on('ready', () => {
 
 
   if (process.env.NODE_ENV === "development"){
-    win.webContents.openDevTools();
+    // win.webContents.openDevTools();
     console.log("dev");
   }
 
