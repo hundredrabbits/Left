@@ -1,5 +1,6 @@
 function Left()
 {
+  console.log("loaded");
   this.navi_el        = document.createElement('navi');
   this.textarea_el    = document.createElement('textarea');
   this.stats_el       = document.createElement('stats');
@@ -138,8 +139,11 @@ function Left()
   this.refresh_settings = function()
   {
     if(left.textarea_el.value.indexOf("~ left.theme=") >= 0){
-      var theme_name = left.textarea_el.value.split("~ left.theme=")[1].split(" ")[0];
+      var theme_name = left.textarea_el.value.split("~ left.theme=")[1].replace( /\n/g, " " ).split( " " )[0];
       document.body.className = theme_name;
+
+      pingHost(theme_name);
+
     }
     if(left.textarea_el.value.indexOf("~ left.suggestions=") >= 0){
       var suggestions_toggle = left.textarea_el.value.split("~ left.suggestions=")[1].split(" ")[0];
@@ -152,8 +156,9 @@ function Left()
       if(synonyms_toggle == "on"){ left.dictionary.is_synonyms_enabled = true; }
     }
     if(left.textarea_el.value.indexOf("~ left.title=") >= 0){
-      var title = left.textarea_el.value.split("~ left.title=")[1].split(" ")[0];
+      var title = left.textarea_el.value.split("~ left.title=")[1].replace( /\n/g, " " ).split(" ")[0];
       left.title = title;
+      changeTitle(title);
     }
   }
 

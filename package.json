@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack:osx": "electron-packager . Left --platform=darwin --arch=x64 --out builds/osx --overwrite --electron-version=1.7.5 --icon=icon.icns"
   },
   "devDependencies": {
     "electron": "^1.7.5",
     "electron-prebuilt": "^1.4.13"
   },
   "dependencies": {
-    "electron-packager": "^8.4.0"
+    "dotenv": "^4.0.0",
+    "electron-packager": "^8.4.0",
+    "electron-tabs": "^0.7.1"
   }
 }
