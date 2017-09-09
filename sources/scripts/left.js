@@ -80,6 +80,10 @@ function Left()
 
     for(var line_id in lines){
       var line = lines[line_id];
+      if(line.substr(0,3) == "  \"" && line.indexOf(":") > -1){
+        var text = line.split(":")[0].replace(/\"/g,'');
+        markers.push({text:text,line:line_id,type:"header"});        
+      }
       if(line.substr(0,2) == "@ " || line.substr(0,2) == "# "){
         var text = line.replace("@ ","").replace("# ","");
         markers.push({text:text,line:line_id,type:"header"});
@@ -132,11 +136,14 @@ function Left()
       synonym_html += syn_id == (left.synonym_index % left.synonyms.length) ? "<i>"+left.synonyms[syn_id]+"</i> " : left.synonyms[syn_id]+" ";
     }
 
-    left.stats_el.innerHTML = left.synonyms ? " <b>"+left.current_word+"</b> "+synonym_html : stats.l+"L "+stats.w+"W "+stats.v+"V "+stats.c+"C "+(stats.p > 0 && stats.p < 100 ? stats.p+"%" : "")+suggestion_html+synonym_html;
+    var title = left.title ? "<i>"+left.title+"</i> " : "";
+
+    left.stats_el.innerHTML = left.synonyms ? " <b>"+left.current_word+"</b> "+synonym_html : title+""+stats.l+"L "+stats.w+"W "+stats.v+"V "+stats.c+"C "+(stats.p > 0 && stats.p < 100 ? stats.p+"%" : "")+suggestion_html+synonym_html;
   }
 
   this.refresh_settings = function()
   {
+    left.title = null;
     if(left.textarea_el.value.indexOf("~ left.theme=") >= 0){
       var theme_name = left.textarea_el.value.split("~ left.theme=")[1].split(" ")[0];
       document.body.className = theme_name;
@@ -309,6 +316,19 @@ function Left()
     left.refresh_settings();
   }
 
+  this.load = function(content,file)
+  {
+    if(is_json(content)){
+      var obj = JSON.parse(content);
+      content = this.format_json(obj);
+    }
+    left.textarea_el.value = content;
+    left.dictionary.update();
+    left.refresh_settings();
+    left.title = left.title ? left.title : file.name.split(".")[0];
+    left.refresh();
+  }
+
   this.splash = function()
   {
     var text = "# Welcome\n\n";
@@ -320,6 +340,11 @@ function Left()
     text += "## Enjoy!\n\n- https://github.com/hundredrabbits/Left";
 
     return text;
+  }
+
+  this.format_json = function(obj)
+  {
+    return JSON.stringify(obj, null, "  ");
   }
 
   document.onkeydown = function key_down(e)
@@ -409,15 +434,12 @@ window.addEventListener('drop', function(e)
 
   var files = e.dataTransfer.files;
   var file = files[0];
-
-  if (!file.type.match(/text.*/)) { console.log("Not text"); return false; }
+  
+  if (file.type && !file.type.match(/text.*/)) { console.log("Not text", file.type); return false; }
 
   var reader = new FileReader();
   reader.onload = function(e){
-    left.textarea_el.value = e.target.result;
-    left.dictionary.update();
-    left.refresh();
-    left.refresh_settings();
+    left.load(e.target.result,file)
   };
   reader.readAsText(file);
 });
@@ -426,3 +448,14 @@ window.onbeforeunload = function(e)
 {
   localStorage.setItem("backup", left.textarea_el.value);
 };
+
+function is_json(text)
+{
+  try{
+      JSON.parse(text);
+      return true;
+  }
+  catch (error){
+    return false;
+  }
+}
