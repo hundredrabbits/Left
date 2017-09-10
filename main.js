@@ -7,15 +7,22 @@ let win
 app.on('ready', () => 
 {
   if (process.platform === 'darwin') {
-    win = new BrowserWindow({width: 1100, height: 660, frame:false, backgroundColor: 'rgba(0,0,0,0.1)', show:false,  resizable:true, transparent: true, autoHideMenuBar: true, icon: __dirname + '/icon.ico'})
+    win = new BrowserWindow({width: 1100, height: 660, frame:false, backgroundColor: '#000', show:false,  resizable:true, transparent: true, autoHideMenuBar: true, icon: __dirname + '/icon.ico'})
 
     var nativeHandleBuffer = win.getNativeWindowHandle();
 
     win.loadURL(`file://${__dirname}/sources/index.html`)
       
     let is_shown = true;
+    let is_fullscreen = false;
 
     Menu.setApplicationMenu(Menu.buildFromTemplate([
+      {
+        label: 'File',
+        submenu: [
+          { label: 'Quit', accelerator: 'CmdOrCtrl+Q', click: function() { force_quit=true; app.exit(); }}
+        ]
+      },
       {
         label: 'Edit',
         submenu: [
@@ -25,10 +32,15 @@ app.on('ready', () =>
           { role: 'copy' },
           { role: 'paste' },
           { role: 'delete' },
-          { role: 'selectall' },
+          { role: 'selectall' }
+        ]
+      },
+      {
+        label: 'Window',
+        submenu : [
           { label: 'Hide', accelerator: 'CmdOrCtrl+H',click: () => { if(is_shown){ win.hide(); } else{ win.show(); }}},
           { label: 'Minimize', accelerator: 'CmdOrCtrl+M',click: () => { win.minimize(); }},
-          { label: 'Quit', accelerator: 'CmdOrCtrl+Q', click: function() { force_quit=true; app.exit(); }},
+          { label: 'Fullscreen', accelerator: 'CmdOrCtrl+Enter',click: () => { win.setFullScreen(win.isFullScreen() ? false : true); }}
         ]
       }
     ]));
