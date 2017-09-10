@@ -8,6 +8,11 @@ Left is a simple open-source distractionless writing application created to help
 
 The application guide is displayed within the application. To reset Left and display the splash again, press `ctrl+shift+del`.
 
+## TODOs
+
+- Add a find method, with `ctrl f`.
+- Add selection modifiers for capitalization, etc..
+
 ## Development
 
 Simply type `npm start` from the project root.

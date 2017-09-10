@@ -58,7 +58,7 @@ app.on('ready', () =>
     })
   }
   else {
-    win = new BrowserWindow({width: 1100, height: 660, frame:false, transparent: true, backgroundColor: 'rgba(200,200,200,.7)', show:false, resizable:true, autoHideMenuBar: true, icon: __dirname + '/icon.ico'})
+    win = new BrowserWindow({width: 1100, height: 660, frame:false, backgroundColor: '#000', show:false, resizable:true, autoHideMenuBar: true, icon: __dirname + '/icon.ico'})
 
     win.loadURL(`file://${__dirname}/sources/index.html`)
 
