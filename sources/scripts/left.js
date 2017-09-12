@@ -1,5 +1,8 @@
 function Left()
 {
+  this.theme_el = document.createElement("style");
+  document.body.appendChild(this.theme_el);
+
   this.navi_el        = document.createElement('navi');
   this.textarea_el    = document.createElement('textarea');
   this.stats_el       = document.createElement('stats');
@@ -16,6 +19,10 @@ function Left()
   this.synonym_index = 0;
 
   this.title = null;
+
+  this.themes = {};
+  this.themes.blanc = {background:"#eee",f_high:"#111",f_med:"#999",f_low:"#bbb",f_inv:"#000",f_special:"#000",b_high:"#000",b_med:"#999",b_low:"#ddd",b_inv:"#fff",b_special:"#72dec2"};
+  this.themes.noir = { background: "#000", f_high: "#fff", f_med: "#999", f_low: "#555", f_inv: "#000", f_special: "#000", b_high: "#000", b_med: "#555", b_low: "#222", b_inv: "#fff", b_special: "#72dec2" };
 
   document.body.appendChild(this.navi_el);
   document.body.appendChild(this.textarea_el);
@@ -42,6 +49,11 @@ function Left()
       this.textarea_el.value = this.splash();
       this.textarea_el.setSelectionRange(2,9);
     }
+
+    this.load_theme(this.themes.blanc);
+
+    // Set theme classes
+    this.textarea_el.className = "fh";
 
     this.dictionary.update();
     this.refresh();
@@ -110,6 +122,7 @@ function Left()
       el.destination = marker.line;
       el.innerHTML = marker.text+"<span>"+marker.line+"</span>";
       el.className = active_line_id >= marker.line && (next_marker && active_line_id < next_marker.line) ? marker.type+" active" : marker.type;
+      el.className += marker.type == "header" ? " fh" : " fm";
       el.onmouseup = function on_mouseup(e){ left.go_to_line(e.target.destination); }
       left.navi_el.appendChild(el);
 
@@ -145,8 +158,13 @@ function Left()
   {
     left.title = null;
     if(left.textarea_el.value.indexOf("~ left.theme=") >= 0){
-      var theme_name = left.textarea_el.value.split("~ left.theme=")[1].split(" ")[0];
-      document.body.className = theme_name;
+      var theme_str = left.textarea_el.value.split("~ left.theme=")[1].split("\n")[0];
+      if(is_json(theme_str)){
+        this.load_theme(JSON.parse(theme_str));
+      }
+      else if(left.themes[theme_str]){
+        this.load_theme(left.themes[theme_str]);
+      }
     }
     if(left.textarea_el.value.indexOf("~ left.suggestions=") >= 0){
       var suggestions_toggle = left.textarea_el.value.split("~ left.suggestions=")[1].split(" ")[0];
@@ -322,12 +340,44 @@ function Left()
       var obj = JSON.parse(content);
       content = this.format_json(obj);
     }
+
+    var file_type = path.split(".")[path.split(".").length-1];
+
     left.path = path;
     left.textarea_el.value = content;
     left.dictionary.update();
     left.refresh_settings();
     left.refresh();
     left.stats_el.innerHTML = "<b>Loaded</b> "+path;
+
+    if(file_type == "thm"){
+      left.load_theme(obj);
+    }
+  }
+
+  this.load_theme = function(theme)
+  {
+    var html = "";
+
+    html += "body { background:"+theme.background+" !important }\n";
+    html += ".fh { color:"+theme.f_high+" !important; stroke:"+theme.f_high+" !important }\n";
+    html += ".fm { color:"+theme.f_med+" !important ; stroke:"+theme.f_med+" !important }\n";
+    html += ".fl { color:"+theme.f_low+" !important ; stroke:"+theme.f_low+" !important }\n";
+    html += ".f_inv { color:"+theme.f_inv+" !important ; stroke:"+theme.f_inv+" !important }\n";
+    html += ".f_special { color:"+theme.f_special+" !important ; stroke:"+theme.f_special+" !important }\n";
+    html += ".bh { background:"+theme.b_high+" !important; fill:"+theme.b_high+" !important }\n";
+    html += ".bm { background:"+theme.b_med+" !important ; fill:"+theme.b_med+" !important }\n";
+    html += ".bl { background:"+theme.b_low+" !important ; fill:"+theme.b_low+" !important }\n";
+    html += ".b_inv { background:"+theme.b_inv+" !important ; fill:"+theme.b_inv+" !important }\n";
+    html += ".b_special { background:"+theme.b_special+" !important ; fill:"+theme.b_special+" !important }\n";
+
+    html += "navi { border-right: 1px dotted "+theme.b_low+" !important }\n";
+    html += "scrollbar { background:"+theme.b_med+" !important }\n";
+    html += "stats { color:"+theme.f_low+" !important }\n";
+    html += "stats b { color:"+theme.f_high+" !important }\n";
+    html += "::selection { background:"+theme.b_inv+" !important; color:"+theme.b_inv+" }\n";
+
+    this.theme_el.innerHTML = html;
   }
 
   this.path = null;
@@ -335,6 +385,8 @@ function Left()
   this.open = function()
   {
     var filepath = dialog.showOpenDialog({properties: ['openFile']});
+
+    if(!filepath){ console.log("Nothing to load"); return; }
 
     fs.readFile(filepath[0], 'utf-8', (err, data) => {
       if(err){ alert("An error ocurred reading the file :" + err.message); return; }
@@ -345,7 +397,7 @@ function Left()
 
   this.save = function()
   {
-    if(!left.path){ left.export(); }
+    if(!left.path){ left.export(); return; }
     fs.writeFile(left.path, left.textarea_el.value, (err) => {
       if(err) { alert("An error ocurred updating the file" + err.message); console.log(err); return; }
       left.stats_el.innerHTML = "<b>Saved</b> "+left.path;
@@ -356,10 +408,10 @@ function Left()
   {
     var text = "# Welcome\n\n";
     text += "Left is a simple, minimalist, open-source and cross-platform text editor. \n\n";
-    text += "## Features\n\n- Create markers by beginning lines with # or ##.\n- Load a text file by dragging it here.\n- Save a text file with ctrl+s, or cmd+s.\n- The synonyms dictionary contains "+Object.keys(left.dictionary.synonyms).length+" common words.\n\n";
+    text += "## Features\n\n- Create markers by beginning lines with # or ##.\n- Open a text file by dragging it here, or <ctrl o>.\n- Save a text file with <ctrl s>.\n- The synonyms dictionary contains "+Object.keys(left.dictionary.synonyms).length+" common words.\n\n";
     text += "## Details\n\n- #L, stands for Lines.\n- #W, stands for Words.\n- #V, stands for Vocabulary, or unique words.\n- #C, stands for Characters.\n\n";
-    text += "## Controls\n\n- tab                  autocomplete.\n- ctrl+o               open.\n- ctrl+s               save.\n- ctrl+S               save as.\n- ctrl+]               Jump to next marker.\n- ctrl+[               Jump to previous marker.\n- ctrl+n               Clear.\n- ctrl+shift+del       Reset.\n\n";
-    text += "## Options\n\n~ left.title=welcome   set file name for export.\n~ left.theme=blanc     set theme(blanc, noir, pale)\n~ left.suggestions=on  toggle suggestions.\n~ left.synonyms=on     toggle synonyms\n\n";
+    text += "## Controls\n\n- tab                  autocomplete.\n- ctrl o               open.\n- ctrl s               save.\n- ctrl S               save as.\n- ctrl ]               Jump to next marker.\n- ctrl [               Jump to previous marker.\n- ctrl n               Clear.\n- ctrl shift+del       Reset.\n\n";
+    text += "## Options\n\n~ left.title=welcome   set file name for export.\n~ left.suggestions=on  toggle suggestions.\n~ left.synonyms=on     toggle synonyms\n~ left.theme=blanc     Set theme to White/Noir/Pale\n\n";
     text += "## Enjoy!\n\n- https://github.com/hundredrabbits/Left";
 
     return text;

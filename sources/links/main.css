@@ -7,7 +7,7 @@ body navi li.active::before { content:":"; position: absolute; left:-15px; }
 body navi li span { float:right; }
 body stats { display: block;border-bottom: 0px;color: #999;margin-top: 30px;position: absolute;bottom:10px;left: calc(20vw + 91px);line-height: 40px;width: calc(80vw - 121px);height:40px;overflow: hidden }
 body stats .right { float:right; }
-body stats b { background:#ccc; color:#f8f8f8;}
+body stats b { color:#000; font-family: 'input_mono_regular';}
 body stats i { text-decoration: underline; }
 body textarea { padding: 30px;height: calc(100vh - 60px);display: inline-block;color: black;width: calc(80vw - 91px);position: absolute;left: calc(20vw + 61px);line-height: 20px;resize: none; background:transparent; overflow: hidden;}
 body scrollbar { display: block; background:#ccc; width:1px; height:0px; position:fixed; left:calc(20vw + 60px); top:0px; }
