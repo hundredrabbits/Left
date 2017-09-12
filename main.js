@@ -12,6 +12,8 @@ app.on('ready', () =>
     var nativeHandleBuffer = win.getNativeWindowHandle();
 
     win.loadURL(`file://${__dirname}/sources/index.html`)
+
+    win.left = 22;
       
     let is_shown = true;
     let is_fullscreen = false;

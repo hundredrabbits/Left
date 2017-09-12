@@ -227,7 +227,7 @@ function Left()
     this.inject(suggestion.substr(left.current_word.length,suggestion.length));
   }
 
-  this.save = function()
+  this.export = function()
   {
     var text = left.textarea_el.value;
     var blob = new Blob([text], {type: "text/plain;charset=" + document.characterSet});
@@ -316,17 +316,40 @@ function Left()
     left.refresh_settings();
   }
 
-  this.load = function(content,file)
+  this.load = function(content,path)
   {
     if(is_json(content)){
       var obj = JSON.parse(content);
       content = this.format_json(obj);
     }
+    left.path = path;
     left.textarea_el.value = content;
     left.dictionary.update();
     left.refresh_settings();
-    left.title = left.title ? left.title : file.name.split(".")[0];
     left.refresh();
+    left.stats_el.innerHTML = "<b>Loaded</b> "+path;
+  }
+
+  this.path = null;
+
+  this.open = function()
+  {
+    var filepath = dialog.showOpenDialog({properties: ['openFile']});
+
+    fs.readFile(filepath[0], 'utf-8', (err, data) => {
+      if(err){ alert("An error ocurred reading the file :" + err.message); return; }
+
+      left.load(data,filepath[0]);
+    });
+  }
+
+  this.save = function()
+  {
+    if(!left.path){ left.export(); }
+    fs.writeFile(left.path, left.textarea_el.value, (err) => {
+      if(err) { alert("An error ocurred updating the file" + err.message); console.log(err); return; }
+      left.stats_el.innerHTML = "<b>Saved</b> "+left.path;
+    });
   }
 
   this.splash = function()
@@ -335,7 +358,7 @@ function Left()
     text += "Left is a simple, minimalist, open-source and cross-platform text editor. \n\n";
     text += "## Features\n\n- Create markers by beginning lines with # or ##.\n- Load a text file by dragging it here.\n- Save a text file with ctrl+s, or cmd+s.\n- The synonyms dictionary contains "+Object.keys(left.dictionary.synonyms).length+" common words.\n\n";
     text += "## Details\n\n- #L, stands for Lines.\n- #W, stands for Words.\n- #V, stands for Vocabulary, or unique words.\n- #C, stands for Characters.\n\n";
-    text += "## Controls\n\n- tab                  autocomplete.\n- ctrl+s               save/export.\n- ctrl+]               Jump to next marker.\n- ctrl+[               Jump to previous marker.\n- ctrl+n               Clear.\n- ctrl+shift+del       Reset.\n\n";
+    text += "## Controls\n\n- tab                  autocomplete.\n- ctrl+o               open.\n- ctrl+s               save.\n- ctrl+S               save as.\n- ctrl+]               Jump to next marker.\n- ctrl+[               Jump to previous marker.\n- ctrl+n               Clear.\n- ctrl+shift+del       Reset.\n\n";
     text += "## Options\n\n~ left.title=welcome   set file name for export.\n~ left.theme=blanc     set theme(blanc, noir, pale)\n~ left.suggestions=on  toggle suggestions.\n~ left.synonyms=on     toggle synonyms\n\n";
     text += "## Enjoy!\n\n- https://github.com/hundredrabbits/Left";
 
@@ -350,9 +373,9 @@ function Left()
   document.onkeydown = function key_down(e)
   {
     // Save
-    if(e.key == "s" && (e.ctrlKey || e.metaKey)){
+    if(e.key == "S" && (e.ctrlKey || e.metaKey)){
       e.preventDefault();
-      left.save();
+      left.export();
     }
 
     // Reset
@@ -384,6 +407,16 @@ function Left()
     if(e.key == "n" && (e.ctrlKey || e.metaKey)){
       e.preventDefault();
       left.clear();
+    }
+
+    if(e.key == "o" && (e.ctrlKey || e.metaKey)){
+      e.preventDefault();
+      left.open();
+    }
+
+    if(e.key == "s" && (e.ctrlKey || e.metaKey)){
+      e.preventDefault();
+      left.save();
     }
 
     // Slower Refresh
@@ -437,9 +470,10 @@ window.addEventListener('drop', function(e)
   
   if (file.type && !file.type.match(/text.*/)) { console.log("Not text", file.type); return false; }
 
+  var path = file.path;
   var reader = new FileReader();
   reader.onload = function(e){
-    left.load(e.target.result,file)
+    left.load(e.target.result,path)
   };
   reader.readAsText(file);
 });
