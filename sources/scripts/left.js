@@ -19,8 +19,9 @@ function Left()
   this.synonym_index = 0;
 
   this.themes = {};
-  this.themes.blanc = {background:"#eee",f_high:"#111",f_med:"#999",f_low:"#bbb",f_inv:"#fff",f_special:"#000",b_high:"#000",b_med:"#999",b_low:"#ddd",b_inv:"#999",b_special:"#72dec2"};
+  this.themes.blanc = { background:"#eee",f_high:"#111",f_med:"#999",f_low:"#bbb",f_inv:"#fff",f_special:"#000",b_high:"#000",b_med:"#999",b_low:"#ddd",b_inv:"#999",b_special:"#72dec2" };
   this.themes.noir = { background: "#000", f_high: "#fff", f_med: "#999", f_low: "#555", f_inv: "#000", f_special: "#000", b_high: "#000", b_med: "#555", b_low: "#222", b_inv: "#fff", b_special: "#72dec2" };
+  this.themes.pale = { background: "#555", f_high: "#fff", f_med: "#999", f_low: "#bbb", f_inv: "#555", f_special: "#555", b_high: "#000", b_med: "#999", b_low: "#666", b_inv: "#fff", b_special: "#ccc" };
 
   document.body.appendChild(this.navi_el);
   document.body.appendChild(this.textarea_el);
@@ -48,8 +49,13 @@ function Left()
       this.textarea_el.setSelectionRange(2,9);
     }
 
-    this.load_theme(this.themes.blanc);
-
+    if(localStorage.theme && is_json(localStorage.backup)){
+      this.load_theme(JSON.parse(localStorage.theme));  
+    }
+    else{
+      this.load_theme(this.themes.blanc);
+    }
+    
     // Set theme classes
     this.textarea_el.className = "fh";
 
@@ -60,6 +66,7 @@ function Left()
 
   this.refresh = function()
   {
+    localStorage.backup = left.textarea_el.value;
     left.current_word = left.active_word();
 
     // Only look for suggestion is at the end of word, or text.
@@ -153,12 +160,15 @@ function Left()
   this.refresh_settings = function()
   {
     if(left.textarea_el.value.indexOf("~ left.theme=") >= 0){
-      var theme_str = left.textarea_el.value.split("~ left.theme=")[1].split("\n")[0];
+      var theme_str = left.textarea_el.value.split("~ left.theme=")[1].split(" ")[0].trim();
       if(is_json(theme_str)){
         this.load_theme(JSON.parse(theme_str));
       }
       else if(left.themes[theme_str]){
         this.load_theme(left.themes[theme_str]);
+      }
+      else{
+        console.log(theme_str,left.themes[theme_str])
       }
     }
     if(left.textarea_el.value.indexOf("~ left.suggestions=") >= 0){
@@ -358,6 +368,8 @@ function Left()
   this.load_theme = function(theme)
   {
     var html = "";
+
+    localStorage.setItem("theme", JSON.stringify(theme));
 
     html += "body { background:"+theme.background+" !important }\n";
     html += ".fh { color:"+theme.f_high+" !important; stroke:"+theme.f_high+" !important }\n";
