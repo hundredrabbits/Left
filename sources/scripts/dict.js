@@ -29,6 +29,7 @@ function Dict()
 
     for(word_id in this.vocabulary){
       var word = this.vocabulary[word_id];
+      if(word.length < 4){ continue; }
       if(word.substr(0,to_word.length) == to_word){ return word; }
     }
     return null;

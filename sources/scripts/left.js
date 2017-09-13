@@ -18,10 +18,8 @@ function Left()
   this.synonyms = null;
   this.synonym_index = 0;
 
-  this.title = null;
-
   this.themes = {};
-  this.themes.blanc = {background:"#eee",f_high:"#111",f_med:"#999",f_low:"#bbb",f_inv:"#000",f_special:"#000",b_high:"#000",b_med:"#999",b_low:"#ddd",b_inv:"#fff",b_special:"#72dec2"};
+  this.themes.blanc = {background:"#eee",f_high:"#111",f_med:"#999",f_low:"#bbb",f_inv:"#fff",f_special:"#000",b_high:"#000",b_med:"#999",b_low:"#ddd",b_inv:"#999",b_special:"#72dec2"};
   this.themes.noir = { background: "#000", f_high: "#fff", f_med: "#999", f_low: "#555", f_inv: "#000", f_special: "#000", b_high: "#000", b_med: "#555", b_low: "#222", b_inv: "#fff", b_special: "#72dec2" };
 
   document.body.appendChild(this.navi_el);
@@ -137,7 +135,7 @@ function Left()
     stats.w = left.words_count;
     stats.c = left.chars_count;
     stats.v = left.dictionary.vocabulary.length;
-    stats.p = (left.textarea_el.selectionEnd/parseFloat(left.chars_count)) * 100; stats.p = stats.p > 100 ? 100 : parseInt(stats.p);
+    stats.g = left.goal ? (Math.round( (left.words_count/parseFloat(left.goal) * 100) * 10 ) / 10)+"%" : "";
 
     suggestion_html = (left.current_word && left.suggestion && left.current_word != left.suggestion) ? " <t>"+left.current_word+"<b>"+left.suggestion.substr(left.current_word.length,left.suggestion.length)+"</b></t>" : "";
 
@@ -149,14 +147,11 @@ function Left()
       synonym_html += syn_id == (left.synonym_index % left.synonyms.length) ? "<i>"+left.synonyms[syn_id]+"</i> " : left.synonyms[syn_id]+" ";
     }
 
-    var title = left.title ? "<i>"+left.title+"</i> " : "";
-
-    left.stats_el.innerHTML = left.synonyms ? " <b>"+left.current_word+"</b> "+synonym_html : title+""+stats.l+"L "+stats.w+"W "+stats.v+"V "+stats.c+"C "+(stats.p > 0 && stats.p < 100 ? stats.p+"%" : "")+suggestion_html+synonym_html;
+    left.stats_el.innerHTML = left.synonyms ? " <b>"+left.current_word+"</b> "+synonym_html : ""+stats.l+"L "+stats.w+(left.goal ? "/"+left.goal : '')+"W "+stats.v+"V "+stats.c+"C "+stats.g+" "+suggestion_html+synonym_html;
   }
 
   this.refresh_settings = function()
   {
-    left.title = null;
     if(left.textarea_el.value.indexOf("~ left.theme=") >= 0){
       var theme_str = left.textarea_el.value.split("~ left.theme=")[1].split("\n")[0];
       if(is_json(theme_str)){
@@ -176,9 +171,11 @@ function Left()
       if(synonyms_toggle == "off"){ left.dictionary.is_synonyms_enabled = false; }
       if(synonyms_toggle == "on"){ left.dictionary.is_synonyms_enabled = true; }
     }
-    if(left.textarea_el.value.indexOf("~ left.title=") >= 0){
-      var title = left.textarea_el.value.split("~ left.title=")[1].split(" ")[0];
-      left.title = title;
+    if(left.textarea_el.value.indexOf("~ left.goal=") >= 0){
+      left.goal = parseInt(left.textarea_el.value.split("~ left.goal=")[1].split(" ")[0]);
+    }
+    else{
+      left.goal = null;
     }
   }
 
@@ -325,8 +322,8 @@ function Left()
     left.textarea_el.value = left.splash();
     localStorage.setItem("backup", left.textarea_el.value);
     left.dictionary.update();
-    left.refresh();
     left.refresh_settings();
+    left.refresh();
   }
 
   this.clear = function()
@@ -378,7 +375,7 @@ function Left()
     html += "scrollbar { background:"+theme.b_med+" !important }\n";
     html += "stats { color:"+theme.f_low+" !important }\n";
     html += "stats b { color:"+theme.f_high+" !important }\n";
-    html += "::selection { background:"+theme.b_inv+" !important; color:"+theme.b_inv+" }\n";
+    html += "::selection { background:"+theme.b_inv+" !important; color:"+theme.f_inv+" }\n";
 
     this.theme_el.innerHTML = html;
   }
@@ -414,7 +411,7 @@ function Left()
     text += "## Features\n\n- Create markers by beginning lines with # or ##.\n- Open a text file by dragging it here, or <ctrl o>.\n- Save a text file with <ctrl s>.\n- The synonyms dictionary contains "+Object.keys(left.dictionary.synonyms).length+" common words.\n\n";
     text += "## Details\n\n- #L, stands for Lines.\n- #W, stands for Words.\n- #V, stands for Vocabulary, or unique words.\n- #C, stands for Characters.\n\n";
     text += "## Controls\n\n- tab                  autocomplete.\n- ctrl o               open.\n- ctrl s               save.\n- ctrl S               save as.\n- ctrl ]               Jump to next marker.\n- ctrl [               Jump to previous marker.\n- ctrl n               Clear.\n- ctrl shift+del       Reset.\n\n";
-    text += "## Options\n\n~ left.title=welcome   set file name for export.\n~ left.suggestions=on  toggle suggestions.\n~ left.synonyms=on     toggle synonyms\n~ left.theme=blanc     Set theme to White/Noir/Pale\n\n";
+    text += "## Options\n\n~ left.goal=4000       set target number of words.\n~ left.suggestions=on  toggle suggestions.\n~ left.synonyms=on     toggle synonyms\n~ left.theme=blanc     Set theme to White/Noir/Pale\n\n";
     text += "## Enjoy!\n\n- https://github.com/hundredrabbits/Left";
 
     return text;

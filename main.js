@@ -7,7 +7,7 @@ let win
 app.on('ready', () => 
 {
   if (process.platform === 'darwin') {
-    win = new BrowserWindow({width: 1100, height: 660, frame:false, backgroundColor: '#000', show:false,  resizable:true, transparent: true, autoHideMenuBar: true, icon: __dirname + '/icon.ico'})
+    win = new BrowserWindow({width: 930, height: 540, frame:false, backgroundColor: '#000', show:false,  resizable:true, transparent: true, autoHideMenuBar: true, icon: __dirname + '/icon.ico'})
 
     var nativeHandleBuffer = win.getNativeWindowHandle();
 
