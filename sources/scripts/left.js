@@ -18,10 +18,13 @@ function Left()
   this.synonyms = null;
   this.synonym_index = 0;
 
+  this.path = null;
+
   this.themes = {};
   this.themes.blanc = { background:"#eee",f_high:"#111",f_med:"#999",f_low:"#bbb",f_inv:"#fff",f_special:"#000",b_high:"#000",b_med:"#999",b_low:"#ddd",b_inv:"#999",b_special:"#72dec2" };
   this.themes.noir = { background: "#000", f_high: "#fff", f_med: "#999", f_low: "#555", f_inv: "#000", f_special: "#000", b_high: "#000", b_med: "#555", b_low: "#222", b_inv: "#fff", b_special: "#72dec2" };
   this.themes.pale = { background: "#555", f_high: "#fff", f_med: "#999", f_low: "#bbb", f_inv: "#555", f_special: "#555", b_high: "#000", b_med: "#999", b_low: "#666", b_inv: "#fff", b_special: "#ccc" };
+  this.theme = this.themes.blanc;
 
   document.body.appendChild(this.navi_el);
   document.body.appendChild(this.textarea_el);
@@ -49,7 +52,7 @@ function Left()
       this.textarea_el.setSelectionRange(2,9);
     }
 
-    if(localStorage.theme && is_json(localStorage.backup)){
+    if(localStorage.theme && is_json(localStorage.theme)){
       this.load_theme(JSON.parse(localStorage.theme));  
     }
     else{
@@ -66,7 +69,6 @@ function Left()
 
   this.refresh = function()
   {
-    localStorage.backup = left.textarea_el.value;
     left.current_word = left.active_word();
 
     // Only look for suggestion is at the end of word, or text.
@@ -166,9 +168,6 @@ function Left()
       }
       else if(left.themes[theme_str]){
         this.load_theme(left.themes[theme_str]);
-      }
-      else{
-        console.log(theme_str,left.themes[theme_str])
       }
     }
     if(left.textarea_el.value.indexOf("~ left.suggestions=") >= 0){
@@ -330,7 +329,7 @@ function Left()
   this.reset = function()
   {
     left.textarea_el.value = left.splash();
-    localStorage.setItem("backup", left.textarea_el.value);
+    localStorage.setItem("backup", null);
     left.dictionary.update();
     left.refresh_settings();
     left.refresh();
@@ -344,7 +343,7 @@ function Left()
     left.refresh_settings();
   }
 
-  this.load = function(content,path)
+  this.load = function(content,path = "")
   {
     if(is_json(content)){
       var obj = JSON.parse(content);
@@ -353,23 +352,24 @@ function Left()
 
     var file_type = path.split(".")[path.split(".").length-1];
 
-    left.path = path;
+    if(file_type == "thm"){
+      left.load_theme(obj);
+    }
+
+    left.path = path ? path : null;
     left.textarea_el.value = content;
     left.dictionary.update();
     left.refresh_settings();
     left.refresh();
     left.stats_el.innerHTML = "<b>Loaded</b> "+path;
-
-    if(file_type == "thm"){
-      left.load_theme(obj);
-    }
   }
 
   this.load_theme = function(theme)
   {
     var html = "";
 
-    localStorage.setItem("theme", JSON.stringify(theme));
+    this.theme = theme;
+    left.save_theme();
 
     html += "body { background:"+theme.background+" !important }\n";
     html += ".fh { color:"+theme.f_high+" !important; stroke:"+theme.f_high+" !important }\n";
@@ -392,8 +392,6 @@ function Left()
     this.theme_el.innerHTML = html;
   }
 
-  this.path = null;
-
   this.open = function()
   {
     var filepath = dialog.showOpenDialog({properties: ['openFile']});
@@ -414,6 +412,18 @@ function Left()
       if(err) { alert("An error ocurred updating the file" + err.message); console.log(err); return; }
       left.stats_el.innerHTML = "<b>Saved</b> "+left.path;
     });
+  }
+
+  this.save_backup = function()
+  {
+    localStorage.setItem("backup", left.textarea_el.value);
+    console.log("Saved backup");
+  }
+
+  this.save_theme = function()
+  {
+    localStorage.setItem("theme", JSON.stringify(left.theme));
+    console.log("Saved theme");
   }
 
   this.splash = function()
@@ -487,6 +497,8 @@ function Left()
     if(e.key == "Enter"){
       left.dictionary.update();
       left.refresh_settings();
+      left.save_backup();
+      left.save_theme();
     }
 
     if(e.key && e.key.substr(0,5) == "Arrow"){
@@ -534,7 +546,7 @@ window.addEventListener('drop', function(e)
   
   if (file.type && !file.type.match(/text.*/)) { console.log("Not text", file.type); return false; }
 
-  var path = file.path;
+  var path = file.path ? file.path : file.name;
   var reader = new FileReader();
   reader.onload = function(e){
     left.load(e.target.result,path)
@@ -544,7 +556,7 @@ window.addEventListener('drop', function(e)
 
 window.onbeforeunload = function(e)
 {
-  localStorage.setItem("backup", left.textarea_el.value);
+  left.save_backup();
 };
 
 function is_json(text)
