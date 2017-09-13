@@ -247,12 +247,15 @@ function Left()
 
   this.export = function()
   {
-    var text = left.textarea_el.value;
-    var blob = new Blob([text], {type: "text/plain;charset=" + document.characterSet});
-    var d = new Date(), e = new Date(d);
-    var since_midnight = e - d.setHours(0,0,0,0);
-    var timestamp = parseInt((since_midnight/864) * 10);
-    saveAs(blob, (left.title ? left.title : "backup")+"."+timestamp+".txt");
+    var str = left.textarea_el.value;
+
+    dialog.showSaveDialog((fileName) => {
+      if (fileName === undefined){ return; }
+      fs.writeFile(fileName+".txt", str, (err) => {
+        if(err){ alert("An error ocurred creating the file "+ err.message); return; }
+        left.path = fileName+".txt";
+      });
+    }); 
   }
 
   this.go_to_line = function(line_id)

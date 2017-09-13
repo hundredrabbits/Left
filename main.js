@@ -12,8 +12,6 @@ app.on('ready', () =>
     var nativeHandleBuffer = win.getNativeWindowHandle();
 
     win.loadURL(`file://${__dirname}/sources/index.html`)
-
-    win.left = 22;
       
     let is_shown = true;
     let is_fullscreen = false;
@@ -76,7 +74,7 @@ app.on('ready', () =>
     })
   }
   // Open the DevTools.
-  // win.webContents.openDevTools()
+  // win.webContents.openDevTools();
 })
 
 app.on('window-all-closed', () => 
