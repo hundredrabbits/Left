@@ -1,14 +1,12 @@
 function Left()
 {
-  this.theme_el = document.createElement("style");
-  document.body.appendChild(this.theme_el);
+  this.theme = new Theme();
+  this.dictionary = new Dict();
 
   this.navi_el        = document.createElement('navi');
   this.textarea_el    = document.createElement('textarea');
   this.stats_el       = document.createElement('stats');
   this.scroll_el      = document.createElement('scrollbar');
-
-  this.dictionary = new Dict();
 
   this.words_count = null;
   this.lines_count = null;
@@ -20,12 +18,7 @@ function Left()
 
   this.path = null;
 
-  this.themes = {};
-  this.themes.blanc = { background:"#eee",f_high:"#111",f_med:"#999",f_low:"#bbb",f_inv:"#fff",f_special:"#000",b_high:"#000",b_med:"#999",b_low:"#ddd",b_inv:"#999",b_special:"#72dec2" };
-  this.themes.noir = { background: "#000", f_high: "#fff", f_med: "#999", f_low: "#555", f_inv: "#000", f_special: "#000", b_high: "#000", b_med: "#555", b_low: "#222", b_inv: "#fff", b_special: "#72dec2" };
-  this.themes.pale = { background: "#555", f_high: "#fff", f_med: "#999", f_low: "#bbb", f_inv: "#555", f_special: "#555", b_high: "#000", b_med: "#999", b_low: "#666", b_inv: "#fff", b_special: "#ccc" };
-  this.theme = this.themes.blanc;
-
+  document.body.appendChild(this.theme.el);
   document.body.appendChild(this.navi_el);
   document.body.appendChild(this.textarea_el);
   document.body.appendChild(this.stats_el);
@@ -52,15 +45,7 @@ function Left()
       this.textarea_el.setSelectionRange(2,9);
     }
 
-    if(localStorage.theme && is_json(localStorage.theme)){
-      this.load_theme(JSON.parse(localStorage.theme));  
-    }
-    else{
-      this.load_theme(this.themes.blanc);
-    }
-    
-    // Set theme classes
-    this.textarea_el.className = "fh";
+    this.theme.start();
 
     this.dictionary.update();
     this.refresh();
@@ -163,12 +148,7 @@ function Left()
   {
     if(left.textarea_el.value.indexOf("~ left.theme=") >= 0){
       var theme_str = left.textarea_el.value.split("~ left.theme=")[1].split(" ")[0].trim();
-      if(is_json(theme_str)){
-        this.load_theme(JSON.parse(theme_str));
-      }
-      else if(left.themes[theme_str]){
-        this.load_theme(left.themes[theme_str]);
-      }
+      this.theme.load(theme_str);
     }
     if(left.textarea_el.value.indexOf("~ left.suggestions=") >= 0){
       var suggestions_toggle = left.textarea_el.value.split("~ left.suggestions=")[1].split(" ")[0];
@@ -353,7 +333,7 @@ function Left()
     var file_type = path.split(".")[path.split(".").length-1];
 
     if(file_type == "thm"){
-      left.load_theme(obj);
+      left.theme.install(obj);
     }
 
     left.path = path ? path : null;
@@ -362,34 +342,6 @@ function Left()
     left.refresh_settings();
     left.refresh();
     left.stats_el.innerHTML = "<b>Loaded</b> "+path;
-  }
-
-  this.load_theme = function(theme)
-  {
-    var html = "";
-
-    this.theme = theme;
-    left.save_theme();
-
-    html += "body { background:"+theme.background+" !important }\n";
-    html += ".fh { color:"+theme.f_high+" !important; stroke:"+theme.f_high+" !important }\n";
-    html += ".fm { color:"+theme.f_med+" !important ; stroke:"+theme.f_med+" !important }\n";
-    html += ".fl { color:"+theme.f_low+" !important ; stroke:"+theme.f_low+" !important }\n";
-    html += ".f_inv { color:"+theme.f_inv+" !important ; stroke:"+theme.f_inv+" !important }\n";
-    html += ".f_special { color:"+theme.f_special+" !important ; stroke:"+theme.f_special+" !important }\n";
-    html += ".bh { background:"+theme.b_high+" !important; fill:"+theme.b_high+" !important }\n";
-    html += ".bm { background:"+theme.b_med+" !important ; fill:"+theme.b_med+" !important }\n";
-    html += ".bl { background:"+theme.b_low+" !important ; fill:"+theme.b_low+" !important }\n";
-    html += ".b_inv { background:"+theme.b_inv+" !important ; fill:"+theme.b_inv+" !important }\n";
-    html += ".b_special { background:"+theme.b_special+" !important ; fill:"+theme.b_special+" !important }\n";
-
-    html += "navi { border-right: 1px dotted "+theme.b_low+" !important }\n";
-    html += "scrollbar { background:"+theme.b_med+" !important }\n";
-    html += "stats { color:"+theme.f_low+" !important }\n";
-    html += "stats b { color:"+theme.f_high+" !important }\n";
-    html += "::selection { background:"+theme.b_inv+" !important; color:"+theme.f_inv+" }\n";
-
-    this.theme_el.innerHTML = html;
   }
 
   this.open = function()
@@ -418,12 +370,6 @@ function Left()
   {
     localStorage.setItem("backup", left.textarea_el.value);
     console.log("Saved backup");
-  }
-
-  this.save_theme = function()
-  {
-    localStorage.setItem("theme", JSON.stringify(left.theme));
-    console.log("Saved theme");
   }
 
   this.splash = function()
@@ -498,7 +444,7 @@ function Left()
       left.dictionary.update();
       left.refresh_settings();
       left.save_backup();
-      left.save_theme();
+      left.theme.save();
     }
 
     if(e.key && e.key.substr(0,5) == "Arrow"){
