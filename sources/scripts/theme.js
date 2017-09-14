@@ -14,7 +14,7 @@ function Theme()
       this.install(JSON.parse(localStorage.theme));  
     }
     else{
-      this.install(this.themes.blanc);
+      this.install(this.collection.blanc);
     }
   }
 
