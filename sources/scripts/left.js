@@ -231,8 +231,20 @@ function Left()
     this.inject(suggestion.substr(left.current_word.length,suggestion.length));
   }
 
+  this.simple_export = function()
+  {
+    var text = left.textarea_el.value;
+    var blob = new Blob([text], {type: "text/plain;charset=" + document.characterSet});
+    var d = new Date(), e = new Date(d);
+    var since_midnight = e - d.setHours(0,0,0,0);
+    var timestamp = parseInt((since_midnight/864) * 10);
+    saveAs(blob, "backup."+timestamp+".txt");
+  }
+
   this.export = function()
   {
+    if(typeof dialog == "undefined"){ this.simple_export(); return; }
+
     var str = left.textarea_el.value;
 
     dialog.showSaveDialog((fileName) => {
