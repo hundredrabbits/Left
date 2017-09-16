@@ -37,6 +37,10 @@ function Left()
   {
     this.textarea_el.focus();
 
+    this.theme.start();
+    this.dictionary.start();
+
+
     if(localStorage.backup){
       this.textarea_el.value = localStorage.backup;
     }
@@ -44,10 +48,7 @@ function Left()
       this.textarea_el.value = this.splash();
       this.textarea_el.setSelectionRange(2,9);
     }
-
-    this.theme.start();
-    this.dictionary.start();
-
+    
     this.dictionary.update();
     this.refresh();
     this.refresh_settings();

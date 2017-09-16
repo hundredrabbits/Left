@@ -55,10 +55,13 @@ function Dict()
 
   this.find_synonym = function(to_word)
   {
-    if(!this.is_synonyms_enabled){ return null; }
+    if(!this.is_synonyms_enabled && this.synonyms){ return null; }
 
     if(this.synonyms[to_word]){ return squash(this.synonyms[to_word]); }
-    if(this.synonyms[to_word.substr(0,to_word.length-1)]){ return squash(this.synonyms[to_word.substr(0,to_word.length-1)]); }
+
+    // If plurral
+    var last_letter = to_word[to_word.length-1];
+    if(last_letter == "s" && this.synonyms[to_word.substr(0,to_word.length-1)]){ return squash(this.synonyms[to_word.substr(0,to_word.length-1)]); }
 
     return null;
   }
