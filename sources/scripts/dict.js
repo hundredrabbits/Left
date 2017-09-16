@@ -1,7 +1,7 @@
 function Dict()
 {
   this.vocabulary = [];
-  this.synonyms = SYN_DB;
+  this.synonyms = null;
   this.is_suggestions_enabled = true;
   this.is_synonyms_enabled = true;
 

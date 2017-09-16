@@ -47,6 +47,7 @@ function Left()
 
     this.theme.start();
 
+    this.dictionary.synonyms = SYN_DB;
     this.dictionary.update();
     this.refresh();
     this.refresh_settings();
