@@ -5,6 +5,12 @@ function Dict()
   this.is_suggestions_enabled = true;
   this.is_synonyms_enabled = true;
 
+  this.start = function()
+  {
+    this.synonyms = SYN_DB;
+    this.build_synonyms();
+  }
+
   this.build_synonyms = function()
   {
     for(target_word in this.synonyms){
@@ -69,6 +75,4 @@ function Dict()
       }
     }
   }
-
-  this.build_synonyms();
 }
