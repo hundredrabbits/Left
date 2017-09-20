@@ -3,8 +3,9 @@ function Left()
   this.theme = new Theme();
   this.dictionary = new Dict();
   this.operator = new Operator();
+  this.navi = new Navi();
+  this.source = new Source();
 
-  this.navi_el        = document.createElement('navi');
   this.textarea_el    = document.createElement('textarea');
   this.stats_el       = document.createElement('stats');
   this.scroll_el      = document.createElement('scrollbar');
@@ -20,7 +21,7 @@ function Left()
   this.path = null;
 
   document.body.appendChild(this.theme.el);
-  document.body.appendChild(this.navi_el);
+  document.body.appendChild(this.navi.el);
   document.body.appendChild(this.textarea_el);
   document.body.appendChild(this.stats_el);
   document.body.appendChild(this.scroll_el);
@@ -62,65 +63,8 @@ function Left()
 
     left.suggestion = (next_char == "" || next_char == " " || next_char == "\n") ? left.dictionary.find_suggestion(left.current_word) : null;
 
-    this.refresh_navi();
+    this.navi.update();
     this.refresh_stats();
-    left.refresh_scrollbar();
-  }
-
-  this.active_line_id = function()
-  {
-    var segments = left.textarea_el.value.substr(0,left.textarea_el.selectionEnd).split("\n");
-    return segments.length-1;
-  }
-
-  this.find_markers = function()
-  {
-    var text = left.textarea_el.value;
-    var lines = text.split("\n");
-    var markers = [];
-
-    left.lines_count = lines.length;
-    left.words_count = text.split(" ").length;
-    left.chars_count = text.length;
-
-    for(var line_id in lines){
-      var line = lines[line_id];
-      if(line.substr(0,3) == "  \"" && line.indexOf(":") > -1){
-        var text = line.split(":")[0].replace(/\"/g,'');
-        markers.push({text:text,line:line_id,type:"header"});        
-      }
-      if(line.substr(0,2) == "@ " || line.substr(0,2) == "# "){
-        var text = line.replace("@ ","").replace("# ","");
-        markers.push({text:text,line:line_id,type:"header"});
-      }
-      if(line.substr(0,2) == "$ " || line.substr(0,3) == "## "){
-        var text = line.replace("@ ","").replace("## ","");
-        markers.push({text:text,line:line_id,type:"note"});
-      }
-    }
-    return markers;
-  }
-
-  this.refresh_navi = function()
-  {
-    var markers = left.find_markers();
-    left.navi_el.innerHTML = "";
-    var active_line_id = left.active_line_id();
-    var i = 0;
-    for(marker_id in markers){
-      var marker = markers[marker_id];
-      var next_marker = markers[i+1];
-
-      var el = document.createElement('li');
-      el.destination = marker.line;
-      el.innerHTML = marker.text+"<span>"+marker.line+"</span>";
-      el.className = active_line_id >= marker.line && (next_marker && active_line_id < next_marker.line) ? marker.type+" active" : marker.type;
-      el.className += marker.type == "header" ? " fh" : " fm";
-      el.onmouseup = function on_mouseup(e){ left.go_to_line(e.target.destination); }
-      left.navi_el.appendChild(el);
-
-      i += 1;
-    }
   }
 
   this.refresh_stats = function()
@@ -145,11 +89,12 @@ function Left()
     left.stats_el.innerHTML = left.synonyms ? " <b>"+left.current_word+"</b> "+synonym_html : ""+stats.l+"L "+stats.w+"W "+stats.v+"V "+stats.c+"C "+suggestion_html+synonym_html;
   }
 
-  this.refresh_scrollbar = function()
+  // Location tools
+
+  this.active_line_id = function()
   {
-    var scroll_distance = left.textarea_el.scrollTop;
-    var scroll_max = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight;
-    left.scroll_el.style.height = (scroll_distance/scroll_max) * window.innerHeight;
+    var segments = left.textarea_el.value.substr(0,left.textarea_el.selectionEnd).split("\n");
+    return segments.length-1;
   }
 
   this.active_word_location = function(position = left.textarea_el.selectionEnd)
@@ -226,31 +171,6 @@ function Left()
   {
     var suggestion = left.suggestion;
     this.inject(suggestion.substr(left.current_word.length,suggestion.length));
-  }
-
-  this.simple_export = function()
-  {
-    var text = left.textarea_el.value;
-    var blob = new Blob([text], {type: "text/plain;charset=" + document.characterSet});
-    var d = new Date(), e = new Date(d);
-    var since_midnight = e - d.setHours(0,0,0,0);
-    var timestamp = parseInt((since_midnight/864) * 10);
-    saveAs(blob, "backup."+timestamp+".txt");
-  }
-
-  this.export = function()
-  {
-    if(typeof dialog == "undefined"){ this.simple_export(); return; }
-
-    var str = left.textarea_el.value;
-
-    dialog.showSaveDialog((fileName) => {
-      if (fileName === undefined){ return; }
-      fs.writeFile(fileName+".txt", str, (err) => {
-        if(err){ alert("An error ocurred creating the file "+ err.message); return; }
-        left.path = fileName+".txt";
-      });
-    }); 
   }
 
   this.go_to_line = function(line_id)
@@ -381,59 +301,6 @@ function Left()
     left.refresh();
   }
 
-  this.load = function(content,path = "")
-  {
-    if(is_json(content)){
-      var obj = JSON.parse(content);
-      content = this.format_json(obj);
-    }
-
-    if(left.textarea_el.value != ""){
-      left.stats_el.innerHTML = "Erase content before loading a new file.";
-      return;
-    }
-
-    var file_type = path.split(".")[path.split(".").length-1];
-
-    if(file_type == "thm"){
-      left.theme.install(obj);
-    }
-
-    left.path = path ? path : null;
-    left.textarea_el.value = content;
-    left.dictionary.update();
-    left.refresh();
-    left.stats_el.innerHTML = "<b>Loaded</b> "+path;
-  }
-
-  this.open = function()
-  {
-    var filepath = dialog.showOpenDialog({properties: ['openFile']});
-
-    if(!filepath){ console.log("Nothing to load"); return; }
-
-    fs.readFile(filepath[0], 'utf-8', (err, data) => {
-      if(err){ alert("An error ocurred reading the file :" + err.message); return; }
-
-      left.load(data,filepath[0]);
-    });
-  }
-
-  this.save = function()
-  {
-    if(!left.path){ left.export(); return; }
-    fs.writeFile(left.path, left.textarea_el.value, (err) => {
-      if(err) { alert("An error ocurred updating the file" + err.message); console.log(err); return; }
-      left.stats_el.innerHTML = "<b>Saved</b> "+left.path;
-    });
-  }
-
-  this.save_backup = function()
-  {
-    localStorage.setItem("backup", left.textarea_el.value);
-    console.log("Saved backup");
-  }
-
   this.time = function()
   {
     var d = new Date(), e = new Date(d);
@@ -457,142 +324,7 @@ function Left()
   {
     return JSON.stringify(obj, null, "  ");
   }
-
-  document.onkeyup = function key_up(e)
-  {
-    if(left.operator.is_active){
-      e.preventDefault();
-      return;
-    }
-  }
-
-  document.onkeydown = function key_down(e)
-  {
-    // Operator
-    if(e.key == "k" && (e.ctrlKey || e.metaKey)){
-      e.preventDefault();
-      left.operator.start();
-      return;
-    }
-
-    if(left.operator.is_active){
-      e.preventDefault();
-      if(e.key == "Escape"){
-        left.operator.stop();
-      }
-      else{
-        left.operator.input(e);
-      }
-      return;
-    }
-
-    // Save
-    if(e.key == "S" && (e.ctrlKey || e.metaKey)){
-      e.preventDefault();
-      left.export();
-    }
-
-    // Reset
-    if((e.key == "Backspace" || e.key == "Delete") && e.ctrlKey && e.shiftKey){
-      e.preventDefault();
-      left.reset();
-    }
-
-    // Autocomplete
-    if(e.keyCode == 9){
-      e.preventDefault();
-      if(left.suggestion && left.suggestion.toLowerCase() != left.active_word().toLowerCase()){ left.autocomplete(); }
-      else if(left.synonyms){ left.replace_active_word_with(left.synonyms[left.synonym_index % left.synonyms.length]); }
-    }
-
-    if(e.key == "]" && (e.ctrlKey || e.metaKey)){
-      e.preventDefault();
-      left.go_to_next();
-    }
-
-    if(e.key == "[" && (e.ctrlKey || e.metaKey)){
-      e.preventDefault();
-      left.go_to_prev();
-    }
-
-    if(e.key == "n" && (e.ctrlKey || e.metaKey)){
-      e.preventDefault();
-      left.clear();
-    }
-
-    if(e.key == "o" && (e.ctrlKey || e.metaKey)){
-      e.preventDefault();
-      left.open();
-    }
-
-    if(e.key == "s" && (e.ctrlKey || e.metaKey)){
-      e.preventDefault();
-      left.save();
-    }
-
-    // Slower Refresh
-    if(e.key == "Enter"){
-      left.dictionary.update();
-      left.save_backup();
-      left.theme.save();
-    }
-
-    // Reset index on space
-    if(e.key == " " || e.key == "Enter"){
-      left.synonym_index = 0;
-    }
-
-    left.refresh();
-  };
-
-  left.textarea_el.addEventListener('wheel', function(e)
-  {
-    e.preventDefault();
-    left.textarea_el.scrollTop += e.wheelDeltaY * -0.25;
-    left.refresh_scrollbar();
-  }, false);
-
-  document.oninput = function on_input(e)
-  {
-    left.refresh();
-  }
-
-  document.onmouseup = function on_mouseup(e)
-  {
-    left.operator.stop();
-    left.refresh();
-  }
 }
-
-window.addEventListener('dragover',function(e)
-{
-  e.stopPropagation();
-  e.preventDefault();
-  e.dataTransfer.dropEffect = 'copy';
-});
-
-window.addEventListener('drop', function(e)
-{
-  e.stopPropagation();
-  e.preventDefault();
-
-  var files = e.dataTransfer.files;
-  var file = files[0];
-  
-  if (file.type && !file.type.match(/text.*/)) { console.log("Not text", file.type); return false; }
-
-  var path = file.path ? file.path : file.name;
-  var reader = new FileReader();
-  reader.onload = function(e){
-    left.load(e.target.result,path)
-  };
-  reader.readAsText(file);
-});
-
-window.onbeforeunload = function(e)
-{
-  left.save_backup();
-};
 
 function is_json(text)
 {
