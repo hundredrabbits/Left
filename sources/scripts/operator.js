@@ -28,6 +28,11 @@ function Operator()
 
   this.input = function(e)
   {
+    if(e.key == "Escape"){
+      this.stop();
+      return;
+    }
+
     if(e.key == "Enter"){
       this.operate();
       return;

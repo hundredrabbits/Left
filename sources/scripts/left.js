@@ -10,6 +10,8 @@ function Left()
   this.stats_el       = document.createElement('stats');
   this.scroll_el      = document.createElement('scrollbar');
 
+  this.selection = {word: null,index:0};
+
   this.words_count = null;
   this.lines_count = null;
   this.chars_count = null;
@@ -17,8 +19,6 @@ function Left()
   this.suggestion = null;
   this.synonyms = null;
   this.synonym_index = 0;
-
-  this.path = null;
 
   document.body.appendChild(this.theme.el);
   document.body.appendChild(this.navi.el);
@@ -57,6 +57,7 @@ function Left()
   this.refresh = function()
   {
     left.current_word = left.active_word();
+    left.selection.word = this.active_word();
 
     // Only look for suggestion is at the end of word, or text.
     var next_char = this.textarea_el.value.substr(left.textarea_el.selectionEnd,1);
@@ -64,10 +65,10 @@ function Left()
     left.suggestion = (next_char == "" || next_char == " " || next_char == "\n") ? left.dictionary.find_suggestion(left.current_word) : null;
 
     this.navi.update();
-    this.refresh_stats();
+    this.update_stats();
   }
 
-  this.refresh_stats = function()
+  this.update_stats = function()
   {
     var stats = {};
     stats.l = left.lines_count;
@@ -83,10 +84,10 @@ function Left()
     synonym_html = "";
 
     for(syn_id in left.synonyms){
-      synonym_html += syn_id == (left.synonym_index % left.synonyms.length) ? "<i>"+left.synonyms[syn_id]+"</i> " : left.synonyms[syn_id]+" ";
+      synonym_html += syn_id == (left.synonym_index % left.synonyms.length) ? "> <i>"+left.synonyms[syn_id]+"</i> " : left.synonyms[syn_id]+" ";
     }
 
-    left.stats_el.innerHTML = left.synonyms ? " <b>"+left.current_word+"</b> "+synonym_html : ""+stats.l+"L "+stats.w+"W "+stats.v+"V "+stats.c+"C "+suggestion_html+synonym_html;
+    left.stats_el.innerHTML = left.synonyms ? " <b>"+left.selection.word+"</b> "+synonym_html : ""+stats.l+"L "+stats.w+"W "+stats.v+"V "+stats.c+"C "+suggestion_html+synonym_html;
   }
 
   // Location tools
@@ -151,8 +152,6 @@ function Left()
     this.textarea_el.focus();
 
     left.synonym_index += 1;
-
-    left.refresh_stats();
   }
 
   this.inject = function(characters = "__")
@@ -313,26 +312,9 @@ function Left()
   this.splash = function()
   {
     var time = this.time();
-
     if(time > 800){ return "Good evening."; }
     if(time > 600){ return "Good afternoon."; }
     if(time < 350){ return "Good morning."; }
     return "Good day.";
-  }
-
-  this.format_json = function(obj)
-  {
-    return JSON.stringify(obj, null, "  ");
-  }
-}
-
-function is_json(text)
-{
-  try{
-      JSON.parse(text);
-      return true;
-  }
-  catch (error){
-    return false;
   }
 }

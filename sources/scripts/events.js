@@ -1,43 +1,3 @@
-
-window.addEventListener('dragover',function(e)
-{
-  e.stopPropagation();
-  e.preventDefault();
-  e.dataTransfer.dropEffect = 'copy';
-});
-
-window.addEventListener('drop', function(e)
-{
-  e.stopPropagation();
-  e.preventDefault();
-
-  var files = e.dataTransfer.files;
-  var file = files[0];
-  
-  if (file.type && !file.type.match(/text.*/)) { console.log("Not text", file.type); return false; }
-
-  var path = file.path ? file.path : file.name;
-  var reader = new FileReader();
-  reader.onload = function(e){
-    left.load(e.target.result,path)
-  };
-  reader.readAsText(file);
-});
-
-window.onbeforeunload = function(e)
-{
-  left.source.backup();
-};
-
-
-document.onkeyup = function key_up(e)
-{
-  if(left.operator.is_active){
-    e.preventDefault();
-    return;
-  }
-}
-
 document.onkeydown = function key_down(e)
 {
   // Operator
@@ -49,12 +9,7 @@ document.onkeydown = function key_down(e)
 
   if(left.operator.is_active){
     e.preventDefault();
-    if(e.key == "Escape"){
-      left.operator.stop();
-    }
-    else{
-      left.operator.input(e);
-    }
+    left.operator.input(e);
     return;
   }
 
@@ -73,8 +28,16 @@ document.onkeydown = function key_down(e)
   // Autocomplete
   if(e.keyCode == 9){
     e.preventDefault();
-    if(left.suggestion && left.suggestion.toLowerCase() != left.active_word().toLowerCase()){ left.autocomplete(); }
-    else if(left.synonyms){ left.replace_active_word_with(left.synonyms[left.synonym_index % left.synonyms.length]); }
+
+    if(left.suggestion && left.suggestion.toLowerCase() != left.active_word().toLowerCase()){ 
+      left.autocomplete(); 
+    }
+    else if(left.synonyms){
+      var synonyms = left.dictionary.find_synonym(left.selection.word);
+      left.replace_active_word_with(synonyms[left.synonym_index % synonyms.length]); 
+      left.update_stats();
+    }
+    return;
   }
 
   if(e.key == "]" && (e.ctrlKey || e.metaKey)){
@@ -116,6 +79,45 @@ document.onkeydown = function key_down(e)
 
   left.refresh();
 };
+
+window.addEventListener('dragover',function(e)
+{
+  e.stopPropagation();
+  e.preventDefault();
+  e.dataTransfer.dropEffect = 'copy';
+});
+
+window.addEventListener('drop', function(e)
+{
+  e.stopPropagation();
+  e.preventDefault();
+
+  var files = e.dataTransfer.files;
+  var file = files[0];
+  
+  if (file.type && !file.type.match(/text.*/)) { console.log("Not text", file.type); return false; }
+
+  var path = file.path ? file.path : file.name;
+  var reader = new FileReader();
+  reader.onload = function(e){
+    left.load(e.target.result,path)
+  };
+  reader.readAsText(file);
+});
+
+window.onbeforeunload = function(e)
+{
+  left.source.backup();
+};
+
+
+document.onkeyup = function key_up(e)
+{
+  if(left.operator.is_active){
+    e.preventDefault();
+    return;
+  }
+}
 
 document.addEventListener('wheel', function(e)
 {

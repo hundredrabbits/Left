@@ -1,5 +1,6 @@
 function Source()
-{
+{  
+  this.path = null;
   
   this.load = function(content,path = "")
   {
@@ -77,5 +78,21 @@ function Source()
         left.path = fileName+".txt";
       });
     }); 
+  }
+
+  this.format_json = function(obj)
+  {
+    return JSON.stringify(obj, null, "  ");
+  }
+
+  function is_json(text)
+  {
+    try{
+        JSON.parse(text);
+        return true;
+    }
+    catch (error){
+      return false;
+    }
   }
 }
