@@ -1,6 +1,5 @@
 document.onkeydown = function key_down(e)
 {
-
   // Reset
 
   if((e.key == "Backspace" || e.key == "Delete") && e.ctrlKey && e.shiftKey){
@@ -27,25 +26,25 @@ document.onkeydown = function key_down(e)
 
   if(e.key == "n" && (e.ctrlKey || e.metaKey)){
     e.preventDefault();
-    left.clear();
+    left.source.clear();
     return;
   }
 
   if(e.key == "o" && (e.ctrlKey || e.metaKey)){
     e.preventDefault();
-    left.open();
+    left.source.open();
     return;
   }
 
   if(e.key == "s" && (e.ctrlKey || e.metaKey)){
     e.preventDefault();
-    left.save();
+    left.source.save();
     return;
   }
 
   if(e.key == "S" && (e.ctrlKey || e.metaKey)){
     e.preventDefault();
-    left.export();
+    left.source.export();
     return;
   }
 
@@ -61,7 +60,6 @@ document.onkeydown = function key_down(e)
       left.replace_active_word_with(synonyms[left.selection.index % synonyms.length]); 
       left.update_stats();
     }
-
     left.selection.index += 1;
     return;
   }
@@ -79,10 +77,9 @@ document.onkeydown = function key_down(e)
   }
 
   // Slower Refresh
-  if(e.key == "Enter"){
+  if(e.key == "Enter" && left.textarea_el.value.length > 50000 || left.textarea_el.value.length < 50000 ){
     left.dictionary.update();
     left.source.backup();
-    left.theme.save();
   }
 
   // Reset index on space
@@ -113,7 +110,7 @@ window.addEventListener('drop', function(e)
   var path = file.path ? file.path : file.name;
   var reader = new FileReader();
   reader.onload = function(e){
-    left.load(e.target.result,path)
+    left.source.load(e.target.result,path)
   };
   reader.readAsText(file);
 });
@@ -121,15 +118,6 @@ window.addEventListener('drop', function(e)
 window.onbeforeunload = function(e)
 {
   left.source.backup();
-};
-
-
-document.onkeyup = function key_up(e)
-{
-  if(left.operator.is_active){
-    e.preventDefault();
-    return;
-  }
 }
 
 document.addEventListener('wheel', function(e)
@@ -137,7 +125,7 @@ document.addEventListener('wheel', function(e)
   e.preventDefault();
   left.textarea_el.scrollTop += e.wheelDeltaY * -0.25;
   left.navi.update_scrollbar();
-}, false);
+}, false)
 
 document.oninput = function on_input(e)
 {
@@ -146,6 +134,7 @@ document.oninput = function on_input(e)
 
 document.onmouseup = function on_mouseup(e)
 {
+  left.selection.index = 0;
   left.operator.stop();
   left.refresh();
 }

@@ -241,21 +241,6 @@ function Left()
     left.textarea_el.setSelectionRange(from,to);
   }
 
-  this.reset = function()
-  {
-    left.textarea_el.value = left.splash();
-    localStorage.setItem("backup", null);
-    left.dictionary.update();
-    left.refresh();
-  }
-
-  this.clear = function()
-  {
-    left.textarea_el.value = "";
-    left.dictionary.update();
-    left.refresh();
-  }
-
   this.time = function()
   {
     var d = new Date(), e = new Date(d);
@@ -272,5 +257,13 @@ function Left()
     if(time > 600){ return "Good afternoon."; }
     if(time < 350){ return "Good morning."; }
     return "Good day.";
+  }
+
+  this.reset = function()
+  {
+    left.textarea_el.value = left.splash();
+    localStorage.setItem("backup", null);
+    left.dictionary.update();
+    left.refresh();
   }
 }

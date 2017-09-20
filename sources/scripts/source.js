@@ -1,7 +1,14 @@
 function Source()
 {  
   this.path = null;
-  
+
+  this.clear = function()
+  {
+    left.textarea_el.value = "";
+    left.dictionary.update();
+    left.refresh();
+  }
+
   this.load = function(content,path = "")
   {
     if(is_json(content)){
@@ -20,7 +27,7 @@ function Source()
       left.theme.install(obj);
     }
 
-    left.path = path ? path : null;
+    this.path = path ? path : null;
     left.textarea_el.value = content;
     left.dictionary.update();
     left.refresh();
@@ -42,10 +49,10 @@ function Source()
 
   this.save = function()
   {
-    if(!left.path){ left.export(); return; }
-    fs.writeFile(left.path, left.textarea_el.value, (err) => {
+    if(!this.path){ left.export(); return; }
+    fs.writeFile(this.path, left.textarea_el.value, (err) => {
       if(err) { alert("An error ocurred updating the file" + err.message); console.log(err); return; }
-      left.stats_el.innerHTML = "<b>Saved</b> "+left.path;
+      left.stats_el.innerHTML = "<b>Saved</b> "+this.path;
     });
   }
 
@@ -75,7 +82,7 @@ function Source()
       if (fileName === undefined){ return; }
       fs.writeFile(fileName+".txt", str, (err) => {
         if(err){ alert("An error ocurred creating the file "+ err.message); return; }
-        left.path = fileName+".txt";
+        this.path = fileName+".txt";
       });
     }); 
   }
