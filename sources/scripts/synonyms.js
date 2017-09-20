@@ -16020,7 +16020,7 @@ var SYN_DB = {
     "sanction",
     "direct"
   ],
-  "2mpty": [
+  "Empty": [
     "void",
     "vacant",
     "unoccupied",

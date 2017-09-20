@@ -12,6 +12,8 @@ The application guide is displayed within the application. To reset Left and dis
 
 - Add a find method, with `ctrl f`.
 - Add selection modifiers for capitalization, etc..
+- Project view/Open Folders
+- Clicking icon on dock, shows the application. Replicate on Left.
 
 ## Development
 

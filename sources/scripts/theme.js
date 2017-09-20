@@ -4,9 +4,9 @@ function Theme()
   this.active = null;
 
   this.collection = {};
-  this.collection.blanc = { background:"#eee",f_high:"#111",f_med:"#999",f_low:"#bbb",f_inv:"#fff",f_special:"#000",b_high:"#000",b_med:"#999",b_low:"#ddd",b_inv:"#999",b_special:"#72dec2" };
-  this.collection.noir = { background: "#000", f_high: "#fff", f_med: "#999", f_low: "#555", f_inv: "#000", f_special: "#000", b_high: "#000", b_med: "#555", b_low: "#222", b_inv: "#fff", b_special: "#72dec2" };
-  this.collection.pale = { background: "#555", f_high: "#fff", f_med: "#999", f_low: "#bbb", f_inv: "#555", f_special: "#555", b_high: "#000", b_med: "#999", b_low: "#666", b_inv: "#fff", b_special: "#ccc" };
+  this.collection.blanc = { background:"#eee",f_high:"#111",f_med:"#999",f_low:"#bbb",f_inv:"#fff",b_high:"#000",b_med:"#999",b_low:"#ddd",b_inv:"#999"};
+  this.collection.noir = { background: "#000", f_high: "#fff", f_med: "#999", f_low: "#555", f_inv: "#000", b_high: "#000", b_med: "#555", b_low: "#222", b_inv: "#fff" };
+  this.collection.pale = { background: "#555", f_high: "#fff", f_med: "#999", f_low: "#bbb", f_inv: "#555", b_high: "#000", b_med: "#999", b_low: "#666", b_inv: "#fff" };
 
   this.start = function()
   {
@@ -51,13 +51,13 @@ function Theme()
     html += ".bm { background:"+theme.b_med+" !important ; fill:"+theme.b_med+" !important }\n";
     html += ".bl { background:"+theme.b_low+" !important ; fill:"+theme.b_low+" !important }\n";
     html += ".b_inv { background:"+theme.b_inv+" !important ; fill:"+theme.b_inv+" !important }\n";
-    html += ".b_special { background:"+theme.b_special+" !important ; fill:"+theme.b_special+" !important }\n";
 
     html += "navi { border-right: 1px dotted "+theme.b_low+" !important }\n";
     html += "scrollbar { background:"+theme.b_med+" !important }\n";
     html += "textarea { color:"+theme.f_high+" !important }\n";
     html += "stats { color:"+theme.f_low+" !important }\n";
     html += "stats b { color:"+theme.f_high+" !important }\n";
+    html += "highlight b { background:"+theme.b_low+" !important; }\n";
     html += "::selection { background:"+theme.b_inv+" !important; color:"+theme.f_inv+" }\n";
 
     this.el.innerHTML = html;

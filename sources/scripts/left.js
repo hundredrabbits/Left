@@ -2,8 +2,10 @@ function Left()
 {
   this.theme = new Theme();
   this.dictionary = new Dict();
+  this.operator = new Operator();
 
   this.navi_el        = document.createElement('navi');
+  this.highlight_el      = document.createElement('highlight');
   this.textarea_el    = document.createElement('textarea');
   this.stats_el       = document.createElement('stats');
   this.scroll_el      = document.createElement('scrollbar');
@@ -20,6 +22,7 @@ function Left()
 
   document.body.appendChild(this.theme.el);
   document.body.appendChild(this.navi_el);
+  document.body.appendChild(this.highlight_el);
   document.body.appendChild(this.textarea_el);
   document.body.appendChild(this.stats_el);
   document.body.appendChild(this.scroll_el);
@@ -66,6 +69,7 @@ function Left()
     this.refresh_navi();
     this.refresh_stats();
     left.refresh_scrollbar();
+    left.refresh_highlight();
   }
 
   this.active_line_id = function()
@@ -137,6 +141,7 @@ function Left()
 
     // Synonyms
     left.synonyms = this.dictionary.find_synonym(left.current_word);
+
     synonym_html = "";
 
     for(syn_id in left.synonyms){
@@ -177,33 +182,69 @@ function Left()
     left.scroll_el.style.height = (scroll_distance/scroll_max) * window.innerHeight;
   }
 
-  this.active_word = function()
+  this.refresh_highlight = function()
   {
-    var before = this.textarea_el.value.substr(0,left.textarea_el.selectionEnd);
-    var words = before.replace(/\n/g," ").split(" ");
-    var last_word = words[words.length-1];
-    return last_word.replace(/\W/g, '');
+    this.highlight_el.scrollTop = this.textarea_el.scrollTop;
+
+    var lines = this.textarea_el.value.split("\n");
+
+    var html = "";
+    for(line_id in lines){
+      var line = lines[line_id];
+      html += line.substr(0,3) == ">> " || line.substr(0,2) == "# " || line.substr(0,3) == "## " ? "<b>"+line+"</b>" : line;
+      html += "\n"
+    }
+
+    this.highlight_el.innerHTML = html;
   }
 
-  this.active_word_length = function()
+  this.active_word_location = function(position = left.textarea_el.selectionEnd)
   {
-    var before = this.textarea_el.value.substr(0,left.textarea_el.selectionEnd);
+    var from = position - 1;
 
-    var l = 0;
-    while(l < 40){
-      var char = before[before.length-(l+1)];
-      if(char.length != 1 || !char.match(/[a-z]/i)){
-        return l;
+    // Find beginning of word 
+    while(from > -1){
+      char = this.textarea_el.value[from];
+      if(!char || !char.match(/[a-z]/i)){
+        break;
       }
-      l += 1;
+      from -= 1;
     }
-    return null;
+
+    // Find end of word
+    var to = from+1;
+    while(to < from+30){
+      char = this.textarea_el.value[to];
+      if(!char || !char.match(/[a-z]/i)){
+        break;
+      }
+      to += 1;
+    }
+
+    from += 1;
+
+    return {from:from,to:to};
+  }
+
+  this.active_word = function()
+  {
+    var l = this.active_word_location();
+    return left.textarea_el.value.substr(l.from,l.to-l.from);
   }
 
   this.replace_active_word_with = function(word)
   {
-    var before = this.textarea_el.value.substr(0,left.textarea_el.selectionEnd-left.active_word_length());
-    var after = this.textarea_el.value.substr(left.textarea_el.selectionEnd,this.textarea_el.value.length);
+    var l = this.active_word_location();
+    var w = left.textarea_el.value.substr(l.from,l.to-l.from);
+
+    // Preserve capitali.ation
+    if(w.substr(0,1) == w.substr(0,1).toUpperCase()){
+      word = word.substr(0,1).toUpperCase()+word.substr(1,word.length);
+    }
+
+    var before = this.textarea_el.value.substr(0,l.from);
+    var after = this.textarea_el.value.substr(l.to);
+
     var target_selection = before.length+word.length;
     this.textarea_el.value = before+word+after;
 
@@ -283,6 +324,8 @@ function Left()
     var perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
     var offset = 60;
     this.textarea_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
+    this.highlight_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
+    return from == -1 ? null : from;
   }
 
   this.go_to_next = function()
@@ -318,6 +361,59 @@ function Left()
       }
       i += 1;
     }
+  }
+
+  this.go_to_word = function(word,from = 0, tries = 0, starting_with = false, ending_with = false)
+  {
+    var target = word;
+    if(starting_with){ target = target.substr(0,target.length-1); }
+    if(ending_with){ target = target.substr(1,target.length-1); }
+
+    if(this.textarea_el.value.substr(from,length).indexOf(target) == -1 || tries < 1){ console.log("failed"); return; }
+
+    var length = this.textarea_el.value.length - from;
+    var segment = this.textarea_el.value.substr(from,length)
+    var location = segment.indexOf(target);
+    var char_before = segment.substr(location-1,1);
+    var char_after = segment.substr(location+target.length,1);
+
+    // Check for full word
+    if(!starting_with && !ending_with && !char_before.match(/[a-z]/i) && !char_after.match(/[a-z]/i)){
+      left.select(location+from,location+from+target.length);
+      var perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
+      var offset = 60;
+      this.textarea_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
+      this.highlight_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
+      return location;
+    }
+    else if(starting_with && !char_before.match(/[a-z]/i) && char_after.match(/[a-z]/i)){
+      left.select(location+from,location+from+target.length);
+      var perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
+      var offset = 60;
+      this.textarea_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
+      this.highlight_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
+      return location;
+    }
+    else if(ending_with && char_before.match(/[a-z]/i) && !char_after.match(/[a-z]/i)){
+      left.select(location+from,location+from+target.length);
+      var perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
+      var offset = 60;
+      this.textarea_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
+      this.highlight_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
+      return location;
+    }
+
+    left.go_to_word(word,location+target.length,tries-1, starting_with,ending_with);
+  }
+
+  this.select = function(from,to)
+  {
+    left.textarea_el.setSelectionRange(from,to);
+  }
+
+  this.selection = function()
+  {
+    return this.textarea_el.value.substr(left.textarea_el.selectionStart,left.textarea_el.selectionEnd - left.textarea_el.selectionStart);
   }
 
   this.reset = function()
@@ -404,13 +500,41 @@ function Left()
     return JSON.stringify(obj, null, "  ");
   }
 
+  document.onkeyup = function key_up(e)
+  {
+    if(left.operator.is_active){
+      e.preventDefault();
+      return;
+    }
+  }
+
   document.onkeydown = function key_down(e)
   {
+    // Operator
+    if(e.key == "k" && (e.ctrlKey || e.metaKey)){
+      e.preventDefault();
+      left.operator.start();
+      return;
+    }
+
+    if(left.operator.is_active){
+      e.preventDefault();
+      if(e.key == "Escape"){
+        left.operator.stop();
+      }
+      else{
+        left.operator.input(e);
+      }
+      return;
+    }
+
+
     // Save
     if(e.key == "S" && (e.ctrlKey || e.metaKey)){
       e.preventDefault();
       left.export();
     }
+
 
     // Reset
     if((e.key == "Backspace" || e.key == "Delete") && e.ctrlKey && e.shiftKey){
@@ -420,22 +544,19 @@ function Left()
 
     // Autocomplete
     if(e.keyCode == 9){
-      console.log(left.suggestion)
       e.preventDefault();
-      if(left.suggestion && left.suggestion != left.active_word()){ left.autocomplete(); }
+      if(left.suggestion && left.suggestion.toLowerCase() != left.active_word().toLowerCase()){ left.autocomplete(); }
       else if(left.synonyms){ left.replace_active_word_with(left.synonyms[left.synonym_index % left.synonyms.length]); }
     }
 
     if(e.key == "]" && (e.ctrlKey || e.metaKey)){
       e.preventDefault();
       left.go_to_next();
-      left.refresh();
     }
 
     if(e.key == "[" && (e.ctrlKey || e.metaKey)){
       e.preventDefault();
       left.go_to_prev();
-      left.refresh();
     }
 
     if(e.key == "n" && (e.ctrlKey || e.metaKey)){
@@ -461,20 +582,19 @@ function Left()
       left.theme.save();
     }
 
-    if(e.key && e.key.substr(0,5) == "Arrow"){
-      left.refresh();
-    }
-
     // Reset index on space
     if(e.key == " " || e.key == "Enter"){
       left.synonym_index = 0;
     }
+
+    left.refresh();
   };
 
   left.textarea_el.addEventListener('wheel', function(e)
   {
     e.preventDefault();
     left.textarea_el.scrollTop += e.wheelDeltaY * -0.25;
+    left.highlight_el.scrollTop += e.wheelDeltaY * -0.25;
     left.refresh_scrollbar();
   }, false);
 
@@ -485,6 +605,7 @@ function Left()
 
   document.onmouseup = function on_mouseup(e)
   {
+    left.operator.stop();
     left.refresh();
   }
 }

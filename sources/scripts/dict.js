@@ -55,6 +55,7 @@ function Dict()
 
   this.find_synonym = function(to_word)
   {
+    to_word = to_word.toLowerCase();
     if(!this.is_synonyms_enabled && this.synonyms){ return null; }
 
     if(this.synonyms[to_word]){ return squash(this.synonyms[to_word]); }

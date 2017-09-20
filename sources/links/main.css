@@ -9,15 +9,10 @@ body stats { display: block;border-bottom: 0px;color: #999;margin-top: 30px;posi
 body stats .right { float:right; }
 body stats b { color:#000; font-family: 'input_mono_regular';}
 body stats i { text-decoration: underline; }
-body textarea { padding: 30px;height: calc(100vh - 60px);display: inline-block;color: black;width: calc(80vw - 91px);position: absolute;left: calc(20vw + 61px);line-height: 20px;resize: none; background:transparent; overflow: hidden; max-width:50%;}
+body textarea,body highlight { padding: 30px;height: calc(100vh - 60px);display: inline-block;color: black;width: calc(80vw - 91px);position: absolute;left: calc(20vw + 61px);line-height: 20px;resize: none; background:transparent; overflow: hidden; max-width:560px;}
+
+body highlight { height: calc(100vh - 120px);width: calc(80vw - 121px);max-width: 500px; white-space: pre-wrap; color:rgba(204, 204, 204, 0);}
+body highlight b { background: #ddd;display: inline-block;}
+body highlight b:before {content:"~"; position: absolute; left:10px;}
 body scrollbar { display: block; background:#ccc; width:1px; height:0px; position:fixed; left:calc(20vw + 60px); top:0px; }
 ::selection { background:#ddd; color:#000; opacity:1.0;}
-
-body.soyuz { background:#222; }
-body.soyuz navi{ color:#fc533e; border-right: 1px solid #333; }
-body.soyuz navi li.note { color:#555;}
-body.soyuz textarea { color:#fc533e; }
-body.soyuz stats { color:#555}
-body.soyuz stats b { background:rgba(0,0,0,0); color:#fc533e; }
-body.soyuz scrollbar { background:#fc533e;  }
-body.soyuz ::selection { background:#777; color:#fff; opacity:1.0;}
