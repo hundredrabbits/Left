@@ -43,14 +43,14 @@ function Source()
     fs.readFile(filepath[0], 'utf-8', (err, data) => {
       if(err){ alert("An error ocurred reading the file :" + err.message); return; }
 
-      left.load(data,filepath[0]);
+      left.source.load(data,filepath[0]);
     });
   }
 
   this.save = function()
   {
-    if(!this.path){ left.export(); return; }
-    fs.writeFile(this.path, left.textarea_el.value, (err) => {
+    if(!this.path){ this.export(); return; }
+    fs.writeFile(left.source.path, left.textarea_el.value, (err) => {
       if(err) { alert("An error ocurred updating the file" + err.message); console.log(err); return; }
       left.stats_el.innerHTML = "<b>Saved</b> "+this.path;
     });
@@ -82,7 +82,7 @@ function Source()
       if (fileName === undefined){ return; }
       fs.writeFile(fileName+".txt", str, (err) => {
         if(err){ alert("An error ocurred creating the file "+ err.message); return; }
-        this.path = fileName+".txt";
+        left.source.path = fileName+".txt";
       });
     }); 
   }
