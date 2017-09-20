@@ -1,6 +1,16 @@
 document.onkeydown = function key_down(e)
 {
+
+  // Reset
+
+  if((e.key == "Backspace" || e.key == "Delete") && e.ctrlKey && e.shiftKey){
+    e.preventDefault();
+    left.reset();
+    return;
+  }
+
   // Operator
+
   if(e.key == "k" && (e.ctrlKey || e.metaKey)){
     e.preventDefault();
     left.operator.start();
@@ -13,56 +23,59 @@ document.onkeydown = function key_down(e)
     return;
   }
 
-  // Save
-  if(e.key == "S" && (e.ctrlKey || e.metaKey)){
-    e.preventDefault();
-    left.export();
-  }
-
-  // Reset
-  if((e.key == "Backspace" || e.key == "Delete") && e.ctrlKey && e.shiftKey){
-    e.preventDefault();
-    left.reset();
-  }
-
-  // Autocomplete
-  if(e.keyCode == 9){
-    e.preventDefault();
-
-    if(left.suggestion && left.suggestion.toLowerCase() != left.active_word().toLowerCase()){ 
-      left.autocomplete(); 
-    }
-    else if(left.synonyms){
-      var synonyms = left.dictionary.find_synonym(left.selection.word);
-      left.replace_active_word_with(synonyms[left.synonym_index % synonyms.length]); 
-      left.update_stats();
-    }
-    return;
-  }
-
-  if(e.key == "]" && (e.ctrlKey || e.metaKey)){
-    e.preventDefault();
-    left.go_to_next();
-  }
-
-  if(e.key == "[" && (e.ctrlKey || e.metaKey)){
-    e.preventDefault();
-    left.go_to_prev();
-  }
+  // New/Open/Save
 
   if(e.key == "n" && (e.ctrlKey || e.metaKey)){
     e.preventDefault();
     left.clear();
+    return;
   }
 
   if(e.key == "o" && (e.ctrlKey || e.metaKey)){
     e.preventDefault();
     left.open();
+    return;
   }
 
   if(e.key == "s" && (e.ctrlKey || e.metaKey)){
     e.preventDefault();
     left.save();
+    return;
+  }
+
+  if(e.key == "S" && (e.ctrlKey || e.metaKey)){
+    e.preventDefault();
+    left.export();
+    return;
+  }
+
+  // Autocomplete
+
+  if(e.keyCode == 9){
+    e.preventDefault();
+    if(left.suggestion && left.suggestion.toLowerCase() != left.active_word().toLowerCase()){ 
+      left.autocomplete(); 
+    }
+    else if(left.synonyms){
+      var synonyms = left.dictionary.find_synonym(left.selection.word);
+      left.replace_active_word_with(synonyms[left.selection.index % synonyms.length]); 
+      left.update_stats();
+    }
+
+    left.selection.index += 1;
+    return;
+  }
+
+  // Navi
+
+  if(e.key == "]" && (e.ctrlKey || e.metaKey)){
+    e.preventDefault();
+    left.navi.next();
+  }
+
+  if(e.key == "[" && (e.ctrlKey || e.metaKey)){
+    e.preventDefault();
+    left.navi.prev();
   }
 
   // Slower Refresh
@@ -74,7 +87,7 @@ document.onkeydown = function key_down(e)
 
   // Reset index on space
   if(e.key == " " || e.key == "Enter"){
-    left.synonym_index = 0;
+    left.selection.index = 0;
   }
 
   left.refresh();

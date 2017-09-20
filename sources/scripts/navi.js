@@ -55,4 +55,37 @@ function Navi()
     var scroll_max = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight;
     left.scroll_el.style.height = (scroll_distance/scroll_max) * window.innerHeight;
   }
+
+  this.next = function()
+  {
+    var active_line_id = left.active_line_id();
+
+    for(marker_id in this.markers){
+      var marker = this.markers[marker_id];
+      if(marker.line > active_line_id){
+        left.go_to_line(marker.line);
+        break;
+      }
+    }
+  }
+
+  this.prev = function()
+  {
+    var active_line_id = left.active_line_id();
+
+    var i = 0;
+    for(marker_id in this.markers){
+      var next_marker = this.markers[i+1];
+
+      if(this.markers[i-1] && next_marker && next_marker.line > active_line_id){
+        left.go_to_line(this.markers[i-1].line);
+        break;
+      }
+      else if(!next_marker){
+        left.go_to_line(this.markers[i-1].line);
+        break;
+      }
+      i += 1;
+    }
+  }
 }

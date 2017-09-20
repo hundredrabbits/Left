@@ -10,15 +10,13 @@ function Left()
   this.stats_el       = document.createElement('stats');
   this.scroll_el      = document.createElement('scrollbar');
 
-  this.selection = {word: null,index:0};
+  this.selection = {word: null,index:1};
 
   this.words_count = null;
   this.lines_count = null;
   this.chars_count = null;
-  this.current_word = null;
   this.suggestion = null;
   this.synonyms = null;
-  this.synonym_index = 0;
 
   document.body.appendChild(this.theme.el);
   document.body.appendChild(this.navi.el);
@@ -56,13 +54,12 @@ function Left()
 
   this.refresh = function()
   {
-    left.current_word = left.active_word();
     left.selection.word = this.active_word();
 
     // Only look for suggestion is at the end of word, or text.
     var next_char = this.textarea_el.value.substr(left.textarea_el.selectionEnd,1);
 
-    left.suggestion = (next_char == "" || next_char == " " || next_char == "\n") ? left.dictionary.find_suggestion(left.current_word) : null;
+    left.suggestion = (next_char == "" || next_char == " " || next_char == "\n") ? left.dictionary.find_suggestion(left.selection.word) : null;
 
     this.navi.update();
     this.update_stats();
@@ -76,18 +73,19 @@ function Left()
     stats.c = left.chars_count;
     stats.v = left.dictionary.vocabulary.length-1;
 
-    suggestion_html = (left.current_word && left.suggestion && left.current_word != left.suggestion) ? " <t>"+left.current_word+"<b>"+left.suggestion.substr(left.current_word.length,left.suggestion.length)+"</b></t>" : "";
+    var suggestion_html = "";
+    var synonym_html = " <b>"+left.selection.word+"</b> ";
 
-    // Synonyms
-    left.synonyms = this.dictionary.find_synonym(left.current_word);
-
-    synonym_html = "";
-
-    for(syn_id in left.synonyms){
-      synonym_html += syn_id == (left.synonym_index % left.synonyms.length) ? "> <i>"+left.synonyms[syn_id]+"</i> " : left.synonyms[syn_id]+" ";
+    if(left.selection.word && left.suggestion && left.selection.word != left.suggestion){
+      suggestion_html = " <t>"+left.selection.word+"<b>"+left.suggestion.substr(left.selection.word.length,left.suggestion.length)+"</b></t>"
     }
-
-    left.stats_el.innerHTML = left.synonyms ? " <b>"+left.selection.word+"</b> "+synonym_html : ""+stats.l+"L "+stats.w+"W "+stats.v+"V "+stats.c+"C "+suggestion_html+synonym_html;
+    else{
+      left.synonyms = this.dictionary.find_synonym(left.selection.word);
+      for(syn_id in left.synonyms){
+        synonym_html += syn_id == (left.selection.index % left.synonyms.length) ? "<i>"+left.synonyms[syn_id]+"</i> " : left.synonyms[syn_id]+" ";
+      }
+    }
+    left.stats_el.innerHTML = left.synonyms ? synonym_html : ""+stats.l+"L "+stats.w+"W "+stats.v+"V "+stats.c+"C "+suggestion_html;
   }
 
   // Location tools
@@ -150,8 +148,6 @@ function Left()
 
     this.textarea_el.setSelectionRange(target_selection,target_selection);
     this.textarea_el.focus();
-
-    left.synonym_index += 1;
   }
 
   this.inject = function(characters = "__")
@@ -169,7 +165,7 @@ function Left()
   this.autocomplete = function()
   {
     var suggestion = left.suggestion;
-    this.inject(suggestion.substr(left.current_word.length,suggestion.length));
+    this.inject(suggestion.substr(left.selection.word.length,suggestion.length));
   }
 
   this.go_to_line = function(line_id)
@@ -198,41 +194,6 @@ function Left()
     var offset = 60;
     this.textarea_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
     return from == -1 ? null : from;
-  }
-
-  this.go_to_next = function()
-  {
-    var markers = left.find_markers();
-    var active_line_id = left.active_line_id();
-
-    for(marker_id in markers){
-      var marker = markers[marker_id];
-      if(marker.line > active_line_id){
-        left.go_to_line(marker.line);
-        break;
-      }
-    }
-  }
-
-  this.go_to_prev = function()
-  {
-    var markers = left.find_markers();
-    var active_line_id = left.active_line_id();
-
-    var i = 0;
-    for(marker_id in markers){
-      var next_marker = markers[i+1];
-
-      if(markers[i-1] && next_marker && next_marker.line > active_line_id){
-        left.go_to_line(markers[i-1].line);
-        break;
-      }
-      else if(!next_marker){
-        left.go_to_line(markers[i-1].line);
-        break;
-      }
-      i += 1;
-    }
   }
 
   this.go_to_word = function(word,from = 0, tries = 0, starting_with = false, ending_with = false)
@@ -278,11 +239,6 @@ function Left()
   this.select = function(from,to)
   {
     left.textarea_el.setSelectionRange(from,to);
-  }
-
-  this.selection = function()
-  {
-    return this.textarea_el.value.substr(left.textarea_el.selectionStart,left.textarea_el.selectionEnd - left.textarea_el.selectionStart);
   }
 
   this.reset = function()
