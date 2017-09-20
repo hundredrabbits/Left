@@ -4,10 +4,8 @@
   "f_med": "#999",
   "f_low": "#555",
   "f_inv": "#555",
-  "f_special": "#333",
   "b_high": "#fc533e",
   "b_med": "#999",
   "b_low": "#333",
-  "b_inv": "#fff",
-  "b_special": "#fc533e"
+  "b_inv": "#fff"
 }

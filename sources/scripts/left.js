@@ -5,7 +5,6 @@ function Left()
   this.operator = new Operator();
 
   this.navi_el        = document.createElement('navi');
-  this.highlight_el      = document.createElement('highlight');
   this.textarea_el    = document.createElement('textarea');
   this.stats_el       = document.createElement('stats');
   this.scroll_el      = document.createElement('scrollbar');
@@ -22,7 +21,6 @@ function Left()
 
   document.body.appendChild(this.theme.el);
   document.body.appendChild(this.navi_el);
-  document.body.appendChild(this.highlight_el);
   document.body.appendChild(this.textarea_el);
   document.body.appendChild(this.stats_el);
   document.body.appendChild(this.scroll_el);
@@ -38,23 +36,21 @@ function Left()
 
   this.start = function()
   {
-    this.textarea_el.focus();
-
     this.theme.start();
     this.dictionary.start();
 
+    this.textarea_el.focus();
 
     if(localStorage.backup){
       this.textarea_el.value = localStorage.backup;
     }
     else{
       this.textarea_el.value = this.splash();
-      this.textarea_el.setSelectionRange(2,9);
+      this.textarea_el.setSelectionRange(0,0);
     }
     
     this.dictionary.update();
     this.refresh();
-    this.refresh_settings();
   }
 
   this.refresh = function()
@@ -69,7 +65,6 @@ function Left()
     this.refresh_navi();
     this.refresh_stats();
     left.refresh_scrollbar();
-    left.refresh_highlight();
   }
 
   this.active_line_id = function()
@@ -134,8 +129,7 @@ function Left()
     stats.l = left.lines_count;
     stats.w = left.words_count;
     stats.c = left.chars_count;
-    stats.v = left.dictionary.vocabulary.length;
-    stats.g = left.goal ? (Math.round( (left.words_count/parseFloat(left.goal) * 100) * 10 ) / 10)+"%" : "";
+    stats.v = left.dictionary.vocabulary.length-1;
 
     suggestion_html = (left.current_word && left.suggestion && left.current_word != left.suggestion) ? " <t>"+left.current_word+"<b>"+left.suggestion.substr(left.current_word.length,left.suggestion.length)+"</b></t>" : "";
 
@@ -148,31 +142,7 @@ function Left()
       synonym_html += syn_id == (left.synonym_index % left.synonyms.length) ? "<i>"+left.synonyms[syn_id]+"</i> " : left.synonyms[syn_id]+" ";
     }
 
-    left.stats_el.innerHTML = left.synonyms ? " <b>"+left.current_word+"</b> "+synonym_html : ""+stats.l+"L "+stats.w+(left.goal ? "/"+left.goal : '')+"W "+stats.v+"V "+stats.c+"C "+stats.g+" "+suggestion_html+synonym_html;
-  }
-
-  this.refresh_settings = function()
-  {
-    if(left.textarea_el.value.indexOf("~ left.theme=") >= 0){
-      var theme_str = left.textarea_el.value.split("~ left.theme=")[1].split(" ")[0].trim();
-      this.theme.load(theme_str);
-    }
-    if(left.textarea_el.value.indexOf("~ left.suggestions=") >= 0){
-      var suggestions_toggle = left.textarea_el.value.split("~ left.suggestions=")[1].split(" ")[0];
-      if(suggestions_toggle == "off"){ left.dictionary.is_suggestions_enabled = false; }
-      if(suggestions_toggle == "on"){ left.dictionary.is_suggestions_enabled = true; }
-    }
-    if(left.textarea_el.value.indexOf("~ left.synonyms=") >= 0){
-      var synonyms_toggle = left.textarea_el.value.split("~ left.synonyms=")[1].split(" ")[0];
-      if(synonyms_toggle == "off"){ left.dictionary.is_synonyms_enabled = false; }
-      if(synonyms_toggle == "on"){ left.dictionary.is_synonyms_enabled = true; }
-    }
-    if(left.textarea_el.value.indexOf("~ left.goal=") >= 0){
-      left.goal = parseInt(left.textarea_el.value.split("~ left.goal=")[1].split(" ")[0]);
-    }
-    else{
-      left.goal = null;
-    }
+    left.stats_el.innerHTML = left.synonyms ? " <b>"+left.current_word+"</b> "+synonym_html : ""+stats.l+"L "+stats.w+"W "+stats.v+"V "+stats.c+"C "+suggestion_html+synonym_html;
   }
 
   this.refresh_scrollbar = function()
@@ -180,22 +150,6 @@ function Left()
     var scroll_distance = left.textarea_el.scrollTop;
     var scroll_max = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight;
     left.scroll_el.style.height = (scroll_distance/scroll_max) * window.innerHeight;
-  }
-
-  this.refresh_highlight = function()
-  {
-    this.highlight_el.scrollTop = this.textarea_el.scrollTop;
-
-    var lines = this.textarea_el.value.split("\n");
-
-    var html = "";
-    for(line_id in lines){
-      var line = lines[line_id];
-      html += line.substr(0,3) == ">> " || line.substr(0,2) == "# " || line.substr(0,3) == "## " ? "<b>"+line+"</b>" : line;
-      html += "\n"
-    }
-
-    this.highlight_el.innerHTML = html;
   }
 
   this.active_word_location = function(position = left.textarea_el.selectionEnd)
@@ -324,7 +278,6 @@ function Left()
     var perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
     var offset = 60;
     this.textarea_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
-    this.highlight_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
     return from == -1 ? null : from;
   }
 
@@ -383,7 +336,6 @@ function Left()
       var perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
       var offset = 60;
       this.textarea_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
-      this.highlight_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
       return location;
     }
     else if(starting_with && !char_before.match(/[a-z]/i) && char_after.match(/[a-z]/i)){
@@ -391,7 +343,6 @@ function Left()
       var perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
       var offset = 60;
       this.textarea_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
-      this.highlight_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
       return location;
     }
     else if(ending_with && char_before.match(/[a-z]/i) && !char_after.match(/[a-z]/i)){
@@ -399,7 +350,6 @@ function Left()
       var perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
       var offset = 60;
       this.textarea_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
-      this.highlight_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
       return location;
     }
 
@@ -421,7 +371,6 @@ function Left()
     left.textarea_el.value = left.splash();
     localStorage.setItem("backup", null);
     left.dictionary.update();
-    left.refresh_settings();
     left.refresh();
   }
 
@@ -430,7 +379,6 @@ function Left()
     left.textarea_el.value = "";
     left.dictionary.update();
     left.refresh();
-    left.refresh_settings();
   }
 
   this.load = function(content,path = "")
@@ -438,6 +386,11 @@ function Left()
     if(is_json(content)){
       var obj = JSON.parse(content);
       content = this.format_json(obj);
+    }
+
+    if(left.textarea_el.value != ""){
+      left.stats_el.innerHTML = "Erase content before loading a new file.";
+      return;
     }
 
     var file_type = path.split(".")[path.split(".").length-1];
@@ -449,7 +402,6 @@ function Left()
     left.path = path ? path : null;
     left.textarea_el.value = content;
     left.dictionary.update();
-    left.refresh_settings();
     left.refresh();
     left.stats_el.innerHTML = "<b>Loaded</b> "+path;
   }
@@ -482,17 +434,23 @@ function Left()
     console.log("Saved backup");
   }
 
+  this.time = function()
+  {
+    var d = new Date(), e = new Date(d);
+    var since_midnight = e - d.setHours(0,0,0,0);
+    var timestamp = parseInt((since_midnight/864) * 10);
+
+    return timestamp/1000;
+  }
+
   this.splash = function()
   {
-    var text = "# Welcome\n\n";
-    text += "Left is a simple, minimalist, open-source and cross-platform text editor. \n\n";
-    text += "## Features\n\n- Create markers by beginning lines with # or ##.\n- Open a text file by dragging it here, or <ctrl o>.\n- Save a text file with <ctrl s>.\n- The synonyms dictionary contains "+Object.keys(left.dictionary.synonyms).length+" common words.\n\n";
-    text += "## Details\n\n- #L, stands for Lines.\n- #W, stands for Words.\n- #V, stands for Vocabulary, or unique words.\n- #C, stands for Characters.\n\n";
-    text += "## Controls\n\n- tab                  autocomplete.\n- ctrl o               open.\n- ctrl s               save.\n- ctrl S               save as.\n- ctrl ]               Jump to next marker.\n- ctrl [               Jump to previous marker.\n- ctrl n               Clear.\n- ctrl shift+del       Reset.\n\n";
-    text += "## Options\n\n~ left.goal=4000       set target number of words.\n~ left.suggestions=on  toggle suggestions.\n~ left.synonyms=on     toggle synonyms\n~ left.theme=blanc     Set theme to White/Noir/Pale\n\n";
-    text += "## Enjoy!\n\n- https://github.com/hundredrabbits/Left";
+    var time = this.time();
 
-    return text;
+    if(time > 800){ return "Good evening."; }
+    if(time > 600){ return "Good afternoon."; }
+    if(time < 350){ return "Good morning."; }
+    return "Good day.";
   }
 
   this.format_json = function(obj)
@@ -528,13 +486,11 @@ function Left()
       return;
     }
 
-
     // Save
     if(e.key == "S" && (e.ctrlKey || e.metaKey)){
       e.preventDefault();
       left.export();
     }
-
 
     // Reset
     if((e.key == "Backspace" || e.key == "Delete") && e.ctrlKey && e.shiftKey){
@@ -577,7 +533,6 @@ function Left()
     // Slower Refresh
     if(e.key == "Enter"){
       left.dictionary.update();
-      left.refresh_settings();
       left.save_backup();
       left.theme.save();
     }
@@ -594,7 +549,6 @@ function Left()
   {
     e.preventDefault();
     left.textarea_el.scrollTop += e.wheelDeltaY * -0.25;
-    left.highlight_el.scrollTop += e.wheelDeltaY * -0.25;
     left.refresh_scrollbar();
   }, false);
 

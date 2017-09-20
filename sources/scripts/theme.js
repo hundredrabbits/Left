@@ -57,7 +57,7 @@ function Theme()
     html += "textarea { color:"+theme.f_high+" !important }\n";
     html += "stats { color:"+theme.f_low+" !important }\n";
     html += "stats b { color:"+theme.f_high+" !important }\n";
-    html += "highlight b { background:"+theme.b_low+" !important; }\n";
+    html += "highlight b { border-bottom: 1px solid "+theme.f_low+" !important; }\n";
     html += "::selection { background:"+theme.b_inv+" !important; color:"+theme.f_inv+" }\n";
 
     this.el.innerHTML = html;
