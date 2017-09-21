@@ -53,7 +53,12 @@ function Navi()
   {
     var scroll_distance = left.textarea_el.scrollTop;
     var scroll_max = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight;
-    left.scroll_el.style.height = (scroll_distance/scroll_max) * window.innerHeight;
+    // if-else statement here could be shortened to single line, sacrificing readability
+    if(scroll_max > 0) {
+      left.scroll_el.style.height = (scroll_distance/scroll_max) * window.innerHeight;
+    } else {
+      left.scroll_el.style.height = 0
+    }
   }
 
   this.next = function()
