@@ -16,11 +16,6 @@ function Source()
       content = this.format_json(obj);
     }
 
-    if(left.textarea_el.value != ""){
-      left.stats_el.innerHTML = "Erase content before loading a new file.";
-      return;
-    }
-
     var file_type = path.split(".")[path.split(".").length-1];
 
     if(file_type == "thm"){
