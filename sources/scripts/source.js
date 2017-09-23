@@ -4,6 +4,7 @@ function Source()
 
   this.clear = function()
   {
+    left.source.path = null;
     left.textarea_el.value = "";
     left.dictionary.update();
     left.refresh();
