@@ -135,6 +135,16 @@ document.addEventListener('wheel', function(e)
   left.navi.update_scrollbar();
 }, false)
 
+window.addEventListener('resize', function(e)
+{
+  if(window.innerWidth < 900){
+    document.body.className = "mobile";
+  }
+  else{
+    document.body.className = "";
+  }
+}, false);
+
 document.oninput = function on_input(e)
 {
   left.refresh();
