@@ -1,0 +1,11 @@
+{
+  "background": "#FFFFFF",
+  "f_high": "#2274A5",
+  "f_med": "#32936F",
+  "f_low": "#E83F6F",
+  "f_inv": "#FFFFFF",
+  "b_high": "#89023E",
+  "b_med": "#89023E",
+  "b_low": "#E83F6F",
+  "b_inv": "#FFBF00"
+}
