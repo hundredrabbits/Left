@@ -88,6 +88,11 @@ function Source()
     return JSON.stringify(obj, null, "  ");
   }
 
+  this.should_confirm = function()
+  {
+    if(left.textarea_el.value.length > 0){ return true; }
+  }
+
   function is_json(text)
   {
     try{

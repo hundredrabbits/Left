@@ -26,6 +26,10 @@ document.onkeydown = function key_down(e)
 
   if(e.key == "n" && (e.ctrlKey || e.metaKey)){
     e.preventDefault();
+    if(left.source.should_confirm){
+      dialog.showMessageBox({type: 'question',icon:'icon.png',buttons: ['Yes', 'No'],title: 'Confirm',message: 'Unsaved data will be lost. Are you sure you want to continue?' }, function(response) { if (response === 0) { left.source.clear(); } })  
+      return;
+    }
     left.source.clear();
     return;
   }
@@ -112,7 +116,11 @@ window.addEventListener('drop', function(e)
   reader.onload = function(e){
     left.source.load(e.target.result,path)
   };
-  reader.readAsText(file);
+
+  if(left.source.should_confirm){
+    dialog.showMessageBox({type: 'question',icon:'icon.png',buttons: ['Yes', 'No'],title: 'Confirm',message: 'Unsaved data will be lost. Are you sure you want to continue?' }, function(response) { if (response === 0) { reader.readAsText(file); } })  
+    return;
+  }
 });
 
 window.onbeforeunload = function(e)
