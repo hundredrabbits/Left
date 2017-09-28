@@ -16,7 +16,7 @@ function Navi()
       var next_marker = this.markers[i+1];
       var el = document.createElement('li');
       el.destination = marker.line;
-      el.innerHTML = marker.text+"<span>"+marker.line+"</span>";
+      el.innerHTML = marker.text;
       el.className = active_line_id >= marker.line && (next_marker && active_line_id < next_marker.line) ? marker.type+" active" : marker.type;
       el.className += marker.type == "header" ? " fh" : " fm";
       el.onmouseup = function on_mouseup(e){ left.go_to_line(e.target.destination); }
@@ -55,9 +55,9 @@ function Navi()
     var scroll_max = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight;
     // if-else statement here could be shortened to single line, sacrificing readability
     if(scroll_max > 0) {
-      left.scroll_el.style.height = (scroll_distance/scroll_max) * window.innerHeight;
+      left.scroll_el.style.width = (scroll_distance/scroll_max) * window.innerWidth;
     } else {
-      left.scroll_el.style.height = 0
+      left.scroll_el.style.width = 0
     }
   }
 

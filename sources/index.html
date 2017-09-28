@@ -18,8 +18,9 @@
   <body>
     <script>
 
-      const {dialog} = require('electron').remote;
+      const {dialog,app} = require('electron').remote;
       const fs = require('fs');
+      const app_path = app.getAppPath();
 
       var left = new Left(); left.start();
       

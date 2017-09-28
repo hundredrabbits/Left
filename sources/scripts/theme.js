@@ -52,7 +52,6 @@ function Theme()
     html += ".bl { background:"+theme.b_low+" !important ; fill:"+theme.b_low+" !important }\n";
     html += ".b_inv { background:"+theme.b_inv+" !important ; fill:"+theme.b_inv+" !important }\n";
 
-    html += "navi { border-right: 1px dotted "+theme.b_low+" !important }\n";
     html += "scrollbar { background:"+theme.b_med+" !important }\n";
     html += "textarea { color:"+theme.f_high+" !important }\n";
     html += "stats { color:"+theme.f_low+" !important }\n";

@@ -4,6 +4,7 @@ function Source()
 
   this.clear = function()
   {
+    left.source.path = null;
     left.textarea_el.value = "";
     left.dictionary.update();
     left.refresh();
@@ -14,11 +15,6 @@ function Source()
     if(is_json(content)){
       var obj = JSON.parse(content);
       content = this.format_json(obj);
-    }
-
-    if(left.textarea_el.value != ""){
-      left.stats_el.innerHTML = "Erase content before loading a new file.";
-      return;
     }
 
     var file_type = path.split(".")[path.split(".").length-1];
@@ -90,6 +86,11 @@ function Source()
   this.format_json = function(obj)
   {
     return JSON.stringify(obj, null, "  ");
+  }
+
+  this.should_confirm = function()
+  {
+    if(left.textarea_el.value.length > 0){ return true; }
   }
 
   function is_json(text)

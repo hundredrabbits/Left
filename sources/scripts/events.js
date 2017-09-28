@@ -26,6 +26,10 @@ document.onkeydown = function key_down(e)
 
   if(e.key == "n" && (e.ctrlKey || e.metaKey)){
     e.preventDefault();
+    if(left.source.should_confirm){
+      dialog.showMessageBox({type: 'question',icon:app_path+'/icon.png',buttons: ['Yes', 'No'],title: 'Confirm',message: 'Unsaved data will be lost. Are you sure you want to continue?' }, function(response) { if (response === 0) { left.source.clear(); } })  
+      return;
+    }
     left.source.clear();
     return;
   }
@@ -104,7 +108,7 @@ window.addEventListener('drop', function(e)
 
   var files = e.dataTransfer.files;
   var file = files[0];
-  
+
   if (file.type && !file.type.match(/text.*/)) { console.log("Not text", file.type); return false; }
 
   var path = file.path ? file.path : file.name;
@@ -112,7 +116,11 @@ window.addEventListener('drop', function(e)
   reader.onload = function(e){
     left.source.load(e.target.result,path)
   };
-  reader.readAsText(file);
+
+  if(left.source.should_confirm){
+    dialog.showMessageBox({type: 'question',icon:app_path+'/icon.png',buttons: ['Yes', 'No'],title: 'Confirm',message: 'Unsaved data will be lost. Are you sure you want to continue?' }, function(response) { if (response === 0) { reader.readAsText(file); } })  
+    return;
+  }
 });
 
 window.onbeforeunload = function(e)
@@ -126,6 +134,16 @@ document.addEventListener('wheel', function(e)
   left.textarea_el.scrollTop += e.wheelDeltaY * -0.25;
   left.navi.update_scrollbar();
 }, false)
+
+window.addEventListener('resize', function(e)
+{
+  if(window.innerWidth < 900){
+    document.body.className = "mobile";
+  }
+  else{
+    document.body.className = "";
+  }
+}, false);
 
 document.oninput = function on_input(e)
 {
