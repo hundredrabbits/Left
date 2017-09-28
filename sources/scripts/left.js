@@ -168,32 +168,42 @@ function Left()
     this.inject(suggestion.substr(left.selection.word.length,suggestion.length));
   }
 
-  this.go_to_line = function(line_id)
+  this.go_to_line = function(id)
   {
-    this.go_to(this.textarea_el.value.split("\n")[line_id]);
-  }
+    let lineArr = this.textarea_el.value.split("\n",parseInt(id)+1)
+    let arrJoin = lineArr.join("\n")
 
+    let from = arrJoin.length-lineArr[id].length;
+    let to = arrJoin.length;
+
+    this.go_to_fromTo(from,to)
+  }
+  
   this.go_to = function(selection)
   {
     var from = this.textarea_el.value.indexOf(selection);
     var to   = from + selection.length;
 
+    this.go_to_fromTo(from,to)
+  }
+  
+  this.go_to_fromTo = function(from,to) {
     if(this.textarea_el.setSelectionRange){
-     this.textarea_el.setSelectionRange(from,to);
-    }
-    else if(this.textarea_el.createTextRange){
-      var range = this.textarea_el.createTextRange();
-      range.collapse(true);
-      range.moveEnd('character',to);
-      range.moveStart('character',from);
-      range.select();
-    }
-    this.textarea_el.focus();
-
-    var perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
-    var offset = 60;
-    this.textarea_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
-    return from == -1 ? null : from;
+      this.textarea_el.setSelectionRange(from,to);
+     }
+     else if(this.textarea_el.createTextRange){
+       var range = this.textarea_el.createTextRange();
+       range.collapse(true);
+       range.moveEnd('character',to);
+       range.moveStart('character',from);
+       range.select();
+     }
+     this.textarea_el.focus();
+ 
+     var perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
+     var offset = 60;
+     this.textarea_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
+     return from == -1 ? null : from;
   }
 
   this.go_to_word = function(word,from = 0, tries = 0, starting_with = false, ending_with = false)
