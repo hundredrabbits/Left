@@ -17,7 +17,7 @@ function Navi()
       var el = document.createElement('li');
       el.destination = marker.line;
       el.innerHTML = marker.text;
-      el.className = active_line_id >= marker.line && (next_marker && active_line_id < next_marker.line) ? marker.type+" active" : marker.type;
+      el.className = active_line_id >= marker.line && (!(next_marker) || active_line_id < next_marker.line) ? marker.type+" active" : marker.type;
       el.className += marker.type == "header" ? " fh" : " fm";
       el.onmouseup = function on_mouseup(e){ left.go_to_line(e.target.destination); }
       this.el.appendChild(el);
