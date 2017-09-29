@@ -137,7 +137,7 @@ document.addEventListener('wheel', function(e)
 
 window.addEventListener('resize', function(e)
 {
-  if(window.innerWidth < 900){
+  if(window.innerWidth < 720){
     document.body.className = "mobile";
   }
   else{
