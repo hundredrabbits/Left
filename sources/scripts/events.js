@@ -90,7 +90,12 @@ document.onkeydown = function key_down(e)
   if(e.key == " " || e.key == "Enter"){
     left.selection.index = 0;
   }
-
+  
+  if(e.key.substring(0,5) == "Arrow"){
+    setTimeout(() => left.refresh(), 0) //force the refresh event to happen after the selection updates
+    return;
+  }
+  
   left.refresh();
 };
 
