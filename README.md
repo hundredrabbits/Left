@@ -30,6 +30,9 @@ Left is a simple, minimalist, open-source and cross-platform text editor.
 - `ctrl S` save as.
 - `ctrl ]` Jump to next marker.
 - `ctrl [` Jump to previous marker.
+- `ctrl +` Make text bigger.
+- `ctrl -` Make text smaller.
+- `ctrl 0` Reset text size.
 - `ctrl n` Clear.
 - `ctrl shift+del` Reset.
 
