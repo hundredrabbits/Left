@@ -5,6 +5,7 @@ function Left()
   this.operator = new Operator();
   this.navi = new Navi();
   this.source = new Source();
+  this.options = new Options();
 
   this.textarea_el    = document.createElement('textarea');
   this.stats_el       = document.createElement('stats');
@@ -62,6 +63,7 @@ function Left()
     left.suggestion = (next_char == "" || next_char == " " || next_char == "\n") ? left.dictionary.find_suggestion(left.selection.word) : null;
 
     this.navi.update();
+    this.options.update();
     this.update_stats();
   }
 
@@ -166,6 +168,47 @@ function Left()
   {
     var suggestion = left.suggestion;
     this.inject(suggestion.substr(left.selection.word.length,suggestion.length));
+  }
+
+  this.replace_line = function(id,new_text)
+  {
+    let lineArr = this.textarea_el.value.split("\n",parseInt(id)+1)
+    let arrJoin = lineArr.join("\n")
+
+    let from = arrJoin.length-lineArr[id].length;
+    let to = arrJoin.length;
+    
+    //splicing the string
+    let new_text_value = this.textarea_el.value.slice(0,from) + new_text + this.textarea_el.value.slice(to)
+
+    // the cursor automatically moves to the changed position, so we have to set it back
+    let cursor_start = this.textarea_el.selectionStart;
+    let cursor_end = this.textarea_el.selectionEnd;
+    let old_length = this.textarea_el.value.length
+    //setting text area
+    this.textarea_el.value = new_text_value
+    //adjusting the cursor position for the change in length
+    let length_dif = this.textarea_el.value.length - old_length
+    if(cursor_start>to) {
+    cursor_start += length_dif
+    cursor_end += length_dif
+    }
+    //setting the cursor position
+    if(this.textarea_el.setSelectionRange){
+    this.textarea_el.setSelectionRange(cursor_start,cursor_end);
+    }
+    else if(this.textarea_el.createTextRange){
+      var range = this.textarea_el.createTextRange();
+      range.collapse(true);
+      range.moveEnd('character',cursor_end);
+      range.moveStart('character',cursor_start);
+      range.select();
+    }
+    //setting the scroll position
+    var perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
+    var offset = 60;
+    this.textarea_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
+    //this function turned out a lot longer than I was expecting. Ah well :/
   }
 
   this.go_to_line = function(id)

@@ -14,9 +14,12 @@
     <script src="scripts/dict.js"></script>
     <script src="scripts/operator.js"></script>
     <script src="scripts/left.js"></script>
+    <script src="scripts/options.js"></script>
   </head>
   <body>
     <script>
+      
+      const {webFrame} = require('electron')
 
       const {dialog,app} = require('electron').remote;
       const fs = require('fs');
