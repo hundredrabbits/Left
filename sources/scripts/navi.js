@@ -37,14 +37,15 @@ function Navi()
 
     for(var line_id in lines){
       var line = lines[line_id];
-      if(line.substr(0,2) == "# "){
-        var text = line.replace("@ ","").replace("# ","");
-        this.markers.push({text:text,line:line_id,type:"header"});
-      }
-      else if(line.substr(0,3) == "## "){
-        var text = line.replace("@ ","").replace("## ","");
+      if(line.substr(0,2).replace(/@/g,"#") == "##"){
+        var text = line.replace(/ +/,"").substring(2);
         this.markers.push({text:text,line:line_id,type:"note"});
       }
+      else if(line.substr(0,1).replace(/@/g,"#") == "#"){
+        var text = line.replace(/ +/,"").substring(1);
+        this.markers.push({text:text,line:line_id,type:"header"});
+      }
+      
     }
     // End
   }
