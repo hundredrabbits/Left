@@ -96,6 +96,14 @@ document.onkeydown = function key_down(e)
     return;
   }
   
+  if(e.key == "+" && (e.ctrlKey || e.metaKey)) {
+    e.preventDefault();
+    left.options.set_zoom(left.options.zoom+0.1)
+  }
+  else if(e.key == "-" && (e.ctrlKey || e.metaKey)) {
+    e.preventDefault();
+    left.options.set_zoom(left.options.zoom-0.1)
+  }
   left.refresh();
 };
 
