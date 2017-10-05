@@ -1,6 +1,6 @@
 body { background:#f8f8f8; font-family: 'input_mono_medium'; font-size: 12px; overflow-y: hidden}
 body navi { display: block;height: calc(100vh - 120px);width: calc((100vw / 6));left: 0px;position: absolute;padding: 30px;color: #333; -webkit-user-select: none;-webkit-app-region: drag; overflow-y: hidden; padding-top:90px;}
-body navi li { display: block;line-height: 20px;cursor: pointer; position: relative; text-transform: uppercase;}
+body navi li { display: block;line-height: 20px;cursor: pointer; position: relative; text-transform: uppercase; -webkit-app-region: no-drag;}
 body navi li:hover::before { content:">"; position: absolute; left:-15px;}
 body navi li.note { padding-left:7px; color:#999; text-transform: capitalize;}
 body navi li.active::before { content:":"; position: absolute; left:-15px; }
@@ -11,6 +11,7 @@ body stats b { color:#000; font-family: 'input_mono_regular';}
 body stats i { text-decoration: underline; }
 body textarea { padding: 90px 30px 0px; height: calc(100vh - 60px);display: block;color: black;width: 540px;position: fixed;left: calc((100vw / 6) + 60px);line-height: 20px;resize: none; background:transparent; overflow: hidden; max-width:560px; }
 body scrollbar { display: block; background:#ccc; width:1px; height:1px; position:fixed; left:0; bottom:0px; }
+div {width: 480px;line-height: 20px;font-family: 'input_mono_medium'; font-size: 12px;white-space: pre-wrap; word-wrap:break-word}
 ::selection { background:#ddd; color:#000; opacity:1.0;}
 
 body.mobile navi { display:none; }
