@@ -62,8 +62,8 @@ function Left()
 
     left.suggestion = (next_char == "" || next_char == " " || next_char == "\n") ? left.dictionary.find_suggestion(left.selection.word) : null;
 
-    this.navi.update();
     this.options.update();
+    this.navi.update();
     this.update_stats();
   }
 

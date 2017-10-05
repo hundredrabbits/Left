@@ -2,7 +2,7 @@ body { background:#f8f8f8; font-family: 'input_mono_medium'; font-size: 12px; ov
 body navi { display: block;height: calc(100vh - 120px);width: calc((100vw / 6));left: 0px;position: absolute;padding: 30px;color: #333; -webkit-user-select: none;-webkit-app-region: drag; overflow-y: hidden; padding-top:90px;}
 body navi li { display: block;line-height: 20px;cursor: pointer; position: relative; text-transform: uppercase; -webkit-app-region: no-drag;}
 body navi li:hover::before { content:">"; position: absolute; left:-15px;}
-body navi li.note { padding-left:7px; color:#999; text-transform: capitalize;}
+body navi li.note { padding-left:7px; color:#999; text-transform: lowercase;}
 body navi li.active::before { content:":"; position: absolute; left:-15px; }
 body navi li span { float:right; }
 body stats { display: block;border-bottom: 0px;color: #999;margin-top: 30px;position: fixed;bottom:10px;left: calc(20vw + 60px - 24px);line-height: 40px;width:540px;height:40px;overflow: hidden; padding-left:30px; }

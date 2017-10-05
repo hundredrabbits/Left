@@ -11,12 +11,17 @@ function Navi()
     this.el.innerHTML = "";
     var active_line_id = left.active_line_id();
     var i = 0;
+    var marker_num = left.options.marker_num
     for(marker_id in this.markers){
       var marker = this.markers[marker_id];
       var next_marker = this.markers[i+1];
       var el = document.createElement('li');
       el.destination = marker.line;
-      el.innerHTML = marker.text;
+      if(marker_num) {
+        el.innerHTML = marker.text+"<span>"+marker.line+"</span>";
+      } else {
+        el.innerHTML = marker.text;
+      }
       el.className = active_line_id >= marker.line && (!(next_marker) || active_line_id < next_marker.line) ? marker.type+" active" : marker.type;
       el.className += marker.type == "header" ? " fh" : " fm";
       el.onmouseup = function on_mouseup(e){ left.go_to_line(e.target.destination); }
@@ -39,6 +44,7 @@ function Navi()
       var line = lines[line_id];
       if(line.substr(0,2).replace(/@/g,"#") == "##"){
         var text = line.replace(/ +/,"").substring(2);
+        text = text.replace(/#+/,(match) => {console.log(match);return new Array(match.length+1).join("\u200b ")})
         this.markers.push({text:text,line:line_id,type:"note"});
       }
       else if(line.substr(0,1).replace(/@/g,"#") == "#"){
