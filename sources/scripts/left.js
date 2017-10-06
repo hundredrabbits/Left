@@ -62,8 +62,8 @@ function Left()
 
     left.suggestion = (next_char == "" || next_char == " " || next_char == "\n") ? left.dictionary.find_suggestion(left.selection.word) : null;
 
-    this.navi.update();
     this.options.update();
+    this.navi.update();
     this.update_stats();
   }
 
@@ -185,6 +185,7 @@ function Left()
     let cursor_start = this.textarea_el.selectionStart;
     let cursor_end = this.textarea_el.selectionEnd;
     let old_length = this.textarea_el.value.length
+    let old_scroll = this.textarea_el.scrollTop
     //setting text area
     this.textarea_el.value = new_text_value
     //adjusting the cursor position for the change in length
@@ -205,9 +206,7 @@ function Left()
       range.select();
     }
     //setting the scroll position
-    var perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
-    var offset = 60;
-    this.textarea_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
+    this.textarea_el.scrollTop = old_scroll
     //this function turned out a lot longer than I was expecting. Ah well :/
   }
 
@@ -231,7 +230,7 @@ function Left()
   }
   
   this.go_to_fromTo = function(from,to) {
-    if(this.textarea_el.setSelectionRange){
+     if(this.textarea_el.setSelectionRange){
       this.textarea_el.setSelectionRange(from,to);
      }
      else if(this.textarea_el.createTextRange){
@@ -242,11 +241,16 @@ function Left()
        range.select();
      }
      this.textarea_el.focus();
- 
-     var perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
-     var offset = 60;
-     this.textarea_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
+     this.scroll_to(from,to)
      return from == -1 ? null : from;
+  }
+  this.scroll_to = function(from,to) { //creates a temp div which 
+    let text_val = this.textarea_el.value
+    var div = document.createElement("div");
+    div.innerHTML=text_val.slice(0,from); 
+    document.body.appendChild(div);
+    this.textarea_el.scrollTop = div.offsetHeight - 60
+    div.remove()
   }
 
   this.go_to_word = function(word,from = 0, tries = 0, starting_with = false, ending_with = false)

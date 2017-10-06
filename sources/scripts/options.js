@@ -1,5 +1,6 @@
 function Options() {
   this.zoom = 1
+  this.marker_num = false
   this.update = function () {
     var text = left.textarea_el.value;
     var lines = text.split("\n");
@@ -11,6 +12,9 @@ function Options() {
       this.check_string(line, /~ *(?:left)?.?zoom *=? */, "number", (res) => {
         this.zoom = res
         webFrame.setZoomFactor(res)
+      })
+      this.check_string(line, /~ *(?:left)?.?(?:marker|navi)[._ ]?num? *=? */, "boolean", (res) => {
+        this.marker_num = res
       })
     }
   }
