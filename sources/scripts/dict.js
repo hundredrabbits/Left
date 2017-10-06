@@ -69,9 +69,9 @@ function Dict()
 
   this.update = function()
   {
-    this.vocabulary = [];
+    this.vocabulary = [""];
 
-    var words = left.textarea_el.value.split(/[^A-Za-z]/);
+    var words = left.textarea_el.value.split(/[^\w\-]+/);
     for(word_id in words){
       var word = words[word_id].toLowerCase();
       if(this.vocabulary.indexOf(word) < 0){

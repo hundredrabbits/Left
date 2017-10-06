@@ -37,7 +37,12 @@ function Navi()
     this.markers = [];
 
     left.lines_count = lines.length;
-    left.words_count = text.split(" ").length;
+    let regex = new RegExp(/[\w][^\w\-]+[\w]/g), matches = [], match;
+    while(match = regex.exec(text)) {
+        matches.push(match);
+        regex.lastIndex = match.index+1;
+    }
+    left.words_count = matches.length+1;
     left.chars_count = text.length;
 
     for(var line_id in lines){
