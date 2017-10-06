@@ -44,7 +44,7 @@ function Navi()
       var line = lines[line_id];
       if(line.substr(0,2).replace(/@/g,"#") == "##"){
         var text = line.replace(/ +/,"").substring(2);
-        text = text.replace(/#+/,(match) => {console.log(match);return new Array(match.length+1).join("\u200b ")})
+        text = text.replace(/[@#]+/,(match) => {console.log(match);return new Array(match.length+1).join("\u200b ")})
         this.markers.push({text:text,line:line_id,type:"note"});
       }
       else if(line.substr(0,1).replace(/@/g,"#") == "#"){
