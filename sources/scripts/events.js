@@ -10,7 +10,7 @@ document.onkeydown = function key_down(e)
 
   // Operator
 
-  if(e.key == "k" && (e.ctrlKey || e.metaKey)){
+  if(!left.operator.is_active && e.key == "Escape"){
     e.preventDefault();
     left.operator.start();
     return;
@@ -24,7 +24,7 @@ document.onkeydown = function key_down(e)
 
   // New/Open/Save
 
-  if(e.key == "n" && (e.ctrlKey || e.metaKey)){
+  if(e.key == "N" && (e.ctrlKey || e.metaKey)){
     e.preventDefault();
     if(left.source.should_confirm){
       dialog.showMessageBox({type: 'question',icon:app_path+'/icon.png',buttons: ['Yes', 'No'],title: 'Confirm',message: 'Unsaved data will be lost. Are you sure you want to continue?' }, function(response) { if (response === 0) { left.source.clear(); } })  

@@ -229,7 +229,8 @@ function Left()
     this.go_to_fromTo(from,to)
   }
   
-  this.go_to_fromTo = function(from,to) {
+  this.go_to_fromTo = function(from,to)
+  {
      if(this.textarea_el.setSelectionRange){
       this.textarea_el.setSelectionRange(from,to);
      }
@@ -244,7 +245,9 @@ function Left()
      this.scroll_to(from,to)
      return from == -1 ? null : from;
   }
-  this.scroll_to = function(from,to) { //creates a temp div which 
+
+  this.scroll_to = function(from,to)
+  { //creates a temp div which 
     let text_val = this.textarea_el.value
     var div = document.createElement("div");
     div.innerHTML=text_val.slice(0,from); 

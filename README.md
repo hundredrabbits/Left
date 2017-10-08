@@ -33,12 +33,16 @@ Left is a simple, minimalist, open-source and cross-platform text editor.
 - `ctrl +` Make text bigger.
 - `ctrl -` Make text smaller.
 - `ctrl 0` Reset text size.
-- `ctrl n` Clear.
-- `ctrl shift+del` Reset.
+- `ctrl shift n` Clear.
+- `ctrl shift del` Reset.
 
-## Operator(ctrl k)
+## Operator
 
-Press `ctrl k` to start the **operator** mode. To find and replace a word, use `word = new_word`, and press `Enter`. To find and replace words ending in *-ing*, use `-ing = new_word`. Press `Esc` to stop.
+Press `ctrl k`, or `escape` to start the **operator** mode. To find and replace a word, use `word = new_word`, and press `Enter`. To find and replace words ending in *-ing*, use `-ing = new_word`. Press `Esc` to stop.
+
+- `NUMBER` go to line number.
+- `WORD` go to word.
+- `WORD_A = WORD_B` replace word `WORD_A` with word `WORD_B`.
 
 ## Themes
 

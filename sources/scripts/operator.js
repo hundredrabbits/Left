@@ -43,6 +43,9 @@ function Operator()
     if(e.key == "Backspace" && this.value.length > 0){
       this.value = this.value.substr(0,this.value.length-1);
     }
+    if(parseInt(this.value) > 0){
+      left.go_to_line(parseInt(this.value));
+    }
     this.update();
   }
 
