@@ -80,12 +80,6 @@ document.onkeydown = function key_down(e)
     left.navi.prev();
   }
 
-  // Slower Refresh
-  if(e.key == "Enter" && left.textarea_el.value.length > 50000 || left.textarea_el.value.length < 50000 ){
-    left.dictionary.update();
-    left.source.backup();
-  }
-
   // Reset index on space
   if(e.key == " " || e.key == "Enter"){
     left.selection.index = 0;
@@ -107,6 +101,13 @@ document.onkeydown = function key_down(e)
   else if(e.key == "0" && (e.ctrlKey || e.metaKey)) {
     e.preventDefault();
     left.options.set_zoom(1)
+  }
+
+  // Slower Refresh
+  if(e.key == "Enter" && left.textarea_el.value.length > 50000 || left.textarea_el.value.length < 50000 ){
+    setTimeout(() => {left.dictionary.update(),left.refresh()}, 0)//left.dictionary.update();
+    left.source.backup();
+    return;
   }
   left.refresh();
 };
