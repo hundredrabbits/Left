@@ -19,6 +19,7 @@ function Options() {
         this.check_string(line, /~ *(?:left)?.?theme *=?[ \(]*([^ \(\)]*)[ \)]*/, "string", (res) => {
           left.theme.load(res)
         })
+      }
     }
   }
 
