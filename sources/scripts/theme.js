@@ -31,6 +31,14 @@ function Theme()
     }
     else if(this.collection[theme_str]){
       this.install(this.collection[theme_str]);
+    } else {
+      fs.readFile(app_path + '/themes/' + theme_str + '.thm', 'utf8', function (err, data) {
+        if (!err) {
+          obj = JSON.parse(data);
+          left.theme.collection[theme_str] = obj
+          left.theme.install(obj)
+        }
+      });
     }
     console.log("Loaded theme");
   }
@@ -61,16 +69,5 @@ function Theme()
 
     this.el.innerHTML = html;
     this.save();
-  }
-
-  function is_json(text)
-  {
-    try{
-        JSON.parse(text);
-        return true;
-    }
-    catch (error){
-      return false;
-    }
   }
 }
