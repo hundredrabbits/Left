@@ -1,5 +1,10 @@
 document.onkeydown = function key_down(e)
 {
+  // update last_char
+
+  left.last_char = e.key
+  console.log(left.last_char)
+
   // Reset
 
   if((e.key == "Backspace" || e.key == "Delete") && e.ctrlKey && e.shiftKey){
@@ -103,6 +108,13 @@ document.onkeydown = function key_down(e)
     left.options.set_zoom(1)
   }
 
+  // check for action
+  if(e.key == "Enter") {
+    if(left.options.check_actions()) {
+      e.preventDefault()
+    }
+  }
+  
   // Slower Refresh
   if(e.key == "Enter" && left.textarea_el.value.length > 50000 || left.textarea_el.value.length < 50000 ){
     setTimeout(() => {left.dictionary.update(),left.refresh()}, 0)//left.dictionary.update();
@@ -162,11 +174,6 @@ window.addEventListener('resize', function(e)
     document.body.className = "";
   }
 }, false);
-
-document.oninput = function on_input(e)
-{
-  left.refresh();
-}
 
 document.onmouseup = function on_mouseup(e)
 {

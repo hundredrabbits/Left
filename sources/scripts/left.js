@@ -18,6 +18,7 @@ function Left()
   this.chars_count = null;
   this.suggestion = null;
   this.synonyms = null;
+  this.last_char = "s"; // this is not a typo. it's bad code, but it has to be a length one string
 
   document.body.appendChild(this.theme.el);
   document.body.appendChild(this.navi.el);
@@ -170,7 +171,7 @@ function Left()
     this.inject(suggestion.substr(left.selection.word.length,suggestion.length));
   }
 
-  this.replace_line = function(id,new_text)
+  this.replace_line = function(id, new_text, del = false) // optional arg for deleting the line, used in actions
   {
     let lineArr = this.textarea_el.value.split("\n",parseInt(id)+1)
     let arrJoin = lineArr.join("\n")
@@ -179,7 +180,7 @@ function Left()
     let to = arrJoin.length;
     
     //splicing the string
-    let new_text_value = this.textarea_el.value.slice(0,from) + new_text + this.textarea_el.value.slice(to)
+    let new_text_value = this.textarea_el.value.slice(0,del ? from-1: from) + new_text + this.textarea_el.value.slice(to)
 
     // the cursor automatically moves to the changed position, so we have to set it back
     let cursor_start = this.textarea_el.selectionStart;
