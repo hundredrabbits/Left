@@ -1,6 +1,8 @@
 function Options() {
   this.zoom = 1
   this.marker_num = false
+  this.suggestions = true
+  this.synonyms = true
   this.update = function () {
     var text = left.textarea_el.value;
     var lines = text.split("\n");
@@ -19,6 +21,12 @@ function Options() {
         this.check_string(line, /~ *(?:left)?.?theme *=?[ \(]*([^ \(\)]*)[ \)]*/, "string", (res) => {
           left.theme.load(res)
         })
+        this.check_string(line, /~ *(?:left)?.?suggestions? *=?[ \(]*([^ \(\)]*)[ \)]*/, "boolean", (res) => {
+          this.suggestions=res
+        })
+        this.check_string(line, /~ *(?:left)?.?synonyms? *=?[ \(]*([^ \(\)]*)[ \)]*/, "boolean", (res) => {
+          this.synonyms=res
+        })
       }
     }
   }
@@ -26,7 +34,6 @@ function Options() {
   this.check_string = function (text, regex, type, cb) {
     match = regex.exec(text)
     if(match) {
-      console.log(match)
       this.check_json_type(match[1], type, cb)
     }
   }
@@ -65,12 +72,41 @@ function Options() {
     var text = left.textarea_el.value;
     var lines = text.split("\n");
     var line = lines[left.active_line_id()].toLowerCase()
-    console.log(lines[left.active_line_id()].toLowerCase())
     this.check_string(line, /> *=? *(?:go[ _]?to) *=?[ \(]*([^ \(\)]*)[ \)]*/, "number", (res) => {
       found = true
       let actLine = left.active_line_id()
       left.go_to_line(res)
       left.replace_line(actLine,"",true)
+    })
+    this.check_string(line, /> *=? *replace *=?[ \(]*([^ \(\)]*)[ \)]*/, "string", (res) => {
+      let actLine = left.active_line_id()
+      console.log("match")
+      found = true
+      let res_array = res.split(/,/)
+      res_array = res_array.map((a) => a.replace(/^ +/,"").replace(/ +$/,""))
+      let regex = new RegExp(res_array[0], "g")
+      let text_val = left.textarea_el.value
+
+      let lineArr = text_val.split("\n",parseInt(actLine)+1)
+      let arrJoin = lineArr.join("\n")
+      let from = arrJoin.length-lineArr[actLine].length;
+      let to = arrJoin.length;
+      text_val = [text_val.slice(0,from),text_val.slice(to)]
+
+      let replace_string,
+          text_before_length_dif = 0; //the diffrence in length between the text before the cursor
+      try {
+        let replace_num = text_val.join("").match(regex).length
+        replace_string = "" + replace_num-1 + " occurrence" + (replace_num>1 ? "s" : "") + " replaced"
+        text_before_length_dif = text_val[0].replace(regex,res_array[1]).length-text_val[0].length
+      } catch (error) {
+        replace_string = "no occurrences found"
+      }
+      left.textarea_el.value = left.textarea_el.value.replace(regex,res_array[1])
+      let cursor_return_index = from+text_before_length_dif+replace_string.length // the place to set the cursor to
+      left.go_to_fromTo(cursor_return_index,cursor_return_index)
+      left.replace_line(actLine,replace_string,false)
+      left.go_to_fromTo(cursor_return_index,cursor_return_index)
     })
     return found;
   }

@@ -16,4 +16,4 @@ div {width: 480px;line-height: 20px;font-family: 'input_mono_medium'; font-size:
 
 body.mobile navi { display:none; }
 body.mobile textarea { left: calc(50vw - 270px) }
-body.mobile stats { left: calc(50vw - 270px) }
+body.mobile stats { left: calc(50vw - 270px); -webkit-app-region: drag; }
