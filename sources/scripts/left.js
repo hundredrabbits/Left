@@ -328,3 +328,14 @@ function Left()
     left.refresh();
   }
 }
+
+function is_json(text)
+{
+  try{
+      JSON.parse(text);
+      return true;
+  }
+  catch (error){
+    return false;
+  }
+}

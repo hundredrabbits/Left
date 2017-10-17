@@ -1,9 +1,16 @@
-function Options() {
+function Options()
+{
   this.zoom = 1
   this.marker_num = false
+<<<<<<< HEAD
   this.suggestions = true
   this.synonyms = true
   this.update = function () {
+=======
+
+  this.update = function()
+  {
+>>>>>>> 837553ddcf7a625ca25ddc64b2e74520941a8173
     var text = left.textarea_el.value;
     var lines = text.split("\n");
 
@@ -13,7 +20,7 @@ function Options() {
         var line = lines[line_id].toLowerCase()
         this.check_string(line, /~ *(?:left)?.?zoom *=?[ \(]*([^ \(\)]*)[ \)]*/, "number", (res) => {
           this.zoom = res
-          webFrame.setZoomFactor(res)
+          if(webFrame){webFrame.setZoomFactor(res) }
         })
         this.check_string(line, /~ *(?:left)?.?(?:marker|navi)[._ ]?num? *=?[ \(]*([^ \(\)]*)[ \)]*/, "boolean", (res) => {
           this.marker_num = res
@@ -31,14 +38,16 @@ function Options() {
     }
   }
 
-  this.check_string = function (text, regex, type, cb) {
+  this.check_string = function (text, regex, type, cb)
+  {
     match = regex.exec(text)
     if(match) {
       this.check_json_type(match[1], type, cb)
     }
   }
 
-  this.check_json_type = function (text, type, cb) {
+  this.check_json_type = function (text, type, cb)
+  {
     if(is_json(text)) {
       let res = JSON.parse(text)
       if (typeof res == type) {
@@ -50,7 +59,10 @@ function Options() {
       }
     }
   }
-  this.set_zoom = function(new_zoom) {
+
+  this.set_zoom = function(new_zoom)
+  {
+    if(!webFrame){ return; }
     if(new_zoom<0.1) new_zoom = 0.1
     new_zoom = Math.round(new_zoom*10)/10
     this.zoom = new_zoom
@@ -67,7 +79,8 @@ function Options() {
       })
     }
   }
-  this.check_actions = function() {
+  this.check_actions = function()
+  {
     var found = false
     var text = left.textarea_el.value;
     var lines = text.split("\n");
