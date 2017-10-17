@@ -65,12 +65,18 @@ function Navi()
   {
     var scroll_distance = left.textarea_el.scrollTop;
     var scroll_max = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight;
+    var scroll_perc = (scroll_distance/scroll_max);
     // if-else statement here could be shortened to single line, sacrificing readability
     if(scroll_max > 0) {
-      left.scroll_el.style.width = (scroll_distance/scroll_max) * window.innerWidth;
+      left.scroll_el.style.width = scroll_perc * window.innerWidth;
     } else {
       left.scroll_el.style.width = 0
     }
+
+    // Scroll Navi
+    var navi_overflow = (left.navi.el.scrollHeight) - window.innerHeight;
+    left.navi.el.style.top = -(scroll_perc * navi_overflow);
+    console.log(navi_overflow)
   }
 
   this.next = function()
