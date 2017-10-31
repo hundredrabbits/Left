@@ -75,8 +75,8 @@ function Navi()
 
     // Scroll Navi
     var navi_overflow = (left.navi.el.scrollHeight) - window.innerHeight;
-    left.navi.el.style.top = -(scroll_perc * navi_overflow);
-    console.log(navi_overflow)
+    
+    left.navi.el.style.top = navi_overflow > 0 ? -(scroll_perc * navi_overflow) : 0;
   }
 
   this.next = function()
