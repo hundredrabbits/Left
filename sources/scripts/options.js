@@ -97,6 +97,8 @@ function Options()
     this.check_string(line, /> *=? *replace *=?[ \(]*([^ \(\)]*)[ \)]*/i, "string", (res) => {
       let actLine = left.active_line_id()
       found = true
+      //// declarations
+      
       let res_array = res.split(/,/)
       res_array = res_array.map((a) => a.replace(/^ +/,"").replace(/ +$/,""))
       let regex = new RegExp(res_array[0], "g")
@@ -109,15 +111,25 @@ function Options()
       text_val = [text_val.slice(0,from),text_val.slice(to)]
 
       let replace_string,
-          text_before_length_dif = 0; //the diffrence in length between the text before the cursor
-      try {
-        let replace_num = text_val.join("").match(regex).length
-        replace_string = "" + replace_num + " occurrence" + (replace_num==1 ? "" : "s") + " replaced"
-        text_before_length_dif = text_val[0].replace(regex,res_array[1]).length-text_val[0].length
-      } catch (error) {
-        replace_string = "no occurrences found"
+      text_before_length_dif = 0; //the diffrence in length between the text before the cursor
+
+      //// computation
+
+      if(res_array.length == 2) { // there are two arguments
+        try {
+          let replace_num = text_val.join("").match(regex).length
+          replace_string = "" + replace_num + " occurrence" + (replace_num==1 ? "" : "s") + " replaced"
+          text_before_length_dif = text_val[0].replace(regex,res_array[1]).length-text_val[0].length
+        } catch (error) {
+          replace_string = "no occurrences found"
+        }
+      } else { // there is not two arguments
+        replace_string = "replace action requires two comma separated arguments"
       }
-      left.textarea_el.value = left.textarea_el.value.replace(regex,res_array[1])
+
+      //// execution
+
+      if(res_array.length == 2) left.textarea_el.value = left.textarea_el.value.replace(regex,res_array[1])
       let cursor_return_index = from+text_before_length_dif+replace_string.length // the place to set the cursor to
       left.go_to_fromTo(cursor_return_index,cursor_return_index)
       left.replace_line(actLine,replace_string,false)
