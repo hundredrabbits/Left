@@ -138,7 +138,7 @@ function Left()
     var l = this.active_word_location();
     var w = left.textarea_el.value.substr(l.from,l.to-l.from);
 
-    // Preserve capitali.ation
+    // Preserve capitalization
     if(w.substr(0,1) == w.substr(0,1).toUpperCase()){
       word = word.substr(0,1).toUpperCase()+word.substr(1,word.length);
     }

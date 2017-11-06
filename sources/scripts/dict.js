@@ -30,7 +30,7 @@ function Dict()
 
   this.find_suggestion = function(to_word)
   {
-    if(!this.is_suggestions_enabled){ return null; }
+    if(!left.options.suggestions){ return null; }
 
     to_word = to_word.toLowerCase();
 
@@ -56,7 +56,7 @@ function Dict()
   this.find_synonym = function(to_word)
   {
     to_word = to_word.toLowerCase();
-    if(!this.is_synonyms_enabled && this.synonyms){ return null; }
+    if(!left.options.synonyms && this.synonyms){ return null; }
 
     if(this.synonyms[to_word]){ return squash(this.synonyms[to_word]); }
 

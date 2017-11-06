@@ -49,7 +49,7 @@ function Navi()
       var line = lines[line_id];
       if(line.substr(0,2).replace(/@/g,"#") == "##"){
         var text = line.replace(/ +/,"").substring(2);
-        text = text.replace(/[@#]+/,(match) => {console.log(match);return new Array(match.length+1).join("\u200b ")})
+        text = text.replace(/[@#]+/,(match) => {return new Array(match.length+1).join("\u200b ")})
         this.markers.push({text:text,line:line_id,type:"note"});
       }
       else if(line.substr(0,1).replace(/@/g,"#") == "#"){
@@ -96,19 +96,12 @@ function Navi()
   {
     var active_line_id = left.active_line_id();
 
-    var i = 0;
     for(marker_id in this.markers){
-      var next_marker = this.markers[i+1];
-
-      if(this.markers[i-1] && next_marker && next_marker.line > active_line_id){
-        left.go_to_line(this.markers[i-1].line);
+      var marker = this.markers[this.markers.length-(parseInt(marker_id)+1)];
+      if(marker.line < active_line_id){
+        left.go_to_line(marker.line);
         break;
       }
-      else if(!next_marker){
-        left.go_to_line(this.markers[i-1].line);
-        break;
-      }
-      i += 1;
     }
   }
 }
