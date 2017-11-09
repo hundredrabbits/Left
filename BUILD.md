@@ -27,11 +27,11 @@ cd /xxiivv/Nataniev/public/public.projects/builds/
 ~/butler push /xxiivv/Nataniev/public/public.projects/builds/Left-win32-x64/ hundredrabbits/left:windows-64
 ~/butler push /xxiivv/Nataniev/public/public.projects/builds/Left-darwin-x64/ hundredrabbits/left:osx-64
 
+~/butler status hundredrabbits/left
+
 rm -r /xxiivv/Nataniev/public/public.projects/builds/Left-darwin-x64/
 rm -r /xxiivv/Nataniev/public/public.projects/builds/Left-linux-x64/
 rm -r /xxiivv/Nataniev/public/public.projects/builds/Left-win32-x64/
-
-~/butler status hundredrabbits/left
 ```
 
 ### Build Linux64 / Darwin64 / Windows64(Local)

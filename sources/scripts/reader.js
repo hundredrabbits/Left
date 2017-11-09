@@ -26,7 +26,7 @@ function Reader()
 
     var html = ": ";
     html += "<span style='opacity:0'>"+left.reader.orp_pad(words,orp)+"</span>"
-    html += "<span class='fm'>"+orp.before+"</span><span class='fh'>"+orp.key+"</span><span class='fm'>"+orp.after+"</span>";
+    html += "<span class='fm'>"+orp.before.trim()+"</span><span class='fh'>"+orp.key.trim()+"</span><span class='fm'>"+(word.length > 1 ? orp.after : '').trim()+"</span>";
     html += "<span style='float:right'>"+left.reader.queue.length+"W "+parseInt((left.reader.queue.length * 175)/1000)+"S "+parseInt(((left.reader.index)/parseFloat(left.reader.queue.length+left.reader.index)) * 100)+"% "+parseInt((1000/left.reader.speed)*60)+"W/M</span>"
     left.stats_el.innerHTML = html;
 
