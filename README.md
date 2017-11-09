@@ -38,11 +38,15 @@ Left is a simple, minimalist, open-source and cross-platform text editor.
 
 ## Operator
 
-Press `ctrl k`, or `escape` to start the **operator** mode. To find and replace a word, use `word = new_word`, and press `Enter`. To find and replace words ending in *-ing*, use `-ing = new_word`. Press `Esc` to stop.
+Press `escape` to start the **operator** mode. To find and replace a word, use `word = new_word`, and press `Enter`. To find and replace words ending in *-ing*, use `-ing = new_word`. Press `Esc` to stop.
 
 - `NUMBER` go to line number.
 - `WORD` go to word.
 - `WORD_A = WORD_B` replace word `WORD_A` with word `WORD_B`.
+
+## Speed Reader
+
+Select some text and press `ctrl k`.
 
 ## Themes
 

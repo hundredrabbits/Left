@@ -6,6 +6,7 @@ function Left()
   this.navi = new Navi();
   this.source = new Source();
   this.options = new Options();
+  this.reader = new Reader();
 
   this.textarea_el    = document.createElement('textarea');
   this.stats_el       = document.createElement('stats');

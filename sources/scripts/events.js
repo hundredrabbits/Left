@@ -3,7 +3,10 @@ document.onkeydown = function key_down(e)
   // update last_char
 
   left.last_char = e.key
-  console.log(left.last_char)
+
+  if(e.key == "Escape"){
+    left.reader.stop();
+  }
 
   // Reset
 
@@ -54,6 +57,14 @@ document.onkeydown = function key_down(e)
   if(e.key == "S" && (e.ctrlKey || e.metaKey)){
     e.preventDefault();
     left.source.export();
+    return;
+  }
+
+  // Reader
+
+  if(e.key == "k" && (e.ctrlKey || e.metaKey)){
+    e.preventDefault();
+    left.reader.start();
     return;
   }
 
