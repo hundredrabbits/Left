@@ -9,7 +9,7 @@ function Reader()
   {
     this.segment.from = left.textarea_el.selectionStart
     this.segment.to = left.textarea_el.selectionEnd
-    this.segment.text = left.textarea_el.value.substr(this.segment.from,this.segment.to - this.segment.from)
+    this.segment.text = left.textarea_el.value.substr(this.segment.from,this.segment.to - this.segment.from).replace(/\n/g," ")
     this.segment.words = this.segment.text.split(" ");
     this.queue = this.segment.words;
     this.index = 0;
