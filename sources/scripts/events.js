@@ -159,7 +159,7 @@ window.addEventListener('drop', function(e)
   };
 
   if(left.source.should_confirm){
-    dialog.showMessageBox({type: 'question',icon:app_path+'/icon.png',buttons: ['Yes', 'No'],title: 'Confirm',message: 'Unsaved data will be lost. Are you sure you want to continue?' }, function(response) { if (response === 0) { reader.readAsText(file); } })  
+    dialog.showMessageBox({type: 'question',buttons: ['Yes', 'No'],title: 'Confirm',message: 'Unsaved data will be lost. Are you sure you want to continue?' }, function(response) { if (response === 0) { reader.readAsText(file); } })  
     return;
   }
 });
