@@ -89,7 +89,7 @@ function Left()
         synonym_html += syn_id == (left.selection.index % left.synonyms.length) ? "<i>"+left.synonyms[syn_id]+"</i> " : left.synonyms[syn_id]+" ";
       }
     }
-    left.stats_el.innerHTML = left.synonyms ? synonym_html : ""+stats.l+"L "+stats.w+"W "+stats.v+"V "+stats.c+"C "+suggestion_html;
+    left.stats_el.innerHTML = left.synonyms ? synonym_html : ""+stats.l+"L "+stats.w+"W "+stats.v+"V "+stats.c+"C "+left.source.hint()+" "+suggestion_html;
   }
 
   // Location tools

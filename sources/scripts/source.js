@@ -93,6 +93,14 @@ function Source()
     if(left.textarea_el.value.length > 0){ return true; }
   }
 
+  this.hint = function()
+  {
+    if(!this.path){ return "~"; }
+
+    var parts = this.path.split("/");
+    return this.path ? parts[parts.length-1] : "Unsaved"
+  }
+
   function is_json(text)
   {
     try{
