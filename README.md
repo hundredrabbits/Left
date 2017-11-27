@@ -57,9 +57,9 @@ Drag a .thm file on the window to install it.
 - Project view/Open Folders
 - Clicking icon on dock, shows the application.
 
-## Development
+## Support
 
-Simply type `npm start` from the project root.
+You can support this project through [Patreon](https://patreon.com/100), or with `$ETH 0x7a5f5d9B697F04f5deE82c81859F7cC4FDb6e990` and `$BTC 1NU2Pso6nYbRpCAftX3yqQW9w2NSUxzsNa`. 
 
 ## License
 
