@@ -71,11 +71,7 @@ function Left()
 
   this.update_stats = function()
   {
-    var stats = {};
-    stats.l = left.lines_count;
-    stats.w = left.words_count;
-    stats.c = left.chars_count;
-    stats.v = left.dictionary.vocabulary.length-1;
+    var stats = left.parse_stats(left.selected());
 
     var suggestion_html = "";
     var synonym_html = " <b>"+left.selection.word+"</b> ";
@@ -89,10 +85,34 @@ function Left()
         synonym_html += syn_id == (left.selection.index % left.synonyms.length) ? "<i>"+left.synonyms[syn_id]+"</i> " : left.synonyms[syn_id]+" ";
       }
     }
-    left.stats_el.innerHTML = left.synonyms ? synonym_html : ""+stats.l+"L "+stats.w+"W "+stats.v+"V "+stats.c+"C "+left.source.hint()+" "+suggestion_html;
+    left.stats_el.innerHTML = left.synonyms && left.selected().length < 5 ? synonym_html : (left.textarea_el.selectionStart != left.textarea_el.selectionEnd ? "<b>["+left.textarea_el.selectionStart+","+left.textarea_el.selectionEnd+"]</b> " : '')+""+stats.l+"L "+stats.w+"W "+stats.v+"V "+stats.c+"C "+left.source.hint()+" "+suggestion_html;
+  }
+
+  this.parse_stats = function(text = left.textarea_el.value)
+  {
+    text = text.length > 5 ? text.trim() : left.textarea_el.value;
+
+    var h = {};
+    var words = text.toLowerCase().replace(/[^a-z0-9 ]/g, '').split(" ");
+    for(id in words){
+      h[words[id]] = 1
+    }
+
+    var stats = {};
+    stats.l = text.split("\n").length; // lines_count
+    stats.w = text.split(" ").length; // words_count
+    stats.c = text.length; // chars_count
+    stats.v = Object.keys(h).length;
+    return stats;
   }
 
   // Location tools
+
+  this.selected = function()
+  {
+    var value = left.textarea_el.value.substr(left.textarea_el.selectionStart,left.textarea_el.selectionEnd - left.textarea_el.selectionStart);
+    return value;
+  }
 
   this.active_line_id = function()
   {
