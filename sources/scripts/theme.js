@@ -3,25 +3,24 @@ function Theme()
   this.el = document.createElement("style");
   this.active = null;
 
-  this.collection = {};
-  this.collection.blanc = { background:"#eee",f_high:"#111",f_med:"#999",f_low:"#bbb",f_inv:"#fff",b_high:"#000",b_med:"#999",b_low:"#ddd",b_inv:"#999"};
-  this.collection.noir = { background: "#000", f_high: "#fff", f_med: "#999", f_low: "#555", f_inv: "#000", b_high: "#000", b_med: "#555", b_low: "#222", b_inv: "#fff" };
-  this.collection.pale = { background: "#555", f_high: "#fff", f_med: "#999", f_low: "#bbb", f_inv: "#555", b_high: "#000", b_med: "#999", b_low: "#666", b_inv: "#fff" };
+  this.default = { background: "#222", f_high: "#fff", f_med: "#777", f_low: "#444", f_inv: "#000", b_high: "#000", b_med: "#affec7", b_low: "#000", b_inv: "#affec7" }
 
   this.start = function()
   {
     if(localStorage.theme && is_json(localStorage.theme)){
+      console.log("Theme","Found in localStorage")
       this.install(JSON.parse(localStorage.theme));  
     }
     else{
-      this.install(this.collection.blanc);
+      console.log("Theme","Creating new")
+      this.install(this.default);
     }
   }
 
   this.save = function()
   {
     localStorage.setItem("theme", JSON.stringify(this.active));
-    console.log("Saved theme");
+    console.log("Theme","Saved");
   }
 
   this.load = function(theme_str)
@@ -29,18 +28,7 @@ function Theme()
     if(is_json(theme_str)){
       this.install(JSON.parse(theme_str));
     }
-    else if(this.collection[theme_str]){
-      this.install(this.collection[theme_str]);
-    } else {
-      fs.readFile(app_path + '/themes/' + theme_str + '.thm', 'utf8', function (err, data) {
-        if (!err) {
-          obj = JSON.parse(data);
-          left.theme.collection[theme_str] = obj
-          left.theme.install(obj)
-        }
-      });
-    }
-    console.log("Loaded theme");
+    console.log("Theme","Loaded");
   }
 
   this.install = function(theme)
@@ -65,9 +53,26 @@ function Theme()
     html += "stats { color:"+theme.f_low+" !important }\n";
     html += "stats b { color:"+theme.f_high+" !important }\n";
     html += "highlight b { border-bottom: 1px solid "+theme.f_low+" !important; }\n";
-    html += "::selection { background:"+theme.b_inv+" !important; color:"+theme.f_inv+" }\n";
+    html += "::selection { background:"+theme.b_low+" !important; color:"+theme.f_med+" }\n";
 
     this.el.innerHTML = html;
     this.save();
+  }
+
+  this.reset = function()
+  {
+    console.log("Theme","reset");
+    this.install(this.default);
+  }
+
+  function is_json(text)
+  {
+    try{
+      JSON.parse(text);
+      return true;
+    }
+    catch (error){
+      return false;
+    }
   }
 }

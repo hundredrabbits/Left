@@ -13,6 +13,7 @@ document.onkeydown = function key_down(e)
   if((e.key == "Backspace" || e.key == "Delete") && e.ctrlKey && e.shiftKey){
     e.preventDefault();
     left.reset();
+    left.theme.reset();
     return;
   }
 

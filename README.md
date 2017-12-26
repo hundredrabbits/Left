@@ -57,12 +57,8 @@ Drag a .thm file on the window to install it.
 - Project view/Open Folders
 - Clicking icon on dock, shows the application.
 
-## Support
+## Extras
 
-- You can support this project through [Patreon](https://patreon.com/100), or with:
-- **$ETH** `0x7a5f5d9B697F04f5deE82c81859F7cC4FDb6e990`
-- **$BTC** `1NU2Pso6nYbRpCAftX3yqQW9w2NSUxzsNa`. 
-
-## License
-
-See the [LICENSE](LICENSE.md) file for license rights and limitations (CC).
+- Download additional [themes](https://github.com/hundredrabbits/Themes).
+- Support this project through [Patreon](https://patreon.com/100).
+- See the [License](LICENSE.md) file for license rights and limitations (MIT).
