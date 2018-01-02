@@ -4,7 +4,7 @@ function Left()
   this.dictionary = new Dict();
   this.operator = new Operator();
   this.navi = new Navi();
-  this.source = new Source();
+  this.project = new Project();
   this.options = new Options();
   this.reader = new Reader();
 
@@ -80,7 +80,7 @@ function Left()
         synonym_html += syn_id == (left.selection.index % left.synonyms.length) ? "<i>"+left.synonyms[syn_id]+"</i> " : left.synonyms[syn_id]+" ";
       }
     }
-    left.stats_el.innerHTML = left.synonyms && left.selected().length < 5 ? synonym_html : (left.textarea_el.selectionStart != left.textarea_el.selectionEnd ? "<b>["+left.textarea_el.selectionStart+","+left.textarea_el.selectionEnd+"]</b> " : '')+""+stats.l+"L "+stats.w+"W "+stats.v+"V "+stats.c+"C "+left.source.hint()+" "+suggestion_html;
+    left.stats_el.innerHTML = left.synonyms && left.selected().length < 5 ? synonym_html : (left.textarea_el.selectionStart != left.textarea_el.selectionEnd ? "<b>["+left.textarea_el.selectionStart+","+left.textarea_el.selectionEnd+"]</b> " : '')+""+stats.l+"L "+stats.w+"W "+stats.v+"V "+stats.c+"C "+suggestion_html;
   }
 
   this.parse_stats = function(text = left.textarea_el.value)
@@ -339,7 +339,6 @@ function Left()
   this.reset = function()
   {
     left.textarea_el.value = left.splash();
-    localStorage.setItem("backup", null);
     left.dictionary.update();
     left.refresh();
   }

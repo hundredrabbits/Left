@@ -1,61 +1,84 @@
-function Source()
+function Project()
 {  
-  this.path = null;
+  this.paths = [];
+  this.index = 0;
 
   this.clear = function()
   {
-    left.source.path = null;
+    this.paths = [];
+    this.index = 0;
+
     left.textarea_el.value = "";
     left.dictionary.update();
     left.refresh();
   }
 
-  this.load = function(content,path = "")
+  this.open = function()
+  {
+    var paths = dialog.showOpenDialog({properties: ['openFile','multiSelections']});
+
+    if(!paths){ console.log("Nothing to load"); return; }
+
+    this.index = 0;
+    this.paths = paths;
+
+    this.load_path(paths[0])
+  }
+
+  this.load_path = function(path)
+  {
+    fs.readFile(path, 'utf-8', (err, data) => {
+      if(err){ alert("An error ocurred reading the file :" + err.message); return; }
+      left.project.load(data,path);
+      left.scroll_to(0,0)
+    });
+  }
+
+  this.original = "";
+
+  this.load = function(content,path)
   {
     if(is_json(content)){
       var obj = JSON.parse(content);
       content = this.format_json(obj);
     }
 
-    var file_type = path.split(".")[path.split(".").length-1];
+    this.original = content;
 
-    if(file_type == "thm"){
-      left.theme.install(obj);
-    }
-
-    this.path = path ? path : null;
     left.textarea_el.value = content;
     left.dictionary.update();
     left.refresh();
     left.stats_el.innerHTML = "<b>Loaded</b> "+path;
   }
 
-  this.open = function()
+  this.show_file = function(index)
   {
-    var filepath = dialog.showOpenDialog({properties: ['openFile']});
+    if(this.has_changes()){ setTimeout(function(){ left.stats_el.innerHTML = `<b>Unsaved Changes</b> ${left.project.paths[left.project.index]}` },100); return; }
 
-    if(!filepath){ console.log("Nothing to load"); return; }
-
-    fs.readFile(filepath[0], 'utf-8', (err, data) => {
-      if(err){ alert("An error ocurred reading the file :" + err.message); return; }
-
-      left.source.load(data,filepath[0]);
-    });
+    this.index = index;
+    this.load_path(this.paths[index])
   }
 
   this.save = function()
   {
-    if(!this.path){ this.export(); return; }
-    fs.writeFile(left.source.path, left.textarea_el.value, (err) => {
+    var path = this.paths[this.index]
+    if(!path){ this.export(); return; }
+
+    this.original = left.textarea_el.value;
+
+    fs.writeFile(path, left.textarea_el.value, (err) => {
       if(err) { alert("An error ocurred updating the file" + err.message); console.log(err); return; }
-      left.stats_el.innerHTML = "<b>Saved</b> "+this.path;
+      left.refresh();
+      left.stats_el.innerHTML = "<b>Saved</b> "+path;
     });
   }
 
-  this.backup = function()
+  this.close_file = function()
   {
-    localStorage.setItem("backup", left.textarea_el.value);
-    console.log("Saved backup");
+    if(this.paths.length < 2){ return; }
+
+    this.paths.splice(this.index,1);
+    this.show_file(0);
   }
 
   this.simple_export = function()
@@ -78,9 +101,14 @@ function Source()
       if (fileName === undefined){ return; }
       fs.writeFile(fileName+".txt", str, (err) => {
         if(err){ alert("An error ocurred creating the file "+ err.message); return; }
-        left.source.path = fileName+".txt";
+        if(left.project.paths.indexOf(fileName+".txt") < 0){ left.project.paths.push(fileName+".txt"); left.refresh(); }
       });
     }); 
+  }
+
+  this.has_changes = function()
+  {
+    return left.textarea_el.value != left.project.original;
   }
 
   this.format_json = function(obj)
@@ -91,14 +119,6 @@ function Source()
   this.should_confirm = function()
   {
     if(left.textarea_el.value.length > 0){ return true; }
-  }
-
-  this.hint = function()
-  {
-    if(!this.path){ return "~"; }
-
-    var parts = this.path.split("/");
-    return this.path ? parts[parts.length-1] : "Unsaved"
   }
 
   function is_json(text)

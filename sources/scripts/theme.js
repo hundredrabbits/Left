@@ -54,6 +54,13 @@ function Theme()
     html += "stats b { color:"+theme.f_high+" !important }\n";
     html += "highlight b { border-bottom: 1px solid "+theme.f_low+" !important; }\n";
     html += "::selection { background:"+theme.b_low+" !important; color:"+theme.f_med+" }\n";
+    
+    html += "navi  { color:"+theme.f_low+" }\n";
+    html += "navi li.file { color:"+theme.f_med+" }\n";
+    html += "navi li.active { color:"+theme.f_high+" }\n";
+    html += "navi li::before { color:"+theme.f_low+" }\n";
+
+
 
     this.el.innerHTML = html;
     this.save();
