@@ -10,7 +10,7 @@ Left is a simple, minimalist, open-source and cross-platform text editor.
 
 ## Features
 
-- Create markers by beginning lines with # or ##.
+- Create markers by beginning lines with `#`, `##` or `--`.
 - Open a text file by dragging it here, or `ctrl o`.
 - Save a text file with `ctrl s`.
 - The synonyms dictionary contains 12465 common words.

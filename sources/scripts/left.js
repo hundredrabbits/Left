@@ -43,13 +43,8 @@ function Left()
 
     this.textarea_el.focus();
 
-    if(localStorage.backup){
-      this.textarea_el.value = localStorage.backup;
-    }
-    else{
-      this.textarea_el.value = this.splash();
-      this.textarea_el.setSelectionRange(0,0);
-    }
+    this.textarea_el.value = this.splash();
+    this.textarea_el.setSelectionRange(0,0);
     
     this.dictionary.update();
     this.refresh();

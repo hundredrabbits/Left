@@ -22,8 +22,8 @@ function Navi()
       } else {
         el.innerHTML = marker.text;
       }
-      el.className = active_line_id >= marker.line && (!(next_marker) || active_line_id < next_marker.line) ? marker.type+" active" : marker.type;
-      el.className += marker.type == "header" ? " fh" : " fm";
+      el.className = active_line_id >= marker.line && (!(next_marker) || active_line_id < next_marker.line) ? marker.type+" active fh" : marker.type+" fm";
+      el.className += marker.type == "header" ? " fh" : "";
       el.onmouseup = function on_mouseup(e){ left.go_to_line(e.target.destination); }
       this.el.appendChild(el);
       i += 1;
@@ -39,8 +39,8 @@ function Navi()
     left.lines_count = lines.length;
     let regex = new RegExp(/[\w][^\w\-]+[\w]/g), matches = [], match;
     while(match = regex.exec(text)) {
-        matches.push(match);
-        regex.lastIndex = match.index+1;
+      matches.push(match);
+      regex.lastIndex = match.index+1;
     }
     left.words_count = matches.length+1;
     left.chars_count = text.length;
@@ -56,7 +56,13 @@ function Navi()
         var text = line.replace(/ +/,"").substring(1);
         this.markers.push({text:text,line:line_id,type:"header"});
       }
-      
+      else if(line.substr(0,2).replace(/@/g,"#") == "--"){
+        var text = line.replace(/ +/,"").substring(2);
+        if(text.indexOf(" : ")){
+          text = text.split(" : ")[0];
+        }
+        this.markers.push({text:text,line:line_id,type:"comment"});
+      }
     }
     // End
   }
@@ -64,14 +70,12 @@ function Navi()
   this.update_scrollbar = function()
   {
     var scroll_distance = left.textarea_el.scrollTop;
+    var scroll_progress = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight;
     var scroll_max = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight;
     var scroll_perc = (scroll_distance/scroll_max);
-    // if-else statement here could be shortened to single line, sacrificing readability
-    if(scroll_max > 0) {
-      left.scroll_el.style.width = scroll_perc * window.innerWidth;
-    } else {
-      left.scroll_el.style.width = 0
-    }
+
+    console.log((scroll_distance/scroll_progress))
+    left.scroll_el.style.width = ((scroll_distance/scroll_progress) * window.innerWidth)+"px";
 
     // Scroll Navi
     var navi_overflow = (left.navi.el.scrollHeight) - window.innerHeight;
