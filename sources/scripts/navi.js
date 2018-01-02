@@ -74,13 +74,10 @@ function Navi()
     var scroll_max = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight;
     var scroll_perc = (scroll_distance/scroll_max);
 
-    console.log((scroll_distance/scroll_progress))
     left.scroll_el.style.width = ((scroll_distance/scroll_progress) * window.innerWidth)+"px";
-
-    // Scroll Navi
-    var navi_overflow = (left.navi.el.scrollHeight) - window.innerHeight;
     
-    left.navi.el.style.top = navi_overflow > 0 ? -(scroll_perc * navi_overflow) : 0;
+    var navi_overflow = (left.navi.el.scrollHeight) - window.innerHeight;
+    left.navi.el.style.top = navi_overflow > 0 ? -(scroll_perc * navi_overflow)+"px" : 0;
   }
 
   this.next = function()

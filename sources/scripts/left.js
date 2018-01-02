@@ -267,7 +267,7 @@ function Left()
   { //creates a temp div which 
     let text_val = this.textarea_el.value
     var div = document.createElement("div");
-    div.innerHTML=text_val.slice(0,from); 
+    div.innerHTML = text_val.slice(0,to); 
     document.body.appendChild(div);
     this.textarea_el.scrollTop = div.offsetHeight - 60
     div.remove()
