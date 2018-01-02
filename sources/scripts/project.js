@@ -25,12 +25,21 @@ function Project()
     this.load_path(paths[0])
   }
 
+  this.open_extra = function(path)
+  {
+    if(left.project.paths.indexOf(path) < 0){ left.project.paths.push(path); }
+
+    this.index = left.project.paths.length-1;
+    this.load_path(left.project.paths[this.index])
+  }
+
   this.load_path = function(path)
   {
     fs.readFile(path, 'utf-8', (err, data) => {
       if(err){ alert("An error ocurred reading the file :" + err.message); return; }
       left.project.load(data,path);
       left.scroll_to(0,0)
+      left.refresh();
     });
   }
 
@@ -101,7 +110,7 @@ function Project()
       if (fileName === undefined){ return; }
       fs.writeFile(fileName+".txt", str, (err) => {
         if(err){ alert("An error ocurred creating the file "+ err.message); return; }
-        if(left.project.paths.indexOf(fileName+".txt") < 0){ left.project.paths.push(fileName+".txt"); left.refresh(); }
+        left.project.open_extra(fileName+".txt");
       });
     }); 
   }

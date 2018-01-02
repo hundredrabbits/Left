@@ -25,6 +25,7 @@ function Theme()
 
   this.load = function(theme_str)
   {
+    console.log(theme_str)
     if(is_json(theme_str)){
       this.install(JSON.parse(theme_str));
     }
@@ -55,10 +56,10 @@ function Theme()
     html += "highlight b { border-bottom: 1px solid "+theme.f_low+" !important; }\n";
     html += "::selection { background:"+theme.b_low+" !important; color:"+theme.f_med+" }\n";
     
-    html += "navi  { color:"+theme.f_low+" }\n";
-    html += "navi li.file { color:"+theme.f_med+" }\n";
-    html += "navi li.active { color:"+theme.f_high+" }\n";
-    html += "navi li::before { color:"+theme.f_low+" }\n";
+    html += "navi  { color:"+theme.f_low+" !important }\n";
+    html += "navi li.file { color:"+theme.f_med+" !important }\n";
+    html += "navi li.active { color:"+theme.f_high+" !important }\n";
+    html += "navi li::before { color:"+theme.f_low+" !important }\n";
 
 
 

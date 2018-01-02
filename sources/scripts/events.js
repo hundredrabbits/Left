@@ -159,15 +159,23 @@ window.addEventListener('drop', function(e)
   if (file.type && !file.type.match(/text.*/)) { console.log("Not text", file.type); return false; }
 
   var path = file.path ? file.path : file.name;
-  var reader = new FileReader();
-  reader.onload = function(e){
-    left.project.load(e.target.result,path)
-  };
 
-  if(left.project.should_confirm){
-    dialog.showMessageBox({type: 'question',buttons: ['Yes', 'No'],title: 'Confirm',message: 'Unsaved data will be lost. Are you sure you want to continue?' }, function(response) { if (response === 0) { reader.readAsText(file); } })  
-    return;
+  // Load Theme
+  if(path.substr(-3,3) == "thm"){
+    console.log("Found theme..")
+    var reader = new FileReader();
+    reader.onload = function(e){
+      console.log("Loading theme..")
+      left.theme.load(e.target.result);
+      return;
+    };
+    reader.readAsText(file);
   }
+
+  // if(left.project.should_confirm){
+  //   dialog.showMessageBox({type: 'question',buttons: ['Yes', 'No'],title: 'Confirm',message: 'Unsaved data will be lost. Are you sure you want to continue?' }, function(response) { if (response === 0) { reader.readAsText(file); } })  
+  //   return;
+  // }
 });
 
 document.addEventListener('wheel', function(e)
