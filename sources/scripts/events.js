@@ -132,10 +132,16 @@ document.onkeydown = function key_down(e)
       e.preventDefault()
     }
   }
-  
+
+  if((e.ctrlKey || e.metaKey) && parseInt(e.key) > 0){
+    e.preventDefault();
+    var target_index = parseInt(e.key) - 1
+    left.project.show_file(target_index);
+  }
+
   // Slower Refresh
   if(e.key == "Enter" && left.textarea_el.value.length > 50000 || left.textarea_el.value.length < 50000 ){
-    setTimeout(() => {left.dictionary.update(),left.refresh()}, 0)//left.dictionary.update();
+    setTimeout(() => {left.dictionary.update(),left.refresh()}, 0)
     return;
   }
   left.refresh();

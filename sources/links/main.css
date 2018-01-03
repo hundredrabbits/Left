@@ -2,7 +2,7 @@
 
 body { background:#f8f8f8; font-family: 'input_mono_regular'; font-size: 12px; overflow-y: hidden; color:red;}
 
-body navi { display: block;width: calc((100vw / 6));left: 0px;position: absolute;padding: 30px; -webkit-user-select: none;-webkit-app-region: drag; overflow-y: hidden; padding-top:90px;padding-bottom: 10px;}
+body navi { display: block;width: calc((100vw / 4) - 40px);left: 0px;position: absolute;padding: 30px; -webkit-user-select: none;-webkit-app-region: drag; overflow-y: hidden; padding-top:90px;padding-bottom: 10px;}
 body navi li { display: block;line-height: 20px;cursor: pointer; position: relative; -webkit-app-region: no-drag; }
 body navi li::before { position: absolute; left:-15px;}
 body navi li:hover { text-decoration: underline; }

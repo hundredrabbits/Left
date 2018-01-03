@@ -40,12 +40,16 @@ app.on('ready', () =>
     {
       label: 'Window',
       submenu : [
-        { label: 'Hide', accelerator: 'CmdOrCtrl+H',click: () => { if(is_shown){ win.hide(); } else{ win.show(); }}},
-        { label: 'Minimize', accelerator: 'CmdOrCtrl+M',click: () => { win.minimize(); }},
-        { label: 'Fullscreen', accelerator: 'CmdOrCtrl+Enter',click: () => { win.setFullScreen(win.isFullScreen() ? false : true); }}
+        { label: 'Toggle Window', accelerator: 'CmdOrCtrl+H',click: () => { if(is_shown){ win.hide(); } else{ win.show(); }}},
+        { label: "Toggle Fullscreen", accelerator: 'CmdOrCtrl+Enter',click: () => { win.setFullScreen(win.isFullScreen() ? false : true); }}
       ]
     }
   ]));
+
+  win.on('ready-to-show',function() {
+    win.show();
+  })
+
 
   win.on('ready-to-show',function() {
     win.show();
