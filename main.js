@@ -7,7 +7,7 @@ let win
 
 app.on('ready', () => 
 {
-  win = new BrowserWindow({width: 930, height: 530, minWidth:660, frame:false, backgroundColor: '#000', show:false,  resizable:true, transparent: true, autoHideMenuBar: true, icon: __dirname + '/icon.ico'})
+  win = new BrowserWindow({width: 930, height: 530, minWidth:660, frame:false, backgroundColor: '#000', show:false,  resizable:true, autoHideMenuBar: true, icon: __dirname + '/icon.ico'})
 
   var nativeHandleBuffer = win.getNativeWindowHandle();
 

@@ -184,7 +184,7 @@ function Left()
   this.autocomplete = function()
   {
     var suggestion = left.suggestion;
-    this.inject(suggestion.substr(left.selection.word.length,suggestion.length));
+    this.inject(suggestion.substr(left.selection.word.length,suggestion.length)+" ");
   }
 
   this.replace_line = function(id, new_text, del = false) // optional arg for deleting the line, used in actions

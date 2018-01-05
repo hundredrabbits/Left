@@ -7,8 +7,19 @@ function Navi()
   {
     this.el.innerHTML = "";
 
-    for(id in left.project.paths){
+    if(left.project.paths.length > 0){
+      this.project_markers();
+    }
+    else{
+      this.display_markers();
+    }
 
+    this.update_scrollbar();
+  }
+
+  this.project_markers = function()
+  {
+    for(id in left.project.paths){
       // Project markers
       var path = left.project.paths[id];
       var parts = path.split("/")
@@ -19,34 +30,37 @@ function Navi()
       file_el.textContent = file_name;
       this.el.appendChild(file_el);
       file_el.onmouseup = function on_mouseup(e){ left.project.show_file(e.target.destination); }
-
       // File Markers
       if(id != left.project.index){ continue; }
-      
       file_el.className += left.project.has_changes() ? " changes" : "";
-
-      this.update_markers();
-      var active_line_id = left.active_line_id();
-      var i = 0;
-      var marker_num = left.options.marker_num
-      for(marker_id in this.markers){
-        var marker = this.markers[marker_id];
-        var next_marker = this.markers[i+1];
-        var el = document.createElement('li');
-        el.destination = marker.line;
-        if(marker_num) {
-          el.innerHTML = marker.text+"<span>"+marker.line+"</span>";
-        } else {
-          el.innerHTML = marker.text;
-        }
-        el.className = active_line_id >= marker.line && (!(next_marker) || active_line_id < next_marker.line) ? marker.type+" active fh" : marker.type+" fm";
-        el.className += marker.type == "header" ? " fh" : "";
-        el.onmouseup = function on_mouseup(e){ left.go_to_line(e.target.destination); }
-        this.el.appendChild(el);
-        i += 1;
-      }
+      this.display_markers();
     }
-    this.update_scrollbar();
+  }
+
+  this.display_markers = function()
+  {
+    this.update_markers();
+
+    var active_line_id = left.active_line_id();
+    var i = 0;
+    var marker_num = left.options.marker_num
+    for(marker_id in this.markers){
+      var marker = this.markers[marker_id];
+      var next_marker = this.markers[i+1];
+      var el = document.createElement('li');
+      el.destination = marker.line;
+      if(marker_num) {
+        el.innerHTML = marker.text+"<span>"+marker.line+"</span>";
+      } else {
+        el.innerHTML = marker.text;
+      }
+      el.className = active_line_id >= marker.line && (!(next_marker) || active_line_id < next_marker.line) ? marker.type+" active fh" : marker.type+" fm";
+      el.className += marker.type == "header" ? " fh" : "";
+      el.onmouseup = function on_mouseup(e){ left.go_to_line(e.target.destination); }
+      this.el.appendChild(el);
+      i += 1;
+    }
+
   }
 
   this.update_markers = function()

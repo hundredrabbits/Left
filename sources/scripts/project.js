@@ -15,6 +15,8 @@ function Project()
 
   this.open = function()
   {
+    if(this.has_changes()){ left.project.alert(); return; }
+
     var paths = dialog.showOpenDialog({properties: ['openFile','multiSelections']});
 
     if(!paths){ console.log("Nothing to load"); return; }
@@ -62,7 +64,7 @@ function Project()
 
   this.show_file = function(index)
   {
-    if(this.has_changes()){ setTimeout(function(){ left.stats_el.innerHTML = `<b>Unsaved Changes</b> ${left.project.paths[left.project.index]}` },100); return; }
+    if(this.has_changes()){ left.project.alert(); return; }
 
     this.index = index;
     this.load_path(this.paths[index])
@@ -118,6 +120,11 @@ function Project()
   this.has_changes = function()
   {
     return left.textarea_el.value != left.project.original;
+  }
+
+  this.alert = function()
+  {
+    setTimeout(function(){ left.stats_el.innerHTML = `<b>Unsaved Changes</b> ${left.project.paths.length > 0 ? left.project.paths[left.project.index] : 'Press ctrl+s to save file.'}` },100);
   }
 
   this.format_json = function(obj)
