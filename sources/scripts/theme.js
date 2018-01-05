@@ -61,8 +61,6 @@ function Theme()
     html += "navi li.active { color:"+theme.f_high+" !important }\n";
     html += "navi li::before { color:"+theme.f_low+" !important }\n";
 
-
-
     this.el.innerHTML = html;
     this.save();
   }
