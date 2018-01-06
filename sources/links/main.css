@@ -2,7 +2,7 @@
 
 body { background:#f8f8f8; font-family: 'input_mono_regular'; font-size: 12px; overflow-y: hidden; color:red;}
 
-body navi { display: block;width: calc((100vw / 4) - 40px);left: 0px;position: absolute;padding: 30px; -webkit-user-select: none;-webkit-app-region: drag; overflow-y: hidden; padding-top:90px;padding-bottom: 10px;}
+body navi { display: block;width: calc((100vw / 4) - 40px);left: 0px;position: absolute;padding: 30px; -webkit-user-select: none;-webkit-app-region: drag; overflow-y: hidden; padding-top:90px;padding-bottom: 10px; height:100%; transition: opacity 150ms; opacity:1;}
 body navi li { display: block;line-height: 20px;cursor: pointer; position: relative; -webkit-app-region: no-drag; }
 body navi li::before { position: absolute; left:-15px;}
 body navi li:hover { text-decoration: underline; }
@@ -17,7 +17,7 @@ body navi li.changes::after { content:"*"; }
 body navi li.active {  }
 body navi li span { float:right; }
 
-body stats { display: block;border-bottom: 0px;margin-top: 30px;position: fixed;bottom:0px;left: calc((100vw / 2) - 25%);line-height: 40px;width:540px;height:40px;overflow: hidden; padding-left:30px; }
+body stats { display: block;border-bottom: 0px;margin-top: 30px;position: fixed;bottom:0px;left: calc((100vw / 2) - 25%);line-height: 40px;width:540px;height:40px;overflow: hidden; padding-left:30px;-webkit-user-select: none;-webkit-app-region: drag;}
 body stats .right { float:right; }
 body stats b {  font-family: 'input_mono_medium';}
 body stats i { text-decoration: underline; }
@@ -26,6 +26,6 @@ body scrollbar { display: block; background:#ccc; width:1px; height:1px; positio
 div {width: 600px;line-height: 20px;font-family: 'input_mono_regular'; font-size: 12px;white-space: pre-wrap; word-wrap:break-word}
 ::selection { background:#ddd;  opacity:1.0;}
 
-body.mobile navi { display:none; }
+body.mobile navi { opacity:0; }
 body.mobile textarea { left: 0px }
 body.mobile stats { left: 0px; -webkit-app-region: drag; }

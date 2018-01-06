@@ -63,7 +63,7 @@ document.onkeydown = function key_down(e)
 
   if(e.key == "S" && (e.ctrlKey || e.metaKey)){
     e.preventDefault();
-    left.project.export();
+    left.project.save_as();
     return;
   }
 

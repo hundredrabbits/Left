@@ -73,7 +73,7 @@ function Project()
   this.save = function()
   {
     var path = this.paths[this.index]
-    if(!path){ this.export(); return; }
+    if(!path){ this.save_as(); return; }
 
     this.original = left.textarea_el.value;
 
@@ -92,29 +92,25 @@ function Project()
     this.show_file(0);
   }
 
-  this.simple_export = function()
+  this.save_as = function()
   {
-    var text = left.textarea_el.value;
-    var blob = new Blob([text], {type: "text/plain;charset=" + document.characterSet});
-    var d = new Date(), e = new Date(d);
-    var since_midnight = e - d.setHours(0,0,0,0);
-    var timestamp = parseInt((since_midnight/864) * 10);
-    saveAs(blob, "backup."+timestamp+".txt");
-  }
-
-  this.export = function()
-  {
-    if(typeof dialog == "undefined"){ this.simple_export(); return; }
-
     var str = left.textarea_el.value;
 
     dialog.showSaveDialog((fileName) => {
       if (fileName === undefined){ return; }
-      fs.writeFile(fileName+".txt", str, (err) => {
+      let filename = left.project.has_extension(fileName) ? fileName : `${fileName}.txt`;
+      fs.writeFile(filename, str, (err) => {
         if(err){ alert("An error ocurred creating the file "+ err.message); return; }
-        left.project.open_extra(fileName+".txt");
+        left.project.open_extra(filename);
       });
     }); 
+  }
+
+  this.has_extension = function(str)
+  {
+    if(str.indexOf(".") < 0){ return false; }
+    var parts = str.split(".");
+    return parts[parts.length-1].length <= 3 ? true : false;
   }
 
   this.has_changes = function()
