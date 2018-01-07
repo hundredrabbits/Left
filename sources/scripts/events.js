@@ -177,11 +177,7 @@ window.addEventListener('drop', function(e)
     };
     reader.readAsText(file);
   }
-
-  // if(left.project.should_confirm){
-  //   dialog.showMessageBox({type: 'question',buttons: ['Yes', 'No'],title: 'Confirm',message: 'Unsaved data will be lost. Are you sure you want to continue?' }, function(response) { if (response === 0) { reader.readAsText(file); } })  
-  //   return;
-  // }
+  left.project.open_extra(path)
 });
 
 document.addEventListener('wheel', function(e)
