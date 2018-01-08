@@ -177,7 +177,9 @@ window.addEventListener('drop', function(e)
     };
     reader.readAsText(file);
   }
-  left.project.open_extra(path)
+  else{
+    left.project.open_extra(path)  
+  }
 });
 
 document.addEventListener('wheel', function(e)
