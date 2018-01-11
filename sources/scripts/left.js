@@ -21,7 +21,6 @@ function Left()
   this.synonyms = null;
   this.last_char = "s"; // this is not a typo. it's bad code, but it has to be a length one string
 
-  document.body.appendChild(this.theme.el);
   document.body.appendChild(this.navi.el);
   document.body.appendChild(this.textarea_el);
   document.body.appendChild(this.stats_el);
