@@ -2,8 +2,8 @@ function Theme()
 {
   this.el = document.createElement("style");
   this.el.type = 'text/css';
-
   this.default = { background: "#222", f_high: "#fff", f_med: "#777", f_low: "#444", f_inv: "#000", b_high: "#000", b_med: "#affec7", b_low: "#000", b_inv: "#affec7" }
+  this.active = this.default;
 
   this.start = function()
   {
@@ -30,6 +30,7 @@ function Theme()
       --b_inv: ${theme.b_inv};
     }`;
 
+    this.active = theme;
     this.el.textContent = css;
     localStorage.setItem("theme", JSON.stringify(theme));
   }
