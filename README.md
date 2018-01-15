@@ -36,7 +36,7 @@ Left is a simple, minimalist, open-source and cross-platform text editor.
 - `ctrl shift n` Clear.
 - `ctrl shift del` Reset.
 
-## Operator
+## Operator(DISABLED)
 
 Press `escape` to start the **operator** mode. To find and replace a word, use `word = new_word`, and press `Enter`. To find and replace words ending in *-ing*, use `-ing = new_word`. Press `Esc` to stop.
 
@@ -52,10 +52,9 @@ Select some text and press `ctrl k`.
 
 Drag a .thm file on the window to install it.
 
-## TODOs
+## Controls
 
-- Project view/Open Folders
-- Clicking icon on dock, shows the application.
+<img src='https://cdn.rawgit.com/hundredrabbits/Left/master/LAYOUT.svg?v=1' width="600"/>
 
 ## Extras
 
