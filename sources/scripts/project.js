@@ -5,8 +5,13 @@ function Project()
 
   this.new = function()
   {
-    var str = "";
+    // No Project
+    if(this.paths.length == 0){
+      left.textarea_el.value = "";
+      return;
+    }
 
+    var str = "";
     dialog.showSaveDialog((fileName) => {
       if (fileName === undefined){ return; }
       let filename = left.project.has_extension(fileName) ? fileName : `${fileName}.txt`;
@@ -62,10 +67,16 @@ function Project()
 
   this.close = function()
   {
+    if(this.has_changes()){ left.project.alert(); return; }
+    this.force_close();
+  }
+
+  this.force_close = function()
+  {
     if(this.paths.length < 2){ this.clear(); return; }
 
     this.paths.splice(this.index,1);
-    this.show_file(0);
+    this.show_file(0,true);
   }
 
   this.add = function(path)
@@ -103,7 +114,7 @@ function Project()
 
   this.load_path = function(path)
   {
-    if(!path){ return; }
+    if(!path){ this.original = left.textarea_el.value; return; }
 
     fs.readFile(path, 'utf-8', (err, data) => {
       if(err){ alert("An error ocurred reading the file :" + err.message); return; }
@@ -130,9 +141,9 @@ function Project()
     left.stats_el.innerHTML = "<b>Loaded</b> "+path;
   }
 
-  this.show_file = function(index)
+  this.show_file = function(index,force = false)
   {
-    if(this.has_changes()){ left.project.alert(); return; }
+    if(this.has_changes() && !force){ left.project.alert(); return; }
 
     this.index = clamp(index,0,this.paths.length-1);
 
