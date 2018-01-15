@@ -1,20 +1,12 @@
 document.onkeydown = function key_down(e)
 {
+  return;
   // update last_char
 
   left.last_char = e.key
 
   if(e.key == "Escape"){
     left.reader.stop();
-  }
-
-  // Reset
-
-  if((e.key == "Backspace" || e.key == "Delete") && e.ctrlKey && e.shiftKey){
-    e.preventDefault();
-    left.reset();
-    left.theme.reset();
-    return;
   }
 
   // Operator
@@ -28,42 +20,6 @@ document.onkeydown = function key_down(e)
   if(left.operator.is_active){
     e.preventDefault();
     left.operator.input(e);
-    return;
-  }
-
-  // New/Open/Save
-
-  if(e.key == "n" && (e.ctrlKey || e.metaKey)){
-    e.preventDefault();
-    if(left.project.should_confirm){
-      dialog.showMessageBox({type: 'question',icon:app_path+'/icon.png',buttons: ['Yes', 'No'],title: 'Confirm',message: 'Unsaved data will be lost. Are you sure you want to continue?' }, function(response) { if (response === 0) { left.project.clear(); } })  
-      return;
-    }
-    left.project.clear();
-    return;
-  }
-
-  if(e.key == "o" && (e.ctrlKey || e.metaKey)){
-    e.preventDefault();
-    left.project.open();
-    return;
-  }
-
-  if(e.key == "w" && (e.ctrlKey || e.metaKey)){
-    e.preventDefault();
-    left.project.close_file();
-    return;
-  }
-
-  if(e.key == "s" && (e.ctrlKey || e.metaKey)){
-    e.preventDefault();
-    left.project.save();
-    return;
-  }
-
-  if(e.key == "S" && (e.ctrlKey || e.metaKey)){
-    e.preventDefault();
-    left.project.save_as();
     return;
   }
 

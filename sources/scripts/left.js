@@ -1,6 +1,7 @@
 function Left()
 {
   this.theme = new Theme();
+  this.controller = new Controller();
   this.dictionary = new Dict();
   this.operator = new Operator();
   this.navi = new Navi();
@@ -45,6 +46,27 @@ function Left()
     this.textarea_el.value = this.splash();
     this.textarea_el.setSelectionRange(0,0);
     
+    this.controller.add("default","*","About",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left'); },"CmdOrCtrl+,");
+    this.controller.add("default","*","Fullscreen",() => { app.toggle_fullscreen(); },"CmdOrCtrl+Enter");
+    this.controller.add("default","*","Hide",() => { app.toggle_visible(); },"CmdOrCtrl+H");
+    this.controller.add("default","*","Inspect",() => { app.inspect(); },"CmdOrCtrl+.");
+    this.controller.add("default","*","Documentation",() => { left.controller.docs(); },"CmdOrCtrl+Esc");
+    this.controller.add("default","*","Reset",() => { left.theme.reset(); },"CmdOrCtrl+Backspace");
+    this.controller.add("default","*","Quit",() => { app.exit(); },"CmdOrCtrl+Q");
+
+    this.controller.add("default","File","New",() => { left.project.new(); },"CmdOrCtrl+N");
+    this.controller.add("default","File","Open",() => { left.project.open(); },"CmdOrCtrl+O");
+    this.controller.add("default","File","Save",() => { left.project.save(); },"CmdOrCtrl+S");
+    this.controller.add("default","File","Save As",() => { left.project.save_as(); },"CmdOrCtrl+Shift+S");
+    this.controller.add("default","File","Close",() => { left.project.close(); },"CmdOrCtrl+W");
+
+    this.controller.add("default","Navigation","Next Marker",() => { left.navi.next(); },"CmdOrCtrl+]");
+    this.controller.add("default","Navigation","Prev Marker",() => { left.navi.prev(); },"CmdOrCtrl+[");
+    this.controller.add("default","Navigation","Next File",() => { left.project.next(); },"CmdOrCtrl+Shift+]");
+    this.controller.add("default","Navigation","Prev File",() => { left.project.prev(); },"CmdOrCtrl+Shift+[");
+
+    this.controller.commit();
+
     this.dictionary.update();
     this.refresh();
   }

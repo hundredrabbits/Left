@@ -1,65 +1,48 @@
 const {app, BrowserWindow, webFrame, Menu} = require('electron')
 const path = require('path')
 const url = require('url')
-const shell = require('electron').shell
+const shell = require('electron').shell;
 
-let win
+let is_shown = true;
+
+app.inspect = function()
+{
+  app.win.toggleDevTools();
+}
+
+app.toggle_fullscreen = function()
+{
+  app.win.setFullScreen(app.win.isFullScreen() ? false : true);
+}
+
+app.toggle_visible = function()
+{
+  if(is_shown){ app.win.hide(); } else{ app.win.show(); }
+}
+
+app.inject_menu = function(m)
+{
+  Menu.setApplicationMenu(Menu.buildFromTemplate(m));
+}
+
+app.win = null;
 
 app.on('ready', () => 
 {
-  win = new BrowserWindow({width: 930, height: 530, minWidth:660, frame:false, backgroundColor: '#000', show:false,  resizable:true, autoHideMenuBar: true, icon: __dirname + '/icon.ico'})
+  app.win = new BrowserWindow({width: 880, height: 540, backgroundColor:"#000", minWidth: 587, minHeight: 540, frame:false, autoHideMenuBar: true, icon: __dirname + '/icon.ico'})
 
-  var nativeHandleBuffer = win.getNativeWindowHandle();
-
-  win.loadURL(`file://${__dirname}/sources/index.html`)
-    
-  let is_shown = true;
-  let is_fullscreen = false;
-
-  Menu.setApplicationMenu(Menu.buildFromTemplate([
-    {
-      label: 'File',
-      submenu: [
-        { label: 'Inspector', accelerator: 'CmdOrCtrl+.', click: () => { win.webContents.openDevTools(); }},
-        { label: 'Guide', accelerator: 'CmdOrCtrl+,', click: () => { shell.openExternal('https://github.com/hundredrabbits/Left'); }},
-        { label: 'Quit', accelerator: 'CmdOrCtrl+Q', click: () => { force_quit=true; app.exit(); }}
-      ]
-    },
-    {
-      label: 'Edit',
-      submenu: [
-        { role: 'undo' },
-        { role: 'redo' },
-        { role: 'cut' },
-        { role: 'copy' },
-        { role: 'paste' },
-        { role: 'delete' },
-        { role: 'selectall' }
-      ]
-    },
-    {
-      label: 'Window',
-      submenu : [
-        { label: 'Toggle Window', accelerator: 'CmdOrCtrl+H',click: () => { if(is_shown){ win.hide(); } else{ win.show(); }}},
-        { label: "Toggle Fullscreen", accelerator: 'CmdOrCtrl+Enter',click: () => { win.setFullScreen(win.isFullScreen() ? false : true); }}
-      ]
-    }
-  ]));
-
-  win.on('ready-to-show',function() {
-    win.show();
+  app.win.loadURL(`file://${__dirname}/sources/index.html`)
+  
+  app.win.on('closed', () => {
+    win = null
+    app.quit()
   })
 
-
-  win.on('ready-to-show',function() {
-    win.show();
-  })
-
-  win.on('hide',function() {
+  app.win.on('hide',function() {
     is_shown = false;
   })
 
-  win.on('show',function() {
+  app.win.on('show',function() {
     is_shown = true;
   })
 })
@@ -69,9 +52,8 @@ app.on('window-all-closed', () =>
   app.quit()
 })
 
-app.on('activate', () => 
-{
-  if (win === null) {
+app.on('activate', () => {
+  if (app.win === null) {
     createWindow()
   }
 })

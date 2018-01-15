@@ -3,6 +3,84 @@ function Project()
   this.paths = [];
   this.index = 0;
 
+  this.new = function()
+  {
+    var str = "";
+
+    dialog.showSaveDialog((fileName) => {
+      if (fileName === undefined){ return; }
+      let filename = left.project.has_extension(fileName) ? fileName : `${fileName}.txt`;
+      fs.writeFile(filename, str, (err) => {
+        if(err){ alert("An error ocurred creating the file "+ err.message); return; }
+        this.paths.push(filename);
+        left.refresh();
+      });
+    }); 
+  }
+
+  this.open = function()
+  {
+    var paths = dialog.showOpenDialog({properties: ['openFile','multiSelections']});
+
+    if(!paths){ console.log("Nothing to load"); return; }
+
+    for(id in paths){
+      var path = paths[id];
+      if(this.paths.indexOf(path) > -1){ continue; }
+      this.paths.push(path);
+    }
+
+    this.index = 0;
+    this.load_path(paths[this.index])
+  }
+
+  this.save = function()
+  {
+    var path = this.paths[this.index]
+    if(!path){ this.save_as(); return; }
+
+    this.original = left.textarea_el.value;
+
+    fs.writeFile(path, left.textarea_el.value, (err) => {
+      if(err) { alert("An error ocurred updating the file" + err.message); console.log(err); return; }
+      left.refresh();
+      left.stats_el.innerHTML = "<b>Saved</b> "+path;
+    });
+  }
+
+  this.save_as = function()
+  {
+    var str = left.textarea_el.value;
+
+    dialog.showSaveDialog((fileName) => {
+      if (fileName === undefined){ return; }
+      let filename = left.project.has_extension(fileName) ? fileName : `${fileName}.txt`;
+      fs.writeFile(filename, str, (err) => {
+        if(err){ alert("An error ocurred creating the file "+ err.message); return; }
+        this.paths.push(filename);
+        left.refresh();
+      });
+    }); 
+  }
+
+  this.close = function()
+  {
+    if(this.paths.length < 2){ return; }
+
+    this.paths.splice(this.index,1);
+    this.show_file(0);
+  }
+
+  this.next = function()
+  {
+    this.show_file(this.index+1);
+  }
+
+  this.prev = function()
+  {
+    this.show_file(this.index-1);
+  }
+
   this.clear = function()
   {
     this.paths = [];
@@ -13,30 +91,10 @@ function Project()
     left.refresh();
   }
 
-  this.open = function()
-  {
-    if(this.has_changes()){ left.project.alert(); return; }
-
-    var paths = dialog.showOpenDialog({properties: ['openFile','multiSelections']});
-
-    if(!paths){ console.log("Nothing to load"); return; }
-
-    this.index = 0;
-    this.paths = paths;
-
-    this.load_path(paths[0])
-  }
-
-  this.open_extra = function(path)
-  {
-    if(left.project.paths.indexOf(path) < 0){ left.project.paths.push(path); }
-
-    this.index = left.project.paths.length-1;
-    this.load_path(left.project.paths[this.index])
-  }
-
   this.load_path = function(path)
   {
+    if(!path){ return; }
+    
     fs.readFile(path, 'utf-8', (err, data) => {
       if(err){ alert("An error ocurred reading the file :" + err.message); return; }
       left.project.load(data,path);
@@ -66,44 +124,9 @@ function Project()
   {
     if(this.has_changes()){ left.project.alert(); return; }
 
-    this.index = index;
+    this.index = clamp(index,0,this.paths.length);
+
     this.load_path(this.paths[index])
-  }
-
-  this.save = function()
-  {
-    var path = this.paths[this.index]
-    if(!path){ this.save_as(); return; }
-
-    this.original = left.textarea_el.value;
-
-    fs.writeFile(path, left.textarea_el.value, (err) => {
-      if(err) { alert("An error ocurred updating the file" + err.message); console.log(err); return; }
-      left.refresh();
-      left.stats_el.innerHTML = "<b>Saved</b> "+path;
-    });
-  }
-
-  this.close_file = function()
-  {
-    if(this.paths.length < 2){ return; }
-
-    this.paths.splice(this.index,1);
-    this.show_file(0);
-  }
-
-  this.save_as = function()
-  {
-    var str = left.textarea_el.value;
-
-    dialog.showSaveDialog((fileName) => {
-      if (fileName === undefined){ return; }
-      let filename = left.project.has_extension(fileName) ? fileName : `${fileName}.txt`;
-      fs.writeFile(filename, str, (err) => {
-        if(err){ alert("An error ocurred creating the file "+ err.message); return; }
-        left.project.open_extra(filename);
-      });
-    }); 
   }
 
   this.has_extension = function(str)
@@ -143,4 +166,6 @@ function Project()
       return false;
     }
   }
+
+  function clamp(v, min, max) { return v < min ? min : v > max ? max : v; }
 }
