@@ -17,6 +17,13 @@ function Controller()
     console.log(`${mode}/${cat}/${label} <${accelerator}>`);
   }
 
+  this.add_role = function(mode,cat,label)
+  {
+    if(!this.menu[mode]){ this.menu[mode] = {}; }
+    if(!this.menu[mode][cat]){ this.menu[mode][cat] = {}; }
+    this.menu[mode][cat][label] = {role:label};    
+  }
+
   this.set = function(mode = "default")
   {
     this.mode = mode;
@@ -31,7 +38,12 @@ function Controller()
       var submenu = [];
       for(name in m[cat]){
         var option = m[cat][name];
-        submenu.push({label:name,accelerator:option.accelerator,click:option.fn})
+        if(option.role){
+          submenu.push({role:option.role})
+        }
+        else{
+          submenu.push({label:name,accelerator:option.accelerator,click:option.fn})  
+        }
       }
       f.push({label:cat,submenu:submenu});
     }

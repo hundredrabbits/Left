@@ -60,6 +60,14 @@ function Left()
     this.controller.add("default","File","Save As",() => { left.project.save_as(); },"CmdOrCtrl+Shift+S");
     this.controller.add("default","File","Close",() => { left.project.close(); },"CmdOrCtrl+W");
 
+    this.controller.add_role("default","Edit","undo");
+    this.controller.add_role("default","Edit","redo");
+    this.controller.add_role("default","Edit","cut");
+    this.controller.add_role("default","Edit","copy");
+    this.controller.add_role("default","Edit","paste");
+    this.controller.add_role("default","Edit","delete");
+    this.controller.add_role("default","Edit","selectall");
+
     this.controller.add("default","Navigation","Next Marker",() => { left.navi.next(); },"CmdOrCtrl+]");
     this.controller.add("default","Navigation","Prev Marker",() => { left.navi.prev(); },"CmdOrCtrl+[");
     this.controller.add("default","Navigation","Next File",() => { left.project.next(); },"CmdOrCtrl+Shift+]");
