@@ -110,10 +110,9 @@ function Left()
   this.select_synonym = function()
   {
     if(left.synonyms){
-      var synonyms = left.dictionary.find_synonym(left.selection.word);
-      left.replace_active_word_with(synonyms[left.selection.index % synonyms.length]); 
-      left.selection.index += 1;
+      left.replace_active_word_with(left.synonyms[left.selection.index % left.synonyms.length]); 
       left.update_stats();
+      left.selection.index += 1;
     }
   }
 
@@ -251,6 +250,7 @@ function Left()
   this.autocomplete = function()
   {
     var suggestion = left.suggestion;
+    console.log(left.selection.word.length,suggestion.length)
     this.inject(suggestion.substr(left.selection.word.length,suggestion.length)+" ");
   }
 

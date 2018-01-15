@@ -11,6 +11,7 @@ document.onkeydown = function key_down(e)
       left.select_autocomplete(); 
     }
     e.preventDefault();
+    return;
   }
 
   // Reset index on space
@@ -28,8 +29,14 @@ document.onkeydown = function key_down(e)
     setTimeout(() => {left.dictionary.update(),left.refresh()}, 0)
     return;
   }
-  left.refresh();
 };
+
+document.onkeyup = (e) => {
+  if(e.keyCode == 9){
+    return;
+  }
+  left.refresh();
+}
 
 window.addEventListener('dragover',function(e)
 {
