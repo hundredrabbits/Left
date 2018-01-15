@@ -7,6 +7,7 @@ function Reader()
 
   this.start = function()
   {
+    left.controller.set("reader");
     this.segment.from = left.textarea_el.selectionStart
     this.segment.to = left.textarea_el.selectionEnd
     this.segment.text = left.textarea_el.value.substr(this.segment.from,this.segment.to - this.segment.from).replace(/\n/g," ")
@@ -41,6 +42,7 @@ function Reader()
 
   this.stop = function()
   {
+    left.controller.set("default");
     this.segment = {from:0,to:0,text:"",words:[]};
     this.queue = [];
     this.index = 0;

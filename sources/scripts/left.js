@@ -65,10 +65,45 @@ function Left()
     this.controller.add("default","Navigation","Next File",() => { left.project.next(); },"CmdOrCtrl+Shift+]");
     this.controller.add("default","Navigation","Prev File",() => { left.project.prev(); },"CmdOrCtrl+Shift+[");
 
+    this.controller.add("default","View","Inc Zoom",() => {  left.options.set_zoom(left.options.zoom+0.1) },"CmdOrCtrl+Plus");
+    this.controller.add("default","View","Dec Zoom",() => {  left.options.set_zoom(left.options.zoom-0.1) },"CmdOrCtrl+-");
+    this.controller.add("default","View","Reset Zoom",() => {  left.options.set_zoom(1) },"CmdOrCtrl+0");
+
+    this.controller.add("default","Operator","Select Autocomplete",() => { left.select_autocomplete(); },"Tab");
+    this.controller.add("default","Operator","Select Synonym",() => { left.select_synonym(); },"Shift+Tab");
+
+    this.controller.add("default","Mode","Reader",() => { left.reader.start(); },"CmdOrCtrl+K");
+
+    this.controller.add("reader","*","About",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left'); },"CmdOrCtrl+,");
+    this.controller.add("reader","*","Fullscreen",() => { app.toggle_fullscreen(); },"CmdOrCtrl+Enter");
+    this.controller.add("reader","*","Hide",() => { app.toggle_visible(); },"CmdOrCtrl+H");
+    this.controller.add("reader","*","Inspect",() => { app.inspect(); },"CmdOrCtrl+.");
+    this.controller.add("reader","*","Documentation",() => { left.controller.docs(); },"CmdOrCtrl+Esc");
+    this.controller.add("reader","*","Reset",() => { left.theme.reset(); },"CmdOrCtrl+Backspace");
+    this.controller.add("reader","*","Quit",() => { app.exit(); },"CmdOrCtrl+Q");
+    this.controller.add("reader","Reader","Stop",() => { left.reader.stop(); },"Esc");
+
     this.controller.commit();
 
     this.dictionary.update();
     this.refresh();
+  }
+
+  this.select_autocomplete = function()
+  {
+    if(left.suggestion && left.suggestion.toLowerCase() != left.active_word().toLowerCase()){ 
+      left.autocomplete(); 
+    }
+  }
+
+  this.select_synonym = function()
+  {
+    if(left.synonyms){
+      var synonyms = left.dictionary.find_synonym(left.selection.word);
+      left.replace_active_word_with(synonyms[left.selection.index % synonyms.length]); 
+      left.selection.index += 1;
+      left.update_stats();
+    }
   }
 
   this.refresh = function()

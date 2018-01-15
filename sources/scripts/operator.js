@@ -6,6 +6,7 @@ function Operator()
   this.start = function()
   {
     console.log("started");
+    left.controller.set("operator");
     left.textarea_el.blur();
 
     this.is_active = true;
@@ -16,6 +17,7 @@ function Operator()
   this.stop = function()
   {
     console.log("stopped")
+    left.controller.set("default");
     this.value = "";
     this.is_active = false;
     left.refresh();
@@ -28,25 +30,25 @@ function Operator()
 
   this.input = function(e)
   {
-    if(e.key == "Escape"){
-      this.stop();
-      return;
-    }
+    // if(e.key == "Escape"){
+    //   this.stop();
+    //   return;
+    // }
 
-    if(e.key == "Enter"){
-      this.operate();
-      return;
-    }
-    if(e.key.length == 1){
-      this.value += e.key;
-    }
-    if(e.key == "Backspace" && this.value.length > 0){
-      this.value = this.value.substr(0,this.value.length-1);
-    }
-    if(parseInt(this.value) > 0){
-      left.go_to_line(parseInt(this.value));
-    }
-    this.update();
+    // if(e.key == "Enter"){
+    //   this.operate();
+    //   return;
+    // }
+    // if(e.key.length == 1){
+    //   this.value += e.key;
+    // }
+    // if(e.key == "Backspace" && this.value.length > 0){
+    //   this.value = this.value.substr(0,this.value.length-1);
+    // }
+    // if(parseInt(this.value) > 0){
+    //   left.go_to_line(parseInt(this.value));
+    // }
+    // this.update();
   }
 
   this.update = function()

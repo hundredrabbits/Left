@@ -1,62 +1,16 @@
 document.onkeydown = function key_down(e)
 {
-  return;
-  // update last_char
-
   left.last_char = e.key
 
-  if(e.key == "Escape"){
-    left.reader.stop();
-  }
-
-  // Operator
-
-  if(!left.operator.is_active && e.key == "Escape"){
-    e.preventDefault();
-    left.operator.start();
-    return;
-  }
-
-  if(left.operator.is_active){
-    e.preventDefault();
-    left.operator.input(e);
-    return;
-  }
-
-  // Reader
-
-  if(e.key == "k" && (e.ctrlKey || e.metaKey)){
-    e.preventDefault();
-    left.reader.start();
-    return;
-  }
-
-  // Autocomplete
-
+  // Faster than Electron
   if(e.keyCode == 9){
-    e.preventDefault();
-    if(left.suggestion && left.suggestion.toLowerCase() != left.active_word().toLowerCase()){ 
-      left.autocomplete(); 
+    if(e.shiftKey){
+      left.select_synonym();   
     }
-    else if(left.synonyms){
-      var synonyms = left.dictionary.find_synonym(left.selection.word);
-      left.replace_active_word_with(synonyms[left.selection.index % synonyms.length]); 
-      left.update_stats();
+    else{
+      left.select_autocomplete(); 
     }
-    left.selection.index += 1;
-    return;
-  }
-
-  // Navi
-
-  if(e.key == "]" && (e.ctrlKey || e.metaKey)){
     e.preventDefault();
-    left.navi.next();
-  }
-
-  if(e.key == "[" && (e.ctrlKey || e.metaKey)){
-    e.preventDefault();
-    left.navi.prev();
   }
 
   // Reset index on space
@@ -67,32 +21,6 @@ document.onkeydown = function key_down(e)
   if(e.key.substring(0,5) == "Arrow"){
     setTimeout(() => left.refresh(), 0) //force the refresh event to happen after the selection updates
     return;
-  }
-  
-  if(e.key == "+" && (e.ctrlKey || e.metaKey)) {
-    e.preventDefault();
-    left.options.set_zoom(left.options.zoom+0.1)
-  }
-  else if(e.key == "-" && (e.ctrlKey || e.metaKey)) {
-    e.preventDefault();
-    left.options.set_zoom(left.options.zoom-0.1)
-  }
-  else if(e.key == "0" && (e.ctrlKey || e.metaKey)) {
-    e.preventDefault();
-    left.options.set_zoom(1)
-  }
-
-  // check for action
-  if(e.key == "Enter") {
-    if(left.options.check_actions()) {
-      e.preventDefault()
-    }
-  }
-
-  if((e.ctrlKey || e.metaKey) && parseInt(e.key) > 0){
-    e.preventDefault();
-    var target_index = parseInt(e.key) - 1
-    left.project.show_file(target_index);
   }
 
   // Slower Refresh
@@ -122,7 +50,7 @@ window.addEventListener('drop', function(e)
 
   var path = file.path ? file.path : file.name;
   
-  left.project.open_extra(path)
+  left.project.open(path)
 });
 
 document.addEventListener('wheel', function(e)
