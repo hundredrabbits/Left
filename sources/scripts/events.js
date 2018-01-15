@@ -56,6 +56,8 @@ window.addEventListener('drop', function(e)
   if (file.type && !file.type.match(/text.*/)) { console.log("Not text", file.type); return false; }
 
   var path = file.path ? file.path : file.name;
+
+  if(path.substr(-3,3) == "thm"){ return; }
   
   left.project.add(path)
 });
