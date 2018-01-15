@@ -99,8 +99,10 @@ function Left()
 
   this.select_autocomplete = function()
   {
-    if(left.suggestion && left.suggestion.toLowerCase() != left.active_word().toLowerCase()){ 
+    if(left.selection.word.trim() != "" && left.suggestion && left.suggestion.toLowerCase() != left.active_word().toLowerCase()){ 
       left.autocomplete(); 
+    }else{
+      left.inject("\u00a0\u00a0")
     }
   }
 

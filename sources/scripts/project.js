@@ -20,18 +20,15 @@ function Project()
 
   this.open = function()
   {
+    if(this.paths.length == 0 && this.has_changes()){ this.save_as(); return; }
+
     var paths = dialog.showOpenDialog({properties: ['openFile','multiSelections']});
 
     if(!paths){ console.log("Nothing to load"); return; }
 
     for(id in paths){
-      var path = paths[id];
-      if(this.paths.indexOf(path) > -1){ continue; }
-      this.paths.push(path);
+      this.add(paths[id]);
     }
-
-    this.index = 0;
-    this.load_path(paths[this.index])
   }
 
   this.save = function()
@@ -65,19 +62,32 @@ function Project()
 
   this.close = function()
   {
-    if(this.paths.length < 2){ return; }
+    if(this.paths.length < 2){ this.clear(); return; }
 
     this.paths.splice(this.index,1);
     this.show_file(0);
   }
 
+  this.add = function(path)
+  {
+    if(this.paths.indexOf(path) > -1){ return; }
+
+    this.paths.push(path);
+    this.index = 0;
+    this.load_path(this.paths[0])
+  }
+
   this.next = function()
   {
+    if(this.index > this.paths.length-1){ return; }
+
     this.show_file(this.index+1);
   }
 
   this.prev = function()
   {
+    if(this.index < 1){ return; }
+
     this.show_file(this.index-1);
   }
 
@@ -94,7 +104,7 @@ function Project()
   this.load_path = function(path)
   {
     if(!path){ return; }
-    
+
     fs.readFile(path, 'utf-8', (err, data) => {
       if(err){ alert("An error ocurred reading the file :" + err.message); return; }
       left.project.load(data,path);
@@ -124,7 +134,7 @@ function Project()
   {
     if(this.has_changes()){ left.project.alert(); return; }
 
-    this.index = clamp(index,0,this.paths.length);
+    this.index = clamp(index,0,this.paths.length-1);
 
     this.load_path(this.paths[index])
   }

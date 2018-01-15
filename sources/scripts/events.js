@@ -50,7 +50,7 @@ window.addEventListener('drop', function(e)
 
   var path = file.path ? file.path : file.name;
   
-  left.project.open(path)
+  left.project.add(path)
 });
 
 document.addEventListener('wheel', function(e)

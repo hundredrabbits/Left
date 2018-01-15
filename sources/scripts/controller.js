@@ -88,7 +88,7 @@ function Controller()
     for(cat in menu){
       var options = menu[cat];
       for(id in options.submenu){
-        var option = options.submenu[id];
+        var option = options.submenu[id]; if(option.role){ continue; }
         acc.basic = (option.accelerator.toLowerCase() == key.toLowerCase()) ? option.label.toUpperCase().replace("TOGGLE ","").substr(0,8).trim() : acc.basic;
         acc.ctrl = (option.accelerator.toLowerCase() == ("CmdOrCtrl+"+key).toLowerCase()) ? option.label.toUpperCase().replace("TOGGLE ","").substr(0,8).trim() : acc.ctrl;
       }
