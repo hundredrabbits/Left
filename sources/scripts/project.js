@@ -67,7 +67,9 @@ function Project()
 
   this.close = function()
   {
+    if(this.paths.length < 2){ return; }
     if(this.has_changes()){ left.project.alert(); return; }
+    
     this.force_close();
   }
 
@@ -76,16 +78,17 @@ function Project()
     if(this.paths.length < 2){ this.clear(); return; }
 
     this.paths.splice(this.index,1);
-    this.show_file(0,true);
+    this.prev();
   }
 
   this.add = function(path)
   {
+    if(!path){ return; }
     if(this.paths.indexOf(path) > -1){ return; }
 
     this.paths.push(path);
-    this.index = 0;
-    this.load_path(this.paths[0])
+    left.refresh();
+    this.next();
   }
 
   this.next = function()

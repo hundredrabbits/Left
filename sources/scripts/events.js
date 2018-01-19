@@ -51,15 +51,13 @@ window.addEventListener('drop', function(e)
   e.preventDefault();
 
   var files = e.dataTransfer.files;
-  var file = files[0];
 
-  if (file.type && !file.type.match(/text.*/)) { console.log("Not text", file.type); return false; }
-
-  var path = file.path ? file.path : file.name;
-
-  if(path.substr(-3,3) == "thm"){ return; }
-  
-  left.project.add(path)
+  for(id in files){
+    var file = files[id];
+    if(file.type && !file.type.match(/text.*/)) { console.log(`Skipped ${file.type} : ${file.path}`); continue; }
+    if(file.path && file.path.substr(-3,3) == "thm"){ continue; }
+    left.project.add(file.path);
+  }
 });
 
 document.addEventListener('wheel', function(e)
