@@ -4,18 +4,16 @@ Left is a simple open-source distractionless writing application created to help
 
 <img src='https://raw.githubusercontent.com/hundredrabbits/Left/master/PREVIEW.jpg' width="600"/>
 
-# Welcome
+## Guide
 
 Left is a simple, minimalist, open-source and cross-platform text editor. 
-
-## Features
 
 - Create markers by beginning lines with `#`, `##` or `--`.
 - Open a text file by dragging it here, or `ctrl o`.
 - Save a text file with `ctrl s`.
 - The synonyms dictionary contains 12465 common words.
 
-## Details
+### Details
 
 - `L`, stands for Lines.
 - `W`, stands for Words.
@@ -24,35 +22,46 @@ Left is a simple, minimalist, open-source and cross-platform text editor.
 
 ## Controls
 
-- `tab` autocomplete.
-- `ctrl o` open.
-- `ctrl s` save.
-- `ctrl S` save as.
-- `ctrl ]` Jump to next marker.
-- `ctrl [` Jump to previous marker.
-- `ctrl +` Make text bigger.
-- `ctrl -` Make text smaller.
-- `ctrl 0` Reset text size.
-- `ctrl shift n` Clear.
-- `ctrl shift del` Reset.
+## default Mode
 
-## Operator(DISABLED)
+### File
+- New: `CmdOrCtrl+N`
+- Open: `CmdOrCtrl+O`
+- Save: `CmdOrCtrl+S`
 
-Press `escape` to start the **operator** mode. To find and replace a word, use `word = new_word`, and press `Enter`. To find and replace words ending in *-ing*, use `-ing = new_word`. Press `Esc` to stop.
+### Edit
+- Insert: `I`
+- Copy: `CmdOrCtrl+C`
+- Paste: `CmdOrCtrl+V`
+- Undo: `CmdOrCtrl+Z`
+- Delete: `Backspace`
+- Move Up: `Up`
+- Move Down: `Down`
+- Move Left: `Left`
+- Move Right: `Right`
+- Deselect: `Esc`
 
-- `NUMBER` go to line number.
-- `WORD` go to word.
-- `WORD_A = WORD_B` replace word `WORD_A` with word `WORD_B`.
+### Stroke
+- Line: `A`
+- Arc: `S`
+- Arc Rev: `D`
+- Bezier: `F`
+- Connect: `Z`
 
-## Speed Reader
+### Effect
+- Thicker: `}`
+- Thinner: `{`
+- Thicker +5: `]`
+- Thinner -5: `[`
+- Linecap: `Y`
+- Mirror: `Space`
+- Fill: `G`
 
-Select some text and press `ctrl k`.
-
-## Themes
-
-Drag a .thm file on the window to install it.
-
-## Controls
+### View
+- Tools: `U`
+- Grid: `H`
+- Control Points: `J`
+- Expert Mode: `:`
 
 <img src='https://cdn.rawgit.com/hundredrabbits/Left/master/LAYOUT.svg?v=1' width="600"/>
 

@@ -93,7 +93,7 @@ function Project()
 
   this.next = function()
   {
-    if(this.index > this.paths.length-1){ return; }
+    if(this.index > this.paths.length-1){ console.log("hit"); return; }
 
     this.show_file(this.index+1);
   }
