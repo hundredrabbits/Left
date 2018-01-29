@@ -135,18 +135,18 @@ function Left()
     var stats = left.parse_stats(left.selected());
 
     var suggestion_html = "";
-    var synonym_html = " <b>"+left.selection.word+"</b> ";
+    var synonym_html = ` <b>${left.selection.word}</b> `;
 
     if(left.selection.word && left.suggestion && left.selection.word != left.suggestion){
-      suggestion_html = " <t>"+left.selection.word+"<b>"+left.suggestion.substr(left.selection.word.length,left.suggestion.length)+"</b></t>"
+      suggestion_html = ` <t>${left.selection.word}<b>${left.suggestion.substr(left.selection.word.length,left.suggestion.length)}</b></t>`;
     }
     else{
       left.synonyms = this.dictionary.find_synonym(left.selection.word);
       for(syn_id in left.synonyms){
-        synonym_html += syn_id == (left.selection.index % left.synonyms.length) ? "<i>"+left.synonyms[syn_id]+"</i> " : left.synonyms[syn_id]+" ";
+        synonym_html += syn_id == (left.selection.index % left.synonyms.length) ? `<i>${left.synonyms[syn_id]}</i> ` : left.synonyms[syn_id]+" ";
       }
     }
-    left.stats_el.innerHTML = left.synonyms && left.selected().length < 5 ? synonym_html : (left.textarea_el.selectionStart != left.textarea_el.selectionEnd ? "<b>["+left.textarea_el.selectionStart+","+left.textarea_el.selectionEnd+"]</b> " : '')+""+stats.l+"L "+stats.w+"W "+stats.v+"V "+stats.c+"C "+suggestion_html;
+    left.stats_el.innerHTML = left.synonyms && left.selected().length < 5 ? synonym_html : (left.textarea_el.selectionStart != left.textarea_el.selectionEnd ? "<b>["+left.textarea_el.selectionStart+","+left.textarea_el.selectionEnd+"]</b> " : '')+(`${stats.l}L ${stats.w}W ${stats.v}V ${stats.c}C ${suggestion_html}`);
   }
 
   this.parse_stats = function(text = left.textarea_el.value)
