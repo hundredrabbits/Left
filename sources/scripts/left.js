@@ -60,9 +60,9 @@ function Left()
     this.controller.add("default","File","Open",() => { left.project.open(); },"CmdOrCtrl+O");
     this.controller.add("default","File","Save",() => { left.project.save(); },"CmdOrCtrl+S");
     this.controller.add("default","File","Save As",() => { left.project.save_as(); },"CmdOrCtrl+Shift+S");
+    this.controller.add("default","File","Discard Changes",() => { left.project.discard(); },"CmdOrCtrl+D");
     this.controller.add("default","File","Close File",() => { left.project.close(); },"CmdOrCtrl+W");
     this.controller.add("default","File","Force Close",() => { left.project.force_close(); },"CmdOrCtrl+Shift+W");
-    this.controller.add("default","File","Discard Changes",() => { left.project.discard(); },"CmdOrCtrl+Shift+D");
 
     this.controller.add_role("default","Edit","undo");
     this.controller.add_role("default","Edit","redo");

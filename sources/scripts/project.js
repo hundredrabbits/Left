@@ -2,6 +2,7 @@ function Project()
 {  
   this.paths = [];
   this.index = 0;
+  this.original = "";
 
   this.new = function()
   {
@@ -34,6 +35,7 @@ function Project()
     for(id in paths){
       this.add(paths[id]);
     }
+    setTimeout(() => { left.project.next(); },400);
   }
 
   this.save = function()
@@ -99,7 +101,7 @@ function Project()
 
   this.next = function()
   {
-    if(this.index > this.paths.length-1){ console.log("hit"); return; }
+    if(this.index > this.paths.length-1){ return; }
 
     this.show_file(this.index+1);
     left.navi.update();
@@ -115,9 +117,9 @@ function Project()
 
   this.clear = function()
   {
-    console.log("HEY")
     this.paths = [];
     this.index = 0;
+    this.original = "";
 
     left.textarea_el.value = "";
     left.dictionary.update();
@@ -135,8 +137,6 @@ function Project()
       left.refresh();
     });
   }
-
-  this.original = "";
 
   this.load = function(content,path)
   {
@@ -159,7 +159,7 @@ function Project()
 
     this.index = clamp(index,0,this.paths.length-1);
 
-    this.load_path(this.paths[index]);
+    this.load_path(this.paths[this.index]);
     left.navi.update();
   }
 
@@ -177,7 +177,7 @@ function Project()
 
   this.alert = function()
   {
-    setTimeout(function(){ left.stats_el.innerHTML = `<b>Unsaved Changes</b> ${left.project.paths.length > 0 ? left.project.paths[left.project.index] : 'Press ctrl+s to save file.'}` },400);
+    setTimeout(function(){ left.stats_el.innerHTML = `<b>Unsaved Changes</b> ${left.project.paths.length > 0 ? left.project.paths[left.project.index] : 'Save(C-s) or Discard changes(C-d).'}` },400);
   }
 
   this.format_json = function(obj)

@@ -5,9 +5,9 @@
 - Open: `CmdOrCtrl+O`
 - Save: `CmdOrCtrl+S`
 - Save As: `CmdOrCtrl+Shift+S`
+- Discard Changes: `CmdOrCtrl+D`
 - Close File: `CmdOrCtrl+W`
 - Force Close: `CmdOrCtrl+Shift+W`
-- Discard Changes: `CmdOrCtrl+Shift+D`
 
 ### Navigation
 - Next Marker: `CmdOrCtrl+]`
@@ -32,5 +32,3 @@
 
 ### Reader
 - Stop: `Esc`
-
-

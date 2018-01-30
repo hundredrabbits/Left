@@ -29,9 +29,9 @@ Left is a simple, minimalist, open-source and cross-platform text editor.
 - Open: `CmdOrCtrl+O`
 - Save: `CmdOrCtrl+S`
 - Save As: `CmdOrCtrl+Shift+S`
+- Discard Changes: `CmdOrCtrl+D`
 - Close File: `CmdOrCtrl+W`
 - Force Close: `CmdOrCtrl+Shift+W`
-- Discard Changes: `CmdOrCtrl+Shift+D`
 
 ### Navigation
 - Next Marker: `CmdOrCtrl+]`
