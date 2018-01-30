@@ -21,47 +21,38 @@ Left is a simple, minimalist, open-source and cross-platform text editor.
 - `C`, stands for Characters.
 
 ## Controls
-
 ## default Mode
 
 ### File
 - New: `CmdOrCtrl+N`
 - Open: `CmdOrCtrl+O`
 - Save: `CmdOrCtrl+S`
+- Save As: `CmdOrCtrl+Shift+S`
+- Close File: `CmdOrCtrl+W`
+- Force Close: `CmdOrCtrl+Shift+W`
 
-### Edit
-- Insert: `I`
-- Copy: `CmdOrCtrl+C`
-- Paste: `CmdOrCtrl+V`
-- Undo: `CmdOrCtrl+Z`
-- Delete: `Backspace`
-- Move Up: `Up`
-- Move Down: `Down`
-- Move Left: `Left`
-- Move Right: `Right`
-- Deselect: `Esc`
-
-### Stroke
-- Line: `A`
-- Arc: `S`
-- Arc Rev: `D`
-- Bezier: `F`
-- Connect: `Z`
-
-### Effect
-- Thicker: `}`
-- Thinner: `{`
-- Thicker +5: `]`
-- Thinner -5: `[`
-- Linecap: `Y`
-- Mirror: `Space`
-- Fill: `G`
+### Navigation
+- Next Marker: `CmdOrCtrl+]`
+- Prev Marker: `CmdOrCtrl+[`
+- Next File: `CmdOrCtrl+Shift+]`
+- Prev File: `CmdOrCtrl+Shift+[`
 
 ### View
-- Tools: `U`
-- Grid: `H`
-- Control Points: `J`
-- Expert Mode: `:`
+- Inc Zoom: `CmdOrCtrl+Plus`
+- Dec Zoom: `CmdOrCtrl+-`
+- Reset Zoom: `CmdOrCtrl+0`
+
+### Operator
+- Select Autocomplete: `Tab`
+- Select Synonym: `Shift+Tab`
+
+### Mode
+- Reader: `CmdOrCtrl+K`
+
+## reader Mode
+
+### Reader
+- Stop: `Esc`
 
 <img src='https://cdn.rawgit.com/hundredrabbits/Left/master/LAYOUT.svg?v=1' width="600"/>
 

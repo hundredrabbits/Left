@@ -58,15 +58,17 @@ function Controller()
   this.docs = function()
   {
     console.log("Generating docs..");
-    var svg = this.generate(this.format())
+    var svg = this.generate_svg(this.format())
+    var txt = this.documentation(this.format());
     dialog.showSaveDialog((fileName) => {
       if (fileName === undefined){ return; }
       fileName = fileName.substr(-4,4) != ".svg" ? fileName+".svg" : fileName;
       fs.writeFile(fileName,svg);
+      fs.writeFile(fileName.replace(".svg",".md"),txt);
     }); 
   }
 
-  this.generate = function(m)
+  this.generate_svg = function(m)
   {
     var svg_html = "";
 
@@ -80,6 +82,36 @@ function Controller()
       svg_html += acc && acc.ctrl ? `<text x="${key.x + 10}" y="${key.y + 45}" font-size='7' font-family='Input Mono' stroke-width='0' fill='#000'>${acc.ctrl}</text>` : '';
     }
     return `<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="900" height="300" version="1.0" style="fill:none;stroke:black;stroke-width:2px;">${svg_html}</svg>`;
+  }
+
+  this.documentation = function()
+  {
+    var txt = "";
+
+    txt += this.documentation_for_mode("default",this.menu.default);
+
+    for(name in this.menu){
+      if(name == "default"){ continue; }
+      txt += this.documentation_for_mode(name,this.menu[name]);
+    }
+    return txt;
+  }
+
+  this.documentation_for_mode = function(name,mode)
+  {
+    var txt = `## ${name} Mode\n\n`;
+
+    for(id in mode){
+      if(id == "*" || id == "Edit"){ continue; }
+      txt += `### ${id}\n`;
+      for(name in mode[id]){
+        var option = mode[id][name];
+        txt += `- ${name}: \`${option.accelerator}\`\n`;
+      }
+      txt += "\n"
+    }
+
+    return txt+"\n";
   }
 
   this.accelerator_for_key = function(key,menu)
