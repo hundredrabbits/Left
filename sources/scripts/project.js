@@ -25,7 +25,7 @@ function Project()
 
   this.open = function()
   {
-    if(this.paths.length == 0 && this.has_changes()){ this.save_as(); return; }
+    if(this.has_changes()){ this.alert(); return; }
 
     var paths = dialog.showOpenDialog({properties: ['openFile','multiSelections']});
 
@@ -67,7 +67,7 @@ function Project()
 
   this.close = function()
   {
-    if(this.paths.length < 2){ return; }
+    if(this.paths.length == 1){ this.clear(); return; }
     if(this.has_changes()){ left.project.alert(); return; }
     
     this.force_close();
@@ -75,10 +75,16 @@ function Project()
 
   this.force_close = function()
   {
-    if(this.paths.length < 2){ this.clear(); return; }
+    this.discard();
 
     this.paths.splice(this.index,1);
     this.prev();
+  }
+
+  this.discard = function()
+  {
+    left.textarea_el.value = left.project.original;
+    left.refresh();
   }
 
   this.add = function(path)
@@ -96,6 +102,7 @@ function Project()
     if(this.index > this.paths.length-1){ console.log("hit"); return; }
 
     this.show_file(this.index+1);
+    left.navi.update();
   }
 
   this.prev = function()
@@ -103,10 +110,12 @@ function Project()
     if(this.index < 1){ return; }
 
     this.show_file(this.index-1);
+    left.navi.update();
   }
 
   this.clear = function()
   {
+    console.log("HEY")
     this.paths = [];
     this.index = 0;
 
@@ -150,7 +159,8 @@ function Project()
 
     this.index = clamp(index,0,this.paths.length-1);
 
-    this.load_path(this.paths[index])
+    this.load_path(this.paths[index]);
+    left.navi.update();
   }
 
   this.has_extension = function(str)
@@ -167,7 +177,7 @@ function Project()
 
   this.alert = function()
   {
-    setTimeout(function(){ left.stats_el.innerHTML = `<b>Unsaved Changes</b> ${left.project.paths.length > 0 ? left.project.paths[left.project.index] : 'Press ctrl+s to save file.'}` },100);
+    setTimeout(function(){ left.stats_el.innerHTML = `<b>Unsaved Changes</b> ${left.project.paths.length > 0 ? left.project.paths[left.project.index] : 'Press ctrl+s to save file.'}` },400);
   }
 
   this.format_json = function(obj)

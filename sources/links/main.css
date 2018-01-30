@@ -20,7 +20,8 @@ body stats i { text-decoration: underline; }
 body stats .right { float:right; }
 body scrollbar { display: block; background:#ccc; width:1px; height:1px; position:fixed; left:0; bottom:0px; transition: width 150ms; }
 body textarea { padding: 90px 30px 0px; height: calc(100vh - 130px);display: block;width: 100%;position: fixed;left: calc((100vw / 2) - 25%);line-height: 20px;resize: none;background: transparent;overflow: hidden;max-width: 600px; }
-body div {width: 600px;line-height: 20px;font-family: 'input_mono_regular'; font-size: 12px;white-space: pre-wrap; word-wrap:break-word}
+body div { width: 600px;line-height: 20px;font-family: 'input_mono_regular'; font-size: 12px;white-space: pre-wrap; word-wrap:break-word}
+body drag { display: block;width: 100vw;height: 40px;position: fixed;top: 0px;-webkit-user-select: none;-webkit-app-region: drag;}
 
 body.mobile navi { opacity:0; }
 body.mobile textarea { left: 0px }

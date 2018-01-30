@@ -21,6 +21,7 @@ Left is a simple, minimalist, open-source and cross-platform text editor.
 - `C`, stands for Characters.
 
 ## Controls
+
 ## default Mode
 
 ### File
@@ -30,6 +31,7 @@ Left is a simple, minimalist, open-source and cross-platform text editor.
 - Save As: `CmdOrCtrl+Shift+S`
 - Close File: `CmdOrCtrl+W`
 - Force Close: `CmdOrCtrl+Shift+W`
+- Discard Changes: `CmdOrCtrl+Shift+D`
 
 ### Navigation
 - Next Marker: `CmdOrCtrl+]`
@@ -52,6 +54,7 @@ Left is a simple, minimalist, open-source and cross-platform text editor.
 ## reader Mode
 
 ### Reader
+
 - Stop: `Esc`
 
 <img src='https://cdn.rawgit.com/hundredrabbits/Left/master/LAYOUT.svg?v=1' width="600"/>

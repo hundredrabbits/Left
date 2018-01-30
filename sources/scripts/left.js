@@ -12,6 +12,7 @@ function Left()
   this.textarea_el    = document.createElement('textarea');
   this.stats_el       = document.createElement('stats');
   this.scroll_el      = document.createElement('scrollbar');
+  this.drag_el        = document.createElement('drag');
 
   this.selection = {word: null,index:1};
 
@@ -26,6 +27,7 @@ function Left()
   document.body.appendChild(this.textarea_el);
   document.body.appendChild(this.stats_el);
   document.body.appendChild(this.scroll_el);
+  document.body.appendChild(this.drag_el);
   document.body.className = window.location.hash.replace("#","");
 
   this.textarea_el.setAttribute("autocomplete","off");
@@ -60,6 +62,7 @@ function Left()
     this.controller.add("default","File","Save As",() => { left.project.save_as(); },"CmdOrCtrl+Shift+S");
     this.controller.add("default","File","Close File",() => { left.project.close(); },"CmdOrCtrl+W");
     this.controller.add("default","File","Force Close",() => { left.project.force_close(); },"CmdOrCtrl+Shift+W");
+    this.controller.add("default","File","Discard Changes",() => { left.project.discard(); },"CmdOrCtrl+Shift+D");
 
     this.controller.add_role("default","Edit","undo");
     this.controller.add_role("default","Edit","redo");
