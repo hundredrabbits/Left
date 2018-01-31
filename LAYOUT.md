@@ -9,6 +9,10 @@
 - Close File: `CmdOrCtrl+W`
 - Force Close: `CmdOrCtrl+Shift+W`
 
+### Select
+- Select Autocomplete: `Tab`
+- Select Synonym: `Shift+Tab`
+
 ### Navigation
 - Next Marker: `CmdOrCtrl+]`
 - Prev Marker: `CmdOrCtrl+[`
@@ -20,15 +24,20 @@
 - Dec Zoom: `CmdOrCtrl+-`
 - Reset Zoom: `CmdOrCtrl+0`
 
-### Operator
-- Select Autocomplete: `Tab`
-- Select Synonym: `Shift+Tab`
-
 ### Mode
 - Reader: `CmdOrCtrl+K`
+- Operator: `CmdOrCtrl+F`
 
 
 ## reader Mode
 
 ### Reader
 - Stop: `Esc`
+
+
+## operator Mode
+
+### Operator
+- Stop: `Esc`
+
+

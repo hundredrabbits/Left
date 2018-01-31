@@ -55,9 +55,9 @@ function Operator()
     if(!this.is_active){ return; }
 
     var value = this.el.value;
-    var target = value.split(" ")[0];
-    var operator = value.indexOf(" ") > 0 ? value.split(" ")[1] : "";
-    var param = value.split(" ").length > 2 ? value.split(" ")[2] : "";
+    var target = value.split("=")[0];
+    var operator = value.indexOf("=") > 0 ? value.split("=")[1] : "";
+    var param = value.split("=").length > 2 ? value.split("=")[2] : "";
 
     var starting_with = target.substr(target.length-1,1) == "-" ? true : false;
     var ending_with = target.substr(0,1) == "-" ? true : false;
@@ -80,15 +80,12 @@ function Operator()
   this.operate = function()
   {
     var value = this.el.value;
-    var target = value.split(" ")[0];
-    var operator = value.split(" ").length > 0 ? value.split(" ")[1] : null;
-    var param = value.split(" ").length > 2 ? value.split(" ")[2] : null;
 
-    var candidate = left.active_word();
-
-    if(operator == "="){
+    if(value.indexOf("=") > -1){
+      var target = value.split("=")[0].trim();
+      var param = value.split("=")[1].trim();
       this.update();
-      left.replace_active_word_with(param);  
+      left.replace_selection_with(param);  
     }
 
     this.stop();

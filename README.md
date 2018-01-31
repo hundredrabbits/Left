@@ -33,6 +33,10 @@ Left is a simple, minimalist, open-source and cross-platform text editor.
 - Close File: `CmdOrCtrl+W`
 - Force Close: `CmdOrCtrl+Shift+W`
 
+### Select
+- Select Autocomplete: `Tab`
+- Select Synonym: `Shift+Tab`
+
 ### Navigation
 - Next Marker: `CmdOrCtrl+]`
 - Prev Marker: `CmdOrCtrl+[`
@@ -44,17 +48,18 @@ Left is a simple, minimalist, open-source and cross-platform text editor.
 - Dec Zoom: `CmdOrCtrl+-`
 - Reset Zoom: `CmdOrCtrl+0`
 
-### Operator
-- Select Autocomplete: `Tab`
-- Select Synonym: `Shift+Tab`
-
 ### Mode
 - Reader: `CmdOrCtrl+K`
+- Operator: `CmdOrCtrl+F`
 
 ## reader Mode
 
 ### Reader
+- Stop: `Esc`
 
+## operator Mode
+
+### Operator
 - Stop: `Esc`
 
 <img src='https://cdn.rawgit.com/hundredrabbits/Left/master/LAYOUT.svg?v=1' width="600"/>

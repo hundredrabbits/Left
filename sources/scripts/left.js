@@ -80,6 +80,7 @@ function Left()
     this.controller.add("default","Navigation","Prev Marker",() => { left.navi.prev(); },"CmdOrCtrl+[");
     this.controller.add("default","Navigation","Next File",() => { left.project.next(); },"CmdOrCtrl+Shift+]");
     this.controller.add("default","Navigation","Prev File",() => { left.project.prev(); },"CmdOrCtrl+Shift+[");
+    this.controller.add("default","Navigation","Find",() => { left.operator.start(); },"CmdOrCtrl+F");
 
     this.controller.add("default","View","Inc Zoom",() => {  left.options.set_zoom(left.options.zoom+0.1) },"CmdOrCtrl+Plus");
     this.controller.add("default","View","Dec Zoom",() => {  left.options.set_zoom(left.options.zoom-0.1) },"CmdOrCtrl+-");
@@ -256,6 +257,19 @@ function Left()
 
     this.textarea_el.setSelectionRange(target_selection,target_selection);
     this.textarea_el.focus();
+  }
+
+  this.replace_selection_with = function(characters)
+  {
+    var from = this.textarea_el.selectionStart;
+    var to = this.textarea_el.selectionEnd;
+    var length = to - from;
+    var before = this.textarea_el.value.substr(0,from);
+    var after  = this.textarea_el.value.substr(from+length,this.textarea_el.value.length);
+
+    this.textarea_el.value = `${before}${characters}${after}`;
+    this.textarea_el.setSelectionRange(from+characters.length,from+characters.length);
+    this.refresh();    
   }
 
   this.inject = function(characters = "__")
