@@ -28,6 +28,7 @@ function Left()
   document.body.appendChild(this.stats_el);
   document.body.appendChild(this.scroll_el);
   document.body.appendChild(this.drag_el);
+  document.body.appendChild(this.operator.el);
   document.body.className = window.location.hash.replace("#","");
 
   this.textarea_el.setAttribute("autocomplete","off");
@@ -72,6 +73,9 @@ function Left()
     this.controller.add_role("default","Edit","delete");
     this.controller.add_role("default","Edit","selectall");
 
+    this.controller.add("default","Select","Select Autocomplete",() => { left.select_autocomplete(); },"Tab");
+    this.controller.add("default","Select","Select Synonym",() => { left.select_synonym(); },"Shift+Tab");
+
     this.controller.add("default","Navigation","Next Marker",() => { left.navi.next(); },"CmdOrCtrl+]");
     this.controller.add("default","Navigation","Prev Marker",() => { left.navi.prev(); },"CmdOrCtrl+[");
     this.controller.add("default","Navigation","Next File",() => { left.project.next(); },"CmdOrCtrl+Shift+]");
@@ -81,10 +85,8 @@ function Left()
     this.controller.add("default","View","Dec Zoom",() => {  left.options.set_zoom(left.options.zoom-0.1) },"CmdOrCtrl+-");
     this.controller.add("default","View","Reset Zoom",() => {  left.options.set_zoom(1) },"CmdOrCtrl+0");
 
-    this.controller.add("default","Operator","Select Autocomplete",() => { left.select_autocomplete(); },"Tab");
-    this.controller.add("default","Operator","Select Synonym",() => { left.select_synonym(); },"Shift+Tab");
-
     this.controller.add("default","Mode","Reader",() => { left.reader.start(); },"CmdOrCtrl+K");
+    this.controller.add("default","Mode","Operator",() => { left.operator.start(); },"CmdOrCtrl+F");
 
     this.controller.add("reader","*","About",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left'); },"CmdOrCtrl+,");
     this.controller.add("reader","*","Fullscreen",() => { app.toggle_fullscreen(); },"CmdOrCtrl+Enter");
@@ -94,6 +96,24 @@ function Left()
     this.controller.add("reader","*","Reset",() => { left.theme.reset(); },"CmdOrCtrl+Backspace");
     this.controller.add("reader","*","Quit",() => { app.exit(); },"CmdOrCtrl+Q");
     this.controller.add("reader","Reader","Stop",() => { left.reader.stop(); },"Esc");
+
+    this.controller.add("operator","*","About",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left'); },"CmdOrCtrl+,");
+    this.controller.add("operator","*","Fullscreen",() => { app.toggle_fullscreen(); },"CmdOrCtrl+Enter");
+    this.controller.add("operator","*","Hide",() => { app.toggle_visible(); },"CmdOrCtrl+H");
+    this.controller.add("operator","*","Inspect",() => { app.inspect(); },"CmdOrCtrl+.");
+    this.controller.add("operator","*","Documentation",() => { left.controller.docs(); },"CmdOrCtrl+Esc");
+    this.controller.add("operator","*","Reset",() => { left.theme.reset(); },"CmdOrCtrl+Backspace");
+    this.controller.add("operator","*","Quit",() => { app.exit(); },"CmdOrCtrl+Q");
+
+    this.controller.add_role("operator","Edit","undo");
+    this.controller.add_role("operator","Edit","redo");
+    this.controller.add_role("operator","Edit","cut");
+    this.controller.add_role("operator","Edit","copy");
+    this.controller.add_role("operator","Edit","paste");
+    this.controller.add_role("operator","Edit","delete");
+    this.controller.add_role("operator","Edit","selectall");
+
+    this.controller.add("operator","Operator","Stop",() => { left.operator.stop(); },"Esc");
 
     this.controller.commit();
 
