@@ -22,12 +22,12 @@ function Navi()
     for(id in left.project.paths){
       // Project markers
       var path = left.project.paths[id];
-      var parts = path.split("/")
+      var parts = path.replace(/\\/g,"/").split("/")
       var file_name = parts[parts.length-1]
       var file_el = document.createElement('li');
       file_el.destination = id;
       file_el.className = left.project.index == id ? 'file active' : 'file';
-      file_el.textContent = file_name;
+      file_el.textContent = file_name.substr(-file_name.length,20);
       this.el.appendChild(file_el);
       file_el.onmouseup = function on_mouseup(e){ left.project.show_file(e.target.destination); }
       // File Markers

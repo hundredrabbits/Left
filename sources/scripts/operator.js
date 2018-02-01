@@ -20,6 +20,8 @@ function Operator()
 
   this.stop = function()
   {
+    if(!this.is_active){ return; }
+    
     console.log("stopped")
     left.controller.set("default");
     this.is_active = false;
