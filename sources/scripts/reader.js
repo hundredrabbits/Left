@@ -12,9 +12,21 @@ function Reader()
     this.segment.to = left.textarea_el.selectionEnd
     this.segment.text = left.textarea_el.value.substr(this.segment.from,this.segment.to - this.segment.from).replace(/\n/g," ")
     this.segment.words = this.segment.text.split(" ");
+
+    if(this.segment.words.length < 5){
+      this.stop();
+      this.alert();
+      return;
+    }
+
     this.queue = this.segment.words;
     this.index = 0;
     this.run();
+  }
+
+  this.alert = function(t)
+  {
+    setTimeout((t) => { left.stats_el.innerHTML = `<b>Reader</b> Select some text before starting the reader.` },400);
   }
 
   this.run = function()
