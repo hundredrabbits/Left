@@ -55,7 +55,7 @@ function Left()
     this.controller.add("default","*","Inspect",() => { app.inspect(); },"CmdOrCtrl+.");
     this.controller.add("default","*","Documentation",() => { left.controller.docs(); },"CmdOrCtrl+Esc");
     this.controller.add("default","*","Reset",() => { left.theme.reset(); },"CmdOrCtrl+Backspace");
-    this.controller.add("default","*","Quit",() => { app.exit(); },"CmdOrCtrl+Q");
+    this.controller.add("default","*","Quit",() => { left.project.quit(); },"CmdOrCtrl+Q");
 
     this.controller.add("default","File","New",() => { left.project.new(); },"CmdOrCtrl+N");
     this.controller.add("default","File","Open",() => { left.project.open(); },"CmdOrCtrl+O");
@@ -95,7 +95,7 @@ function Left()
     this.controller.add("reader","*","Inspect",() => { app.inspect(); },"CmdOrCtrl+.");
     this.controller.add("reader","*","Documentation",() => { left.controller.docs(); },"CmdOrCtrl+Esc");
     this.controller.add("reader","*","Reset",() => { left.theme.reset(); },"CmdOrCtrl+Backspace");
-    this.controller.add("reader","*","Quit",() => { app.exit(); },"CmdOrCtrl+Q");
+    this.controller.add("reader","*","Quit",() => { left.project.quit(); },"CmdOrCtrl+Q");
     this.controller.add("reader","Reader","Stop",() => { left.reader.stop(); },"Esc");
 
     this.controller.add("operator","*","About",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left'); },"CmdOrCtrl+,");
@@ -104,7 +104,7 @@ function Left()
     this.controller.add("operator","*","Inspect",() => { app.inspect(); },"CmdOrCtrl+.");
     this.controller.add("operator","*","Documentation",() => { left.controller.docs(); },"CmdOrCtrl+Esc");
     this.controller.add("operator","*","Reset",() => { left.theme.reset(); },"CmdOrCtrl+Backspace");
-    this.controller.add("operator","*","Quit",() => { app.exit(); },"CmdOrCtrl+Q");
+    this.controller.add("operator","*","Quit",() => { left.project.quit(); },"CmdOrCtrl+Q");
 
     this.controller.add_role("operator","Edit","undo");
     this.controller.add_role("operator","Edit","redo");

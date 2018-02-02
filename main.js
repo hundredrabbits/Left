@@ -25,6 +25,11 @@ app.inject_menu = function(m)
   Menu.setApplicationMenu(Menu.buildFromTemplate(m));
 }
 
+app.path = function()
+{
+  return __dirname
+}
+
 app.win = null;
 
 app.on('ready', () => 
@@ -32,6 +37,7 @@ app.on('ready', () =>
   app.win = new BrowserWindow({width: 880, height: 540, backgroundColor:"#000", minWidth: 587, minHeight: 540, frame:false, autoHideMenuBar: true, icon: __dirname + '/icon.ico'})
 
   app.win.loadURL(`file://${__dirname}/sources/index.html`)
+  // app.win.toggleDevTools();
   
   app.win.on('closed', () => {
     win = null

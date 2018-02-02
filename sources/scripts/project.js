@@ -89,6 +89,32 @@ function Project()
     left.refresh();
   }
 
+  this.quit = function()
+  {
+    if(this.has_changes()){
+      this.quit_dialog();  
+    }
+    else{
+      app.exit()
+    }
+    
+  }
+
+  this.quit_dialog = function()
+  {
+    dialog.showMessageBox({
+      type: 'question',
+      buttons: ['Yes', 'No'],
+      title: 'Confirm',
+      message: 'Unsaved data will be lost. Are you sure you want to quit?',
+      icon: `${app.path()}/icon.png`
+    }, function (response) {
+      if (response === 0) {
+        app.exit()
+      }
+    })
+  }
+
   this.add = function(path)
   {
     if(!path){ return; }
