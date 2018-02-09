@@ -81,18 +81,18 @@ function Navi()
     for(var line_id in lines){
       var line = lines[line_id];
       if(line.substr(0,2).replace(/@/g,"#") == "##"){
-        var text = line.replace(/ +/,"").substring(2);
+        var text = line.substring(2).trim();
         text = text.replace(/[@#]+/,(match) => {return new Array(match.length+1).join("\u200b ")})
         this.markers.push({text:text,line:line_id,type:"note"});
       }
       else if(line.substr(0,1).replace(/@/g,"#") == "#"){
-        var text = line.replace(/ +/,"").substring(1);
+        var text = line.substring(1).trim();
         this.markers.push({text:text,line:line_id,type:"header"});
       }
       else if(line.substr(0,2).replace(/@/g,"#") == "--"){
-        var text = line.replace(/ +/,"").substring(2);
+        var text = line.substring(2).trim();
         if(text.indexOf(" : ")){
-          text = text.split(" : ")[0];
+          text = text.split(" : ")[0].trim();
         }
         this.markers.push({text:text,line:line_id,type:"comment"});
       }
