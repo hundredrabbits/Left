@@ -9,9 +9,10 @@ Left is a simple open-source distractionless writing application created to help
 Left is a simple, minimalist, open-source and cross-platform text editor. 
 
 - Create markers by beginning lines with `#`, `##` or `--`.
-- Open a text file by dragging it here, or `ctrl o`.
-- Save a text file with `ctrl s`.
-- The synonyms dictionary contains 12465 common words.
+- Open a text file by dragging it, or with `ctrl o`.
+- Highlight some text and press `ctrl k` to enable the speed reader.
+- Press `tab` to auto-complete a previously used, or common, word.
+- Press `shift tab` to scroll through the selected word's synonyms.
 
 ### Details
 
