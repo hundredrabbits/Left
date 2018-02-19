@@ -116,9 +116,13 @@ function Left()
     this.controller.add("insert","*","Reset",() => { left.theme.reset(); },"CmdOrCtrl+Backspace");
     this.controller.add("insert","*","Quit",() => { left.project.quit(); },"CmdOrCtrl+Q");
 
-    this.controller.add("insert","Items","Date",() => { left.insert.date(); },"CmdOrCtrl+D");
-    this.controller.add("insert","Items","Time",() => { left.insert.time(); },"CmdOrCtrl+T");
-    this.controller.add("insert","Items","Path",() => { left.insert.path(); },"CmdOrCtrl+P");
+    this.controller.add("insert","Insert","Date",() => { left.insert.date(); },"CmdOrCtrl+D");
+    this.controller.add("insert","Insert","Time",() => { left.insert.time(); },"CmdOrCtrl+T");
+    this.controller.add("insert","Insert","Path",() => { left.insert.path(); },"CmdOrCtrl+P");
+    this.controller.add("insert","Insert","Header",() => { left.insert.header(); },"CmdOrCtrl+H");
+    this.controller.add("insert","Insert","SubHeader",() => { left.insert.subheader(); },"CmdOrCtrl+Shift+H");
+    this.controller.add("insert","Insert","Comment",() => { left.insert.comment(); },"CmdOrCtrl+/");
+    this.controller.add("insert","Insert","Line",() => { left.insert.line(); },"CmdOrCtrl+L");
     this.controller.add("insert","Mode","Stop",() => { left.insert.stop(); },"Esc");
 
     this.controller.add_role("operator","Edit","undo");
@@ -176,7 +180,11 @@ function Left()
     var suggestion_html = "";
     var synonym_html = ` <b>${left.selection.word}</b> `;
 
-    if(left.selection.word && left.suggestion && left.selection.word != left.suggestion){
+    if(left.insert.is_active){
+      left.stats_el.innerHTML = left.insert.status();
+      return;
+    }
+    else if(left.selection.word && left.suggestion && left.selection.word != left.suggestion){
       suggestion_html = ` <t>${left.selection.word}<b>${left.suggestion.substr(left.selection.word.length,left.suggestion.length)}</b></t>`;
     }
     else{
@@ -252,6 +260,12 @@ function Left()
   {
     var l = this.active_word_location();
     return left.textarea_el.value.substr(l.from,l.to-l.from);
+  }
+
+  this.prev_character = function()
+  {
+    var l = this.active_word_location();
+    return left.textarea_el.value.substr(l.from-1,1);
   }
 
   this.replace_active_word_with = function(word)

@@ -43,6 +43,7 @@ Left is a simple, minimalist, open-source and cross-platform text editor.
 - Prev Marker: `CmdOrCtrl+[`
 - Next File: `CmdOrCtrl+Shift+]`
 - Prev File: `CmdOrCtrl+Shift+[`
+- Find: `CmdOrCtrl+F`
 
 ### View
 - Inc Zoom: `CmdOrCtrl+Plus`
@@ -52,6 +53,7 @@ Left is a simple, minimalist, open-source and cross-platform text editor.
 ### Mode
 - Reader: `CmdOrCtrl+K`
 - Operator: `CmdOrCtrl+F`
+- Insert: `CmdOrCtrl+I`
 
 ## reader Mode
 
@@ -61,6 +63,20 @@ Left is a simple, minimalist, open-source and cross-platform text editor.
 ## operator Mode
 
 ### Operator
+- Stop: `Esc`
+
+## insert Mode
+
+### Insert
+- Date: `CmdOrCtrl+D`
+- Time: `CmdOrCtrl+T`
+- Path: `CmdOrCtrl+P`
+- Header: `CmdOrCtrl+H`
+- SubHeader: `CmdOrCtrl+Shift+H`
+- Comment: `CmdOrCtrl+/`
+- Line: `CmdOrCtrl+L`
+
+### Mode
 - Stop: `Esc`
 
 <img src='https://cdn.rawgit.com/hundredrabbits/Left/master/LAYOUT.svg?v=1' width="600"/>
