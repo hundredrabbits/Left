@@ -8,6 +8,7 @@ function Left()
   this.project = new Project();
   this.options = new Options();
   this.reader = new Reader();
+  this.insert = new Insert();
 
   this.textarea_el    = document.createElement('textarea');
   this.stats_el       = document.createElement('stats');
@@ -88,6 +89,7 @@ function Left()
 
     this.controller.add("default","Mode","Reader",() => { left.reader.start(); },"CmdOrCtrl+K");
     this.controller.add("default","Mode","Operator",() => { left.operator.start(); },"CmdOrCtrl+F");
+    this.controller.add("default","Mode","Insert",() => { left.insert.start(); },"CmdOrCtrl+I");
 
     this.controller.add("reader","*","About",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left'); },"CmdOrCtrl+,");
     this.controller.add("reader","*","Fullscreen",() => { app.toggle_fullscreen(); },"CmdOrCtrl+Enter");
@@ -105,6 +107,19 @@ function Left()
     this.controller.add("operator","*","Documentation",() => { left.controller.docs(); },"CmdOrCtrl+Esc");
     this.controller.add("operator","*","Reset",() => { left.theme.reset(); },"CmdOrCtrl+Backspace");
     this.controller.add("operator","*","Quit",() => { left.project.quit(); },"CmdOrCtrl+Q");
+
+    this.controller.add("insert","*","About",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left'); },"CmdOrCtrl+,");
+    this.controller.add("insert","*","Fullscreen",() => { app.toggle_fullscreen(); },"CmdOrCtrl+Enter");
+    this.controller.add("insert","*","Hide",() => { app.toggle_visible(); },"CmdOrCtrl+H");
+    this.controller.add("insert","*","Inspect",() => { app.inspect(); },"CmdOrCtrl+.");
+    this.controller.add("insert","*","Documentation",() => { left.controller.docs(); },"CmdOrCtrl+Esc");
+    this.controller.add("insert","*","Reset",() => { left.theme.reset(); },"CmdOrCtrl+Backspace");
+    this.controller.add("insert","*","Quit",() => { left.project.quit(); },"CmdOrCtrl+Q");
+
+    this.controller.add("insert","Items","Date",() => { left.insert.date(); },"CmdOrCtrl+D");
+    this.controller.add("insert","Items","Time",() => { left.insert.time(); },"CmdOrCtrl+T");
+    this.controller.add("insert","Items","Path",() => { left.insert.path(); },"CmdOrCtrl+P");
+    this.controller.add("insert","Mode","Stop",() => { left.insert.stop(); },"Esc");
 
     this.controller.add_role("operator","Edit","undo");
     this.controller.add_role("operator","Edit","redo");

@@ -183,6 +183,12 @@ function Project()
   {
     if(this.has_changes() && !force){ left.project.alert(); return; }
 
+
+    var path = left.project.paths[left.project.index];
+    var parts = path.replace(/\\/g,"/").split("/")
+    var file_name = parts[parts.length-1];
+
+    document.title = file_name ? `Left — ${file_name}` : "Left"
     this.index = clamp(index,0,this.paths.length-1);
 
     this.load_path(this.paths[this.index]);

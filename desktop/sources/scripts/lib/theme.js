@@ -19,7 +19,7 @@ function Theme()
   {
     var theme = is_json(t) ? JSON.parse(t).data : t.data;
 
-    if(!theme.background){ return; }
+    if(!theme || !theme.background){ return; }
 
     var css = `
     :root {
