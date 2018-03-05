@@ -9,17 +9,23 @@ function Theme()
 
   this.start = function()
   {
-    this.load(localStorage.theme && localStorage.theme.background ? localStorage.theme : this.default);
+    this.load(localStorage.theme ? localStorage.theme : this.default, this.default);
     window.addEventListener('dragover',this.drag_enter);
     window.addEventListener('drop', this.drag);
     document.head.appendChild(this.el)
   }
 
-  this.load = function(t)
+  this.load = function(t, fall_back)
   {
     var theme = is_json(t) ? JSON.parse(t).data : t.data;
 
-    if(!theme || !theme.background){ return; }
+    if(!theme || !theme.background){
+      if(fall_back) {
+        theme = fall_back.data;
+      } else {
+        return;
+      }
+    }
 
     var css = `
     :root {
@@ -36,7 +42,7 @@ function Theme()
 
     this.active = theme;
     this.el.textContent = css;
-    localStorage.setItem("theme", JSON.stringify(theme));
+    localStorage.setItem("theme", JSON.stringify({data: theme}));
   }
 
   this.reset = function()
