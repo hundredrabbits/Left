@@ -10,23 +10,11 @@ const scr = blessed.screen({
   fullUnicode: true,
 });
 
-const appTitle = blessed.text({
-  width: '100%-2',
-  height: 1,
-  top: 1,
-  left: 1,
-  content: '{bold}TEAL 0.1.0{/bold}',
-  tags: true
-});
-
 const naviEl = blessed.list({
   width: '30%-1',
-  height: '100%-3',
-  left: 1,
-  top: 2,
-  border: {
-    type: 'line',
-  },
+  height: '100%-2',
+  left: 2,
+  top: 1,
   style: {
     border: {
       fg: 'white',
@@ -34,12 +22,9 @@ const naviEl = blessed.list({
   },
 });
 
-// naviEl.add(': LEFT');
-// naviEl.add('  WELCOME');
-
 const textArea = blessed.textarea({
   width: '70%-1',
-  height: '100%-3',
+  height: '100%-2',
   top: 2,
   left: '30%',
   // bottom: 0,
@@ -47,9 +32,6 @@ const textArea = blessed.textarea({
   vi: true,
   hoverText: 'Enter commands here...',
   inputOnFocus: true,
-  border: {
-    type: 'line',
-  },
   style: {
     border: {
       fg: 'white',
@@ -61,12 +43,11 @@ const statsBar = blessed.text({
   width: '100%',
   height: 1,
   left: '30%+1',
-  bottom: 0,
+  bottom: 2,
   // content: '{bold}0L 0W 0V 0C NONEXISTENT.md{/bold}',
   tags: true
 });
 
-scr.append(appTitle);
 scr.append(naviEl);
 scr.append(textArea);
 scr.append(statsBar);
