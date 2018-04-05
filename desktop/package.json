@@ -8,13 +8,15 @@
     "build_osx"    : "electron-packager . Left --platform=darwin --arch=x64 --out ~/Desktop/ --overwrite --icon=icon.icns && echo 'Built for OSX'",
     "build_linux"  : "electron-packager . Left --platform=linux  --arch=x64 --out ~/Desktop/ --overwrite --icon=icon.ico && echo 'Built for LINUX'",
     "build_win"    : "electron-packager . Left --platform=win32  --arch=x64 --out ~/Desktop/ --overwrite --icon=icon.ico && echo 'Built for WIN'",
-    "build"        : "npm run clean ; npm run build_osx ; npm run build_linux ; npm run build_win",
+    "build_pi"     : "electron-packager . Left --platform=linux  --arch=armv7l --out ~/Desktop/ --overwrite --icon=icon.ico ; echo 'Built for PI'",
+    "build"        : "npm run clean ; npm run build_osx ; npm run build_linux ; npm run build_win ; npm run build_pi",
     "push_osx"     : "~/butler push ~/Desktop/Left-darwin-x64/ hundredrabbits/left:osx-64",
     "push_linux"   : "~/butler push ~/Desktop/Left-linux-x64/ hundredrabbits/left:linux-64",
     "push_win"     : "~/butler push ~/Desktop/Left-win32-x64/ hundredrabbits/left:windows-64",
+    "push_pi"      : "~/butler push ~/Desktop/Left-linux-armv7l/ hundredrabbits/left:linux-pi",
     "push_theme"   : "~/butler push ~/Github/HundredRabbits/Themes/themes/ hundredrabbits/left:themes",
     "push_status"  : "~/butler status hundredrabbits/left",
-    "push"         : "npm run build && npm run push_theme ; npm run push_osx ; npm run push_linux ; npm run push_win ; npm run clean ; npm run push_status"
+    "push"         : "npm run build ; npm run push_theme ; npm run push_osx ; npm run push_pi ; npm run push_linux ; npm run push_win ; npm run clean ; npm run push_status"
   },
   "devDependencies": {
     "electron": "^1.8.1"
