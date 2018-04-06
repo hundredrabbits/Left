@@ -27,10 +27,7 @@ const textArea = blessed.textarea({
   height: '100%-2',
   top: 2,
   left: '30%',
-  // bottom: 0,
   keys: true,
-  vi: true,
-  hoverText: 'Enter commands here...',
   inputOnFocus: true,
   style: {
     border: {
@@ -63,26 +60,27 @@ left.navi.el = naviEl;
 left.start();
 
 scr.key(['space'], e => {
+  console.log(e,"11")
   left.refresh();
 })
 
 scr.on('keyup', e => {
+  console.log(e,"11")
   if (e.keyCode == 9) {
     return;
   }
   left.refresh();
 });
 
-// document.addEventListener('wheel', function(e) {
-//   e.preventDefault();
-//   left.textarea_el.scrollTop += e.wheelDeltaY * -0.25;
-//   left.navi.update_scrollbar();
-// }, false)
-
-scr.on('keyup', e => {
-  left.selection.index = 0;
-  left.operator.stop();
-  left.refresh();
-});
+// scr.on('keyup', e => {
+//   console.log(e,"11")
+//   left.selection.index = 0;
+//   left.operator.stop();
+//   left.refresh();
+// });
 
 scr.render();
+
+setInterval(() => {
+  left.refresh()
+}, 1000);

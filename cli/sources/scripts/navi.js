@@ -46,39 +46,17 @@ module.exports = {
   display_markers() {
     this.update_markers();
 
+    var html = ""
     var active_line_id = left.active_line_id();
     var i = 0;
     var marker_num = left.options.marker_num
     for (marker_id in this.markers) {
       var marker = this.markers[marker_id];
       var next_marker = this.markers[i + 1];
-      var el = document.createElement('li');
-
-      el.destination = marker.line;
-
-      // if (marker_num) {
-      //   el.innerHTML = marker.text + "<span>" + marker.line + "</span>";
-      // } else {
-      //   el.innerHTML = marker.text;
-      // }
-
-      // el.className = active_line_id >= marker.line && (!(next_marker) || active_line_id < next_marker.line) ? marker.type + " active fh" : marker.type + " fm";
-      //
-      // el.className += marker.type == "header" ? " fh" : "";
-
-      el.onmouseup = function on_mouseup(e) {
-        left.go_to_line(e.target.destination);
-      }
-
-      if (marker_num) {
-        this.el.add("<span>" + marker.line + "</span>");
-      } else {
-        this.el.add(marker.text);
-      }
-
-      this.el.appendChild(el);
+      html += `${marker.text}\n`
       i += 1;
     }
+    this.el.setContent(html)
   },
 
   update_markers() {

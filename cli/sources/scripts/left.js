@@ -64,8 +64,6 @@ module.exports = {
     var val = this.textarea_el.getValue();
     var next_char = this.textarea_el.value.substr(this.textarea_el.selectionEnd,1);
 
-    console.log('FOUND', next_char)
-
     this.suggestion = (next_char == "" || next_char == " " || next_char == "\n") ? this.dictionary.find_suggestion(this.selection.word) : null;
 
     this.options.update();
