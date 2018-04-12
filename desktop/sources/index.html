@@ -30,6 +30,14 @@
       const app_path = app.getAppPath();
       
       var left = new Left(); left.start();
+
+      // On Windows: open the file specified in the first argument
+      // (allows Open With and file associations on Windows)
+      const remote = require('electron').remote;
+      if (process.platform === "win32" && remote.process.argv.length > 1) {
+        left.project.add(remote.process.argv[1]);
+      }
+      
     </script>
   </body>
 </html>
