@@ -171,9 +171,14 @@ function Project()
       content = this.format_json(obj);
     }
 
-    this.original = content;
-
     left.textarea_el.value = content;
+    
+    // 'content' has the line ending of the file (\r, \n or \r\n).
+    // Textarea converts all line endings to \n.
+    // Load the value back from the textarea so that both have \n line
+    // endings. Otherwise has_changes() does not work correctly.
+    this.original = left.textarea_el.value;
+    
     left.dictionary.update();
     left.refresh();
     left.stats_el.innerHTML = "<b>Loaded</b> "+path;
