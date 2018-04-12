@@ -49,6 +49,10 @@ window.addEventListener('drop', function(e)
 {
   e.stopPropagation();
   e.preventDefault();
+  
+  // Prevent opening a new file when the current file
+  // has changes (same behavior as the keyboard shortcut)
+  if(left.project.has_changes()){ left.project.alert(); return; }
 
   var files = e.dataTransfer.files;
 
