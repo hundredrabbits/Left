@@ -19,7 +19,7 @@ function Navi()
 
   this.project_markers = function()
   {
-    for(id in left.project.paths){
+    for(var id = 0; id < left.project.paths.length; id++){
       // Project markers
       var path = left.project.paths[id];
       var parts = path.replace(/\\/g,"/").split("/")
@@ -44,7 +44,7 @@ function Navi()
     var active_line_id = left.active_line_id();
     var i = 0;
     var marker_num = left.options.marker_num
-    for(marker_id in this.markers){
+    for(var marker_id = 0; marker_id < this.markers.length; marker_id++){
       var marker = this.markers[marker_id];
       var next_marker = this.markers[i+1];
       var el = document.createElement('li');

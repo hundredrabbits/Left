@@ -122,12 +122,12 @@ function Project()
 
     this.paths.push(path);
     left.refresh();
-    this.next();
+    this.show_file(this.paths.length-1);
   }
 
   this.next = function()
   {
-    if(this.index > this.paths.length-1){ return; }
+    if(this.index >= this.paths.length-1){ return; }
 
     this.show_file(this.index+1);
     left.navi.update();
@@ -183,13 +183,13 @@ function Project()
   {
     if(this.has_changes() && !force){ left.project.alert(); return; }
 
-
-    var path = left.project.paths[left.project.index];
+    this.index = clamp(index,0,this.paths.length-1);
+    
+    var path = left.project.paths[this.index];
     var parts = path.replace(/\\/g,"/").split("/")
     var file_name = parts[parts.length-1];
 
     document.title = file_name ? `Left — ${file_name}` : "Left"
-    this.index = clamp(index,0,this.paths.length-1);
 
     this.load_path(this.paths[this.index]);
     left.navi.update();
