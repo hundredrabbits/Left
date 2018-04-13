@@ -68,13 +68,12 @@ function Project()
   this.close = function()
   {
     if(this.has_changes()){ 
-      dialog.showMessageBox({
+      var response = dialog.showMessageBox(app.win, {
         type: 'question', buttons: ['Yes', 'No'], title: 'Confirm', message: 'Are you sure you want to discard changes?'
-      }, function (response) {
-        if (response === 0) { // Runs the following if 'Yes' is clicked
-          this.force_close();
-        }
-      })
+      });
+      if (response !== 0) {
+        return;
+      }
     }
     // Unchanged
     if(this.paths.length <= 1){ 
@@ -93,17 +92,16 @@ function Project()
 
   this.discard = function()
   {
-    dialog.showMessageBox({
+    var response = dialog.showMessageBox(app.win, {
       type: 'question',
       buttons: ['Yes', 'No'],
       title: 'Confirm',
       message: 'Are you sure you want to discard changes?'
-    }, function (response) {
-      if (response === 0) { // Runs the following if 'Yes' is clicked
-        left.textarea_el.value = left.project.original ? left.project.original : '';
-        left.refresh();
-      }
-    })
+    });
+    if (response === 0) { // Runs the following if 'Yes' is clicked
+      left.textarea_el.value = left.project.original ? left.project.original : '';
+      left.refresh();
+    }
   }
 
   this.quit = function()
@@ -119,17 +117,16 @@ function Project()
 
   this.quit_dialog = function()
   {
-    dialog.showMessageBox({
+    var response = dialog.showMessageBox(app.win, {
       type: 'question',
       buttons: ['Yes', 'No'],
       title: 'Confirm',
       message: 'Unsaved data will be lost. Are you sure you want to quit?',
       icon: `${app.path()}/icon.png`
-    }, function (response) {
-      if (response === 0) {
-        app.exit()
-      }
-    })
+    });
+    if (response === 0) {
+      app.exit()
+    }
   }
 
   this.add = function(path)
