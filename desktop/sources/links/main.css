@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 body { font-family: 'input_mono_regular'; font-size: 12px; overflow-y: hidden; }
-body navi { display: block;width: calc((100vw / 4) - 40px);left: 0px;position: absolute;padding: 30px; -webkit-user-select: none;-webkit-app-region: drag; overflow-y: hidden; padding-top:90px;padding-bottom: 100px; transition: opacity 150ms, top 150ms; opacity:1; }
+body navi { display: block;width: calc((100vw / 4) - 40px);left: 0px;position: absolute;padding: 30px; -webkit-user-select: none;-webkit-app-region: drag; overflow-y: hidden; padding-top:90px;padding-bottom: 100px; transition: opacity 150ms, translateY 150ms; opacity:1; }
 body navi li { display: block;line-height: 20px;cursor: pointer; position: relative; -webkit-app-region: no-drag; }
 body navi li::before { position: absolute; left:-15px;}
 body navi li:hover { text-decoration: underline; }
@@ -18,7 +18,7 @@ body stats { display: block;border-bottom: 0px;margin-top: 30px;position: fixed;
 body stats b {  font-family: 'input_mono_medium';}
 body stats i { text-decoration: underline; }
 body stats .right { float:right; }
-body scrollbar { display: block; background:#ccc; width:1px; height:1px; position:fixed; left:0; bottom:0px; transition: width 150ms; }
+body scrollbar { display: block; background:#ccc; width:100vw; height:2px; position:fixed; left:0; bottom:0px; transition: scaleX 150ms; transform-origin: center left; }
 body textarea { padding: 90px 30px 0px; height: calc(100vh - 130px);display: block;width: 100%;position: fixed;left: calc((100vw / 2) - 25%);line-height: 20px;resize: none;background: transparent;overflow: hidden;max-width: 600px; }
 body div { width: 600px;line-height: 20px;font-family: 'input_mono_regular'; font-size: 12px;white-space: pre-wrap; word-wrap:break-word}
 body drag { display: block;width: 100vw;height: 40px;position: fixed;top: 0px;-webkit-user-select: none;-webkit-app-region: drag;}
