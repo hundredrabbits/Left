@@ -103,14 +103,22 @@ function Navi()
   this.update_scrollbar = function()
   {
     var scroll_distance = left.textarea_el.scrollTop;
-    var scroll_progress = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight;
     var scroll_max = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight;
-    var scroll_perc = (scroll_distance/scroll_max);
-
-    left.scroll_el.style.width = ((scroll_distance/scroll_progress) * window.innerWidth)+"px";
+    var scroll_perc = (scroll_max == 0) ? 0 : (scroll_distance / scroll_max);
     
-    var navi_overflow = (left.navi.el.scrollHeight) - window.innerHeight;
-    left.navi.el.style.top = navi_overflow > 0 ? -(scroll_perc * navi_overflow)+"px" : 0;
+    // scrollTop is floating point while others are rounded down to int,
+    // which sometimes makes the percentage go over 100%
+    scroll_perc = Math.min(1, scroll_perc);
+
+    left.scroll_el.style.transform = "scaleX(" + scroll_perc + ")";
+
+    // % of navi which is overflowing (we need this because translateY is in % of navi height)
+    var navi_overflow_perc = (left.navi.el.scrollHeight / window.innerHeight) - 1;
+    
+    // don't go below zero if the whole navi fits
+    navi_overflow_perc = Math.max(0, navi_overflow_perc);
+    
+    left.navi.el.style.transform = "translateY(" + (-100 * scroll_perc * navi_overflow_perc) + "%)";
   }
 
   this.next = function()
