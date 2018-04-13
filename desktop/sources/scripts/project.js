@@ -6,12 +6,6 @@ function Project()
 
   this.new = function()
   {
-    // No Project
-    if(this.paths.length == 0){
-      left.textarea_el.value = "";
-      return;
-    }
-
     var str = "";
     dialog.showSaveDialog((fileName) => {
       if (fileName === undefined){ return; }
@@ -20,14 +14,18 @@ function Project()
         if(err){ alert("An error ocurred creating the file "+ err.message); return; }
         this.paths.push(filename);
         left.refresh();
+        setTimeout(() => { left.project.next(); left.textarea_el.focus(); },200);
       });
     }); 
   }
 
   this.open = function()
   {
-    if(this.has_changes()){ this.alert(); return; }
-
+    if(this.has_changes()){
+      this.alert()
+      return;
+    }
+    
     var paths = dialog.showOpenDialog({properties: ['openFile','multiSelections']});
 
     if(!paths){ console.log("Nothing to load"); return; }
@@ -35,7 +33,7 @@ function Project()
     for(id in paths){
       this.add(paths[id]);
     }
-    setTimeout(() => { left.project.next(); },400);
+    setTimeout(() => { left.project.next(); },200);
   }
 
   this.save = function()
@@ -69,24 +67,43 @@ function Project()
 
   this.close = function()
   {
-    if(this.paths.length == 1){ this.clear(); return; }
-    if(this.has_changes()){ left.project.alert(); return; }
-    
-    this.force_close();
+    if(this.has_changes()){ 
+      dialog.showMessageBox({
+        type: 'question', buttons: ['Yes', 'No'], title: 'Confirm', message: 'Are you sure you want to discard changes?'
+      }, function (response) {
+        if (response === 0) { // Runs the following if 'Yes' is clicked
+          this.force_close();
+        }
+      })
+    }
+    // Unchanged
+    if(this.paths.length == 0){ 
+      this.clear();
+    }
+    else{
+      this.force_close();
+    }
   }
 
   this.force_close = function()
   {
-    this.discard();
-
     this.paths.splice(this.index,1);
     this.prev();
   }
 
   this.discard = function()
   {
-    left.textarea_el.value = left.project.original;
-    left.refresh();
+    dialog.showMessageBox({
+      type: 'question',
+      buttons: ['Yes', 'No'],
+      title: 'Confirm',
+      message: 'Are you sure you want to discard changes?'
+    }, function (response) {
+      if (response === 0) { // Runs the following if 'Yes' is clicked
+        left.textarea_el.value = left.project.original ? left.project.original : '';
+        left.refresh();
+      }
+    })
   }
 
   this.quit = function()
@@ -130,7 +147,7 @@ function Project()
     if(this.index >= this.paths.length-1){ return; }
 
     this.show_file(this.index+1);
-    left.navi.update();
+    left.refresh()
   }
 
   this.prev = function()
@@ -138,7 +155,7 @@ function Project()
     if(this.index < 1){ return; }
 
     this.show_file(this.index-1);
-    left.navi.update();
+    left.refresh();
   }
 
   this.clear = function()
