@@ -77,7 +77,7 @@ function Project()
       })
     }
     // Unchanged
-    if(this.paths.length == 0){ 
+    if(this.paths.length <= 1){ 
       this.clear();
     }
     else{
