@@ -17,7 +17,11 @@ app.toggle_fullscreen = function()
 
 app.toggle_visible = function()
 {
-  if(is_shown){ app.win.hide(); } else{ app.win.show(); }
+  if(process.platform == "win32"){
+    if(!app.win.isMinimized()){ app.win.minimize(); } else{ app.win.restore(); }
+  } else {
+    if(is_shown){ app.win.hide(); } else{ app.win.show(); }
+  }
 }
 
 app.inject_menu = function(m)
