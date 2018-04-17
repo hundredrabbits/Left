@@ -277,39 +277,25 @@ function Left()
     if(w.substr(0,1) == w.substr(0,1).toUpperCase()){
       word = word.substr(0,1).toUpperCase()+word.substr(1,word.length);
     }
+    
+    this.textarea_el.setSelectionRange(l.from, l.to);
 
-    var before = this.textarea_el.value.substr(0,l.from);
-    var after = this.textarea_el.value.substr(l.to);
-
-    var target_selection = before.length+word.length;
-    this.textarea_el.value = before+word+after;
-
-    this.textarea_el.setSelectionRange(target_selection,target_selection);
+    document.execCommand('insertText', false, word);
+    
     this.textarea_el.focus();
   }
 
   this.replace_selection_with = function(characters)
   {
-    var from = this.textarea_el.selectionStart;
-    var to = this.textarea_el.selectionEnd;
-    var length = to - from;
-    var before = this.textarea_el.value.substr(0,from);
-    var after  = this.textarea_el.value.substr(from+length,this.textarea_el.value.length);
-
-    this.textarea_el.value = `${before}${characters}${after}`;
-    this.textarea_el.setSelectionRange(from+characters.length,from+characters.length);
+    document.execCommand('insertText', false, characters);
     this.refresh();    
   }
 
   this.inject = function(characters = "__")
   {
     var pos = this.textarea_el.selectionStart;
-    var before = this.textarea_el.value.substr(0,pos);
-    var middle = characters;
-    var after  = this.textarea_el.value.substr(pos,this.textarea_el.value.length);
-
-    this.textarea_el.value = before+middle+after;
-    this.textarea_el.setSelectionRange(pos+characters.length,pos+characters.length);
+    this.textarea_el.setSelectionRange(pos, pos);
+    document.execCommand('insertText', false, characters);
     this.refresh();
   }
 
