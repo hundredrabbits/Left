@@ -7,16 +7,16 @@ function Project()
   this.new = function()
   {
     var str = "";
-    dialog.showSaveDialog((fileName) => {
-      if (fileName === undefined){ return; }
-      let filename = left.project.has_extension(fileName) ? fileName : `${fileName}.txt`;
-      fs.writeFile(filename, str, (err) => {
-        if(err){ alert("An error ocurred creating the file "+ err.message); return; }
-        this.paths.push(filename);
-        left.refresh();
-        setTimeout(() => { left.project.next(); left.textarea_el.focus(); },200);
-      });
-    }); 
+    var fileName = dialog.showSaveDialog(app.win);
+
+    if (fileName === undefined){ return; }
+    let filename = left.project.has_extension(fileName) ? fileName : `${fileName}.txt`;
+    fs.writeFile(filename, str, (err) => {
+      if(err){ alert("An error ocurred creating the file "+ err.message); return; }
+      this.paths.push(filename);
+      left.refresh();
+      setTimeout(() => { left.project.next(); left.textarea_el.focus(); },200);
+    });
   }
 
   this.open = function()
@@ -26,7 +26,7 @@ function Project()
       return;
     }
     
-    var paths = dialog.showOpenDialog({properties: ['openFile','multiSelections']});
+    var paths = dialog.showOpenDialog(app.win, {properties: ['openFile','multiSelections']});
 
     if(!paths){ console.log("Nothing to load"); return; }
 
@@ -54,15 +54,15 @@ function Project()
   {
     var str = left.textarea_el.value;
 
-    dialog.showSaveDialog((fileName) => {
-      if (fileName === undefined){ return; }
-      let filename = left.project.has_extension(fileName) ? fileName : `${fileName}.txt`;
-      fs.writeFile(filename, str, (err) => {
-        if(err){ alert("An error ocurred creating the file "+ err.message); return; }
-        this.paths.push(filename);
-        left.refresh();
-      });
-    }); 
+    var fileName = dialog.showSaveDialog(app.win);
+    
+    if (fileName === undefined){ return; }
+    let filename = left.project.has_extension(fileName) ? fileName : `${fileName}.txt`;
+    fs.writeFile(filename, str, (err) => {
+      if(err){ alert("An error ocurred creating the file "+ err.message); return; }
+      this.paths.push(filename);
+      left.refresh();
+    });
   }
 
   this.close = function()
@@ -218,7 +218,7 @@ function Project()
   {
     if(str.indexOf(".") < 0){ return false; }
     var parts = str.split(".");
-    return parts[parts.length-1].length <= 2 ? true : false;
+    return parts[parts.length-1].length <= 2 ? false : true;
   }
 
   this.has_changes = function()
