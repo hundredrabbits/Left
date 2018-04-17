@@ -218,7 +218,7 @@ function Project()
   {
     if(str.indexOf(".") < 0){ return false; }
     var parts = str.split(".");
-    return parts[parts.length-1].length <= 2 ? true : false;
+    return parts[parts.length-1].length <= 2 ? false : true;
   }
 
   this.has_changes = function()
