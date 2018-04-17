@@ -60,12 +60,12 @@ function Controller()
     console.log("Generating docs..");
     var svg = this.generate_svg(this.format())
     var txt = this.documentation(this.format());
-    dialog.showSaveDialog((fileName) => {
-      if (fileName === undefined){ return; }
-      fileName = fileName.substr(-4,4) != ".svg" ? fileName+".svg" : fileName;
-      fs.writeFile(fileName,svg);
-      fs.writeFile(fileName.replace(".svg",".md"),txt);
-    }); 
+    var fileName = dialog.showSaveDialog(app.win);
+    
+    if (fileName === undefined){ return; }
+    fileName = fileName.substr(-4,4) != ".svg" ? fileName+".svg" : fileName;
+    fs.writeFile(fileName,svg);
+    fs.writeFile(fileName.replace(".svg",".md"),txt);
   }
 
   this.generate_svg = function(m)
