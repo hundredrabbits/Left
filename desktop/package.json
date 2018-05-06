@@ -17,7 +17,7 @@
     "push_pi"      : "~/butler push ~/Desktop/Left-linux-armv7l/ hundredrabbits/left:linux-pi",
     "push_theme"   : "~/butler push ~/Github/HundredRabbits/Themes/themes/ hundredrabbits/left:themes",
     "push_status"  : "~/butler status hundredrabbits/left",
-    "push"         : "npm run build ; npm run push_theme ; npm run push_osx ; npm run push_pi ; npm run push_linux ; npm run push_win ; npm run clean ; npm run push_status"
+    "push"         : "git pull ; npm run build ; npm run push_theme ; npm run push_osx ; npm run push_pi ; npm run push_linux ; npm run push_win ; npm run clean ; npm run push_status"
   },
   "devDependencies": {
     "electron": "^1.8.1"
