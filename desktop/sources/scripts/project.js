@@ -170,12 +170,16 @@ function Project()
   {
     if(!path){ this.original = left.textarea_el.value; return; }
 
-    fs.readFile(path, 'utf-8', (err, data) => {
-      if(err){ alert("An error ocurred reading the file :" + err.message); return; }
-      left.project.load(data,path);
-      left.scroll_to(0,0)
-      left.refresh();
-    });
+    var data;
+    try {
+      data = fs.readFileSync(path, 'utf-8');
+    } catch (err) {
+      alert("An error ocurred reading the file :" + err.message);
+      return;
+    }
+    left.project.load(data,path);
+    left.scroll_to(0,0);
+    left.refresh();
   }
 
   this.load = function(content,path)
