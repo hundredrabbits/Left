@@ -3,7 +3,9 @@
 const blessed = require('blessed');
 left = require('./sources/scripts/left.js');
 
-const scr = blessed.screen({
+const Editor = require('editor-widget');
+
+const screen = blessed.screen({
   smartCSR: true,
   autopadding: true,
   title: 'Left',
@@ -36,6 +38,14 @@ const textArea = blessed.textarea({
   },
 });
 
+const ed = new Editor({
+  parent: screen,
+  width: '70%-1',
+  height: '100%-2',
+  top: 2,
+  left: '30%',
+});
+
 const statsBar = blessed.text({
   width: '100%',
   height: 1,
@@ -45,12 +55,15 @@ const statsBar = blessed.text({
   tags: true
 });
 
-scr.append(naviEl);
-scr.append(textArea);
-scr.append(statsBar);
+screen.append(naviEl);
+screen.append(ed);
+screen.append(statsBar);
+
+const filePath = './main.js';
+ed.open(filePath);
 
 // Quit on Escape, q, or Control-C.
-scr.key(['escape', 'C-c'], (ch, key) => {
+screen.key(['escape', 'C-c'], (ch, key) => {
   process.exit(0);
 });
 
@@ -59,12 +72,12 @@ left.stats_el = statsBar;
 left.navi.el = naviEl;
 left.start();
 
-scr.key(['space'], e => {
+screen.key(['space'], e => {
   console.log(e,"11")
   left.refresh();
 })
 
-scr.on('keyup', e => {
+screen.on('keyup', e => {
   console.log(e,"11")
   if (e.keyCode == 9) {
     return;
@@ -72,14 +85,14 @@ scr.on('keyup', e => {
   left.refresh();
 });
 
-// scr.on('keyup', e => {
+// screen.on('keyup', e => {
 //   console.log(e,"11")
 //   left.selection.index = 0;
 //   left.operator.stop();
 //   left.refresh();
 // });
 
-scr.render();
+screen.render();
 
 setInterval(() => {
   left.refresh()

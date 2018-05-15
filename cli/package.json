@@ -5,8 +5,12 @@
   "scripts": {
     "start": "node . dev"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "deep-extend": "^0.5.1",
+    "lodash": "^4.17.5"
+  },
   "dependencies": {
-    "blessed": "^0.1.56"
+    "blessed": "^0.1.56",
+    "editor-widget": "^1.1.1"
   }
 }
