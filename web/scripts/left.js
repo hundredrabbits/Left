@@ -1,6 +1,8 @@
 function Left()
 {
+  this.controller = new Controller();
   this.theme = new Theme();
+
   this.dictionary = new Dict();
   this.operator = new Operator();
   this.navi = new Navi();
@@ -43,6 +45,35 @@ function Left()
   {
     this.theme.start();
     this.dictionary.start();
+
+    this.controller.add("default","File","New",() => { left.project.new(); },"N",true);
+    this.controller.add("default","File","Save",() => { left.project.save(); },"S",true);
+
+    this.controller.add("default","Select","Select Autocomplete",() => { left.select_autocomplete(); },"Tab");
+    this.controller.add("default","Select","Select Synonym",() => { left.select_synonym(); },"Shift+Tab");
+
+    this.controller.add("default","Navigation","Next Marker",() => { left.navi.next(); },"]",true);
+    this.controller.add("default","Navigation","Prev Marker",() => { left.navi.prev(); },"[",true);
+    this.controller.add("default","Navigation","Next File",() => { left.project.next(); },"Shift+]",true);
+    this.controller.add("default","Navigation","Prev File",() => { left.project.prev(); },"Shift+[",true);
+    this.controller.add("default","Navigation","Find",() => { left.operator.start(); },"F");
+
+    this.controller.add("default","Mode","Reader",() => { left.reader.start(); },"K",true);
+    this.controller.add("default","Mode","Operator",() => { left.operator.start(); },"F",true);
+    this.controller.add("default","Mode","Insert",() => { left.insert.start(); },"I",true);
+
+    this.controller.add("reader","Reader","Stop",() => { left.reader.stop(); },"Escape");
+
+    this.controller.add("insert","Insert","Date",() => { left.insert.date(); },"D",true);
+    this.controller.add("insert","Insert","Time",() => { left.insert.time(); },"T",true);
+    this.controller.add("insert","Insert","Path",() => { left.insert.path(); },"P",true);
+    this.controller.add("insert","Insert","Header",() => { left.insert.header(); },"H",true);
+    this.controller.add("insert","Insert","SubHeader",() => { left.insert.subheader(); },"Shift+H",true);
+    this.controller.add("insert","Insert","Comment",() => { left.insert.comment(); },"/",true);
+    this.controller.add("insert","Insert","Line",() => { left.insert.line(); },"L",true);
+    this.controller.add("insert","Mode","Stop",() => { left.insert.stop(); },"Esc");
+
+    this.controller.add("operator","Operator","Stop",() => { left.operator.stop(); },"Esc");
 
     this.textarea_el.focus();
 
@@ -214,7 +245,6 @@ function Left()
   this.autocomplete = function()
   {
     var suggestion = left.suggestion;
-    console.log(left.selection.word.length,suggestion.length)
     this.inject(suggestion.substr(left.selection.word.length,suggestion.length)+" ");
   }
 
@@ -354,7 +384,6 @@ function Left()
     var d = new Date(), e = new Date(d);
     var since_midnight = e - d.setHours(0,0,0,0);
     var timestamp = parseInt((since_midnight/864) * 10);
-
     return timestamp/1000;
   }
 
