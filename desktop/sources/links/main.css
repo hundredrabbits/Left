@@ -40,6 +40,7 @@ scrollbar { background:var(--b_med) !important }
 textarea { color:var(--f_high) !important }
 stats { color:var(--f_low) !important }
 stats b { color:var(--f_high) !important }
+stats i { color:var(--f_med) !important }
 highlight b { border-bottom: 1px solid var(--f_low) !important; }
 ::selection { background:var(--b_low) !important; color:var(--f_med) !important }
 navi  { color:var(--f_low) !important }
@@ -47,3 +48,8 @@ navi li.file { color:var(--f_med) !important }
 navi li.active { color:var(--f_high) !important }
 navi li::before { color:var(--f_low) !important }
 body #operator { background:var(--background); color:var(--b_inv); }
+
+.fh { color:var(--f_high) !important; }
+.fm { color:var(--f_med) !important; }
+.fl { color:var(--f_low) !important; }
+
