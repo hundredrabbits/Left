@@ -66,4 +66,7 @@ app.on('activate', () => {
   if (app.win === null) {
     createWindow()
   }
+  else{
+    app.win.show();
+  }
 })
