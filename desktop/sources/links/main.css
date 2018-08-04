@@ -7,10 +7,10 @@ body navi li::before { position: absolute; left:-15px;}
 body navi li:hover { text-decoration: underline; }
 body navi li.file { font-family: 'input_mono_medium' }
 body navi li.file::before { content:"/"; }
-body navi li.header { text-transform: capitalize; }
-body navi li.note { text-transform: capitalize; padding-left:20px;}
+body navi li.header { }
+body navi li.note { padding-left:20px;}
 body navi li.note::before { content:"#"; left:0px; }
-body navi li.comment { text-transform: capitalize;padding-left: 20px;}
+body navi li.comment {padding-left: 20px;}
 body navi li.comment::before { content:"-"; left:0px; }
 body navi li.changes::after { content:"*"; }
 body navi li span { float:right; }
