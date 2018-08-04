@@ -39,6 +39,10 @@ function Dict()
       if(word.length < 4){ continue; }
       if(word.substr(0,to_word.length) == to_word){ return word; }
     }
+
+    for(id in this.synonyms){
+
+    }
     return null;
   }
 
@@ -46,9 +50,7 @@ function Dict()
   {
     var tmp = [];
     for(var i = 0; i < arr.length; i++){
-        if(tmp.indexOf(arr[i]) == -1){
-        tmp.push(arr[i]);
-        }
+      if(tmp.indexOf(arr[i]) == -1){ tmp[tmp.length] = arr[i]; }
     }
     return tmp;
   }
@@ -56,6 +58,7 @@ function Dict()
   this.find_synonym = function(to_word)
   {
     to_word = to_word.toLowerCase();
+
     if(!left.options.synonyms && this.synonyms){ return null; }
 
     if(this.synonyms[to_word]){ return squash(this.synonyms[to_word]); }
@@ -69,13 +72,13 @@ function Dict()
 
   this.update = function()
   {
-    this.vocabulary = [""];
+    this.vocabulary = Object.keys(this.synonyms);
 
     var words = left.textarea_el.value.split(/[^\w\-]+/);
     for(word_id in words){
       var word = words[word_id].toLowerCase();
       if(this.vocabulary.indexOf(word) < 0){
-        this.vocabulary.push(word);
+        this.vocabulary[this.vocabulary.length] = word;
       }
     }
   }
