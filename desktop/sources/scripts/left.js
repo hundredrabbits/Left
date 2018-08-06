@@ -2,7 +2,7 @@ function Left()
 {
   this.theme = new Theme();
   this.controller = new Controller();
-  this.dictionary = new Dict();
+  this.dictionary = new Dictionary();
   this.operator = new Operator();
   this.navi = new Navi();
   this.project = new Project();
@@ -189,8 +189,9 @@ function Left()
     }
     else{
       left.synonyms = this.dictionary.find_synonym(left.selection.word);
-      for(syn_id in left.synonyms){
-        synonym_html += syn_id == (left.selection.index % left.synonyms.length) ? `<i>${left.synonyms[syn_id]}</i> ` : left.synonyms[syn_id]+" ";
+      for(id in left.synonyms){
+        var synonym = left.synonyms[id]
+        synonym_html += id == left.selection.index ? `<i>${synonym}</i> ` : synonym+" ";
       }
     }
     left.stats_el.innerHTML = left.synonyms && left.selected().length < 5 ? synonym_html : (left.textarea_el.selectionStart != left.textarea_el.selectionEnd ? "<b>["+left.textarea_el.selectionStart+","+left.textarea_el.selectionEnd+"]</b> " : '')+(`${stats.l}L ${stats.w}W ${stats.v}V ${stats.c}C ${suggestion_html}`);

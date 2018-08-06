@@ -32,7 +32,10 @@ document.onkeydown = function key_down(e)
 };
 
 document.onkeyup = (e) => {
-  if(e.keyCode == 9){
+  if(e.keyCode == 16){ // Shift
+    left.selection.index = 0;
+  }
+  if(e.keyCode == 9){ // Tab
     return;
   }
   left.refresh();
