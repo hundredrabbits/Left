@@ -76,19 +76,20 @@ function Left()
 
     this.controller.add("default","Select","Select Autocomplete",() => { left.select_autocomplete(); },"Tab");
     this.controller.add("default","Select","Select Synonym",() => { left.select_synonym(); },"Shift+Tab");
+    this.controller.add("default","Select","Find",() => { left.operator.start("find: "); },"CmdOrCtrl+F");
+    this.controller.add("default","Select","Replace",() => { left.operator.start("replace: a -> b"); },"CmdOrCtrl+Shift+F");
+    this.controller.add("default","Select","Goto",() => { left.operator.start("goto: "); },"CmdOrCtrl+G");
 
     this.controller.add("default","Navigation","Next Marker",() => { left.navi.next(); },"CmdOrCtrl+]");
     this.controller.add("default","Navigation","Prev Marker",() => { left.navi.prev(); },"CmdOrCtrl+[");
     this.controller.add("default","Navigation","Next File",() => { left.project.next(); },"CmdOrCtrl+Shift+]");
     this.controller.add("default","Navigation","Prev File",() => { left.project.prev(); },"CmdOrCtrl+Shift+[");
-    this.controller.add("default","Navigation","Find",() => { left.operator.start(); },"CmdOrCtrl+F");
 
     this.controller.add("default","View","Inc Zoom",() => {  left.options.set_zoom(left.options.zoom+0.1) },"CmdOrCtrl+Plus");
     this.controller.add("default","View","Dec Zoom",() => {  left.options.set_zoom(left.options.zoom-0.1) },"CmdOrCtrl+-");
     this.controller.add("default","View","Reset Zoom",() => {  left.options.set_zoom(1) },"CmdOrCtrl+0");
 
     this.controller.add("default","Mode","Reader",() => { left.reader.start(); },"CmdOrCtrl+K");
-    this.controller.add("default","Mode","Operator",() => { left.operator.start(); },"CmdOrCtrl+F");
     this.controller.add("default","Mode","Insert",() => { left.insert.start(); },"CmdOrCtrl+I");
 
     this.controller.add("reader","*","About",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left'); },"CmdOrCtrl+,");
@@ -123,6 +124,7 @@ function Left()
     this.controller.add("insert","Insert","SubHeader",() => { left.insert.subheader(); },"CmdOrCtrl+Shift+H");
     this.controller.add("insert","Insert","Comment",() => { left.insert.comment(); },"CmdOrCtrl+/");
     this.controller.add("insert","Insert","Line",() => { left.insert.line(); },"CmdOrCtrl+L");
+    this.controller.add("insert","Insert","List",() => { left.insert.list(); },"CmdOrCtrl+-");
     this.controller.add("insert","Mode","Stop",() => { left.insert.stop(); },"Esc");
 
     this.controller.add_role("operator","Edit","undo");
@@ -219,8 +221,10 @@ function Left()
 
   this.selected = function()
   {
-    var value = left.textarea_el.value.substr(left.textarea_el.selectionStart,left.textarea_el.selectionEnd - left.textarea_el.selectionStart);
-    return value;
+    var from = this.textarea_el.selectionStart;
+    var to = this.textarea_el.selectionEnd;
+    var length = to - from;
+    return this.textarea_el.value.substr(from,length);
   }
 
   this.active_line_id = function()
@@ -298,6 +302,24 @@ function Left()
     this.textarea_el.setSelectionRange(pos, pos);
     document.execCommand('insertText', false, characters);
     this.refresh();
+  }
+
+  this.inject_line = function(characters = "__")
+  {
+    left.select_line(left.active_line_id())
+    this.inject(characters)
+  }
+
+  this.inject_multiline = function(characters = "__")
+  {
+    console.log("!!")
+    var lines = this.selected().match(/[^\r\n]+/g);
+    var text = ""
+    for(id in lines){
+      var line = lines[id];
+      text += `${characters}${line}\n`
+    }
+    this.replace_selection_with(text);
   }
 
   this.autocomplete = function()
@@ -434,6 +456,17 @@ function Left()
   this.select = function(from,to)
   {
     left.textarea_el.setSelectionRange(from,to);
+  }
+
+  this.select_line = function(id)
+  {
+    let lineArr = this.textarea_el.value.split("\n",parseInt(id)+1)
+    let arrJoin = lineArr.join("\n")
+
+    let from = arrJoin.length-lineArr[id].length;
+    let to = arrJoin.length;
+
+    this.select(from,to)
   }
 
   this.time = function()

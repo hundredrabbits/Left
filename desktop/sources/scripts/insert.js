@@ -44,28 +44,65 @@ function Insert()
 
   this.header = function()
   {
-    if(left.prev_character() != "\n"){
-      left.inject("\n");
+    var is_multiline = left.selected().match(/[^\r\n]+/g);
+    
+    if(left.prev_character() == "\n" && !is_multiline){
+      left.inject("# ");
     }
-    left.inject("# ");
+    else if(is_multiline){
+      left.inject_multiline("# ");
+    }
+    else{
+      left.inject_line("# ");
+    }
     this.stop();
   }
 
   this.subheader = function()
   {
-    if(left.prev_character() != "\n"){
-      left.inject("\n");
+    var is_multiline = left.selected().match(/[^\r\n]+/g);
+
+    if(left.prev_character() == "\n" && !is_multiline){
+      left.inject("## ");
     }
-    left.inject("## ");
+    else if(is_multiline){
+      left.inject_multiline("## ");
+    }
+    else{
+      left.inject_line("## ");
+    }
     this.stop();
   }
 
   this.comment = function()
   {
-    if(left.prev_character() != "\n"){
-      left.inject("\n");
+    var is_multiline = left.selected().match(/[^\r\n]+/g);
+
+    if(left.prev_character() == "\n" && !is_multiline){
+      left.inject("-- ");
     }
-    left.inject("-- ");
+    else if(is_multiline){
+      left.inject_multiline("-- ");
+    }
+    else{
+      left.inject_line("-- ");
+    }
+    this.stop();
+  }
+
+  this.list = function()
+  {
+    var is_multiline = left.selected().match(/[^\r\n]+/g);
+
+    if(left.prev_character() == "\n" && !is_multiline){
+      left.inject("- ");
+    }
+    else if(is_multiline){
+      left.inject_multiline("- ");
+    }
+    else{
+      left.inject_line("- ");
+    }
     this.stop();
   }
 
@@ -80,6 +117,6 @@ function Insert()
 
   this.status = function()
   {
-    return `<b>Insert Mode</b> c-D <i>Date</i> c-T <i>Time</i> ${left.project.paths.length > 0 ? 'c-P <i>Path</i> ' : ''}Esc <i>Exit</i>.`
+    return `<b>Insert Mode</b> c-D <i>Date</i> c-T <i>Time</i> ${left.project.paths.length > 0 ? 'c-P <i>Path</i> c-H <i>Header</i> ' : ''}Esc <i>Exit</i>.`
   }
 }

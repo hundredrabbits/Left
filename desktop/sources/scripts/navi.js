@@ -60,7 +60,6 @@ function Navi()
       this.el.appendChild(el);
       i += 1;
     }
-
   }
 
   this.update_markers = function()

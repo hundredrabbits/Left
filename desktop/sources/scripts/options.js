@@ -4,6 +4,7 @@ function Options()
   this.marker_num = false
   this.suggestions = true
   this.synonyms = true
+  
   this.update = function () 
   {
     var text = left.textarea_el.value;
@@ -82,6 +83,7 @@ function Options()
       })
     }
   }
+
   this.check_actions = function()
   {
     var found = false

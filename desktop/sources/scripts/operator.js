@@ -2,16 +2,18 @@ function Operator()
 {
   this.el = document.createElement('input'); this.el.id = "operator";
   this.is_active = false;
+  this.index = 0;
 
   this.el.addEventListener("keyup", (e) => { left.operator.on_change(e); });
 
-  this.start = function()
+  this.start = function(f = "")
   {
     console.log("started");
     left.controller.set("operator");
     this.is_active = true;
 
     left.textarea_el.blur();
+    this.el.value = f;
     this.el.focus();
 
     this.update();
@@ -38,16 +40,12 @@ function Operator()
   {
     if(!this.is_active){ return; }
 
-    this.update();
-
     if(e.key == "Enter" || e.code == "Enter"){
-      this.operate();
+      this.active();
     }
-  }
-
-  this.text = function()
-  {
-    return left.textarea_el.value;
+    else{
+      this.passive();
+    }
   }
 
   this.update = function()
@@ -56,40 +54,69 @@ function Operator()
 
     if(!this.is_active){ return; }
 
-    var value = this.el.value;
-    var target = value.split("=")[0];
-    var operator = value.indexOf("=") > 0 ? value.split("=")[1] : "";
-    var param = value.split("=").length > 2 ? value.split("=")[2] : "";
+    this.passive();
+  }
 
-    var starting_with = target.substr(target.length-1,1) == "-" ? true : false;
-    var ending_with = target.substr(0,1) == "-" ? true : false;
+  this.passive = function()
+  {
+    if(this.el.value.indexOf(" ") < 0){ return; }
 
-    if(target.length > 2){
-      var location = left.go_to_word(target,0,10,starting_with,ending_with);    
+    var cmd = this.el.value.split(" ")[0].replace(":","").trim()
+    var params = this.el.value.replace(cmd,"").replace(":","").trim()
+
+    if(!this[cmd]){ console.info(`Unknown command ${cmd}.`); return; }
+
+    this[cmd](params);
+  }
+
+  this.active = function()
+  {
+    if(this.el.value.indexOf(" ") < 0){ return; }
+
+    var cmd = this.el.value.split(" ")[0].replace(":","").trim()
+    var params = this.el.value.replace(cmd,"").replace(":","").trim()
+
+    if(!this[cmd]){ console.info(`Unknown command ${cmd}.`); return; }
+
+    this[cmd](params,true);
+  }
+
+  this.find = function(q,bang = false)
+  {
+    var loc = left.go_to_word(q,this.index,10);
+
+    if(bang){
+      this.stop();
     }
   }
 
-  this.select = function(query)
+  this.replace = function(q,bang = false)
   {
-    if(query.length < 3){ return []; }
-    if(this.text().indexOf(query) == -1){ return []; }
+    if(q.indexOf("->") < 0){ return; }
 
-    var parts = this.text().split(query);
+    var a = q.split("->")[0].trim();
+    var b = q.split("->")[1].trim();
 
-    return parts;
+    if(a.length < 3){ return; }
+    if(b.length < 3){ return; }
+
+    var loc = left.go_to_word(a,this.index,10);
+
+    if(bang){
+      this.stop();
+      left.replace_selection_with(b);  
+    }
   }
 
-  this.operate = function()
+  this.goto = function(q,bang = false)
   {
-    var value = this.el.value;
+    var target = parseInt(q);
 
-    if(value.indexOf("=") > -1){
-      var target = value.split("=")[0].trim();
-      var param = value.split("=")[1].trim();
-      this.update();
-      left.replace_selection_with(param);  
+    if(q == "" || target < 1){ return; }
+
+    if(bang){
+      this.stop();
+      left.go_to_line(target);
     }
-
-    this.stop();
   }
 }
