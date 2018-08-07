@@ -24,6 +24,8 @@ function Dictionary()
 
   this.build_synonyms = function()
   {
+    var time = performance.now();
+    
     for(target_word in SYN_DB){
       var synonyms = SYN_DB[target_word];
       this.add_word(target_word)
@@ -37,6 +39,7 @@ function Dictionary()
         }
       }
     }
+    console.log(`Built ${Object.keys(this.synonyms).length} synonyms, in ${(performance.now() - time).toFixed(2)}ms.`);
   }
 
   this.find_suggestion = function(target)
@@ -70,15 +73,11 @@ function Dictionary()
 
   this.update = function()
   {
-    var time = performance.now();
-
     var words = left.textarea_el.value.toLowerCase().split(/[^\w\-]+/);
 
     for(word_id in words){
       this.add_word(words[word_id])
     }
-
-    console.log(`Updated ${Object.keys(this.synonyms).length} words, in ${(performance.now() - time).toFixed(2)}ms.`);
   }
 
   function uniq(a1){ var a2 = []; for(id in a1){ if(a2.indexOf(a1[id]) == -1){ a2[a2.length] = a1[id]; } } return a2; }

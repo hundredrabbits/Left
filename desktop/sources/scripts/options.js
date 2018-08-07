@@ -133,10 +133,12 @@ function Options()
 
       if(res_array.length == 2) left.textarea_el.value = left.textarea_el.value.replace(regex,res_array[1])
       let cursor_return_index = from+text_before_length_dif+replace_string.length // the place to set the cursor to
-      left.go.to_fromTo(cursor_return_index,cursor_return_index)
+      left.go.to(cursor_return_index,cursor_return_index)
       left.replace_line(actLine,replace_string,false)
-      left.go.to_fromTo(cursor_return_index,cursor_return_index)
+      left.go.to(cursor_return_index,cursor_return_index)
     })
     return found;
   }
+  
+  function is_json(text){ try{ JSON.parse(text); return true; } catch (error){ return false; } }
 }

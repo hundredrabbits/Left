@@ -58,6 +58,8 @@ function Project()
     
     if (fileName === undefined){ return; }
     let filename = left.project.has_extension(fileName) ? fileName : `${fileName}.txt`;
+
+    console.log(filename,left.project.has_extension(fileName))
     fs.writeFile(filename, str, (err) => {
       if(err){ alert("An error ocurred creating the file "+ err.message); return; }
       this.paths.push(filename);
@@ -221,8 +223,11 @@ function Project()
   this.has_extension = function(str)
   {
     if(str.indexOf(".") < 0){ return false; }
+
     var parts = str.split(".");
-    return parts[parts.length-1].length <= 2 ? false : true;
+    var ext = parts[parts.length-1]
+    
+    return ext.length < 2 || ext.length > 4 ? false : true;
   }
 
   this.has_changes = function()
@@ -245,16 +250,6 @@ function Project()
     if(left.textarea_el.value.length > 0){ return true; }
   }
 
-  function is_json(text)
-  {
-    try{
-        JSON.parse(text);
-        return true;
-    }
-    catch (error){
-      return false;
-    }
-  }
-
+  function is_json(text){ try{ JSON.parse(text); return true; } catch (error){ return false; } }
   function clamp(v, min, max) { return v < min ? min : v > max ? max : v; }
 }

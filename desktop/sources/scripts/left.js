@@ -1,18 +1,17 @@
 function Left()
 {
   this.splash = new Splash();
-  this.stats = new Stats();
   this.theme = new Theme();
   this.controller = new Controller();
   this.dictionary = new Dictionary();
   this.operator = new Operator();
   this.navi = new Navi();
+  this.stats = new Stats();
+  this.go = new Go();
   this.project = new Project();
   this.options = new Options();
   this.reader = new Reader();
   this.insert = new Insert();
-
-  this.go = new Go();
 
   this.textarea_el    = document.createElement('textarea');
   this.scroll_el      = document.createElement('scrollbar');
@@ -95,14 +94,12 @@ function Left()
   {
     var time = performance.now();
 
-    left.selection.word = this.active_word();
-
-    // Only look for suggestion is at the end of word, or text.
     var next_char = this.textarea_el.value.substr(left.textarea_el.selectionEnd,1);
 
-    left.suggestion = (next_char == "" || next_char == " " || next_char == "\n") ? left.dictionary.find_suggestion(left.selection.word) : null;
-    left.synonyms = left.dictionary.find_synonym(left.selection.word);
-    
+    left.selection.word = this.active_word();
+    left.suggestion     = (next_char == "" || next_char == " " || next_char == "\n") ? left.dictionary.find_suggestion(left.selection.word) : null;
+    left.synonyms       = left.dictionary.find_synonym(left.selection.word);
+
     this.options.update();
     this.navi.update();
     this.stats.update();
@@ -266,5 +263,3 @@ function Left()
     left.refresh();
   }
 }
-
-function is_json(text){ try{ JSON.parse(text); return true; } catch (error){ return false; } }

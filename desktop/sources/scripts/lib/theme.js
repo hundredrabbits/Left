@@ -73,14 +73,5 @@ function Theme()
     reader.readAsText(file);
   }
 
-  function is_json(text)
-  {
-    try{
-      JSON.parse(text);
-      return true;
-    }
-    catch (error){
-      return false;
-    }
-  }
+  function is_json(text){ try{ JSON.parse(text); return true; } catch (error){ return false; } }
 }

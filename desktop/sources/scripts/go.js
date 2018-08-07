@@ -4,14 +4,13 @@ function Go()
   {
     let lineArr = left.textarea_el.value.split("\n",parseInt(id)+1)
     let arrJoin = lineArr.join("\n")
-
     let from = arrJoin.length-lineArr[id].length;
     let to = arrJoin.length;
 
-    this.to_fromTo(from,to)
+    this.to(from,to)
   }
   
-  this.to_fromTo = function(from,to)
+  this.to = function(from,to)
   {
      if(left.textarea_el.setSelectionRange){
       left.textarea_el.setSelectionRange(from,to);
@@ -31,6 +30,7 @@ function Go()
   this.to_word = function(word,from = 0, tries = 0, starting_with = false, ending_with = false)
   {
     var target = word;
+    
     if(starting_with){ target = target.substr(0,target.length-1); }
     if(ending_with){ target = target.substr(1,target.length-1); }
 
@@ -69,29 +69,30 @@ function Go()
   }
 
   this.scroll_to = function(from,to)
-  { //creates a temp div which 
-    let text_val = left.textarea_el.value
+  {
+    let text_val = left.textarea_el.value;
     var div = document.createElement("div");
-    div.innerHTML = text_val.slice(0,to); 
+    div.innerHTML = text_val.slice(0,to);
     document.body.appendChild(div);
-    animate_scroll_to(left.textarea_el,div.offsetHeight - 60,500)
-    div.remove()
+    animate_scroll_to(left.textarea_el,div.offsetHeight - 60,500);
+    div.remove();
   }
 
   function animate_scroll_to(element, to, duration)
   {
-    var start = element.scrollTop,
-        change = to - start,
-        currentTime = 0,
-        increment = 20;
+    var start = element.scrollTop;
+    var change = to - start;
+    var currentTime = 0;
+    var increment = 20;
         
-    var animateScroll = function(){        
-        currentTime += increment;
-        var val = Math.easeInOutQuad(currentTime, start, change, duration);
-        element.scrollTop = val;
-        if(currentTime < duration) {
-          setTimeout(animateScroll, increment);
-        }
+    var animateScroll = function()
+    {        
+      currentTime += increment;
+      var val = Math.easeInOutQuad(currentTime, start, change, duration);
+      element.scrollTop = val;
+      if(currentTime < duration) {
+        setTimeout(animateScroll, increment);
+      }
     };
     animateScroll();
   }
