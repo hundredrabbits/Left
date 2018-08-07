@@ -1,5 +1,7 @@
 function Left()
 {
+  this.splash = new Splash();
+  this.stats = new Stats();
   this.theme = new Theme();
   this.controller = new Controller();
   this.dictionary = new Dictionary();
@@ -11,7 +13,6 @@ function Left()
   this.insert = new Insert();
 
   this.textarea_el    = document.createElement('textarea');
-  this.stats_el       = document.createElement('stats');
   this.scroll_el      = document.createElement('scrollbar');
   this.drag_el        = document.createElement('drag');
 
@@ -26,7 +27,7 @@ function Left()
 
   document.body.appendChild(this.navi.el);
   document.body.appendChild(this.textarea_el);
-  document.body.appendChild(this.stats_el);
+  document.body.appendChild(this.stats.el);
   document.body.appendChild(this.scroll_el);
   document.body.appendChild(this.drag_el);
   document.body.appendChild(this.operator.el);
@@ -47,97 +48,8 @@ function Left()
 
     this.textarea_el.focus();
 
-    this.textarea_el.value = this.splash();
+    this.textarea_el.value = `${this.splash}`;
     this.textarea_el.setSelectionRange(0,0);
-    
-    this.controller.add("default","*","About",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left'); },"CmdOrCtrl+,");
-    this.controller.add("default","*","Fullscreen",() => { app.toggle_fullscreen(); },"CmdOrCtrl+Enter");
-    this.controller.add("default","*","Hide",() => { app.toggle_visible(); },"CmdOrCtrl+H");
-    this.controller.add("default","*","Inspect",() => { app.inspect(); },"CmdOrCtrl+.");
-    this.controller.add("default","*","Documentation",() => { left.controller.docs(); },"CmdOrCtrl+Esc");
-    this.controller.add("default","*","Reset",() => { left.theme.reset(); },"CmdOrCtrl+Backspace");
-    this.controller.add("default","*","Quit",() => { left.project.quit(); },"CmdOrCtrl+Q");
-
-    this.controller.add("default","File","New",() => { left.project.new(); },"CmdOrCtrl+N");
-    this.controller.add("default","File","Open",() => { left.project.open(); },"CmdOrCtrl+O");
-    this.controller.add("default","File","Save",() => { left.project.save(); },"CmdOrCtrl+S");
-    this.controller.add("default","File","Save As",() => { left.project.save_as(); },"CmdOrCtrl+Shift+S");
-    this.controller.add("default","File","Discard Changes",() => { left.project.discard(); },"CmdOrCtrl+D");
-    this.controller.add("default","File","Close File",() => { left.project.close(); },"CmdOrCtrl+W");
-    this.controller.add("default","File","Force Close",() => { left.project.force_close(); },"CmdOrCtrl+Shift+W");
-
-    this.controller.add_role("default","Edit","undo");
-    this.controller.add_role("default","Edit","redo");
-    this.controller.add_role("default","Edit","cut");
-    this.controller.add_role("default","Edit","copy");
-    this.controller.add_role("default","Edit","paste");
-    this.controller.add_role("default","Edit","delete");
-    this.controller.add_role("default","Edit","selectall");
-
-    this.controller.add("default","Select","Select Autocomplete",() => { left.select_autocomplete(); },"Tab");
-    this.controller.add("default","Select","Select Synonym",() => { left.select_synonym(); },"Shift+Tab");
-    this.controller.add("default","Select","Find",() => { left.operator.start("find: "); },"CmdOrCtrl+F");
-    this.controller.add("default","Select","Replace",() => { left.operator.start("replace: a -> b"); },"CmdOrCtrl+Shift+F");
-    this.controller.add("default","Select","Goto",() => { left.operator.start("goto: "); },"CmdOrCtrl+G");
-
-    this.controller.add("default","Navigation","Next Marker",() => { left.navi.next(); },"CmdOrCtrl+]");
-    this.controller.add("default","Navigation","Prev Marker",() => { left.navi.prev(); },"CmdOrCtrl+[");
-    this.controller.add("default","Navigation","Next File",() => { left.project.next(); },"CmdOrCtrl+Shift+]");
-    this.controller.add("default","Navigation","Prev File",() => { left.project.prev(); },"CmdOrCtrl+Shift+[");
-
-    this.controller.add("default","View","Inc Zoom",() => {  left.options.set_zoom(left.options.zoom+0.1) },"CmdOrCtrl+Plus");
-    this.controller.add("default","View","Dec Zoom",() => {  left.options.set_zoom(left.options.zoom-0.1) },"CmdOrCtrl+-");
-    this.controller.add("default","View","Reset Zoom",() => {  left.options.set_zoom(1) },"CmdOrCtrl+0");
-
-    this.controller.add("default","Mode","Reader",() => { left.reader.start(); },"CmdOrCtrl+K");
-    this.controller.add("default","Mode","Insert",() => { left.insert.start(); },"CmdOrCtrl+I");
-
-    this.controller.add("reader","*","About",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left'); },"CmdOrCtrl+,");
-    this.controller.add("reader","*","Fullscreen",() => { app.toggle_fullscreen(); },"CmdOrCtrl+Enter");
-    this.controller.add("reader","*","Hide",() => { app.toggle_visible(); },"CmdOrCtrl+H");
-    this.controller.add("reader","*","Inspect",() => { app.inspect(); },"CmdOrCtrl+.");
-    this.controller.add("reader","*","Documentation",() => { left.controller.docs(); },"CmdOrCtrl+Esc");
-    this.controller.add("reader","*","Reset",() => { left.theme.reset(); },"CmdOrCtrl+Backspace");
-    this.controller.add("reader","*","Quit",() => { left.project.quit(); },"CmdOrCtrl+Q");
-    this.controller.add("reader","Reader","Stop",() => { left.reader.stop(); },"Esc");
-
-    this.controller.add("operator","*","About",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left'); },"CmdOrCtrl+,");
-    this.controller.add("operator","*","Fullscreen",() => { app.toggle_fullscreen(); },"CmdOrCtrl+Enter");
-    this.controller.add("operator","*","Hide",() => { app.toggle_visible(); },"CmdOrCtrl+H");
-    this.controller.add("operator","*","Inspect",() => { app.inspect(); },"CmdOrCtrl+.");
-    this.controller.add("operator","*","Documentation",() => { left.controller.docs(); },"CmdOrCtrl+Esc");
-    this.controller.add("operator","*","Reset",() => { left.theme.reset(); },"CmdOrCtrl+Backspace");
-    this.controller.add("operator","*","Quit",() => { left.project.quit(); },"CmdOrCtrl+Q");
-
-    this.controller.add("insert","*","About",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left'); },"CmdOrCtrl+,");
-    this.controller.add("insert","*","Fullscreen",() => { app.toggle_fullscreen(); },"CmdOrCtrl+Enter");
-    this.controller.add("insert","*","Hide",() => { app.toggle_visible(); },"CmdOrCtrl+H");
-    this.controller.add("insert","*","Inspect",() => { app.inspect(); },"CmdOrCtrl+.");
-    this.controller.add("insert","*","Documentation",() => { left.controller.docs(); },"CmdOrCtrl+Esc");
-    this.controller.add("insert","*","Reset",() => { left.theme.reset(); },"CmdOrCtrl+Backspace");
-    this.controller.add("insert","*","Quit",() => { left.project.quit(); },"CmdOrCtrl+Q");
-
-    this.controller.add("insert","Insert","Date",() => { left.insert.date(); },"CmdOrCtrl+D");
-    this.controller.add("insert","Insert","Time",() => { left.insert.time(); },"CmdOrCtrl+T");
-    this.controller.add("insert","Insert","Path",() => { left.insert.path(); },"CmdOrCtrl+P");
-    this.controller.add("insert","Insert","Header",() => { left.insert.header(); },"CmdOrCtrl+H");
-    this.controller.add("insert","Insert","SubHeader",() => { left.insert.subheader(); },"CmdOrCtrl+Shift+H");
-    this.controller.add("insert","Insert","Comment",() => { left.insert.comment(); },"CmdOrCtrl+/");
-    this.controller.add("insert","Insert","Line",() => { left.insert.line(); },"CmdOrCtrl+L");
-    this.controller.add("insert","Insert","List",() => { left.insert.list(); },"CmdOrCtrl+-");
-    this.controller.add("insert","Mode","Stop",() => { left.insert.stop(); },"Esc");
-
-    this.controller.add_role("operator","Edit","undo");
-    this.controller.add_role("operator","Edit","redo");
-    this.controller.add_role("operator","Edit","cut");
-    this.controller.add_role("operator","Edit","copy");
-    this.controller.add_role("operator","Edit","paste");
-    this.controller.add_role("operator","Edit","delete");
-    this.controller.add_role("operator","Edit","selectall");
-
-    this.controller.add("operator","Operator","Stop",() => { left.operator.stop(); },"Esc");
-
-    this.controller.commit();
 
     this.dictionary.update();
     this.refresh();
@@ -156,9 +68,25 @@ function Left()
   {
     if(left.synonyms){
       left.replace_active_word_with(left.synonyms[left.selection.index % left.synonyms.length]); 
-      left.update_stats();
+      left.stats.update();
       left.selection.index += 1;
     }
+  }
+
+  this.select = function(from,to)
+  {
+    left.textarea_el.setSelectionRange(from,to);
+  }
+
+  this.select_line = function(id)
+  {
+    let lineArr = this.textarea_el.value.split("\n",parseInt(id)+1)
+    let arrJoin = lineArr.join("\n")
+
+    let from = arrJoin.length-lineArr[id].length;
+    let to = arrJoin.length;
+
+    this.select(from,to)
   }
 
   this.refresh = function()
@@ -169,52 +97,11 @@ function Left()
     var next_char = this.textarea_el.value.substr(left.textarea_el.selectionEnd,1);
 
     left.suggestion = (next_char == "" || next_char == " " || next_char == "\n") ? left.dictionary.find_suggestion(left.selection.word) : null;
-
+    left.synonyms = left.dictionary.find_synonym(left.selection.word);
+    
     this.options.update();
     this.navi.update();
-    this.update_stats();
-  }
-
-  this.update_stats = function()
-  {
-    var stats = left.parse_stats(left.selected());
-
-    var suggestion_html = "";
-    var synonym_html = ` <b>${left.selection.word}</b> `;
-
-    if(left.insert.is_active){
-      left.stats_el.innerHTML = left.insert.status();
-      return;
-    }
-    else if(left.selection.word && left.suggestion && left.selection.word != left.suggestion){
-      suggestion_html = ` <t>${left.selection.word}<b>${left.suggestion.substr(left.selection.word.length,left.suggestion.length)}</b></t>`;
-    }
-    else{
-      left.synonyms = this.dictionary.find_synonym(left.selection.word);
-      for(id in left.synonyms){
-        var synonym = left.synonyms[id]
-        synonym_html += id == left.selection.index ? `<i>${synonym}</i> ` : synonym+" ";
-      }
-    }
-    left.stats_el.innerHTML = left.synonyms && left.selected().length < 5 ? synonym_html : (left.textarea_el.selectionStart != left.textarea_el.selectionEnd ? "<b>["+left.textarea_el.selectionStart+","+left.textarea_el.selectionEnd+"]</b> " : '')+(`${stats.l}L ${stats.w}W ${stats.v}V ${stats.c}C ${suggestion_html}`);
-  }
-
-  this.parse_stats = function(text = left.textarea_el.value)
-  {
-    text = text.length > 5 ? text.trim() : left.textarea_el.value;
-
-    var h = {};
-    var words = text.toLowerCase().replace(/[^a-z0-9 ]/g, '').split(" ");
-    for(id in words){
-      h[words[id]] = 1
-    }
-
-    var stats = {};
-    stats.l = text.split("\n").length; // lines_count
-    stats.w = text.split(" ").length; // words_count
-    stats.c = text.length; // chars_count
-    stats.v = Object.keys(h).length;
-    return stats;
+    this.stats.update();
   }
 
   // Location tools
@@ -296,37 +183,6 @@ function Left()
     this.refresh();    
   }
 
-  this.inject = function(characters = "__")
-  {
-    var pos = this.textarea_el.selectionStart;
-    this.textarea_el.setSelectionRange(pos, pos);
-    document.execCommand('insertText', false, characters);
-    this.refresh();
-  }
-
-  this.inject_line = function(characters = "__")
-  {
-    left.select_line(left.active_line_id())
-    this.inject(characters)
-  }
-
-  this.inject_multiline = function(characters = "__")
-  {
-    console.log("!!")
-    var lines = this.selected().match(/[^\r\n]+/g);
-    var text = ""
-    for(id in lines){
-      var line = lines[id];
-      text += `${characters}${line}\n`
-    }
-    this.replace_selection_with(text);
-  }
-
-  this.autocomplete = function()
-  {
-    this.inject(left.suggestion.substr(left.selection.word.length,left.suggestion.length)+" ");
-  }
-
   this.replace_line = function(id, new_text, del = false) // optional arg for deleting the line, used in actions
   {
     let lineArr = this.textarea_el.value.split("\n",parseInt(id)+1)
@@ -367,6 +223,36 @@ function Left()
     //this function turned out a lot longer than I was expecting. Ah well :/
   }
 
+  this.inject = function(characters = "__")
+  {
+    var pos = this.textarea_el.selectionStart;
+    this.textarea_el.setSelectionRange(pos, pos);
+    document.execCommand('insertText', false, characters);
+    this.refresh();
+  }
+
+  this.inject_line = function(characters = "__")
+  {
+    left.select_line(left.active_line_id())
+    this.inject(characters)
+  }
+
+  this.inject_multiline = function(characters = "__")
+  {
+    var lines = this.selected().match(/[^\r\n]+/g);
+    var text = ""
+    for(id in lines){
+      var line = lines[id];
+      text += `${characters}${line}\n`
+    }
+    this.replace_selection_with(text);
+  }
+
+  this.autocomplete = function()
+  {
+    this.inject(left.suggestion.substr(left.selection.word.length,left.suggestion.length)+" ");
+  }
+
   this.go_to_line = function(id)
   {
     let lineArr = this.textarea_el.value.split("\n",parseInt(id)+1)
@@ -401,16 +287,6 @@ function Left()
      this.textarea_el.focus();
      this.scroll_to(from,to)
      return from == -1 ? null : from;
-  }
-
-  this.scroll_to = function(from,to)
-  { //creates a temp div which 
-    let text_val = this.textarea_el.value
-    var div = document.createElement("div");
-    div.innerHTML = text_val.slice(0,to); 
-    document.body.appendChild(div);
-    this.textarea_el.scrollTop = div.offsetHeight - 60
-    div.remove()
   }
 
   this.go_to_word = function(word,from = 0, tries = 0, starting_with = false, ending_with = false)
@@ -453,87 +329,22 @@ function Left()
     left.go_to_word(word,location+target.length,tries-1, starting_with,ending_with);
   }
 
-  this.select = function(from,to)
-  {
-    left.textarea_el.setSelectionRange(from,to);
-  }
-
-  this.select_line = function(id)
-  {
-    let lineArr = this.textarea_el.value.split("\n",parseInt(id)+1)
-    let arrJoin = lineArr.join("\n")
-
-    let from = arrJoin.length-lineArr[id].length;
-    let to = arrJoin.length;
-
-    this.select(from,to)
-  }
-
-  this.time = function()
-  {
-    var d = new Date(), e = new Date(d);
-    var since_midnight = e - d.setHours(0,0,0,0);
-    var timestamp = parseInt((since_midnight/864) * 10);
-
-    return timestamp/1000;
-  }
-
-  this.splash = function()
-  {
-    return `# Welcome
-
-## Guide
-
-Left is a simple, minimalist, open-source and cross-platform text editor. 
-
-- Create markers by beginning lines with #, ## or --.
-- Navigate quickly between markers with <c-]> and <c-[>.
-- Open a text file by dragging it, or with <c-o>.
-- Highlight some text and press <c-k> to enable the speed reader.
-- Press <tab> to auto-complete a previously used, or common, word.
-- Press <shift tab> to scroll through the selected word's synonyms.
-
--- Details
-
-- L : stands for Lines.
-- W : stands for Words.
-- V : stands for Vocabulary, or unique words.
-- C : stands for Characters.
-
--- Quick Inserts<c-i>
-
-- <c-d> : Date
-- <c-t> : Time
-- <c-p> : Path
-- <c-h> : Header
-- <c-H> : Sub-Header
-- <c-/> : Comment
-- <c-l> : Line
-
-## Sources
-
-View sources: https://github.com/hundredrabbits/left
-
--- Themes
-
-Download additional themes: http://hundredrabbits.itch.io/Left`
+  this.scroll_to = function(from,to)
+  { //creates a temp div which 
+    let text_val = this.textarea_el.value
+    var div = document.createElement("div");
+    div.innerHTML = text_val.slice(0,to); 
+    document.body.appendChild(div);
+    this.textarea_el.scrollTop = div.offsetHeight - 60
+    div.remove()
   }
 
   this.reset = function()
   {
-    left.textarea_el.value = left.splash();
+    left.textarea_el.value = `${left.splash}`;
     left.dictionary.update();
     left.refresh();
   }
 }
 
-function is_json(text)
-{
-  try{
-      JSON.parse(text);
-      return true;
-  }
-  catch (error){
-    return false;
-  }
-}
+function is_json(text){ try{ JSON.parse(text); return true; } catch (error){ return false; } }

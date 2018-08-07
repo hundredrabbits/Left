@@ -46,7 +46,7 @@ function Project()
     fs.writeFile(path, left.textarea_el.value, (err) => {
       if(err) { alert("An error ocurred updating the file" + err.message); console.log(err); return; }
       left.refresh();
-      left.stats_el.innerHTML = "<b>Saved</b> "+path;
+      left.stats.el.innerHTML = "<b>Saved</b> "+path;
     });
   }
 
@@ -199,7 +199,7 @@ function Project()
     
     left.dictionary.update();
     left.refresh();
-    left.stats_el.innerHTML = "<b>Loaded</b> "+path;
+    left.stats.el.innerHTML = "<b>Loaded</b> "+path;
   }
 
   this.show_file = function(index,force = false)
@@ -232,7 +232,7 @@ function Project()
 
   this.alert = function()
   {
-    setTimeout(function(){ left.stats_el.innerHTML = `<b>Unsaved Changes</b> ${left.project.paths.length > 0 ? left.project.paths[left.project.index] : 'Save(C-s) or Discard changes(C-d).'}` },400);
+    setTimeout(function(){ left.stats.el.innerHTML = `<b>Unsaved Changes</b> ${left.project.paths.length > 0 ? left.project.paths[left.project.index] : 'Save(C-s) or Discard changes(C-d).'}` },400);
   }
 
   this.format_json = function(obj)

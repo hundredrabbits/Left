@@ -26,7 +26,7 @@ function Reader()
 
   this.alert = function(t)
   {
-    setTimeout((t) => { left.stats_el.innerHTML = `<b>Reader</b> Select some text before starting the reader.` },400);
+    setTimeout((t) => { left.stats.el.innerHTML = `<b>Reader</b> Select some text before starting the reader.` },400);
   }
 
   this.run = function()
@@ -41,7 +41,7 @@ function Reader()
     html += "<span style='opacity:0'>"+left.reader.orp_pad(words,orp)+"</span>"
     html += "<span class='fm'>"+orp.before.trim()+"</span><span class='fh'>"+orp.key.trim()+"</span><span class='fm'>"+(word.length > 1 ? orp.after : '').trim()+"</span>";
     html += "<span style='float:right'>"+left.reader.queue.length+"W "+parseInt((left.reader.queue.length * 175)/1000)+"S "+parseInt(((left.reader.index)/parseFloat(left.reader.queue.length+left.reader.index)) * 100)+"% "+parseInt((1000/left.reader.speed)*60)+"W/M</span>"
-    left.stats_el.innerHTML = html;
+    left.stats.el.innerHTML = html;
 
     left.reader.queue = left.reader.queue.splice(1,left.reader.queue.length-1);
     left.reader.index += 1;
