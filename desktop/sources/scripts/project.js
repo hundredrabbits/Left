@@ -227,7 +227,7 @@ function Project()
 
   this.has_changes = function()
   {
-    return left.textarea_el.value != left.project.original && left.textarea_el.value != left.splash();
+    return left.textarea_el.value != left.project.original && left.textarea_el.value != `${left.splash}`;
   }
 
   this.alert = function()
