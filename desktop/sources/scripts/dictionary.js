@@ -24,8 +24,6 @@ function Dictionary()
 
   this.build_synonyms = function()
   {
-    var time = performance.now();
-
     for(target_word in SYN_DB){
       var synonyms = SYN_DB[target_word];
       this.add_word(target_word)
@@ -39,8 +37,6 @@ function Dictionary()
         }
       }
     }
-
-    console.log(`Built ${Object.keys(this.synonyms).length} synonyms, in ${(performance.now() - time).toFixed(2)}ms.`);
   }
 
   this.find_suggestion = function(target)

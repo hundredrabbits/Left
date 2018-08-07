@@ -83,7 +83,7 @@ function Operator()
 
   this.find = function(q,bang = false)
   {
-    var loc = left.go_to_word(q,this.index,10);
+    var loc = left.go.to_word(q,this.index,10);
 
     if(bang){
       this.stop();
@@ -100,7 +100,7 @@ function Operator()
     if(a.length < 3){ return; }
     if(b.length < 3){ return; }
 
-    var loc = left.go_to_word(a,this.index,10);
+    var loc = left.go.to_word(a,this.index,10);
 
     if(bang){
       this.stop();
@@ -116,7 +116,7 @@ function Operator()
 
     if(bang){
       this.stop();
-      left.go_to_line(target);
+      left.go.to_line(target);
     }
   }
 }

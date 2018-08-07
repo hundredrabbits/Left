@@ -12,6 +12,8 @@ function Left()
   this.reader = new Reader();
   this.insert = new Insert();
 
+  this.go = new Go();
+
   this.textarea_el    = document.createElement('textarea');
   this.scroll_el      = document.createElement('scrollbar');
   this.drag_el        = document.createElement('drag');
@@ -91,6 +93,8 @@ function Left()
 
   this.refresh = function()
   {
+    var time = performance.now();
+
     left.selection.word = this.active_word();
 
     // Only look for suggestion is at the end of word, or text.
@@ -102,6 +106,8 @@ function Left()
     this.options.update();
     this.navi.update();
     this.stats.update();
+
+    console.log(`Refreshed in ${(performance.now() - time).toFixed(2)}ms.`);
   }
 
   // Location tools
@@ -251,92 +257,6 @@ function Left()
   this.autocomplete = function()
   {
     this.inject(left.suggestion.substr(left.selection.word.length,left.suggestion.length)+" ");
-  }
-
-  this.go_to_line = function(id)
-  {
-    let lineArr = this.textarea_el.value.split("\n",parseInt(id)+1)
-    let arrJoin = lineArr.join("\n")
-
-    let from = arrJoin.length-lineArr[id].length;
-    let to = arrJoin.length;
-
-    this.go_to_fromTo(from,to)
-  }
-  
-  this.go_to = function(selection)
-  {
-    var from = this.textarea_el.value.indexOf(selection);
-    var to   = from + selection.length;
-
-    this.go_to_fromTo(from,to)
-  }
-  
-  this.go_to_fromTo = function(from,to)
-  {
-     if(this.textarea_el.setSelectionRange){
-      this.textarea_el.setSelectionRange(from,to);
-     }
-     else if(this.textarea_el.createTextRange){
-       var range = this.textarea_el.createTextRange();
-       range.collapse(true);
-       range.moveEnd('character',to);
-       range.moveStart('character',from);
-       range.select();
-     }
-     this.textarea_el.focus();
-     this.scroll_to(from,to)
-     return from == -1 ? null : from;
-  }
-
-  this.go_to_word = function(word,from = 0, tries = 0, starting_with = false, ending_with = false)
-  {
-    var target = word;
-    if(starting_with){ target = target.substr(0,target.length-1); }
-    if(ending_with){ target = target.substr(1,target.length-1); }
-
-    if(this.textarea_el.value.substr(from,length).indexOf(target) == -1 || tries < 1){ console.log("failed"); return; }
-
-    var length = this.textarea_el.value.length - from;
-    var segment = this.textarea_el.value.substr(from,length)
-    var location = segment.indexOf(target);
-    var char_before = segment.substr(location-1,1);
-    var char_after = segment.substr(location+target.length,1);
-
-    // Check for full word
-    if(!starting_with && !ending_with && !char_before.match(/[a-z]/i) && !char_after.match(/[a-z]/i)){
-      left.select(location+from,location+from+target.length);
-      var perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
-      var offset = 60;
-      this.textarea_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
-      return location;
-    }
-    else if(starting_with && !char_before.match(/[a-z]/i) && char_after.match(/[a-z]/i)){
-      left.select(location+from,location+from+target.length);
-      var perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
-      var offset = 60;
-      this.textarea_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
-      return location;
-    }
-    else if(ending_with && char_before.match(/[a-z]/i) && !char_after.match(/[a-z]/i)){
-      left.select(location+from,location+from+target.length);
-      var perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
-      var offset = 60;
-      this.textarea_el.scrollTop = (this.textarea_el.scrollHeight * perc) - offset;
-      return location;
-    }
-
-    left.go_to_word(word,location+target.length,tries-1, starting_with,ending_with);
-  }
-
-  this.scroll_to = function(from,to)
-  { //creates a temp div which 
-    let text_val = this.textarea_el.value
-    var div = document.createElement("div");
-    div.innerHTML = text_val.slice(0,to); 
-    document.body.appendChild(div);
-    this.textarea_el.scrollTop = div.offsetHeight - 60
-    div.remove()
   }
 
   this.reset = function()

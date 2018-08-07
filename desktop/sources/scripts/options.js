@@ -93,7 +93,7 @@ function Options()
     this.check_string(line, /> *=? *(?:go[ _]?to) *=?[ \(]*([^ \(\)]*)[ \)]*/i, "number", (res) => {
       found = true
       let actLine = left.active_line_id()
-      left.go_to_line(res)
+      left.go.to_line(res)
       left.replace_line(actLine,"",true)
     })
     this.check_string(line, /> *=? *replace *=?[ \(]*([^ \(\)]*)[ \)]*/i, "string", (res) => {
@@ -133,9 +133,9 @@ function Options()
 
       if(res_array.length == 2) left.textarea_el.value = left.textarea_el.value.replace(regex,res_array[1])
       let cursor_return_index = from+text_before_length_dif+replace_string.length // the place to set the cursor to
-      left.go_to_fromTo(cursor_return_index,cursor_return_index)
+      left.go.to_fromTo(cursor_return_index,cursor_return_index)
       left.replace_line(actLine,replace_string,false)
-      left.go_to_fromTo(cursor_return_index,cursor_return_index)
+      left.go.to_fromTo(cursor_return_index,cursor_return_index)
     })
     return found;
   }

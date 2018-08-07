@@ -56,7 +56,7 @@ function Navi()
       }
       el.className = active_line_id >= marker.line && (!(next_marker) || active_line_id < next_marker.line) ? marker.type+" active fh" : marker.type+" fm";
       el.className += marker.type == "header" ? " fh" : "";
-      el.onmouseup = function on_mouseup(e){ left.go_to_line(e.target.destination); }
+      el.onmouseup = function on_mouseup(e){ left.go.to_line(e.target.destination); }
       this.el.appendChild(el);
       i += 1;
     }
@@ -127,7 +127,7 @@ function Navi()
     for(marker_id in this.markers){
       var marker = this.markers[marker_id];
       if(marker.line > active_line_id){
-        left.go_to_line(marker.line);
+        left.go.to_line(marker.line);
         break;
       }
     }
@@ -140,7 +140,7 @@ function Navi()
     for(marker_id in this.markers){
       var marker = this.markers[this.markers.length-(parseInt(marker_id)+1)];
       if(marker.line < active_line_id){
-        left.go_to_line(marker.line);
+        left.go.to_line(marker.line);
         break;
       }
     }
