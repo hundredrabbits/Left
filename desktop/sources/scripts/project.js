@@ -6,6 +6,8 @@ function Project()
   this.index = 0;
   this.original = "";
 
+  // ========================
+
   this.page = function()
   {
     return this.pages[this.index];
@@ -28,97 +30,108 @@ function Project()
     return data;
   }
 
+  this.show = function(id,line = 0)
+  {
+    console.log(`Show Page:${id}`);
+
+    this.index = clamp(id,0,this.pages.length-1);
+
+    var page = this.pages[this.index];
+
+    if(!page){ console.warn("Missing page",this.index); return; }
+
+    left.textarea_el.value = page.text;
+    left.go.to_line(line);
+  }
+
   // ========================
 
   this.new = function()
   {
+    console.log("New Page");
+
     this.pages.push(new Page());
 
-    setTimeout(() => { left.navi.next_page(); left.textarea_el.focus(); },200);
-
-    return; 
-    var str = "";
-    var fileName = dialog.showSaveDialog(app.win);
-
-    if (fileName === undefined){ return; }
-    let filename = left.project.has_extension(fileName) ? fileName : `${fileName}.txt`;
-    fs.writeFile(filename, str, (err) => {
-      if(err){ alert("An error ocurred creating the file "+ err.message); return; }
-      this.paths.push(filename);
-      left.refresh();
-      setTimeout(() => { left.project.next(); left.textarea_el.focus(); },200);
-    });
+    setTimeout(() => { left.navi.next_page(); left.refresh(); left.textarea_el.focus(); },200);
   }
 
   this.open = function()
   {    
+    console.log("Open Pages");
+
     var paths = dialog.showOpenDialog(app.win, {properties: ['openFile','multiSelections']});
 
     if(!paths){ console.log("Nothing to load"); return; }
 
     for(id in paths){
-      var path = paths[id]
-      var text = this.load(path)
-      var page = new Page(text,path)
-      this.pages.push(page);
+      this.pages.push(new Page(this.load(paths[id]),paths[id]));
     }
+
     setTimeout(() => { left.navi.next_page(); left.refresh(); left.textarea_el.focus(); },200);
   }
 
   this.save = function()
   {
-    var path = this.paths[this.index]
-    if(!path){ this.save_as(); return; }
+    console.log("Save Page");
 
-    this.original = left.textarea_el.value;
+    var page = this.page()
 
-    fs.writeFile(path, left.textarea_el.value, (err) => {
+    if(!page.path){ this.save_as(); return; }
+
+    fs.writeFile(page.path, page.text, (err) => {
       if(err) { alert("An error ocurred updating the file" + err.message); console.log(err); return; }
+
+      page.commit();
       left.refresh();
-      left.stats.el.innerHTML = "<b>Saved</b> "+path;
+      setTimeout(() => { left.stats.el.innerHTML = `<b>Saved</b> ${page.path}`; },200);
     });
   }
 
   this.save_as = function()
   {
-    var str = left.textarea_el.value;
+    console.log("Save As Page");
 
-    var fileName = dialog.showSaveDialog(app.win);
+    var page = this.page()
+    var path = dialog.showSaveDialog(app.win);
     
-    if (fileName === undefined){ return; }
-    let filename = left.project.has_extension(fileName) ? fileName : `${fileName}.txt`;
+    if(!name){ console.log("Nothing to save"); return; }
 
-    console.log(filename,left.project.has_extension(fileName))
-    fs.writeFile(filename, str, (err) => {
+    fs.writeFile(path, page.text, (err) => {
       if(err){ alert("An error ocurred creating the file "+ err.message); return; }
-      this.paths.push(filename);
+
+      if(!page.path){
+        page.path = path;
+      }
+      else if(page.path != path){
+        left.project.load(path);
+      }
+      page.commit();
       left.refresh();
+      setTimeout(() => { left.stats.el.innerHTML = `<b>Saved</b> ${page.path}`; },200);
     });
   }
 
   this.close = function()
   {
-    if(this.has_changes()){ 
+    if(this.page().has_changes()){ 
       var response = dialog.showMessageBox(app.win, {
         type: 'question', buttons: ['Yes', 'No'], title: 'Confirm', message: 'Are you sure you want to discard changes?'
       });
-      if (response !== 0) {
+      if(response !== 0){
         return;
       }
     }
-    // Unchanged
-    if(this.paths.length <= 1){ 
-      this.clear();
-    }
-    else{
-      this.force_close();
-    }
+    this.force_close();
   }
 
   this.force_close = function()
   {
-    this.paths.splice(this.index,1);
-    this.prev();
+    if(this.pages.length == 1){ console.warn("Cannot close"); return; }
+
+    console.log("Closing..")
+
+    this.pages.splice(this.index,1);
+    this.show(this.index-1);
   }
 
   this.discard = function()
@@ -130,7 +143,7 @@ function Project()
       message: 'Are you sure you want to discard changes?'
     });
     if (response === 0) { // Runs the following if 'Yes' is clicked
-      left.textarea_el.value = left.project.original ? left.project.original : '';
+      this.page().revert();
       left.refresh();
     }
   }
@@ -157,139 +170,6 @@ function Project()
     if (response === 0) {
       app.exit()
     }
-  }
-
-  this.show = function(id,line = 0)
-  {
-    console.log(`Show Page:${id}`);
-
-    this.index = clamp(id,0,this.pages.length-1);
-
-    var page = this.pages[this.index];
-
-    if(!page){ console.warn("Missing page",this.index); return; }
-
-    left.textarea_el.value = page.text;
-    left.go.to_line(line);
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-  this.add = function(path)
-  {
-    if(!path){ return; }
-    if(this.paths.indexOf(path) > -1){ return; }
-
-    this.paths.push(path);
-    left.refresh();
-    this.show_file(this.paths.length-1);
-  }
-
-  this.clear = function()
-  {
-    this.paths = [];
-    this.index = 0;
-    this.original = "";
-
-    left.textarea_el.value = "";
-    left.dictionary.update();
-    left.refresh();
-  }
-
-  // this.load_path = function(path)
-  // {
-  //   if(!path){ this.original = left.textarea_el.value; return; }
-
-  //   var data;
-  //   try {
-  //     data = fs.readFileSync(path, 'utf-8');
-  //   } catch (err) {
-  //     alert("An error ocurred reading the file :" + err.message);
-  //     return;
-  //   }
-  //   left.project.load(data,path);
-  //   left.scroll_to(0,0);
-  //   left.refresh();
-  // }
-
-  // this.load = function(content,path)
-  // {
-  //   if(is_json(content)){
-  //     var obj = JSON.parse(content);
-  //     content = this.format_json(obj);
-  //   }
-
-  //   left.textarea_el.value = content;
-    
-  //   // 'content' has the line ending of the file (\r, \n or \r\n).
-  //   // Textarea converts all line endings to \n.
-  //   // Load the value back from the textarea so that both have \n line
-  //   // endings. Otherwise has_changes() does not work correctly.
-  //   this.original = left.textarea_el.value;
-    
-  //   left.dictionary.update();
-  //   left.refresh();
-  //   left.stats.el.innerHTML = "<b>Loaded</b> "+path;
-  // }
-
-  this.show_file = function(index,force = false)
-  {
-    console.log("show file",index)
-
-
-    return; // REMOVE
-    if(this.has_changes() && !force){ left.project.alert(); return; }
-
-    this.index = clamp(index,0,this.paths.length-1);
-    
-    var path = left.project.paths[this.index];
-    var parts = path.replace(/\\/g,"/").split("/")
-    var file_name = parts[parts.length-1];
-
-    document.title = file_name ? `Left — ${file_name}` : "Left"
-
-    this.load_path(this.paths[this.index]);
-    left.navi.update();
-  }
-
-  this.has_extension = function(str)
-  {
-    if(str.indexOf(".") < 0){ return false; }
-
-    var parts = str.split(".");
-    var ext = parts[parts.length-1]
-    
-    return ext.length < 2 || ext.length > 4 ? false : true;
-  }
-
-  this.has_changes = function()
-  {
-    return left.textarea_el.value != left.project.original && left.textarea_el.value != `${left.splash}`;
-  }
-
-  this.alert = function()
-  {
-    setTimeout(function(){ left.stats.el.innerHTML = `<b>Unsaved Changes</b> ${left.project.paths.length > 0 ? left.project.paths[left.project.index] : 'Save(C-s) or Discard changes(C-d).'}` },400);
-  }
-
-  this.format_json = function(obj)
-  {
-    return JSON.stringify(obj, null, "  ");
-  }
-
-  this.should_confirm = function()
-  {
-    if(left.textarea_el.value.length > 0){ return true; }
   }
 
   function is_json(text){ try{ JSON.parse(text); return true; } catch (error){ return false; } }

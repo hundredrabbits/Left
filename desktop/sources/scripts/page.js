@@ -8,18 +8,28 @@ function Page(text = "",path = null)
   {
     if(!this.path){ return "Untitled"; }
     
-    var parts = path.replace(/\\/g,"/").split("/");
+    var parts = this.path.replace(/\\/g,"/").split("/");
     return parts[parts.length-1];
   }
 
   this.has_changes = function()
   {
-    return this.copy == this.text;
+    return this.copy != this.text;
   }
 
   this.is_active = function()
   {
     return true;
+  }
+
+  this.commit = function()
+  {
+    this.copy = this.text;
+  }
+
+  this.revert = function()
+  {
+    this.text = this.copy;
   }
 
   this.markers = function()

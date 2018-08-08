@@ -23,7 +23,7 @@ function Navi()
     var el = document.createElement('li');
 
     var is_active = left.project.index == id
-    var has_changes = left.project.has_changes()
+    var has_changes = left.project.pages[id].has_changes();
 
     el.textContent = page.name();
     el.className = `page ${is_active ? 'active' : ''} ${has_changes ? 'changes' : ''}`
