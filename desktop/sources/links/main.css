@@ -5,12 +5,12 @@ body navi { display: block;width: calc((100vw / 4) - 40px);left: 0px;position: a
 body navi li { display: block;line-height: 20px;cursor: pointer; position: relative; -webkit-app-region: no-drag; }
 body navi li::before { position: absolute; left:-15px;}
 body navi li:hover { text-decoration: underline; }
-body navi li.file { font-family: 'input_mono_medium' }
-body navi li.file::before { content:"/"; }
+body navi li.page { font-family: 'input_mono_medium' }
+body navi li.page::before { content:"/"; }
 body navi li.header { }
-body navi li.note { padding-left:20px;}
+body navi li.note { padding-left:15px;}
 body navi li.note::before { content:"#"; left:0px; }
-body navi li.comment {padding-left: 20px;}
+body navi li.comment {padding-left: 15px;}
 body navi li.comment::before { content:"-"; left:0px; }
 body navi li.changes::after { content:"*"; }
 body navi li i { float:right; padding-right:15px; }

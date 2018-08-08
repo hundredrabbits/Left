@@ -1,25 +1,24 @@
 function Navi()
 {
   this.el = document.createElement('navi');
-  this.markers = [];
 
   this.update = function()
   {
     this.el.innerHTML = "";
 
-    for(var id in left.project.pages){
-      var page = left.project.pages[id];
-      this.el.appendChild(this._file(id,page));
+    for(var pid in left.project.pages){
+      var page = left.project.pages[pid];
+      this.el.appendChild(this._page(pid,page));
       var markers = page.markers();
       for(var i in markers){
         var marker = markers[i]
-        this.el.appendChild(this._marker(i,marker,markers));
+        this.el.appendChild(this._marker(pid,i,marker,markers));
       }
     }
     this.update_scrollbar();
   }
 
-  this._file = function(id,page)
+  this._page = function(id,page)
   {
     var el = document.createElement('li');
 
@@ -27,23 +26,23 @@ function Navi()
     var has_changes = left.project.has_changes()
 
     el.textContent = page.name();
-    el.className = `${is_active ? 'active' : ''} ${has_changes ? 'changes' : ''}`
-    el.onmouseup = function on_mouseup(e){ left.project.show_page(id); }
+    el.className = `page ${is_active ? 'active' : ''} ${has_changes ? 'changes' : ''}`
+    el.onmouseup = function on_mouseup(e){ left.project.show(id); }
 
     return el;
   }
 
-  this._marker = function(id,marker,markers)
+  this._marker = function(pid,id,marker,markers)
   {
     var el = document.createElement('li');
 
     var pos = left.active_line_id();
     var next_marker = markers[parseInt(id)+1];
-    var is_active = pos >= marker.line && (!next_marker || pos < next_marker.line);
+    var is_active = pid == left.project.index && pos >= marker.line && (!next_marker || pos < next_marker.line);
 
     el.innerHTML = `${marker.text}<i>${marker.line}</i>`;
-    el.className = `${marker.type} ${is_active ? 'active' : ''}`
-    el.onmouseup = function on_mouseup(e){ left.go.to_line(marker.line); }
+    el.className = `marker ${marker.type} ${is_active ? 'active' : ''}`
+    el.onmouseup = function on_mouseup(e){ left.project.show(pid,marker.line); }
 
     return el;
   }
@@ -59,29 +58,23 @@ function Navi()
     left.navi.el.style.transform = "translateY(" + (-100 * scroll_perc * navi_overflow_perc) + "%)";
   }
 
-  this.next = function()
+  this.next_page = function()
   {
-    var active_line_id = left.active_line_id();
-
-    for(marker_id in this.markers){
-      var marker = this.markers[marker_id];
-      if(marker.line > active_line_id){
-        left.go.to_line(marker.line);
-        break;
-      }
-    }
+    // TODO
   }
 
-  this.prev = function()
+  this.prev_page = function()
   {
-    var active_line_id = left.active_line_id();
+    // TODO
+  }
 
-    for(marker_id in this.markers){
-      var marker = this.markers[this.markers.length-(parseInt(marker_id)+1)];
-      if(marker.line < active_line_id){
-        left.go.to_line(marker.line);
-        break;
-      }
-    }
+  this.next_marker = function()
+  {
+    // TODO
+  }
+
+  this.prev_marker = function()
+  {
+    // TODO
   }
 }

@@ -6,11 +6,35 @@ function Project()
   this.index = 0;
   this.original = "";
 
+  this.page = function()
+  {
+    return this.pages[this.index];
+  }
+
+  this.update = function()
+  {
+    this.page().text = left.textarea_el.value;
+  }
+
+  this.load = function(path)
+  {
+    var data;
+    try {
+      data = fs.readFileSync(path, 'utf-8');
+    } catch (err) {
+      alert("An error ocurred reading the file :" + err.message);
+      return;
+    }
+    return data;
+  }
+
+  // ========================
+
   this.new = function()
   {
     this.pages.push(new Page());
 
-    setTimeout(() => { left.project.next(); left.textarea_el.focus(); },200);
+    setTimeout(() => { left.navi.next_page(); left.textarea_el.focus(); },200);
 
     return; 
     var str = "";
@@ -27,20 +51,18 @@ function Project()
   }
 
   this.open = function()
-  {
-    if(this.has_changes()){
-      this.alert()
-      return;
-    }
-    
+  {    
     var paths = dialog.showOpenDialog(app.win, {properties: ['openFile','multiSelections']});
 
     if(!paths){ console.log("Nothing to load"); return; }
 
     for(id in paths){
-      this.add(paths[id]);
+      var path = paths[id]
+      var text = this.load(path)
+      var page = new Page(text,path)
+      this.pages.push(page);
     }
-    setTimeout(() => { left.project.next(); },200);
+    setTimeout(() => { left.navi.next_page(); left.refresh(); left.textarea_el.focus(); },200);
   }
 
   this.save = function()
@@ -121,7 +143,6 @@ function Project()
     else{
       app.exit()
     }
-    
   }
 
   this.quit_dialog = function()
@@ -138,6 +159,32 @@ function Project()
     }
   }
 
+  this.show = function(id,line = 0)
+  {
+    console.log(`Show Page:${id}`);
+
+    this.index = clamp(id,0,this.pages.length-1);
+
+    var page = this.pages[this.index];
+
+    if(!page){ console.warn("Missing page",this.index); return; }
+
+    left.textarea_el.value = page.text;
+    left.go.to_line(line);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
   this.add = function(path)
   {
     if(!path){ return; }
@@ -146,22 +193,6 @@ function Project()
     this.paths.push(path);
     left.refresh();
     this.show_file(this.paths.length-1);
-  }
-
-  this.next = function()
-  {
-    if(this.index >= this.pages.length-1){ return; }
-
-    this.show_page(this.index+1);
-    left.refresh()
-  }
-
-  this.prev = function()
-  {
-    if(this.index < 1){ return; }
-
-    this.show_page(this.index-1);
-    left.refresh();
   }
 
   this.clear = function()
@@ -175,49 +206,41 @@ function Project()
     left.refresh();
   }
 
-  this.load_path = function(path)
-  {
-    if(!path){ this.original = left.textarea_el.value; return; }
+  // this.load_path = function(path)
+  // {
+  //   if(!path){ this.original = left.textarea_el.value; return; }
 
-    var data;
-    try {
-      data = fs.readFileSync(path, 'utf-8');
-    } catch (err) {
-      alert("An error ocurred reading the file :" + err.message);
-      return;
-    }
-    left.project.load(data,path);
-    left.scroll_to(0,0);
-    left.refresh();
-  }
+  //   var data;
+  //   try {
+  //     data = fs.readFileSync(path, 'utf-8');
+  //   } catch (err) {
+  //     alert("An error ocurred reading the file :" + err.message);
+  //     return;
+  //   }
+  //   left.project.load(data,path);
+  //   left.scroll_to(0,0);
+  //   left.refresh();
+  // }
 
-  this.load = function(content,path)
-  {
-    if(is_json(content)){
-      var obj = JSON.parse(content);
-      content = this.format_json(obj);
-    }
+  // this.load = function(content,path)
+  // {
+  //   if(is_json(content)){
+  //     var obj = JSON.parse(content);
+  //     content = this.format_json(obj);
+  //   }
 
-    left.textarea_el.value = content;
+  //   left.textarea_el.value = content;
     
-    // 'content' has the line ending of the file (\r, \n or \r\n).
-    // Textarea converts all line endings to \n.
-    // Load the value back from the textarea so that both have \n line
-    // endings. Otherwise has_changes() does not work correctly.
-    this.original = left.textarea_el.value;
+  //   // 'content' has the line ending of the file (\r, \n or \r\n).
+  //   // Textarea converts all line endings to \n.
+  //   // Load the value back from the textarea so that both have \n line
+  //   // endings. Otherwise has_changes() does not work correctly.
+  //   this.original = left.textarea_el.value;
     
-    left.dictionary.update();
-    left.refresh();
-    left.stats.el.innerHTML = "<b>Loaded</b> "+path;
-  }
-
-  this.show_page = function(id)
-  {
-    this.index = clamp(id,0,this.pages.length-1);
-    var page = this.pages[this.index];
-    if(!page){ console.warn("Missing page",this.index); return; }
-    left.textarea_el.value = page.text;
-  }
+  //   left.dictionary.update();
+  //   left.refresh();
+  //   left.stats.el.innerHTML = "<b>Loaded</b> "+path;
+  // }
 
   this.show_file = function(index,force = false)
   {

@@ -100,6 +100,7 @@ function Left()
     left.suggestion     = (next_char == "" || next_char == " " || next_char == "\n") ? left.dictionary.find_suggestion(left.selection.word) : null;
     left.synonyms       = left.dictionary.find_synonym(left.selection.word);
 
+    this.project.update();
     this.options.update();
     this.navi.update();
     this.stats.update();

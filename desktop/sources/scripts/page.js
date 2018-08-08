@@ -1,16 +1,20 @@
-function Page(text = "")
+function Page(text = "",path = null)
 {
+  this.copy = text;
   this.text = text;
-  this.path = null;
+  this.path = path;
 
   this.name = function()
   {
-    return !this.path ? "Untitled" : this.path;
+    if(!this.path){ return "Untitled"; }
+    
+    var parts = path.replace(/\\/g,"/").split("/");
+    return parts[parts.length-1];
   }
 
   this.has_changes = function()
   {
-    return false;
+    return this.copy == this.text;
   }
 
   this.is_active = function()
