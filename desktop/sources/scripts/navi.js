@@ -27,7 +27,7 @@ function Navi()
 
     el.textContent = page.name();
     el.className = `page ${is_active ? 'active' : ''} ${has_changes ? 'changes' : ''}`
-    el.onmouseup = function on_mouseup(e){ left.project.show(id); }
+    el.onmouseup = function on_mouseup(e){ left.go.to_page(id); }
 
     return el;
   }
@@ -37,12 +37,11 @@ function Navi()
     var el = document.createElement('li');
 
     var pos = left.active_line_id();
-    var next_marker = markers[parseInt(id)+1];
-    var is_active = pid == left.project.index && pos >= marker.line && (!next_marker || pos < next_marker.line);
+    var is_active = this.marker().line == marker.line;
 
     el.innerHTML = `${marker.text}<i>${marker.line}</i>`;
     el.className = `marker ${marker.type} ${is_active ? 'active' : ''}`
-    el.onmouseup = function on_mouseup(e){ left.project.show(pid,marker.line); }
+    el.onmouseup = function on_mouseup(e){ left.go.to_page(pid,marker.line); }
 
     return el;
   }
@@ -60,21 +59,48 @@ function Navi()
 
   this.next_page = function()
   {
-    // TODO
+    var page = clamp(left.project.index+1,0,left.project.pages.length-1)
+    left.go.to_page(page,0);
   }
 
   this.prev_page = function()
   {
-    // TODO
+    var page = clamp(left.project.index-1,0,left.project.pages.length-1)
+    left.go.to_page(page,0);
   }
 
   this.next_marker = function()
   {
-    // TODO
+    var page = clamp(left.project.index,0,left.project.pages.length-1)
+    var marker = this.marker();
+    var markers = left.project.page().markers();
+    var next_index = clamp(marker.id+1,0,markers.length-1);
+
+    left.go.to_page(page,markers[next_index].line);
   }
 
   this.prev_marker = function()
   {
-    // TODO
+    var page = clamp(left.project.index,0,left.project.pages.length-1)
+    var marker = this.marker();
+    var markers = left.project.page().markers();
+    var next_index = clamp(marker.id-1,0,markers.length-1);
+
+    left.go.to_page(page,markers[next_index].line);
   }
+
+  this.marker = function()
+  {
+    var markers = left.project.page().markers();
+    var pos = left.active_line_id();
+
+    var prev = null;
+    for(id in markers){
+      var marker = markers[id];
+      if(marker.line > pos){ return markers[parseInt(id)-1]; }
+    }
+    return markers[markers.length-1];
+  }
+
+  function clamp(v, min, max) { return v < min ? min : v > max ? max : v; }
 }

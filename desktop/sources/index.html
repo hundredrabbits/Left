@@ -68,10 +68,10 @@
       left.controller.add("default","Select","Replace",() => { left.operator.start("replace: a -> b"); },"CmdOrCtrl+Shift+F");
       left.controller.add("default","Select","Goto",() => { left.operator.start("goto: "); },"CmdOrCtrl+G");
 
-      left.controller.add("default","Navigation","Next File",() => { left.next_page(); },"CmdOrCtrl+Shift+]");
-      left.controller.add("default","Navigation","Prev File",() => { left.prev_page(); },"CmdOrCtrl+Shift+[");
-      left.controller.add("default","Navigation","Next Marker",() => { left.next_marker(); },"CmdOrCtrl+]");
-      left.controller.add("default","Navigation","Prev Marker",() => { left.prev_marker(); },"CmdOrCtrl+[");
+      left.controller.add("default","Navigation","Next File",() => { left.navi.next_page(); },"CmdOrCtrl+Shift+]");
+      left.controller.add("default","Navigation","Prev File",() => { left.navi.prev_page(); },"CmdOrCtrl+Shift+[");
+      left.controller.add("default","Navigation","Next Marker",() => { left.navi.next_marker(); },"CmdOrCtrl+]");
+      left.controller.add("default","Navigation","Prev Marker",() => { left.navi.prev_marker(); },"CmdOrCtrl+[");
 
       left.controller.add("default","View","Inc Zoom",() => {  left.options.set_zoom(left.options.zoom+0.1) },"CmdOrCtrl+Plus");
       left.controller.add("default","View","Dec Zoom",() => {  left.options.set_zoom(left.options.zoom-0.1) },"CmdOrCtrl+-");

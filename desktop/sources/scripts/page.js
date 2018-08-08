@@ -39,9 +39,9 @@ function Page(text = "",path = null)
   
     for(var id in lines){
       var line = lines[id].trim();
-      if(line.substr(0,2) == "##"){ a.push({text:line.replace("##","").trim(),line:parseInt(id),type:"subheader"}); }
-      else if(line.substr(0,1) == "#"){ a.push({text:line.replace("#","").trim(),line:parseInt(id),type:"header"}); }
-      else if(line.substr(0,2) == "--"){ a.push({text:line.replace("--","").trim(),line:parseInt(id),type:"comment"}); }
+      if(line.substr(0,2) == "##"){ a.push({id:a.length,text:line.replace("##","").trim(),line:parseInt(id),type:"subheader"}); }
+      else if(line.substr(0,1) == "#"){ a.push({id:a.length,text:line.replace("#","").trim(),line:parseInt(id),type:"header"}); }
+      else if(line.substr(0,2) == "--"){ a.push({id:a.length,text:line.replace("--","").trim(),line:parseInt(id),type:"comment"}); }
     }
     return a;
   }

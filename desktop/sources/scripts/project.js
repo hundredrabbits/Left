@@ -30,20 +30,6 @@ function Project()
     return data;
   }
 
-  this.show = function(id,line = 0)
-  {
-    console.log(`Show Page:${id}`);
-
-    this.index = clamp(id,0,this.pages.length-1);
-
-    var page = this.pages[this.index];
-
-    if(!page){ console.warn("Missing page",this.index); return; }
-
-    left.textarea_el.value = page.text;
-    left.go.to_line(line);
-  }
-
   // ========================
 
   this.new = function()
@@ -131,7 +117,7 @@ function Project()
     console.log("Closing..")
 
     this.pages.splice(this.index,1);
-    this.show(this.index-1);
+    left.go.to_page(this.index-1);
   }
 
   this.discard = function()

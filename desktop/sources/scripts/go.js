@@ -1,5 +1,17 @@
 function Go()
 {
+  this.to_page = function(id,line = 0)
+  {
+    left.project.index = clamp(id,0,left.project.pages.length-1);
+
+    var page = left.project.pages[left.project.index];
+
+    if(!page){ console.warn("Missing page",this.index); return; }
+
+    left.textarea_el.value = page.text;
+    left.go.to_line(line);
+  }
+
   this.to_line = function(id)
   {
     let lineArr = left.textarea_el.value.split("\n",parseInt(id)+1)
@@ -110,4 +122,5 @@ function Go()
     return -c/2 * (t*(t-2) - 1) + b;
  };
 
+  function clamp(v, min, max) { return v < min ? min : v > max ? max : v; }
 }
