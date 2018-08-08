@@ -38,6 +38,7 @@ View sources: https://github.com/hundredrabbits/left
 
 -- Themes
 
-Download additional themes: http://hundredrabbits.itch.io/Left`
+Download additional themes: http://hundredrabbits.itch.io/Left
+`
   }
 }
