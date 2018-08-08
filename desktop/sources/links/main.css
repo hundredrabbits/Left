@@ -13,7 +13,7 @@ body navi li.note::before { content:"#"; left:0px; }
 body navi li.comment {padding-left: 20px;}
 body navi li.comment::before { content:"-"; left:0px; }
 body navi li.changes::after { content:"*"; }
-body navi li span { float:right; }
+body navi li i { float:right; padding-right:15px; }
 body stats { display: block;border-bottom: 0px;margin-top: 30px;position: fixed;bottom:0px;left: calc((100vw / 2) - 25%);line-height: 40px;width:540px;height:40px;overflow: hidden;-webkit-user-select: none;-webkit-app-region: drag;}
 body stats b {  font-family: 'input_mono_medium';}
 body stats i { text-decoration: underline; }
@@ -44,6 +44,8 @@ stats i { color:var(--f_med) !important }
 highlight b { border-bottom: 1px solid var(--f_low) !important; }
 ::selection { background:var(--b_low) !important; color:var(--f_med) !important }
 navi  { color:var(--f_low) !important }
+navi li { color:var(--f_med) !important }
+navi li i { color:var(--f_low) !important }
 navi li.file { color:var(--f_med) !important }
 navi li.active { color:var(--f_high) !important }
 navi li::before { color:var(--f_low) !important }

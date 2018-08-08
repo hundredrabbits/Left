@@ -66,7 +66,7 @@ function Stats()
     stats.w = text.split(" ").length; // words_count
     stats.c = text.length; // chars_count
     stats.v = Object.keys(h).length;
-    stats.p = ((left.textarea_el.selectionEnd/stats.c)*100).toFixed(2)
+    stats.p = stats.c > 0 ? ((left.textarea_el.selectionEnd/stats.c)*100).toFixed(2) : 0
     return stats;
   }
 }

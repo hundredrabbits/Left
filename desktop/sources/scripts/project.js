@@ -1,11 +1,18 @@
 function Project()
 {  
-  this.paths = [];
+  this.pages = [new Page(`${new Splash()}`)]
+
+  this.paths = [null];
   this.index = 0;
   this.original = "";
 
   this.new = function()
   {
+    this.pages.push(new Page());
+
+    setTimeout(() => { left.project.next(); left.textarea_el.focus(); },200);
+
+    return; 
     var str = "";
     var fileName = dialog.showSaveDialog(app.win);
 
@@ -143,9 +150,9 @@ function Project()
 
   this.next = function()
   {
-    if(this.index >= this.paths.length-1){ return; }
+    if(this.index >= this.pages.length-1){ return; }
 
-    this.show_file(this.index+1);
+    this.show_page(this.index+1);
     left.refresh()
   }
 
@@ -153,7 +160,7 @@ function Project()
   {
     if(this.index < 1){ return; }
 
-    this.show_file(this.index-1);
+    this.show_page(this.index-1);
     left.refresh();
   }
 
@@ -204,8 +211,20 @@ function Project()
     left.stats.el.innerHTML = "<b>Loaded</b> "+path;
   }
 
+  this.show_page = function(id)
+  {
+    this.index = clamp(id,0,this.pages.length-1);
+    var page = this.pages[this.index];
+    if(!page){ console.warn("Missing page",this.index); return; }
+    left.textarea_el.value = page.text;
+  }
+
   this.show_file = function(index,force = false)
   {
+    console.log("show file",index)
+
+
+    return; // REMOVE
     if(this.has_changes() && !force){ left.project.alert(); return; }
 
     this.index = clamp(index,0,this.paths.length-1);
