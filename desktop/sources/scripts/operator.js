@@ -4,7 +4,8 @@ function Operator()
   this.is_active = false;
   this.index = 0;
 
-  this.el.addEventListener("keyup", (e) => { left.operator.on_change(e); });
+  this.el.addEventListener("keyup", (e) => { left.operator.on_change(e,false); });
+  this.el.addEventListener("keydown", (e) => { left.operator.on_change(e,true); });
 
   this.start = function(f = "")
   {
@@ -36,14 +37,20 @@ function Operator()
     left.refresh();
   }
 
-  this.on_change = function(e)
+  this.on_change = function(e,down = false)
   {
     if(!this.is_active){ return; }
 
-    if(e.key == "Enter" || e.code == "Enter"){
+    if(e.key == "ArrowUp" && down){
+      this.el.value = this.prev;
+      e.preventDefault();
+      return;
+    }
+    
+    if(!down && (e.key == "Enter" || e.code == "Enter")){
       this.active();
     }
-    else{
+    else if(!down){
       this.passive();
     }
   }
@@ -73,6 +80,8 @@ function Operator()
   {
     if(this.el.value.indexOf(" ") < 0){ return; }
 
+    this.prev = this.el.value;
+
     var cmd = this.el.value.split(" ")[0].replace(":","").trim()
     var params = this.el.value.replace(cmd,"").replace(":","").trim()
 
@@ -83,14 +92,21 @@ function Operator()
 
   this.find = function(q,bang = false)
   {
-    var r = left.find(q);
+    if(q.length < 3){ return; }
 
-    if(r.length < 1){ return; }
+    var results = left.find(q);
 
-    left.go.to_word(q,0,10);
+    if(results.length < 1){ return; }
 
-    if(bang){
-      left.go.to(r[0],q.length);
+    var from = left.textarea_el.selectionStart;
+    var result = 0;
+    for(id in results){
+      result = results[id];
+      if(result > from){ break; }
+    }
+
+    if(bang && result){
+      left.go.to(result,result+q.length);
       this.stop();
     }
   }

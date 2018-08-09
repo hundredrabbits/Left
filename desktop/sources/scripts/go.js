@@ -27,20 +27,20 @@ function Go()
   
   this.to = function(from,to)
   {
-     if(left.textarea_el.setSelectionRange){
+    if(left.textarea_el.setSelectionRange){
       left.textarea_el.setSelectionRange(from,to);
-     }
-     else if(left.textarea_el.createTextRange){
-       var range = left.textarea_el.createTextRange();
-       range.collapse(true);
-       range.moveEnd('character',to);
-       range.moveStart('character',from);
-       range.select();
-     }
-     left.textarea_el.focus();
-     this.scroll_to(from,to);
-     
-     return from == -1 ? null : from;
+    }
+    else if(left.textarea_el.createTextRange){
+      var range = left.textarea_el.createTextRange();
+      range.collapse(true);
+      range.moveEnd('character',to);
+      range.moveStart('character',from);
+      range.select();
+    }
+    left.textarea_el.focus();
+    this.scroll_to(from,to);
+
+    return from == -1 ? null : from;
   }
 
   this.to_word = function(word,from = 0, tries = 0, starting_with = false, ending_with = false)

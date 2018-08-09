@@ -257,11 +257,12 @@ function Left()
     var text = left.textarea_el.value;
     var parts = text.split(word);
     var a = [];
+    var sum = 0;
 
-    var index = 0;
     for(id in parts){
-      var l = parts[id]
-      a.push(l.length);
+      var p = parts[id].length
+      a.push(sum + p);
+      sum += p + word.length;
     }
 
     a.splice(-1,1)
