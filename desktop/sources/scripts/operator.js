@@ -121,11 +121,21 @@ function Operator()
     if(a.length < 3){ return; }
     if(b.length < 3){ return; }
 
-    var loc = left.go.to_word(a,this.index,10);
+    var results = left.find(a);
+
+    if(results.length < 1){ return; }
+
+    var from = left.textarea_el.selectionStart;
+    var result = 0;
+    for(id in results){
+      result = results[id];
+      if(result > from){ break; }
+    }
 
     if(bang){
+      left.go.to(result,result+a.length);
+      setTimeout(() => { left.replace_selection_with(b); }, 500)
       this.stop();
-      left.replace_selection_with(b);  
     }
   }
 

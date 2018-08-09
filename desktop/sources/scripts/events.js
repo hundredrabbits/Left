@@ -53,18 +53,19 @@ window.addEventListener('drop', function(e)
   e.stopPropagation();
   e.preventDefault();
   
-  // Prevent opening a new file when the current file
-  // has changes (same behavior as the keyboard shortcut)
-  if(left.project.has_changes()){ left.project.alert(); return; }
-
   var files = e.dataTransfer.files;
 
   for(id in files){
     var file = files[id];
+    if(!file.path){ continue;}
     if(file.type && !file.type.match(/text.*/)) { console.log(`Skipped ${file.type} : ${file.path}`); continue; }
     if(file.path && file.path.substr(-3,3) == "thm"){ continue; }
-    left.project.add(file.path);
+
+    left.project.pages.push(new Page(left.project.load(file.path),file.path));
   }
+
+  left.refresh();
+  left.navi.next_page();
 });
 
 document.addEventListener('wheel', function(e)
