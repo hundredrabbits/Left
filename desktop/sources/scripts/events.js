@@ -31,7 +31,8 @@ document.onkeydown = function key_down(e)
   }
 };
 
-document.onkeyup = (e) => {
+document.onkeyup = (e) =>
+{
   if(e.keyCode == 16){ // Shift
     left.selection.index = 0;
   }
@@ -89,5 +90,6 @@ document.onmouseup = function on_mouseup(e)
 {
   left.selection.index = 0;
   left.operator.stop();
+  left.reader.stop();
   left.refresh();
 }

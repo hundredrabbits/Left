@@ -137,7 +137,7 @@ function Project()
 
   this.quit = function()
   {
-    if(this.has_changes()){
+    if(this.page().has_changes()){
       this.quit_dialog();  
     }
     else{

@@ -277,8 +277,7 @@ function Left()
 
   this.reset = function()
   {
-    left.textarea_el.value = `${left.splash}`;
-    left.dictionary.update();
+    left.theme.reset();
     left.refresh();
   }
 }

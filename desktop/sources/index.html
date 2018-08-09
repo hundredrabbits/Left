@@ -43,7 +43,7 @@
       left.controller.add("default","*","Hide",() => { app.toggle_visible(); },"CmdOrCtrl+H");
       left.controller.add("default","*","Inspect",() => { app.inspect(); },"CmdOrCtrl+.");
       left.controller.add("default","*","Documentation",() => { left.controller.docs(); },"CmdOrCtrl+Esc");
-      left.controller.add("default","*","Reset",() => { left.theme.reset(); },"CmdOrCtrl+Backspace");
+      left.controller.add("default","*","Reset",() => { left.reset(); },"CmdOrCtrl+Backspace");
       left.controller.add("default","*","Quit",() => { left.project.quit(); },"CmdOrCtrl+Q");
 
       left.controller.add("default","File","New",() => { left.project.new(); },"CmdOrCtrl+N");

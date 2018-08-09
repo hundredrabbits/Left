@@ -54,6 +54,8 @@ function Reader()
 
   this.stop = function()
   {
+    if(this.index == 0){ return; }
+    
     left.controller.set("default");
     this.segment = {from:0,to:0,text:"",words:[]};
     this.queue = [];
