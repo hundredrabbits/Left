@@ -4,6 +4,11 @@ function Theme()
 
   this.el = document.createElement("style");
   this.el.type = 'text/css';
+  this.collection = {
+    noir: {meta:{}, data: { background: "#222", f_high: "#fff", f_med: "#777", f_low: "#444", f_inv: "#000", b_high: "#000", b_med: "#aaa", b_low: "#000", b_inv: "#aaa" }},
+    pale: {meta:{}, data: { background: "#e1e1e1", f_high: "#222", f_med: "#777", f_low: "#444", f_inv: "#000", b_high: "#000", b_med: "#aaa", b_low: "#000", b_inv: "#fff" }}
+  }
+
   this.default = {meta:{}, data: { background: "#222", f_high: "#fff", f_med: "#777", f_low: "#444", f_inv: "#000", b_high: "#000", b_med: "#aaa", b_low: "#000", b_inv: "#aaa" }}
   this.active = this.default;
 
@@ -26,6 +31,8 @@ function Theme()
         return;
       }
     }
+
+    console.log("Loading theme",theme)
 
     var css = `
     :root {
@@ -71,6 +78,28 @@ function Theme()
       app.load(e.target.result);
     };
     reader.readAsText(file);
+  }
+
+  // Toggle Button
+
+  this.button = document.createElement("a");
+  this.button.id = "theme_button";
+  this.button.onmouseup = function on_mouseup(e){ left.theme.toggle(); }
+
+  this.button_icon = document.createElement("div");
+  this.button_icon.id = "theme_button_icon";
+  this.button_icon_fg = document.createElement("div");
+  this.button_icon_fg.id = "theme_button_icon_fg";
+
+  this.button.appendChild(this.button_icon)
+  this.button_icon.appendChild(this.button_icon_fg)
+
+  this.toggle = function()
+  {
+    var dark_mode = left.theme.button.className == "active" ? true : false;
+
+    left.theme.button.className = dark_mode ? "" : "active";
+    left.theme.load(dark_mode == true ? left.theme.collection.noir : left.theme.collection.pale)
   }
 
   function is_json(text){ try{ JSON.parse(text); return true; } catch (error){ return false; } }

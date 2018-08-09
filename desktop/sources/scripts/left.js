@@ -32,6 +32,8 @@ function Left()
   document.body.appendChild(this.scroll_el);
   document.body.appendChild(this.drag_el);
   document.body.appendChild(this.operator.el);
+  document.body.appendChild(this.theme.button);
+  
   document.body.className = window.location.hash.replace("#","");
 
   this.textarea_el.setAttribute("autocomplete","off");

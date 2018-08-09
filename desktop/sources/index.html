@@ -76,6 +76,7 @@
       left.controller.add("default","View","Inc Zoom",() => {  left.options.set_zoom(left.options.zoom+0.1) },"CmdOrCtrl+Plus");
       left.controller.add("default","View","Dec Zoom",() => {  left.options.set_zoom(left.options.zoom-0.1) },"CmdOrCtrl+-");
       left.controller.add("default","View","Reset Zoom",() => {  left.options.set_zoom(1) },"CmdOrCtrl+0");
+      left.controller.add("default","View","Toggle Dark Mode",() => {  left.theme.toggle() },"CmdOrCtrl+Shift+T");
 
       left.controller.add("default","Mode","Reader",() => { left.reader.start(); },"CmdOrCtrl+K");
       left.controller.add("default","Mode","Insert",() => { left.insert.start(); },"CmdOrCtrl+I");

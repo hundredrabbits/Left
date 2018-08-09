@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-body { font-family: 'input_mono_regular'; font-size: 12px; overflow-y: hidden; }
+body { font-family: 'input_mono_regular'; font-size: 12px; overflow-y: hidden; transition: background-color 500ms; }
 body navi { display: block;width: calc((100vw / 4) - 40px);left: 0px;position: absolute;padding: 30px; -webkit-user-select: none;-webkit-app-region: drag; overflow-y: hidden; padding-top:90px;padding-bottom: 100px; transition: opacity 150ms, translateY 150ms; opacity:1; }
 body navi li { display: block;line-height: 20px;cursor: pointer; position: relative; -webkit-app-region: no-drag; }
 body navi li::before { position: absolute; left:-15px;}
@@ -14,12 +14,12 @@ body navi li.comment {padding-left: 15px;}
 body navi li.comment::before { content:"-"; left:0px; }
 body navi li.changes::after { content:"*"; }
 body navi li i { float:right; padding-right:15px; }
-body stats { display: block;border-bottom: 0px;margin-top: 30px;position: fixed;bottom:0px;left: calc((100vw / 2) - 25%);line-height: 40px;width:540px;height:40px;overflow: hidden;-webkit-user-select: none;-webkit-app-region: drag;}
+body stats { display: block;border-bottom: 0px;margin-top: 30px;position: fixed;bottom:0px;left: 25vw;line-height: 40px;width:calc(75vw - 40px);height:40px;overflow: hidden;-webkit-user-select: none;-webkit-app-region: drag;}
 body stats b {  font-family: 'input_mono_medium';}
 body stats i { text-decoration: underline; }
 body stats .right { float:right; }
 body scrollbar { display: block; background:#ccc; width:100vw; height:1px; position:fixed; left:0; bottom:0px; transition: scaleX 150ms; transform-origin: center left; z-index: 9999}
-body textarea { padding: 90px 0px 0px;height: calc(100vh - 130px);display: block;width: 50vw;position: fixed;left: calc(25vw);line-height: 20px;resize: none;background: transparent;overflow: hidden;max-width: 600px; }
+body textarea { padding: 90px 0px 0px;height: calc(100vh - 130px);display: block;width: 50vw;position: fixed;left: 25vw;line-height: 20px;resize: none;background: transparent;overflow: hidden;max-width: 600px; }
 body div { max-width: 600px; width:50vw;line-height: 20px;font-family: 'input_mono_regular'; font-size: 12px;white-space: pre-wrap; word-wrap:break-word}
 body drag { display: block;width: 100vw;height: 40px;position: fixed;top: 0px;-webkit-user-select: none;-webkit-app-region: drag;}
 
@@ -31,12 +31,18 @@ body.mobile navi { opacity:0; display: none; }
 body.mobile textarea { left: 30px;width: calc(100vw - 60px); }
 body.mobile stats { left: 30px; -webkit-app-region: drag; }
 
+body #theme_button { width: 40px;height: 40px;position: fixed;right: 0px;bottom: 0px;overflow: hidden; cursor: pointer; opacity: 0; transition: opacity 500ms }
+body #theme_button_icon { border: 1px solid white;width: 10px;height: 10px;position: absolute;left: 14.5px;top: 14.5px;border-radius: 30px;overflow: hidden; }
+body #theme_button_icon_fg { width: 20px;height: 6.5px;background: white;position: relative;left: -2px;top: -2px; transition: top 250ms; }
+body #theme_button.active #theme_button_icon_fg { top:5.5px; }
+body #theme_button:hover { opacity: 1 }
+
 /* Theme Defaults */
 
 :root { --background: "#222"; --f_high: "#fff";--f_med: "#777";--f_low: "#444";--f_inv: "#000";--b_high: "#000";--b_med: "#555";--b_low: "#000";--b_inv: "#aaa"; }  
 
 body { background:var(--background); color:var(--f_high) !important; }
-scrollbar { background:var(--b_med) !important }
+scrollbar { background:var(--b_inv) !important }
 textarea { color:var(--f_high) !important }
 stats { color:var(--f_low) !important }
 stats b { color:var(--f_high) !important }
@@ -50,6 +56,8 @@ navi li.file { color:var(--f_med) !important }
 navi li.active { color:var(--f_high) !important }
 navi li::before { color:var(--f_low) !important }
 body #operator { background:var(--background); color:var(--b_inv); }
+body #theme_button_icon { border-color: var(--f_med) !important }
+body #theme_button_icon_fg { background-color: var(--f_med) !important }
 
 .fh { color:var(--f_high) !important; }
 .fm { color:var(--f_med) !important; }
