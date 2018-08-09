@@ -22,7 +22,9 @@ Left is a simple, minimalist, open-source and cross-platform text editor.
 - V : stands for Vocabulary, or unique words.
 - C : stands for Characters.
 
--- Quick Inserts<c-i>
+-- Quick Inserts
+
+You can quickly insert data, or transform a line in a header or comment, by activating the Insert Mode with <c-i>, followed by one of these shortcuts:
 
 - <c-d> : Date
 - <c-t> : Time
