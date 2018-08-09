@@ -83,9 +83,14 @@ function Operator()
 
   this.find = function(q,bang = false)
   {
-    var loc = left.go.to_word(q,this.index,10);
+    var r = left.find(q);
+
+    if(r.length < 1){ return; }
+
+    left.go.to_word(q,0,10);
 
     if(bang){
+      left.go.to(r[0],q.length);
       this.stop();
     }
   }

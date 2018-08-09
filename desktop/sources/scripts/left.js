@@ -252,6 +252,23 @@ function Left()
     this.replace_selection_with(text);
   }
 
+  this.find = function(word)
+  {
+    var text = left.textarea_el.value;
+    var parts = text.split(word);
+    var a = [];
+
+    var index = 0;
+    for(id in parts){
+      var l = parts[id]
+      a.push(l.length);
+    }
+
+    a.splice(-1,1)
+
+    return a;
+  }
+
   this.autocomplete = function()
   {
     this.inject(left.suggestion.substr(left.selection.word.length,left.suggestion.length)+" ");

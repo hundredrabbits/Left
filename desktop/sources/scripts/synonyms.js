@@ -5427,7 +5427,7 @@ var SYN_DB = {
     "skycolor",
     "cerulean"
   ],
-  "bbabble": [
+  "babble": [
     "chatter",
     "prattle",
     "jibber",

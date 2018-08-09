@@ -37,7 +37,7 @@ function Navi()
     var el = document.createElement('li');
 
     var pos = left.active_line_id();
-    var is_active = this.marker().line == marker.line;
+    var is_active = this.marker() && this.marker().line == marker.line;
 
     el.innerHTML = `${marker.text}<i>${marker.line}</i>`;
     el.className = `marker ${marker.type} ${is_active ? 'active' : ''}`
@@ -59,19 +59,19 @@ function Navi()
 
   this.next_page = function()
   {
-    var page = clamp(left.project.index+1,0,left.project.pages.length-1)
+    var page = clamp(parseInt(left.project.index)+1,0,left.project.pages.length-1)
     left.go.to_page(page,0);
   }
 
   this.prev_page = function()
   {
-    var page = clamp(left.project.index-1,0,left.project.pages.length-1)
+    var page = clamp(parseInt(left.project.index)-1,0,left.project.pages.length-1)
     left.go.to_page(page,0);
   }
 
   this.next_marker = function()
   {
-    var page = clamp(left.project.index,0,left.project.pages.length-1)
+    var page = clamp(parseInt(left.project.index),0,left.project.pages.length-1)
     var marker = this.marker();
     var markers = left.project.page().markers();
     var next_index = clamp(marker.id+1,0,markers.length-1);
@@ -81,7 +81,7 @@ function Navi()
 
   this.prev_marker = function()
   {
-    var page = clamp(left.project.index,0,left.project.pages.length-1)
+    var page = clamp(parseInt(left.project.index),0,left.project.pages.length-1)
     var marker = this.marker();
     var markers = left.project.page().markers();
     var next_index = clamp(marker.id-1,0,markers.length-1);

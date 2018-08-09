@@ -15,6 +15,7 @@ function Project()
 
   this.update = function()
   {
+    if(!this.page()){ console.warn("Missing page"); return; }
     this.page().text = left.textarea_el.value;
   }
 
@@ -89,7 +90,7 @@ function Project()
         page.path = path;
       }
       else if(page.path != path){
-        left.project.load(path);
+        left.project.pages.push(new Page(page.text,path))
       }
       page.commit();
       left.refresh();

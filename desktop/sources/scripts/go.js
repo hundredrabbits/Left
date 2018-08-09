@@ -2,7 +2,9 @@ function Go()
 {
   this.to_page = function(id,line = 0)
   {
-    left.project.index = clamp(id,0,left.project.pages.length-1);
+    left.project.index = clamp(parseInt(id),0,left.project.pages.length-1);
+
+    console.log(`Go to page:${left.project.index}/${left.project.pages.length}`)
 
     var page = left.project.pages[left.project.index];
 
@@ -10,6 +12,7 @@ function Go()
 
     left.textarea_el.value = page.text;
     left.go.to_line(line);
+    left.refresh();
   }
 
   this.to_line = function(id)
@@ -35,7 +38,8 @@ function Go()
        range.select();
      }
      left.textarea_el.focus();
-     this.scroll_to(from,to)
+     this.scroll_to(from,to);
+     
      return from == -1 ? null : from;
   }
 
