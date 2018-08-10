@@ -131,13 +131,22 @@ function Project()
     });
     if (response === 0) { // Runs the following if 'Yes' is clicked
       this.page().revert();
+      left.textarea_el.value = this.page().text;
       left.refresh();
     }
   }
 
+  this.has_changes = function()
+  {
+    for(id in this.pages){
+      if(this.pages[id].has_changes()){ return true;}
+    }
+    return false;
+  }
+
   this.quit = function()
   {
-    if(this.page().has_changes()){
+    if(this.has_changes()){
       this.quit_dialog();  
     }
     else{
