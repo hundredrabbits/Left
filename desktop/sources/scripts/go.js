@@ -101,16 +101,16 @@ function Go()
     var currentTime = 0;
     var increment = 20;
         
-    var animateScroll = function()
+    var animate = function()
     {        
       currentTime += increment;
       var val = Math.easeInOutQuad(currentTime, start, change, duration);
       element.scrollTop = val;
-      if(currentTime < duration) {
-        setTimeout(animateScroll, increment);
+      if(currentTime < duration){
+        requestAnimationFrame(animate, increment);
       }
     };
-    animateScroll();
+    requestAnimationFrame(animate);
   }
 
   //t = current time
@@ -118,13 +118,13 @@ function Go()
   //c = change in value
   //d = duration
 
-  Math.easeInOutQuad = function (t, b, c, d)
+  Math.easeInOutQuad = function(t, b, c, d)
   {
     t /= d/2;
     if(t < 1) return c/2*t*t + b;
     t--;
     return -c/2 * (t*(t-2) - 1) + b;
- };
+  };
 
   function clamp(v, min, max) { return v < min ? min : v > max ? max : v; }
 }
