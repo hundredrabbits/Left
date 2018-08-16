@@ -81,6 +81,12 @@ function Left()
     left.textarea_el.setSelectionRange(from,to);
   }
 
+  this.select_word = function(target)
+  {
+    var from = left.textarea_el.value.split(target)[0].length;
+    this.select(from,from+target.length);
+  }
+
   this.select_line = function(id)
   {
     let lineArr = this.textarea_el.value.split("\n",parseInt(id)+1)
@@ -101,6 +107,7 @@ function Left()
     left.selection.word = this.active_word();
     left.suggestion     = (next_char == "" || next_char == " " || next_char == "\n") ? left.dictionary.find_suggestion(left.selection.word) : null;
     left.synonyms       = left.dictionary.find_synonym(left.selection.word);
+    left.selection.url  = this.active_url();
 
     this.project.update();
     this.options.update();
@@ -118,12 +125,6 @@ function Left()
     var to = this.textarea_el.selectionEnd;
     var length = to - from;
     return this.textarea_el.value.substr(from,length);
-  }
-
-  this.active_line_id = function()
-  {
-    var segments = left.textarea_el.value.substr(0,left.textarea_el.selectionEnd).split("\n");
-    return segments.length-1;
   }
 
   this.active_word_location = function(position = left.textarea_el.selectionEnd)
@@ -154,10 +155,34 @@ function Left()
     return {from:from,to:to};
   }
 
+  this.active_line_id = function()
+  {
+    var segments = left.textarea_el.value.substr(0,left.textarea_el.selectionEnd).split("\n");
+    return segments.length-1;
+  }
+
+  this.active_line = function()
+  {
+    var text = left.textarea_el.value;
+    var lines = text.split("\n");
+    return lines[this.active_line_id()];
+  }
+
   this.active_word = function()
   {
     var l = this.active_word_location();
     return left.textarea_el.value.substr(l.from,l.to-l.from);
+  }
+
+  this.active_url = function()
+  {
+    var words = this.active_line().split(" ");
+    for(id in words){
+      if(words[id].indexOf("://") > -1){
+        return words[id];
+      }
+    }
+    return null;
   }
 
   this.prev_character = function()
@@ -275,6 +300,14 @@ function Left()
   this.autocomplete = function()
   {
     this.inject(left.suggestion.substr(left.selection.word.length,left.suggestion.length)+" ");
+  }
+
+  this.open_url = function(target = this.active_url())
+  {
+    if(!target){ return; }
+
+    this.select_word(target);
+    setTimeout(() => { require('electron').shell.openExternal(target) }, 500)
   }
 
   this.reset = function()

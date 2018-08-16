@@ -67,6 +67,7 @@
       left.controller.add("default","Select","Find",() => { left.operator.start("find: "); },"CmdOrCtrl+F");
       left.controller.add("default","Select","Replace",() => { left.operator.start("replace: a -> b"); },"CmdOrCtrl+Shift+F");
       left.controller.add("default","Select","Goto",() => { left.operator.start("goto: "); },"CmdOrCtrl+G");
+      left.controller.add("default","Select","Open Url",() => { left.open_url(); },"CmdOrCtrl+B");
 
       left.controller.add("default","Navigation","Next File",() => { left.navi.next_page(); },"CmdOrCtrl+Shift+]");
       left.controller.add("default","Navigation","Prev File",() => { left.navi.prev_page(); },"CmdOrCtrl+Shift+[");

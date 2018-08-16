@@ -18,6 +18,9 @@ function Stats()
     else if(left.synonyms){
       this.el.innerHTML = this._synonyms();
     }
+    else if(left.selection.url){
+      this.el.innerHTML = this._url(); 
+    }
     else{
       this.el.innerHTML = this._default();
     }
@@ -49,6 +52,11 @@ function Stats()
   {
     var p = ((left.textarea_el.selectionEnd/left.textarea_el.value.length)*100).toFixed(2)
     return `<b>[${left.textarea_el.selectionStart},${left.textarea_el.selectionEnd}]</b> ${p}%`
+  }
+
+  this._url = function()
+  {
+    return `Open <b>${left.selection.url}</b> with &lt;c-b&gt;`;
   }
 
   this.parse = function(text = left.textarea_el.value)

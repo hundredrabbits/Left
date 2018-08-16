@@ -23,7 +23,7 @@ body textarea { padding: 90px 0px 0px;height: calc(100vh - 130px);display: block
 body div { max-width: 600px; width:50vw;line-height: 20px;font-family: 'input_mono_regular'; font-size: 12px;white-space: pre-wrap; word-wrap:break-word}
 body drag { display: block;width: 100vw;height: 40px;position: fixed;top: 0px;-webkit-user-select: none;-webkit-app-region: drag;}
 
-body #operator { display: block;border-bottom: 0px;margin-top: 30px;position: fixed;bottom: 0px;left: calc((100vw / 2) - 25%);line-height: 40px;width: 540px;height: 40px;overflow: hidden;padding-left: 30px;-webkit-user-select: none;-webkit-app-region: no-drag; bottom:-40px; transition: bottom 150ms }
+body #operator { display: block;border-bottom: 0px;margin-top: 30px;position: fixed;bottom: 0px;left: calc((100vw / 2) - 25%);line-height: 40px;width: 540px;height: 40px;overflow: hidden;-webkit-user-select: none;-webkit-app-region: no-drag; bottom:-40px; transition: bottom 150ms }
 body #operator.inactive { bottom:-40px; }
 body #operator.active { bottom:0px; }
 
@@ -48,14 +48,14 @@ stats { color:var(--f_low) !important }
 stats b { color:var(--f_high) !important }
 stats i { color:var(--f_med) !important }
 highlight b { border-bottom: 1px solid var(--f_low) !important; }
-::selection { background:var(--b_low) !important; color:var(--f_med) !important }
+::selection { background:var(--b_low) !important; color:var(--f_high) !important }
 navi  { color:var(--f_low) !important }
 navi li { color:var(--f_med) !important }
 navi li i { color:var(--f_low) !important }
 navi li.file { color:var(--f_med) !important }
 navi li.active { color:var(--f_high) !important }
 navi li::before { color:var(--f_low) !important }
-body #operator { background:var(--background); color:var(--b_inv); }
+body #operator { background:var(--background); color:var(--f_high); }
 body #theme_button_icon { border-color: var(--f_med) !important }
 body #theme_button_icon_fg { background-color: var(--f_med) !important }
 

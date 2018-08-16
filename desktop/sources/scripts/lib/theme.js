@@ -6,7 +6,7 @@ function Theme()
   this.el.type = 'text/css';
   this.collection = {
     noir: {meta:{}, data: { background: "#222", f_high: "#fff", f_med: "#777", f_low: "#444", f_inv: "#000", b_high: "#000", b_med: "#aaa", b_low: "#000", b_inv: "#aaa" }},
-    pale: {meta:{}, data: { background: "#e1e1e1", f_high: "#222", f_med: "#777", f_low: "#444", f_inv: "#000", b_high: "#000", b_med: "#aaa", b_low: "#000", b_inv: "#fff" }}
+    pale: {meta:{}, data: { background: "#e1e1e1", f_high: "#222", f_med: "#777", f_low: "#aaa", f_inv: "#000", b_high: "#000", b_med: "#aaa", b_low: "#ccc", b_inv: "#fff" }}
   }
 
   this.default = {meta:{}, data: { background: "#222", f_high: "#fff", f_med: "#777", f_low: "#444", f_inv: "#000", b_high: "#000", b_med: "#aaa", b_low: "#000", b_inv: "#aaa" }}
