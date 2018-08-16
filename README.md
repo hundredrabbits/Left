@@ -21,8 +21,6 @@ Left is a distractionless writing application created to help organize ideas qui
 
 ## Controls
 
-## default Mode
-
 ### File
 - New: `CmdOrCtrl+N`
 - Open: `CmdOrCtrl+O`
@@ -56,9 +54,9 @@ Left is a distractionless writing application created to help organize ideas qui
 - Reader: `CmdOrCtrl+K`
 - Insert: `CmdOrCtrl+I`
 
-## insert Mode
+### insert Mode
 
-### Insert
+#### Insert
 - Date: `CmdOrCtrl+D`
 - Time: `CmdOrCtrl+T`
 - Path: `CmdOrCtrl+P`
