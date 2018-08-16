@@ -15,7 +15,6 @@ function Navi()
         this.el.appendChild(this._marker(pid,i,marker,markers));
       }
     }
-    this.update_scrollbar();
   }
 
   this._page = function(id,page)
@@ -44,17 +43,6 @@ function Navi()
     el.onmouseup = function on_mouseup(e){ left.go.to_page(pid,marker.line); }
 
     return el;
-  }
-
-  this.update_scrollbar = function()
-  {
-    var scroll_distance = left.textarea_el.scrollTop;
-    var scroll_max = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight;
-    var scroll_perc = Math.min(1, (scroll_max == 0) ? 0 : (scroll_distance / scroll_max));
-    var navi_overflow_perc = Math.max(0, (left.navi.el.scrollHeight / window.innerHeight) - 1);
-    
-    left.scroll_el.style.transform = "scaleX(" + scroll_perc + ")";
-    left.navi.el.style.transform = "translateY(" + (-100 * scroll_perc * navi_overflow_perc) + "%)";
   }
 
   this.next_page = function()
@@ -100,6 +88,16 @@ function Navi()
       if(marker.line > pos){ return markers[parseInt(id)-1]; }
     }
     return markers[markers.length-1];
+  }
+
+  this.on_scroll = function()
+  {
+    var scroll_distance = left.textarea_el.scrollTop;
+    var scroll_max = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight;
+    var scroll_perc = Math.min(1, (scroll_max == 0) ? 0 : (scroll_distance / scroll_max));
+    var navi_overflow_perc = Math.max(0, (left.navi.el.scrollHeight / window.innerHeight) - 1);
+    
+    left.navi.el.style.transform = "translateY(" + (-100 * scroll_perc * navi_overflow_perc) + "%)";
   }
 
   function clamp(v, min, max) { return v < min ? min : v > max ? max : v; }

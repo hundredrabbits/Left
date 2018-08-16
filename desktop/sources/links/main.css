@@ -18,7 +18,6 @@ body stats { display: block;border-bottom: 0px;margin-top: 30px;position: fixed;
 body stats b {  font-family: 'input_mono_medium';}
 body stats i { text-decoration: underline; }
 body stats .right { float:right; }
-body scrollbar { display: block; background:#ccc; width:100vw; height:1px; position:fixed; left:0; bottom:0px; transition: scaleX 150ms; transform-origin: center left; z-index: 9999}
 body textarea { padding: 90px 0px 0px;height: calc(100vh - 130px);display: block;width: 50vw;position: fixed;left: 25vw;line-height: 20px;resize: none;background: transparent;overflow: hidden;max-width: 600px; }
 body div { max-width: 600px; width:50vw;line-height: 20px;font-family: 'input_mono_regular'; font-size: 12px;white-space: pre-wrap; word-wrap:break-word}
 body drag { display: block;width: 100vw;height: 40px;position: fixed;top: 0px;-webkit-user-select: none;-webkit-app-region: drag;}
@@ -42,7 +41,6 @@ body #theme_button:hover { opacity: 1 }
 :root { --background: "#222"; --f_high: "#fff";--f_med: "#777";--f_low: "#444";--f_inv: "#000";--b_high: "#000";--b_med: "#555";--b_low: "#000";--b_inv: "#aaa"; }  
 
 body { background:var(--background); color:var(--f_high) !important; }
-scrollbar { background:var(--b_inv) !important }
 textarea { color:var(--f_high) !important }
 stats { color:var(--f_low) !important }
 stats b { color:var(--f_high) !important }

@@ -44,8 +44,6 @@ function Dictionary()
 
   this.find_suggestion = function(target)
   {
-    if(!left.options.suggestions){ return null; }
-
     target = target.toLowerCase();
 
     for(word_id in this.vocabulary){
@@ -58,8 +56,6 @@ function Dictionary()
 
   this.find_synonym = function(to_word)
   {
-    if(!left.options.synonyms){ return null; }
-
     to_word = to_word.toLowerCase();
 
     if(this.synonyms[to_word]){ return uniq(this.synonyms[to_word]); }

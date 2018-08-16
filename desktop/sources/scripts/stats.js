@@ -2,13 +2,13 @@ function Stats()
 {
   this.el = document.createElement('stats');
 
-  this.update = function()
+  this.update = function(special = "")
   {
     if(left.insert.is_active){
       this.el.innerHTML = left.insert.status();
       return;
     }
-    
+      
     if(left.textarea_el.selectionStart != left.textarea_el.selectionEnd){
       this.el.innerHTML = this._selection();
     }
@@ -58,6 +58,15 @@ function Stats()
   {
     var date = new Date();
     return `Open <b>${left.selection.url}</b> with &lt;c-b&gt; <span class='right'>${date.getHours()}:${date.getMinutes()}</span>`;
+  }
+
+  this.on_scroll = function()
+  {
+    var scroll_distance = left.textarea_el.scrollTop;
+    var scroll_max = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight;
+    var scroll_perc = Math.min(1, (scroll_max == 0) ? 0 : (scroll_distance / scroll_max));
+  
+    this.el.innerHTML = `${(scroll_perc * 100).toFixed(2)}%`
   }
 
   this.parse = function(text = left.textarea_el.value)

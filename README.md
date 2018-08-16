@@ -1,6 +1,6 @@
 # Left
 
-Left is a distractionless writing application created to help organize ideas quickly, featuring writing essentials auto-complete, synonyms suggestions, writing statistics, markup-based navigation and a speed-reader.
+[Left](http://wiki.xxiivv.com/Left) is a distractionless writing application created to help organize ideas quickly, featuring writing essentials auto-complete, synonyms suggestions, writing statistics, markup-based navigation and a speed-reader.
 
 <img src='https://raw.githubusercontent.com/hundredrabbits/Left/master/PREVIEW.jpg' width="600"/>
 
@@ -45,9 +45,6 @@ Left is a distractionless writing application created to help organize ideas qui
 - Prev Marker: `CmdOrCtrl+[`
 
 ### View
-- Inc Zoom: `CmdOrCtrl+Plus`
-- Dec Zoom: `CmdOrCtrl+-`
-- Reset Zoom: `CmdOrCtrl+0`
 - Toggle Dark Mode: `CmdOrCtrl+Shift+T`
 
 ### Mode

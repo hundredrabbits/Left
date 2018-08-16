@@ -73,7 +73,8 @@ document.addEventListener('wheel', function(e)
 {
   e.preventDefault();
   left.textarea_el.scrollTop += e.wheelDeltaY * -0.25;
-  left.navi.update_scrollbar();
+  left.stats.on_scroll()
+  left.navi.on_scroll()
 }, false)
 
 window.addEventListener('resize', function(e)

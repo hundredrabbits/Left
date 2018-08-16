@@ -3,6 +3,8 @@
     <title>Left</title>
     
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
     <link rel="stylesheet" href="links/reset.css"/>
     <link rel="stylesheet" href="links/fonts.css"/>
     <link rel="stylesheet" href="links/main.css"/>
@@ -13,7 +15,10 @@
 
     <script src="scripts/navi.js"></script>
     <script src="scripts/page.js"></script>
+    
     <script src="scripts/go.js"></script>
+    <script src="scripts/insert.js"></script>
+
     <script src="scripts/stats.js"></script>
     <script src="scripts/project.js"></script>
     <script src="scripts/events.js"></script>
@@ -21,13 +26,14 @@
     <script src="scripts/dictionary.js"></script>
     <script src="scripts/operator.js"></script>
     <script src="scripts/left.js"></script>
-    <script src="scripts/options.js"></script>
     <script src="scripts/reader.js"></script>
-    <script src="scripts/insert.js"></script>
+    
   </head>
   <body>
     <script>
       const {webFrame} = require('electron')
+
+      webFrame.setZoomLevelLimits(1, 1);
 
       const {dialog,app} = require('electron').remote;
       const fs = require('fs');
@@ -74,9 +80,6 @@
       left.controller.add("default","Navigation","Next Marker",() => { left.navi.next_marker(); },"CmdOrCtrl+]");
       left.controller.add("default","Navigation","Prev Marker",() => { left.navi.prev_marker(); },"CmdOrCtrl+[");
 
-      left.controller.add("default","View","Inc Zoom",() => {  left.options.set_zoom(left.options.zoom+0.1) },"CmdOrCtrl+Plus");
-      left.controller.add("default","View","Dec Zoom",() => {  left.options.set_zoom(left.options.zoom-0.1) },"CmdOrCtrl+-");
-      left.controller.add("default","View","Reset Zoom",() => {  left.options.set_zoom(1) },"CmdOrCtrl+0");
       left.controller.add("default","View","Toggle Dark Mode",() => {  left.theme.toggle() },"CmdOrCtrl+Shift+T");
 
       left.controller.add("default","Mode","Reader",() => { left.reader.start(); },"CmdOrCtrl+K");

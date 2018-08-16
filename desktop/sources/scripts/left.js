@@ -9,12 +9,10 @@ function Left()
   this.stats = new Stats();
   this.go = new Go();
   this.project = new Project();
-  this.options = new Options();
   this.reader = new Reader();
   this.insert = new Insert();
 
   this.textarea_el    = document.createElement('textarea');
-  this.scroll_el      = document.createElement('scrollbar');
   this.drag_el        = document.createElement('drag');
 
   this.selection = {word: null,index:1};
@@ -29,7 +27,6 @@ function Left()
   document.body.appendChild(this.navi.el);
   document.body.appendChild(this.textarea_el);
   document.body.appendChild(this.stats.el);
-  document.body.appendChild(this.scroll_el);
   document.body.appendChild(this.drag_el);
   document.body.appendChild(this.operator.el);
   document.body.appendChild(this.theme.button);
@@ -110,7 +107,6 @@ function Left()
     left.selection.url  = this.active_url();
 
     this.project.update();
-    this.options.update();
     this.navi.update();
     this.stats.update();
 
