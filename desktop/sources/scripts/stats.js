@@ -29,8 +29,8 @@ function Stats()
   this._default = function(stats)
   {
     var stats = this.parse(left.selected());
-
-    return `${stats.l}L ${stats.w}W ${stats.v}V ${stats.c}C ${stats.p}% `
+    var date = new Date();
+    return `${stats.l}L ${stats.w}W ${stats.v}V ${stats.c}C ${stats.p}% <span class='right'>${date.getHours()}:${date.getMinutes()}</span>`
   }
 
   this._synonyms = function()
@@ -56,7 +56,8 @@ function Stats()
 
   this._url = function()
   {
-    return `Open <b>${left.selection.url}</b> with &lt;c-b&gt;`;
+    var date = new Date();
+    return `Open <b>${left.selection.url}</b> with &lt;c-b&gt; <span class='right'>${date.getHours()}:${date.getMinutes()}</span>`;
   }
 
   this.parse = function(text = left.textarea_el.value)

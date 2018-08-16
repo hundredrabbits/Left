@@ -178,7 +178,7 @@ function Left()
   {
     var words = this.active_line().split(" ");
     for(id in words){
-      if(words[id].indexOf("://") > -1){
+      if(words[id].indexOf("://") > -1 || words[id].indexOf("www.") > -1){
         return words[id];
       }
     }

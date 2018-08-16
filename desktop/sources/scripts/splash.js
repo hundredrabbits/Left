@@ -24,7 +24,7 @@ Left is a simple, minimalist, open-source and cross-platform text editor.
 
 -- Quick Inserts
 
-You can quickly insert data, or transform a line in a header or comment, by activating the Insert Mode with <c-i>, followed by one of these shortcuts:
+You can quickly insert or transform text by activating the Insert Mode with <c-i>, followed by one of these shortcuts:
 
 - <c-d> : Date
 - <c-t> : Time
