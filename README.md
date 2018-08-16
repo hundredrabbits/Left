@@ -1,12 +1,10 @@
 # Left
 
-Left is a simple open-source distractionless writing application created to help organize ideas. 
+Left is a distractionless writing application created to help organize ideas quickly, featuring writing essentials auto-complete, synonyms suggestions, writing statistics, markup-based navigation and a speed-reader.
 
 <img src='https://raw.githubusercontent.com/hundredrabbits/Left/master/PREVIEW.jpg' width="600"/>
 
 ## Guide
-
-Left is a simple, minimalist, open-source and cross-platform text editor. 
 
 - Create markers by beginning lines with `#`, `##` or `--`.
 - Open a text file by dragging it, or with `ctrl o`.
@@ -37,33 +35,26 @@ Left is a simple, minimalist, open-source and cross-platform text editor.
 ### Select
 - Select Autocomplete: `Tab`
 - Select Synonym: `Shift+Tab`
+- Find: `CmdOrCtrl+F`
+- Replace: `CmdOrCtrl+Shift+F`
+- Goto: `CmdOrCtrl+G`
+- Open Url: `CmdOrCtrl+B`
 
 ### Navigation
-- Next Marker: `CmdOrCtrl+]`
-- Prev Marker: `CmdOrCtrl+[`
 - Next File: `CmdOrCtrl+Shift+]`
 - Prev File: `CmdOrCtrl+Shift+[`
-- Find: `CmdOrCtrl+F`
+- Next Marker: `CmdOrCtrl+]`
+- Prev Marker: `CmdOrCtrl+[`
 
 ### View
 - Inc Zoom: `CmdOrCtrl+Plus`
 - Dec Zoom: `CmdOrCtrl+-`
 - Reset Zoom: `CmdOrCtrl+0`
+- Toggle Dark Mode: `CmdOrCtrl+Shift+T`
 
 ### Mode
 - Reader: `CmdOrCtrl+K`
-- Operator: `CmdOrCtrl+F`
 - Insert: `CmdOrCtrl+I`
-
-## reader Mode
-
-### Reader
-- Stop: `Esc`
-
-## operator Mode
-
-### Operator
-- Stop: `Esc`
 
 ## insert Mode
 
@@ -75,11 +66,7 @@ Left is a simple, minimalist, open-source and cross-platform text editor.
 - SubHeader: `CmdOrCtrl+Shift+H`
 - Comment: `CmdOrCtrl+/`
 - Line: `CmdOrCtrl+L`
-
-### Mode
-- Stop: `Esc`
-
-<img src='https://cdn.rawgit.com/hundredrabbits/Left/master/LAYOUT.svg?v=1' width="600"/>
+- List: `CmdOrCtrl+-`
 
 ## Extras
 
