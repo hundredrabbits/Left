@@ -38,7 +38,7 @@ function Navi()
     var pos = left.active_line_id();
     var is_active = this.marker() && this.marker().line == marker.line;
 
-    el.innerHTML = `${marker.text}<i>${marker.line}</i>`;
+    el.innerHTML = `<span>${marker.text}</span><i>${marker.line}</i>`;
     el.className = `marker ${marker.type} ${is_active ? 'active' : ''}`
     el.onmouseup = function on_mouseup(e){ left.go.to_page(pid,marker.line); }
 
@@ -96,8 +96,13 @@ function Navi()
     var scroll_max = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight;
     var scroll_perc = Math.min(1, (scroll_max == 0) ? 0 : (scroll_distance / scroll_max));
     var navi_overflow_perc = Math.max(0, (left.navi.el.scrollHeight / window.innerHeight) - 1);
-    
+
     left.navi.el.style.transform = "translateY(" + (-100 * scroll_perc * navi_overflow_perc) + "%)";
+  }
+
+  this.toggle = function()
+  {
+    document.body.classList.toggle('mobile');
   }
 
   function clamp(v, min, max) { return v < min ? min : v > max ? max : v; }
