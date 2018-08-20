@@ -46,6 +46,7 @@
 
 ### View
 - Toggle Dark Mode: `CmdOrCtrl+Shift+T`
+- Toggle Navigation: `CmdOrCtrl+\`
 
 ### Mode
 - Reader: `CmdOrCtrl+K`

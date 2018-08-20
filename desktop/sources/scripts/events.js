@@ -5,10 +5,10 @@ document.onkeydown = function key_down(e)
   // Faster than Electron
   if(e.keyCode == 9){
     if(e.shiftKey){
-      left.select_synonym();   
+      left.select_synonym();
     }
     else{
-      left.select_autocomplete(); 
+      left.select_autocomplete();
     }
     e.preventDefault();
     return;
@@ -18,7 +18,7 @@ document.onkeydown = function key_down(e)
   if(e.key == " " || e.key == "Enter"){
     left.selection.index = 0;
   }
-  
+
   if(e.key.substring(0,5) == "Arrow"){
     setTimeout(() => left.refresh(), 0) //force the refresh event to happen after the selection updates
     return;
@@ -53,7 +53,7 @@ window.addEventListener('drop', function(e)
 {
   e.stopPropagation();
   e.preventDefault();
-  
+
   var files = e.dataTransfer.files;
 
   for(id in files){
@@ -76,16 +76,6 @@ document.addEventListener('wheel', function(e)
   left.stats.on_scroll()
   left.navi.on_scroll()
 }, false)
-
-window.addEventListener('resize', function(e)
-{
-  if(window.innerWidth < 800){
-    document.body.className = "mobile";
-  }
-  else{
-    document.body.className = "";
-  }
-}, false);
 
 document.onmouseup = function on_mouseup(e)
 {
