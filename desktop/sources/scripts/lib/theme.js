@@ -11,9 +11,15 @@ function Theme()
 
   this.default = {meta:{}, data: { background: "#222", f_high: "#fff", f_med: "#777", f_low: "#444", f_inv: "#000", b_high: "#000", b_med: "#aaa", b_low: "#000", b_inv: "#aaa" }}
   this.active = this.default;
+  this.invert = "false";
 
   this.start = function()
   {
+    var inv = localStorage.getItem("invert");
+    if (inv === "true") {
+      this.invert = "true";
+      document.body.classList.add("invert");
+    }
     this.load(localStorage.theme ? localStorage.theme : this.default, this.default);
     window.addEventListener('dragover',this.drag_enter);
     window.addEventListener('drop', this.drag);
@@ -96,10 +102,15 @@ function Theme()
 
   this.toggle = function()
   {
-    var dark_mode = left.theme.button.className == "active" ? true : false;
-
-    left.theme.button.className = dark_mode ? "" : "active";
-    left.theme.load(dark_mode == true ? left.theme.collection.noir : left.theme.collection.pale)
+    if (this.invert === "true") {
+      this.invert = "false";
+      document.body.classList.remove("invert");
+    } else if (this.invert === "false") {
+      this.invert = "true";
+      document.body.classList.add("invert");
+    }
+    this.button.classList.toggle("active");
+    localStorage.setItem("invert", this.invert);
   }
 
   function is_json(text){ try{ JSON.parse(text); return true; } catch (error){ return false; } }

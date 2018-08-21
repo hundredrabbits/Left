@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 ::-webkit-scrollbar { display: none; margin: 0; padding: 0; }
-body { font-family: 'input_mono_regular'; font-size: 12px; overflow: auto; transition: background-color 500ms; }
+body { height: 100vh; font-family: 'input_mono_regular'; font-size: 12px; overflow: auto; transition: background-color 500ms; transition: filter 150ms; }
 body navi { display: block;width: calc((100vw / 4) - 40px);left: 0px;position: absolute;padding: 30px; -webkit-user-select: none;-webkit-app-region: drag;
   overflow: auto;
   padding-top:90px;transition: opacity 200ms 200ms, translateY 150ms, width 200ms; opacity:1; }
@@ -29,6 +29,10 @@ body drag { display: block;width: 100vw;height: 40px;position: fixed;top: 0px;-w
 body #operator { display: block;border-bottom: 0px;margin-top: 30px;position: fixed;bottom: 0px;left: calc((100vw / 2) - 25%);line-height: 40px;width: 540px;height: 40px;overflow: hidden;-webkit-user-select: none;-webkit-app-region: no-drag; bottom:-40px; transition: bottom 150ms }
 body #operator.inactive { bottom:-40px; }
 body #operator.active { bottom:0px; }
+
+:root { background-color: #222; }
+* { background-color: inherit; }
+body.invert { filter: invert(1); transition: filter 150ms; }
 
 body.mobile navi { opacity:0; transition: opacity 10ms; }
 body.mobile textarea { width: 100vw; left: 5%; transition: left 200ms; transition-delay: 20ms; }
