@@ -70,7 +70,7 @@ function Left()
     if(left.synonyms){
       left.replace_active_word_with(left.synonyms[left.selection.index % left.synonyms.length]);
       left.stats.update();
-      left.selection.index += 1;
+      left.selection.index = (left.selection.index + 1) % left.synonyms.length;
     }
   }
 
