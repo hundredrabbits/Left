@@ -23,9 +23,7 @@ function Reader()
     this.index = 0;
 
     // Small delay before starting the reader
-    setTimeout(() => {
-      this.run();
-    }, 250);
+    setTimeout(() => { this.run(); }, 250);
   }
 
   this.alert = function(t)

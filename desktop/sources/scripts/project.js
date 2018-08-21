@@ -102,7 +102,11 @@ function Project()
   {
     if(this.page().has_changes()){
       var response = dialog.showMessageBox(app.win, {
-        type: 'question', buttons: ['Yes', 'No'], title: 'Confirm', message: 'Are you sure you want to discard changes?'
+        type: 'question',
+        buttons: ['Yes', 'No'],
+        title: 'Confirm',
+        message: 'Are you sure you want to discard changes?',
+        icon: `${app.path()}/icon.png`
       });
       if(response !== 0){
         return;
@@ -127,7 +131,8 @@ function Project()
       type: 'question',
       buttons: ['Yes', 'No'],
       title: 'Confirm',
-      message: 'Are you sure you want to discard changes?'
+      message: 'Are you sure you want to discard changes?',
+      icon: `${app.path()}/icon.png`
     });
     if (response === 0) { // Runs the following if 'Yes' is clicked
       this.page().revert();
