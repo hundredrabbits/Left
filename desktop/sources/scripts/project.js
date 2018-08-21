@@ -1,5 +1,5 @@
 function Project()
-{  
+{
   this.pages = [new Page(`${new Splash()}`)]
 
   this.paths = [null];
@@ -43,7 +43,7 @@ function Project()
   }
 
   this.open = function()
-  {    
+  {
     console.log("Open Pages");
 
     var paths = dialog.showOpenDialog(app.win, {properties: ['openFile','multiSelections']});
@@ -80,8 +80,8 @@ function Project()
 
     var page = this.page()
     var path = dialog.showSaveDialog(app.win);
-    
-    if(!name){ console.log("Nothing to save"); return; }
+
+    if(!path){ console.log("Nothing to save"); return; }
 
     fs.writeFile(path, page.text, (err) => {
       if(err){ alert("An error ocurred creating the file "+ err.message); return; }
@@ -100,7 +100,7 @@ function Project()
 
   this.close = function()
   {
-    if(this.page().has_changes()){ 
+    if(this.page().has_changes()){
       var response = dialog.showMessageBox(app.win, {
         type: 'question', buttons: ['Yes', 'No'], title: 'Confirm', message: 'Are you sure you want to discard changes?'
       });
@@ -147,7 +147,7 @@ function Project()
   this.quit = function()
   {
     if(this.has_changes()){
-      this.quit_dialog();  
+      this.quit_dialog();
     }
     else{
       app.exit()
