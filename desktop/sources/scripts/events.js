@@ -69,14 +69,6 @@ window.addEventListener('drop', function(e)
   left.navi.next_page();
 });
 
-document.addEventListener('wheel', function(e)
-{
-  e.preventDefault();
-  left.textarea_el.scrollTop += e.wheelDeltaY * -0.25;
-  left.stats.on_scroll()
-  left.navi.on_scroll()
-}, false)
-
 document.onmouseup = function on_mouseup(e)
 {
   left.selection.index = 0;

@@ -24,7 +24,7 @@ function Go()
 
     this.to(from,to)
   }
-  
+
   this.to = function(from,to)
   {
     if(left.textarea_el.setSelectionRange){
@@ -46,7 +46,7 @@ function Go()
   this.to_word = function(word,from = 0, tries = 0, starting_with = false, ending_with = false)
   {
     var target = word;
-    
+
     if(starting_with){ target = target.substr(0,target.length-1); }
     if(ending_with){ target = target.substr(1,target.length-1); }
 
@@ -100,14 +100,13 @@ function Go()
     var change = to - start;
     var currentTime = 0;
     var increment = 20;
-        
+
     var animate = function()
-    {        
+    {
       currentTime += increment;
       var val = Math.easeInOutQuad(currentTime, start, change, duration);
       element.scrollTop = val;
       left.stats.on_scroll();
-      left.navi.on_scroll();
       if(currentTime < duration){
         requestAnimationFrame(animate, increment);
       }
