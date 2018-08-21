@@ -30,7 +30,7 @@ function Left()
   document.body.appendChild(this.drag_el);
   document.body.appendChild(this.operator.el);
   document.body.appendChild(this.theme.button);
-  
+
   document.body.className = window.location.hash.replace("#","");
 
   this.textarea_el.setAttribute("autocomplete","off");
@@ -47,6 +47,7 @@ function Left()
     this.dictionary.start();
 
     this.textarea_el.focus();
+    this.textarea_el.addEventListener('scroll', () => { this.stats.on_scroll(); });
 
     this.textarea_el.value = `${this.splash}`;
     this.textarea_el.setSelectionRange(0,0);
@@ -57,8 +58,8 @@ function Left()
 
   this.select_autocomplete = function()
   {
-    if(left.selection.word.trim() != "" && left.suggestion && left.suggestion.toLowerCase() != left.active_word().toLowerCase()){ 
-      left.autocomplete(); 
+    if(left.selection.word.trim() != "" && left.suggestion && left.suggestion.toLowerCase() != left.active_word().toLowerCase()){
+      left.autocomplete();
     }else{
       left.inject("\u00a0\u00a0")
     }
@@ -67,7 +68,7 @@ function Left()
   this.select_synonym = function()
   {
     if(left.synonyms){
-      left.replace_active_word_with(left.synonyms[left.selection.index % left.synonyms.length]); 
+      left.replace_active_word_with(left.synonyms[left.selection.index % left.synonyms.length]);
       left.stats.update();
       left.selection.index += 1;
     }
@@ -127,7 +128,7 @@ function Left()
   {
     var from = position - 1;
 
-    // Find beginning of word 
+    // Find beginning of word
     while(from > -1){
       char = this.textarea_el.value[from];
       if(!char || !char.match(/[a-z]/i)){
@@ -196,18 +197,18 @@ function Left()
     if(w.substr(0,1) == w.substr(0,1).toUpperCase()){
       word = word.substr(0,1).toUpperCase()+word.substr(1,word.length);
     }
-    
+
     this.textarea_el.setSelectionRange(l.from, l.to);
 
     document.execCommand('insertText', false, word);
-    
+
     this.textarea_el.focus();
   }
 
   this.replace_selection_with = function(characters)
   {
     document.execCommand('insertText', false, characters);
-    this.refresh();    
+    this.refresh();
   }
 
   this.replace_line = function(id, new_text, del = false) // optional arg for deleting the line, used in actions
@@ -217,7 +218,7 @@ function Left()
 
     let from = arrJoin.length-lineArr[id].length;
     let to = arrJoin.length;
-    
+
     //splicing the string
     let new_text_value = this.textarea_el.value.slice(0,del ? from-1: from) + new_text + this.textarea_el.value.slice(to)
 

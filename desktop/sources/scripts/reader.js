@@ -7,7 +7,6 @@ function Reader()
 
   this.start = function()
   {
-    left.controller.set("reader");
     this.segment.from = left.textarea_el.selectionStart
     this.segment.to = left.textarea_el.selectionEnd
     this.segment.text = left.textarea_el.value.substr(this.segment.from,this.segment.to - this.segment.from).replace(/\n/g," ")
@@ -19,9 +18,14 @@ function Reader()
       return;
     }
 
+    left.controller.set("reader");
     this.queue = this.segment.words;
     this.index = 0;
-    this.run();
+
+    // Small delay before starting the reader
+    setTimeout(() => {
+      this.run();
+    }, 250);
   }
 
   this.alert = function(t)
@@ -54,8 +58,6 @@ function Reader()
 
   this.stop = function()
   {
-    if(this.index == 0){ return; }
-    
     left.controller.set("default");
     this.segment = {from:0,to:0,text:"",words:[]};
     this.queue = [];
