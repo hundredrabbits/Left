@@ -52,7 +52,7 @@ function Reader()
 
     var range = words.splice(0,left.reader.index).join(" ").length;
     left.select(left.reader.segment.from,left.reader.segment.from+range);
-    left.go.scroll_to(left.reader.segment.from, range);
+    left.go.scroll_to(0, left.reader.segment.from + range);
 
     setTimeout(left.reader.run,left.reader.speed);
   }
