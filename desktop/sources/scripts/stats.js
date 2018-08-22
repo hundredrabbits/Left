@@ -12,11 +12,11 @@ function Stats()
     if(left.textarea_el.selectionStart != left.textarea_el.selectionEnd){
       this.el.innerHTML = this._selection();
     }
-    else if(left.selection.word && left.suggestion){
-      this.el.innerHTML = this._suggestion();
-    }
     else if(left.synonyms){
       this.el.innerHTML = this._synonyms();
+    }
+    else if(left.selection.word && left.suggestion){
+      this.el.innerHTML = this._suggestion();
     }
     else if(left.selection.url){
       this.el.innerHTML = this._url();
