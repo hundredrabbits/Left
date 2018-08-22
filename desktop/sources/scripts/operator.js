@@ -24,7 +24,7 @@ function Operator()
   this.stop = function()
   {
     if(!this.is_active){ return; }
-    
+
     console.log("stopped")
     left.controller.set("default");
     this.is_active = false;
@@ -46,7 +46,7 @@ function Operator()
       e.preventDefault();
       return;
     }
-    
+
     if(!down && (e.key == "Enter" || e.code == "Enter")){
       this.active();
     }
@@ -141,11 +141,11 @@ function Operator()
 
   this.goto = function(q,bang = false)
   {
-    var target = parseInt(q);
+    var target = parseInt(q, 10);
 
-    if(q == "" || target < 1){ return; }
+    if(q == "" || target < 1 || Number.isNaN(target)) { return; }
 
-    if(bang){
+    if(bang) {
       this.stop();
       left.go.to_line(target);
     }
