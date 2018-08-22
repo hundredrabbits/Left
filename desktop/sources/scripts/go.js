@@ -106,7 +106,7 @@ function Go()
       currentTime += increment;
       var val = Math.easeInOutQuad(currentTime, start, change, duration);
       element.scrollTop = val;
-      left.stats.on_scroll();
+      if (left.controller.mode !== "reader") left.stats.on_scroll();
       if(currentTime < duration){
         requestAnimationFrame(animate, increment);
       }
