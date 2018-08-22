@@ -8,7 +8,7 @@ function Stats()
       this.el.innerHTML = left.insert.status();
       return;
     }
-      
+
     if(left.textarea_el.selectionStart != left.textarea_el.selectionEnd){
       this.el.innerHTML = this._selection();
     }
@@ -19,7 +19,7 @@ function Stats()
       this.el.innerHTML = this._synonyms();
     }
     else if(left.selection.url){
-      this.el.innerHTML = this._url(); 
+      this.el.innerHTML = this._url();
     }
     else{
       this.el.innerHTML = this._default();
@@ -35,10 +35,11 @@ function Stats()
 
   this._synonyms = function()
   {
-    var html = `<b>${left.selection.word}</b> `
-    for(id in left.synonyms){
-      var synonym = left.synonyms[id]
-      html += id == left.selection.index ? `<i>${synonym}</i> ` : synonym+" ";
+    var underlinedSyn = left.synonyms[left.selection.index];
+    var html = `<b>${left.selection.word}</b> <i>${underlinedSyn}</i> `
+
+    for (i = left.selection.index + 1; i < left.synonyms.length; i += 1) {
+      html += `${left.synonyms[i]} `;
     }
     return html
   }
@@ -65,7 +66,7 @@ function Stats()
     var scroll_distance = left.textarea_el.scrollTop;
     var scroll_max = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight;
     var scroll_perc = Math.min(1, (scroll_max == 0) ? 0 : (scroll_distance / scroll_max));
-  
+
     this.el.innerHTML = `${(scroll_perc * 100).toFixed(2)}%`
   }
 
