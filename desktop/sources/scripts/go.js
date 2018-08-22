@@ -90,7 +90,7 @@ function Go()
     var div = document.createElement("div");
     div.innerHTML = text_val.slice(0,to);
     document.body.appendChild(div);
-    animate_scroll_to(left.textarea_el,div.offsetHeight - 60,500);
+    animate_scroll_to(left.textarea_el,div.offsetHeight - 60, 200);
     div.remove();
   }
 
@@ -99,14 +99,14 @@ function Go()
     var start = element.scrollTop;
     var change = to - start;
     var currentTime = 0;
-    var increment = 20;
+    var increment = 20; // Equal to line-height
 
     var animate = function()
     {
       currentTime += increment;
       var val = Math.easeInOutQuad(currentTime, start, change, duration);
       element.scrollTop = val;
-      if (left.controller.mode !== "reader") left.stats.on_scroll();
+      if (!left.reader.active) left.stats.on_scroll();
       if(currentTime < duration){
         requestAnimationFrame(animate, increment);
       }

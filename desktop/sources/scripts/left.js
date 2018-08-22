@@ -47,7 +47,9 @@ function Left()
     this.dictionary.start();
 
     this.textarea_el.focus();
-    this.textarea_el.addEventListener('scroll', () => { this.stats.on_scroll(); });
+    this.textarea_el.addEventListener('scroll', () => {
+      if (!this.reader.active) this.stats.on_scroll();
+    });
 
     this.textarea_el.value = `${this.splash}`;
     this.textarea_el.setSelectionRange(0,0);

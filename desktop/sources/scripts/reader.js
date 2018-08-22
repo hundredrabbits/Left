@@ -4,6 +4,7 @@ function Reader()
   this.queue = [];
   this.index = 0;
   this.speed = 175;
+  this.active = false;
 
   this.start = function()
   {
@@ -19,6 +20,7 @@ function Reader()
     }
 
     left.controller.set("reader");
+    this.active = true;
     this.queue = this.segment.words;
     this.index = 0;
 
@@ -61,6 +63,7 @@ function Reader()
     this.segment = {from:0,to:0,text:"",words:[]};
     this.queue = [];
     this.index = 0;
+    this.active = false;
     left.operator.stop();
     left.refresh();
   }
