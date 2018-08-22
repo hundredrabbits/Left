@@ -280,8 +280,8 @@ function Left()
 
   this.find = function(word)
   {
-    var text = left.textarea_el.value;
-    var parts = text.split(word);
+    var text = left.textarea_el.value.toLowerCase();
+    var parts = text.split(word.toLowerCase());
     var a = [];
     var sum = 0;
 
