@@ -34,6 +34,7 @@ body.mobile navi { opacity:0; transition: opacity 10ms; }
 body.mobile textarea { width: 100vw; left: 5%; transition: left 200ms; transition-delay: 20ms; }
 body.mobile stats { width: 85%; left: 5%; transition: left 200ms; transition-delay: 20ms; }
 body.mobile div { width: 100vw; }
+body.mobile #operator { width: 85%; left: 5%; }
 
 body #theme_button { width: 40px;height: 40px;position: fixed;right: 0px;bottom: 0px;overflow: hidden; cursor: pointer; opacity: 0; transition: opacity 500ms }
 body #theme_button_icon { border: 1px solid white;width: 10px;height: 10px;position: absolute;left: 14.5px;top: 14.5px;border-radius: 30px;overflow: hidden; }
