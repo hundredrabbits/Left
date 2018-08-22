@@ -26,7 +26,8 @@ function Navi()
 
     el.textContent = page.name();
     el.className = `page ${is_active ? 'active' : ''} ${has_changes ? 'changes' : ''}`
-    el.onmouseup = function on_mouseup(e){ left.go.to_page(id); }
+    // el.onmouseup = function on_mouseup(e){ left.go.to_page(id); }
+    el.onclick = (e) => { left.go.to_page(id); }
 
     return el;
   }
@@ -40,7 +41,7 @@ function Navi()
 
     el.innerHTML = `<span>${marker.text}</span><i>${marker.line}</i>`;
     el.className = `marker ${marker.type} ${is_active ? 'active' : ''}`
-    el.onmouseup = function on_mouseup(e){ left.go.to_page(pid,marker.line); }
+    el.onclick = function on_click(e) { left.go.to_page(pid, marker.line); }
 
     return el;
   }

@@ -69,7 +69,7 @@ window.addEventListener('drop', function(e)
   left.navi.next_page();
 });
 
-document.onmouseup = function on_mouseup(e)
+document.onclick = function on_click(e) =>
 {
   left.selection.index = 0;
   left.operator.stop();
