@@ -90,6 +90,15 @@ function Operator()
     this[cmd](params,true);
   }
 
+  this.find_next = function()
+  {
+    if (!this.prev || !this.prev.includes("find:")) { return; }
+    var word = this.prev.replace("find:", "").trim();
+
+    // Find next occurence
+    this.find(word, true);
+  }
+
   this.find = function(q,bang = false)
   {
     if(q.length < 3){ return; }
@@ -105,9 +114,15 @@ function Operator()
       if(result > from){ break; }
     }
 
+    // Found final occurence, start from the top
+    if (result === left.textarea_el.selectionStart) {
+      left.textarea_el.setSelectionRange(0, 0);
+      this.find(q, true);
+      return;
+    }
+
     if(bang && result){
       left.go.to(result,result+q.length);
-      this.stop();
     }
   }
 
@@ -143,7 +158,11 @@ function Operator()
   {
     var target = parseInt(q, 10);
 
-    if(q == "" || target < 1 || Number.isNaN(target)) { return; }
+    var lines_count = left.textarea_el.value.split("\n").length - 1;
+
+    if(q == "" || target < 1 || target > lines_count || Number.isNaN(target)) {
+      return;
+    }
 
     if(bang) {
       this.stop();
