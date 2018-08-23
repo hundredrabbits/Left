@@ -26,7 +26,7 @@ body textarea { padding: 90px 0px 0px;height: calc(100vh - 130px);display: block
 body div { left: 25vw; max-width: 90%; width:50vw; line-height: 20px; font-family: 'input_mono_regular'; font-size: 12px; white-space: pre-wrap; word-wrap:break-word; }
 body drag { display: block;width: 100vw;height: 40px;position: fixed;top: 0px;-webkit-user-select: none;-webkit-app-region: drag;}
 
-body #operator { display: block;border-bottom: 0px;margin-top: 30px;position: fixed;bottom: 0px;left: calc((100vw / 2) - 25%);line-height: 40px;width: 540px;height: 40px;overflow: hidden;-webkit-user-select: none;-webkit-app-region: no-drag; bottom:-40px; transition: bottom 150ms }
+body #operator { display: block;border-bottom: 0px;margin-top: 30px;position: fixed;bottom: 0px;left: 25vw;;line-height: 40px;width:calc(75vw - 40px);height: 40px;overflow: hidden;-webkit-user-select: none;-webkit-app-region: no-drag; bottom:-40px; transition: bottom 150ms }
 body #operator.inactive { bottom:-40px; }
 body #operator.active { bottom:0px; }
 
@@ -42,7 +42,7 @@ body.mobile #operator { width: 85%; left: 5%; }
 
 body #theme_button { width: 40px;height: 40px;position: fixed;right: 0px;bottom: 0px;overflow: hidden; cursor: pointer; opacity: 0; transition: opacity 500ms }
 body #theme_button_icon { border: 1px solid white;width: 10px;height: 10px;position: absolute;left: 14.5px;top: 14.5px;border-radius: 30px;overflow: hidden; }
-body #theme_button_icon_fg { width: 20px;height: 6.5px;background: white;position: relative;left: -2px;top: -2px; transition: top 250ms; }
+body #theme_button_icon_fg { max-width: 20px; width: 20px;height: 6.5px;background: white;position: relative;left: -2px;top: -2px; transition: top 250ms; }
 body #theme_button.active #theme_button_icon_fg { top:5.5px; }
 body #theme_button:hover { opacity: 1 }
 

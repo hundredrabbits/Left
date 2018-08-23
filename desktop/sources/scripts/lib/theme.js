@@ -90,7 +90,7 @@ function Theme()
 
   this.button = document.createElement("a");
   this.button.id = "theme_button";
-  this.button.onmouseup = function on_mouseup(e){ left.theme.toggle(); }
+  this.button.onclick = function on_click(e) { left.theme.toggle(); }
 
   this.button_icon = document.createElement("div");
   this.button_icon.id = "theme_button_icon";

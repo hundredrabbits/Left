@@ -129,6 +129,8 @@
       left.controller.add_role("operator","Edit","delete");
       left.controller.add_role("operator","Edit","selectall");
 
+      left.controller.add("operator","Find","Find",() => { left.operator.start("find: "); },"CmdOrCtrl+F");
+      left.controller.add("operator","Find","Find Next",() => { left.operator.find_next(); },"CmdOrCtrl+N");
       left.controller.add("operator","Operator","Stop",() => { left.operator.stop(); },"Esc");
 
       left.controller.commit();
