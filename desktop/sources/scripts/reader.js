@@ -37,11 +37,11 @@ function Reader()
   {
     if(left.reader.queue.length == 0){ left.reader.stop(); return; }
 
-    var words = left.reader.segment.text.split(" ");
-    var word = left.reader.queue[0];
-    var orp = left.reader.find_orp(word,words);
+    let words = left.reader.segment.text.split(" ");
+    let word = left.reader.queue[0];
+    let orp = left.reader.find_orp(word,words);
 
-    var html = ": ";
+    let html = ": ";
     html += "<span style='opacity:0'>"+left.reader.orp_pad(words,orp)+"</span>"
     html += "<span class='fm'>"+orp.before.trim()+"</span><span class='fh'>"+orp.key.trim()+"</span><span class='fm'>"+(word.length > 1 ? orp.after : '').trim()+"</span>";
     html += "<span style='float:right'>"+left.reader.queue.length+"W "+parseInt((left.reader.queue.length * 175)/1000)+"S "+parseInt(((left.reader.index)/parseFloat(left.reader.queue.length+left.reader.index)) * 100)+"% "+parseInt((1000/left.reader.speed)*60)+"W/M</span>"
@@ -50,7 +50,7 @@ function Reader()
     left.reader.queue = left.reader.queue.splice(1,left.reader.queue.length-1);
     left.reader.index += 1;
 
-    var range = words.splice(0,left.reader.index).join(" ").length;
+    let range = words.splice(0,left.reader.index).join(" ").length;
     left.select(left.reader.segment.from,left.reader.segment.from+range);
     left.go.scroll_to(0, left.reader.segment.from + range);
 
@@ -68,28 +68,28 @@ function Reader()
     left.refresh();
   }
 
-  this.find_orp = function(word,words)
+  this.find_orp = function(w,words)
   {
-    var word = word.toLowerCase().trim();
-    var index = parseInt(word.length/2)-1;
-    var before = word.substr(0,index);
-    var after = word.substr(index+1,word.length-index);
+    let word = w.toLowerCase().trim();
+    let index = parseInt(word.length/2)-1;
+    let before = word.substr(0,index);
+    let after = word.substr(index+1,word.length-index);
 
     return {before:before,key:word.substr(index,1),after:after,index:index}
   }
 
   this.orp_pad = function(words,orp)
   {
-    var longest = "";
-    for(i in words){
+    let longest = "";
+    for(let i in words){
       if(words[i].length < longest.length){ continue; }
       longest = words[i]
     }
 
-    var longest_orp = left.reader.find_orp(longest)
-    var longest_pad = longest_orp.index;
+    let longest_orp = left.reader.find_orp(longest)
+    let longest_pad = longest_orp.index;
 
-    var pad = "";
+    let pad = "";
 
     i = 0;
     while(i < longest_pad - (orp.index)){

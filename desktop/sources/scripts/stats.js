@@ -26,17 +26,17 @@ function Stats()
     }
   }
 
-  this._default = function(stats)
+  this._default = function()
   {
-    var stats = this.parse(left.selected());
-    var date = new Date();
+    let stats = this.parse(left.selected());
+    let date = new Date();
     return `${stats.l}L ${stats.w}W ${stats.v}V ${stats.c}C ${stats.p}% <span class='right'>${date.getHours()}:${date.getMinutes()}</span>`
   }
 
   this._synonyms = function()
   {
-    var underlinedSyn = left.synonyms[left.selection.index];
-    var html = `<b>${left.selection.word}</b> <i>${underlinedSyn}</i> `
+    let underlinedSyn = left.synonyms[left.selection.index];
+    let html = `<b>${left.selection.word}</b> <i>${underlinedSyn}</i> `
 
     for (i = left.selection.index + 1; i < left.synonyms.length; i += 1) {
       html += `${left.synonyms[i]} `;
@@ -51,21 +51,21 @@ function Stats()
 
   this._selection = function()
   {
-    var p = ((left.textarea_el.selectionEnd/left.textarea_el.value.length)*100).toFixed(2)
+    let p = ((left.textarea_el.selectionEnd/left.textarea_el.value.length)*100).toFixed(2)
     return `<b>[${left.textarea_el.selectionStart},${left.textarea_el.selectionEnd}]</b> ${p}%`
   }
 
   this._url = function()
   {
-    var date = new Date();
+    let date = new Date();
     return `Open <b>${left.selection.url}</b> with &lt;c-b&gt; <span class='right'>${date.getHours()}:${date.getMinutes()}</span>`;
   }
 
   this.on_scroll = function()
   {
-    var scroll_distance = left.textarea_el.scrollTop;
-    var scroll_max = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight;
-    var scroll_perc = Math.min(1, (scroll_max == 0) ? 0 : (scroll_distance / scroll_max));
+    let scroll_distance = left.textarea_el.scrollTop;
+    let scroll_max = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight;
+    let scroll_perc = Math.min(1, (scroll_max == 0) ? 0 : (scroll_distance / scroll_max));
 
     this.el.innerHTML = `${(scroll_perc * 100).toFixed(2)}%`
   }
@@ -74,13 +74,13 @@ function Stats()
   {
     text = text.length > 5 ? text.trim() : left.textarea_el.value;
 
-    var h = {};
-    var words = text.toLowerCase().replace(/[^a-z0-9 ]/g, '').split(" ");
-    for(id in words){
+    let h = {};
+    let words = text.toLowerCase().replace(/[^a-z0-9 ]/g, '').split(" ");
+    for(let id in words){
       h[words[id]] = 1
     }
 
-    var stats = {};
+    let stats = {};
     stats.l = text.split("\n").length; // lines_count
     stats.w = text.split(" ").length; // words_count
     stats.c = text.length; // chars_count

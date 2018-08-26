@@ -49,6 +49,7 @@ function Operator()
 
     if(!down && (e.key == "Enter" || e.code == "Enter")){
       this.active();
+      e.preventDefault();
     }
     else if(!down){
       this.passive();
@@ -68,8 +69,8 @@ function Operator()
   {
     if(this.el.value.indexOf(" ") < 0){ return; }
 
-    var cmd = this.el.value.split(" ")[0].replace(":","").trim()
-    var params = this.el.value.replace(cmd,"").replace(":","").trim()
+    let cmd = this.el.value.split(" ")[0].replace(":","").trim()
+    let params = this.el.value.replace(cmd,"").replace(":","").trim()
 
     if(!this[cmd]){ console.info(`Unknown command ${cmd}.`); return; }
 
@@ -82,8 +83,8 @@ function Operator()
 
     this.prev = this.el.value;
 
-    var cmd = this.el.value.split(" ")[0].replace(":","").trim()
-    var params = this.el.value.replace(cmd,"").replace(":","").trim()
+    let cmd = this.el.value.split(" ")[0].replace(":","").trim()
+    let params = this.el.value.replace(cmd,"").replace(":","").trim()
 
     if(!this[cmd]){ console.info(`Unknown command ${cmd}.`); return; }
 
@@ -93,7 +94,7 @@ function Operator()
   this.find_next = function()
   {
     if (!this.prev || !this.prev.includes("find:")) { return; }
-    var word = this.prev.replace("find:", "").trim();
+    let word = this.prev.replace("find:", "").trim();
 
     // Find next occurence
     this.find(word, true);
@@ -103,13 +104,13 @@ function Operator()
   {
     if(q.length < 3){ return; }
 
-    var results = left.find(q);
+    let results = left.find(q);
 
     if(results.length < 1){ return; }
 
-    var from = left.textarea_el.selectionStart;
-    var result = 0;
-    for(id in results){
+    let from = left.textarea_el.selectionStart;
+    let result = 0;
+    for(let id in results){
       result = results[id];
       if(result > from){ break; }
     }
@@ -130,19 +131,19 @@ function Operator()
   {
     if(q.indexOf("->") < 0){ return; }
 
-    var a = q.split("->")[0].trim();
-    var b = q.split("->")[1].trim();
+    let a = q.split("->")[0].trim();
+    let b = q.split("->")[1].trim();
 
     if(a.length < 3){ return; }
     if(b.length < 3){ return; }
 
-    var results = left.find(a);
+    let results = left.find(a);
 
     if(results.length < 1){ return; }
 
-    var from = left.textarea_el.selectionStart;
-    var result = 0;
-    for(id in results){
+    let from = left.textarea_el.selectionStart;
+    let result = 0;
+    for(let id in results){
       result = results[id];
       if(result > from){ break; }
     }
@@ -156,9 +157,9 @@ function Operator()
 
   this.goto = function(q,bang = false)
   {
-    var target = parseInt(q, 10);
+    let target = parseInt(q, 10);
 
-    var lines_count = left.textarea_el.value.split("\n").length - 1;
+    let lines_count = left.textarea_el.value.split("\n").length - 1;
 
     if(q == "" || target < 1 || target > lines_count || Number.isNaN(target)) {
       return;

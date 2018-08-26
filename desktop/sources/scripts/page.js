@@ -8,7 +8,7 @@ function Page(text = "",path = null)
   {
     if(!this.path){ return "Untitled"; }
     
-    var parts = this.path.replace(/\\/g,"/").split("/");
+    let parts = this.path.replace(/\\/g,"/").split("/");
     return parts[parts.length-1];
   }
 
@@ -34,11 +34,11 @@ function Page(text = "",path = null)
 
   this.markers = function()
   {
-    var a = [];
-    var lines = this.text.split("\n");
+    let a = [];
+    let lines = this.text.split("\n");
   
-    for(var id in lines){
-      var line = lines[id].trim();
+    for(let id in lines){
+      let line = lines[id].trim();
       if(line.substr(0,2) == "##"){ a.push({id:a.length,text:line.replace("##","").trim(),line:parseInt(id),type:"subheader"}); }
       else if(line.substr(0,1) == "#"){ a.push({id:a.length,text:line.replace("#","").trim(),line:parseInt(id),type:"header"}); }
       else if(line.substr(0,2) == "--"){ a.push({id:a.length,text:line.replace("--","").trim(),line:parseInt(id),type:"comment"}); }

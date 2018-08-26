@@ -39,7 +39,7 @@ function Left()
   this.textarea_el.setAttribute("spellcheck","false");
   this.textarea_el.setAttribute("type","text");
 
-  var left = this;
+  let left = this;
 
   this.start = function()
   {
@@ -83,7 +83,7 @@ function Left()
 
   this.select_word = function(target)
   {
-    var from = left.textarea_el.value.split(target)[0].length;
+    let from = left.textarea_el.value.split(target)[0].length;
     this.select(from,from+target.length);
   }
 
@@ -100,9 +100,9 @@ function Left()
 
   this.refresh = function()
   {
-    var time = performance.now();
+    let time = performance.now();
 
-    var next_char = this.textarea_el.value.substr(left.textarea_el.selectionEnd,1);
+    let next_char = this.textarea_el.value.substr(left.textarea_el.selectionEnd,1);
 
     left.selection.word = this.active_word();
     left.suggestion     = (next_char == "" || next_char == " " || next_char == "\n") ? left.dictionary.find_suggestion(left.selection.word) : null;
@@ -120,15 +120,15 @@ function Left()
 
   this.selected = function()
   {
-    var from = this.textarea_el.selectionStart;
-    var to = this.textarea_el.selectionEnd;
-    var length = to - from;
+    let from = this.textarea_el.selectionStart;
+    let to = this.textarea_el.selectionEnd;
+    let length = to - from;
     return this.textarea_el.value.substr(from,length);
   }
 
   this.active_word_location = function(position = left.textarea_el.selectionEnd)
   {
-    var from = position - 1;
+    let from = position - 1;
 
     // Find beginning of word
     while(from > -1){
@@ -140,7 +140,7 @@ function Left()
     }
 
     // Find end of word
-    var to = from+1;
+    let to = from+1;
     while(to < from+30){
       char = this.textarea_el.value[to];
       if(!char || !char.match(/[a-z]/i)){
@@ -156,27 +156,27 @@ function Left()
 
   this.active_line_id = function()
   {
-    var segments = left.textarea_el.value.substr(0,left.textarea_el.selectionEnd).split("\n");
+    let segments = left.textarea_el.value.substr(0,left.textarea_el.selectionEnd).split("\n");
     return segments.length-1;
   }
 
   this.active_line = function()
   {
-    var text = left.textarea_el.value;
-    var lines = text.split("\n");
+    let text = left.textarea_el.value;
+    let lines = text.split("\n");
     return lines[this.active_line_id()];
   }
 
   this.active_word = function()
   {
-    var l = this.active_word_location();
+    let l = this.active_word_location();
     return left.textarea_el.value.substr(l.from,l.to-l.from);
   }
 
   this.active_url = function()
   {
-    var words = this.active_line().split(" ");
-    for(id in words){
+    let words = this.active_line().split(" ");
+    for(let id in words){
       if(words[id].indexOf("://") > -1 || words[id].indexOf("www.") > -1){
         return words[id];
       }
@@ -186,14 +186,14 @@ function Left()
 
   this.prev_character = function()
   {
-    var l = this.active_word_location();
+    let l = this.active_word_location();
     return left.textarea_el.value.substr(l.from-1,1);
   }
 
   this.replace_active_word_with = function(word)
   {
-    var l = this.active_word_location();
-    var w = left.textarea_el.value.substr(l.from,l.to-l.from);
+    let l = this.active_word_location();
+    let w = left.textarea_el.value.substr(l.from,l.to-l.from);
 
     // Preserve capitalization
     if(w.substr(0,1) == w.substr(0,1).toUpperCase()){
@@ -242,7 +242,7 @@ function Left()
     this.textarea_el.setSelectionRange(cursor_start,cursor_end);
     }
     else if(this.textarea_el.createTextRange){
-      var range = this.textarea_el.createTextRange();
+      let range = this.textarea_el.createTextRange();
       range.collapse(true);
       range.moveEnd('character',cursor_end);
       range.moveStart('character',cursor_start);
@@ -255,7 +255,7 @@ function Left()
 
   this.inject = function(characters = "__")
   {
-    var pos = this.textarea_el.selectionStart;
+    let pos = this.textarea_el.selectionStart;
     this.textarea_el.setSelectionRange(pos, pos);
     document.execCommand('insertText', false, characters);
     this.refresh();
@@ -269,10 +269,10 @@ function Left()
 
   this.inject_multiline = function(characters = "__")
   {
-    var lines = this.selected().match(/[^\r\n]+/g);
-    var text = ""
-    for(id in lines){
-      var line = lines[id];
+    let lines = this.selected().match(/[^\r\n]+/g);
+    let text = ""
+    for(let id in lines){
+      let line = lines[id];
       text += `${characters}${line}\n`
     }
     this.replace_selection_with(text);
@@ -280,13 +280,13 @@ function Left()
 
   this.find = function(word)
   {
-    var text = left.textarea_el.value.toLowerCase();
-    var parts = text.split(word.toLowerCase());
-    var a = [];
-    var sum = 0;
+    let text = left.textarea_el.value.toLowerCase();
+    let parts = text.split(word.toLowerCase());
+    let a = [];
+    let sum = 0;
 
-    for(id in parts){
-      var p = parts[id].length
+    for(let id in parts){
+      let p = parts[id].length
       a.push(sum + p);
       sum += p + word.length;
     }

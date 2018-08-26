@@ -6,7 +6,7 @@ function Go()
 
     console.log(`Go to page:${left.project.index}/${left.project.pages.length}`)
 
-    var page = left.project.pages[left.project.index];
+    let page = left.project.pages[left.project.index];
 
     if(!page){ console.warn("Missing page",this.index); return; }
 
@@ -31,7 +31,7 @@ function Go()
       left.textarea_el.setSelectionRange(from,to);
     }
     else if(left.textarea_el.createTextRange){
-      var range = left.textarea_el.createTextRange();
+      let range = left.textarea_el.createTextRange();
       range.collapse(true);
       range.moveEnd('character',to);
       range.moveStart('character',from);
@@ -45,38 +45,38 @@ function Go()
 
   this.to_word = function(word,from = 0, tries = 0, starting_with = false, ending_with = false)
   {
-    var target = word;
+    let target = word;
 
     if(starting_with){ target = target.substr(0,target.length-1); }
     if(ending_with){ target = target.substr(1,target.length-1); }
 
     if(left.textarea_el.value.substr(from,length).indexOf(target) == -1 || tries < 1){ console.log("failed"); return; }
 
-    var length = left.textarea_el.value.length - from;
-    var segment = left.textarea_el.value.substr(from,length)
-    var location = segment.indexOf(target);
-    var char_before = segment.substr(location-1,1);
-    var char_after = segment.substr(location+target.length,1);
+    let length = left.textarea_el.value.length - from;
+    let segment = left.textarea_el.value.substr(from,length)
+    let location = segment.indexOf(target);
+    let char_before = segment.substr(location-1,1);
+    let char_after = segment.substr(location+target.length,1);
 
     // Check for full word
     if(!starting_with && !ending_with && !char_before.match(/[a-z]/i) && !char_after.match(/[a-z]/i)){
       left.select(location+from,location+from+target.length);
-      var perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
-      var offset = 60;
+      let perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
+      let offset = 60;
       left.textarea_el.scrollTop = (left.textarea_el.scrollHeight * perc) - offset;
       return location;
     }
     else if(starting_with && !char_before.match(/[a-z]/i) && char_after.match(/[a-z]/i)){
       left.select(location+from,location+from+target.length);
-      var perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
-      var offset = 60;
+      let perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
+      let offset = 60;
       left.textarea_el.scrollTop = (left.textarea_el.scrollHeight * perc) - offset;
       return location;
     }
     else if(ending_with && char_before.match(/[a-z]/i) && !char_after.match(/[a-z]/i)){
       left.select(location+from,location+from+target.length);
-      var perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
-      var offset = 60;
+      let perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
+      let offset = 60;
       left.textarea_el.scrollTop = (left.textarea_el.scrollHeight * perc) - offset;
       return location;
     }
@@ -87,7 +87,7 @@ function Go()
   this.scroll_to = function(from,to)
   {
     let text_val = left.textarea_el.value;
-    var div = document.createElement("div");
+    let div = document.createElement("div");
     div.innerHTML = text_val.slice(0,to);
     document.body.appendChild(div);
     animate_scroll_to(left.textarea_el,div.offsetHeight - 60, 200);
@@ -96,15 +96,15 @@ function Go()
 
   function animate_scroll_to(element, to, duration)
   {
-    var start = element.scrollTop;
-    var change = to - start;
-    var currentTime = 0;
-    var increment = 20; // Equal to line-height
+    let start = element.scrollTop;
+    let change = to - start;
+    let currentTime = 0;
+    let increment = 20; // Equal to line-height
 
-    var animate = function()
+    let animate = function()
     {
       currentTime += increment;
-      var val = Math.easeInOutQuad(currentTime, start, change, duration);
+      let val = Math.easeInOutQuad(currentTime, start, change, duration);
       element.scrollTop = val;
       if (!left.reader.active) left.stats.on_scroll();
       if(currentTime < duration){

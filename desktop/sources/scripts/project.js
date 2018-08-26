@@ -21,7 +21,7 @@ function Project()
 
   this.load = function(path)
   {
-    var data;
+    let data;
     try {
       data = fs.readFileSync(path, 'utf-8');
     } catch (err) {
@@ -46,11 +46,11 @@ function Project()
   {
     console.log("Open Pages");
 
-    var paths = dialog.showOpenDialog(app.win, {properties: ['openFile','multiSelections']});
+    let paths = dialog.showOpenDialog(app.win, {properties: ['openFile','multiSelections']});
 
     if(!paths){ console.log("Nothing to load"); return; }
 
-    for(id in paths){
+    for(let id in paths){
       this.pages.push(new Page(this.load(paths[id]),paths[id]));
     }
 
@@ -61,7 +61,7 @@ function Project()
   {
     console.log("Save Page");
 
-    var page = this.page()
+    let page = this.page()
 
     if(!page.path){ this.save_as(); return; }
 
@@ -78,8 +78,8 @@ function Project()
   {
     console.log("Save As Page");
 
-    var page = this.page()
-    var path = dialog.showSaveDialog(app.win);
+    let page = this.page()
+    let path = dialog.showSaveDialog(app.win);
 
     if(!path){ console.log("Nothing to save"); return; }
 
@@ -101,7 +101,7 @@ function Project()
   this.close = function()
   {
     if(this.page().has_changes()){
-      var response = dialog.showMessageBox(app.win, {
+      let response = dialog.showMessageBox(app.win, {
         type: 'question',
         buttons: ['Yes', 'No'],
         title: 'Confirm',
@@ -127,7 +127,7 @@ function Project()
 
   this.discard = function()
   {
-    var response = dialog.showMessageBox(app.win, {
+    let response = dialog.showMessageBox(app.win, {
       type: 'question',
       buttons: ['Yes', 'No'],
       title: 'Confirm',
@@ -143,7 +143,7 @@ function Project()
 
   this.has_changes = function()
   {
-    for(id in this.pages){
+    for(let id in this.pages){
       if(this.pages[id].has_changes()){ return true;}
     }
     return false;
@@ -161,7 +161,7 @@ function Project()
 
   this.quit_dialog = function()
   {
-    var response = dialog.showMessageBox(app.win, {
+    let response = dialog.showMessageBox(app.win, {
       type: 'question',
       buttons: ['Yes', 'No'],
       title: 'Confirm',

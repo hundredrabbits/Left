@@ -1,4 +1,4 @@
-var SYN_DB = {
+const SYN_DB = {
   "abandon": [
     "desert",
     "leave",
