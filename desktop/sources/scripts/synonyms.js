@@ -21898,21 +21898,6 @@ const SYN_DB = {
     "temper",
     "mood"
   ],
-  "jframe": [
-    "construct",
-    "build",
-    "puttogether",
-    "form",
-    "compose",
-    "make",
-    "constitute",
-    "invent",
-    "devise",
-    "plan",
-    "contrive",
-    "fabricate",
-    "forge"
-  ],
   "franchise": [
     "right",
     "privilege",
@@ -22582,7 +22567,7 @@ const SYN_DB = {
     "coming",
     "advenient"
   ],
-  "ggabble": [
+  "gabble": [
     "prate",
     "jargon",
     "stuff",
@@ -27393,18 +27378,6 @@ const SYN_DB = {
     "exaction",
     "encroachment"
   ],
-  "thority": [
-    "thority",
-    "truth",
-    "verity",
-    "fact",
-    "certainty",
-    "verification",
-    "genuine",
-    "ness",
-    "authenticity",
-    "honesty"
-  ],
   "impost": [
     "tax",
     "duty",
@@ -28488,7 +28461,6 @@ const SYN_DB = {
     "defect",
     "disease",
     "malady",
-    "uusoundness"
   ],
   "inflame": [
     "excite",
@@ -32673,18 +32645,6 @@ const SYN_DB = {
     "sweet",
     "admirable"
   ],
-  "xower": [
-    "depress",
-    "sink",
-    "reduce",
-    "diminish",
-    "humble",
-    "drop",
-    "degrade",
-    "disgrace",
-    "debase",
-    "lessen"
-  ],
   "lowering": [
     "gloomy",
     "threatening",
@@ -32967,7 +32927,7 @@ const SYN_DB = {
     "untrue",
     "recumbent"
   ],
-  "mmacerate": [
+  "macerate": [
     "weaken",
     "soften",
     "attenuate",
@@ -40181,17 +40141,6 @@ const SYN_DB = {
     "extract",
     "paraphrase"
   ],
-  "rbabble": [
-    "mob",
-    "crowd",
-    "people",
-    "populace",
-    "herd",
-    "multitudes",
-    "commonalty",
-    "scum",
-    "dregs"
-  ],
   "racy": [
     "lively",
     "piquant",
@@ -45164,7 +45113,7 @@ const SYN_DB = {
     "mold",
     "fashion"
   ],
-  "uubiquity": [
+  "ubiquity": [
     "omnipresence",
     "allpervasiveness"
   ],
