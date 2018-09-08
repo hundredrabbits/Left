@@ -6,46 +6,32 @@ function Navi()
 
   this.update = function()
   {
-    this.el.innerHTML = "";
+    let html = ""
+    let current = this.marker()
 
     for(let pid in left.project.pages){
       let page = left.project.pages[pid];
-      this.el.appendChild(this._page(pid,page));
+      html += this._page(pid,page);
       let markers = page.markers();
       for(let i in markers){
         let marker = markers[i]
-        this.el.appendChild(this._marker(pid,i,marker,markers));
+        html += this._marker(pid,current,marker,markers);
       }
     }
+
+    this.el.innerHTML = html;
   }
 
   this._page = function(id,page)
   {
-    let el = document.createElement('li');
-
-    let is_active = left.project.index == id
-    let has_changes = left.project.pages[id].has_changes();
-
-    el.textContent = page.name();
-    el.className = `page ${is_active ? 'active' : ''} ${has_changes ? 'changes' : ''}`
-    // el.onmouseup = function on_mouseup(e){ left.go.to_page(id); }
-    el.onclick = (e) => { left.go.to_page(id); }
-
-    return el;
+    return `<li class='page ${left.project.index == id ? 'active' : ''} ${left.project.pages[id].has_changes() ? 'changes' : ''}' onclick='left.go.to_page(${id})'>${page.name()}</li>`;
   }
 
-  this._marker = function(pid,id,marker,markers)
+  this._marker = function(pid,current,marker,markers)
   {
-    let el = document.createElement('li');
+    let is_active = current && current.line == marker.line;
 
-    let pos = left.active_line_id();
-    let is_active = this.marker() && this.marker().line == marker.line;
-
-    el.innerHTML = `<span>${marker.text}</span><i>${marker.line}</i>`;
-    el.className = `marker ${marker.type} ${is_active ? 'active' : ''}`
-    el.onclick = function on_click(e) { left.go.to_page(pid, marker.line); }
-
-    return el;
+    return `<li class='marker ${marker.type} ${is_active ? 'active' : ''}' onclick='left.go.to_page(${pid}, ${marker.line})'><span>${marker.text}</span><i>${marker.line}</i></li>`;
   }
 
   this.next_page = function()
@@ -64,7 +50,7 @@ function Navi()
   {
     let page = clamp(parseInt(left.project.index),0,left.project.pages.length-1)
     let marker = this.marker();
-    let markers = left.project.page().markers();
+    let markers = left.project.pages[left.project.index].markers();
     let next_index = clamp(marker.id+1,0,markers.length-1);
 
     left.go.to_page(page,markers[next_index].line);
@@ -74,7 +60,7 @@ function Navi()
   {
     let page = clamp(parseInt(left.project.index),0,left.project.pages.length-1)
     let marker = this.marker();
-    let markers = left.project.page().markers();
+    let markers = left.project.pages[left.project.index].markers();
     let next_index = clamp(marker.id-1,0,markers.length-1);
 
     left.go.to_page(page,markers[next_index].line);
@@ -82,7 +68,7 @@ function Navi()
 
   this.marker = function()
   {
-    let markers = left.project.page().markers();
+    let markers = left.project.pages[left.project.index].markers();
     let pos = left.active_line_id();
 
     let prev = null;

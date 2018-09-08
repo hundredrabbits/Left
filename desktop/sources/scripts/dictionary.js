@@ -16,10 +16,10 @@ function Dictionary()
 
   this.add_word = function(s)
   {
-    let word = s.toLowerCase();
+    let word = s.toLowerCase().trim();
     let regex = /[^a-z]/gi
 
-    if(regex.test(word)){ return; }
+    if(regex.test(word) || word.length < 4){ return; }
 
     this.vocabulary[this.vocabulary.length] = word    
   }
@@ -44,38 +44,38 @@ function Dictionary()
     console.log(`Built ${Object.keys(this.synonyms).length} synonyms, in ${(performance.now() - time).toFixed(2)}ms.`);
   }
 
-  this.find_suggestion = function(target)
+  this.find_suggestion = function(str)
   {
-    target = target.toLowerCase();
+    let target = str.toLowerCase();
 
-    for(let word_id in this.vocabulary){
-      let word = this.vocabulary[word_id];
-      if(word.length < 4){ continue; }
-      if(word.substr(0,target.length) == target){ return word; }
+    for(let id in this.vocabulary){
+      if(this.vocabulary[id].substr(0,target.length) != target){ continue; }
+      return this.vocabulary[id];
     }
     return null;
   }
 
-  this.find_synonym = function(to_word)
+  this.find_synonym = function(str)
   {
-    to_word = to_word.toLowerCase();
+    let target = str.toLowerCase();
 
-    if(this.synonyms[to_word]){ return uniq(this.synonyms[to_word]); }
+    if(this.synonyms[target]){ return uniq(this.synonyms[target]); }
 
     // If plurral
-    let last_letter = to_word[to_word.length-1];
-    if(last_letter == "s" && this.synonyms[to_word.substr(0,to_word.length-1)]){ return uniq(this.synonyms[to_word.substr(0,to_word.length-1)]); }
+    if(target[target.length-1] == "s" && this.synonyms[target.substr(0,target.length-1)]){ return uniq(this.synonyms[target.substr(0,target.length-1)]); }
 
     return null;
   }
 
   this.update = function()
   {
+    let time = performance.now();
     let words = left.textarea_el.value.toLowerCase().split(/[^\w\-]+/);
 
     for(let word_id in words){
       this.add_word(words[word_id])
     }
+    console.log(`Updated Dictionary in ${(performance.now() - time).toFixed(2)}ms.`);
   }
 
   function uniq(a1){ let a2 = []; for(let id in a1){ if(a2.indexOf(a1[id]) == -1){ a2[a2.length] = a1[id]; } } return a2; }

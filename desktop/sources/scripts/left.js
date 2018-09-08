@@ -50,7 +50,7 @@ function Left()
 
     this.textarea_el.focus();
     this.textarea_el.addEventListener('scroll', () => {
-      if (!this.reader.active) this.stats.on_scroll();
+      if(!this.reader.active) this.stats.on_scroll();
     });
 
     this.textarea_el.value = `${this.splash}`;
@@ -100,7 +100,7 @@ function Left()
     this.select(from,to)
   }
 
-  this.refresh = function()
+  this.refresh = function(hard = false)
   {
     let time = performance.now();
 

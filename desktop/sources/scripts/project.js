@@ -10,15 +10,10 @@ function Project()
 
   // ========================
 
-  this.page = function()
-  {
-    return this.pages[this.index];
-  }
-
   this.update = function()
   {
-    if(!this.page()){ console.warn("Missing page"); return; }
-    this.page().text = left.textarea_el.value;
+    if(!this.pages[this.index]){ console.warn("Missing page"); return; }
+    this.pages[this.index].text = left.textarea_el.value;
   }
 
   this.load = function(path)
@@ -63,7 +58,7 @@ function Project()
   {
     console.log("Save Page");
 
-    let page = this.page()
+    let page = this.pages[this.index]
 
     if(!page.path){ this.save_as(); return; }
 
@@ -80,7 +75,7 @@ function Project()
   {
     console.log("Save As Page");
 
-    let page = this.page()
+    let page = this.pages[this.index]
     let path = dialog.showSaveDialog(app.win);
 
     if(!path){ console.log("Nothing to save"); return; }
@@ -102,7 +97,7 @@ function Project()
 
   this.close = function()
   {
-    if(this.page().has_changes()){
+    if(this.pages[this.index].has_changes()){
       let response = dialog.showMessageBox(app.win, {
         type: 'question',
         buttons: ['Yes', 'No'],
@@ -137,8 +132,8 @@ function Project()
       icon: `${app.path()}/icon.png`
     });
     if (response === 0) { // Runs the following if 'Yes' is clicked
-      this.page().revert();
-      left.textarea_el.value = this.page().text;
+      this.pages[this.index].revert();
+      left.textarea_el.value = this.pages[this.index].text;
       left.refresh();
     }
   }
