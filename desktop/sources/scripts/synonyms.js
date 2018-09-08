@@ -1,3 +1,5 @@
+"use strict";
+
 const SYN_DB = {
   "abandon": [
     "desert",

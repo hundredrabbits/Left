@@ -1,3 +1,5 @@
+"use strict";
+
 document.onkeydown = function key_down(e)
 {
   left.last_char = e.key

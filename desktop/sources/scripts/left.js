@@ -1,3 +1,5 @@
+"use strict";
+
 function Left()
 {
   this.splash = new Splash();
@@ -132,7 +134,7 @@ function Left()
 
     // Find beginning of word
     while(from > -1){
-      char = this.textarea_el.value[from];
+      let char = this.textarea_el.value[from];
       if(!char || !char.match(/[a-z]/i)){
         break;
       }
@@ -142,7 +144,7 @@ function Left()
     // Find end of word
     let to = from+1;
     while(to < from+30){
-      char = this.textarea_el.value[to];
+      let char = this.textarea_el.value[to];
       if(!char || !char.match(/[a-z]/i)){
         break;
       }

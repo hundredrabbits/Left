@@ -1,3 +1,5 @@
+"use strict";
+
 function Reader()
 {
   this.segment = {from:0,to:0,text:"",words:[]};

@@ -1,3 +1,5 @@
+"use strict";
+
 function Operator()
 {
   this.el = document.createElement('input'); this.el.id = "operator";

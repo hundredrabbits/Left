@@ -1,3 +1,5 @@
+"use strict";
+
 function Splash()
 {
   this.toString = function()

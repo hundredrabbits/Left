@@ -1,3 +1,5 @@
+"use strict";
+
 function Stats()
 {
   this.el = document.createElement('stats');
@@ -38,7 +40,7 @@ function Stats()
     let underlinedSyn = left.synonyms[left.selection.index];
     let html = `<b>${left.selection.word}</b> <i>${underlinedSyn}</i> `
 
-    for (i = left.selection.index + 1; i < left.synonyms.length; i += 1) {
+    for(let i = left.selection.index + 1; i < left.synonyms.length; i += 1) {
       html += `${left.synonyms[i]} `;
     }
     return html

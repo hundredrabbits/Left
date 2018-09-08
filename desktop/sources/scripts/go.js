@@ -1,3 +1,5 @@
+"use strict";
+
 function Go()
 {
   this.to_page = function(id,line = 0)

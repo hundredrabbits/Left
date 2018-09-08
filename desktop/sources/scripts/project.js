@@ -1,3 +1,5 @@
+"use strict";
+
 function Project()
 {
   this.pages = [new Page(`${new Splash()}`)]

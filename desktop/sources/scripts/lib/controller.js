@@ -1,3 +1,5 @@
+"use strict";
+
 function Controller()
 {
   this.menu = {default:{}};
@@ -90,7 +92,7 @@ function Controller()
 
     txt += this.documentation_for_mode("default",this.menu.default);
 
-    for(name in this.menu){
+    for(let name in this.menu){
       if(name == "default"){ continue; }
       txt += this.documentation_for_mode(name,this.menu[name]);
     }

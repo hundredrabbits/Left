@@ -1,3 +1,5 @@
+"use strict";
+
 function Page(text = "",path = null)
 {
   this.copy = text;

@@ -1,3 +1,5 @@
+"use strict";
+
 function Insert()
 {
   this.is_active = false;

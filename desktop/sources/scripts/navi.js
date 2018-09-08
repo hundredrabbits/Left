@@ -1,3 +1,5 @@
+"use strict";
+
 function Navi()
 {
   this.el = document.createElement('navi');
