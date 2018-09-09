@@ -18,7 +18,6 @@ function Navi()
         html += this._marker(pid,current,marker,markers);
       }
     }
-
     this.el.innerHTML = html;
   }
 
@@ -29,9 +28,7 @@ function Navi()
 
   this._marker = function(pid,current,marker,markers)
   {
-    let is_active = current && current.line == marker.line;
-
-    return `<li class='marker ${marker.type} ${is_active ? 'active' : ''}' onclick='left.go.to_page(${pid}, ${marker.line})'><span>${marker.text}</span><i>${marker.line}</i></li>`;
+    return `<li class='marker ${marker.type} ${current && current.line == marker.line ? 'active' : ''}' onclick='left.go.to_page(${pid}, ${marker.line})'><span>${marker.text}</span></li>`;
   }
 
   this.next_page = function()

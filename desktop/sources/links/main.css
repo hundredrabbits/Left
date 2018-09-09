@@ -20,8 +20,8 @@ body stats { display: block;border-bottom: 0px;margin-top: 30px;position: fixed;
 body stats b {  font-family: 'input_mono_medium';}
 body stats i { text-decoration: underline; }
 body stats .right { float:right; }
-body textarea { padding: 90px 0px 0px;height: calc(100vh - 130px);display: block;width: 50vw;position: fixed;left: 25vw;line-height: 20px;resize: none;background: transparent;overflow: auto;max-width: 90%; transition: left 200ms; }
-body div { left: 25vw; max-width: 90%; width:50vw; line-height: 20px; font-family: 'input_mono_regular'; font-size: 12px; white-space: pre-wrap; word-wrap:break-word; }
+body textarea { padding: 90px 15px 0px;height: calc(100vh - 130px);display: block;width: 50vw;position: fixed;left: 25vw;line-height: 20px;resize: none;background: transparent;overflow: auto;max-width: 90%; transition: left 200ms; margin-left:-15px; }
+body div { left: 25vw; max-width:600px; width:50vw; line-height: 20px; font-family: 'input_mono_regular'; font-size: 12px; white-space: pre-wrap; word-wrap:break-word; }
 body drag { display: block;width: 100vw;height: 40px;position: fixed;top: 0px;-webkit-user-select: none;-webkit-app-region: drag; background-color: transparent !important;}
 
 body #operator { display: block;border-bottom: 0px;margin-top: 30px;position: fixed;bottom: 0px;left: 25vw;;line-height: 40px;width:calc(75vw - 40px);height: 40px;overflow: hidden;-webkit-user-select: none;-webkit-app-region: no-drag; bottom:-40px; transition: bottom 150ms }

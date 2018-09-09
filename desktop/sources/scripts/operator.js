@@ -126,6 +126,7 @@ function Operator()
 
     if(bang && result){
       left.go.to(result,result+q.length);
+      setTimeout(() => { left.operator.stop(); }, 250)
     }
   }
 

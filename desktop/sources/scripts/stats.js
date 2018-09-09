@@ -53,8 +53,7 @@ function Stats()
 
   this._selection = function()
   {
-    let p = ((left.textarea_el.selectionEnd/left.textarea_el.value.length)*100).toFixed(2)
-    return `<b>[${left.textarea_el.selectionStart},${left.textarea_el.selectionEnd}]</b> ${p}%`
+    return `<b>[${left.textarea_el.selectionStart},${left.textarea_el.selectionEnd}]</b> ${this._default()}`
   }
 
   this._url = function()
@@ -67,9 +66,10 @@ function Stats()
   {
     let scroll_distance = left.textarea_el.scrollTop;
     let scroll_max = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight;
-    let scroll_perc = Math.min(1, (scroll_max == 0) ? 0 : (scroll_distance / scroll_max));
+    let ratio = Math.min(1, (scroll_max == 0) ? 0 : (scroll_distance / scroll_max));
+    let progress = ["|","|","|","|","|","|","|","|","|","|"].map((v,i) => { return i < ratio * 10 ? "<b>|</b>" : v }).join("")
 
-    this.el.innerHTML = `${(scroll_perc * 100).toFixed(2)}%`
+    this.el.innerHTML = `${progress} ${(ratio * 100).toFixed(2)}%`
   }
 
   this.parse = function(text = left.textarea_el.value)

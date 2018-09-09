@@ -44,6 +44,18 @@ document.onkeyup = (e) =>
   left.refresh();
 }
 
+// Selection Change
+let last_selection = null;
+
+window.addEventListener('mousemove',function(e)
+{
+  if(last_selection && last_selection.start == left.textarea_el.selectionStart && last_selection.end == left.textarea_el.selectionEnd){
+    return;
+  }
+  left.refresh();
+  last_selection = {start:left.textarea_el.selectionStart,end:left.textarea_el.selectionEnd}
+});
+
 window.addEventListener('dragover',function(e)
 {
   e.stopPropagation();
