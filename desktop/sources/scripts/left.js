@@ -51,9 +51,6 @@ function Left()
     this.textarea_el.addEventListener('scroll', () => {
       if(!this.reader.active){ this.stats.on_scroll(); }
     });
-    this.textarea_el.addEventListener('focus', () => {
-      this.project.page().sync();
-    });
     this.textarea_el.addEventListener('input', () => {
       this.project.page().commit();
     });
@@ -123,9 +120,9 @@ function Left()
     // console.log(`Refreshed in ${(performance.now() - time).toFixed(2)}ms.`);
   }
 
-  this.reload = function()
+  this.reload = function(force = false)
   {
-    this.project.page().reload();
+    this.project.page().reload(force);
     this.load(this.project.page().text)
   }
 
