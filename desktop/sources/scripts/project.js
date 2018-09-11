@@ -11,7 +11,9 @@ function Project()
 
   this.add = function(path = null)
   {
-    let page;
+    console.log(`Adding page(${path})`)
+    
+    let page = new Page();
 
     if(path){
       if(this.paths().indexOf(path) > -1){ console.warn(`Already open: ${path}`); return; }
@@ -21,9 +23,15 @@ function Project()
     this.pages.push(page);
   }
 
+  this.page = function()
+  {
+    return this.pages[this.index]
+  }
+
   this.update = function()
   {
     if(!this.pages[this.index]){ console.warn("Missing page"); return; }
+
     this.pages[this.index].text = left.textarea_el.value;
   }
 

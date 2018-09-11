@@ -8,7 +8,7 @@ function Go()
 
     console.log(`Go to page:${left.project.index}/${left.project.pages.length}`)
 
-    let page = left.project.pages[left.project.index];
+    let page = left.project.page();
 
     if(!page){ console.warn("Missing page",this.index); return; }
     if(page.has_external_changes()){ page.refresh(); }

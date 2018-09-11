@@ -11,6 +11,7 @@ function Navi()
 
     for(let pid in left.project.pages){
       let page = left.project.pages[pid];
+      if(!page){ continue; }
       html += this._page(pid,page);
       let markers = page.markers();
       for(let i in markers){
@@ -47,7 +48,7 @@ function Navi()
   {
     let page = clamp(parseInt(left.project.index),0,left.project.pages.length-1)
     let marker = this.marker();
-    let markers = left.project.pages[left.project.index].markers();
+    let markers = left.project.page().markers();
     let next_index = clamp(marker.id+1,0,markers.length-1);
 
     left.go.to_page(page,markers[next_index].line);
@@ -57,7 +58,7 @@ function Navi()
   {
     let page = clamp(parseInt(left.project.index),0,left.project.pages.length-1)
     let marker = this.marker();
-    let markers = left.project.pages[left.project.index].markers();
+    let markers = left.project.page().markers();
     let next_index = clamp(marker.id-1,0,markers.length-1);
 
     left.go.to_page(page,markers[next_index].line);
@@ -65,7 +66,9 @@ function Navi()
 
   this.marker = function()
   {
-    let markers = left.project.pages[left.project.index].markers();
+    if(!left.project.page()){ return []; }
+
+    let markers = left.project.page().markers();
     let pos = left.active_line_id();
 
     let prev = null;
