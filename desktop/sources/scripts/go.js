@@ -13,7 +13,7 @@ function Go()
     if(!page){ console.warn("Missing page",this.index); return; }
     if(page.has_external_changes()){ page.refresh(); }
 
-    left.textarea_el.value = page.text;
+    left.textarea_el.value = page.text ? page.text : '';
     left.go.to_line(line);
     left.refresh();
   }

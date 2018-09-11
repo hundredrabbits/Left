@@ -31,7 +31,7 @@ function Page(text = "",path = null)
 
   this.commit = function()
   {
-    this.copy = this.text ? `${this.text.trim()}` : "";
+    this.copy = this.text;
   }
 
   this.revert = function()
