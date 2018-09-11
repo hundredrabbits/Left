@@ -19,15 +19,15 @@ function Go()
 
   this.to_line = function(id)
   {
-    let lineArr = left.textarea_el.value.split("\n",parseInt(id)+1)
-    let arrJoin = lineArr.join("\n")
+    let lineArr = left.textarea_el.value.split(EOL,parseInt(id)+1)
+    let arrJoin = lineArr.join(EOL)
     let from = arrJoin.length-lineArr[id].length;
     let to = arrJoin.length;
 
     this.to(from,to)
   }
 
-  this.to = function(from,to)
+  this.to = function(from,to,scroll = true)
   {
     if(left.textarea_el.setSelectionRange){
       left.textarea_el.setSelectionRange(from,to);
@@ -40,9 +40,21 @@ function Go()
       range.select();
     }
     left.textarea_el.focus();
-    this.scroll_to(from,to);
+
+    if(scroll){
+      this.scroll_to(from,to);  
+    }
 
     return from == -1 ? null : from;
+  }
+
+  this.to_next = function(str,scroll = true)
+  {
+    let ta = left.textarea_el
+    let text = ta.value;
+    let range = text.substr(ta.selectionStart,text.length-ta.selectionStart);
+    let next = ta.selectionStart + range.indexOf(EOL)
+    this.to(next,next,scroll)
   }
 
   this.to_word = function(word,from = 0, tries = 0, starting_with = false, ending_with = false)

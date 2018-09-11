@@ -93,8 +93,8 @@ function Left()
 
   this.select_line = function(id)
   {
-    let lineArr = this.textarea_el.value.split("\n",parseInt(id)+1)
-    let arrJoin = lineArr.join("\n")
+    let lineArr = this.textarea_el.value.split(EOL,parseInt(id)+1)
+    let arrJoin = lineArr.join(EOL)
 
     let from = arrJoin.length-lineArr[id].length;
     let to = arrJoin.length;
@@ -109,7 +109,7 @@ function Left()
     let next_char = this.textarea_el.value.substr(left.textarea_el.selectionEnd,1);
 
     left.selection.word = this.active_word();
-    left.suggestion     = (next_char == "" || next_char == " " || next_char == "\n") ? left.dictionary.find_suggestion(left.selection.word) : null;
+    left.suggestion     = (next_char == "" || next_char == " " || next_char == EOL) ? left.dictionary.find_suggestion(left.selection.word) : null;
     left.synonyms       = left.dictionary.find_synonym(left.selection.word);
     left.selection.url  = this.active_url();
 
@@ -172,14 +172,14 @@ function Left()
 
   this.active_line_id = function()
   {
-    let segments = left.textarea_el.value.substr(0,left.textarea_el.selectionEnd).split("\n");
+    let segments = left.textarea_el.value.substr(0,left.textarea_el.selectionEnd).split(EOL);
     return segments.length-1;
   }
 
   this.active_line = function()
   {
     let text = left.textarea_el.value;
-    let lines = text.split("\n");
+    let lines = text.split(EOL);
     return lines[this.active_line_id()];
   }
 
@@ -231,8 +231,8 @@ function Left()
 
   this.replace_line = function(id, new_text, del = false) // optional arg for deleting the line, used in actions
   {
-    let lineArr = this.textarea_el.value.split("\n",parseInt(id)+1)
-    let arrJoin = lineArr.join("\n")
+    let lineArr = this.textarea_el.value.split(EOL,parseInt(id)+1)
+    let arrJoin = lineArr.join(EOL)
 
     let from = arrJoin.length-lineArr[id].length;
     let to = arrJoin.length;
@@ -331,3 +331,6 @@ function Left()
     left.update();
   }
 }
+
+let EOL = (process.platform === 'win32' ? '\r\n' : '\n')
+

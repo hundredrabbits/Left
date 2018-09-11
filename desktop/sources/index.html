@@ -69,6 +69,7 @@
       left.controller.add_role("default","Edit","paste");
       left.controller.add_role("default","Edit","delete");
       left.controller.add_role("default","Edit","selectall");
+      left.controller.add("default","Edit","Add Linebreak",() => { left.go.to_next(EOL,false); left.inject(EOL); },"CmdOrCtrl+Shift+Enter");
 
       left.controller.add("default","Select","Select Autocomplete",() => { left.select_autocomplete(); },"Tab");
       left.controller.add("default","Select","Select Synonym",() => { left.select_synonym(); },"Shift+Tab");

@@ -83,7 +83,7 @@ function Stats()
     }
 
     let stats = {};
-    stats.l = text.split("\n").length; // lines_count
+    stats.l = text.split(EOL).length; // lines_count
     stats.w = text.split(" ").length; // words_count
     stats.c = text.length; // chars_count
     stats.v = Object.keys(h).length;

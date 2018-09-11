@@ -162,7 +162,7 @@ function Operator()
   {
     let target = parseInt(q, 10);
 
-    let lines_count = left.textarea_el.value.split("\n").length - 1;
+    let lines_count = left.textarea_el.value.split(EOL).length - 1;
 
     if(q == "" || target < 1 || target > lines_count || Number.isNaN(target)) {
       return;

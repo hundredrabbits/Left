@@ -48,7 +48,7 @@ function Insert()
   {
     let is_multiline = left.selected().match(/[^\r\n]+/g);
     
-    if(left.prev_character() == "\n" && !is_multiline){
+    if(left.prev_character() == EOL && !is_multiline){
       left.inject("# ");
     }
     else if(is_multiline){
@@ -64,7 +64,7 @@ function Insert()
   {
     let is_multiline = left.selected().match(/[^\r\n]+/g);
 
-    if(left.prev_character() == "\n" && !is_multiline){
+    if(left.prev_character() == EOL && !is_multiline){
       left.inject("## ");
     }
     else if(is_multiline){
@@ -80,7 +80,7 @@ function Insert()
   {
     let is_multiline = left.selected().match(/[^\r\n]+/g);
 
-    if(left.prev_character() == "\n" && !is_multiline){
+    if(left.prev_character() == EOL && !is_multiline){
       left.inject("-- ");
     }
     else if(is_multiline){
@@ -96,7 +96,7 @@ function Insert()
   {
     let is_multiline = left.selected().match(/[^\r\n]+/g);
 
-    if(left.prev_character() == "\n" && !is_multiline){
+    if(left.prev_character() == EOL && !is_multiline){
       left.inject("- ");
     }
     else if(is_multiline){
@@ -110,8 +110,8 @@ function Insert()
 
   this.line = function()
   {
-    if(left.prev_character() != "\n"){
-      left.inject("\n");
+    if(left.prev_character() != EOL){
+      left.inject(EOL);
     }
     left.inject("===================== \n");
     this.stop();

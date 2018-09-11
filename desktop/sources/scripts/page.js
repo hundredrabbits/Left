@@ -57,7 +57,7 @@ function Page(text = "",path = null)
   this.markers = function()
   {
     let a = [];
-    let lines = this.text.split("\n");
+    let lines = this.text.split(EOL);
   
     for(let id in lines){
       let line = lines[id].trim();

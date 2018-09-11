@@ -110,10 +110,10 @@ function Controller()
         let option = mode[id][name];
         txt += `- ${name}: \`${option.accelerator}\`\n`;
       }
-      txt += "\n"
+      txt += EOL
     }
 
-    return txt+"\n";
+    return txt+EOL;
   }
 
   this.accelerator_for_key = function(key,menu)
