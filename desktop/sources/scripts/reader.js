@@ -93,7 +93,7 @@ function Reader()
 
     let pad = "";
 
-    i = 0;
+    let i = 0;
     while(i < longest_pad - (orp.index)){
       pad += "-";
       i += 1
