@@ -8,14 +8,14 @@ function Insert()
   {
     left.controller.set("insert");
     this.is_active = true;
-    left.refresh();
+    left.update();
   }
 
   this.stop = function()
   {
     left.controller.set("default");
     this.is_active = false;
-    left.refresh();  
+    left.update();  
   }
 
   this.time = function()

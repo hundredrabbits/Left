@@ -22,13 +22,13 @@ document.onkeydown = function key_down(e)
   }
 
   if(e.key.substring(0,5) == "Arrow"){
-    setTimeout(() => left.refresh(), 0) //force the refresh event to happen after the selection updates
+    setTimeout(() => left.update(), 0) //force the refresh event to happen after the selection updates
     return;
   }
 
   // Slower Refresh
   if(e.key == "Enter" && left.textarea_el.value.length > 50000 || left.textarea_el.value.length < 50000 ){
-    setTimeout(() => { left.dictionary.update(); left.refresh()}, 16)
+    setTimeout(() => { left.dictionary.update(); left.update()}, 16)
     return;
   }
 };
@@ -41,7 +41,7 @@ document.onkeyup = (e) =>
   if(e.keyCode == 9){ // Tab
     return;
   }
-  left.refresh();
+  left.update();
 }
 
 // Selection Change
@@ -52,7 +52,7 @@ window.addEventListener('mousemove',function(e)
   if(last_selection && last_selection.start == left.textarea_el.selectionStart && last_selection.end == left.textarea_el.selectionEnd){
     return;
   }
-  left.refresh();
+  left.update();
   last_selection = {start:left.textarea_el.selectionStart,end:left.textarea_el.selectionEnd}
 });
 
@@ -79,7 +79,7 @@ window.addEventListener('drop', function(e)
     left.project.add(file.path)
   }
 
-  left.refresh();
+  left.reload();
   left.navi.next_page();
 });
 
@@ -88,5 +88,5 @@ document.onclick = function on_click(e)
   left.selection.index = 0;
   left.operator.stop();
   left.reader.stop();
-  left.refresh();
+  left.update();
 }

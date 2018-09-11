@@ -2,7 +2,6 @@
 
 function Page(text = "",path = null)
 {
-  this.copy = text;
   this.text = text;
   this.path = path;
 
@@ -16,12 +15,11 @@ function Page(text = "",path = null)
 
   this.has_changes = function()
   {
-    return this.copy != this.text;
-  }
-
-  this.has_external_changes = function()
-  {
-    return this.origin() != this.text;
+    if(!this.path){ 
+      if(this.text && this.text.length > 0){ return true; }
+      return false;
+    }
+    return this.load() != this.text;
   }
 
   this.is_active = function()
@@ -31,21 +29,19 @@ function Page(text = "",path = null)
 
   this.commit = function()
   {
-    this.copy = this.text;
+    this.text = left.textarea_el.value;
   }
 
-  this.revert = function()
+  this.reload = function(force = false)
   {
-    this.text = this.copy;
+    if(!this.path){ return; }
+
+    if(!this.has_changes() || force){
+      this.text = this.load();
+    }
   }
 
-  this.refresh = function()
-  {
-    this.text = this.origin();
-    this.commit();
-  }
-
-  this.origin = function()
+  this.load = function()
   {
     if(!this.path){ return; }
     let data;

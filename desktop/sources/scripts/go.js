@@ -11,11 +11,11 @@ function Go()
     let page = left.project.page();
 
     if(!page){ console.warn("Missing page",this.index); return; }
-    if(page.has_external_changes()){ page.refresh(); }
+    if(page.has_changes()){ page.reload(); }
 
-    left.textarea_el.value = page.text ? page.text : '';
+    left.load(page.text);
     left.go.to_line(line);
-    left.refresh();
+    left.update();
   }
 
   this.to_line = function(id)

@@ -49,7 +49,7 @@ Download additional themes: http://hundredrabbits.itch.io/Left
     return "splash"
   }
 
-  this.has_external_changes = function()
+  this.has_changes = function()
   {
     return false;
   }

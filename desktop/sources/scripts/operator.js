@@ -20,7 +20,7 @@ function Operator()
     this.el.focus();
 
     this.update();
-    left.refresh();
+    left.update();
   }
 
   this.stop = function()
@@ -36,7 +36,7 @@ function Operator()
     left.textarea_el.focus();
 
     this.update();
-    left.refresh();
+    left.update();
   }
 
   this.on_change = function(e,down = false)

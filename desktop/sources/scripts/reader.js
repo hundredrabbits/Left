@@ -67,7 +67,7 @@ function Reader()
     this.index = 0;
     this.active = false;
     left.operator.stop();
-    left.refresh();
+    left.update();
   }
 
   this.find_orp = function(w,words)

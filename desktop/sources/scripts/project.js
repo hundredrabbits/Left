@@ -12,14 +12,14 @@ function Project()
   this.add = function(path = null)
   {
     console.log(`Adding page(${path})`)
+
+    this.remove_splash();
     
     let page = new Page();
-
     if(path){
       if(this.paths().indexOf(path) > -1){ console.warn(`Already open: ${path}`); return; }
       page = new Page(this.load(path),path);
     }
-    
     this.pages.push(page);
   }
 
@@ -55,11 +55,10 @@ function Project()
   {
     console.log("New Page");
 
-    this.remove_splash();
-
     this.add();
+    left.reload();
 
-    setTimeout(() => { left.navi.next_page(); left.refresh(); left.textarea_el.focus(); },200);
+    setTimeout(() => { left.navi.next_page(); left.textarea_el.focus(); },200);
   }
 
   this.open = function()
@@ -70,13 +69,11 @@ function Project()
 
     if(!paths){ console.log("Nothing to load"); return; }
 
-    this.remove_splash();
-
     for(let id in paths){
       this.add(paths[id])
     }
 
-    setTimeout(() => { left.navi.next_page(); left.refresh(); left.textarea_el.focus(); },200);
+    setTimeout(() => { left.navi.next_page(); left.update(); left.textarea_el.focus(); },200);
   }
 
   this.save = function()
@@ -89,9 +86,7 @@ function Project()
 
     fs.writeFile(page.path, page.text, (err) => {
       if(err) { alert("An error ocurred updating the file" + err.message); console.log(err); return; }
-
-      page.commit();
-      left.refresh();
+      left.update();
       setTimeout(() => { left.stats.el.innerHTML = `<b>Saved</b> ${page.path}`; },200);
     });
   }
@@ -114,8 +109,7 @@ function Project()
       else if(page.path != path){
         left.project.pages.push(new Page(page.text,path))
       }
-      page.commit();
-      left.refresh();
+      left.update();
       setTimeout(() => { left.stats.el.innerHTML = `<b>Saved</b> ${page.path}`; },200);
     });
   }
@@ -158,10 +152,8 @@ function Project()
       message: 'Are you sure you want to discard changes?',
       icon: `${app.path()}/icon.png`
     });
-    if (response === 0) { // Runs the following if 'Yes' is clicked
-      this.pages[this.index].revert();
-      left.textarea_el.value = this.pages[this.index].text;
-      left.refresh();
+    if(response === 0) { // Runs the following if 'Yes' is clicked
+      left.reload(true);
     }
   }
 
@@ -203,6 +195,7 @@ function Project()
       let page = this.pages[id];
       if(page.text == new Splash().text){
         this.pages.splice(0,1);
+        return;
       }
     }
   }

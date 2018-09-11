@@ -49,14 +49,23 @@ function Left()
 
     this.textarea_el.focus();
     this.textarea_el.addEventListener('scroll', () => {
-      if(!this.reader.active) this.stats.on_scroll();
+      if(!this.reader.active){ this.stats.on_scroll(); }
+    });
+    this.textarea_el.addEventListener('focus', () => {
+      if(this.project.page().has_changes()){
+        console.warn("File was changed!");
+        this.reload();
+      };
+    });
+    this.textarea_el.addEventListener('input', () => {
+      this.project.page().commit();
     });
 
     this.go.to_page();
     this.textarea_el.setSelectionRange(0,0);
 
     this.dictionary.update();
-    this.refresh();
+    this.update();
   }
 
   this.select_autocomplete = function()
@@ -99,7 +108,7 @@ function Left()
     this.select(from,to)
   }
 
-  this.refresh = function(hard = false)
+  this.update = function(hard = false)
   {
     let time = performance.now();
 
@@ -115,6 +124,18 @@ function Left()
     this.stats.update();
 
     console.log(`Refreshed in ${(performance.now() - time).toFixed(2)}ms.`);
+  }
+
+  this.reload = function()
+  {
+    this.project.page().reload();
+    this.load(this.project.page().text)
+  }
+
+  this.load = function(text)
+  {
+    this.textarea_el.value = text ? text : '';
+    this.update();
   }
 
   // Location tools
@@ -211,7 +232,7 @@ function Left()
   this.replace_selection_with = function(characters)
   {
     document.execCommand('insertText', false, characters);
-    this.refresh();
+    this.update();
   }
 
   this.replace_line = function(id, new_text, del = false) // optional arg for deleting the line, used in actions
@@ -231,7 +252,7 @@ function Left()
     let old_length = this.textarea_el.value.length
     let old_scroll = this.textarea_el.scrollTop
     //setting text area
-    this.textarea_el.value = new_text_value
+    this.load(new_text_value)
     //adjusting the cursor position for the change in length
     let length_dif = this.textarea_el.value.length - old_length
     if(cursor_start>to) {
@@ -259,7 +280,7 @@ function Left()
     let pos = this.textarea_el.selectionStart;
     this.textarea_el.setSelectionRange(pos, pos);
     document.execCommand('insertText', false, characters);
-    this.refresh();
+    this.update();
   }
 
   this.inject_line = function(characters = "__")
@@ -313,6 +334,6 @@ function Left()
   this.reset = function()
   {
     left.theme.reset();
-    left.refresh();
+    left.update();
   }
 }
