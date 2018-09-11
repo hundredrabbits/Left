@@ -75,8 +75,8 @@ window.addEventListener('drop', function(e)
     if(!file.path){ continue;}
     if(file.type && !file.type.match(/text.*/)) { console.log(`Skipped ${file.type} : ${file.path}`); continue; }
     if(file.path && file.path.substr(-3,3) == "thm"){ continue; }
-
-    left.project.pages.push(new Page(left.project.load(file.path),file.path));
+    
+    left.project.add(file.path)
   }
 
   left.refresh();

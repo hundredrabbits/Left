@@ -2,7 +2,6 @@
 
 function Left()
 {
-  this.splash = new Splash();
   this.theme = new Theme();
   this.controller = new Controller();
   this.dictionary = new Dictionary();
@@ -53,7 +52,7 @@ function Left()
       if(!this.reader.active) this.stats.on_scroll();
     });
 
-    this.textarea_el.value = `${this.splash}`;
+    this.go.to_page();
     this.textarea_el.setSelectionRange(0,0);
 
     this.dictionary.update();

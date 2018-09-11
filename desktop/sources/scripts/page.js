@@ -19,6 +19,11 @@ function Page(text = "",path = null)
     return this.copy != this.text;
   }
 
+  this.has_external_changes = function()
+  {
+    return this.origin() != this.text;
+  }
+
   this.is_active = function()
   {
     return true;
@@ -26,12 +31,31 @@ function Page(text = "",path = null)
 
   this.commit = function()
   {
-    this.copy = this.text;
+    this.copy = this.text ? `${this.text.trim()}` : "";
   }
 
   this.revert = function()
   {
     this.text = this.copy;
+  }
+
+  this.refresh = function()
+  {
+    this.text = this.origin();
+    this.commit();
+  }
+
+  this.origin = function()
+  {
+    if(!this.path){ return; }
+    let data;
+    try {
+      data = fs.readFileSync(this.path, 'utf-8');
+    } catch (err) {
+      alert("An error ocurred reading the file :" + err.message);
+      return;
+    }
+    return data;
   }
 
   this.markers = function()

@@ -2,7 +2,7 @@
 
 function Go()
 {
-  this.to_page = function(id,line = 0)
+  this.to_page = function(id = 0,line = 0)
   {
     left.project.index = clamp(parseInt(id),0,left.project.pages.length-1);
 
@@ -11,6 +11,7 @@ function Go()
     let page = left.project.pages[left.project.index];
 
     if(!page){ console.warn("Missing page",this.index); return; }
+    if(page.has_external_changes()){ page.refresh(); }
 
     left.textarea_el.value = page.text;
     left.go.to_line(line);

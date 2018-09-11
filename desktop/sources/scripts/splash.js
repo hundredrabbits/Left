@@ -2,9 +2,7 @@
 
 function Splash()
 {
-  this.toString = function()
-  {
-    return `# Welcome
+  Page.call(this,`# Welcome
 
 ## Guide
 
@@ -44,6 +42,15 @@ View sources: https://github.com/hundredrabbits/left
 -- Themes
 
 Download additional themes: http://hundredrabbits.itch.io/Left
-`
+`)
+
+  this.name = function()
+  {
+    return "splash"
+  }
+
+  this.has_external_changes = function()
+  {
+    return false;
   }
 }
