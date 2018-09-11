@@ -52,10 +52,7 @@ function Left()
       if(!this.reader.active){ this.stats.on_scroll(); }
     });
     this.textarea_el.addEventListener('focus', () => {
-      if(this.project.page().has_changes()){
-        console.warn("File was changed!");
-        this.reload();
-      };
+      this.project.page().sync();
     });
     this.textarea_el.addEventListener('input', () => {
       this.project.page().commit();
@@ -123,7 +120,7 @@ function Left()
     this.navi.update();
     this.stats.update();
 
-    console.log(`Refreshed in ${(performance.now() - time).toFixed(2)}ms.`);
+    // console.log(`Refreshed in ${(performance.now() - time).toFixed(2)}ms.`);
   }
 
   this.reload = function()

@@ -10,6 +10,7 @@ body navi li:hover { text-decoration: none; }
 body navi li.page { font-family: 'input_mono_medium' }
 body navi li.page::before { content:"/"; }
 body navi li.header { }
+body navi li.header::before { content:"•"; }
 body navi li.note { padding-left:15px;}
 body navi li.note::before { content:"#"; left:0px; }
 body navi li.comment {padding-left: 15px;}

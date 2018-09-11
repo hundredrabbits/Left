@@ -27,7 +27,7 @@ document.onkeydown = function key_down(e)
   }
 
   // Slower Refresh
-  if(e.key == "Enter" && left.textarea_el.value.length > 50000 || left.textarea_el.value.length < 50000 ){
+  if(e.key == "Enter"){
     setTimeout(() => { left.dictionary.update(); left.update()}, 16)
     return;
   }

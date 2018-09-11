@@ -14,7 +14,7 @@ function Project()
     console.log(`Adding page(${path})`)
 
     this.remove_splash();
-    
+
     let page = new Page();
     if(path){
       if(this.paths().indexOf(path) > -1){ console.warn(`Already open: ${path}`); return; }
@@ -30,9 +30,9 @@ function Project()
 
   this.update = function()
   {
-    if(!this.pages[this.index]){ console.warn("Missing page"); return; }
+    if(!this.page()){ console.warn("Missing page"); return; }
 
-    this.pages[this.index].text = left.textarea_el.value;
+    this.page().commit(left.textarea_el.value);
   }
 
   this.load = function(path)
@@ -73,19 +73,19 @@ function Project()
       this.add(paths[id])
     }
 
-    setTimeout(() => { left.navi.next_page(); left.update(); left.textarea_el.focus(); },200);
+    setTimeout(() => { left.navi.next_page(); left.update(); },200);
   }
 
   this.save = function()
   {
     console.log("Save Page");
 
-    let page = this.pages[this.index]
+    let page = this.page()
 
     if(!page.path){ this.save_as(); return; }
 
     fs.writeFile(page.path, page.text, (err) => {
-      if(err) { alert("An error ocurred updating the file" + err.message); console.log(err); return; }
+      if(err) { alert("An error ocurred updating the file" + err.message); console.log(err); return; }      
       left.update();
       setTimeout(() => { left.stats.el.innerHTML = `<b>Saved</b> ${page.path}`; },200);
     });
@@ -95,14 +95,13 @@ function Project()
   {
     console.log("Save As Page");
 
-    let page = this.pages[this.index]
+    let page = this.page()
     let path = dialog.showSaveDialog(app.win);
 
     if(!path){ console.log("Nothing to save"); return; }
 
     fs.writeFile(path, page.text, (err) => {
       if(err){ alert("An error ocurred creating the file "+ err.message); return; }
-
       if(!page.path){
         page.path = path;
       }
@@ -118,7 +117,7 @@ function Project()
   {
     if(this.pages.length == 1){ console.warn("Cannot close"); return; }
 
-    if(this.pages[this.index].has_changes()){
+    if(this.page().has_changes()){
       let response = dialog.showMessageBox(app.win, {
         type: 'question',
         buttons: ['Yes', 'No'],

@@ -11,7 +11,6 @@ function Go()
     let page = left.project.page();
 
     if(!page){ console.warn("Missing page",this.index); return; }
-    if(page.has_changes()){ page.reload(); }
 
     left.load(page.text);
     left.go.to_line(line);

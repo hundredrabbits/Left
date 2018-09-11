@@ -4,6 +4,7 @@ function Page(text = "",path = null)
 {
   this.text = text;
   this.path = path;
+  this.time = new Date().getTime();
 
   this.name = function()
   {
@@ -27,9 +28,9 @@ function Page(text = "",path = null)
     return true;
   }
 
-  this.commit = function()
+  this.commit = function(text = left.textarea_el.value)
   {
-    this.text = left.textarea_el.value;
+    this.text = text;
   }
 
   this.reload = function(force = false)
@@ -37,7 +38,7 @@ function Page(text = "",path = null)
     if(!this.path){ return; }
 
     if(!this.has_changes() || force){
-      this.text = this.load();
+      this.commit(this.load());
     }
   }
 
@@ -52,6 +53,31 @@ function Page(text = "",path = null)
       return;
     }
     return data;
+  }
+
+  this.edited = function()
+  {
+    if(!this.path){ return; }
+
+    let time;
+
+    try{
+      time = require('fs').statSync(this.path).mtimeMs
+    }
+    catch(err){
+      console.warn(err);
+      this.path = null; // Remove path, lost sync.
+    }
+    return time
+  }
+
+  this.sync = function()
+  {
+    let edit = this.edited();
+    if(!edit){ console.log("Nothing to sync"); return; }
+
+    let offset = this.time - edit;
+    console.log('edited',offset)
   }
 
   this.markers = function()
