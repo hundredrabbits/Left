@@ -44,29 +44,3 @@ body #theme_button_icon { border: 1px solid white;width: 10px;height: 10px;posit
 body #theme_button_icon_fg { max-width: 20px; width: 20px;height: 6.5px;background: white;position: relative;left: -2px;top: -2px; transition: top 250ms; }
 body #theme_button.active #theme_button_icon_fg { top:5.5px; }
 body #theme_button:hover { opacity: 1 }
-
-/* Theme Defaults */
-
-:root { --background: "#222"; --f_high: "#fff";--f_med: "#777";--f_low: "#444";--f_inv: "#000";--b_high: "#000";--b_med: "#555";--b_low: "#000";--b_inv: "#aaa"; }
-
-body { background:var(--background); color:var(--f_high) !important; }
-textarea { color:var(--f_high) !important }
-stats { color:var(--f_low) !important }
-stats b { color:var(--f_high) !important }
-stats i { color:var(--f_med) !important }
-highlight b { border-bottom: 1px solid var(--f_low) !important; }
-::selection { background:var(--b_low) !important; color:var(--f_high) !important }
-navi  { color:var(--f_low) !important }
-navi li { color:var(--f_med) !important }
-navi li i { color:var(--f_low) !important }
-navi li.file { color:var(--f_med) !important }
-navi li.active { color:var(--f_high) !important }
-navi li::before { color:var(--f_low) !important }
-navi li:hover { color:var(--f_high) !important; }
-body #operator { background:var(--background); color:var(--f_high); }
-body #theme_button_icon { border-color: var(--f_med) !important }
-body #theme_button_icon_fg { background-color: var(--f_med) !important }
-
-.fh { color:var(--f_high) !important; }
-.fm { color:var(--f_med) !important; }
-.fl { color:var(--f_low) !important; }

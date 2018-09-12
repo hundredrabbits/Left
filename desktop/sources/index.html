@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="links/reset.css"/>
     <link rel="stylesheet" href="links/fonts.css"/>
     <link rel="stylesheet" href="links/main.css"/>
+    <link rel="stylesheet" href="links/theme.css"/>
 
     <script src="scripts/splash.js"></script>
     <script src="scripts/lib/theme.js"></script>
@@ -42,6 +43,7 @@
       const app_path = app.getAppPath();
 
       let left = new Left();
+      left.install(document.body);
       left.start();
 
       // Menu
@@ -88,6 +90,11 @@
 
       left.controller.add("default","Mode","Reader",() => { left.reader.start(); },"CmdOrCtrl+K");
       left.controller.add("default","Mode","Insert",() => { left.insert.start(); },"CmdOrCtrl+I");
+
+      left.controller.add("default","Theme","Noir",() => { left.theme.noir(); },"CmdOrCtrl+Shift+1");
+      left.controller.add("default","Theme","Pale",() => { left.theme.pale(); },"CmdOrCtrl+Shift+2");
+      left.controller.add("default","Theme","Invert",() => { left.theme.invert(); },"CmdOrCtrl+Shift+I");
+      left.controller.add("default","Theme","Install",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Themes'); });
 
       left.controller.add("reader","*","About",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left'); },"CmdOrCtrl+,");
       left.controller.add("reader","*","Fullscreen",() => { app.toggle_fullscreen(); },"CmdOrCtrl+Enter");

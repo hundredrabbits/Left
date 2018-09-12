@@ -25,22 +25,24 @@ function Left()
   this.synonyms = null;
   this.last_char = "s"; // this is not a typo. it's bad code, but it has to be a length one string
 
-  document.body.appendChild(this.navi.el);
-  document.body.appendChild(this.textarea_el);
-  document.body.appendChild(this.stats.el);
-  document.body.appendChild(this.drag_el);
-  document.body.appendChild(this.operator.el);
-  document.body.appendChild(this.theme.button);
+  this.install = function(host = document.body)
+  {
+    host.appendChild(this.navi.el);
+    host.appendChild(this.textarea_el);
+    host.appendChild(this.stats.el);
+    host.appendChild(this.drag_el);
+    host.appendChild(this.operator.el);
 
-  document.body.className = window.location.hash.replace("#","");
+    host.className = window.location.hash.replace("#","");
 
-  this.textarea_el.setAttribute("autocomplete","off");
-  this.textarea_el.setAttribute("autocorrect","off");
-  this.textarea_el.setAttribute("autocapitalize","off");
-  this.textarea_el.setAttribute("spellcheck","false");
-  this.textarea_el.setAttribute("type","text");
+    this.textarea_el.setAttribute("autocomplete","off");
+    this.textarea_el.setAttribute("autocorrect","off");
+    this.textarea_el.setAttribute("autocapitalize","off");
+    this.textarea_el.setAttribute("spellcheck","false");
+    this.textarea_el.setAttribute("type","text");
 
-  let left = this;
+    this.theme.install(host);
+  }
 
   this.start = function()
   {
@@ -104,9 +106,7 @@ function Left()
 
   this.update = function(hard = false)
   {
-    let time = performance.now();
-
-    let next_char = this.textarea_el.value.substr(left.textarea_el.selectionEnd,1);
+    let next_char = left.textarea_el.value.substr(left.textarea_el.selectionEnd,1);
 
     left.selection.word = this.active_word();
     left.suggestion     = (next_char == "" || next_char == " " || next_char == EOL) ? left.dictionary.find_suggestion(left.selection.word) : null;
@@ -116,8 +116,6 @@ function Left()
     this.project.update();
     this.navi.update();
     this.stats.update();
-
-    // console.log(`Refreshed in ${(performance.now() - time).toFixed(2)}ms.`);
   }
 
   this.reload = function(force = false)
@@ -332,5 +330,5 @@ function Left()
   }
 }
 
-let EOL = (process.platform === 'win32' ? '\r\n' : '\n')
+let EOL = (process.platform === 'win32' ? '\r\n' : '\n'); // '\r\n' Mayhaps?
 
