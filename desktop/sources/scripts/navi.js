@@ -4,6 +4,11 @@ function Navi()
 {
   this.el = document.createElement('navi');
 
+  this.install = function(host)
+  {
+    host.appendChild(this.el);
+  }
+
   this.update = function()
   {
     let html = ""

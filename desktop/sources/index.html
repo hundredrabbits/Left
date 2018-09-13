@@ -52,7 +52,6 @@
       left.controller.add("default","*","Fullscreen",() => { app.toggle_fullscreen(); },"CmdOrCtrl+Enter");
       left.controller.add("default","*","Hide",() => { app.toggle_visible(); },"CmdOrCtrl+H");
       left.controller.add("default","*","Inspect",() => { app.inspect(); },"CmdOrCtrl+.");
-      left.controller.add("default","*","Documentation",() => { left.controller.docs(); },"CmdOrCtrl+Esc");
       left.controller.add("default","*","Reset",() => { left.reset(); },"CmdOrCtrl+Backspace");
       left.controller.add("default","*","Quit",() => { left.project.quit(); },"CmdOrCtrl+Q");
 
@@ -150,7 +149,7 @@
 
       const remote = require('electron').remote;
 
-      if (process.platform === "win32" && remote.process.argv.length > 1) {
+      if(process.platform === "win32" && remote.process.argv.length > 1){
         left.project.add(remote.process.argv[1]);
       }
 

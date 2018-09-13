@@ -9,6 +9,11 @@ function Operator()
   this.el.addEventListener("keyup", (e) => { left.operator.on_change(e,false); });
   this.el.addEventListener("keydown", (e) => { left.operator.on_change(e,true); });
 
+  this.install = function(host)
+  {
+    host.appendChild(this.el);
+  }
+  
   this.start = function(f = "")
   {
     console.log("started");
@@ -21,6 +26,15 @@ function Operator()
 
     this.update();
     left.update();
+  }
+
+  this.update = function()
+  {
+    this.el.className = this.is_active ? "active" : "inactive";
+
+    if(!this.is_active){ return; }
+
+    this.passive();
   }
 
   this.stop = function()
@@ -56,15 +70,6 @@ function Operator()
     else if(!down){
       this.passive();
     }
-  }
-
-  this.update = function()
-  {
-    this.el.className = this.is_active ? "active" : "inactive";
-
-    if(!this.is_active){ return; }
-
-    this.passive();
   }
 
   this.passive = function()

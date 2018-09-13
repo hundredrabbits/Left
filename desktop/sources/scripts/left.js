@@ -27,11 +27,12 @@ function Left()
 
   this.install = function(host = document.body)
   {
-    host.appendChild(this.navi.el);
+    this.navi.install(host);
+    this.stats.install(host);
+    this.operator.install(host);
+    
     host.appendChild(this.textarea_el);
-    host.appendChild(this.stats.el);
     host.appendChild(this.drag_el);
-    host.appendChild(this.operator.el);
 
     host.className = window.location.hash.replace("#","");
 
@@ -63,6 +64,22 @@ function Left()
     this.dictionary.update();
     this.update();
   }
+
+  this.update = function(hard = false)
+  {
+    let next_char = left.textarea_el.value.substr(left.textarea_el.selectionEnd,1);
+
+    left.selection.word = this.active_word();
+    left.suggestion     = (next_char == "" || next_char == " " || next_char == EOL) ? left.dictionary.find_suggestion(left.selection.word) : null;
+    left.synonyms       = left.dictionary.find_synonym(left.selection.word);
+    left.selection.url  = this.active_url();
+
+    this.project.update();
+    this.navi.update();
+    this.stats.update();
+  }
+
+  //
 
   this.select_autocomplete = function()
   {
@@ -102,20 +119,6 @@ function Left()
     let to = arrJoin.length;
 
     this.select(from,to)
-  }
-
-  this.update = function(hard = false)
-  {
-    let next_char = left.textarea_el.value.substr(left.textarea_el.selectionEnd,1);
-
-    left.selection.word = this.active_word();
-    left.suggestion     = (next_char == "" || next_char == " " || next_char == EOL) ? left.dictionary.find_suggestion(left.selection.word) : null;
-    left.synonyms       = left.dictionary.find_synonym(left.selection.word);
-    left.selection.url  = this.active_url();
-
-    this.project.update();
-    this.navi.update();
-    this.stats.update();
   }
 
   this.reload = function(force = false)

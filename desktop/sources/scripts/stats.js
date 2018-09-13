@@ -4,6 +4,11 @@ function Stats()
 {
   this.el = document.createElement('stats');
 
+  this.install = function(host)
+  {
+    host.appendChild(this.el);
+  }
+  
   this.update = function(special = "")
   {
     if(left.insert.is_active){
