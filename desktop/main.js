@@ -26,9 +26,12 @@ app.toggle_visible = function()
 
 app.inject_menu = function(m)
 {
-  if(process.platform == "win32"){ return; }
-  
-  Menu.setApplicationMenu(Menu.buildFromTemplate(m));
+  try{
+    Menu.setApplicationMenu(Menu.buildFromTemplate(m));
+  }
+  catch(err){
+    console.warn("Cannot inject menu.")
+  }  
 }
 
 app.path = function()
