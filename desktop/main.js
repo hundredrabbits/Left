@@ -20,7 +20,7 @@ app.toggle_visible = function()
   if(process.platform == "win32"){
     if(!app.win.isMinimized()){ app.win.minimize(); } else{ app.win.restore(); }
   } else {
-    if(is_shown){ app.win.hide(); } else{ app.win.show(); }
+    if(is_shown && !app.win.isFullScreen()){ app.win.hide(); } else{ app.win.show(); }
   }
 }
 
