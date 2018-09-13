@@ -15,6 +15,19 @@ document.onkeydown = function key_down(e)
     e.preventDefault();
     return;
   }
+  // Faster than Electron
+  if(e.metaKey || e.ctrlKey){
+    if(e.keyCode == 221 || e.keyCode == 190){
+      left.navi.next_marker();
+      e.preventDefault();
+      return;
+    }
+    if(e.keyCode == 291 || e.keyCode == 188){
+      left.navi.prev_marker();
+      e.preventDefault();
+      return;
+    }
+  }
 
   // Reset index on space
   if(e.key == " " || e.key == "Enter"){
