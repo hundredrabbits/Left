@@ -333,5 +333,5 @@ function Left()
   }
 }
 
-let EOL = (process.platform === 'win32' ? '\r\n' : '\n'); // '\r\n' Mayhaps?
+let EOL = '\n';
 

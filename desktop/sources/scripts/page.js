@@ -2,7 +2,7 @@
 
 function Page(text = "",path = null)
 {
-  this.text = text;
+  this.text = text.replace(/\r?\n/g,'\n');
   this.path = path;
 
   this.name = function()
@@ -58,7 +58,6 @@ function Page(text = "",path = null)
   {
     let a = [];
     let lines = this.text.split(EOL);
-  
     for(let id in lines){
       let line = lines[id].trim();
       if(line.substr(0,2) == "##"){ a.push({id:a.length,text:line.replace("##","").trim(),line:parseInt(id),type:"subheader"}); }
