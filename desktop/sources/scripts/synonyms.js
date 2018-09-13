@@ -1570,7 +1570,6 @@ const SYN_DB = {
     "deed",
     "feat"
   ],
-  "acknowledge": [],
   "acme": [
     "summit",
     "zenith",
@@ -13860,7 +13859,6 @@ const SYN_DB = {
     "somber"
   ],
   "dip": [
-    "te",
     "soak",
     "steep",
     "drown",
@@ -13940,7 +13938,6 @@ const SYN_DB = {
   "dis": [
     "therefore"
   ],
-  "when": [],
   "disability": [
     "unfitness",
     "inability",
@@ -15670,8 +15667,6 @@ const SYN_DB = {
     "unsubstantial",
     "intangible"
   ],
-  "em": [],
-  "words": [],
   "emaciation": [
     "leanness",
     "lankness",
@@ -26843,7 +26838,6 @@ const SYN_DB = {
     "deathless",
     "noble"
   ],
-  "im": [],
   "image": [
     "statue",
     "idol",
@@ -30202,7 +30196,6 @@ const SYN_DB = {
     "harping",
     "succession"
   ],
-  "single": [],
   "itinerant": [
     "traveling",
     "wandering",
@@ -33312,7 +33305,6 @@ const SYN_DB = {
     "provide",
     "determine"
   ],
-  "mai": [],
   "malady": [
     "disorder",
     "distemper",
@@ -34898,7 +34890,6 @@ const SYN_DB = {
     "wonderful",
     "awesome"
   ],
-  "mis": [],
   "misanthropy": [
     "cynicism",
     "hatred",
@@ -45141,7 +45132,6 @@ const SYN_DB = {
     "mostremote",
     "elemental"
   ],
-  "uxl": [],
   "unction": [
     "anointing",
     "ointment",
@@ -45316,8 +45306,6 @@ const SYN_DB = {
     "exhaustive",
     "complete"
   ],
-  "up": [],
-  "their": [],
   "upbraid": [
     "reproach",
     "censure",
