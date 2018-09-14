@@ -1,11 +1,9 @@
-const {app, BrowserWindow, webFrame, Menu} = require('electron')
+const {app, BrowserWindow, webFrame, Menu, dialog} = require('electron')
 const path = require('path')
 const url = require('url')
 const shell = require('electron').shell;
 
 let is_shown = true;
-
-// Events
 
 app.on('ready', () => 
 {
