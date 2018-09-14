@@ -1,6 +1,6 @@
 'use strict';
 
-function Theme(default_theme = {background: "#222", f_high: "#fff", f_med: "#777", f_low: "#444", f_inv: "#fff", b_high: "#000", b_med: "#aaa", b_low: "#000", b_inv: "#000"})
+function Theme(default_theme = {background: "#222", f_high: "#fff", f_med: "#ccc", f_low: "#999", f_inv: "#fff", b_high: "#888", b_med: "#666", b_low: "#444", b_inv: "#000" })
 {
   let themer = this;
 
@@ -12,8 +12,8 @@ function Theme(default_theme = {background: "#222", f_high: "#fff", f_med: "#777
 
   this.collection = {
     default: default_theme,
-    noir: {background: "#222", f_high: "#fff", f_med: "#777", f_low: "#444", f_inv: "#fff", b_high: "#000", b_med: "#aaa", b_low: "#000", b_inv: "#000" },
-    pale: {background: "#e1e1e1", f_high: "#000", f_med: "#777", f_low: "#aaa", f_inv: "#000", b_high: "#000", b_med: "#aaa", b_low: "#ccc", b_inv: "#fff" }
+    noir: {background: "#222", f_high: "#fff", f_med: "#ccc", f_low: "#999", f_inv: "#fff", b_high: "#888", b_med: "#666", b_low: "#444", b_inv: "#000" },
+    pale: {background: "#e1e1e1", f_high: "#000", f_med: "#777", f_low: "#fff", f_inv: "#000", b_high: "#eee", b_med: "#999", b_low: "#ccc", b_inv: "#fff" }
   }
 
   this.install = function(host = document.body,callback)
