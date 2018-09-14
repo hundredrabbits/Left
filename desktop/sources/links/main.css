@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 ::-webkit-scrollbar { display: none; margin: 0; padding: 0; }
-body { height: 100vh; font-family: 'input_mono_regular'; font-size: 12px; overflow: auto; transition: background-color 500ms; transition: filter 150ms; overflow: hidden;}
+body { height: 100vh; font-family: 'input_mono_regular'; font-size: 12px; overflow: auto; transition: background-color 500ms,filter 150ms; overflow: hidden;}
 body navi { display: block;width: calc((100vw / 4) - 40px);left: 0px;position: absolute;padding: 30px 0px 0px 30px; -webkit-user-select: none;-webkit-app-region: drag;overflow: auto;padding-top:90px;transition: opacity 200ms 200ms, translateY 150ms, width 200ms; opacity:1;     height: calc(100vh - 120px); padding-bottom: 40px;}
 body navi li { display: flex; flex-direction: row; justify-content: space-between; align-items: center; line-height: 20px; cursor: pointer; position: relative; -webkit-app-region: no-drag; }
 body navi li span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
