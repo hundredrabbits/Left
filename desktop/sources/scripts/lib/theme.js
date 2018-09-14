@@ -69,7 +69,8 @@ function Theme(default_theme = {background: "#222", f_high: "#fff", f_med: "#777
   {
     let theme;
 
-    if(any && any.data){ return any; }
+    if(any && any.background){ return any; }
+    else if(any && any.data){ return any.data; }
     else if(any && is_json(any)){ return JSON.parse(any); }
     else if(any && is_html(any)){ return this.extract(any); }
 
@@ -117,7 +118,7 @@ function Theme(default_theme = {background: "#222", f_high: "#fff", f_med: "#777
 
   this.invert = function()
   {
-    this.load(this.active.background == this.collection.noir.data.background ? this.collection.pale : this.collection.noir)
+    this.load(this.active.background == this.collection.noir.background ? this.collection.pale : this.collection.noir)
   }
 
   // Drag
