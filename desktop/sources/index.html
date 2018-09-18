@@ -148,6 +148,12 @@
 
       if(process.platform === "win32" && remote.process.argv.length > 1){
         left.project.add(remote.process.argv[1]);
+      } 
+      
+      // Open the last file that the user was working on.
+      
+      else if (localStorage.hasOwnProperty("last-file")){
+        left.project.add(localStorage.getItem("last-file"));
       }
 
     </script>
