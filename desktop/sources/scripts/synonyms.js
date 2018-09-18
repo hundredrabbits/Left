@@ -33414,7 +33414,7 @@ const SYN_DB = {
     "director",
     "superintendent",
     "supervisor",
-    "comptroller",
+    "controller",
     "governor",
     "overseer",
     "conductor",

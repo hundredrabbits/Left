@@ -50,6 +50,7 @@ document.onkeyup = (e) =>
 {
   if(e.keyCode == 16){ // Shift
     left.selection.index = 0;
+    left.update();
     return;
   }
   if(e.keyCode != 9){
