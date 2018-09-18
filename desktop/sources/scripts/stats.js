@@ -43,12 +43,13 @@ function Stats()
   this._synonyms = function()
   {
     let underlinedSyn = left.synonyms[left.selection.index];
-    let html = `<b>${left.selection.word}</b> <i>${underlinedSyn}</i> `
+    let html = `<b>${left.selection.word}</b> `
 
-    for(let i = left.selection.index + 1; i < left.synonyms.length; i += 1) {
-      html += `${left.synonyms[i]} `;
+    for(let id in left.synonyms){
+      let w = left.synonyms[id];
+      html += parseInt(id) == left.selection.index ? `<i>${w}</i> ` : `${w} `;
     }
-    return html
+    return html.trim()
   }
 
   this._suggestion = function()

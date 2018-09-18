@@ -50,11 +50,11 @@ document.onkeyup = (e) =>
 {
   if(e.keyCode == 16){ // Shift
     left.selection.index = 0;
-  }
-  if(e.keyCode == 9){ // Tab
     return;
   }
-  left.update();
+  if(e.keyCode != 9){
+    left.update();  
+  }
 }
 
 // Selection Change

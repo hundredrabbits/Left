@@ -57,12 +57,20 @@ function Dictionary()
 
   this.find_synonym = function(str)
   {
+    if(str.trim().length < 4){ return; }
+
     let target = str.toLowerCase();
 
-    if(this.synonyms[target]){ return uniq(this.synonyms[target]); }
+    if(this.synonyms[target]){ 
+      return uniq(this.synonyms[target]); 
+    }
 
-    // If plurral
-    if(target[target.length-1] == "s" && this.synonyms[target.substr(0,target.length-1)]){ return uniq(this.synonyms[target.substr(0,target.length-1)]); }
+    if(target[target.length-1] == "s"){
+      let singular = this.synonyms[target.substr(0,target.length-1)]
+      if(this.synonyms[singular]){
+        return uniq(this.synonyms[singular]);
+      }
+    }
 
     return null;
   }
