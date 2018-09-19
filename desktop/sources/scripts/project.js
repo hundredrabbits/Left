@@ -19,8 +19,10 @@ function Project()
     if(path){
       if(this.paths().indexOf(path) > -1){ console.warn(`Already open: ${path}`); return; }
       page = new Page(this.load(path),path);
+      localStorage.setItem("last-file", path);
     }
     this.pages.push(page);
+    left.go.to_page(this.pages.length-1);
   }
 
   this.page = function()
