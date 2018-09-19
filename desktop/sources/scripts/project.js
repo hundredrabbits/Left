@@ -11,9 +11,11 @@ function Project()
   {
     // Load previous files
     if(localStorage.hasOwnProperty("paths")){
-      let paths = JSON.parse(localStorage.getItem("paths"))
-      for(let id in paths){
-        left.project.add(paths[id])
+      if(is_json(localStorage.getItem("paths"))){
+        let paths = JSON.parse(localStorage.getItem("paths"))
+        for(let id in paths){
+          left.project.add(paths[id])
+        }
       }
     }
 
