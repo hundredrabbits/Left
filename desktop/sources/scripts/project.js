@@ -2,12 +2,27 @@
 
 function Project()
 {
-  this.pages = [new Splash()]
+  this.pages = []
 
   this.index = 0;
   this.original = "";
 
-  // ========================
+  this.start = function()
+  {
+    // Load previous files
+    if(localStorage.hasOwnProperty("paths")){
+      let paths = JSON.parse(localStorage.getItem("paths"))
+      for(let id in paths){
+        left.project.add(paths[id])
+      }
+    }
+
+    // Add splash
+    if(this.pages.length == 0){
+      left.project.pages.push(new Splash())
+      left.go.to_page(0);
+    }
+  }
 
   this.add = function(path = null)
   {
@@ -16,13 +31,17 @@ function Project()
     this.remove_splash();
 
     let page = new Page();
+
     if(path){
-      if(this.paths().indexOf(path) > -1){ console.warn(`Already open: ${path}`); return; }
+      if(this.paths().indexOf(path) > -1){ console.warn(`Already open(skipped): ${path}`); return; }
+      if(!this.load(path)){ console.warn(`Invalid url(skipped): ${path}`); return; }
       page = new Page(this.load(path),path);
-      localStorage.setItem("last-file", path);
     }
+
     this.pages.push(page);
     left.go.to_page(this.pages.length-1);
+    
+    localStorage.setItem("paths", JSON.stringify(this.paths()));
   }
 
   this.page = function()
@@ -45,7 +64,7 @@ function Project()
     try {
       data = fs.readFileSync(path, 'utf-8');
     } catch (err) {
-      alert("An error ocurred reading the file :" + err.message);
+      console.warn(`Could not load ${path}`);
       return;
     }
     return data;
@@ -132,6 +151,7 @@ function Project()
       }
     }
     this.force_close();
+    localStorage.setItem("paths", JSON.stringify(this.paths()));
   }
 
   this.force_close = function()

@@ -42,6 +42,14 @@ function Left()
     this.textarea_el.setAttribute("spellcheck","false");
     this.textarea_el.setAttribute("type","text");
 
+    this.textarea_el.addEventListener('scroll', () => {
+      if(!this.reader.active){ this.stats.on_scroll(); }
+    });
+    
+    this.textarea_el.addEventListener('input', () => {
+      this.project.page().commit();
+    });
+
     this.theme.install(host);
   }
 
@@ -49,16 +57,13 @@ function Left()
   {
     this.theme.start();
     this.dictionary.start();
+    this.project.start();
 
-    this.textarea_el.focus();
-    this.textarea_el.addEventListener('scroll', () => {
-      if(!this.reader.active){ this.stats.on_scroll(); }
-    });
-    this.textarea_el.addEventListener('input', () => {
-      this.project.page().commit();
-    });
+
 
     this.go.to_page();
+
+    this.textarea_el.focus();
     this.textarea_el.setSelectionRange(0,0);
 
     this.dictionary.update();

@@ -29,9 +29,8 @@ body #operator { display: block;border-bottom: 0px;margin-top: 30px;position: fi
 body #operator.inactive { bottom:-40px; }
 body #operator.active { bottom:0px; }
 
-body { background-color: #222; }
+body {}
 * { background-color: inherit; }
-body.invert { filter: invert(1); transition: filter 150ms; }
 
 body.mobile navi { opacity:0; transition: opacity 10ms; }
 body.mobile textarea { width: 100vw; left: 5%; transition: left 200ms; transition-delay: 20ms; }

@@ -17,12 +17,12 @@ document.onkeydown = function key_down(e)
   }
   // Faster than Electron
   if(e.metaKey || e.ctrlKey){
-    if(e.keyCode == 221 || e.keyCode == 190){
+    if(e.keyCode == 221){
       left.navi.next_marker();
       e.preventDefault();
       return;
     }
-    if(e.keyCode == 291 || e.keyCode == 188){
+    if(e.keyCode == 291){
       left.navi.prev_marker();
       e.preventDefault();
       return;

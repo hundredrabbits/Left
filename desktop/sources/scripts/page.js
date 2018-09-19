@@ -22,11 +22,6 @@ function Page(text = "",path = null)
     return this.load() != this.text;
   }
 
-  this.is_active = function()
-  {
-    return true;
-  }
-
   this.commit = function(text = left.textarea_el.value)
   {
     this.text = text;
