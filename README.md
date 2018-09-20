@@ -6,18 +6,7 @@
 
 ## Guide
 
-- Create markers by beginning lines with `#`, `##` or `--`.
-- Open a text file by dragging it, or with `ctrl o`.
-- Highlight some text and press `ctrl k` to enable the speed reader.
-- Press `tab` to auto-complete a previously used, or common, word.
-- Press `shift tab` to scroll through the selected word's synonyms.
-
-### Details
-
-- `L`, stands for Lines.
-- `W`, stands for Words.
-- `V`, stands for Vocabulary, or unique words.
-- `C`, stands for Characters.
+View the [guide](https://100r.co/blog.html#left)
 
 ## Install
 
