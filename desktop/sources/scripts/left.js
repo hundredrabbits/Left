@@ -198,7 +198,7 @@ function Left()
   this.active_url = function()
   {
     let words = this.active_line().split(" ");
-    for(let id in words){
+    for(const id in words){
       if(words[id].indexOf("://") > -1 || words[id].indexOf("www.") > -1){
         return words[id];
       }
@@ -293,7 +293,7 @@ function Left()
   {
     let lines = this.selected().match(/[^\r\n]+/g);
     let text = ""
-    for(let id in lines){
+    for(const id in lines){
       let line = lines[id];
       text += `${characters}${line}\n`
     }
@@ -307,7 +307,7 @@ function Left()
     let a = [];
     let sum = 0;
 
-    for(let id in parts){
+    for(const id in parts){
       let p = parts[id].length
       a.push(sum + p);
       sum += p + word.length;

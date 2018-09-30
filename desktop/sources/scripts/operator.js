@@ -117,7 +117,7 @@ function Operator()
 
     let from = left.textarea_el.selectionStart;
     let result = 0;
-    for(let id in results){
+    for(const id in results){
       result = results[id];
       if(result > from){ break; }
     }
@@ -151,7 +151,7 @@ function Operator()
 
     let from = left.textarea_el.selectionStart;
     let result = 0;
-    for(let id in results){
+    for(const id in results){
       result = results[id];
       if(result > from){ break; }
     }

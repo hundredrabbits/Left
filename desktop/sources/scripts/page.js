@@ -53,7 +53,7 @@ function Page(text = "",path = null)
   {
     let a = [];
     let lines = this.text.split(EOL);
-    for(let id in lines){
+    for(const id in lines){
       let line = lines[id].trim();
       if(line.substr(0,2) == "##"){ a.push({id:a.length,text:line.replace("##","").trim(),line:parseInt(id),type:"subheader"}); }
       else if(line.substr(0,1) == "#"){ a.push({id:a.length,text:line.replace("#","").trim(),line:parseInt(id),type:"header"}); }

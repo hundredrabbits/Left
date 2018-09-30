@@ -74,7 +74,7 @@ function Controller()
   {
     let svg_html = "";
 
-    for(let id in this.layout){
+    for(const id in this.layout){
       let key = this.layout[id];
       let acc = this.accelerator_for_key(key.name,m);
       svg_html += `<rect x="${key.x + 1}" y="${key.y + 1}" width="${key.width - 2}" height="${key.height - 2}" rx="4" ry="4" title="${key.name}" stroke="#ccc" fill="none" stroke-width="1"/>`;
@@ -103,7 +103,7 @@ function Controller()
   {
     let txt = `## ${name} Mode\n\n`;
 
-    for(let id in mode){
+    for(const id in mode){
       if(id == "*" || id == "Edit"){ continue; }
       txt += `### ${id}\n`;
       for(let name in mode[id]){
@@ -121,7 +121,7 @@ function Controller()
     let acc = {basic:null,ctrl:null}
     for(let cat in menu){
       let options = menu[cat];
-      for(let id in options.submenu){
+      for(const id in options.submenu){
         let option = options.submenu[id]; if(option.role){ continue; }
         acc.basic = (option.accelerator.toLowerCase() == key.toLowerCase()) ? option.label.toUpperCase().replace("TOGGLE ","").substr(0,8).trim() : acc.basic;
         acc.ctrl = (option.accelerator.toLowerCase() == ("CmdOrCtrl+"+key).toLowerCase()) ? option.label.toUpperCase().replace("TOGGLE ","").substr(0,8).trim() : acc.ctrl;

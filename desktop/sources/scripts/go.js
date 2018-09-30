@@ -8,7 +8,7 @@ function Go()
 
     console.log(`Go to page:${left.project.index}/${left.project.pages.length}`)
 
-    let page = left.project.page();
+    const page = left.project.page();
 
     if(!page){ console.warn("Missing page",this.index); return; }
 
@@ -19,10 +19,10 @@ function Go()
 
   this.to_line = function(id)
   {
-    let lineArr = left.textarea_el.value.split(EOL,parseInt(id)+1)
-    let arrJoin = lineArr.join(EOL)
-    let from = arrJoin.length-lineArr[id].length;
-    let to = arrJoin.length;
+    const lineArr = left.textarea_el.value.split(EOL,parseInt(id)+1)
+    const arrJoin = lineArr.join(EOL)
+    const from = arrJoin.length-lineArr[id].length;
+    const to = arrJoin.length;
 
     this.to(from,to)
   }
@@ -33,7 +33,7 @@ function Go()
       left.textarea_el.setSelectionRange(from,to);
     }
     else if(left.textarea_el.createTextRange){
-      let range = left.textarea_el.createTextRange();
+      const range = left.textarea_el.createTextRange();
       range.collapse(true);
       range.moveEnd('character',to);
       range.moveStart('character',from);
@@ -50,47 +50,47 @@ function Go()
 
   this.to_next = function(str,scroll = true)
   {
-    let ta = left.textarea_el
-    let text = ta.value;
-    let range = text.substr(ta.selectionStart,text.length-ta.selectionStart);
-    let next = ta.selectionStart + range.indexOf(EOL)
+    const ta = left.textarea_el
+    const text = ta.value;
+    const range = text.substr(ta.selectionStart,text.length-ta.selectionStart);
+    const next = ta.selectionStart + range.indexOf(EOL)
     this.to(next,next,scroll)
   }
 
   this.to_word = function(word,from = 0, tries = 0, starting_with = false, ending_with = false)
   {
-    let target = word;
+    const target = word;
 
     if(starting_with){ target = target.substr(0,target.length-1); }
     if(ending_with){ target = target.substr(1,target.length-1); }
 
     if(left.textarea_el.value.substr(from,length).indexOf(target) == -1 || tries < 1){ console.log("failed"); return; }
 
-    let length = left.textarea_el.value.length - from;
-    let segment = left.textarea_el.value.substr(from,length)
-    let location = segment.indexOf(target);
-    let char_before = segment.substr(location-1,1);
-    let char_after = segment.substr(location+target.length,1);
+    const length = left.textarea_el.value.length - from;
+    const segment = left.textarea_el.value.substr(from,length)
+    const location = segment.indexOf(target);
+    const char_before = segment.substr(location-1,1);
+    const char_after = segment.substr(location+target.length,1);
 
     // Check for full word
     if(!starting_with && !ending_with && !char_before.match(/[a-z]/i) && !char_after.match(/[a-z]/i)){
       left.select(location+from,location+from+target.length);
-      let perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
-      let offset = 60;
+      const perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
+      const offset = 60;
       left.textarea_el.scrollTop = (left.textarea_el.scrollHeight * perc) - offset;
       return location;
     }
     else if(starting_with && !char_before.match(/[a-z]/i) && char_after.match(/[a-z]/i)){
       left.select(location+from,location+from+target.length);
-      let perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
-      let offset = 60;
+      const perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
+      const offset = 60;
       left.textarea_el.scrollTop = (left.textarea_el.scrollHeight * perc) - offset;
       return location;
     }
     else if(ending_with && char_before.match(/[a-z]/i) && !char_after.match(/[a-z]/i)){
       left.select(location+from,location+from+target.length);
-      let perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
-      let offset = 60;
+      const perc = (left.textarea_el.selectionEnd/parseFloat(left.chars_count));
+      const offset = 60;
       left.textarea_el.scrollTop = (left.textarea_el.scrollHeight * perc) - offset;
       return location;
     }
@@ -100,8 +100,8 @@ function Go()
 
   this.scroll_to = function(from,to)
   {
-    let text_val = left.textarea_el.value;
-    let div = document.createElement("div");
+    const text_val = left.textarea_el.value;
+    const div = document.createElement("div");
     div.innerHTML = text_val.slice(0,to);
     document.body.appendChild(div);
     animate_scroll_to(left.textarea_el,div.offsetHeight - 60, 200);
@@ -110,15 +110,15 @@ function Go()
 
   function animate_scroll_to(element, to, duration)
   {
-    let start = element.scrollTop;
-    let change = to - start;
-    let currentTime = 0;
-    let increment = 20; // Equal to line-height
+    const start = element.scrollTop;
+    const change = to - start;
+    const currentTime = 0;
+    const increment = 20; // Equal to line-height
 
-    let animate = function()
+    const animate = function()
     {
       currentTime += increment;
-      let val = Math.easeInOutQuad(currentTime, start, change, duration);
+      const val = Math.easeInOutQuad(currentTime, start, change, duration);
       element.scrollTop = val;
       if (!left.reader.active) left.stats.on_scroll();
       if(currentTime < duration){

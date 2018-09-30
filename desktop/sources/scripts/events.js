@@ -82,10 +82,10 @@ window.addEventListener('drop', function(e)
   e.stopPropagation();
   e.preventDefault();
 
-  let files = e.dataTransfer.files;
+  const files = e.dataTransfer.files;
 
-  for(let id in files){
-    let file = files[id];
+  for(const id in files){
+    const file = files[id];
     if(!file.path){ continue;}
     if(file.type && !file.type.match(/text.*/)) { console.log(`Skipped ${file.type} : ${file.path}`); continue; }
     if(file.path && file.path.substr(-3,3) == "thm"){ continue; }

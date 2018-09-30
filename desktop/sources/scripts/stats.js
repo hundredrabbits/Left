@@ -45,7 +45,7 @@ function Stats()
     let underlinedSyn = left.synonyms[left.selection.index];
     let html = `<b>${left.selection.word}</b> `
 
-    for(let id in left.synonyms){
+    for(const id in left.synonyms){
       let w = left.synonyms[id];
       html += parseInt(id) == left.selection.index ? `<i>${w}</i> ` : `${w} `;
     }
@@ -84,7 +84,7 @@ function Stats()
 
     let h = {};
     let words = text.toLowerCase().replace(/[^a-z0-9 ]/g, '').split(" ");
-    for(let id in words){
+    for(const id in words){
       h[words[id]] = 1
     }
 

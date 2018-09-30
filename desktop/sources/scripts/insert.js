@@ -26,12 +26,12 @@ function Insert()
 
   this.date = function()
   {
-    let date = new Date()
-    let strArray=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    let d = date.getDate();
-    let m = strArray[date.getMonth()];
-    let y = date.getFullYear();
-    let s = '' + (d <= 9 ? '0' + d : d) + '-' + m + '-' + y;
+    const date = new Date()
+    const strArray=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const d = date.getDate();
+    const m = strArray[date.getMonth()];
+    const y = date.getFullYear();
+    const s = '' + (d <= 9 ? '0' + d : d) + '-' + m + '-' + y;
     left.inject(s+" ")
     this.stop();
   }
@@ -46,7 +46,7 @@ function Insert()
 
   this.header = function()
   {
-    let is_multiline = left.selected().match(/[^\r\n]+/g);
+    const is_multiline = left.selected().match(/[^\r\n]+/g);
     
     if(left.prev_character() == EOL && !is_multiline){
       left.inject("# ");
@@ -62,7 +62,7 @@ function Insert()
 
   this.subheader = function()
   {
-    let is_multiline = left.selected().match(/[^\r\n]+/g);
+    const is_multiline = left.selected().match(/[^\r\n]+/g);
 
     if(left.prev_character() == EOL && !is_multiline){
       left.inject("## ");
@@ -78,7 +78,7 @@ function Insert()
 
   this.comment = function()
   {
-    let is_multiline = left.selected().match(/[^\r\n]+/g);
+    const is_multiline = left.selected().match(/[^\r\n]+/g);
 
     if(left.prev_character() == EOL && !is_multiline){
       left.inject("-- ");
@@ -94,7 +94,7 @@ function Insert()
 
   this.list = function()
   {
-    let is_multiline = left.selected().match(/[^\r\n]+/g);
+    const is_multiline = left.selected().match(/[^\r\n]+/g);
 
     if(left.prev_character() == EOL && !is_multiline){
       left.inject("- ");

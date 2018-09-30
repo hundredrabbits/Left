@@ -13,7 +13,7 @@ function Project()
     if(localStorage.hasOwnProperty("paths")){
       if(is_json(localStorage.getItem("paths"))){
         let paths = JSON.parse(localStorage.getItem("paths"))
-        for(let id in paths){
+        for(const id in paths){
           left.project.add(paths[id])
         }
       }
@@ -92,7 +92,7 @@ function Project()
 
     if(!paths){ console.log("Nothing to load"); return; }
 
-    for(let id in paths){
+    for(const id in paths){
       this.add(paths[id])
     }
 
@@ -182,7 +182,7 @@ function Project()
 
   this.has_changes = function()
   {
-    for(let id in this.pages){
+    for(const id in this.pages){
       if(this.pages[id].has_changes()){ return true;}
     }
     return false;
@@ -214,7 +214,7 @@ function Project()
 
   this.remove_splash = function()
   {
-    for(let id in this.pages){
+    for(const id in this.pages){
       let page = this.pages[id];
       if(page.text == new Splash().text){
         this.pages.splice(0,1);
@@ -226,7 +226,7 @@ function Project()
   this.paths = function()
   {
     let a = []
-    for(let id in this.pages){
+    for(const id in this.pages){
       let page = this.pages[id];
       if(page.path){ a.push(page.path); }
     }

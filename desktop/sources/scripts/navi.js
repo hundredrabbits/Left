@@ -85,7 +85,7 @@ function Navi()
     if(markers.length < 1){ return; }
 
     let prev = null;
-    for(let id in markers){
+    for(const id in markers){
       let marker = markers[id];
       if(marker.line > pos){ return markers[parseInt(id)-1]; }
     }
