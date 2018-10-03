@@ -1,8 +1,7 @@
-"use strict";
+'use strict'
 
-function Splash()
-{
-  Page.call(this,`# Welcome
+function Splash () {
+  Page.call(this, `# Welcome
 
 ## Guide
 
@@ -44,13 +43,11 @@ View sources: https://github.com/hundredrabbits/left
 Download additional themes: http://hundredrabbits.itch.io/Left
 `)
 
-  this.name = function()
-  {
-    return "splash"
+  this.name = function () {
+    return 'splash'
   }
 
-  this.has_changes = function()
-  {
-    return false;
+  this.has_changes = function () {
+    return false
   }
 }

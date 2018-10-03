@@ -1,90 +1,82 @@
-"use strict";
+'use strict'
 
-function Dictionary()
-{
-  this.vocabulary = [];
-  this.synonyms = {};
-  this.is_suggestions_enabled = true;
-  this.is_synonyms_enabled = true;
+function Dictionary () {
+  this.vocabulary = []
+  this.synonyms = {}
+  this.is_suggestions_enabled = true
+  this.is_synonyms_enabled = true
 
-  this.start = function()
-  {
-    this.synonyms = SYN_DB;
-    this.build_synonyms();
-    this.update();
+  this.start = function () {
+    this.synonyms = SYN_DB
+    this.build_synonyms()
+    this.update()
   }
 
-  this.add_word = function(s)
-  {
-    const word = s.toLowerCase().trim();
+  this.add_word = function (s) {
+    const word = s.toLowerCase().trim()
     const regex = /[^a-z]/gi
 
-    if(regex.test(word) || word.length < 4){ return; }
+    if (regex.test(word) || word.length < 4) { return }
 
-    this.vocabulary[this.vocabulary.length] = word    
+    this.vocabulary[this.vocabulary.length] = word
   }
 
-  this.build_synonyms = function()
-  {
-    const time = performance.now();
-    
-    for(const target_word in SYN_DB){
-      const synonyms = SYN_DB[target_word];
+  this.build_synonyms = function () {
+    const time = performance.now()
+
+    for (const target_word in SYN_DB) {
+      const synonyms = SYN_DB[target_word]
       this.add_word(target_word)
-      for(const word_id in synonyms){
-        const target_parent = synonyms[word_id];
-        if(this.synonyms[target_parent] && this.synonyms[target_parent].constructor == Array){ 
-          this.synonyms[target_parent][this.synonyms[target_parent].length] = target_word;
-        }
-        else{
-          this.synonyms[target_parent] = [target_word];
+      for (const word_id in synonyms) {
+        const target_parent = synonyms[word_id]
+        if (this.synonyms[target_parent] && this.synonyms[target_parent].constructor == Array) {
+          this.synonyms[target_parent][this.synonyms[target_parent].length] = target_word
+        } else {
+          this.synonyms[target_parent] = [target_word]
         }
       }
     }
-    console.log(`Built ${Object.keys(this.synonyms).length} synonyms, in ${(performance.now() - time).toFixed(2)}ms.`);
+    console.log(`Built ${Object.keys(this.synonyms).length} synonyms, in ${(performance.now() - time).toFixed(2)}ms.`)
   }
 
-  this.find_suggestion = function(str)
-  {
-    const target = str.toLowerCase();
+  this.find_suggestion = function (str) {
+    const target = str.toLowerCase()
 
-    for(const id in this.vocabulary){
-      if(this.vocabulary[id].substr(0,target.length) != target){ continue; }
-      return this.vocabulary[id];
+    for (const id in this.vocabulary) {
+      if (this.vocabulary[id].substr(0, target.length) != target) { continue }
+      return this.vocabulary[id]
     }
-    return null;
+    return null
   }
 
-  this.find_synonym = function(str)
-  {
-    if(str.trim().length < 4){ return; }
+  this.find_synonym = function (str) {
+    if (str.trim().length < 4) { return }
 
-    const target = str.toLowerCase();
+    const target = str.toLowerCase()
 
-    if(this.synonyms[target]){ 
-      return uniq(this.synonyms[target]); 
+    if (this.synonyms[target]) {
+      return uniq(this.synonyms[target])
     }
 
-    if(target[target.length-1] == "s"){
-      const singular = this.synonyms[target.substr(0,target.length-1)]
-      if(this.synonyms[singular]){
-        return uniq(this.synonyms[singular]);
+    if (target[target.length - 1] == 's') {
+      const singular = this.synonyms[target.substr(0, target.length - 1)]
+      if (this.synonyms[singular]) {
+        return uniq(this.synonyms[singular])
       }
     }
 
-    return null;
+    return null
   }
 
-  this.update = function()
-  {
-    const time = performance.now();
-    const words = left.textarea_el.value.toLowerCase().split(/[^\w\-]+/);
+  this.update = function () {
+    const time = performance.now()
+    const words = left.textarea_el.value.toLowerCase().split(/[^\w\-]+/)
 
-    for(const word_id in words){
+    for (const word_id in words) {
       this.add_word(words[word_id])
     }
-    console.log(`Updated Dictionary in ${(performance.now() - time).toFixed(2)}ms.`);
+    console.log(`Updated Dictionary in ${(performance.now() - time).toFixed(2)}ms.`)
   }
 
-  function uniq(a1){ const a2 = []; for(const id in a1){ if(a2.indexOf(a1[id]) == -1){ a2[a2.length] = a1[id]; } } return a2; }
+  function uniq (a1) { const a2 = []; for (const id in a1) { if (a2.indexOf(a1[id]) == -1) { a2[a2.length] = a1[id] } } return a2 }
 }
