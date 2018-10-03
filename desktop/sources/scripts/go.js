@@ -52,7 +52,7 @@ function Go () {
   }
 
   this.to_word = function (word, from = 0, tries = 0, starting_with = false, ending_with = false) {
-    const target = word
+    let target = word
 
     if (starting_with) { target = target.substr(0, target.length - 1) }
     if (ending_with) { target = target.substr(1, target.length - 1) }
@@ -101,7 +101,7 @@ function Go () {
   function animate_scroll_to (element, to, duration) {
     const start = element.scrollTop
     const change = to - start
-    const currentTime = 0
+    let currentTime = 0
     const increment = 20 // Equal to line-height
 
     const animate = function () {
