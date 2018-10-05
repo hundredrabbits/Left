@@ -1,3 +1,5 @@
+/* global left, EOL */
+
 'use strict'
 
 function Go () {
@@ -40,7 +42,7 @@ function Go () {
       this.scroll_to(from, to)
     }
 
-    return from == -1 ? null : from
+    return from === -1 ? null : from
   }
 
   this.to_next = function (str, scroll = true) {
@@ -51,34 +53,35 @@ function Go () {
     this.to(next, next, scroll)
   }
 
-  this.to_word = function (word, from = 0, tries = 0, starting_with = false, ending_with = false) {
+  this.to_word = function (word, from = 0, tries = 0, startingWith = false, endingWith = false) {
     let target = word
 
-    if (starting_with) { target = target.substr(0, target.length - 1) }
-    if (ending_with) { target = target.substr(1, target.length - 1) }
+    if (startingWith) { target = target.substr(0, target.length - 1) }
+    if (endingWith) { target = target.substr(1, target.length - 1) }
 
-    if (left.textarea_el.value.substr(from, length).indexOf(target) == -1 || tries < 1) { console.log('failed'); return }
+    // TODO: fix length reference here?
+    if (left.textarea_el.value.substr(from, length).indexOf(target) === -1 || tries < 1) { console.log('failed'); return }
 
     const length = left.textarea_el.value.length - from
     const segment = left.textarea_el.value.substr(from, length)
     const location = segment.indexOf(target)
-    const char_before = segment.substr(location - 1, 1)
-    const char_after = segment.substr(location + target.length, 1)
+    const charBefore = segment.substr(location - 1, 1)
+    const charAfter = segment.substr(location + target.length, 1)
 
     // Check for full word
-    if (!starting_with && !ending_with && !char_before.match(/[a-z]/i) && !char_after.match(/[a-z]/i)) {
+    if (!startingWith && !endingWith && !charBefore.match(/[a-z]/i) && !charAfter.match(/[a-z]/i)) {
       left.select(location + from, location + from + target.length)
       const perc = (left.textarea_el.selectionEnd / parseFloat(left.chars_count))
       const offset = 60
       left.textarea_el.scrollTop = (left.textarea_el.scrollHeight * perc) - offset
       return location
-    } else if (starting_with && !char_before.match(/[a-z]/i) && char_after.match(/[a-z]/i)) {
+    } else if (startingWith && !charBefore.match(/[a-z]/i) && charAfter.match(/[a-z]/i)) {
       left.select(location + from, location + from + target.length)
       const perc = (left.textarea_el.selectionEnd / parseFloat(left.chars_count))
       const offset = 60
       left.textarea_el.scrollTop = (left.textarea_el.scrollHeight * perc) - offset
       return location
-    } else if (ending_with && char_before.match(/[a-z]/i) && !char_after.match(/[a-z]/i)) {
+    } else if (endingWith && charBefore.match(/[a-z]/i) && !charAfter.match(/[a-z]/i)) {
       left.select(location + from, location + from + target.length)
       const perc = (left.textarea_el.selectionEnd / parseFloat(left.chars_count))
       const offset = 60
@@ -86,19 +89,19 @@ function Go () {
       return location
     }
 
-    this.to_word(word, location + target.length, tries - 1, starting_with, ending_with)
+    this.to_word(word, location + target.length, tries - 1, startingWith, endingWith)
   }
 
   this.scroll_to = function (from, to) {
-    const text_val = left.textarea_el.value
+    const textVal = left.textarea_el.value
     const div = document.createElement('div')
-    div.innerHTML = text_val.slice(0, to)
+    div.innerHTML = textVal.slice(0, to)
     document.body.appendChild(div)
-    animate_scroll_to(left.textarea_el, div.offsetHeight - 60, 200)
+    animateScrollTo(left.textarea_el, div.offsetHeight - 60, 200)
     div.remove()
   }
 
-  function animate_scroll_to (element, to, duration) {
+  function animateScrollTo (element, to, duration) {
     const start = element.scrollTop
     const change = to - start
     let currentTime = 0
@@ -130,3 +133,5 @@ function Go () {
 
   function clamp (v, min, max) { return v < min ? min : v > max ? max : v }
 }
+
+module.exports = Go

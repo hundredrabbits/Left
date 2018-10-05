@@ -1,3 +1,5 @@
+/* global left, EOL */
+
 'use strict'
 
 function Stats () {
@@ -13,7 +15,7 @@ function Stats () {
       return
     }
 
-    if (left.textarea_el.selectionStart != left.textarea_el.selectionEnd) {
+    if (left.textarea_el.selectionStart !== left.textarea_el.selectionEnd) {
       this.el.innerHTML = this._selection()
     } else if (left.synonyms) {
       this.el.innerHTML = this._synonyms()
@@ -33,12 +35,13 @@ function Stats () {
   }
 
   this._synonyms = function () {
-    let underlinedSyn = left.synonyms[left.selection.index]
+    // TODO: improve synonyms (#91)
+    // let underlinedSyn = left.synonyms[left.selection.index]
     let html = `<b>${left.selection.word}</b> `
 
     for (const id in left.synonyms) {
       let w = left.synonyms[id]
-      html += parseInt(id) == left.selection.index ? `<i>${w}</i> ` : `${w} `
+      html += parseInt(id) === left.selection.index ? `<i>${w}</i> ` : `${w} `
     }
     return html.trim()
   }
@@ -57,9 +60,9 @@ function Stats () {
   }
 
   this.on_scroll = function () {
-    let scroll_distance = left.textarea_el.scrollTop
-    let scroll_max = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight
-    let ratio = Math.min(1, (scroll_max == 0) ? 0 : (scroll_distance / scroll_max))
+    let scrollDistance = left.textarea_el.scrollTop
+    let scrollMax = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight
+    let ratio = Math.min(1, (scrollMax === 0) ? 0 : (scrollDistance / scrollMax))
     let progress = ['|', '|', '|', '|', '|', '|', '|', '|', '|', '|'].map((v, i) => { return i < ratio * 10 ? '<b>|</b>' : v }).join('')
 
     this.el.innerHTML = `${progress} ${(ratio * 100).toFixed(2)}%`
@@ -85,3 +88,5 @@ function Stats () {
 
   function clamp (v, min, max) { return v < min ? min : v > max ? max : v }
 }
+
+module.exports = Stats

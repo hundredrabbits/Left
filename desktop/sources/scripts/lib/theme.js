@@ -6,9 +6,6 @@ function Theme (default_theme = { background: '#222', f_high: '#fff', f_med: '#c
   this.el = document.createElement('style')
   this.el.type = 'text/css'
 
-  this.callback
-  this.active
-
   this.collection = {
     default: default_theme,
     noir: { background: '#222', f_high: '#fff', f_med: '#ccc', f_low: '#999', f_inv: '#fff', b_high: '#888', b_med: '#666', b_low: '#444', b_inv: '#000' },
@@ -23,7 +20,7 @@ function Theme (default_theme = { background: '#222', f_high: '#fff', f_med: '#c
 
   this.start = function () {
     console.log('Theme', 'Starting..')
-    let storage = is_json(localStorage.theme) ? JSON.parse(localStorage.theme) : this.collection.default
+    let storage = isJSON(localStorage.theme) ? JSON.parse(localStorage.theme) : this.collection.default
     this.load(!storage.background ? this.collection.default : storage)
   }
 
@@ -60,9 +57,7 @@ function Theme (default_theme = { background: '#222', f_high: '#fff', f_med: '#c
   }
 
   this.parse = function (any) {
-    let theme
-
-    if (any && any.background) { return any } else if (any && any.data) { return any.data } else if (any && is_json(any)) { return JSON.parse(any) } else if (any && is_html(any)) { return this.extract(any) }
+    if (any && any.background) { return any } else if (any && any.data) { return any.data } else if (any && isJSON(any)) { return JSON.parse(any) } else if (any && isHTML(any)) { return this.extract(any) }
 
     return null
   }
@@ -102,7 +97,7 @@ function Theme (default_theme = { background: '#222', f_high: '#fff', f_med: '#c
   }
 
   this.invert = function () {
-    this.load(this.active.background == this.collection.noir.background ? this.collection.pale : this.collection.noir)
+    this.load(this.active.background === this.collection.noir.background ? this.collection.pale : this.collection.noir)
   }
 
   // Drag
@@ -132,6 +127,8 @@ function Theme (default_theme = { background: '#222', f_high: '#fff', f_med: '#c
   window.addEventListener('dragover', this.drag)
   window.addEventListener('drop', this.drop)
 
-  function is_json (text) { try { JSON.parse(text); return true } catch (error) { return false } }
-  function is_html (text) { try { new DOMParser().parseFromString(text, 'text/xml'); return true } catch (error) { return false } }
+  function isJSON (text) { try { JSON.parse(text); return true } catch (error) { return false } }
+  function isHTML (text) { try { new DOMParser().parseFromString(text, 'text/xml'); return true } catch (error) { return false } }
 }
+
+module.exports = Theme

@@ -1,3 +1,5 @@
+/* global Page */
+
 'use strict'
 
 function Splash () {
@@ -5,7 +7,7 @@ function Splash () {
 
 ## Guide
 
-Left is a simple, minimalist, open-source and cross-platform text editor. 
+Left is a simple, minimalist, open-source and cross-platform text editor.
 
 - Create markers by beginning lines with #, ## or --.
 - Navigate quickly between markers with <c-]> and <c-[>.
@@ -51,3 +53,5 @@ Download additional themes: http://hundredrabbits.itch.io/Left
     return false
   }
 }
+
+module.exports = Splash

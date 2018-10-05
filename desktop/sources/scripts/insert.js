@@ -1,3 +1,5 @@
+/* global left, EOL */
+
 'use strict'
 
 function Insert () {
@@ -32,18 +34,18 @@ function Insert () {
   }
 
   this.path = function () {
-    if (left.project.paths().length == 0) { this.stop(); return }
+    if (left.project.paths().length === 0) { this.stop(); return }
 
     left.inject(left.project.paths()[left.project.index])
     this.stop()
   }
 
   this.header = function () {
-    const is_multiline = left.selected().match(/[^\r\n]+/g)
+    const isMultiline = left.selected().match(/[^\r\n]+/g)
 
-    if (left.prev_character() == EOL && !is_multiline) {
+    if (left.prev_character() === EOL && !isMultiline) {
       left.inject('# ')
-    } else if (is_multiline) {
+    } else if (isMultiline) {
       left.inject_multiline('# ')
     } else {
       left.inject_line('# ')
@@ -52,11 +54,11 @@ function Insert () {
   }
 
   this.subheader = function () {
-    const is_multiline = left.selected().match(/[^\r\n]+/g)
+    const isMultiline = left.selected().match(/[^\r\n]+/g)
 
-    if (left.prev_character() == EOL && !is_multiline) {
+    if (left.prev_character() === EOL && !isMultiline) {
       left.inject('## ')
-    } else if (is_multiline) {
+    } else if (isMultiline) {
       left.inject_multiline('## ')
     } else {
       left.inject_line('## ')
@@ -65,11 +67,11 @@ function Insert () {
   }
 
   this.comment = function () {
-    const is_multiline = left.selected().match(/[^\r\n]+/g)
+    const isMultiline = left.selected().match(/[^\r\n]+/g)
 
-    if (left.prev_character() == EOL && !is_multiline) {
+    if (left.prev_character() === EOL && !isMultiline) {
       left.inject('-- ')
-    } else if (is_multiline) {
+    } else if (isMultiline) {
       left.inject_multiline('-- ')
     } else {
       left.inject_line('-- ')
@@ -78,11 +80,11 @@ function Insert () {
   }
 
   this.list = function () {
-    const is_multiline = left.selected().match(/[^\r\n]+/g)
+    const isMultiline = left.selected().match(/[^\r\n]+/g)
 
-    if (left.prev_character() == EOL && !is_multiline) {
+    if (left.prev_character() === EOL && !isMultiline) {
       left.inject('- ')
-    } else if (is_multiline) {
+    } else if (isMultiline) {
       left.inject_multiline('- ')
     } else {
       left.inject_line('- ')
@@ -91,7 +93,7 @@ function Insert () {
   }
 
   this.line = function () {
-    if (left.prev_character() != EOL) {
+    if (left.prev_character() !== EOL) {
       left.inject(EOL)
     }
     left.inject('===================== \n')
@@ -102,3 +104,5 @@ function Insert () {
     return `<b>Insert Mode</b> c-D <i>Date</i> c-T <i>Time</i> ${left.project.paths().length > 0 ? 'c-P <i>Path</i> ' : ''}c-H <i>Header</i> c-/ <i>Comment</i> Esc <i>Exit</i>.`
   }
 }
+
+module.exports = Insert

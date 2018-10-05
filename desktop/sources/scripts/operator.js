@@ -1,3 +1,5 @@
+/* global left, EOL */
+
 'use strict'
 
 function Operator () {
@@ -51,13 +53,13 @@ function Operator () {
   this.on_change = function (e, down = false) {
     if (!this.is_active) { return }
 
-    if (e.key == 'ArrowUp' && down) {
+    if (e.key === 'ArrowUp' && down) {
       this.el.value = this.prev
       e.preventDefault()
       return
     }
 
-    if (!down && (e.key == 'Enter' || e.code == 'Enter')) {
+    if (!down && (e.key === 'Enter' || e.code === 'Enter')) {
       this.active()
       e.preventDefault()
     } else if (!down) {
@@ -154,9 +156,9 @@ function Operator () {
   this.goto = function (q, bang = false) {
     let target = parseInt(q, 10)
 
-    let lines_count = left.textarea_el.value.split(EOL).length - 1
+    let linesCount = left.textarea_el.value.split(EOL).length - 1
 
-    if (q == '' || target < 1 || target > lines_count || Number.isNaN(target)) {
+    if (q === '' || target < 1 || target > linesCount || Number.isNaN(target)) {
       return
     }
 
@@ -166,3 +168,5 @@ function Operator () {
     }
   }
 }
+
+module.exports = Operator

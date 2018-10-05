@@ -1,3 +1,5 @@
+/* global left */
+
 'use strict'
 
 function Reader () {
@@ -33,7 +35,7 @@ function Reader () {
   }
 
   this.run = function () {
-    if (left.reader.queue.length == 0) { left.reader.stop(); return }
+    if (left.reader.queue.length === 0) { left.reader.stop(); return }
 
     let words = left.reader.segment.text.split(' ')
     let word = left.reader.queue[0]
@@ -81,16 +83,18 @@ function Reader () {
       longest = words[i]
     }
 
-    let longest_orp = left.reader.find_orp(longest)
-    let longest_pad = longest_orp.index
+    let longestOrp = left.reader.find_orp(longest)
+    let longestPad = longestOrp.index
 
     let pad = ''
 
     let i = 0
-    while (i < longest_pad - (orp.index)) {
+    while (i < longestPad - (orp.index)) {
       pad += '-'
       i += 1
     }
     return pad
   }
 }
+
+module.exports = Reader

@@ -33,17 +33,13 @@
   <body>
     <script>
       "use strict";
-      
-      const {webFrame} = require('electron')
 
-      webFrame.setZoomLevelLimits(1, 1);
-
-      const {dialog,app} = require('electron').remote;
+      const { dialog, app } = require('electron').remote;
       const fs = require('fs');
       const app_path = app.getAppPath();
 
       const left = new Left();
-      
+
       left.install(document.body);
       left.start();
 
