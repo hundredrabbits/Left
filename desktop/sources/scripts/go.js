@@ -1,5 +1,3 @@
-/* global left */
-
 'use strict'
 
 const EOL = '\n'

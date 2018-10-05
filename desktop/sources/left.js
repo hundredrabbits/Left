@@ -1,5 +1,3 @@
-/* global left */
-
 'use strict'
 
 const Theme = require('./scripts/lib/theme')

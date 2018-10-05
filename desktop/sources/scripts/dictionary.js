@@ -1,5 +1,3 @@
-/* global left */
-
 'use strict'
 
 const SYN_DB = require('./synonyms')

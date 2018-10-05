@@ -6,5 +6,8 @@
     },
     "plugins": [
       "html"
-    ]
+    ],
+    "globals": {
+      "left": true
+    }
 }

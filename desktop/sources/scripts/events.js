@@ -1,5 +1,3 @@
-/* global left */
-
 'use strict'
 
 document.onkeydown = function keyDown (e) {
