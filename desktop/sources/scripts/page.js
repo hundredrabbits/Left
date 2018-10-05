@@ -1,5 +1,8 @@
 'use strict'
 
+const fs = require('fs')
+const EOL = '\n'
+
 function Page (text = '', path = null) {
   this.text = text.replace(/\r?\n/g, '\n')
   this.path = path
@@ -16,7 +19,7 @@ function Page (text = '', path = null) {
       if (this.text && this.text.length > 0) { return true }
       return false
     }
-    return this.load() != this.text
+    return this.load() !== this.text
   }
 
   this.commit = function (text = left.textarea_el.value) {
@@ -48,8 +51,10 @@ function Page (text = '', path = null) {
     let lines = this.text.split(EOL)
     for (const id in lines) {
       let line = lines[id].trim()
-      if (line.substr(0, 2) == '##') { a.push({ id: a.length, text: line.replace('##', '').trim(), line: parseInt(id), type: 'subheader' }) } else if (line.substr(0, 1) == '#') { a.push({ id: a.length, text: line.replace('#', '').trim(), line: parseInt(id), type: 'header' }) } else if (line.substr(0, 2) == '--') { a.push({ id: a.length, text: line.replace('--', '').trim(), line: parseInt(id), type: 'comment' }) }
+      if (line.substr(0, 2) === '##') { a.push({ id: a.length, text: line.replace('##', '').trim(), line: parseInt(id), type: 'subheader' }) } else if (line.substr(0, 1) === '#') { a.push({ id: a.length, text: line.replace('#', '').trim(), line: parseInt(id), type: 'header' }) } else if (line.substr(0, 2) === '--') { a.push({ id: a.length, text: line.replace('--', '').trim(), line: parseInt(id), type: 'comment' }) }
     }
     return a
   }
 }
+
+module.exports = Page

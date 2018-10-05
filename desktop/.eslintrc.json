@@ -3,5 +3,11 @@
     "env": {
       "browser": true,
       "node": true
+    },
+    "plugins": [
+      "html"
+    ],
+    "globals": {
+      "left": true
     }
 }

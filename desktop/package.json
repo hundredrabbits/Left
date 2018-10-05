@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "lint": "eslint --ignore-path ../.gitignore .",
+    "lint": "eslint --ignore-path ../.gitignore . --ext .html,.js",
     "clean": "rm -r ~/Desktop/Left-darwin-x64/ ; rm -r ~/Desktop/Left-linux-x64/ ; rm -r ~/Desktop/Left-win32-x64/ ; rm -r ~/Desktop/Left-linux-armv7l ; echo 'cleaned build location'",
     "build_osx": "electron-packager . Left --platform=darwin --arch=x64 --out ~/Desktop/ --overwrite --icon=icon.icns && echo 'Built for OSX'",
     "build_linux": "electron-packager . Left --platform=linux  --arch=x64 --out ~/Desktop/ --overwrite --icon=icon.ico && echo 'Built for LINUX'",
@@ -23,6 +23,7 @@
     "electron-packager": "^12.1.1",
     "eslint": "^5.6.1",
     "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-html": "^4.0.6",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.1",

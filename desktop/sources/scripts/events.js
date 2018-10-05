@@ -1,10 +1,10 @@
 'use strict'
 
-document.onkeydown = function key_down (e) {
+document.onkeydown = function keyDown (e) {
   left.last_char = e.key
 
   // Faster than Electron
-  if (e.keyCode == 9) {
+  if (e.keyCode === 9) {
     if (e.shiftKey) {
       left.select_synonym()
     } else {
@@ -15,12 +15,12 @@ document.onkeydown = function key_down (e) {
   }
   // Faster than Electron
   if (e.metaKey || e.ctrlKey) {
-    if (e.keyCode == 221) {
+    if (e.keyCode === 221) {
       left.navi.next_marker()
       e.preventDefault()
       return
     }
-    if (e.keyCode == 291) {
+    if (e.keyCode === 291) {
       left.navi.prev_marker()
       e.preventDefault()
       return
@@ -28,41 +28,41 @@ document.onkeydown = function key_down (e) {
   }
 
   // Reset index on space
-  if (e.key == ' ' || e.key == 'Enter') {
+  if (e.key === ' ' || e.key === 'Enter') {
     left.selection.index = 0
   }
 
-  if (e.key.substring(0, 5) == 'Arrow') {
+  if (e.key.substring(0, 5) === 'Arrow') {
     setTimeout(() => left.update(), 0) // force the refresh event to happen after the selection updates
     return
   }
 
   // Slower Refresh
-  if (e.key == 'Enter') {
+  if (e.key === 'Enter') {
     setTimeout(() => { left.dictionary.update(); left.update() }, 16)
   }
 }
 
 document.onkeyup = (e) => {
-  if (e.keyCode == 16) { // Shift
+  if (e.keyCode === 16) { // Shift
     left.selection.index = 0
     left.update()
     return
   }
-  if (e.keyCode != 9) {
+  if (e.keyCode !== 9) {
     left.update()
   }
 }
 
 // Selection Change
-let last_selection = null
+let lastSelection = null
 
 window.addEventListener('mousemove', function (e) {
-  if (last_selection && last_selection.start == left.textarea_el.selectionStart && last_selection.end == left.textarea_el.selectionEnd) {
+  if (lastSelection && lastSelection.start === left.textarea_el.selectionStart && lastSelection.end === left.textarea_el.selectionEnd) {
     return
   }
   left.update()
-  last_selection = { start: left.textarea_el.selectionStart, end: left.textarea_el.selectionEnd }
+  lastSelection = { start: left.textarea_el.selectionStart, end: left.textarea_el.selectionEnd }
 })
 
 window.addEventListener('dragover', function (e) {
@@ -81,7 +81,7 @@ window.addEventListener('drop', function (e) {
     const file = files[id]
     if (!file.path) { continue }
     if (file.type && !file.type.match(/text.*/)) { console.log(`Skipped ${file.type} : ${file.path}`); continue }
-    if (file.path && file.path.substr(-3, 3) == 'thm') { continue }
+    if (file.path && file.path.substr(-3, 3) === 'thm') { continue }
 
     left.project.add(file.path)
   }
@@ -90,7 +90,7 @@ window.addEventListener('drop', function (e) {
   left.navi.next_page()
 })
 
-document.onclick = function on_click (e) {
+document.onclick = function onClick (e) {
   left.selection.index = 0
   left.operator.stop()
   left.reader.stop()

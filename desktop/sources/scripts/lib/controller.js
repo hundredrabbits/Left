@@ -1,5 +1,11 @@
 'use strict'
 
+const fs = require('fs')
+const { remote } = require('electron')
+const { app, dialog } = remote
+
+const EOL = '\n'
+
 function Controller () {
   this.menu = { default: {} }
   this.mode = 'default'
@@ -56,24 +62,24 @@ function Controller () {
     let fileName = dialog.showSaveDialog(app.win)
 
     if (fileName === undefined) { return }
-    fileName = fileName.substr(-4, 4) != '.svg' ? fileName + '.svg' : fileName
+    fileName = fileName.substr(-4, 4) !== '.svg' ? fileName + '.svg' : fileName
     fs.writeFile(fileName, svg)
     fs.writeFile(fileName.replace('.svg', '.md'), txt)
   }
 
   this.generate_svg = function (m) {
-    let svg_html = ''
+    let svgHTML = ''
 
     for (const id in this.layout) {
       let key = this.layout[id]
       let acc = this.accelerator_for_key(key.name, m)
-      svg_html += `<rect x="${key.x + 1}" y="${key.y + 1}" width="${key.width - 2}" height="${key.height - 2}" rx="4" ry="4" title="${key.name}" stroke="#ccc" fill="none" stroke-width="1"/>`
-      svg_html += `<rect x="${key.x + 3}" y="${key.y + 3}" width="${key.width - 6}" height="${key.height - 12}" rx="3" ry="3" title="${key.name}" stroke="${acc.basic ? '#000' : acc.ctrl ? '#ccc' : '#fff'}" fill="${acc.basic ? '#000' : acc.ctrl ? '#ccc' : '#fff'}" stroke-width="1"/>`
-      svg_html += `<text x="${key.x + 10}" y="${key.y + 20}" font-size='11' font-family='Input Mono' stroke-width='0' fill='${acc.basic ? '#fff' : '#000'}'>${key.name.toUpperCase()}</text>`
-      svg_html += acc && acc.basic ? `<text x="${key.x + 10}" y="${key.y + 35}" font-size='7' font-family='Input Mono' stroke-width='0' fill='#fff'>${acc.basic}</text>` : ''
-      svg_html += acc && acc.ctrl ? `<text x="${key.x + 10}" y="${key.y + 45}" font-size='7' font-family='Input Mono' stroke-width='0' fill='#000'>${acc.ctrl}</text>` : ''
+      svgHTML += `<rect x="${key.x + 1}" y="${key.y + 1}" width="${key.width - 2}" height="${key.height - 2}" rx="4" ry="4" title="${key.name}" stroke="#ccc" fill="none" stroke-width="1"/>`
+      svgHTML += `<rect x="${key.x + 3}" y="${key.y + 3}" width="${key.width - 6}" height="${key.height - 12}" rx="3" ry="3" title="${key.name}" stroke="${acc.basic ? '#000' : acc.ctrl ? '#ccc' : '#fff'}" fill="${acc.basic ? '#000' : acc.ctrl ? '#ccc' : '#fff'}" stroke-width="1"/>`
+      svgHTML += `<text x="${key.x + 10}" y="${key.y + 20}" font-size='11' font-family='Input Mono' stroke-width='0' fill='${acc.basic ? '#fff' : '#000'}'>${key.name.toUpperCase()}</text>`
+      svgHTML += acc && acc.basic ? `<text x="${key.x + 10}" y="${key.y + 35}" font-size='7' font-family='Input Mono' stroke-width='0' fill='#fff'>${acc.basic}</text>` : ''
+      svgHTML += acc && acc.ctrl ? `<text x="${key.x + 10}" y="${key.y + 45}" font-size='7' font-family='Input Mono' stroke-width='0' fill='#000'>${acc.ctrl}</text>` : ''
     }
-    return `<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="900" height="300" version="1.0" style="fill:none;stroke:black;stroke-width:2px;">${svg_html}</svg>`
+    return `<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="900" height="300" version="1.0" style="fill:none;stroke:black;stroke-width:2px;">${svgHTML}</svg>`
   }
 
   this.documentation = function () {
@@ -82,7 +88,7 @@ function Controller () {
     txt += this.documentation_for_mode('default', this.menu.default)
 
     for (let name in this.menu) {
-      if (name == 'default') { continue }
+      if (name === 'default') { continue }
       txt += this.documentation_for_mode(name, this.menu[name])
     }
     return txt
@@ -92,7 +98,7 @@ function Controller () {
     let txt = `## ${name} Mode\n\n`
 
     for (const id in mode) {
-      if (id == '*' || id == 'Edit') { continue }
+      if (id === '*' || id === 'Edit') { continue }
       txt += `### ${id}\n`
       for (let name in mode[id]) {
         let option = mode[id][name]
@@ -110,8 +116,8 @@ function Controller () {
       let options = menu[cat]
       for (const id in options.submenu) {
         let option = options.submenu[id]; if (option.role) { continue }
-        acc.basic = (option.accelerator.toLowerCase() == key.toLowerCase()) ? option.label.toUpperCase().replace('TOGGLE ', '').substr(0, 8).trim() : acc.basic
-        acc.ctrl = (option.accelerator.toLowerCase() == ('CmdOrCtrl+' + key).toLowerCase()) ? option.label.toUpperCase().replace('TOGGLE ', '').substr(0, 8).trim() : acc.ctrl
+        acc.basic = (option.accelerator.toLowerCase() === key.toLowerCase()) ? option.label.toUpperCase().replace('TOGGLE ', '').substr(0, 8).trim() : acc.basic
+        acc.ctrl = (option.accelerator.toLowerCase() === ('CmdOrCtrl+' + key).toLowerCase()) ? option.label.toUpperCase().replace('TOGGLE ', '').substr(0, 8).trim() : acc.ctrl
       }
     }
     return acc
@@ -182,4 +188,4 @@ function Controller () {
   ]
 }
 
-module.exports = new Controller()
+module.exports = Controller

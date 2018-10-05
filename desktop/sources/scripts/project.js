@@ -1,5 +1,14 @@
 'use strict'
 
+const fs = require('fs')
+const { remote } = require('electron')
+const { app, dialog } = remote
+
+console.log(app)
+
+const Page = require('./page')
+const Splash = require('./splash')
+
 function Project () {
   this.pages = []
 
@@ -9,7 +18,7 @@ function Project () {
   this.start = function () {
     // Load previous files
     if (localStorage.hasOwnProperty('paths')) {
-      if (is_json(localStorage.getItem('paths'))) {
+      if (isJSON(localStorage.getItem('paths'))) {
         let paths = JSON.parse(localStorage.getItem('paths'))
         for (const id in paths) {
           left.project.add(paths[id])
@@ -18,7 +27,7 @@ function Project () {
     }
 
     // Add splash
-    if (this.pages.length == 0) {
+    if (this.pages.length === 0) {
       left.project.pages.push(new Splash())
       left.go.to_page(0)
     }
@@ -117,7 +126,7 @@ function Project () {
       if (err) { alert('An error ocurred creating the file ' + err.message); return }
       if (!page.path) {
         page.path = path
-      } else if (page.path != path) {
+      } else if (page.path !== path) {
         left.project.pages.push(new Page(page.text, path))
       }
       left.update()
@@ -126,7 +135,7 @@ function Project () {
   }
 
   this.close = function () {
-    if (this.pages.length == 1) { console.warn('Cannot close'); return }
+    if (this.pages.length === 1) { console.warn('Cannot close'); return }
 
     if (this.page().has_changes()) {
       let response = dialog.showMessageBox(app.win, {
@@ -145,7 +154,7 @@ function Project () {
   }
 
   this.force_close = function () {
-    if (this.pages.length == 1) { console.warn('Cannot close'); return }
+    if (this.pages.length === 1) { console.warn('Cannot close'); return }
 
     console.log('Closing..')
 
@@ -197,7 +206,7 @@ function Project () {
   this.remove_splash = function () {
     for (const id in this.pages) {
       let page = this.pages[id]
-      if (page.text == new Splash().text) {
+      if (page.text === new Splash().text) {
         this.pages.splice(0, 1)
         return
       }
@@ -213,6 +222,7 @@ function Project () {
     return a
   }
 
-  function is_json (text) { try { JSON.parse(text); return true } catch (error) { return false } }
-  function clamp (v, min, max) { return v < min ? min : v > max ? max : v }
+  function isJSON (text) { try { JSON.parse(text); return true } catch (error) { return false } }
 }
+
+module.exports = Project

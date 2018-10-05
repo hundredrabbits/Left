@@ -25,11 +25,11 @@ function Navi () {
   }
 
   this._page = function (id, page) {
-    return `<li class='page ${left.project.index == id ? 'active' : ''} ${left.project.pages[id].has_changes() ? 'changes' : ''}' onclick='left.go.to_page(${id})'>${page.name()}</li>`
+    return `<li class='page ${left.project.index === id ? 'active' : ''} ${left.project.pages[id].has_changes() ? 'changes' : ''}' onclick='left.go.to_page(${id})'>${page.name()}</li>`
   }
 
   this._marker = function (pid, current, marker, markers) {
-    return `<li class='marker ${marker.type} ${current && current.line == marker.line ? 'active' : ''}' onclick='left.go.to_page(${pid}, ${marker.line})'><span>${marker.text}</span></li>`
+    return `<li class='marker ${marker.type} ${current && current.line === marker.line ? 'active' : ''}' onclick='left.go.to_page(${pid}, ${marker.line})'><span>${marker.text}</span></li>`
   }
 
   this.next_page = function () {
@@ -49,9 +49,9 @@ function Navi () {
     if (!marker) { return }
 
     let markers = left.project.page().markers()
-    let next_index = clamp(marker.id + 1, 0, markers.length - 1)
+    let nextIndex = clamp(marker.id + 1, 0, markers.length - 1)
 
-    left.go.to_page(page, markers[next_index].line)
+    left.go.to_page(page, markers[nextIndex].line)
   }
 
   this.prev_marker = function () {
@@ -61,9 +61,9 @@ function Navi () {
     if (!marker) { return }
 
     let markers = left.project.page().markers()
-    let next_index = clamp(marker.id - 1, 0, markers.length - 1)
+    let nextIndex = clamp(marker.id - 1, 0, markers.length - 1)
 
-    left.go.to_page(page, markers[next_index].line)
+    left.go.to_page(page, markers[nextIndex].line)
   }
 
   this.marker = function () {
@@ -74,7 +74,6 @@ function Navi () {
 
     if (markers.length < 1) { return }
 
-    let prev = null
     for (const id in markers) {
       let marker = markers[id]
       if (marker.line > pos) { return markers[parseInt(id) - 1] }
@@ -83,12 +82,12 @@ function Navi () {
   }
 
   this.on_scroll = function () {
-    let scroll_distance = left.textarea_el.scrollTop
-    let scroll_max = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight
-    let scroll_perc = Math.min(1, (scroll_max == 0) ? 0 : (scroll_distance / scroll_max))
-    let navi_overflow_perc = Math.max(0, (left.navi.el.scrollHeight / window.innerHeight) - 1)
+    let scrollDistance = left.textarea_el.scrollTop
+    let scrollMax = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight
+    let scrollPerc = Math.min(1, (scrollMax === 0) ? 0 : (scrollDistance / scrollMax))
+    let naviOverflowPerc = Math.max(0, (left.navi.el.scrollHeight / window.innerHeight) - 1)
 
-    left.navi.el.style.transform = 'translateY(' + (-100 * scroll_perc * navi_overflow_perc) + '%)'
+    left.navi.el.style.transform = 'translateY(' + (-100 * scrollPerc * naviOverflowPerc) + '%)'
   }
 
   this.toggle = function () {
@@ -97,3 +96,5 @@ function Navi () {
 
   function clamp (v, min, max) { return v < min ? min : v > max ? max : v }
 }
+
+module.exports = Navi

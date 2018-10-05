@@ -1,5 +1,18 @@
 'use strict'
 
+const Theme = require('./scripts/lib/theme')
+const Controller = require('./scripts/lib/controller')
+const Dictionary = require('./scripts/dictionary')
+const Operator = require('./scripts/operator')
+const Navi = require('./scripts/navi')
+const Stats = require('./scripts/stats')
+const Go = require('./scripts/go')
+const Project = require('./scripts/project')
+const Reader = require('./scripts/reader')
+const Insert = require('./scripts/insert')
+
+const EOL = '\n'
+
 function Left () {
   this.theme = new Theme()
   this.controller = new Controller()
@@ -66,10 +79,10 @@ function Left () {
   }
 
   this.update = function (hard = false) {
-    let next_char = left.textarea_el.value.substr(left.textarea_el.selectionEnd, 1)
+    let nextChar = left.textarea_el.value.substr(left.textarea_el.selectionEnd, 1)
 
     left.selection.word = this.active_word()
-    left.suggestion = (next_char == '' || next_char == ' ' || next_char == EOL) ? left.dictionary.find_suggestion(left.selection.word) : null
+    left.suggestion = (nextChar === '' || nextChar === ' ' || nextChar === EOL) ? left.dictionary.find_suggestion(left.selection.word) : null
     left.synonyms = left.dictionary.find_synonym(left.selection.word)
     left.selection.url = this.active_url()
 
@@ -81,7 +94,7 @@ function Left () {
   //
 
   this.select_autocomplete = function () {
-    if (left.selection.word.trim() != '' && left.suggestion && left.suggestion.toLowerCase() != left.active_word().toLowerCase()) {
+    if (left.selection.word.trim() !== '' && left.suggestion && left.suggestion.toLowerCase() !== left.active_word().toLowerCase()) {
       left.autocomplete()
     } else {
       left.inject('\u00a0\u00a0')
@@ -197,7 +210,7 @@ function Left () {
     let w = left.textarea_el.value.substr(l.from, l.to - l.from)
 
     // Preserve capitalization
-    if (w.substr(0, 1) == w.substr(0, 1).toUpperCase()) {
+    if (w.substr(0, 1) === w.substr(0, 1).toUpperCase()) {
       word = word.substr(0, 1).toUpperCase() + word.substr(1, word.length)
     }
 
@@ -213,8 +226,8 @@ function Left () {
     this.update()
   }
 
-  this.replace_line = function (id, new_text, del = false) // optional arg for deleting the line, used in actions
-  {
+  // del is an optional arg for deleting the line, used in actions
+  this.replace_line = function (id, newText, del = false) {
     let lineArr = this.textarea_el.value.split(EOL, parseInt(id) + 1)
     let arrJoin = lineArr.join(EOL)
 
@@ -222,33 +235,33 @@ function Left () {
     let to = arrJoin.length
 
     // splicing the string
-    let new_text_value = this.textarea_el.value.slice(0, del ? from - 1 : from) + new_text + this.textarea_el.value.slice(to)
+    let newTextValue = this.textarea_el.value.slice(0, del ? from - 1 : from) + newText + this.textarea_el.value.slice(to)
 
     // the cursor automatically moves to the changed position, so we have to set it back
-    let cursor_start = this.textarea_el.selectionStart
-    let cursor_end = this.textarea_el.selectionEnd
-    let old_length = this.textarea_el.value.length
-    let old_scroll = this.textarea_el.scrollTop
+    let cursorStart = this.textarea_el.selectionStart
+    let cursorEnd = this.textarea_el.selectionEnd
+    let oldLength = this.textarea_el.value.length
+    let oldScroll = this.textarea_el.scrollTop
     // setting text area
-    this.load(new_text_value)
+    this.load(newTextValue)
     // adjusting the cursor position for the change in length
-    let length_dif = this.textarea_el.value.length - old_length
-    if (cursor_start > to) {
-      cursor_start += length_dif
-      cursor_end += length_dif
+    let lengthDif = this.textarea_el.value.length - oldLength
+    if (cursorStart > to) {
+      cursorStart += lengthDif
+      cursorEnd += lengthDif
     }
     // setting the cursor position
     if (this.textarea_el.setSelectionRange) {
-      this.textarea_el.setSelectionRange(cursor_start, cursor_end)
+      this.textarea_el.setSelectionRange(cursorStart, cursorEnd)
     } else if (this.textarea_el.createTextRange) {
       let range = this.textarea_el.createTextRange()
       range.collapse(true)
-      range.moveEnd('character', cursor_end)
-      range.moveStart('character', cursor_start)
+      range.moveEnd('character', cursorEnd)
+      range.moveStart('character', cursorStart)
       range.select()
     }
     // setting the scroll position
-    this.textarea_el.scrollTop = old_scroll
+    this.textarea_el.scrollTop = oldScroll
     // this function turned out a lot longer than I was expecting. Ah well :/
   }
 
@@ -308,4 +321,4 @@ function Left () {
   }
 }
 
-let EOL = '\n'
+module.exports = Left

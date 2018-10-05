@@ -48638,3 +48638,5 @@ const SYN_DB = {
     'orbit'
   ]
 }
+
+module.exports = SYN_DB

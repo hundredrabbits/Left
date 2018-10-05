@@ -10,147 +10,120 @@
     <link rel="stylesheet" href="links/main.css"/>
     <link rel="stylesheet" href="links/theme.css"/>
 
-    <script src="scripts/splash.js"></script>
-    <script src="scripts/lib/theme.js"></script>
-    <script src="scripts/lib/controller.js"></script>
-
-    <script src="scripts/navi.js"></script>
-    <script src="scripts/page.js"></script>
-
-    <script src="scripts/go.js"></script>
-    <script src="scripts/insert.js"></script>
-
-    <script src="scripts/stats.js"></script>
-    <script src="scripts/project.js"></script>
     <script src="scripts/events.js"></script>
-    <script src="scripts/synonyms.js"></script>
-    <script src="scripts/dictionary.js"></script>
-    <script src="scripts/operator.js"></script>
-    <script src="scripts/left.js"></script>
-    <script src="scripts/reader.js"></script>
-
   </head>
   <body>
     <script>
-      "use strict";
-      
-      const {webFrame} = require('electron')
+      'use strict'
 
-      webFrame.setZoomLevelLimits(1, 1);
+      const { shell, remote } = require('electron')
+      const Left = require('./left')
+      const { app } = remote
+      const EOL = '\n'
 
-      const {dialog,app} = require('electron').remote;
-      const fs = require('fs');
-      const app_path = app.getAppPath();
+      const left = new Left()
 
-      const left = new Left();
-      
-      left.install(document.body);
-      left.start();
-
-      // Menu
-
-      left.controller.add("default","*","About",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left'); },"CmdOrCtrl+,");
-      left.controller.add("default","*","Fullscreen",() => { app.toggle_fullscreen(); },"CmdOrCtrl+Enter");
-      left.controller.add("default","*","Hide",() => { app.toggle_visible(); },"CmdOrCtrl+H");
-      left.controller.add("default","*","Inspect",() => { app.inspect(); },"CmdOrCtrl+.");
-      left.controller.add("default","*","Reset",() => { left.reset(); },"CmdOrCtrl+Backspace");
-      left.controller.add("default","*","Quit",() => { left.project.quit(); },"CmdOrCtrl+Q");
-
-      left.controller.add("default","File","New",() => { left.project.new(); },"CmdOrCtrl+N");
-      left.controller.add("default","File","Open",() => { left.project.open(); },"CmdOrCtrl+O");
-      left.controller.add("default","File","Save",() => { left.project.save(); },"CmdOrCtrl+S");
-      left.controller.add("default","File","Save As",() => { left.project.save_as(); },"CmdOrCtrl+Shift+S");
-      left.controller.add("default","File","Discard Changes",() => { left.project.discard(); },"CmdOrCtrl+D");
-      left.controller.add("default","File","Close File",() => { left.project.close(); },"CmdOrCtrl+W");
-      left.controller.add("default","File","Force Close",() => { left.project.force_close(); },"CmdOrCtrl+Shift+W");
-
-      left.controller.add_role("default","Edit","undo");
-      left.controller.add_role("default","Edit","redo");
-      left.controller.add_role("default","Edit","cut");
-      left.controller.add_role("default","Edit","copy");
-      left.controller.add_role("default","Edit","paste");
-      left.controller.add_role("default","Edit","delete");
-      left.controller.add_role("default","Edit","selectall");
-      left.controller.add("default","Edit","Add Linebreak",() => { left.go.to_next(EOL,false); left.inject(EOL); },"CmdOrCtrl+Shift+Enter");
-
-      left.controller.add("default","Select","Select Autocomplete",() => { left.select_autocomplete(); },"Tab");
-      left.controller.add("default","Select","Select Synonym",() => { left.select_synonym(); },"Shift+Tab");
-      left.controller.add("default","Select","Find",() => { left.operator.start("find: "); },"CmdOrCtrl+F");
-      left.controller.add("default","Select","Replace",() => { left.operator.start("replace: a -> b"); },"CmdOrCtrl+Shift+F");
-      left.controller.add("default","Select","Goto",() => { left.operator.start("goto: "); },"CmdOrCtrl+G");
-      left.controller.add("default","Select","Open Url",() => { left.open_url(); },"CmdOrCtrl+B");
-
-      left.controller.add("default","Navigation","Next File",() => { left.navi.next_page(); },"CmdOrCtrl+Shift+]");
-      left.controller.add("default","Navigation","Prev File",() => { left.navi.prev_page(); },"CmdOrCtrl+Shift+[");
-      left.controller.add("default","Navigation","Next Marker",() => { left.navi.next_marker(); },"CmdOrCtrl+]");
-      left.controller.add("default","Navigation","Prev Marker",() => { left.navi.prev_marker(); },"CmdOrCtrl+[");
-
-      left.controller.add("default","View","Toggle Dark Mode",() => {  left.theme.toggle() },"CmdOrCtrl+Shift+T");
-      left.controller.add("default","View","Toggle Navigation",() => {  left.navi.toggle() },"CmdOrCtrl+\\");
-
-      left.controller.add("default","Mode","Reader",() => { left.reader.start(); },"CmdOrCtrl+K");
-      left.controller.add("default","Mode","Insert",() => { left.insert.start(); },"CmdOrCtrl+I");
-
-      left.controller.add("default","Theme","Noir",() => { left.theme.noir(); },"CmdOrCtrl+Shift+1");
-      left.controller.add("default","Theme","Pale",() => { left.theme.pale(); },"CmdOrCtrl+Shift+2");
-      left.controller.add("default","Theme","Invert",() => { left.theme.invert(); },"CmdOrCtrl+Shift+I");
-      left.controller.add("default","Theme","Install",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Themes'); });
-
-      left.controller.add("reader","*","About",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left'); },"CmdOrCtrl+,");
-      left.controller.add("reader","*","Fullscreen",() => { app.toggle_fullscreen(); },"CmdOrCtrl+Enter");
-      left.controller.add("reader","*","Hide",() => { app.toggle_visible(); },"CmdOrCtrl+H");
-      left.controller.add("reader","*","Inspect",() => { app.inspect(); },"CmdOrCtrl+.");
-      left.controller.add("reader","*","Reset",() => { left.theme.reset(); },"CmdOrCtrl+Backspace");
-      left.controller.add("reader","*","Quit",() => { left.project.quit(); },"CmdOrCtrl+Q");
-      left.controller.add("reader","Reader","Stop",() => { left.reader.stop(); },"Esc");
-
-      left.controller.add("operator","*","About",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left'); },"CmdOrCtrl+,");
-      left.controller.add("operator","*","Fullscreen",() => { app.toggle_fullscreen(); },"CmdOrCtrl+Enter");
-      left.controller.add("operator","*","Hide",() => { app.toggle_visible(); },"CmdOrCtrl+H");
-      left.controller.add("operator","*","Inspect",() => { app.inspect(); },"CmdOrCtrl+.");
-      left.controller.add("operator","*","Reset",() => { left.theme.reset(); },"CmdOrCtrl+Backspace");
-      left.controller.add("operator","*","Quit",() => { left.project.quit(); },"CmdOrCtrl+Q");
-
-      left.controller.add("insert","*","About",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left'); },"CmdOrCtrl+,");
-      left.controller.add("insert","*","Fullscreen",() => { app.toggle_fullscreen(); },"CmdOrCtrl+Enter");
-      left.controller.add("insert","*","Hide",() => { app.toggle_visible(); },"CmdOrCtrl+H");
-      left.controller.add("insert","*","Inspect",() => { app.inspect(); },"CmdOrCtrl+.");
-      left.controller.add("insert","*","Reset",() => { left.theme.reset(); },"CmdOrCtrl+Backspace");
-      left.controller.add("insert","*","Quit",() => { left.project.quit(); },"CmdOrCtrl+Q");
-
-      left.controller.add("insert","Insert","Date",() => { left.insert.date(); },"CmdOrCtrl+D");
-      left.controller.add("insert","Insert","Time",() => { left.insert.time(); },"CmdOrCtrl+T");
-      left.controller.add("insert","Insert","Path",() => { left.insert.path(); },"CmdOrCtrl+P");
-      left.controller.add("insert","Insert","Header",() => { left.insert.header(); },"CmdOrCtrl+H");
-      left.controller.add("insert","Insert","SubHeader",() => { left.insert.subheader(); },"CmdOrCtrl+Shift+H");
-      left.controller.add("insert","Insert","Comment",() => { left.insert.comment(); },"CmdOrCtrl+/");
-      left.controller.add("insert","Insert","Line",() => { left.insert.line(); },"CmdOrCtrl+L");
-      left.controller.add("insert","Insert","List",() => { left.insert.list(); },"CmdOrCtrl+-");
-      left.controller.add("insert","Mode","Stop",() => { left.insert.stop(); },"Esc");
-
-      left.controller.add_role("operator","Edit","undo");
-      left.controller.add_role("operator","Edit","redo");
-      left.controller.add_role("operator","Edit","cut");
-      left.controller.add_role("operator","Edit","copy");
-      left.controller.add_role("operator","Edit","paste");
-      left.controller.add_role("operator","Edit","delete");
-      left.controller.add_role("operator","Edit","selectall");
-
-      left.controller.add("operator","Find","Find",() => { left.operator.start("find: "); },"CmdOrCtrl+F");
-      left.controller.add("operator","Find","Find Next",() => { left.operator.find_next(); },"CmdOrCtrl+N");
-      left.controller.add("operator","Operator","Stop",() => { left.operator.stop(); },"Esc");
-
-      left.controller.commit();
+      left.install(document.body)
+      left.start()
 
       // On Windows: open the file specified in the first argument
       // (allows Open With and file associations on Windows)
-
-      const remote = require('electron').remote;
-
-      if(process.platform === "win32" && remote.process.argv.length > 1){
-        left.project.add(remote.process.argv[1]);
+      if (process.platform === 'win32' && remote.process.argv.length > 1) {
+        left.project.add(remote.process.argv[1])
       }
 
+      // Menu
+
+      left.controller.add('default', '*', 'About', () => { shell.openExternal('https://github.com/hundredrabbits/Left') }, 'CmdOrCtrl+,')
+      left.controller.add('default', '*', 'Fullscreen', () => { app.toggle_fullscreen() }, 'CmdOrCtrl+Enter')
+      left.controller.add('default', '*', 'Hide', () => { app.toggle_visible() }, 'CmdOrCtrl+H')
+      left.controller.add('default', '*', 'Reset', () => { left.reset() }, 'CmdOrCtrl+Backspace')
+      left.controller.add('default', '*', 'Quit', () => { left.project.quit() }, 'CmdOrCtrl+Q')
+
+      left.controller.add('default', 'File', 'New', () => { left.project.new() }, 'CmdOrCtrl+N')
+      left.controller.add('default', 'File', 'Open', () => { left.project.open() }, 'CmdOrCtrl+O')
+      left.controller.add('default', 'File', 'Save', () => { left.project.save() }, 'CmdOrCtrl+S')
+      left.controller.add('default', 'File', 'Save As', () => { left.project.save_as() }, 'CmdOrCtrl+Shift+S')
+      left.controller.add('default', 'File', 'Discard Changes', () => { left.project.discard() }, 'CmdOrCtrl+D')
+      left.controller.add('default', 'File', 'Close File', () => { left.project.close() }, 'CmdOrCtrl+W')
+      left.controller.add('default', 'File', 'Force Close', () => { left.project.force_close() }, 'CmdOrCtrl+Shift+W')
+
+      left.controller.add_role('default', 'Edit', 'undo')
+      left.controller.add_role('default', 'Edit', 'redo')
+      left.controller.add_role('default', 'Edit', 'cut')
+      left.controller.add_role('default', 'Edit', 'copy')
+      left.controller.add_role('default', 'Edit', 'paste')
+      left.controller.add_role('default', 'Edit', 'delete')
+      left.controller.add_role('default', 'Edit', 'selectall')
+      left.controller.add('default', 'Edit', 'Add Linebreak', () => { left.go.to_next(EOL, false); left.inject(EOL) }, 'CmdOrCtrl+Shift+Enter')
+
+      left.controller.add('default', 'Select', 'Select Autocomplete', () => { left.select_autocomplete() }, 'Tab')
+      left.controller.add('default', 'Select', 'Select Synonym', () => { left.select_synonym() }, 'Shift+Tab')
+      left.controller.add('default', 'Select', 'Find', () => { left.operator.start('find: ') }, 'CmdOrCtrl+F')
+      left.controller.add('default', 'Select', 'Replace', () => { left.operator.start('replace: a -> b') }, 'CmdOrCtrl+Shift+F')
+      left.controller.add('default', 'Select', 'Goto', () => { left.operator.start('goto: ') }, 'CmdOrCtrl+G')
+      left.controller.add('default', 'Select', 'Open Url', () => { left.open_url() }, 'CmdOrCtrl+B')
+
+      left.controller.add('default', 'Navigation', 'Next File', () => { left.navi.next_page() }, 'CmdOrCtrl+Shift+]')
+      left.controller.add('default', 'Navigation', 'Prev File', () => { left.navi.prev_page() }, 'CmdOrCtrl+Shift+[')
+      left.controller.add('default', 'Navigation', 'Next Marker', () => { left.navi.next_marker() }, 'CmdOrCtrl+]')
+      left.controller.add('default', 'Navigation', 'Prev Marker', () => { left.navi.prev_marker() }, 'CmdOrCtrl+[')
+
+      left.controller.add('default', 'View', 'Toggle Navigation', () => { left.navi.toggle() }, 'CmdOrCtrl+\\')
+      left.controller.add_role('default', 'View', 'reload')
+      left.controller.add_role('default', 'View', 'forcereload')
+      left.controller.add_role('default', 'View', 'toggledevtools')
+
+      left.controller.add('default', 'Mode', 'Reader', () => { left.reader.start() }, 'CmdOrCtrl+K')
+      left.controller.add('default', 'Mode', 'Insert', () => { left.insert.start() }, 'CmdOrCtrl+I')
+
+      left.controller.add('default', 'Theme', 'Noir', () => { left.theme.noir() }, 'CmdOrCtrl+Shift+1')
+      left.controller.add('default', 'Theme', 'Pale', () => { left.theme.pale() }, 'CmdOrCtrl+Shift+2')
+      left.controller.add('default', 'Theme', 'Invert', () => { left.theme.invert() }, 'CmdOrCtrl+Shift+I')
+      left.controller.add('default', 'Theme', 'Install', () => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Themes') })
+
+      left.controller.add('reader', '*', 'About', () => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left') }, 'CmdOrCtrl+,')
+      left.controller.add('reader', '*', 'Fullscreen', () => { app.toggle_fullscreen() }, 'CmdOrCtrl+Enter')
+      left.controller.add('reader', '*', 'Hide', () => { app.toggle_visible() }, 'CmdOrCtrl+H')
+      left.controller.add('reader', '*', 'Reset', () => { left.theme.reset() }, 'CmdOrCtrl+Backspace')
+      left.controller.add('reader', '*', 'Quit', () => { left.project.quit() }, 'CmdOrCtrl+Q')
+      left.controller.add('reader', 'Reader', 'Stop', () => { left.reader.stop() }, 'Esc')
+
+      left.controller.add('operator', '*', 'About', () => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left') }, 'CmdOrCtrl+,')
+      left.controller.add('operator', '*', 'Fullscreen', () => { app.toggle_fullscreen() }, 'CmdOrCtrl+Enter')
+      left.controller.add('operator', '*', 'Hide', () => { app.toggle_visible() }, 'CmdOrCtrl+H')
+      left.controller.add('operator', '*', 'Reset', () => { left.theme.reset() }, 'CmdOrCtrl+Backspace')
+      left.controller.add('operator', '*', 'Quit', () => { left.project.quit() }, 'CmdOrCtrl+Q')
+
+      left.controller.add('insert', '*', 'About', () => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left') }, 'CmdOrCtrl+,')
+      left.controller.add('insert', '*', 'Fullscreen', () => { app.toggle_fullscreen() }, 'CmdOrCtrl+Enter')
+      left.controller.add('insert', '*', 'Hide', () => { app.toggle_visible() }, 'CmdOrCtrl+H')
+      left.controller.add('insert', '*', 'Reset', () => { left.theme.reset() }, 'CmdOrCtrl+Backspace')
+      left.controller.add('insert', '*', 'Quit', () => { left.project.quit() }, 'CmdOrCtrl+Q')
+
+      left.controller.add('insert', 'Insert', 'Date', () => { left.insert.date() }, 'CmdOrCtrl+D')
+      left.controller.add('insert', 'Insert', 'Time', () => { left.insert.time() }, 'CmdOrCtrl+T')
+      left.controller.add('insert', 'Insert', 'Path', () => { left.insert.path() }, 'CmdOrCtrl+P')
+      left.controller.add('insert', 'Insert', 'Header', () => { left.insert.header() }, 'CmdOrCtrl+H')
+      left.controller.add('insert', 'Insert', 'SubHeader', () => { left.insert.subheader() }, 'CmdOrCtrl+Shift+H')
+      left.controller.add('insert', 'Insert', 'Comment', () => { left.insert.comment() }, 'CmdOrCtrl+/')
+      left.controller.add('insert', 'Insert', 'Line', () => { left.insert.line() }, 'CmdOrCtrl+L')
+      left.controller.add('insert', 'Insert', 'List', () => { left.insert.list() }, 'CmdOrCtrl+-')
+      left.controller.add('insert', 'Mode', 'Stop', () => { left.insert.stop() }, 'Esc')
+
+      left.controller.add_role('operator', 'Edit', 'undo')
+      left.controller.add_role('operator', 'Edit', 'redo')
+      left.controller.add_role('operator', 'Edit', 'cut')
+      left.controller.add_role('operator', 'Edit', 'copy')
+      left.controller.add_role('operator', 'Edit', 'paste')
+      left.controller.add_role('operator', 'Edit', 'delete')
+      left.controller.add_role('operator', 'Edit', 'selectall')
+
+      left.controller.add('operator', 'Find', 'Find', () => { left.operator.start('find: ') }, 'CmdOrCtrl+F')
+      left.controller.add('operator', 'Find', 'Find Next', () => { left.operator.find_next() }, 'CmdOrCtrl+N')
+      left.controller.add('operator', 'Operator', 'Stop', () => { left.operator.stop() }, 'Esc')
+
+      left.controller.commit()
     </script>
   </body>
 </html>

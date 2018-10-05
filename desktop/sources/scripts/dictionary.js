@@ -1,5 +1,7 @@
 'use strict'
 
+const SYN_DB = require('./synonyms')
+
 function Dictionary () {
   this.vocabulary = []
   this.synonyms = {}
@@ -24,15 +26,15 @@ function Dictionary () {
   this.build_synonyms = function () {
     const time = performance.now()
 
-    for (const target_word in SYN_DB) {
-      const synonyms = SYN_DB[target_word]
-      this.add_word(target_word)
-      for (const word_id in synonyms) {
-        const target_parent = synonyms[word_id]
-        if (this.synonyms[target_parent] && this.synonyms[target_parent].constructor == Array) {
-          this.synonyms[target_parent][this.synonyms[target_parent].length] = target_word
+    for (const targetWord in SYN_DB) {
+      const synonyms = SYN_DB[targetWord]
+      this.add_word(targetWord)
+      for (const wordID in synonyms) {
+        const targetParent = synonyms[wordID]
+        if (this.synonyms[targetParent] && this.synonyms[targetParent].constructor === Array) {
+          this.synonyms[targetParent][this.synonyms[targetParent].length] = targetWord
         } else {
-          this.synonyms[target_parent] = [target_word]
+          this.synonyms[targetParent] = [targetWord]
         }
       }
     }
@@ -43,7 +45,7 @@ function Dictionary () {
     const target = str.toLowerCase()
 
     for (const id in this.vocabulary) {
-      if (this.vocabulary[id].substr(0, target.length) != target) { continue }
+      if (this.vocabulary[id].substr(0, target.length) !== target) { continue }
       return this.vocabulary[id]
     }
     return null
@@ -58,7 +60,7 @@ function Dictionary () {
       return uniq(this.synonyms[target])
     }
 
-    if (target[target.length - 1] == 's') {
+    if (target[target.length - 1] === 's') {
       const singular = this.synonyms[target.substr(0, target.length - 1)]
       if (this.synonyms[singular]) {
         return uniq(this.synonyms[singular])
@@ -70,13 +72,15 @@ function Dictionary () {
 
   this.update = function () {
     const time = performance.now()
-    const words = left.textarea_el.value.toLowerCase().split(/[^\w\-]+/)
+    const words = left.textarea_el.value.toLowerCase().split(/[^\w-]+/)
 
-    for (const word_id in words) {
-      this.add_word(words[word_id])
+    for (const wordID in words) {
+      this.add_word(words[wordID])
     }
     console.log(`Updated Dictionary in ${(performance.now() - time).toFixed(2)}ms.`)
   }
 
-  function uniq (a1) { const a2 = []; for (const id in a1) { if (a2.indexOf(a1[id]) == -1) { a2[a2.length] = a1[id] } } return a2 }
+  function uniq (a1) { const a2 = []; for (const id in a1) { if (a2.indexOf(a1[id]) === -1) { a2[a2.length] = a1[id] } } return a2 }
 }
+
+module.exports = Dictionary
