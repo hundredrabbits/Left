@@ -61,7 +61,7 @@ function Go () {
     if (startingWith) { target = target.substr(0, target.length - 1) }
     if (endingWith) { target = target.substr(1, target.length - 1) }
 
-    // TODO: fix length reference here?
+    // TODO: fix length reference here: not sure what it is supposed to be
     if (left.textarea_el.value.substr(from, length).indexOf(target) === -1 || tries < 1) { console.log('failed'); return }
 
     const length = left.textarea_el.value.length - from
