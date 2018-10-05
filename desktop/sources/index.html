@@ -48,7 +48,6 @@
       left.controller.add("default","*","About",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left'); },"CmdOrCtrl+,");
       left.controller.add("default","*","Fullscreen",() => { app.toggle_fullscreen(); },"CmdOrCtrl+Enter");
       left.controller.add("default","*","Hide",() => { app.toggle_visible(); },"CmdOrCtrl+H");
-      left.controller.add("default","*","Inspect",() => { app.inspect(); },"CmdOrCtrl+.");
       left.controller.add("default","*","Reset",() => { left.reset(); },"CmdOrCtrl+Backspace");
       left.controller.add("default","*","Quit",() => { left.project.quit(); },"CmdOrCtrl+Q");
 
@@ -81,8 +80,10 @@
       left.controller.add("default","Navigation","Next Marker",() => { left.navi.next_marker(); },"CmdOrCtrl+]");
       left.controller.add("default","Navigation","Prev Marker",() => { left.navi.prev_marker(); },"CmdOrCtrl+[");
 
-      left.controller.add("default","View","Toggle Dark Mode",() => {  left.theme.toggle() },"CmdOrCtrl+Shift+T");
       left.controller.add("default","View","Toggle Navigation",() => {  left.navi.toggle() },"CmdOrCtrl+\\");
+      left.controller.add_role("default","View","reload");
+      left.controller.add_role("default","View","forcereload");
+      left.controller.add_role("default","View","toggledevtools");
 
       left.controller.add("default","Mode","Reader",() => { left.reader.start(); },"CmdOrCtrl+K");
       left.controller.add("default","Mode","Insert",() => { left.insert.start(); },"CmdOrCtrl+I");
