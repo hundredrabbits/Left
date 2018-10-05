@@ -1,6 +1,8 @@
-/* global left, SYN_DB */
+/* global left */
 
 'use strict'
+
+const SYN_DB = require('./synonyms')
 
 function Dictionary () {
   this.vocabulary = []

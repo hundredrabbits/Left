@@ -1,6 +1,8 @@
-/* global left, EOL */
+/* global left */
 
 'use strict'
+
+const EOL = '\n'
 
 function Go () {
   this.to_page = function (id = 0, line = 0) {

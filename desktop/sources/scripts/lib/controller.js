@@ -1,6 +1,10 @@
-/* global EOL, fs, app, dialog */
-
 'use strict'
+
+const fs = require('fs')
+const { remote } = require('electron')
+const { app, dialog } = remote
+
+const EOL = '\n'
 
 function Controller () {
   this.menu = { default: {} }
@@ -184,4 +188,4 @@ function Controller () {
   ]
 }
 
-module.exports = new Controller()
+module.exports = Controller

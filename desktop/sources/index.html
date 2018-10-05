@@ -10,38 +10,26 @@
     <link rel="stylesheet" href="links/main.css"/>
     <link rel="stylesheet" href="links/theme.css"/>
 
-    <script src="scripts/splash.js"></script>
-    <script src="scripts/lib/theme.js"></script>
-    <script src="scripts/lib/controller.js"></script>
-
-    <script src="scripts/navi.js"></script>
-    <script src="scripts/page.js"></script>
-
-    <script src="scripts/go.js"></script>
-    <script src="scripts/insert.js"></script>
-
-    <script src="scripts/stats.js"></script>
-    <script src="scripts/project.js"></script>
     <script src="scripts/events.js"></script>
-    <script src="scripts/synonyms.js"></script>
-    <script src="scripts/dictionary.js"></script>
-    <script src="scripts/operator.js"></script>
-    <script src="scripts/left.js"></script>
-    <script src="scripts/reader.js"></script>
-
   </head>
   <body>
     <script>
       "use strict";
 
-      const { dialog, app } = require('electron').remote;
-      const fs = require('fs');
-      const app_path = app.getAppPath();
+      const { remote } = require('electron')
+      const Left = require('./left');
+      const { app } = remote
 
       const left = new Left();
 
       left.install(document.body);
       left.start();
+
+      // On Windows: open the file specified in the first argument
+      // (allows Open With and file associations on Windows)
+      if (process.platform === "win32" && remote.process.argv.length > 1) {
+        left.project.add(remote.process.argv[1]);
+      }
 
       // Menu
 
@@ -96,7 +84,6 @@
       left.controller.add("reader","*","About",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left'); },"CmdOrCtrl+,");
       left.controller.add("reader","*","Fullscreen",() => { app.toggle_fullscreen(); },"CmdOrCtrl+Enter");
       left.controller.add("reader","*","Hide",() => { app.toggle_visible(); },"CmdOrCtrl+H");
-      left.controller.add("reader","*","Inspect",() => { app.inspect(); },"CmdOrCtrl+.");
       left.controller.add("reader","*","Reset",() => { left.theme.reset(); },"CmdOrCtrl+Backspace");
       left.controller.add("reader","*","Quit",() => { left.project.quit(); },"CmdOrCtrl+Q");
       left.controller.add("reader","Reader","Stop",() => { left.reader.stop(); },"Esc");
@@ -104,14 +91,12 @@
       left.controller.add("operator","*","About",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left'); },"CmdOrCtrl+,");
       left.controller.add("operator","*","Fullscreen",() => { app.toggle_fullscreen(); },"CmdOrCtrl+Enter");
       left.controller.add("operator","*","Hide",() => { app.toggle_visible(); },"CmdOrCtrl+H");
-      left.controller.add("operator","*","Inspect",() => { app.inspect(); },"CmdOrCtrl+.");
       left.controller.add("operator","*","Reset",() => { left.theme.reset(); },"CmdOrCtrl+Backspace");
       left.controller.add("operator","*","Quit",() => { left.project.quit(); },"CmdOrCtrl+Q");
 
       left.controller.add("insert","*","About",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left'); },"CmdOrCtrl+,");
       left.controller.add("insert","*","Fullscreen",() => { app.toggle_fullscreen(); },"CmdOrCtrl+Enter");
       left.controller.add("insert","*","Hide",() => { app.toggle_visible(); },"CmdOrCtrl+H");
-      left.controller.add("insert","*","Inspect",() => { app.inspect(); },"CmdOrCtrl+.");
       left.controller.add("insert","*","Reset",() => { left.theme.reset(); },"CmdOrCtrl+Backspace");
       left.controller.add("insert","*","Quit",() => { left.project.quit(); },"CmdOrCtrl+Q");
 
@@ -138,15 +123,6 @@
       left.controller.add("operator","Operator","Stop",() => { left.operator.stop(); },"Esc");
 
       left.controller.commit();
-
-      // On Windows: open the file specified in the first argument
-      // (allows Open With and file associations on Windows)
-
-      const remote = require('electron').remote;
-
-      if(process.platform === "win32" && remote.process.argv.length > 1){
-        left.project.add(remote.process.argv[1]);
-      }
 
     </script>
   </body>

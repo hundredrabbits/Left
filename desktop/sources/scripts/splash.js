@@ -1,6 +1,6 @@
-/* global Page */
-
 'use strict'
+
+const Page = require('./page')
 
 function Splash () {
   Page.call(this, `# Welcome

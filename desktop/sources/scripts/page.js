@@ -1,6 +1,9 @@
-/* global left, EOL, fs */
+/* global left */
 
 'use strict'
+
+const fs = require('fs')
+const EOL = '\n'
 
 function Page (text = '', path = null) {
   this.text = text.replace(/\r?\n/g, '\n')

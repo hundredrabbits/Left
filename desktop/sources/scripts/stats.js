@@ -1,6 +1,8 @@
-/* global left, EOL */
+/* global left */
 
 'use strict'
+
+const EOL = '\n'
 
 function Stats () {
   this.el = document.createElement('stats')

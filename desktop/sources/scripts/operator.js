@@ -1,6 +1,8 @@
-/* global left, EOL */
+/* global left */
 
 'use strict'
+
+const EOL = '\n'
 
 function Operator () {
   this.el = document.createElement('input'); this.el.id = 'operator'

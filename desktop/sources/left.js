@@ -2,6 +2,19 @@
 
 'use strict'
 
+const Theme = require('./scripts/lib/theme')
+const Controller = require('./scripts/lib/controller')
+const Dictionary = require('./scripts/dictionary')
+const Operator = require('./scripts/operator')
+const Navi = require('./scripts/navi')
+const Stats = require('./scripts/stats')
+const Go = require('./scripts/go')
+const Project = require('./scripts/project')
+const Reader = require('./scripts/reader')
+const Insert = require('./scripts/insert')
+
+const EOL = '\n'
+
 function Left () {
   this.theme = new Theme()
   this.controller = new Controller()
@@ -310,4 +323,4 @@ function Left () {
   }
 }
 
-let EOL = '\n'
+module.exports = Left
