@@ -1,29 +1,20 @@
-/* Input */
-
 @font-face {
-    font-family: 'input_mono_regular';
-    src: url('../media/fonts/input_mono_regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'custom_mono';
+  src: url('../media/fonts/mono.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'input_mono_medium';
-    src: url('../media/fonts/input_mono_medium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'custom_serif';
+  src: url('../media/fonts/serif.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'custom_serif';
-    src: url('../media/fonts/serif.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'custom_sans_serif';
-    src: url('../media/fonts/sans_serif.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'custom_sans_serif';
+  src: url('../media/fonts/sans_serif.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }

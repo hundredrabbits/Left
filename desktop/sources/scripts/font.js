@@ -4,7 +4,7 @@ function Font () {
   const root = document.documentElement
 
   this.fonts = [
-    'input_mono_regular',
+    'custom_mono',
     'custom_serif',
     'custom_sans_serif'
   ]
