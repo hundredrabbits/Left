@@ -73,9 +73,9 @@
       left.controller.add_role('default', 'View', 'reload')
       left.controller.add_role('default', 'View', 'forcereload')
       left.controller.add_role('default', 'View', 'toggledevtools')
-      left.controller.add('default', 'View', 'Decrease Font Size', () => { left.theme.decrease_font_size() }, 'CmdOrCtrl+Shift+-')
-      left.controller.add('default', 'View', 'Increase Font Size', () => { left.theme.increase_font_size() }, 'CmdOrCtrl+Shift+=')
-      left.controller.add('default', 'View', 'Reset Font Size', () => { left.theme.reset_font_size() }, 'CmdOrCtrl+Shift+0')
+      left.controller.add('default', 'View', 'Decrease Font Size', () => { left.theme.decrease_font_size() }, 'CmdOrCtrl+-')
+      left.controller.add('default', 'View', 'Increase Font Size', () => { left.theme.increase_font_size() }, 'CmdOrCtrl+=')
+      left.controller.add('default', 'View', 'Reset Font Size', () => { left.theme.reset_font_size() }, 'CmdOrCtrl+0')
 
       left.controller.add('default', 'Mode', 'Reader', () => { left.reader.start() }, 'CmdOrCtrl+K')
       left.controller.add('default', 'Mode', 'Insert', () => { left.insert.start() }, 'CmdOrCtrl+I')
