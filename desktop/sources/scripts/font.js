@@ -37,7 +37,8 @@ function Font () {
   this.reset = function () {
     localStorage.removeItem('font')
     this.fontSize = 12
-    this.fontFamily = this.fonts[0]
+    this.fontIndex = 0
+    this.fontFamily = this.fonts[this.fontIndex]
     this.updateVariables()
   }
 
