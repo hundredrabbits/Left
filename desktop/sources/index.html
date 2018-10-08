@@ -37,6 +37,9 @@
       left.controller.add('default', '*', 'About', () => { shell.openExternal('https://github.com/hundredrabbits/Left') }, 'CmdOrCtrl+,')
       left.controller.add('default', '*', 'Fullscreen', () => { app.toggle_fullscreen() }, 'CmdOrCtrl+Enter')
       left.controller.add('default', '*', 'Hide', () => { app.toggle_visible() }, 'CmdOrCtrl+H')
+      left.controller.add_role('default', '*', 'reload')
+      left.controller.add_role('default', '*', 'forcereload')
+      left.controller.add_role('default', '*', 'toggledevtools')
       left.controller.add('default', '*', 'Reset', () => { left.reset() }, 'CmdOrCtrl+Backspace')
       left.controller.add('default', '*', 'Quit', () => { left.project.quit() }, 'CmdOrCtrl+Q')
 
@@ -70,9 +73,6 @@
       left.controller.add('default', 'Navigation', 'Prev Marker', () => { left.navi.prev_marker() }, 'CmdOrCtrl+[')
 
       left.controller.add('default', 'View', 'Toggle Navigation', () => { left.navi.toggle() }, 'CmdOrCtrl+\\')
-      left.controller.add_role('default', 'View', 'reload')
-      left.controller.add_role('default', 'View', 'forcereload')
-      left.controller.add_role('default', 'View', 'toggledevtools')
       left.controller.add('default', 'View', 'Previous Font', () => { left.font.previousFont() }, 'CmdOrCtrl+Shift+,')
       left.controller.add('default', 'View', 'Next Font', () => { left.font.nextFont() }, 'CmdOrCtrl+Shift+.')
       left.controller.add('default', 'View', 'Decrease Font Size', () => { left.font.decreaseFontSize() }, 'CmdOrCtrl+-')
