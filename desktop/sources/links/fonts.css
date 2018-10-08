@@ -13,3 +13,17 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'custom_serif';
+    src: url('../media/fonts/serif.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'custom_sans_serif';
+    src: url('../media/fonts/sans_serif.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

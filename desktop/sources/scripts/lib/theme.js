@@ -12,10 +12,12 @@ function Theme (default_theme = { background: '#222', f_high: '#fff', f_med: '#c
     pale: { background: '#e1e1e1', f_high: '#000', f_med: '#777', f_low: '#fff', f_inv: '#000', b_high: '#eee', b_med: '#999', b_low: '#ccc', b_inv: '#fff' }
   }
   
+  // Currently, the custom_serif font is Zilla Slab and the custom_sans_serif font is Roboto Condensed. These can be changed by replacing the serif.ttf and sans_serif.ttf fonts in the media/fonts folder.
+  
   this.fonts = [
     "input_mono_regular",
-    "serif",
-    "sans-serif",
+    "custom_serif",
+    "custom_sans_serif",
   ]
   
   this.font_index = 0
@@ -108,9 +110,29 @@ function Theme (default_theme = { background: '#222', f_high: '#fff', f_med: '#c
     this.load(this.active.background === this.collection.noir.background ? this.collection.pale : this.collection.noir)
   }
   
+  this.previous_font = function () {
+    this.font_index--
+    if (this.font_index < 0) this.font_index = this.fonts.length - 1
+    document.body.style.fontFamily = this.fonts[this.font_index]
+  }
+  
   this.next_font = function () {
     this.font_index = (this.font_index + 1) % this.fonts.length
     document.body.style.fontFamily = this.fonts[this.font_index]
+  }
+  
+  this.decrease_font_size = function () {
+    const font_size = parseInt(window.getComputedStyle(document.body).getPropertyValue('font-size'));
+    document.body.style.fontSize = (font_size - 1) + "px";
+  }
+  
+  this.increase_font_size = function () {
+    const font_size = parseInt(window.getComputedStyle(document.body).getPropertyValue('font-size'));
+    document.body.style.fontSize = (font_size + 1) + "px";
+  }
+  
+  this.reset_font_size = function () {
+    document.body.style.fontSize = "12px";
   }
 
   // Drag
