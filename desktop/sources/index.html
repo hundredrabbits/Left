@@ -73,6 +73,9 @@
       left.controller.add_role('default', 'View', 'reload')
       left.controller.add_role('default', 'View', 'forcereload')
       left.controller.add_role('default', 'View', 'toggledevtools')
+      
+      left.controller.add('default', 'View', 'Previous Font', () => { left.theme.previous_font() }, 'CmdOrCtrl+Shift+,')
+      left.controller.add('default', 'View', 'Next Font', () => { left.theme.next_font() }, 'CmdOrCtrl+Shift+.')
       left.controller.add('default', 'View', 'Decrease Font Size', () => { left.theme.decrease_font_size() }, 'CmdOrCtrl+-')
       left.controller.add('default', 'View', 'Increase Font Size', () => { left.theme.increase_font_size() }, 'CmdOrCtrl+=')
       left.controller.add('default', 'View', 'Reset Font Size', () => { left.theme.reset_font_size() }, 'CmdOrCtrl+0')
@@ -84,8 +87,6 @@
       left.controller.add('default', 'Theme', 'Pale', () => { left.theme.pale() }, 'CmdOrCtrl+Shift+2')
       left.controller.add('default', 'Theme', 'Invert', () => { left.theme.invert() }, 'CmdOrCtrl+Shift+I')
       left.controller.add('default', 'Theme', 'Install', () => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Themes') })
-      left.controller.add('default', 'Theme', 'Previous Font', () => { left.theme.previous_font() }, 'CmdOrCtrl+Shift+,')
-      left.controller.add('default', 'Theme', 'Next Font', () => { left.theme.next_font() }, 'CmdOrCtrl+Shift+.')
 
       left.controller.add('reader', '*', 'About', () => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left') }, 'CmdOrCtrl+,')
       left.controller.add('reader', '*', 'Fullscreen', () => { app.toggle_fullscreen() }, 'CmdOrCtrl+Enter')
