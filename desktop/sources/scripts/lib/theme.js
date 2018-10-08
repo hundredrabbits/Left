@@ -11,6 +11,14 @@ function Theme (default_theme = { background: '#222', f_high: '#fff', f_med: '#c
     noir: { background: '#222', f_high: '#fff', f_med: '#ccc', f_low: '#999', f_inv: '#fff', b_high: '#888', b_med: '#666', b_low: '#444', b_inv: '#000' },
     pale: { background: '#e1e1e1', f_high: '#000', f_med: '#777', f_low: '#fff', f_inv: '#000', b_high: '#eee', b_med: '#999', b_low: '#ccc', b_inv: '#fff' }
   }
+  
+  this.fonts = [
+    "input_mono_regular",
+    "serif",
+    "sans-serif",
+  ]
+  
+  this.font_index = 0
 
   this.install = function (host = document.body, callback) {
     console.log('Theme', 'Installing..')
@@ -98,6 +106,11 @@ function Theme (default_theme = { background: '#222', f_high: '#fff', f_med: '#c
 
   this.invert = function () {
     this.load(this.active.background === this.collection.noir.background ? this.collection.pale : this.collection.noir)
+  }
+  
+  this.next_font = function () {
+    this.font_index = (this.font_index + 1) % this.fonts.length
+    document.body.style.fontFamily = this.fonts[this.font_index]
   }
 
   // Drag

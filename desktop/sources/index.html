@@ -81,6 +81,7 @@
       left.controller.add('default', 'Theme', 'Pale', () => { left.theme.pale() }, 'CmdOrCtrl+Shift+2')
       left.controller.add('default', 'Theme', 'Invert', () => { left.theme.invert() }, 'CmdOrCtrl+Shift+I')
       left.controller.add('default', 'Theme', 'Install', () => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Themes') })
+      left.controller.add('default', 'Theme', 'Next Font', () => { left.theme.next_font() }, 'CmdOrCtrl+Shift+.')
 
       left.controller.add('reader', '*', 'About', () => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left') }, 'CmdOrCtrl+,')
       left.controller.add('reader', '*', 'Fullscreen', () => { app.toggle_fullscreen() }, 'CmdOrCtrl+Enter')
