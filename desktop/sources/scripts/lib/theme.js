@@ -11,15 +11,15 @@ function Theme (default_theme = { background: '#222', f_high: '#fff', f_med: '#c
     noir: { background: '#222', f_high: '#fff', f_med: '#ccc', f_low: '#999', f_inv: '#fff', b_high: '#888', b_med: '#666', b_low: '#444', b_inv: '#000' },
     pale: { background: '#e1e1e1', f_high: '#000', f_med: '#777', f_low: '#fff', f_inv: '#000', b_high: '#eee', b_med: '#999', b_low: '#ccc', b_inv: '#fff' }
   }
-  
+
   // Currently, the custom_serif font is Zilla Slab and the custom_sans_serif font is Roboto Condensed. These can be changed by replacing the serif.ttf and sans_serif.ttf fonts in the media/fonts folder.
-  
+
   this.fonts = [
-    "input_mono_regular",
-    "custom_serif",
-    "custom_sans_serif",
+    'input_mono_regular',
+    'custom_serif',
+    'custom_sans_serif'
   ]
-  
+
   this.font_index = 0
 
   this.install = function (host = document.body, callback) {
@@ -109,30 +109,30 @@ function Theme (default_theme = { background: '#222', f_high: '#fff', f_med: '#c
   this.invert = function () {
     this.load(this.active.background === this.collection.noir.background ? this.collection.pale : this.collection.noir)
   }
-  
+
   this.previous_font = function () {
     this.font_index--
     if (this.font_index < 0) this.font_index = this.fonts.length - 1
     document.body.style.fontFamily = this.fonts[this.font_index]
   }
-  
+
   this.next_font = function () {
     this.font_index = (this.font_index + 1) % this.fonts.length
     document.body.style.fontFamily = this.fonts[this.font_index]
   }
-  
+
   this.decrease_font_size = function () {
-    const font_size = parseInt(window.getComputedStyle(document.body).getPropertyValue('font-size'));
-    document.body.style.fontSize = (font_size - 1) + "px";
+    const fontSize = parseInt(window.getComputedStyle(document.body).getPropertyValue('font-size'))
+    document.body.style.fontSize = (fontSize - 1) + 'px'
   }
-  
+
   this.increase_font_size = function () {
-    const font_size = parseInt(window.getComputedStyle(document.body).getPropertyValue('font-size'));
-    document.body.style.fontSize = (font_size + 1) + "px";
+    const fontSize = parseInt(window.getComputedStyle(document.body).getPropertyValue('font-size'))
+    document.body.style.fontSize = (fontSize + 1) + 'px'
   }
-  
+
   this.reset_font_size = function () {
-    document.body.style.fontSize = "12px";
+    document.body.style.fontSize = '12px'
   }
 
   // Drag
