@@ -17,6 +17,7 @@ navi li.file { color:var(--f_med) !important }
 navi li.active { color:var(--f_high) !important }
 navi li::before { color:var(--f_low) !important }
 navi li:hover { color:var(--f_high) !important; }
+body navi li:hover::before { color:var(--f_high) !important; }
 body #operator { background:var(--background); color:var(--f_high); }
 body #theme_button_icon { border-color: var(--f_med) !important }
 body #theme_button_icon_fg { background-color: var(--f_med) !important }
