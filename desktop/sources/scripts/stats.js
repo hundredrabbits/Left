@@ -56,26 +56,19 @@ function Stats () {
     previousWord.classList.remove('active')
     currentWord.classList.add('active')
 
-    if (currentWord.offsetLeft > this.el.offsetWidth / 2) {
-      this.el.scrollLeft += (20 + currentWord.offsetWidth)
-    } else {
-      this.el.scrollLeft = 0
-    }
-
-    console.log(`Next synonym: ${left.synonyms[left.selection.index]}`)
+    currentWord.scrollIntoView({
+      behavior: 'smooth'
+    })
   }
 
   this.applySynonym = function () {
     if (!this.isSynonymsActive) { return }
-
-    console.log(`Apply the synonym: ${left.synonyms[left.selection.index % left.synonyms.length]}`)
 
     // Replace the current word with the selected synonym
     left.replace_active_word_with(left.synonyms[left.selection.index % left.synonyms.length])
   }
 
   this._synonyms = function () {
-    console.warn('Populate the synonyms.')
     left.selection.index = 0
 
     const ul = document.createElement('ul')
@@ -87,7 +80,9 @@ function Stats () {
     })
 
     ul.children[0].classList.add('active')
-    this.el.scrollLeft = 0
+    ul.children[0].scrollIntoView({
+      behavior: 'smooth'
+    })
     this.list = ul
 
     return ul
