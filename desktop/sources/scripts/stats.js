@@ -56,7 +56,7 @@ function Stats () {
     previousWord.classList.remove('active')
     currentWord.classList.add('active')
 
-    if (currentWord.offsetLeft > (window.innerWidth * 0.75 - 40) / 2) {
+    if (currentWord.offsetLeft > this.el.offsetWidth / 2) {
       this.el.scrollLeft += (20 + currentWord.offsetWidth)
     } else {
       this.el.scrollLeft = 0
