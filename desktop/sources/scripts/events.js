@@ -54,17 +54,6 @@ document.onkeyup = (e) => {
   }
 }
 
-// Selection Change
-let lastSelection = null
-
-window.addEventListener('mousemove', function (e) {
-  if (lastSelection && lastSelection.start === left.textarea_el.selectionStart && lastSelection.end === left.textarea_el.selectionEnd) {
-    return
-  }
-  left.update()
-  lastSelection = { start: left.textarea_el.selectionStart, end: left.textarea_el.selectionEnd }
-})
-
 window.addEventListener('dragover', function (e) {
   e.stopPropagation()
   e.preventDefault()

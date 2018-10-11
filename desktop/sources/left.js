@@ -59,6 +59,9 @@ function Left () {
       if (!this.reader.active) { this.stats.on_scroll() }
     })
 
+    // Trigger update when selection changes
+    this.textarea_el.addEventListener('select', (e) => { this.update() })
+
     this.textarea_el.addEventListener('input', () => {
       this.project.page().commit()
     })
