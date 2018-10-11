@@ -18,7 +18,8 @@ function Stats () {
     if (left.textarea_el.selectionStart !== left.textarea_el.selectionEnd) {
       this.el.innerHTML = this._selection()
     } else if (left.synonyms) {
-      this.el.innerHTML = this._synonyms()
+      this.el.innerHTML = ''
+      this.el.appendChild(this._synonyms())
     } else if (left.selection.word && left.suggestion) {
       this.el.innerHTML = this._suggestion()
     } else if (left.selection.url) {
@@ -34,16 +35,57 @@ function Stats () {
     return `${stats.l}L ${stats.w}W ${stats.v}V ${stats.c}C ${stats.p}% <span class='right'>${date.getHours()}:${date.getMinutes()}</span>`
   }
 
-  this._synonyms = function () {
-    // TODO: improve synonyms (#91)
-    // let underlinedSyn = left.synonyms[left.selection.index]
-    let html = `<b>${left.selection.word}</b> `
+  this.incrementSynonym = function () {
+    left.selection.index = (left.selection.index + 1) % left.synonyms.length
+  }
 
-    for (const id in left.synonyms) {
-      let w = left.synonyms[id]
-      html += parseInt(id) === left.selection.index ? `<i>${w}</i> ` : `${w} `
-    }
-    return html.trim()
+  this.list = null
+  this.isSynonymsActive = false
+
+  this.nextSynonym = function () {
+    this.isSynonymsActive = true
+
+    // Save the previous word element
+    const previousWord = this.list.children[left.selection.index]
+
+    // Increment the index
+    this.incrementSynonym()
+
+    // Get the current word element, add/remove appropriate active class
+    const currentWord = this.list.children[left.selection.index]
+    previousWord.classList.remove('active')
+    currentWord.classList.add('active')
+
+    currentWord.scrollIntoView({
+      behavior: 'smooth'
+    })
+  }
+
+  this.applySynonym = function () {
+    if (!this.isSynonymsActive) { return }
+
+    // Replace the current word with the selected synonym
+    left.replace_active_word_with(left.synonyms[left.selection.index % left.synonyms.length])
+  }
+
+  this._synonyms = function () {
+    left.selection.index = 0
+
+    const ul = document.createElement('ul')
+
+    left.synonyms.forEach((syn) => {
+      const li = document.createElement('li')
+      li.textContent = syn
+      ul.appendChild(li)
+    })
+
+    ul.children[0].classList.add('active')
+    ul.children[0].scrollIntoView({
+      behavior: 'smooth'
+    })
+    this.list = ul
+
+    return ul
   }
 
   this._suggestion = function () {

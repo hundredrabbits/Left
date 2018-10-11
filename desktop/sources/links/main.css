@@ -22,10 +22,13 @@ body navi li i { padding-right:15px; }
 body navi > ul {  }
 body navi > ul li.marker { display: none }
 body navi > ul.active li.marker { display: block }
-body stats { display: block;border-bottom: 0px;margin-top: 30px;position: fixed;bottom:0px;left: 25vw;line-height: 40px;width:calc(75vw - 40px);height:40px;overflow: hidden;-webkit-user-select: none;-webkit-app-region: drag; transition: left 200ms; }
-body stats b { }
-body stats i { text-decoration: underline; }
-body stats .right { float:right; }
+body stats { display: block; border-bottom: 0; margin-top: 30px; position: fixed; bottom: 0; left: 25vw; line-height: 40px; width: calc(75vw - 40px); height: 40px; overflow: auto; -webkit-user-select: none; -webkit-app-region: drag; transition: left 200ms; }
+body stats i {text-decoration: underline; }
+body stats .right { float: right; }
+body stats ul { height: 100%; display: inline; overflow: scroll; white-space: nowrap; }
+body stats li { display: inline; margin-right: 20px; }
+body stats li.active { text-decoration: underline; font-weight: bold; }
+
 body textarea { font-family: var(--font-family); padding: 90px 15px 0; height: calc(100vh - 130px); display: block; width: 50vw; position: fixed; left: 25vw; font-size: var(--font-size); line-height: var(--line-height); resize: none; background: transparent; overflow: auto; max-width: 90%; transition: left 200ms; margin-left:-15px; }
 body div { left: 25vw; max-width:600px; width:50vw; line-height: var(--line-height); font-family: var(--font-family); font-size: var(--font-size); white-space: pre-wrap; word-wrap:break-word; }
 body drag { display: block;width: 100vw;height: 40px;position: fixed;top: 0px;-webkit-user-select: none;-webkit-app-region: drag; background-color: transparent !important;}

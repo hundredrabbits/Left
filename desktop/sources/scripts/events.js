@@ -6,7 +6,7 @@ document.onkeydown = function keyDown (e) {
   // Faster than Electron
   if (e.keyCode === 9) {
     if (e.shiftKey) {
-      left.select_synonym()
+      left.stats.nextSynonym()
     } else {
       left.select_autocomplete()
     }
@@ -45,7 +45,7 @@ document.onkeydown = function keyDown (e) {
 
 document.onkeyup = (e) => {
   if (e.keyCode === 16) { // Shift
-    left.selection.index = 0
+    left.stats.applySynonym()
     left.update()
     return
   }
@@ -53,17 +53,6 @@ document.onkeyup = (e) => {
     left.update()
   }
 }
-
-// Selection Change
-let lastSelection = null
-
-window.addEventListener('mousemove', function (e) {
-  if (lastSelection && lastSelection.start === left.textarea_el.selectionStart && lastSelection.end === left.textarea_el.selectionEnd) {
-    return
-  }
-  left.update()
-  lastSelection = { start: left.textarea_el.selectionStart, end: left.textarea_el.selectionEnd }
-})
 
 window.addEventListener('dragover', function (e) {
   e.stopPropagation()
