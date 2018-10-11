@@ -7,7 +7,6 @@ document.onkeydown = function keyDown (e) {
   if (e.keyCode === 9) {
     if (e.shiftKey) {
       left.stats.nextSynonym()
-      // left.select_synonym()
     } else {
       left.select_autocomplete()
     }
@@ -46,7 +45,6 @@ document.onkeydown = function keyDown (e) {
 
 document.onkeyup = (e) => {
   if (e.keyCode === 16) { // Shift
-    // left.selection.index = 0
     left.stats.applySynonym()
     left.update()
     return

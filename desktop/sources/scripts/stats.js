@@ -91,16 +91,6 @@ function Stats () {
     this.list = ul
 
     return ul
-
-    // // Populate the stats
-    // let underlinedSyn = left.synonyms[left.selection.index]
-    // let html = `<b>${left.selection.word}</b> <i>${underlinedSyn}</i> `
-    //
-    // for (let i = left.selection.index + 1; i < left.synonyms.length; i += 1) {
-    //   html += `${left.synonyms[i]} `
-    // }
-    //
-    // return html
   }
 
   this._suggestion = function () {
