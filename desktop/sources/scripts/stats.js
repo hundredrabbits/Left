@@ -80,9 +80,7 @@ function Stats () {
     })
 
     ul.children[0].classList.add('active')
-    ul.children[0].scrollIntoView({
-      behavior: 'smooth'
-    })
+    this.el.scrollLeft = 0
     this.list = ul
 
     return ul
