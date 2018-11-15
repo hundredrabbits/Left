@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-:root { --font-size: 12px; --line-height: 20px; --font-family: 'input_mono_regular'; }
+:root { --font-size: 12px; --line-height: 20px; --font-family: 'custom_mono'; }
 
 ::-webkit-scrollbar { display: none; margin: 0; padding: 0; }
 body { height: 100vh; font-family: var(--font-family); font-size: 12px; overflow: auto; transition: background-color 500ms,filter 150ms; overflow: hidden;}
