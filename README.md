@@ -6,7 +6,7 @@
 
 ## Guide
 
-View the [guide](https://100r.co/blog.html#left)
+View the [guide](https://100r.co/pages/left.html)
 
 ## Install
 
