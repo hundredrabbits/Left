@@ -15,7 +15,7 @@ body navi li.note { padding-left:15px;}
 body navi li.note::before { content:"#"; left:0px; }
 body navi li.comment {padding-left: 15px;}
 body navi li.comment::before { content:""; left:0px; }
-body navi li.changes::after { content:"⬤"; position: absolute; right: 15px; font-size:66%;}
+body navi li.changes::after { content:"*"; position: absolute; right: 15px; }
 body navi li i { padding-right:15px; }
 body navi > ul {}
 body navi > ul li.marker { display: none }
