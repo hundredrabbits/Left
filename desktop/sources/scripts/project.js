@@ -4,8 +4,6 @@ const fs = require('fs')
 const { remote } = require('electron')
 const { app, dialog } = remote
 
-console.log(app)
-
 const Page = require('./page')
 const Splash = require('./splash')
 

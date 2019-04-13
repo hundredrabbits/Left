@@ -9045,7 +9045,7 @@ const SYN_DB = {
     'subject',
     'denizen'
   ],
-  'estranged': [ //!!!
+  'estranged': [ //! !!
     'alien',
     'exile',
     'visitor',
@@ -17231,7 +17231,7 @@ const SYN_DB = {
     'annihilate',
     'excise'
   ],
-  'esteem': [ //!!
+  'esteem': [ //! !
     'cherish',
     'encourage',
     'instill',
@@ -17685,7 +17685,7 @@ const SYN_DB = {
     'exemplification',
     'illustration'
   ],
-  'evil': [ //!!
+  'evil': [ //! !
     'ill',
     'noxious',
     'deleterious',
@@ -18722,7 +18722,7 @@ const SYN_DB = {
     'transport',
     'ecstasy'
   ],
-  'fable': [ //!!
+  'fable': [ //! !
     'story',
     'myth',
     'legend',
@@ -19397,7 +19397,7 @@ const SYN_DB = {
     'luxuriant',
     'brawny',
     'stout',
-    'oleaginous',
+    'oleaginous'
   ],
   'fatal': [
     'deadly',
@@ -23071,7 +23071,7 @@ const SYN_DB = {
     'secure',
     'gain'
   ],
-  'relinquish': [ //!!
+  'relinquish': [ //! !
     'abandon',
     'lose',
     'forfeit',
@@ -26575,7 +26575,7 @@ const SYN_DB = {
     'peculiarity',
     'characteristic'
   ],
-  'idiosyncrasy': [ //mark
+  'idiosyncrasy': [ // mark
     'peculiarity',
     'idiocrasy',
     'constitution',
@@ -28116,7 +28116,7 @@ const SYN_DB = {
     'irrepressible',
     'indefatigable'
   ],
-  'endorse': [ //!!
+  'endorse': [ //! !
     'superscribe',
     'sanction',
     'approve',
@@ -29784,7 +29784,7 @@ const SYN_DB = {
     'obscurity',
     'confusion'
   ],
-  'intricate': [ //mark
+  'intricate': [ // mark
     'involved',
     'perplexed',
     'complicated',
