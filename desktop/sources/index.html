@@ -35,8 +35,8 @@
       // Menu
 
       left.controller.add('default', '*', 'About', () => { shell.openExternal('https://github.com/hundredrabbits/Left') }, 'CmdOrCtrl+,')
-      left.controller.add('default', '*', 'Fullscreen', () => { app.toggle_fullscreen() }, 'CmdOrCtrl+Enter')
-      left.controller.add('default', '*', 'Hide', () => { app.toggle_visible() }, 'CmdOrCtrl+H')
+      left.controller.add('default', '*', 'Fullscreen', () => { app.toggleFullscreen() }, 'CmdOrCtrl+Enter')
+      left.controller.add('default', '*', 'Hide', () => { app.toggleVisible() }, 'CmdOrCtrl+H')
       left.controller.addRole('default', '*', 'reload')
       left.controller.addRole('default', '*', 'forcereload')
       left.controller.addRole('default', '*', 'toggledevtools')
@@ -88,21 +88,21 @@
       left.controller.add('default', 'Theme', 'Install', () => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Themes') })
 
       left.controller.add('reader', '*', 'About', () => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left') }, 'CmdOrCtrl+,')
-      left.controller.add('reader', '*', 'Fullscreen', () => { app.toggle_fullscreen() }, 'CmdOrCtrl+Enter')
-      left.controller.add('reader', '*', 'Hide', () => { app.toggle_visible() }, 'CmdOrCtrl+H')
+      left.controller.add('reader', '*', 'Fullscreen', () => { app.toggleFullscreen() }, 'CmdOrCtrl+Enter')
+      left.controller.add('reader', '*', 'Hide', () => { app.toggleVisible() }, 'CmdOrCtrl+H')
       left.controller.add('reader', '*', 'Reset', () => { left.theme.reset() }, 'CmdOrCtrl+Backspace')
       left.controller.add('reader', '*', 'Quit', () => { left.project.quit() }, 'CmdOrCtrl+Q')
       left.controller.add('reader', 'Reader', 'Stop', () => { left.reader.stop() }, 'Esc')
 
       left.controller.add('operator', '*', 'About', () => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left') }, 'CmdOrCtrl+,')
-      left.controller.add('operator', '*', 'Fullscreen', () => { app.toggle_fullscreen() }, 'CmdOrCtrl+Enter')
-      left.controller.add('operator', '*', 'Hide', () => { app.toggle_visible() }, 'CmdOrCtrl+H')
+      left.controller.add('operator', '*', 'Fullscreen', () => { app.toggleFullscreen() }, 'CmdOrCtrl+Enter')
+      left.controller.add('operator', '*', 'Hide', () => { app.toggleVisible() }, 'CmdOrCtrl+H')
       left.controller.add('operator', '*', 'Reset', () => { left.theme.reset() }, 'CmdOrCtrl+Backspace')
       left.controller.add('operator', '*', 'Quit', () => { left.project.quit() }, 'CmdOrCtrl+Q')
 
       left.controller.add('insert', '*', 'About', () => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left') }, 'CmdOrCtrl+,')
-      left.controller.add('insert', '*', 'Fullscreen', () => { app.toggle_fullscreen() }, 'CmdOrCtrl+Enter')
-      left.controller.add('insert', '*', 'Hide', () => { app.toggle_visible() }, 'CmdOrCtrl+H')
+      left.controller.add('insert', '*', 'Fullscreen', () => { app.toggleFullscreen() }, 'CmdOrCtrl+Enter')
+      left.controller.add('insert', '*', 'Hide', () => { app.toggleVisible() }, 'CmdOrCtrl+H')
       left.controller.add('insert', '*', 'Reset', () => { left.theme.reset() }, 'CmdOrCtrl+Backspace')
       left.controller.add('insert', '*', 'Quit', () => { left.project.quit() }, 'CmdOrCtrl+Q')
 
