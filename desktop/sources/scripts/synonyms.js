@@ -17231,16 +17231,6 @@ const SYN_DB = {
     'annihilate',
     'excise'
   ],
-  'esteem': [ //! !
-    'cherish',
-    'encourage',
-    'instill',
-    'propagate',
-    'implant',
-    'inculcate',
-    'inspire',
-    'foster'
-  ],
   'erase': [
     'efface',
     'expunge',
@@ -23070,13 +23060,6 @@ const SYN_DB = {
     'win',
     'secure',
     'gain'
-  ],
-  'relinquish': [ //! !
-    'abandon',
-    'lose',
-    'forfeit',
-    'surrender',
-    'forego'
   ],
   'ghastly': [
     'pale',

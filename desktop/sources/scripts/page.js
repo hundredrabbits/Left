@@ -40,7 +40,7 @@ function Page (text = '', path = null) {
     try {
       data = fs.readFileSync(this.path, 'utf-8')
     } catch (err) {
-      alert('An error ocurred reading the file :' + err.message)
+      this.path = null
       return
     }
     return data

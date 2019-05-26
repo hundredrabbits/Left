@@ -19,15 +19,7 @@
     "push": "git pull ; npm run build ; npm run push_theme ; npm run push_osx ; npm run push_linux ; npm run push_win ; npm run clean ; npm run push_status"
   },
   "devDependencies": {
-    "electron": "^3.1.8",
-    "electron-packager": "^12.1.1",
-    "eslint": "^5.16.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-html": "^4.0.6",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-node": "^7.0.1",
-    "eslint-plugin-promise": "^4.1.1",
-    "eslint-plugin-standard": "^4.0.0"
-  },
-  "dependencies": {}
+    "electron": "^5.0.1",
+    "electron-packager": "^13.1.1"
+  }
 }

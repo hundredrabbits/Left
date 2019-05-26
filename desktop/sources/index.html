@@ -82,10 +82,10 @@
       left.controller.add('default', 'Mode', 'Reader', () => { left.reader.start() }, 'CmdOrCtrl+K')
       left.controller.add('default', 'Mode', 'Insert', () => { left.insert.start() }, 'CmdOrCtrl+I')
 
-      left.controller.add('default', 'Theme', 'Noir', () => { left.theme.noir() }, 'CmdOrCtrl+Shift+1')
-      left.controller.add('default', 'Theme', 'Pale', () => { left.theme.pale() }, 'CmdOrCtrl+Shift+2')
-      left.controller.add('default', 'Theme', 'Invert', () => { left.theme.invert() }, 'CmdOrCtrl+Shift+I')
-      left.controller.add('default', 'Theme', 'Install', () => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Themes') })
+      left.controller.add("default","Theme","Open Theme",() => { left.theme.open() },"CmdOrCtrl+Shift+O")
+      left.controller.add("default","Theme","Reset Theme",() => { left.theme.reset() },"CmdOrCtrl+Shift+Backspace")
+      left.controller.addSpacer('default', 'Theme', 'Download')
+      left.controller.add("default","Theme","Download Themes..",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Themes') })
 
       left.controller.add('reader', '*', 'About', () => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left') }, 'CmdOrCtrl+,')
       left.controller.add('reader', '*', 'Fullscreen', () => { app.toggleFullscreen() }, 'CmdOrCtrl+Enter')

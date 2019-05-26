@@ -1,70 +1,110 @@
 'use strict'
 
-function Theme (default_theme = { background: '#222', f_high: '#fff', f_med: '#ccc', f_low: '#999', f_inv: '#fff', b_high: '#888', b_med: '#666', b_low: '#444', b_inv: '#000' }) {
-  let themer = this
+function Theme (_default) {
+  const fs = require('fs')
+  const themer = this
+
+  this.active = _default
 
   this.el = document.createElement('style')
   this.el.type = 'text/css'
 
-  this.collection = {
-    default: default_theme,
-    noir: { background: '#222', f_high: '#fff', f_med: '#ccc', f_low: '#999', f_inv: '#fff', b_high: '#888', b_med: '#666', b_low: '#444', b_inv: '#000' },
-    pale: { background: '#e1e1e1', f_high: '#000', f_med: '#777', f_low: '#fff', f_inv: '#000', b_high: '#eee', b_med: '#999', b_low: '#ccc', b_inv: '#fff' }
-  }
-
   this.install = function (host = document.body, callback) {
-    console.log('Theme', 'Installing..')
     host.appendChild(this.el)
     this.callback = callback
   }
 
   this.start = function () {
     console.log('Theme', 'Starting..')
-    let storage = isJSON(localStorage.theme) ? JSON.parse(localStorage.theme) : this.collection.default
-    this.load(!storage.background ? this.collection.default : storage)
+    if (isJson(localStorage.theme)) {
+      const storage = JSON.parse(localStorage.theme)
+      if (validate(storage)) {
+        console.log('Theme', 'Loading localStorage..')
+        this.load(storage)
+        return
+      }
+    }
+    this.load(_default)
   }
 
-  this.save = function (theme) {
-    console.log('Theme', 'Saving..')
-    this.active = theme
+  this.load = function (data) {
+    const theme = parse(data)
+    if (!validate(theme)) { console.warn('Theme', 'Not a theme', theme); return }
+    console.log('Theme', `Loaded theme!`)
+    this.el.innerHTML = `:root { --background: ${theme.background}; --f_high: ${theme.f_high}; --f_med: ${theme.f_med}; --f_low: ${theme.f_low}; --f_inv: ${theme.f_inv}; --b_high: ${theme.b_high}; --b_med: ${theme.b_med}; --b_low: ${theme.b_low}; --b_inv: ${theme.b_inv}; }`
     localStorage.setItem('theme', JSON.stringify(theme))
-  }
-
-  this.load = function (theme, fall_back = this.collection.noir) {
-    if (!theme || !theme.background) { console.warn('Theme', 'Not a theme', theme); return }
-
-    this.save(theme)
-    this.apply(theme)
-
+    this.active = theme
     if (this.callback) {
       this.callback()
     }
   }
 
-  this.apply = function (theme) {
-    this.el.innerHTML = `
-    :root {
-      --background: ${theme.background};
-      --f_high: ${theme.f_high};
-      --f_med: ${theme.f_med};
-      --f_low: ${theme.f_low};
-      --f_inv: ${theme.f_inv};
-      --b_high: ${theme.b_high};
-      --b_med: ${theme.b_med};
-      --b_low: ${theme.b_low};
-      --b_inv: ${theme.b_inv};
-    }`
+  this.reset = function () {
+    this.load(_default)
   }
 
-  this.parse = function (any) {
-    if (any && any.background) { return any } else if (any && any.data) { return any.data } else if (any && isJSON(any)) { return JSON.parse(any) } else if (any && isHTML(any)) { return this.extract(any) }
+  this.setImage = function (path) {
+    document.body.style.backgroundImage = path && fs.existsSync(path) && document.body.style.backgroundImage !== `url(${path})` ? `url(${path})` : ''
+  }
 
+  function parse (any) {
+    if (any && any.background) { return any } else if (any && any.data) { return any.data } else if (any && isJson(any)) { return JSON.parse(any) } else if (any && isHtml(any)) { return extract(any) }
     return null
   }
 
-  this.extract = function (text) {
-    let svg = new DOMParser().parseFromString(text, 'text/xml')
+  // Drag
 
+  this.drag = function (e) {
+    e.stopPropagation()
+    e.preventDefault()
+    e.dataTransfer.dropEffect = 'copy'
+  }
+
+  this.drop = function (e) {
+    e.preventDefault()
+    e.stopPropagation()
+    const file = e.dataTransfer.files[0]
+    if (!file || !file.name) { console.warn('Theme', 'Unnamed file.'); return }
+    if (file.name.indexOf('.thm') < 0 && file.name.indexOf('.svg') < 0) { console.warn('Theme', 'Skipped, not a theme'); return }
+    const reader = new FileReader()
+    reader.onload = function (e) {
+      themer.load(e.target.result)
+    }
+    reader.readAsText(file)
+  }
+
+  this.open = function () {
+    const fs = require('fs')
+    const { dialog, app } = require('electron').remote
+    let paths = dialog.showOpenDialog(app.win, { properties: ['openFile'], filters: [{ name: 'Themes', extensions: ['svg'] }] })
+    if (!paths) { console.log('Nothing to load'); return }
+    fs.readFile(paths[0], 'utf8', function (err, data) {
+      if (err) throw err
+      themer.load(data)
+    })
+  }
+
+  window.addEventListener('dragover', this.drag)
+  window.addEventListener('drop', this.drop)
+
+  // Helpers
+
+  function validate (json) {
+    if (!json) { return false }
+    if (!json.background) { return false }
+    if (!json.f_high) { return false }
+    if (!json.f_med) { return false }
+    if (!json.f_low) { return false }
+    if (!json.f_inv) { return false }
+    if (!json.b_high) { return false }
+    if (!json.b_med) { return false }
+    if (!json.b_low) { return false }
+    if (!json.b_inv) { return false }
+    return true
+  }
+
+  function extract (text) {
+    const svg = new DOMParser().parseFromString(text, 'text/xml')
     try {
       return {
         'background': svg.getElementById('background').getAttribute('fill'),
@@ -82,53 +122,13 @@ function Theme (default_theme = { background: '#222', f_high: '#fff', f_med: '#c
     }
   }
 
-  this.reset = function () {
-    this.load(this.collection.default)
+  function isJson (text) {
+    try { JSON.parse(text); return true } catch (error) { return false }
   }
 
-  // Defaults
-
-  this.pale = function () {
-    this.load(this.collection.pale)
+  function isHtml (text) {
+    try { new DOMParser().parseFromString(text, 'text/xml'); return true } catch (error) { return false }
   }
-
-  this.noir = function () {
-    this.load(this.collection.noir)
-  }
-
-  this.invert = function () {
-    this.load(this.active.background === this.collection.noir.background ? this.collection.pale : this.collection.noir)
-  }
-
-  // Drag
-
-  this.drag = function (e) {
-    e.stopPropagation()
-    e.preventDefault()
-    e.dataTransfer.dropEffect = 'copy'
-  }
-
-  this.drop = function (e) {
-    e.preventDefault()
-    e.stopPropagation()
-
-    let file = e.dataTransfer.files[0]
-
-    if (!file || !file.name) { console.warn('Theme', 'Unnamed file.'); return }
-    if (file.name.indexOf('.thm') < 0 && file.name.indexOf('.svg') < 0) { console.warn('Theme', 'Skipped, not a theme'); return }
-
-    let reader = new FileReader()
-    reader.onload = function (e) {
-      themer.load(themer.parse(e.target.result))
-    }
-    reader.readAsText(file)
-  }
-
-  window.addEventListener('dragover', this.drag)
-  window.addEventListener('drop', this.drop)
-
-  function isJSON (text) { try { JSON.parse(text); return true } catch (error) { return false } }
-  function isHTML (text) { try { new DOMParser().parseFromString(text, 'text/xml'); return true } catch (error) { return false } }
 }
 
 module.exports = Theme

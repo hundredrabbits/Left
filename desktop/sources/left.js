@@ -15,7 +15,7 @@ const Font = require('./scripts/font')
 const EOL = '\n'
 
 function Left () {
-  this.theme = new Theme()
+  this.theme = new Theme({ background: '#222', f_high: '#eee', f_med: '#888', f_low: '#666', f_inv: '#00f', b_high: '#f9a', b_med: '#a9f', b_low: '#000', b_inv: '#af9' })
   this.controller = new Controller()
   this.dictionary = new Dictionary()
   this.operator = new Operator()

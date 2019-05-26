@@ -14,16 +14,16 @@ app.on('ready', () => {
     minWidth: 310,
     minHeight: 350,
     backgroundColor: '#000',
-    icon: __dirname + '/' + { darwin: 'icon.icns', linux: 'icon.png', win32: 'icon.ico' }[process.platform] || 'icon.ico',
+    icon: path.join(__dirname, { darwin: 'icon.icns', linux: 'icon.png', win32: 'icon.ico' }[process.platform] || 'icon.ico'),
     resizable: true,
     frame: process.platform !== 'darwin',
     skipTaskbar: process.platform === 'darwin',
     autoHideMenuBar: process.platform === 'darwin',
-    webPreferences: { zoomFactor: 1.0 },
-    webPreferences: { backgroundThrottling: false }
+    webPreferences: { zoomFactor: 1.0, nodeIntegration: true, backgroundThrottling: false }
   })
 
   app.win.loadURL(`file://${__dirname}/sources/index.html`)
+  app.inspect()
 
   app.win.on('closed', () => {
     win = null
