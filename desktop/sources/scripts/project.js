@@ -141,7 +141,7 @@ function Project () {
         buttons: ['Yes', 'No'],
         title: 'Confirm',
         message: 'Are you sure you want to discard changes?',
-        icon: `${app.path()}/icon.png`
+        icon: `${app.getAppPath()}/icon.png`
       })
       if (response !== 0) {
         return
@@ -166,7 +166,7 @@ function Project () {
       buttons: ['Yes', 'No'],
       title: 'Confirm',
       message: 'Are you sure you want to discard changes?',
-      icon: `${app.path()}/icon.png`
+      icon: `${app.getAppPath()}/icon.png`
     })
     if (response === 0) { // Runs the following if 'Yes' is clicked
       left.reload(true)
@@ -194,7 +194,7 @@ function Project () {
       buttons: ['Yes', 'No'],
       title: 'Confirm',
       message: 'Unsaved data will be lost. Are you sure you want to quit?',
-      icon: `${app.path()}/icon.png`
+      icon: `${app.getAppPath()}/icon.png`
     })
     if (response === 0) {
       app.exit()
