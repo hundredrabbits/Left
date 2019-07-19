@@ -1,6 +1,6 @@
 # Left
 
-[Left](http://wiki.xxiivv.com/Left) is a distractionless writing application created by [hunddredrabbits](https://github.com/hundredrabbits) to help organize ideas quickly, featuring writing essentials auto-complete, synonyms suggestions, writing statistics, markup-based navigation and a speed-reader. You can learn more on the [left manual](https://100r.co/pages/left.html).
+[Left](http://wiki.xxiivv.com/Left) is a distractionless writing application designed to help organize ideas quickly, featuring writing essentials auto-complete, synonyms suggestions, writing statistics, markup-based navigation and a speed-reader. You can learn more on the [left manual](https://100r.co/pages/left.html).
 
 ## Install & Run
 
