@@ -24,7 +24,7 @@ body navi > ul li.active.header::before { content:"•"; }
 body navi > ul li.active.subheader::before { content:"•"; }
 body navi > ul li.active.comment::before { content:"•"; }
 body navi > ul li.active.page::before { content:"/"; }
-body stats { display: block; border-bottom: 0; margin-top: 30px; position: fixed; bottom: 0; left: 25vw; line-height: 40px; width: calc(75vw - 40px); height: 40px; overflow: auto; -webkit-user-select: none; -webkit-app-region: drag; transition: left 200ms; }
+body stats { display: block; border-bottom: 0; margin-top: 30px; position: fixed; bottom: 0; left: 25vw; line-height: 15px; width: calc(75vw - 40px); height: 40px; overflow: auto; -webkit-user-select: none; -webkit-app-region: drag; transition: left 200ms; }
 body stats i {text-decoration: underline; }
 body stats .right { float: right; }
 body stats ul { height: 100%; display: inline; overflow: scroll; white-space: nowrap; }
