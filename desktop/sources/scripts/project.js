@@ -40,7 +40,6 @@ function Project () {
 
     if (path) {
       if (this.paths().indexOf(path) > -1) { console.warn(`Already open(skipped): ${path}`); return }
-      if (!this.load(path)) { console.warn(`Invalid url(skipped): ${path}`); return }
       page = new Page(this.load(path), path)
     }
 
