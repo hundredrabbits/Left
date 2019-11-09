@@ -84,6 +84,7 @@
 
       left.controller.add("default","Theme","Open Theme",() => { left.theme.open() },"CmdOrCtrl+Shift+O")
       left.controller.add("default","Theme","Reset Theme",() => { left.theme.reset() },"CmdOrCtrl+Shift+Backspace")
+      left.controller.add('default', 'Theme', 'Toggle Theme Editor', () => { left.themeEditor.toggle() })
       left.controller.addSpacer('default', 'Theme', 'Download')
       left.controller.add("default","Theme","Download Themes..",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Themes') })
 

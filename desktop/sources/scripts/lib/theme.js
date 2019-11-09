@@ -31,12 +31,16 @@ function Theme (_default) {
     const theme = parse(data)
     if (!validate(theme)) { console.warn('Theme', 'Not a theme', theme); return }
     console.log('Theme', `Loaded theme!`)
-    this.el.innerHTML = `:root { --background: ${theme.background}; --f_high: ${theme.f_high}; --f_med: ${theme.f_med}; --f_low: ${theme.f_low}; --f_inv: ${theme.f_inv}; --b_high: ${theme.b_high}; --b_med: ${theme.b_med}; --b_low: ${theme.b_low}; --b_inv: ${theme.b_inv}; }`
-    localStorage.setItem('theme', JSON.stringify(theme))
-    this.active = theme
+    this.setTheme(theme)
     if (this.callback) {
       this.callback()
     }
+  }
+
+  this.setTheme = function(theme) {
+    this.el.innerHTML = `:root { --background: ${theme.background}; --f_high: ${theme.f_high}; --f_med: ${theme.f_med}; --f_low: ${theme.f_low}; --f_inv: ${theme.f_inv}; --b_high: ${theme.b_high}; --b_med: ${theme.b_med}; --b_low: ${theme.b_low}; --b_inv: ${theme.b_inv}; }`
+    localStorage.setItem('theme', JSON.stringify(theme))
+    this.active = theme
   }
 
   this.reset = function () {

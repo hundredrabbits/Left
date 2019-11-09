@@ -11,6 +11,7 @@ const Project = require('./scripts/project')
 const Reader = require('./scripts/reader')
 const Insert = require('./scripts/insert')
 const Font = require('./scripts/font')
+const ThemeEditor = require('./scripts/theme-editor')
 
 const EOL = '\n'
 
@@ -26,6 +27,7 @@ function Left () {
   this.reader = new Reader()
   this.insert = new Insert()
   this.font = new Font()
+  this.themeEditor = new ThemeEditor(this.theme)
 
   this.textarea_el = document.createElement('textarea')
   this.drag_el = document.createElement('drag')
@@ -43,6 +45,7 @@ function Left () {
     this.navi.install(host)
     this.stats.install(host)
     this.operator.install(host)
+    this.themeEditor.install(host)
 
     host.appendChild(this.textarea_el)
     host.appendChild(this.drag_el)
@@ -73,6 +76,7 @@ function Left () {
 
   this.start = function () {
     this.theme.start()
+    this.themeEditor.start()
     this.font.start()
     this.dictionary.start()
     this.project.start()

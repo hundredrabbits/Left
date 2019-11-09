@@ -53,3 +53,12 @@ body #theme_button_icon { border: 1px solid white;width: 10px;height: 10px;posit
 body #theme_button_icon_fg { max-width: 20px; width: 20px;height: 6.5px;background: white;position: relative;left: -2px;top: -2px; transition: top 250ms; }
 body #theme_button.active #theme_button_icon_fg { top:5.5px; }
 body #theme_button:hover { opacity: 1 }
+
+body theme-editor { position:absolute; left: 75vw; height: calc(100vh - 60px); width: calc((100vw / 4) - 10px); padding: 30px 10px 30px 0px; }
+body theme-editor.hidden { opacity: 0; transition: opacity 10ms; }
+body theme-editor h3 { text-align: center; margin-bottom: 10px; }
+body theme-editor button { border: 1px solid var(--f_high); background-color: var(--f_high); color: var(--background); padding: 5px; cursor: pointer;  margin-top: 10px; }
+body theme-editor button:active { background-color: var(--background); color: var(--f_high); }
+body theme-editor .color-box { width: 25%; margin: auto; border: 1px solid white; height: 1em; margin-bottom: 10px; margin-top: 2px; }
+body theme-editor #canvas-container { position: fixed; z-index: 1000; }
+body theme-editor #canvas-container button { display: block; margin-top: 2px; }
