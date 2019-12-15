@@ -70,8 +70,8 @@ function Operator () {
   this.passive = function () {
     if (this.el.value.indexOf(' ') < 0) { return }
 
-    let cmd = this.el.value.split(' ')[0].replace(':', '').trim()
-    let params = this.el.value.replace(cmd, '').replace(':', '').trim()
+    const cmd = this.el.value.split(' ')[0].replace(':', '').trim()
+    const params = this.el.value.replace(cmd, '').replace(':', '').trim()
 
     if (!this[cmd]) { console.info(`Unknown command ${cmd}.`); return }
 
@@ -83,8 +83,8 @@ function Operator () {
 
     this.prev = this.el.value
 
-    let cmd = this.el.value.split(' ')[0].replace(':', '').trim()
-    let params = this.el.value.replace(cmd, '').replace(':', '').trim()
+    const cmd = this.el.value.split(' ')[0].replace(':', '').trim()
+    const params = this.el.value.replace(cmd, '').replace(':', '').trim()
 
     if (!this[cmd]) { console.info(`Unknown command ${cmd}.`); return }
 
@@ -93,7 +93,7 @@ function Operator () {
 
   this.find_next = function () {
     if (!this.prev || !this.prev.includes('find:')) { return }
-    let word = this.prev.replace('find:', '').trim()
+    const word = this.prev.replace('find:', '').trim()
 
     // Find next occurence
     this.find(word, true)
@@ -102,11 +102,11 @@ function Operator () {
   this.find = function (q, bang = false) {
     if (q.length < 3) { return }
 
-    let results = left.find(q)
+    const results = left.find(q)
 
     if (results.length < 1) { return }
 
-    let from = left.textarea_el.selectionStart
+    const from = left.textarea_el.selectionStart
     let result = 0
     for (const id in results) {
       result = results[id]
@@ -129,17 +129,17 @@ function Operator () {
   this.replace = function (q, bang = false) {
     if (q.indexOf('->') < 0) { return }
 
-    let a = q.split('->')[0].trim()
-    let b = q.split('->')[1].trim()
+    const a = q.split('->')[0].trim()
+    const b = q.split('->')[1].trim()
 
     if (a.length < 3) { return }
     if (b.length < 3) { return }
 
-    let results = left.find(a)
+    const results = left.find(a)
 
     if (results.length < 1) { return }
 
-    let from = left.textarea_el.selectionStart
+    const from = left.textarea_el.selectionStart
     let result = 0
     for (const id in results) {
       result = results[id]
@@ -154,9 +154,9 @@ function Operator () {
   }
 
   this.goto = function (q, bang = false) {
-    let target = parseInt(q, 10)
+    const target = parseInt(q, 10)
 
-    let linesCount = left.textarea_el.value.split(EOL).length - 1
+    const linesCount = left.textarea_el.value.split(EOL).length - 1
 
     if (q === '' || target < 1 || target > linesCount || Number.isNaN(target)) {
       return

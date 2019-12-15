@@ -1,7 +1,7 @@
 'use strict'
 
 const SYN_DB = {
-  'abandon': [
+  abandon: [
     'desert',
     'leave',
     'forsake',
@@ -29,7 +29,7 @@ const SYN_DB = {
     'drop',
     'deliverup'
   ],
-  'abandoned': [
+  abandoned: [
     'ofabandon',
     'depraved',
     'corrupt',
@@ -52,7 +52,7 @@ const SYN_DB = {
     'irreclaimable',
     'bad'
   ],
-  'abandonment': [
+  abandonment: [
     'desertion',
     'renunciation',
     'surrender',
@@ -69,7 +69,7 @@ const SYN_DB = {
     'defection',
     'abrogation'
   ],
-  'abase': [
+  abase: [
     'degrade',
     'reduce',
     'lower',
@@ -86,7 +86,7 @@ const SYN_DB = {
     'drop',
     'demean'
   ],
-  'abasement': [
+  abasement: [
     'degradation',
     'humiliation',
     'dishonor',
@@ -107,7 +107,7 @@ const SYN_DB = {
     'discredit',
     'subservience'
   ],
-  'abash': [
+  abash: [
     'bewilder',
     'confound',
     'disconcert',
@@ -122,7 +122,7 @@ const SYN_DB = {
     'snub',
     'discountenance'
   ],
-  'abate': [
+  abate: [
     'lessen',
     'lower',
     'reduce',
@@ -161,7 +161,7 @@ const SYN_DB = {
     'demolish',
     'raze'
   ],
-  'abatement': [
+  abatement: [
     'subsidence',
     'decline',
     'lowering',
@@ -187,7 +187,7 @@ const SYN_DB = {
     'deduction',
     'diminution'
   ],
-  'abbreviate': [
+  abbreviate: [
     'shorten',
     'contract',
     'curtail',
@@ -197,7 +197,7 @@ const SYN_DB = {
     'epitomize',
     'compress'
   ],
-  'abbreviation': [
+  abbreviation: [
     'abridgment',
     'contraction',
     'condensation',
@@ -209,7 +209,7 @@ const SYN_DB = {
     'curtailment',
     'compression'
   ],
-  'abdicate': [
+  abdicate: [
     'resign',
     'surrender',
     'abandon',
@@ -218,22 +218,22 @@ const SYN_DB = {
     'renounce',
     'cede'
   ],
-  'abdomen': [
+  abdomen: [
     'belly',
     'paunch'
   ],
-  'abduct': [
+  abduct: [
     'kidnap',
     'spiritaway'
   ],
-  'abduction': [
+  abduction: [
     'withdrawal',
     'abstraction',
     'kidnapping',
     'seizure',
     'appropriation'
   ],
-  'aberrant': [
+  aberrant: [
     'wandering',
     'rambling',
     'divergent',
@@ -245,7 +245,7 @@ const SYN_DB = {
     'unusual',
     'exceptional'
   ],
-  'aberration': [
+  aberration: [
     'wandering',
     'divergence',
     'irregularity',
@@ -258,7 +258,7 @@ const SYN_DB = {
     'singularity',
     'peculiarity'
   ],
-  'abet': [
+  abet: [
     'aid',
     'assist',
     'promote',
@@ -275,7 +275,7 @@ const SYN_DB = {
     'foment',
     'cooperatewith'
   ],
-  'abeyance': [
+  abeyance: [
     'suspense',
     'suspension',
     'expectancy',
@@ -287,7 +287,7 @@ const SYN_DB = {
     'suppression',
     'expectation'
   ],
-  'abhor': [
+  abhor: [
     'hate',
     'detest',
     'loathe',
@@ -298,7 +298,7 @@ const SYN_DB = {
     'nauseate',
     'revoltat'
   ],
-  'abhorrent': [
+  abhorrent: [
     'odious',
     'offensive',
     'shocking',
@@ -310,7 +310,7 @@ const SYN_DB = {
     'repulsive',
     'nauseating'
   ],
-  'abide': [
+  abide: [
     'await',
     'attend',
     'endure',
@@ -331,7 +331,7 @@ const SYN_DB = {
     'inhabit',
     'remain'
   ],
-  'abiding': [
+  abiding: [
     'lasting',
     'continuing',
     'permanent',
@@ -342,7 +342,7 @@ const SYN_DB = {
     'changeless',
     'unchanging'
   ],
-  'ability': [
+  ability: [
     'power',
     'force',
     'might',
@@ -374,7 +374,7 @@ const SYN_DB = {
     'gift',
     'parts'
   ],
-  'abject': [
+  abject: [
     'base',
     'vile',
     'mean',
@@ -392,7 +392,7 @@ const SYN_DB = {
     'menial',
     'ignoble'
   ],
-  'abjure': [
+  abjure: [
     'renounce',
     'relinquish',
     'reject',
@@ -410,7 +410,7 @@ const SYN_DB = {
     'apostatize',
     'discard'
   ],
-  'able': [
+  able: [
     'accomplished',
     'adroit',
     'talented',
@@ -435,7 +435,7 @@ const SYN_DB = {
     'powerful',
     'mighty'
   ],
-  'ablution': [
+  ablution: [
     'washing',
     'bathing',
     'cleansing',
@@ -443,7 +443,7 @@ const SYN_DB = {
     'purification',
     'baptism'
   ],
-  'abnormal': [
+  abnormal: [
     'singular',
     'unnatural',
     'unusual',
@@ -455,12 +455,12 @@ const SYN_DB = {
     'monstrous',
     'preternatural'
   ],
-  'aboard': [
+  aboard: [
     'afloat',
     'inside',
     'within'
   ],
-  'abode': [
+  abode: [
     'home',
     'house',
     'place',
@@ -472,7 +472,7 @@ const SYN_DB = {
     'quarters',
     'seat'
   ],
-  'abolish': [
+  abolish: [
     'abrogate',
     'annul',
     'destroy',
@@ -491,7 +491,7 @@ const SYN_DB = {
     'setaside',
     'end'
   ],
-  'abominable': [
+  abominable: [
     'hateful',
     'horrible',
     'loathsome',
@@ -503,7 +503,7 @@ const SYN_DB = {
     'impure',
     'execrable'
   ],
-  'abomination': [
+  abomination: [
     'offense',
     'horror',
     'shame',
@@ -519,7 +519,7 @@ const SYN_DB = {
     'nuisance',
     'annoyance'
   ],
-  'aboriginal': [
+  aboriginal: [
     'primitive',
     'primeval',
     'primary',
@@ -529,7 +529,7 @@ const SYN_DB = {
     'indigenous',
     'autochthonous'
   ],
-  'abortion': [
+  abortion: [
     'failure',
     'miscarriage',
     'disappointment',
@@ -538,7 +538,7 @@ const SYN_DB = {
     'frustration',
     'blunder'
   ],
-  'abound': [
+  abound: [
     'team',
     'swarm',
     'multiply',
@@ -552,7 +552,7 @@ const SYN_DB = {
     'revel',
     'exuberate'
   ],
-  'about': [
+  about: [
     'concerning',
     'regarding',
     'touching',
@@ -565,7 +565,7 @@ const SYN_DB = {
     'ready',
     'around'
   ],
-  'above': [
+  above: [
     'overhead',
     'aloft',
     'before',
@@ -577,7 +577,7 @@ const SYN_DB = {
     'superior',
     'excessive'
   ],
-  'aboveboard': [
+  aboveboard: [
     'openly',
     'candidly',
     'frankly',
@@ -587,19 +587,19 @@ const SYN_DB = {
     'unreservedly',
     'guilelessly'
   ],
-  'abrasion': [
+  abrasion: [
     'rubbing',
     'friction',
     'disintegration',
     'attrition'
   ],
-  'abreast': [
+  abreast: [
     'alongside',
     'aligned',
     'against',
     'off'
   ],
-  'abridge': [
+  abridge: [
     'abbreviate',
     'shorten',
     'condense',
@@ -609,7 +609,7 @@ const SYN_DB = {
     'epitomize',
     'compress'
   ],
-  'abridgment': [
+  abridgment: [
     'summary',
     'synopsis',
     'compend',
@@ -621,7 +621,7 @@ const SYN_DB = {
     'compendium',
     'digest'
   ],
-  'abroad': [
+  abroad: [
     'distant',
     'apart',
     'dispersed',
@@ -633,7 +633,7 @@ const SYN_DB = {
     'confounded',
     'forth'
   ],
-  'abrogate': [
+  abrogate: [
     'abolish',
     'cancel',
     'setaside',
@@ -643,7 +643,7 @@ const SYN_DB = {
     'nullify',
     'repeal'
   ],
-  'abrogation': [
+  abrogation: [
     'repeal',
     'rescinding',
     'annulment',
@@ -654,7 +654,7 @@ const SYN_DB = {
     'discontinuance',
     'disestablishment'
   ],
-  'abrupt': [
+  abrupt: [
     'sudden',
     'unexpected',
     'hasty',
@@ -675,7 +675,7 @@ const SYN_DB = {
     'harsh',
     'disconnected'
   ],
-  'abscond': [
+  abscond: [
     'depart',
     'decamp',
     'bolt',
@@ -688,7 +688,7 @@ const SYN_DB = {
     'elope',
     'scamper'
   ],
-  'absence': [
+  absence: [
     'nonattendance',
     'nonappearance',
     'nonexistence',
@@ -703,7 +703,7 @@ const SYN_DB = {
     'defect',
     'deficiency'
   ],
-  'absent': [
+  absent: [
     'away',
     'gone',
     'abstracted',
@@ -711,7 +711,7 @@ const SYN_DB = {
     'inattentive',
     'dreaming'
   ],
-  'absolute': [
+  absolute: [
     'perfect',
     'complete',
     'supreme',
@@ -743,7 +743,7 @@ const SYN_DB = {
     'categorical',
     'unquestionable'
   ],
-  'absolve': [
+  absolve: [
     'acquit',
     'clear',
     'exonerate',
@@ -756,7 +756,7 @@ const SYN_DB = {
     'exempt',
     'exculpate'
   ],
-  'absorb': [
+  absorb: [
     'consume',
     'imbibe',
     'swallow',
@@ -767,7 +767,7 @@ const SYN_DB = {
     'occupy',
     'arrest'
   ],
-  'absorption': [
+  absorption: [
     'absorbing',
     'imbibing',
     'assimilation',
@@ -779,7 +779,7 @@ const SYN_DB = {
     'occupation',
     'immersion'
   ],
-  'abstain': [
+  abstain: [
     'refrain',
     'resist',
     'forbear',
@@ -790,7 +790,7 @@ const SYN_DB = {
     'withhold',
     'relinquish'
   ],
-  'abstemious': [
+  abstemious: [
     'abstinent',
     'sober',
     'moderate',
@@ -800,7 +800,7 @@ const SYN_DB = {
     'selfdenying',
     'continent'
   ],
-  'absterge': [
+  absterge: [
     'purge',
     'cleanse',
     'purify',
@@ -808,7 +808,7 @@ const SYN_DB = {
     'sponge',
     'scour'
   ],
-  'abstersive': [
+  abstersive: [
     'cleansing',
     'purging',
     'purifying',
@@ -816,7 +816,7 @@ const SYN_DB = {
     'detergent',
     'cathartic'
   ],
-  'abstinence': [
+  abstinence: [
     'temperance',
     'abstemiousness',
     'selfcontrol',
@@ -828,7 +828,7 @@ const SYN_DB = {
     'moderation',
     'frugality'
   ],
-  'abstinent': [
+  abstinent: [
     'abstaining',
     'fasting',
     'abstemious',
@@ -839,7 +839,7 @@ const SYN_DB = {
     'continent',
     'austere'
   ],
-  'abstract': [
+  abstract: [
     'epitome',
     'summary',
     'abridgment',
@@ -866,7 +866,7 @@ const SYN_DB = {
     'discriminate',
     'abridge'
   ],
-  'abstracted': [
+  abstracted: [
     'separated',
     'withdrawn',
     'removed',
@@ -885,7 +885,7 @@ const SYN_DB = {
     'absorbed',
     'absent'
   ],
-  'abstraction': [
+  abstraction: [
     'disconnection',
     'disjunction',
     'removal',
@@ -905,14 +905,14 @@ const SYN_DB = {
     'classification',
     'generalization'
   ],
-  'abstruse': [
+  abstruse: [
     'vague',
     'indefinite',
     'mysterious',
     'abstract',
     'transcendental'
   ],
-  'absurd': [
+  absurd: [
     'ludicrous',
     'monstrous',
     'nonsensical',
@@ -924,7 +924,7 @@ const SYN_DB = {
     'wild',
     'unreasonable'
   ],
-  'absurdity': [
+  absurdity: [
     'unreasonableness',
     'irrationality',
     'foolishness',
@@ -934,7 +934,7 @@ const SYN_DB = {
     'extravagance',
     'drivel'
   ],
-  'abundance': [
+  abundance: [
     'profusion',
     'wealth',
     'affluence',
@@ -950,7 +950,7 @@ const SYN_DB = {
     'exuberance',
     'plenteousness'
   ],
-  'abundant': [
+  abundant: [
     'abounding',
     'flowing',
     'plentiful',
@@ -965,7 +965,7 @@ const SYN_DB = {
     'full',
     'teeming'
   ],
-  'abuse': [
+  abuse: [
     'misuse',
     'dishonor',
     'maltreatment',
@@ -997,7 +997,7 @@ const SYN_DB = {
     'defame',
     'misuse'
   ],
-  'abusive': [
+  abusive: [
     'insulting',
     'rude',
     'denunciatory',
@@ -1009,7 +1009,7 @@ const SYN_DB = {
     'scurrilous',
     'opprobrious'
   ],
-  'abut': [
+  abut: [
     'extend',
     'impinge',
     'project',
@@ -1019,10 +1019,10 @@ const SYN_DB = {
     'end',
     'border'
   ],
-  'abutment': [
+  abutment: [
     'buttress'
   ],
-  'abuttal': [
+  abuttal: [
     'adjacency',
     'contiguity',
     'nearness',
@@ -1032,7 +1032,7 @@ const SYN_DB = {
     'limit',
     'termination'
   ],
-  'abyss': [
+  abyss: [
     'gulf',
     'gorge',
     'deep',
@@ -1040,21 +1040,21 @@ const SYN_DB = {
     'profound',
     'abysm'
   ],
-  'academical': [
+  academical: [
     'scholastic',
     'learned',
     'literary',
     'collegiate',
     'classical'
   ],
-  'academy': [
+  academy: [
     'school',
     'seminary',
     'institute',
     'college',
     'gymnasium'
   ],
-  'accede': [
+  accede: [
     'consent',
     'assent',
     'acquiesce',
@@ -1065,7 +1065,7 @@ const SYN_DB = {
     'approve',
     'coincide'
   ],
-  'accelerate': [
+  accelerate: [
     'hasten',
     'quicken',
     'speed',
@@ -1078,7 +1078,7 @@ const SYN_DB = {
     'advance',
     'further'
   ],
-  'accent': [
+  accent: [
     'stress',
     'beat',
     'emphasis',
@@ -1090,11 +1090,11 @@ const SYN_DB = {
     'modulation',
     'ictus'
   ],
-  'accentuate': [
+  accentuate: [
     'emphasize',
     'mark'
   ],
-  'accept': [
+  accept: [
     'take',
     'receive',
     'admit',
@@ -1106,7 +1106,7 @@ const SYN_DB = {
     'value',
     'construe'
   ],
-  'acceptable': [
+  acceptable: [
     'welcome',
     'pleasing',
     'grateful',
@@ -1118,7 +1118,7 @@ const SYN_DB = {
     'desirable',
     'expedient'
   ],
-  'acceptance': [
+  acceptance: [
     'reception',
     'taking',
     'acknowledgment',
@@ -1127,7 +1127,7 @@ const SYN_DB = {
     'satisfaction',
     'gratification'
   ],
-  'acceptation': [
+  acceptation: [
     'meaning',
     'significance',
     'sense',
@@ -1139,7 +1139,7 @@ const SYN_DB = {
     'adoption',
     'acceptance'
   ],
-  'access': [
+  access: [
     'entrance',
     'approach',
     'passage',
@@ -1158,12 +1158,12 @@ const SYN_DB = {
     'fit',
     'paroxysm'
   ],
-  'accessible': [
+  accessible: [
     'approachable',
     'affable',
     'conversible'
   ],
-  'accession': [
+  accession: [
     'addition',
     'increase',
     'enlargement',
@@ -1172,7 +1172,7 @@ const SYN_DB = {
     'arrival',
     'influx'
   ],
-  'accessory': [
+  accessory: [
     'assisting',
     'aiding',
     'abetting',
@@ -1188,7 +1188,7 @@ const SYN_DB = {
     'contributory',
     'auxiliary'
   ],
-  'accident': [
+  accident: [
     'chance',
     'disaster',
     'happening',
@@ -1201,7 +1201,7 @@ const SYN_DB = {
     'mishap',
     'possibility'
   ],
-  'accidental': [
+  accidental: [
     'casual',
     'unintended',
     'fortuitous',
@@ -1213,7 +1213,7 @@ const SYN_DB = {
     'contingent',
     'adventitious'
   ],
-  'acclamation': [
+  acclamation: [
     'applause',
     'cheer',
     'outcry',
@@ -1221,7 +1221,7 @@ const SYN_DB = {
     'gratulation',
     'salutation'
   ],
-  'acclivity': [
+  acclivity: [
     'rise',
     'incline',
     'ascent',
@@ -1229,7 +1229,7 @@ const SYN_DB = {
     'hill',
     'height'
   ],
-  'accommodate': [
+  accommodate: [
     'oblige',
     'serve',
     'furnish',
@@ -1245,7 +1245,7 @@ const SYN_DB = {
     'conform',
     'arrange'
   ],
-  'accommodating': [
+  accommodating: [
     'kind',
     'obliging',
     'considerate',
@@ -1254,13 +1254,13 @@ const SYN_DB = {
     'yielding',
     'conciliatory'
   ],
-  'accompany': [
+  accompany: [
     'follow',
     'attend',
     'escort',
     'convoy'
   ],
-  'accomplice': [
+  accomplice: [
     'confederate',
     'accessory',
     'abettor',
@@ -1271,7 +1271,7 @@ const SYN_DB = {
     'promoter',
     'coadjutor'
   ],
-  'accomplish': [
+  accomplish: [
     'complete',
     'finish',
     'achieve',
@@ -1288,7 +1288,7 @@ const SYN_DB = {
     'equip',
     'furnish'
   ],
-  'accomplished': [
+  accomplished: [
     'educated',
     'experienced',
     'practiced',
@@ -1309,7 +1309,7 @@ const SYN_DB = {
     'effected',
     'established'
   ],
-  'accomplishment': [
+  accomplishment: [
     'execution',
     'achievement',
     'performance',
@@ -1320,7 +1320,7 @@ const SYN_DB = {
     'ornament',
     'grace'
   ],
-  'accord': [
+  accord: [
     'agree',
     'correspond',
     'harmonize',
@@ -1333,7 +1333,7 @@ const SYN_DB = {
     'consent',
     'answer'
   ],
-  'accordant': [
+  accordant: [
     'agreeable',
     'suitable',
     'consonant',
@@ -1343,7 +1343,7 @@ const SYN_DB = {
     'corresponding',
     'conformable'
   ],
-  'accordingly': [
+  accordingly: [
     'suitably',
     'conformably',
     'agreeably',
@@ -1352,7 +1352,7 @@ const SYN_DB = {
     'hence',
     'wherefore'
   ],
-  'accost': [
+  accost: [
     'approach',
     'address',
     'salute',
@@ -1360,7 +1360,7 @@ const SYN_DB = {
     'confront',
     'speakto'
   ],
-  'account': [
+  account: [
     'record',
     'register',
     'inventory',
@@ -1404,7 +1404,7 @@ const SYN_DB = {
     'explain',
     'solve'
   ],
-  'accountable': [
+  accountable: [
     'responsible',
     'punishable',
     'answerable',
@@ -1413,14 +1413,14 @@ const SYN_DB = {
     'accredited',
     'delegated'
   ],
-  'accouter': [
+  accouter: [
     'equip',
     'furnish',
     'dress',
     'arm',
     'array'
   ],
-  'accredit': [
+  accredit: [
     'credit',
     'authorize',
     'trust',
@@ -1428,7 +1428,7 @@ const SYN_DB = {
     'commission',
     'depute'
   ],
-  'accredited': [
+  accredited: [
     'authorized',
     'commissioned',
     'sanctioned',
@@ -1436,14 +1436,14 @@ const SYN_DB = {
     'trusted',
     'believed'
   ],
-  'accretion': [
+  accretion: [
     'growth',
     'accumulation',
     'adhesion',
     'coherence',
     'increase'
   ],
-  'accrue': [
+  accrue: [
     'result',
     'arise',
     'issue',
@@ -1454,7 +1454,7 @@ const SYN_DB = {
     'increase',
     'augment'
   ],
-  'accumulate': [
+  accumulate: [
     'pile',
     'collect',
     'store',
@@ -1465,7 +1465,7 @@ const SYN_DB = {
     'hoard',
     'aggregate'
   ],
-  'accumulation': [
+  accumulation: [
     'collection',
     'heap',
     'mass',
@@ -1473,7 +1473,7 @@ const SYN_DB = {
     'hoard',
     'store'
   ],
-  'accuracy': [
+  accuracy: [
     'exactness',
     'precision',
     'nicety',
@@ -1483,7 +1483,7 @@ const SYN_DB = {
     'exactitude',
     'fidelity'
   ],
-  'accurate': [
+  accurate: [
     'careful',
     'exact',
     'faithful',
@@ -1496,7 +1496,7 @@ const SYN_DB = {
     'just',
     'unerring'
   ],
-  'accusation': [
+  accusation: [
     'charge',
     'indictment',
     'arraignment',
@@ -1505,7 +1505,7 @@ const SYN_DB = {
     'crimination',
     'censure'
   ],
-  'accuse': [
+  accuse: [
     'charge',
     'indict',
     'arraign',
@@ -1519,7 +1519,7 @@ const SYN_DB = {
     'blame',
     'reproach'
   ],
-  'accustom': [
+  accustom: [
     'habituate',
     'use',
     'bewonted',
@@ -1530,7 +1530,7 @@ const SYN_DB = {
     'drill',
     'discipline'
   ],
-  'acerbity': [
+  acerbity: [
     'sourness',
     'acidity',
     'tartness',
@@ -1539,13 +1539,13 @@ const SYN_DB = {
     'harshness',
     'acrimony'
   ],
-  'ache': [
+  ache: [
     'pain',
     'anguish',
     'suffering',
     'agony'
   ],
-  'achieve': [
+  achieve: [
     'accomplish',
     'perform',
     'complete',
@@ -1558,7 +1558,7 @@ const SYN_DB = {
     'win',
     'get'
   ],
-  'achievement': [
+  achievement: [
     'accomplishment',
     'performance',
     'attainment',
@@ -1568,7 +1568,7 @@ const SYN_DB = {
     'deed',
     'feat'
   ],
-  'acme': [
+  acme: [
     'summit',
     'zenith',
     'climax',
@@ -1578,7 +1578,7 @@ const SYN_DB = {
     'pinnacle',
     'culmination'
   ],
-  'acquaintance': [
+  acquaintance: [
     'association',
     'familiarity',
     'friend',
@@ -1589,7 +1589,7 @@ const SYN_DB = {
     'friendship',
     'fellowship'
   ],
-  'acquiesce': [
+  acquiesce: [
     'assent',
     'concur',
     'yield',
@@ -1598,7 +1598,7 @@ const SYN_DB = {
     'agree',
     'consent'
   ],
-  'acquire': [
+  acquire: [
     'gain',
     'earn',
     'win',
@@ -1610,7 +1610,7 @@ const SYN_DB = {
     'secure',
     'master'
   ],
-  'acquit': [
+  acquit: [
     'discharge',
     'exonerate',
     'release',
@@ -1619,14 +1619,14 @@ const SYN_DB = {
     'pardon',
     'exculpate'
   ],
-  'acquittal': [
+  acquittal: [
     'discharge',
     'release',
     'deliverance',
     'liberation',
     'absolution'
   ],
-  'acrimony': [
+  acrimony: [
     'bitterness',
     'sharpness',
     'sourness',
@@ -1639,7 +1639,7 @@ const SYN_DB = {
     'spite',
     'unkindness'
   ],
-  'act': [
+  act: [
     'deed',
     'performance',
     'exploit',
@@ -1664,7 +1664,7 @@ const SYN_DB = {
     'realize',
     'actualize'
   ],
-  'action': [
+  action: [
     'exercise',
     'motion',
     'movement',
@@ -1683,7 +1683,7 @@ const SYN_DB = {
     'lawsuit',
     'case'
   ],
-  'active': [
+  active: [
     'agile',
     'brisk',
     'alert',
@@ -1697,7 +1697,7 @@ const SYN_DB = {
     'busy',
     'diligent'
   ],
-  'actual': [
+  actual: [
     'real',
     'true',
     'genuine',
@@ -1710,7 +1710,7 @@ const SYN_DB = {
     'sensible',
     'perceptible'
   ],
-  'acumen': [
+  acumen: [
     'discernment',
     'penetration',
     'keenness',
@@ -1720,7 +1720,7 @@ const SYN_DB = {
     'sagacity',
     'acuteness'
   ],
-  'acute': [
+  acute: [
     'sharp',
     'pointed',
     'keen',
@@ -1736,7 +1736,7 @@ const SYN_DB = {
     'sagacious',
     'discerning'
   ],
-  'adaptation': [
+  adaptation: [
     'adjustment',
     'fitness',
     'conformity',
@@ -1744,7 +1744,7 @@ const SYN_DB = {
     'aptness',
     'harmony'
   ],
-  'add': [
+  add: [
     'increase',
     'adjoin',
     'append',
@@ -1755,7 +1755,7 @@ const SYN_DB = {
     'annex',
     'affix'
   ],
-  'addicted': [
+  addicted: [
     'habituated',
     'disposedto',
     'inclined',
@@ -1763,7 +1763,7 @@ const SYN_DB = {
     'devoted',
     'weddedto'
   ],
-  'addition': [
+  addition: [
     'accession',
     'enlargement',
     'increase',
@@ -1772,7 +1772,7 @@ const SYN_DB = {
     'augmentation',
     'adjunct'
   ],
-  'address': [
+  address: [
     'courtesy',
     'manners',
     'politeness',
@@ -1798,7 +1798,7 @@ const SYN_DB = {
     'salute',
     'speakto'
   ],
-  'adduce': [
+  adduce: [
     'offer',
     'present',
     'advance',
@@ -1809,7 +1809,7 @@ const SYN_DB = {
     'mention',
     'allege'
   ],
-  'adept': [
+  adept: [
     'expert',
     'master',
     'proficient',
@@ -1817,7 +1817,7 @@ const SYN_DB = {
     'veteran',
     'professor'
   ],
-  'adequate': [
+  adequate: [
     'equal',
     'competent',
     'fitted',
@@ -1830,7 +1830,7 @@ const SYN_DB = {
     'proportionate',
     'commensurate'
   ],
-  'adhere': [
+  adhere: [
     'stick',
     'cling',
     'cohere',
@@ -1840,7 +1840,7 @@ const SYN_DB = {
     'pertain',
     'fixed'
   ],
-  'adherence': [
+  adherence: [
     'tenacity',
     'attachment',
     'constancy',
@@ -1849,7 +1849,7 @@ const SYN_DB = {
     'partisanship',
     'adhesion'
   ],
-  'adjacent': [
+  adjacent: [
     'near',
     'close',
     'bordering',
@@ -1857,7 +1857,7 @@ const SYN_DB = {
     'contiguous',
     'beside'
   ],
-  'adjourn': [
+  adjourn: [
     'postpone',
     'delay',
     'defer',
@@ -1867,7 +1867,7 @@ const SYN_DB = {
     'end',
     'dissolve'
   ],
-  'adjunct': [
+  adjunct: [
     'addition',
     'appendage',
     'accessory',
@@ -1877,7 +1877,7 @@ const SYN_DB = {
     'colleague',
     'associate'
   ],
-  'adjure': [
+  adjure: [
     'entreat',
     'beseech',
     'pray',
@@ -1886,7 +1886,7 @@ const SYN_DB = {
     'beg',
     'swearby'
   ],
-  'adjustment': [
+  adjustment: [
     'arrangement',
     'disposal',
     'settlement',
@@ -1899,7 +1899,7 @@ const SYN_DB = {
     'rectification',
     'accommodation'
   ],
-  'administer': [
+  administer: [
     'dispense',
     'distribute',
     'supply',
@@ -1911,7 +1911,7 @@ const SYN_DB = {
     'proffer',
     'tender'
   ],
-  'admiration': [
+  admiration: [
     'wonder',
     'approval',
     'love',
@@ -1921,7 +1921,7 @@ const SYN_DB = {
     'reverence',
     'highregard'
   ],
-  'admire': [
+  admire: [
     'honor',
     'esteem',
     'approve',
@@ -1932,14 +1932,14 @@ const SYN_DB = {
     'revere',
     'respect'
   ],
-  'admissible': [
+  admissible: [
     'allowable',
     'lawful',
     'permissible',
     'possible',
     'probable'
   ],
-  'admission': [
+  admission: [
     'admittance',
     'entrance',
     'access',
@@ -1949,7 +1949,7 @@ const SYN_DB = {
     'concurrence',
     'allowance'
   ],
-  'admit': [
+  admit: [
     'receive',
     'accept',
     'acknowledge',
@@ -1959,7 +1959,7 @@ const SYN_DB = {
     'allow',
     'suffer'
   ],
-  'admonish': [
+  admonish: [
     'advise',
     'warn',
     'caution',
@@ -1975,7 +1975,7 @@ const SYN_DB = {
     'apprise',
     'acquaint'
   ],
-  'admonition': [
+  admonition: [
     'caution',
     'warning',
     'advice',
@@ -1986,7 +1986,7 @@ const SYN_DB = {
     'reproof',
     'reprehension'
   ],
-  'ado': [
+  ado: [
     'trouble',
     'toil',
     'labor',
@@ -1997,7 +1997,7 @@ const SYN_DB = {
     'noise',
     'turmoil'
   ],
-  'adopt': [
+  adopt: [
     'appropriate',
     'assume',
     'approve',
@@ -2007,7 +2007,7 @@ const SYN_DB = {
     'affiliate',
     'father'
   ],
-  'adoration': [
+  adoration: [
     'worship',
     'devotion',
     'homage',
@@ -2015,7 +2015,7 @@ const SYN_DB = {
     'veneration',
     'idolatry'
   ],
-  'adorn': [
+  adorn: [
     'beautify',
     'decorate',
     'embellish',
@@ -2029,7 +2029,7 @@ const SYN_DB = {
     'honor',
     'exalt'
   ],
-  'adroit': [
+  adroit: [
     'dexterous',
     'expert',
     'skillful',
@@ -2042,7 +2042,7 @@ const SYN_DB = {
     'ingenious',
     'cunning'
   ],
-  'adulation': [
+  adulation: [
     'flattery',
     'fulsomepraise',
     'fawning',
@@ -2050,7 +2050,7 @@ const SYN_DB = {
     'blandishment',
     'obsequiousness'
   ],
-  'adumbrate': [
+  adumbrate: [
     'shadow',
     'outline',
     'indicate',
@@ -2065,7 +2065,7 @@ const SYN_DB = {
     'hide',
     'conceal'
   ],
-  'advance': [
+  advance: [
     'progress',
     'improvement',
     'growth',
@@ -2098,7 +2098,7 @@ const SYN_DB = {
     'prosper',
     'accelerate'
   ],
-  'advantage': [
+  advantage: [
     'benefit',
     'profit',
     'expediency',
@@ -2112,13 +2112,13 @@ const SYN_DB = {
     'utility',
     'service'
   ],
-  'advent': [
+  advent: [
     'approach',
     'coming',
     'arrival',
     'accession'
   ],
-  'adventitious': [
+  adventitious: [
     'accidental',
     'incidental',
     'extrinsic',
@@ -2128,7 +2128,7 @@ const SYN_DB = {
     'redundant',
     'superfluous'
   ],
-  'adventure': [
+  adventure: [
     'chance',
     'hazard',
     'risk',
@@ -2141,7 +2141,7 @@ const SYN_DB = {
     'contingency',
     'crisis'
   ],
-  'adventurous': [
+  adventurous: [
     'bold',
     'daring',
     'venturesome',
@@ -2154,7 +2154,7 @@ const SYN_DB = {
     'fearless',
     'enterprising'
   ],
-  'adversary': [
+  adversary: [
     'foe',
     'enemy',
     'antagonist',
@@ -2162,7 +2162,7 @@ const SYN_DB = {
     'rival',
     'assailant'
   ],
-  'adverse': [
+  adverse: [
     'opposite',
     'contrary',
     'conflicting',
@@ -2173,7 +2173,7 @@ const SYN_DB = {
     'unfortunate',
     'disastrous'
   ],
-  'adversity': [
+  adversity: [
     'calamity',
     'affliction',
     'trouble',
@@ -2182,7 +2182,7 @@ const SYN_DB = {
     'distress',
     'suffering'
   ],
-  'advert': [
+  advert: [
     'consider',
     'notice',
     'remark',
@@ -2193,7 +2193,7 @@ const SYN_DB = {
     'mention',
     'regard'
   ],
-  'advertent': [
+  advertent: [
     'mindful',
     'regardful',
     'attentive',
@@ -2203,7 +2203,7 @@ const SYN_DB = {
     'considerate',
     'heedful'
   ],
-  'advertise': [
+  advertise: [
     'announce',
     'publish',
     'proclaim',
@@ -2214,7 +2214,7 @@ const SYN_DB = {
     'apprise',
     'promulgate'
   ],
-  'advice': [
+  advice: [
     'counsel',
     'suggestion',
     'admonition',
@@ -2230,7 +2230,7 @@ const SYN_DB = {
     'exhortation',
     'information'
   ],
-  'advisable': [
+  advisable: [
     'judicious',
     'expedient',
     'politic',
@@ -2241,7 +2241,7 @@ const SYN_DB = {
     'proper',
     'fitting'
   ],
-  'affable': [
+  affable: [
     'open',
     'free',
     'frank',
@@ -2260,7 +2260,7 @@ const SYN_DB = {
     'wellbred',
     'condescending'
   ],
-  'affair': [
+  affair: [
     'business',
     'concern',
     'function',
@@ -2280,7 +2280,7 @@ const SYN_DB = {
     'brush',
     'encounter'
   ],
-  'affect': [
+  affect: [
     'influence',
     'change',
     'transform',
@@ -2305,7 +2305,7 @@ const SYN_DB = {
     'subdue',
     'overcome'
   ],
-  'affectation': [
+  affectation: [
     'airs',
     'mannerism',
     'pretension',
@@ -2313,7 +2313,7 @@ const SYN_DB = {
     'foppery',
     'display'
   ],
-  'affection': [
+  affection: [
     'feeling',
     'passion',
     'attachment',
@@ -2330,7 +2330,7 @@ const SYN_DB = {
     'characteristic',
     'mark'
   ],
-  'affiance': [
+  affiance: [
     'trust',
     'confidence',
     'homage',
@@ -2340,7 +2340,7 @@ const SYN_DB = {
     'faith',
     'plighting'
   ],
-  'affiliate': [
+  affiliate: [
     'associate',
     'adopt',
     'join',
@@ -2348,7 +2348,7 @@ const SYN_DB = {
     'incorporate',
     'annex'
   ],
-  'affinity': [
+  affinity: [
     'relationship',
     'kin',
     'consanguinity',
@@ -2362,7 +2362,7 @@ const SYN_DB = {
     'sympathy',
     'attraction'
   ],
-  'affirm': [
+  affirm: [
     'assert',
     'swear',
     'state',
@@ -2380,7 +2380,7 @@ const SYN_DB = {
     'avouch',
     'establish'
   ],
-  'affirmation': [
+  affirmation: [
     'avowal',
     'declaration',
     'statement',
@@ -2392,14 +2392,14 @@ const SYN_DB = {
     'approval',
     'endorsement'
   ],
-  'affix': [
+  affix: [
     'join',
     'annex',
     'attach',
     'fasten',
     'append'
   ],
-  'affliction': [
+  affliction: [
     'adversity',
     'misfortune',
     'grief',
@@ -2415,7 +2415,7 @@ const SYN_DB = {
     'trouble',
     'hardship'
   ],
-  'affluence': [
+  affluence: [
     'wealth',
     'fortune',
     'riches',
@@ -2424,7 +2424,7 @@ const SYN_DB = {
     'plenty',
     'profusion'
   ],
-  'afford': [
+  afford: [
     'supply',
     'furnish',
     'contribute',
@@ -2438,7 +2438,7 @@ const SYN_DB = {
     'impart',
     'administer'
   ],
-  'affray': [
+  affray: [
     'quarrel',
     'tussle',
     'scuffle',
@@ -2455,7 +2455,7 @@ const SYN_DB = {
     'feud',
     'tumult'
   ],
-  'affront': [
+  affront: [
     'outrage',
     'insult',
     'abuse',
@@ -2469,13 +2469,13 @@ const SYN_DB = {
     'exasperation',
     'irritation'
   ],
-  'afire': [
+  afire: [
     'ablaze',
     'burning',
     'ignited',
     'aflame'
   ],
-  'afloat': [
+  afloat: [
     'adrift',
     'abroad',
     'loose',
@@ -2483,7 +2483,7 @@ const SYN_DB = {
     'betiding',
     'brewing'
   ],
-  'afoot': [
+  afoot: [
     'afloat',
     'preparing',
     'forthcoming',
@@ -2492,13 +2492,13 @@ const SYN_DB = {
     'onhand',
     'astir'
   ],
-  'aforesaid': [
+  aforesaid: [
     'abovementioned',
     'foregoing',
     'preceding',
     'abovenamed'
   ],
-  'axt': [
+  axt: [
     'folloicing',
     'subsequent',
     'subjoined',
@@ -2591,7 +2591,7 @@ const SYN_DB = {
     'indifference',
     'apathy'
   ],
-  'afraid': [
+  afraid: [
     'fearful',
     'timid',
     'apprehensive',
@@ -2600,14 +2600,14 @@ const SYN_DB = {
     'terrified',
     'frightened'
   ],
-  'afresh': [
+  afresh: [
     'anew',
     'again',
     'newly',
     'frequently',
     'repeatedly'
   ],
-  'after': [
+  after: [
     'subsequent',
     'later',
     'following',
@@ -2620,7 +2620,7 @@ const SYN_DB = {
     'for',
     'of'
   ],
-  'again': [
+  again: [
     'anew',
     'afresh',
     'repeatedly',
@@ -2630,7 +2630,7 @@ const SYN_DB = {
     'back',
     'oncemore'
   ],
-  'against': [
+  against: [
     'opposite',
     'across',
     'athwart',
@@ -2638,7 +2638,7 @@ const SYN_DB = {
     'fronting',
     'for'
   ],
-  'agape': [
+  agape: [
     'yawning',
     'openmouthed',
     'wondering',
@@ -2651,7 +2651,7 @@ const SYN_DB = {
     'astare',
     'eager'
   ],
-  'age': [
+  age: [
     'duration',
     'period',
     'date',
@@ -2662,7 +2662,7 @@ const SYN_DB = {
     'era',
     'century'
   ],
-  'agent': [
+  agent: [
     'actor',
     'doer',
     'operator',
@@ -2679,7 +2679,7 @@ const SYN_DB = {
     'means',
     'instrument'
   ],
-  'agglomeration': [
+  agglomeration: [
     'accumulation',
     'heap',
     'pile',
@@ -2687,7 +2687,7 @@ const SYN_DB = {
     'conglomeration',
     'cluster'
   ],
-  'aggrandize': [
+  aggrandize: [
     'exalt',
     'honor',
     'elevate',
@@ -2697,7 +2697,7 @@ const SYN_DB = {
     'enrich',
     'augment'
   ],
-  'aggravate': [
+  aggravate: [
     'exasperate',
     'provoke',
     'wound',
@@ -2705,7 +2705,7 @@ const SYN_DB = {
     'embitter',
     'heighten'
   ],
-  'aggregation': [
+  aggregation: [
     'collection',
     'accumulation',
     'mass',
@@ -2718,7 +2718,7 @@ const SYN_DB = {
     'whole',
     'agglomeration'
   ],
-  'aggression': [
+  aggression: [
     'attack',
     'invasion',
     'encroachment',
@@ -2729,7 +2729,7 @@ const SYN_DB = {
     'provocation',
     'intrusion'
   ],
-  'aghast': [
+  aghast: [
     'dismayed',
     'horrified',
     'terrified',
@@ -2740,7 +2740,7 @@ const SYN_DB = {
     'astonished',
     'dumbfounded'
   ],
-  'agile': [
+  agile: [
     'nimble',
     'active',
     'lively',
@@ -2754,7 +2754,7 @@ const SYN_DB = {
     'sprightly',
     'spry'
   ],
-  'agitate': [
+  agitate: [
     'disturb',
     'trouble',
     'shake',
@@ -2777,12 +2777,12 @@ const SYN_DB = {
     'devise',
     'plan'
   ],
-  'ago': [
+  ago: [
     'past',
     'gone',
     'since'
   ],
-  'agony': [
+  agony: [
     'anguish',
     'torture',
     'torment',
@@ -2794,7 +2794,7 @@ const SYN_DB = {
     'woe',
     'excruciation'
   ],
-  'agree': [
+  agree: [
     'accept',
     'assent',
     'approvecomply',
@@ -2803,7 +2803,7 @@ const SYN_DB = {
     'admit',
     'accede'
   ],
-  'agreeable': [
+  agreeable: [
     'suitable',
     'proper',
     'appropriate',
@@ -2816,7 +2816,7 @@ const SYN_DB = {
     'pleasing',
     'gratifying'
   ],
-  'agreement': [
+  agreement: [
     'contract',
     'compact',
     'bond',
@@ -2828,21 +2828,21 @@ const SYN_DB = {
     'undertaking',
     'treaty'
   ],
-  'agriculture': [
+  agriculture: [
     'farming',
     'husbandry',
     'tillage'
   ],
-  'aground': [
+  aground: [
     'ashore',
     'stranded',
     'notafloat'
   ],
-  'ahead': [
+  ahead: [
     'forward',
     'onward'
   ],
-  'aid': [
+  aid: [
     'help',
     'support',
     'assist',
@@ -2856,7 +2856,7 @@ const SYN_DB = {
     'encourage',
     'favor'
   ],
-  'ailing': [
+  ailing: [
     'sick',
     'ill',
     'indisposed',
@@ -2868,14 +2868,14 @@ const SYN_DB = {
     'unhealthy',
     'pining'
   ],
-  'ailment': [
+  ailment: [
     'disease',
     'malady',
     'indisposition',
     'distemper',
     'complaint'
   ],
-  'aim': [
+  aim: [
     'direction',
     'course',
     'tendency',
@@ -2898,7 +2898,7 @@ const SYN_DB = {
     'aspiration',
     'determination'
   ],
-  'air': [
+  air: [
     'atmosphere',
     'gas',
     'breeze',
@@ -2922,7 +2922,7 @@ const SYN_DB = {
     'fashion',
     'tune'
   ],
-  'airy': [
+  airy: [
     'aerial',
     'thin',
     'rare',
@@ -2948,7 +2948,7 @@ const SYN_DB = {
     'windy',
     'empty'
   ],
-  'akin': [
+  akin: [
     'related',
     'allied',
     'homogeneous',
@@ -2957,7 +2957,7 @@ const SYN_DB = {
     'congenial',
     'sympathetic'
   ],
-  'alacrity': [
+  alacrity: [
     'readiness',
     'briskness',
     'activity',
@@ -2970,7 +2970,7 @@ const SYN_DB = {
     'gaiety',
     'agility'
   ],
-  'alarm': [
+  alarm: [
     'summons',
     'tocsin',
     'warcry',
@@ -2982,7 +2982,7 @@ const SYN_DB = {
     'dread',
     'affright'
   ],
-  'alert': [
+  alert: [
     'lively',
     'prompt',
     'ready',
@@ -2997,7 +2997,7 @@ const SYN_DB = {
     'sprightly',
     'agile'
   ],
-  'alien': [
+  alien: [
     'foreigner',
     'stranger',
     'strange',
@@ -3010,7 +3010,7 @@ const SYN_DB = {
     'unlike',
     'unconnected'
   ],
-  'alienation': [
+  alienation: [
     'estrangement',
     'transfer',
     'conveyance',
@@ -3025,7 +3025,7 @@ const SYN_DB = {
     'mania',
     'imbecility'
   ],
-  'alight': [
+  alight: [
     'perch',
     'settle',
     'drop',
@@ -3033,7 +3033,7 @@ const SYN_DB = {
     'dismount',
     'descend'
   ],
-  'alike': [
+  alike: [
     'similar',
     'kindred',
     'same',
@@ -3046,7 +3046,7 @@ const SYN_DB = {
     'akin',
     'allied'
   ],
-  'aliment': [
+  aliment: [
     'food',
     'nourishment',
     'subsistence',
@@ -3058,7 +3058,7 @@ const SYN_DB = {
     'meat',
     'sustenance'
   ],
-  'alive': [
+  alive: [
     'living',
     'quick',
     'subsisting',
@@ -3073,7 +3073,7 @@ const SYN_DB = {
     'joyous',
     'brisk'
   ],
-  'all': [
+  all: [
     'whole',
     'totality',
     'whole',
@@ -3083,7 +3083,7 @@ const SYN_DB = {
     'each',
     'every'
   ],
-  'allay': [
+  allay: [
     'repress',
     'restrain',
     'check',
@@ -3103,7 +3103,7 @@ const SYN_DB = {
     'relieve',
     'palliate'
   ],
-  'allege': [
+  allege: [
     'declare',
     'affirm',
     'claim',
@@ -3116,7 +3116,7 @@ const SYN_DB = {
     'profess',
     'cite'
   ],
-  'allegiance': [
+  allegiance: [
     'fealty',
     'loyalty',
     'devotion',
@@ -3124,7 +3124,7 @@ const SYN_DB = {
     'faithfulness',
     'obedience'
   ],
-  'allegory': [
+  allegory: [
     'parable',
     'fable',
     'myth',
@@ -3135,7 +3135,7 @@ const SYN_DB = {
     'illustration',
     'simile'
   ],
-  'alleviate': [
+  alleviate: [
     'abate',
     'mitigate',
     'reduce',
@@ -3147,7 +3147,7 @@ const SYN_DB = {
     'moderate',
     'lighten'
   ],
-  'alliance': [
+  alliance: [
     'connection',
     'relationship',
     'affinity',
@@ -3167,7 +3167,7 @@ const SYN_DB = {
     'federation',
     'compact'
   ],
-  'allot': [
+  allot: [
     'divide',
     'apportion',
     'distribute',
@@ -3178,7 +3178,7 @@ const SYN_DB = {
     'appoint',
     'destine'
   ],
-  'allow': [
+  allow: [
     'grant',
     'own',
     'confess',
@@ -3197,7 +3197,7 @@ const SYN_DB = {
     'abate',
     'remit'
   ],
-  'allowance': [
+  allowance: [
     'leave',
     'permission',
     'sanction',
@@ -3210,7 +3210,7 @@ const SYN_DB = {
     'exception',
     'ration'
   ],
-  'alloy': [
+  alloy: [
     'admixture',
     'adulteration',
     'deterioration',
@@ -3218,7 +3218,7 @@ const SYN_DB = {
     'disparagement',
     'drawback'
   ],
-  'allude': [
+  allude: [
     'intimate',
     'insinuate',
     'point',
@@ -3230,7 +3230,7 @@ const SYN_DB = {
     'indicate',
     'mention'
   ],
-  'allure': [
+  allure: [
     'decoy',
     'entice',
     'coax',
@@ -3239,7 +3239,7 @@ const SYN_DB = {
     'inveigle',
     'seduce'
   ],
-  'allusion': [
+  allusion: [
     'hint',
     'suggestion',
     'intimation',
@@ -3247,7 +3247,7 @@ const SYN_DB = {
     'implication',
     'innuendo'
   ],
-  'ally': [
+  ally: [
     'assistant',
     'helper',
     'aid',
@@ -3259,19 +3259,19 @@ const SYN_DB = {
     'accessory',
     'accomplice'
   ],
-  'aloft': [
+  aloft: [
     'above',
     'skyward',
     'heavenward',
     'overhead'
   ],
-  'alone': [
+  alone: [
     'solitary',
     'sole',
     'single',
     'isolated'
   ],
-  'along': [
+  along: [
     'lengthwise',
     'onward',
     'forward',
@@ -3279,27 +3279,27 @@ const SYN_DB = {
     'beside',
     'simultaneously'
   ],
-  'aloof': [
+  aloof: [
     'apart',
     'distant',
     'away',
     'off'
   ],
-  'aloud': [
+  aloud: [
     'distinctly',
     'audibly',
     'vociferously',
     'clamorously',
     'sonorously'
   ],
-  'also': [
+  also: [
     'likewise',
     'too',
     'similarly',
     'withal',
     'besides'
   ],
-  'alter': [
+  alter: [
     'change',
     'turn',
     'vary',
@@ -3310,14 +3310,14 @@ const SYN_DB = {
     'transform',
     'convert'
   ],
-  'alteration': [
+  alteration: [
     'change',
     'variation',
     'modification',
     'shifting',
     'mutation'
   ],
-  'altercation': [
+  altercation: [
     'dispute',
     'contention',
     'controversy',
@@ -3326,13 +3326,13 @@ const SYN_DB = {
     'wrangle',
     'dissension'
   ],
-  'alternate': [
+  alternate: [
     'reciprocal',
     'inturn',
     'interchangeable',
     'mutual'
   ],
-  'alternative': [
+  alternative: [
     'choice',
     'option',
     'preference',
@@ -3340,18 +3340,18 @@ const SYN_DB = {
     'pick',
     'resource'
   ],
-  'although': [
+  although: [
     'albeit',
     'supposing'
   ],
-  'altitude': [
+  altitude: [
     'height',
     'elevation',
     'loftiness',
     'ascent',
     'eminence'
   ],
-  'altogether': [
+  altogether: [
     'collectively',
     'conjointly',
     'wholly',
@@ -3363,14 +3363,14 @@ const SYN_DB = {
     'thoroughly',
     'fully'
   ],
-  'altruism': [
+  altruism: [
     'philanthropy',
     'unselfishness',
     'selfsacrifice',
     'selfforgetfulness',
     'generosity'
   ],
-  'always': [
+  always: [
     'ever',
     'forever',
     'eternally',
@@ -3382,7 +3382,7 @@ const SYN_DB = {
     'generally',
     'habitually'
   ],
-  'amalgamate': [
+  amalgamate: [
     'mix',
     'commingle',
     'unite',
@@ -3394,7 +3394,7 @@ const SYN_DB = {
     'fuse',
     'consolidate'
   ],
-  'amaranthine': [
+  amaranthine: [
     'fadeless',
     'imperishable',
     'undying',
@@ -3403,14 +3403,14 @@ const SYN_DB = {
     'purplish',
     'amethystine'
   ],
-  'amass': [
+  amass: [
     'accumulate',
     'collect',
     'gather',
     'hoard',
     'storeup'
   ],
-  'amateur': [
+  amateur: [
     'lover',
     'votary',
     'devotee',
@@ -3420,7 +3420,7 @@ const SYN_DB = {
     'tyro',
     'dilettante'
   ],
-  'amazement': [
+  amazement: [
     'astonishment',
     'bewilderment',
     'wonder',
@@ -3430,7 +3430,7 @@ const SYN_DB = {
     'perplexity',
     'awe'
   ],
-  'amazing': [
+  amazing: [
     'astonishing',
     'astounding',
     'wonderful',
@@ -3442,7 +3442,7 @@ const SYN_DB = {
     'stupendous',
     'extraordinary'
   ],
-  'ambagious': [
+  ambagious: [
     'winding',
     'devious',
     'sinuous',
@@ -3457,21 +3457,21 @@ const SYN_DB = {
     'enigmatical',
     'vague'
   ],
-  'ambassador': [
+  ambassador: [
     'minister',
     'envoy',
     'legate',
     'deputy',
     'plenipotentiary'
   ],
-  'ambient': [
+  ambient: [
     'surrounding',
     'encompassing',
     'enfolding',
     'circling',
     'investing'
   ],
-  'ambiguous': [
+  ambiguous: [
     'doubtful',
     'dubious',
     'uncertain',
@@ -3482,21 +3482,21 @@ const SYN_DB = {
     'equivocal',
     'enigmatical'
   ],
-  'ambition': [
+  ambition: [
     'emulation',
     'rivalry',
     'aspiration',
     'competition',
     'opposition'
   ],
-  'amelioration': [
+  amelioration: [
     'amendment',
     'improvement',
     'promotion',
     'bettering',
     'elevation'
   ],
-  'amenable': [
+  amenable: [
     'liable',
     'responsible',
     'answerable',
@@ -3506,7 +3506,7 @@ const SYN_DB = {
     'pliant',
     'docile'
   ],
-  'amend': [
+  amend: [
     'improve',
     'mend',
     'repair',
@@ -3515,14 +3515,14 @@ const SYN_DB = {
     'correct',
     'rectify'
   ],
-  'amends': [
+  amends: [
     'compensation',
     'atonement',
     'expiation',
     'recompense',
     'indemnity'
   ],
-  'amenity': [
+  amenity: [
     'softness',
     'mildness',
     'suavity',
@@ -3530,7 +3530,7 @@ const SYN_DB = {
     'refinement',
     'amiability'
   ],
-  'amiable': [
+  amiable: [
     'agreeable',
     'gentle',
     'goodnatured',
@@ -3540,7 +3540,7 @@ const SYN_DB = {
     'charming',
     'lovable'
   ],
-  'amicable': [
+  amicable: [
     'cordial',
     'kind',
     'friendly',
@@ -3551,13 +3551,13 @@ const SYN_DB = {
     'sociable',
     'amiable'
   ],
-  'amid': [
+  amid: [
     'among',
     'between',
     'betwixt',
     'surroundedby'
   ],
-  'amount': [
+  amount: [
     'sum',
     'total',
     'aggregate',
@@ -3566,7 +3566,7 @@ const SYN_DB = {
     'substance',
     'purport'
   ],
-  'amplify': [
+  amplify: [
     'augment',
     'enlarge',
     'expand',
@@ -3577,7 +3577,7 @@ const SYN_DB = {
     'dilate',
     'extend'
   ],
-  'amusement': [
+  amusement: [
     'diversion',
     'sport',
     'play',
@@ -3589,33 +3589,33 @@ const SYN_DB = {
     'frolic',
     'relaxation'
   ],
-  'analogy': [
+  analogy: [
     'likeness',
     'relation',
     'resemblance',
     'similitude',
     'comparison'
   ],
-  'analysis': [
+  analysis: [
     'separation',
     'dissection',
     'investigation',
     'partition'
   ],
-  'anarchy': [
+  anarchy: [
     'misrule',
     'disorder',
     'lawlessness',
     'violence',
     'confusion'
   ],
-  'anatomy': [
+  anatomy: [
     'analysis',
     'dissection',
     'skeleton',
     'dismemberment'
   ],
-  'ancient': [
+  ancient: [
     'old',
     'antique',
     'antiquated',
@@ -3623,7 +3623,7 @@ const SYN_DB = {
     'primeval',
     'aged'
   ],
-  'ancillary': [
+  ancillary: [
     'auxiliary',
     'helping',
     'instrumental',
@@ -3631,7 +3631,7 @@ const SYN_DB = {
     'subordinate',
     'subservient'
   ],
-  'angelic': [
+  angelic: [
     'seraphic',
     'celestial',
     'pure',
@@ -3642,7 +3642,7 @@ const SYN_DB = {
     'divine',
     'spiritual'
   ],
-  'anger': [
+  anger: [
     'fury',
     'ire',
     'offense',
@@ -3657,7 +3657,7 @@ const SYN_DB = {
     'wrath',
     'resentment'
   ],
-  'angry': [
+  angry: [
     'provoked',
     'indignant',
     'exasperated',
@@ -3671,18 +3671,18 @@ const SYN_DB = {
     'piqued',
     'galled'
   ],
-  'anguish': [
+  anguish: [
     'agony',
     'torture',
     'torment',
     'pang'
   ],
-  'animal': [
+  animal: [
     'brute',
     'beast',
     'fauna'
   ],
-  'animate': [
+  animate: [
     'enliven',
     'vivify',
     'quicken',
@@ -3697,7 +3697,7 @@ const SYN_DB = {
     'inspire',
     'elate'
   ],
-  'animation': [
+  animation: [
     'life',
     'vitality',
     'spirit',
@@ -3711,7 +3711,7 @@ const SYN_DB = {
     'vigor',
     'liveliness'
   ],
-  'animosity': [
+  animosity: [
     'hatred',
     'enmity',
     'malignity',
@@ -3725,14 +3725,14 @@ const SYN_DB = {
     'malice',
     'anger'
   ],
-  'annals': [
+  annals: [
     'chronicles',
     'records',
     'registers',
     'rolls',
     'archives'
   ],
-  'annex': [
+  annex: [
     'add',
     'affix',
     'attach',
@@ -3744,7 +3744,7 @@ const SYN_DB = {
     'unite',
     'connect'
   ],
-  'annihilation': [
+  annihilation: [
     'extermination',
     'obliteration',
     'eradication',
@@ -3754,7 +3754,7 @@ const SYN_DB = {
     'nonbeing',
     'nirvana'
   ],
-  'annotation': [
+  annotation: [
     'note',
     'comment',
     'remark',
@@ -3765,7 +3765,7 @@ const SYN_DB = {
     'illustration',
     'elucidation'
   ],
-  'announce': [
+  announce: [
     'proclaim',
     'publish',
     'report',
@@ -3779,7 +3779,7 @@ const SYN_DB = {
     'circulate',
     'enunciate'
   ],
-  'announcement': [
+  announcement: [
     'notice',
     'proclamation',
     'declaration',
@@ -3788,7 +3788,7 @@ const SYN_DB = {
     'manifesto',
     'promulgation'
   ],
-  'annoyance': [
+  annoyance: [
     'trouble',
     'discomfort',
     'vexation',
@@ -3797,11 +3797,11 @@ const SYN_DB = {
     'nuisance',
     'irritation'
   ],
-  'annual': [
+  annual: [
     'yearbook',
     'annals'
   ],
-  'annul': [
+  annul: [
     'cancel',
     'abrogate',
     'recall',
@@ -3815,7 +3815,7 @@ const SYN_DB = {
     'supersede',
     'invalidate'
   ],
-  'anomalous': [
+  anomalous: [
     'abnormal',
     'unnatural',
     'irregular',
@@ -3827,7 +3827,7 @@ const SYN_DB = {
     'eccentric',
     'erratic'
   ],
-  'anon': [
+  anon: [
     'soon',
     'shortly',
     'forthwith',
@@ -3838,11 +3838,11 @@ const SYN_DB = {
     'presently',
     'again'
   ],
-  'anonymous': [
+  anonymous: [
     'nameless',
     'unacknowledged'
   ],
-  'answer': [
+  answer: [
     'reply',
     'rejoin',
     'respond',
@@ -3857,7 +3857,7 @@ const SYN_DB = {
     'satisfy',
     'fulfill'
   ],
-  'answerable': [
+  answerable: [
     'refutable',
     'responsible',
     'amenable',
@@ -3868,14 +3868,14 @@ const SYN_DB = {
     'suitable',
     'proportionate'
   ],
-  'antagonism': [
+  antagonism: [
     'opposition',
     'contradiction',
     'hostility',
     'animosity',
     'enmity'
   ],
-  'antecedent': [
+  antecedent: [
     'preceding',
     'previous',
     'prior',
@@ -3883,12 +3883,12 @@ const SYN_DB = {
     'anterior',
     'precursory'
   ],
-  'antedate': [
+  antedate: [
     'anticipate',
     'forestall',
     'foretaste'
   ],
-  'anticipate': [
+  anticipate: [
     'forestall',
     'expect',
     'foretaste',
@@ -3896,7 +3896,7 @@ const SYN_DB = {
     'forecast',
     'apprehend'
   ],
-  'anticipation': [
+  anticipation: [
     'expectation',
     'prospect',
     'hope',
@@ -3910,7 +3910,7 @@ const SYN_DB = {
     'prevision',
     'forethought'
   ],
-  'antipathy': [
+  antipathy: [
     'repugnance',
     'repulsion',
     'aversion',
@@ -3920,7 +3920,7 @@ const SYN_DB = {
     'hostility',
     'loathing'
   ],
-  'antiquated': [
+  antiquated: [
     'quaint',
     'obsolete',
     'bygone',
@@ -3928,13 +3928,13 @@ const SYN_DB = {
     'archaic',
     'oldfashioned'
   ],
-  'antiquity': [
+  antiquity: [
     'eld'
   ],
-  'early': [
+  early: [
     'archaeology'
   ],
-  'anxiety': [
+  anxiety: [
     'perplexity',
     'apprehension',
     'care',
@@ -3948,7 +3948,7 @@ const SYN_DB = {
     'eagerness',
     'diffidence'
   ],
-  'apathy': [
+  apathy: [
     'stoicism',
     'calmness',
     'composure',
@@ -3961,7 +3961,7 @@ const SYN_DB = {
     'phlegm',
     'stillness'
   ],
-  'ape': [
+  ape: [
     'mimic',
     'imitate',
     'counterfeit',
@@ -3970,7 +3970,7 @@ const SYN_DB = {
     'personate',
     'represent'
   ],
-  'aperture': [
+  aperture: [
     'opening',
     'hole',
     'gap',
@@ -3980,13 +3980,13 @@ const SYN_DB = {
     'orifice',
     'cleft'
   ],
-  'apex': [
+  apex: [
     'acme',
     'vertex',
     'pinnacle',
     'summit'
   ],
-  'aphorism': [
+  aphorism: [
     'adage',
     'maxim',
     'proverb',
@@ -3995,14 +3995,14 @@ const SYN_DB = {
     'apothegm',
     'saw'
   ],
-  'apiece': [
+  apiece: [
     'each',
     'individually',
     'severally',
     'distributively',
     'separately'
   ],
-  'apocalyptic': [
+  apocalyptic: [
     'prophetic',
     'mystical',
     'mysterious',
@@ -4010,7 +4010,7 @@ const SYN_DB = {
     'revealing',
     'unveiling'
   ],
-  'apocryphal': [
+  apocryphal: [
     'unauthentic',
     'uncanonical',
     'legendary',
@@ -4020,7 +4020,7 @@ const SYN_DB = {
     'doubtful',
     'spurious'
   ],
-  'apology': [
+  apology: [
     'plea',
     'excuse',
     'defense',
@@ -4031,7 +4031,7 @@ const SYN_DB = {
     'explanation',
     'extenuation'
   ],
-  'apostate': [
+  apostate: [
     'renegade',
     'turncoat',
     'backslider',
@@ -4039,7 +4039,7 @@ const SYN_DB = {
     'pervert',
     'traitor'
   ],
-  'apothegm': [
+  apothegm: [
     'saying',
     'dictum',
     'proverb',
@@ -4047,7 +4047,7 @@ const SYN_DB = {
     'precept',
     'byword'
   ],
-  'appall': [
+  appall: [
     'terrify',
     'frighten',
     'dismay',
@@ -4056,7 +4056,7 @@ const SYN_DB = {
     'alarm',
     'affright'
   ],
-  'apparel': [
+  apparel: [
     'clothes',
     'dress',
     'raiment',
@@ -4071,7 +4071,7 @@ const SYN_DB = {
     'equipment',
     'trappings'
   ],
-  'apparent': [
+  apparent: [
     'seeming',
     'probable',
     'likely',
@@ -4085,7 +4085,7 @@ const SYN_DB = {
     'legible',
     'specious'
   ],
-  'appeal': [
+  appeal: [
     'address',
     'invoke',
     'entreat',
@@ -4094,7 +4094,7 @@ const SYN_DB = {
     'sue',
     'petition'
   ],
-  'appearance': [
+  appearance: [
     'semblance',
     'look',
     'show',
@@ -4109,7 +4109,7 @@ const SYN_DB = {
     'complexion',
     'manner'
   ],
-  'appease': [
+  appease: [
     'calm',
     'pacify',
     'soothe',
@@ -4122,20 +4122,20 @@ const SYN_DB = {
     'satisfy',
     'reconcile'
   ],
-  'appellation': [
+  appellation: [
     'epithet',
     'title',
     'description',
     'designation',
     'name'
   ],
-  'appendage': [
+  appendage: [
     'attachment',
     'addition',
     'adjunct',
     'supplement'
   ],
-  'appertain': [
+  appertain: [
     'belong',
     'inhere',
     'adhere',
@@ -4144,7 +4144,7 @@ const SYN_DB = {
     'touch',
     'relate'
   ],
-  'appetite': [
+  appetite: [
     'longing',
     'craving',
     'desire',
@@ -4153,7 +4153,7 @@ const SYN_DB = {
     'zest',
     'liking'
   ],
-  'applause': [
+  applause: [
     'praise',
     'approbation',
     'commendation',
@@ -4162,7 +4162,7 @@ const SYN_DB = {
     'acclamation',
     'eclat'
   ],
-  'appliances': [
+  appliances: [
     'means',
     'instruments',
     'appointments',
@@ -4176,7 +4176,7 @@ const SYN_DB = {
     'ways',
     'contrivances'
   ],
-  'applicable': [
+  applicable: [
     'fit',
     'appropriate',
     'suitable',
@@ -4187,14 +4187,14 @@ const SYN_DB = {
     'germane',
     'adjustable'
   ],
-  'applicant': [
+  applicant: [
     'petitioner',
     'solicitor',
     'suitor',
     'candidate',
     'aspirant'
   ],
-  'apply': [
+  apply: [
     'use',
     'employ',
     'exercise',
@@ -4205,7 +4205,7 @@ const SYN_DB = {
     'request',
     'petition'
   ],
-  'appoint': [
+  appoint: [
     'determine',
     'establish',
     'fix',
@@ -4226,7 +4226,7 @@ const SYN_DB = {
     'require',
     'ordain'
   ],
-  'appointment': [
+  appointment: [
     'assignation',
     'assignment',
     'agreement',
@@ -4246,7 +4246,7 @@ const SYN_DB = {
     'requirement',
     'law'
   ],
-  'apportion': [
+  apportion: [
     'appoint',
     'allot',
     'appropriate',
@@ -4258,7 +4258,7 @@ const SYN_DB = {
     'assign',
     'deal'
   ],
-  'apposite': [
+  apposite: [
     'apt',
     'pertinent',
     'suitable',
@@ -4268,7 +4268,7 @@ const SYN_DB = {
     'applicable',
     'adapted'
   ],
-  'appraise': [
+  appraise: [
     'estimate',
     'prize',
     'value',
@@ -4277,13 +4277,13 @@ const SYN_DB = {
     'assess',
     'assize'
   ],
-  'appreciate': [
+  appreciate: [
     'esteem',
     'prize',
     'recognize',
     'respect'
   ],
-  'apprehend': [
+  apprehend: [
     'arrest',
     'seize',
     'take',
@@ -4299,7 +4299,7 @@ const SYN_DB = {
     'fear',
     'forebode'
   ],
-  'apprehension': [
+  apprehension: [
     'arrest',
     'capture',
     'understanding',
@@ -4322,21 +4322,21 @@ const SYN_DB = {
     'suspicion',
     'anxiety'
   ],
-  'apprise': [
+  apprise: [
     'inform',
     'tell',
     'publish',
     'advise',
     'acquaint'
   ],
-  'approach': [
+  approach: [
     'advance',
     'drawnear',
     'push',
     'broach',
     'similar'
   ],
-  'approbation': [
+  approbation: [
     'praise',
     'commendation',
     'approval',
@@ -4348,7 +4348,7 @@ const SYN_DB = {
     'concurrence',
     'assent'
   ],
-  'approve': [
+  approve: [
     'praise',
     'commend',
     'sanction',
@@ -4356,7 +4356,7 @@ const SYN_DB = {
     'encourage',
     'authorize'
   ],
-  'approximation': [
+  approximation: [
     'approach',
     'nearness',
     'similarity',
@@ -4366,14 +4366,14 @@ const SYN_DB = {
     'propinquity',
     'neighborhood'
   ],
-  'appurtenant': [
+  appurtenant: [
     'belonging',
     'connected',
     'appended',
     'attached',
     'coordinate'
   ],
-  'apropos': [
+  apropos: [
     'opportune',
     'seasonable',
     'apposite',
@@ -4381,7 +4381,7 @@ const SYN_DB = {
     'apt',
     'suitable'
   ],
-  'aptitude': [
+  aptitude: [
     'disposition',
     'knack',
     'endowment',
@@ -4392,7 +4392,7 @@ const SYN_DB = {
     'bias',
     'propensity'
   ],
-  'arbiter': [
+  arbiter: [
     'umpire',
     'judge',
     'referee',
@@ -4400,7 +4400,7 @@ const SYN_DB = {
     'master',
     'lord'
   ],
-  'arbitrary': [
+  arbitrary: [
     'despotic',
     'autocratic',
     'tyrannical',
@@ -4412,7 +4412,7 @@ const SYN_DB = {
     'imperious',
     'dictatorial'
   ],
-  'arbitration': [
+  arbitration: [
     'mediation',
     'intercession',
     'interposition',
@@ -4423,7 +4423,7 @@ const SYN_DB = {
     'judgment',
     'decision'
   ],
-  'ardent': [
+  ardent: [
     'passionate',
     'fervent',
     'intense',
@@ -4436,7 +4436,7 @@ const SYN_DB = {
     'enthusiastic',
     'strenuous'
   ],
-  'argument': [
+  argument: [
     'reasoning',
     'proof',
     'evidence',
@@ -4451,7 +4451,7 @@ const SYN_DB = {
     'abstract',
     'outline'
   ],
-  'aridity': [
+  aridity: [
     'dryness',
     'parchedness',
     'sterility',
@@ -4462,7 +4462,7 @@ const SYN_DB = {
     'torpidity',
     'insensibility'
   ],
-  'arise': [
+  arise: [
     'ascend',
     'mount',
     'rebel',
@@ -4470,12 +4470,12 @@ const SYN_DB = {
     'result',
     'eventuate'
   ],
-  'aristocracy': [
+  aristocracy: [
     'nobility',
     'peerage',
     'gentry'
   ],
-  'arm': [
+  arm: [
     'equip',
     'array',
     'furnish',
@@ -4488,7 +4488,7 @@ const SYN_DB = {
     'guard',
     'prepare'
   ],
-  'army': [
+  army: [
     'soldiery',
     'legion',
     'armament',
@@ -4497,7 +4497,7 @@ const SYN_DB = {
     'phalanx',
     'troops'
   ],
-  'aromatic': [
+  aromatic: [
     'fragrant',
     'spicy',
     'balmy',
@@ -4505,7 +4505,7 @@ const SYN_DB = {
     'odoriferous',
     'ambrosial'
   ],
-  'arouse': [
+  arouse: [
     'excite',
     'provoke',
     'instigate',
@@ -4517,14 +4517,14 @@ const SYN_DB = {
     'summon',
     'awaken'
   ],
-  'arraign': [
+  arraign: [
     'accuse',
     'charge',
     'indict',
     'impeach',
     'denounce'
   ],
-  'arrange': [
+  arrange: [
     'settle',
     'determine',
     'adjust',
@@ -4542,7 +4542,7 @@ const SYN_DB = {
     'construct',
     'organize'
   ],
-  'array': [
+  array: [
     'order',
     'parade',
     'show',
@@ -4551,7 +4551,7 @@ const SYN_DB = {
     'arrangement',
     'disposition'
   ],
-  'arrest': [
+  arrest: [
     'apprehend',
     'capture',
     'seize',
@@ -4559,12 +4559,12 @@ const SYN_DB = {
     'hold',
     'stop'
   ],
-  'arrival': [
+  arrival: [
     'advent',
     'coming',
     'comer'
   ],
-  'arrive': [
+  arrive: [
     'reach',
     'come',
     'attain',
@@ -4572,7 +4572,7 @@ const SYN_DB = {
     'overtake',
     'happen'
   ],
-  'arrogant': [
+  arrogant: [
     'haughty',
     'insolent',
     'proud',
@@ -4585,7 +4585,7 @@ const SYN_DB = {
     'dogmatic',
     'imperious'
   ],
-  'art': [
+  art: [
     'craft',
     'business',
     'calling',
@@ -4615,7 +4615,7 @@ const SYN_DB = {
     'happy',
     'blithe'
   ],
-  'article': [
+  article: [
     'tiling',
     'substance',
     'commodity',
@@ -4630,14 +4630,14 @@ const SYN_DB = {
     'monograph',
     'brochure'
   ],
-  'articulate': [
+  articulate: [
     'join',
     'unite',
     'connect',
     'enunciate',
     'pronounce'
   ],
-  'artifice': [
+  artifice: [
     'cunning',
     'craft',
     'machination',
@@ -4652,7 +4652,7 @@ const SYN_DB = {
     'maneuver',
     'wile'
   ],
-  'artificial': [
+  artificial: [
     'unnatural',
     'factitious',
     'feigned',
@@ -4664,7 +4664,7 @@ const SYN_DB = {
     'forced',
     'strained'
   ],
-  'artist': [
+  artist: [
     'designer',
     'contriver',
     'artisan',
@@ -4676,14 +4676,14 @@ const SYN_DB = {
     'master',
     'masterhand'
   ],
-  'ascend': [
+  ascend: [
     'rise',
     'mount',
     'soar',
     'aspire',
     'tower'
   ],
-  'ascendancy': [
+  ascendancy: [
     'power',
     'authority',
     'sway',
@@ -4694,7 +4694,7 @@ const SYN_DB = {
     'government',
     'influence'
   ],
-  'ascertain': [
+  ascertain: [
     'determine',
     'establish',
     'settle',
@@ -4703,7 +4703,7 @@ const SYN_DB = {
     'verify',
     'discover'
   ],
-  'ascetic': [
+  ascetic: [
     'austere',
     'rigid',
     'severe',
@@ -4712,14 +4712,14 @@ const SYN_DB = {
     'stern',
     'puritanical'
   ],
-  'ascribe': [
+  ascribe: [
     'impute',
     'attribute',
     'assign',
     'refer',
     'charge'
   ],
-  'ask': [
+  ask: [
     'request',
     'petition',
     'solicit',
@@ -4730,7 +4730,7 @@ const SYN_DB = {
     'crave',
     'demand'
   ],
-  'aspect': [
+  aspect: [
     'air',
     'mien',
     'look',
@@ -4747,7 +4747,7 @@ const SYN_DB = {
     'outlook',
     'prospect'
   ],
-  'asperse': [
+  asperse: [
     'slander',
     'calumniate',
     'traduce',
@@ -4762,12 +4762,12 @@ const SYN_DB = {
     'slur',
     'malign'
   ],
-  'aspiration': [
+  aspiration: [
     'yearning',
     'longing',
     'craving'
   ],
-  'assault': [
+  assault: [
     'attack',
     'invasion',
     'charge',
@@ -4775,7 +4775,7 @@ const SYN_DB = {
     'onslaught',
     'aggression'
   ],
-  'assemble': [
+  assemble: [
     'gather',
     'collect',
     'convene',
@@ -4783,7 +4783,7 @@ const SYN_DB = {
     'meet',
     'cometogether'
   ],
-  'assembly': [
+  assembly: [
     'concourse',
     'company',
     'gathering',
@@ -4802,7 +4802,7 @@ const SYN_DB = {
     'ball',
     'dance'
   ],
-  'assent': [
+  assent: [
     'acquiescence',
     'acknowledgment',
     'approval',
@@ -4813,7 +4813,7 @@ const SYN_DB = {
     'agreement',
     'compliance'
   ],
-  'assertion': [
+  assertion: [
     'asseveration',
     'protestation',
     'allegation',
@@ -4825,7 +4825,7 @@ const SYN_DB = {
     'defense',
     'maintenance'
   ],
-  'assess': [
+  assess: [
     'tax',
     'value',
     'appraise',
@@ -4836,7 +4836,7 @@ const SYN_DB = {
     'determine',
     'impose'
   ],
-  'assiduous': [
+  assiduous: [
     'diligent',
     'industrious',
     'untiring',
@@ -4849,7 +4849,7 @@ const SYN_DB = {
     'persistent',
     'active'
   ],
-  'assignment': [
+  assignment: [
     'appointment',
     'allotment',
     'specification',
@@ -4860,13 +4860,13 @@ const SYN_DB = {
     'transfer',
     'allowance'
   ],
-  'assimilate': [
+  assimilate: [
     'digest',
     'appropriate',
     'incorporate',
     'absorb'
   ],
-  'assist': [
+  assist: [
     'help',
     'aid',
     'succor',
@@ -4880,7 +4880,7 @@ const SYN_DB = {
     'further',
     'patronize'
   ],
-  'associate': [
+  associate: [
     'companion',
     'comrade',
     'chum',
@@ -4895,7 +4895,7 @@ const SYN_DB = {
     'confederate',
     'peer'
   ],
-  'association': [
+  association: [
     'federation',
     'fellowship',
     'alliance',
@@ -4910,7 +4910,7 @@ const SYN_DB = {
     'fraternity',
     'club'
   ],
-  'assortment': [
+  assortment: [
     'arrangement',
     'allotment',
     'distribution',
@@ -4922,7 +4922,7 @@ const SYN_DB = {
     'variety',
     'miscellany'
   ],
-  'assuage': [
+  assuage: [
     'soothe',
     'pacify',
     'mitigate',
@@ -4931,7 +4931,7 @@ const SYN_DB = {
     'abate',
     'calm'
   ],
-  'assume': [
+  assume: [
     'arrogate',
     'feign',
     'pretend',
@@ -4942,7 +4942,7 @@ const SYN_DB = {
     'appropriate',
     'claim'
   ],
-  'assumption': [
+  assumption: [
     'presumption',
     'hypothesis',
     'theory',
@@ -4956,7 +4956,7 @@ const SYN_DB = {
     'impudence',
     'effrontery'
   ],
-  'assurance': [
+  assurance: [
     'confidence',
     'effrontery',
     'presumption',
@@ -4968,7 +4968,7 @@ const SYN_DB = {
     'assertion',
     'pledge'
   ],
-  'astonish': [
+  astonish: [
     'amaze',
     'startle',
     'surprise',
@@ -4976,7 +4976,7 @@ const SYN_DB = {
     'stupefy',
     'stagger'
   ],
-  'astute': [
+  astute: [
     'keen',
     'discerning',
     'acute',
@@ -4990,7 +4990,7 @@ const SYN_DB = {
     'perspicacious',
     'crafty'
   ],
-  'atrocious': [
+  atrocious: [
     'infamous',
     'outrageous',
     'nefarious',
@@ -5000,7 +5000,7 @@ const SYN_DB = {
     'flagrant',
     'horrible'
   ],
-  'attachment': [
+  attachment: [
     'adherence',
     'friendship',
     'regard',
@@ -5012,7 +5012,7 @@ const SYN_DB = {
     'inclination',
     'union'
   ],
-  'attack': [
+  attack: [
     'assault',
     'storm',
     'assail',
@@ -5024,7 +5024,7 @@ const SYN_DB = {
     'besiege',
     'beset'
   ],
-  'attain': [
+  attain: [
     'achieve',
     'accomplish',
     'gain',
@@ -5036,7 +5036,7 @@ const SYN_DB = {
     'acquire',
     'accomplish'
   ],
-  'attainment': [
+  attainment: [
     'winning',
     'getting',
     'accomplishing',
@@ -5049,7 +5049,7 @@ const SYN_DB = {
     'learning',
     'enlightenment'
   ],
-  'attempt': [
+  attempt: [
     'try',
     'undertake',
     'seek',
@@ -5058,7 +5058,7 @@ const SYN_DB = {
     'attack',
     'strive'
   ],
-  'attendance': [
+  attendance: [
     'presence',
     'personspresent',
     'train',
@@ -5066,7 +5066,7 @@ const SYN_DB = {
     'ministration',
     'service'
   ],
-  'attention': [
+  attention: [
     'care',
     'notice',
     'observation',
@@ -5083,7 +5083,7 @@ const SYN_DB = {
     'devotion',
     'wooing'
   ],
-  'attenuate': [
+  attenuate: [
     'rarefy',
     'thin',
     'reduce',
@@ -5092,7 +5092,7 @@ const SYN_DB = {
     'orspare',
     'lessen'
   ],
-  'attest': [
+  attest: [
     'certify',
     'endorse',
     'corroborate',
@@ -5105,7 +5105,7 @@ const SYN_DB = {
     'manifest',
     'exhibit'
   ],
-  'attire': [
+  attire: [
     'dress',
     'apparel',
     'robes',
@@ -5117,7 +5117,7 @@ const SYN_DB = {
     'costume',
     'livery'
   ],
-  'attitude': [
+  attitude: [
     'position',
     'pose',
     'posture',
@@ -5125,7 +5125,7 @@ const SYN_DB = {
     'standing',
     'aspect'
   ],
-  'attraction': [
+  attraction: [
     'drawing',
     'allurement',
     'lure',
@@ -5135,7 +5135,7 @@ const SYN_DB = {
     'witchery',
     'grace'
   ],
-  'attribute': [
+  attribute: [
     'quality',
     'property',
     'characteristic',
@@ -5149,7 +5149,7 @@ const SYN_DB = {
     'connect',
     'associate'
   ],
-  'audacious': [
+  audacious: [
     'bold',
     'daring',
     'fearless',
@@ -5164,7 +5164,7 @@ const SYN_DB = {
     'impertinent',
     'insolent'
   ],
-  'augur': [
+  augur: [
     'foretell',
     'portend',
     'predict',
@@ -5174,7 +5174,7 @@ const SYN_DB = {
     'prognosticate',
     'betoken'
   ],
-  'august': [
+  august: [
     'awful',
     'imposing',
     'majestic',
@@ -5186,7 +5186,7 @@ const SYN_DB = {
     'noble',
     'dignified'
   ],
-  'auspicious': [
+  auspicious: [
     'successful',
     'fortunate',
     'lucky',
@@ -5197,7 +5197,7 @@ const SYN_DB = {
     'opportune',
     'favorable'
   ],
-  'austere': [
+  austere: [
     'severe',
     'hard',
     'stiff',
@@ -5208,7 +5208,7 @@ const SYN_DB = {
     'rigid',
     'formal'
   ],
-  'authentic': [
+  authentic: [
     'genuine',
     'trustworthy',
     'veritable',
@@ -5222,7 +5222,7 @@ const SYN_DB = {
     'original',
     'legitimate'
   ],
-  'author': [
+  author: [
     'creator',
     'maker',
     'contriver',
@@ -5231,7 +5231,7 @@ const SYN_DB = {
     'writer',
     'composer'
   ],
-  'authority': [
+  authority: [
     'power',
     'government',
     'empire',
@@ -5249,11 +5249,11 @@ const SYN_DB = {
     'master',
     'connoisseur'
   ],
-  'automatic': [
+  automatic: [
     'selfmoving',
     'selfacting'
   ],
-  'auxiliary': [
+  auxiliary: [
     'assistant',
     'helper',
     'confederate',
@@ -5263,14 +5263,14 @@ const SYN_DB = {
     'promoter',
     'subordinate'
   ],
-  'available': [
+  available: [
     'serviceable',
     'useful',
     'profitable',
     'beneficial',
     'advantageous'
   ],
-  'avaricious': [
+  avaricious: [
     'grasping',
     'sordid',
     'greedy',
@@ -5278,13 +5278,13 @@ const SYN_DB = {
     'miserly',
     'stingy'
   ],
-  'avenge': [
+  avenge: [
     'punish',
     'retaliate',
     'revenge',
     'vindicate'
   ],
-  'avenue': [
+  avenue: [
     'access',
     'entrance',
     'entry',
@@ -5297,7 +5297,7 @@ const SYN_DB = {
     'route',
     'channel'
   ],
-  'aver': [
+  aver: [
     'assert',
     'declare',
     'say',
@@ -5306,7 +5306,7 @@ const SYN_DB = {
     'asseverate',
     'allege'
   ],
-  'average': [
+  average: [
     'medium',
     'medial',
     'middling',
@@ -5316,7 +5316,7 @@ const SYN_DB = {
     'mediocre',
     'passable'
   ],
-  'aversion': [
+  aversion: [
     'dislike',
     'hatred',
     'repugnance',
@@ -5327,7 +5327,7 @@ const SYN_DB = {
     'detestation',
     'unwillingness'
   ],
-  'avidity': [
+  avidity: [
     'eagerness',
     'longing',
     'desire',
@@ -5336,7 +5336,7 @@ const SYN_DB = {
     'craving',
     'greediness'
   ],
-  'avoid': [
+  avoid: [
     'quit',
     'shun',
     'abandon',
@@ -5346,7 +5346,7 @@ const SYN_DB = {
     'forsake',
     'dodge'
   ],
-  'avouch': [
+  avouch: [
     'assert',
     'affirm',
     'declare',
@@ -5354,7 +5354,7 @@ const SYN_DB = {
     'profess',
     'asseverate'
   ],
-  'avow': [
+  avow: [
     'confess',
     'own',
     'acknowledge',
@@ -5363,13 +5363,13 @@ const SYN_DB = {
     'proclaim',
     'testify'
   ],
-  'awaken': [
+  awaken: [
     'rouse',
     'kindle',
     'excite',
     'provoke'
   ],
-  'award': [
+  award: [
     'grant',
     'allot',
     'accord',
@@ -5378,7 +5378,7 @@ const SYN_DB = {
     'decree',
     'determine'
   ],
-  'aware': [
+  aware: [
     'conscious',
     'sensible',
     'cognizant',
@@ -5386,7 +5386,7 @@ const SYN_DB = {
     'apprised',
     'mindful'
   ],
-  'awe': [
+  awe: [
     'fear',
     'dread',
     'reverence',
@@ -5394,7 +5394,7 @@ const SYN_DB = {
     'terror',
     'wonder'
   ],
-  'awful': [
+  awful: [
     'dread',
     'grand',
     'imposing',
@@ -5409,7 +5409,7 @@ const SYN_DB = {
     'shocking',
     'terrible'
   ],
-  'awkward': [
+  awkward: [
     'clumsy',
     'bungling',
     'ungainly',
@@ -5417,17 +5417,17 @@ const SYN_DB = {
     'rough',
     'unskillful'
   ],
-  'axiom': [
+  axiom: [
     'truism',
     'postulate',
     'necessarytruth'
   ],
-  'azure': [
+  azure: [
     'blue',
     'skycolor',
     'cerulean'
   ],
-  'babble': [
+  babble: [
     'chatter',
     'prattle',
     'jibber',
@@ -5437,7 +5437,7 @@ const SYN_DB = {
     'blab',
     'murmur'
   ],
-  'babel': [
+  babel: [
     'tumult',
     'disorder',
     'clamor',
@@ -5446,7 +5446,7 @@ const SYN_DB = {
     'din',
     'pother'
   ],
-  'back': [
+  back: [
     'remote',
     'hindmost',
     'again',
@@ -5460,7 +5460,7 @@ const SYN_DB = {
     'retreat',
     'withdraw'
   ],
-  'backbiter': [
+  backbiter: [
     'slanderer',
     'defamer',
     'traducer',
@@ -5468,14 +5468,14 @@ const SYN_DB = {
     'detractor',
     'cynic'
   ],
-  'backslider': [
+  backslider: [
     'recreant',
     'apostate',
     'renegade',
     'deserter',
     'abjurer'
   ],
-  'backward': [
+  backward: [
     'averse',
     'indisposed',
     'reluctant',
@@ -5490,7 +5490,7 @@ const SYN_DB = {
     'late',
     'tardy'
   ],
-  'bad': [
+  bad: [
     'evil',
     'wicked',
     'depraved',
@@ -5524,7 +5524,7 @@ const SYN_DB = {
     'hard',
     'severe'
   ],
-  'baffle': [
+  baffle: [
     'frustrate',
     'thwart',
     'defeat',
@@ -5536,7 +5536,7 @@ const SYN_DB = {
     'confound',
     'disconcert'
   ],
-  'balance': [
+  balance: [
     'poise',
     'weigh',
     'compare',
@@ -5548,7 +5548,7 @@ const SYN_DB = {
     'square',
     'adjust'
   ],
-  'bald': [
+  bald: [
     'bare',
     'hairless',
     'treeless',
@@ -5567,7 +5567,7 @@ const SYN_DB = {
     'unsupported',
     'uncorroborated'
   ],
-  'baleful': [
+  baleful: [
     'harmful',
     'hurtful',
     'injurious',
@@ -5576,12 +5576,12 @@ const SYN_DB = {
     'deadly',
     'ruinous'
   ],
-  'balk': [
+  balk: [
     'frustrate',
     'defeat',
     'foil'
   ],
-  'banish': [
+  banish: [
     'dismiss',
     'eject',
     'expel',
@@ -5590,7 +5590,7 @@ const SYN_DB = {
     'evict',
     'expatriate'
   ],
-  'banquet': [
+  banquet: [
     'feast',
     'treat',
     'regalement',
@@ -5599,7 +5599,7 @@ const SYN_DB = {
     'carousal',
     'cheer'
   ],
-  'banter': [
+  banter: [
     'badinage',
     'irony',
     'raillery',
@@ -5610,7 +5610,7 @@ const SYN_DB = {
     'jeering',
     'derision'
   ],
-  'barbarous': [
+  barbarous: [
     'brutal',
     'atrocious',
     'cruel',
@@ -5620,7 +5620,7 @@ const SYN_DB = {
     'barbaric',
     'barbarian'
   ],
-  'bare': [
+  bare: [
     'nude',
     'naked',
     'unclothed',
@@ -5636,7 +5636,7 @@ const SYN_DB = {
     'indigent',
     'empty'
   ],
-  'bargain': [
+  bargain: [
     'agreement',
     'contract',
     'stipulation',
@@ -5647,7 +5647,7 @@ const SYN_DB = {
     'getting',
     'proceeds'
   ],
-  'barren': [
+  barren: [
     'sterile',
     'childless',
     'unprolific',
@@ -5656,7 +5656,7 @@ const SYN_DB = {
     'uninstructive',
     'ineffectual'
   ],
-  'barrier': [
+  barrier: [
     'obstruction',
     'hindrance',
     'obstacle',
@@ -5666,7 +5666,7 @@ const SYN_DB = {
     'restraint',
     'restriction'
   ],
-  'base': [
+  base: [
     'cheap',
     'worthless',
     'inferior',
@@ -5680,19 +5680,19 @@ const SYN_DB = {
     'scandalous',
     'vile'
   ],
-  'bashful': [
+  bashful: [
     'modest',
     'shy',
     'retiring',
     'reserved',
     'diffident'
   ],
-  'basis': [
+  basis: [
     'base',
     'foundation',
     'groundwork'
   ],
-  'bathe': [
+  bathe: [
     'wash',
     'lave',
     'cover',
@@ -5700,7 +5700,7 @@ const SYN_DB = {
     'immerse',
     'suffuse'
   ],
-  'battle': [
+  battle: [
     'fight',
     'contest',
     'skirmish',
@@ -5712,7 +5712,7 @@ const SYN_DB = {
     'action',
     'conflict'
   ],
-  'bauble': [
+  bauble: [
     'trifle',
     'toy',
     'plaything',
@@ -5720,7 +5720,7 @@ const SYN_DB = {
     'gimcrack',
     'knickknack'
   ],
-  'bays': [
+  bays: [
     'crown',
     'wreath',
     'garland',
@@ -5732,7 +5732,7 @@ const SYN_DB = {
     'glory',
     'applause'
   ],
-  'beach': [
+  beach: [
     'shore',
     'strand',
     'margin',
@@ -5743,20 +5743,20 @@ const SYN_DB = {
     'seashore',
     'seaboard'
   ],
-  'beacon': [
+  beacon: [
     'mark',
     'sign',
     'guide',
     'light',
     'flame'
   ],
-  'beam': [
+  beam: [
     'shine',
     'beacon',
     'gleam',
     'glitter'
   ],
-  'bear': [
+  bear: [
     'support',
     'sustain',
     'carry',
@@ -5776,7 +5776,7 @@ const SYN_DB = {
     'yield',
     'generate'
   ],
-  'bearing': [
+  bearing: [
     'behavior',
     'deportment',
     'demeanor',
@@ -5801,7 +5801,7 @@ const SYN_DB = {
     'bed',
     'socket'
   ],
-  'beat': [
+  beat: [
     'strike',
     'thrash',
     'flog',
@@ -5825,19 +5825,19 @@ const SYN_DB = {
     'worst',
     'vanquish'
   ],
-  'beatific': [
+  beatific: [
     'ravishing',
     'enrapturing',
     'enchanting',
     'transporting',
     'ecstatic'
   ],
-  'beatitude': [
+  beatitude: [
     'bliss',
     'felicity',
     'blessedness'
   ],
-  'beautiful': [
+  beautiful: [
     'handsome',
     'lovely',
     'charming',
@@ -5851,24 +5851,24 @@ const SYN_DB = {
     'picturesque',
     'comely'
   ],
-  'because': [
+  because: [
     'since',
     'for',
     'as'
   ],
-  'beckon': [
+  beckon: [
     'signal',
     'sign',
     'nod'
   ],
-  'become': [
+  become: [
     'suit',
     'adorn',
     'fit',
     'befall',
     'bechance'
   ],
-  'becoming': [
+  becoming: [
     'befitting',
     'beseeming',
     'fit',
@@ -5879,13 +5879,13 @@ const SYN_DB = {
     'congruous',
     'worthy'
   ],
-  'befall': [
+  befall: [
     'happen',
     'occur',
     'chance',
     'betide'
   ],
-  'befitting': [
+  befitting: [
     'decent',
     'becoming',
     'suitable',
@@ -5893,7 +5893,7 @@ const SYN_DB = {
     'appropriate',
     'expedient'
   ],
-  'before': [
+  before: [
     'preceding',
     'previous',
     'hitherto',
@@ -5901,7 +5901,7 @@ const SYN_DB = {
     'formerly',
     'already'
   ],
-  'beg': [
+  beg: [
     'beseech',
     'pray',
     'ask',
@@ -5912,20 +5912,20 @@ const SYN_DB = {
     'implore',
     'importune'
   ],
-  'beggar': [
+  beggar: [
     'mendicant',
     'supplicant',
     'pauper',
     'suitor',
     'applicant'
   ],
-  'beggary': [
+  beggary: [
     'want',
     'penury',
     'indigence',
     'destitution'
   ],
-  'beginning': [
+  beginning: [
     'origin',
     'commencement',
     'fountain',
@@ -5940,7 +5940,7 @@ const SYN_DB = {
     'inception',
     'inauguration'
   ],
-  'beguile': [
+  beguile: [
     'cheat',
     'deceive',
     'befool',
@@ -5949,7 +5949,7 @@ const SYN_DB = {
     'cheer',
     'solace'
   ],
-  'behavior': [
+  behavior: [
     'conduct',
     'deportment',
     'manners',
@@ -5960,18 +5960,18 @@ const SYN_DB = {
     'demeanor',
     'life'
   ],
-  'behest': [
+  behest: [
     'command',
     'injunction',
     'charge',
     'precept'
   ],
-  'behind': [
+  behind: [
     'back',
     'astern',
     'rearward'
   ],
-  'behold': [
+  behold: [
     'see',
     'look',
     'discern',
@@ -5980,11 +5980,11 @@ const SYN_DB = {
     'observe',
     'contemplate'
   ],
-  'behoof': [
+  behoof: [
     'advantage',
     'profit'
   ],
-  'being': [
+  being: [
     'reality',
     'existence',
     'actuality',
@@ -5994,7 +5994,7 @@ const SYN_DB = {
     'root',
     'heart'
   ],
-  'beleaguer': [
+  beleaguer: [
     'besiege',
     'beset',
     'blockade',
@@ -6004,7 +6004,7 @@ const SYN_DB = {
     'obstruct',
     'environ'
   ],
-  'belief': [
+  belief: [
     'trust',
     'confidence',
     'conviction',
@@ -6022,7 +6022,7 @@ const SYN_DB = {
     'assent',
     'currency'
   ],
-  'belligerent': [
+  belligerent: [
     'warlike',
     'contending',
     'conflicting',
@@ -6035,7 +6035,7 @@ const SYN_DB = {
     'contentious',
     'quarrelsome'
   ],
-  'belonging': [
+  belonging: [
     'quality',
     'gift',
     'endowment',
@@ -6055,13 +6055,13 @@ const SYN_DB = {
     'cognate',
     'accompanying'
   ],
-  'below': [
+  below: [
     'under',
     'beneath',
     'underneath',
     'hereinafter'
   ],
-  'bend': [
+  bend: [
     'curve',
     'twist',
     'crook',
@@ -6075,13 +6075,13 @@ const SYN_DB = {
     'incline',
     'submit'
   ],
-  'beneath': [
+  beneath: [
     'below',
     'under',
     'underneath',
     'unbefitting'
   ],
-  'benediction': [
+  benediction: [
     'benison',
     'blessing',
     'beatitude',
@@ -6092,20 +6092,20 @@ const SYN_DB = {
     'grace',
     'boon'
   ],
-  'benefactor': [
+  benefactor: [
     'patron',
     'supporter',
     'upholder',
     'friend',
     'contributor'
   ],
-  'beneficence': [
+  beneficence: [
     'charity',
     'bounty',
     'liberality',
     'benevolence'
   ],
-  'benefit': [
+  benefit: [
     'boon',
     'service',
     'advantage',
@@ -6113,7 +6113,7 @@ const SYN_DB = {
     'favor',
     'blessing'
   ],
-  'benevolence': [
+  benevolence: [
     'kindness',
     'humaneness',
     'charitableness',
@@ -6130,7 +6130,7 @@ const SYN_DB = {
     'unselfishness',
     'kindheartedness'
   ],
-  'benign': [
+  benign: [
     'kind',
     'gracious',
     'amiable',
@@ -6141,14 +6141,14 @@ const SYN_DB = {
     'obliging',
     'good'
   ],
-  'bequeath': [
+  bequeath: [
     'will',
     'leave',
     'devise',
     'transmit',
     'impart'
   ],
-  'bereavement': [
+  bereavement: [
     'deprivation',
     'loss',
     'destitution',
@@ -6156,12 +6156,12 @@ const SYN_DB = {
     'forlorncondition',
     'desolation'
   ],
-  'bereft': [
+  bereft: [
     'stripped',
     'despoiled',
     'deprived'
   ],
-  'beseech': [
+  beseech: [
     'beg',
     'implore',
     'pray',
@@ -6171,24 +6171,24 @@ const SYN_DB = {
     'petition',
     'importune'
   ],
-  'beset': [
+  beset: [
     'surround',
     'circle',
     'besiege',
     'beleaguer',
     'embarrass'
   ],
-  'beside': [
+  beside: [
     'near'
   ],
-  'besides': [
+  besides: [
     'except',
     'save',
     'moreover',
     'furthermore',
     'else'
   ],
-  'bestow': [
+  bestow: [
     'give',
     'present',
     'award',
@@ -6198,21 +6198,21 @@ const SYN_DB = {
     'stow',
     'store'
   ],
-  'bet': [
+  bet: [
     'stake',
     'wager',
     'pledge'
   ],
-  'betide': [
+  betide: [
     'happen',
     'bechance',
     'befall',
     'occur'
   ],
-  'betimes': [
+  betimes: [
     'seasonably'
   ],
-  'betoken': [
+  betoken: [
     'signify',
     'denote',
     'indicate',
@@ -6226,7 +6226,7 @@ const SYN_DB = {
     'foretell',
     'portend'
   ],
-  'betray': [
+  betray: [
     'reveal',
     'expose',
     'divulge',
@@ -6242,12 +6242,12 @@ const SYN_DB = {
     'ruin',
     'corrupt'
   ],
-  'betrothal': [
+  betrothal: [
     'engagement',
     'plighting',
     'affiancing'
   ],
-  'better': [
+  better: [
     'amend',
     'ameliorate',
     'improve',
@@ -6255,21 +6255,21 @@ const SYN_DB = {
     'advance',
     'reform'
   ],
-  'between': [
+  between: [
     'amid',
     'among',
     'betwixt'
   ],
-  'bewail': [
+  bewail: [
     'bemoan',
     'lament',
     'sorrow',
     'grieve'
   ],
-  'beware': [
+  beware: [
     'mind'
   ],
-  'bewilderment': [
+  bewilderment: [
     'confusion',
     'embarrassment',
     'daze',
@@ -6277,13 +6277,13 @@ const SYN_DB = {
     'perplexity',
     'mystification'
   ],
-  'bewitch': [
+  bewitch: [
     'charm',
     'enchant',
     'fascinate',
     'captivate'
   ],
-  'beyond': [
+  beyond: [
     'over',
     'across',
     'remote',
@@ -6292,7 +6292,7 @@ const SYN_DB = {
     'above',
     'exceeding'
   ],
-  'bias': [
+  bias: [
     'bent',
     'inclination',
     'tendency',
@@ -6303,13 +6303,13 @@ const SYN_DB = {
     'partiality',
     'predilection'
   ],
-  'bicker': [
+  bicker: [
     'wrangle',
     'quarrel',
     'dispute',
     'squabble'
   ],
-  'bidding': [
+  bidding: [
     'command',
     'order',
     'direction',
@@ -6319,7 +6319,7 @@ const SYN_DB = {
     'bid',
     'proposal'
   ],
-  'bide': [
+  bide: [
     'dwell',
     'stay',
     'reside',
@@ -6329,7 +6329,7 @@ const SYN_DB = {
     'endure',
     'bear'
   ],
-  'big': [
+  big: [
     'large',
     'great',
     'wide',
@@ -6342,13 +6342,13 @@ const SYN_DB = {
     'haughty',
     'pompous'
   ],
-  'bigot': [
+  bigot: [
     'zealot',
     'fanatic',
     'dogmatist',
     'devotee'
   ],
-  'bigoted': [
+  bigoted: [
     'intolerant',
     'opinionated',
     'prejudiced',
@@ -6356,7 +6356,7 @@ const SYN_DB = {
     'narrowminded',
     'onesided'
   ],
-  'bill': [
+  bill: [
     'account',
     'charge',
     'score',
@@ -6365,7 +6365,7 @@ const SYN_DB = {
     'placard',
     'advertisement'
   ],
-  'bind': [
+  bind: [
     'fetter',
     'tie',
     'fasten',
@@ -6377,7 +6377,7 @@ const SYN_DB = {
     'oblige',
     'engage'
   ],
-  'birth': [
+  birth: [
     'family',
     'parentage',
     'origin',
@@ -6389,13 +6389,13 @@ const SYN_DB = {
     'race',
     'rise'
   ],
-  'bit': [
+  bit: [
     'part',
     'piece',
     'fragment',
     'morsel'
   ],
-  'biting': [
+  biting: [
     'gnawing',
     'sharp',
     'severe',
@@ -6405,7 +6405,7 @@ const SYN_DB = {
     'sarcastic',
     'trenchant'
   ],
-  'bitter': [
+  bitter: [
     'harsh',
     'caustic',
     'cutting',
@@ -6419,7 +6419,7 @@ const SYN_DB = {
     'pungent',
     'virulent'
   ],
-  'blacken': [
+  blacken: [
     'slander',
     'malign',
     'defame',
@@ -6432,12 +6432,12 @@ const SYN_DB = {
     'decry',
     'calumniate'
   ],
-  'blackguard': [
+  blackguard: [
     'rascal',
     'scoundrel',
     'villain'
   ],
-  'blame': [
+  blame: [
     'censure',
     'rebuke',
     'chide',
@@ -6449,17 +6449,17 @@ const SYN_DB = {
     'reprehend',
     'dispraise'
   ],
-  'blameless': [
+  blameless: [
     'pure',
     'innocent',
     'irresponsible'
   ],
-  'blanch': [
+  blanch: [
     'bleach',
     'whiten',
     'whitewash'
   ],
-  'bland': [
+  bland: [
     'soft',
     'gentle',
     'mild',
@@ -6470,7 +6470,7 @@ const SYN_DB = {
     'courteous',
     'complaisant'
   ],
-  'blandishment': [
+  blandishment: [
     'flattery',
     'coaxing',
     'fascination',
@@ -6480,13 +6480,13 @@ const SYN_DB = {
     'fawning',
     'cajolery'
   ],
-  'blasphemy': [
+  blasphemy: [
     'profanity',
     'sacrilege',
     'impiety',
     'swearing'
   ],
-  'blast': [
+  blast: [
     'shrivel',
     'destroy',
     'blight',
@@ -6498,7 +6498,7 @@ const SYN_DB = {
     'rend',
     'burst'
   ],
-  'blazon': [
+  blazon: [
     'exhibit',
     'blaze',
     'blare',
@@ -6506,11 +6506,11 @@ const SYN_DB = {
     'proclaim',
     'publish'
   ],
-  'bleach': [
+  bleach: [
     'blanch',
     'whiten'
   ],
-  'bleak': [
+  bleak: [
     'windy',
     'exposed',
     'bare',
@@ -6521,7 +6521,7 @@ const SYN_DB = {
     'comfortless',
     'cheerless'
   ],
-  'blemish': [
+  blemish: [
     'blot',
     'spot',
     'flaw',
@@ -6537,7 +6537,7 @@ const SYN_DB = {
     'stigma',
     'taint'
   ],
-  'blend': [
+  blend: [
     'mix',
     'unite',
     'fuse',
@@ -6548,7 +6548,7 @@ const SYN_DB = {
     'coalesce',
     'harmonize'
   ],
-  'bless': [
+  bless: [
     'delight',
     'gladden',
     'makehappy',
@@ -6560,7 +6560,7 @@ const SYN_DB = {
     'felicitate',
     'cheer'
   ],
-  'blessing': [
+  blessing: [
     'benediction',
     'benison',
     'good',
@@ -6573,13 +6573,13 @@ const SYN_DB = {
     'praise',
     'gratitude'
   ],
-  'blight': [
+  blight: [
     'pestilence',
     'withering',
     'blast',
     'destruction'
   ],
-  'blind': [
+  blind: [
     'sightless',
     'unseeing',
     'eyeless',
@@ -6588,13 +6588,13 @@ const SYN_DB = {
     'unconscious',
     'uninformed'
   ],
-  'blink': [
+  blink: [
     'wink',
     'ignore',
     'connive',
     'overlook'
   ],
-  'bliss': [
+  bliss: [
     'blessedness',
     'happiness',
     'joy',
@@ -6603,7 +6603,7 @@ const SYN_DB = {
     'felicity',
     'beatitude'
   ],
-  'blithe': [
+  blithe: [
     'merry',
     'joyous',
     'cheerful',
@@ -6618,13 +6618,13 @@ const SYN_DB = {
     'vivacious',
     'joyful'
   ],
-  'block': [
+  block: [
     'obstruct',
     'arrest',
     'stop',
     'fill'
   ],
-  'blockhead': [
+  blockhead: [
     'dunce',
     'dolt',
     'stupidfellow',
@@ -6635,7 +6635,7 @@ const SYN_DB = {
     'dullard',
     'booby'
   ],
-  'bloodthirsty': [
+  bloodthirsty: [
     'cruel',
     'savage',
     'ferocious',
@@ -6648,7 +6648,7 @@ const SYN_DB = {
     'ruthless',
     'sanguinary'
   ],
-  'bloom': [
+  bloom: [
     'blossom',
     'flower',
     'flowering',
@@ -6668,7 +6668,7 @@ const SYN_DB = {
     'blow',
     'develop'
   ],
-  'blooming': [
+  blooming: [
     'flourishing',
     'flowering',
     'young',
@@ -6676,7 +6676,7 @@ const SYN_DB = {
     'fair',
     'fresh'
   ],
-  'blot': [
+  blot: [
     'sully',
     'spot',
     'tarnish',
@@ -6697,7 +6697,7 @@ const SYN_DB = {
     'efface',
     'destroy'
   ],
-  'blow': [
+  blow: [
     'shock',
     'stroke',
     'wound',
@@ -6707,7 +6707,7 @@ const SYN_DB = {
     'gust',
     'disappointment'
   ],
-  'bluff': [
+  bluff: [
     'abrupt',
     'blunt',
     'inconsiderate',
@@ -6725,7 +6725,7 @@ const SYN_DB = {
     'plainspoken',
     'rude'
   ],
-  'blunder': [
+  blunder: [
     'error',
     'mistake',
     'misunderstanding',
@@ -6735,7 +6735,7 @@ const SYN_DB = {
     'inaccuracy',
     'delusion'
   ],
-  'blunt': [
+  blunt: [
     'obtuse',
     'dull',
     'pointless',
@@ -6758,7 +6758,7 @@ const SYN_DB = {
     'mitigate',
     'assuage'
   ],
-  'blush': [
+  blush: [
     'bloom',
     'color',
     'reddening',
@@ -6768,7 +6768,7 @@ const SYN_DB = {
     'confusion',
     'guiltiness'
   ],
-  'bluster': [
+  bluster: [
     'storm',
     'rage',
     'insult',
@@ -6777,7 +6777,7 @@ const SYN_DB = {
     'vaunt',
     'boast'
   ],
-  'boast': [
+  boast: [
     'vaunt',
     'brag',
     'swagger',
@@ -6788,7 +6788,7 @@ const SYN_DB = {
     'glory',
     'vapor'
   ],
-  'bodily': [
+  bodily: [
     'corporeally',
     'completely',
     'wholly',
@@ -6797,7 +6797,7 @@ const SYN_DB = {
     'collectively',
     'unitedly'
   ],
-  'body': [
+  body: [
     'carcass',
     'corpse',
     'trunk',
@@ -6821,14 +6821,14 @@ const SYN_DB = {
     'remains',
     'clay'
   ],
-  'boil': [
+  boil: [
     'bubble',
     'rage',
     'effervesce',
     'explode',
     'fume'
   ],
-  'bold': [
+  bold: [
     'courageous',
     'fearless',
     'adventurous',
@@ -6839,7 +6839,7 @@ const SYN_DB = {
     'daring',
     'valiant'
   ],
-  'bolster': [
+  bolster: [
     'support',
     'prop',
     'help',
@@ -6850,14 +6850,14 @@ const SYN_DB = {
     'defend',
     'maintain'
   ],
-  'bombast': [
+  bombast: [
     'bluster',
     'pomposity',
     'fustian',
     'braggadocio',
     'rhodomontade'
   ],
-  'bond': [
+  bond: [
     'tie',
     'fastening',
     'manacle',
@@ -6866,7 +6866,7 @@ const SYN_DB = {
     'obligation',
     'security'
   ],
-  'bondage': [
+  bondage: [
     'servitude',
     'slavery',
     'imprisonment',
@@ -6877,14 +6877,14 @@ const SYN_DB = {
     'confinement',
     'thraldom'
   ],
-  'bondsman': [
+  bondsman: [
     'slave',
     'serf',
     'captive',
     'vassal',
     'prisoner'
   ],
-  'bonny': [
+  bonny: [
     'fair',
     'pretty',
     'pleasant',
@@ -6892,25 +6892,25 @@ const SYN_DB = {
     'shapely',
     'buxom'
   ],
-  'bonus': [
+  bonus: [
     'premium',
     'douceur',
     'boon',
     'benefit'
   ],
-  'booby': [
+  booby: [
     'dunce',
     'idiot',
     'numskull'
   ],
-  'bookish': [
+  bookish: [
     'pedantic',
     'studious',
     'learned',
     'erudite',
     'educated'
   ],
-  'boor': [
+  boor: [
     'rustic',
     'clown',
     'lout',
@@ -6920,7 +6920,7 @@ const SYN_DB = {
     'swain',
     'bumpkin'
   ],
-  'boorish': [
+  boorish: [
     'rude',
     'rustic',
     'clownish',
@@ -6931,21 +6931,21 @@ const SYN_DB = {
     'rough',
     'gawky'
   ],
-  'bootless': [
+  bootless: [
     'useless',
     'unavailing',
     'unprofitable',
     'profitless',
     'vain'
   ],
-  'booty': [
+  booty: [
     'plunder',
     'prey',
     'spoil',
     'pillage',
     'loot'
   ],
-  'border': [
+  border: [
     'edge',
     'limit',
     'boundary',
@@ -6956,7 +6956,7 @@ const SYN_DB = {
     'confine',
     'band'
   ],
-  'bore': [
+  bore: [
     'pierce',
     'perforate',
     'penetrate',
@@ -6968,7 +6968,7 @@ const SYN_DB = {
     'worry',
     'annoy'
   ],
-  'bosom': [
+  bosom: [
     'breast',
     'heart',
     'affection',
@@ -6981,11 +6981,11 @@ const SYN_DB = {
     'quiet',
     'privacy'
   ],
-  'both': [
+  both: [
     'twain',
     'two'
   ],
-  'bother': [
+  bother: [
     'worry',
     'pester',
     'perplex',
@@ -6997,7 +6997,7 @@ const SYN_DB = {
     'annoy',
     'excite'
   ],
-  'bottom': [
+  bottom: [
     'deep',
     'profound',
     'base',
@@ -7015,7 +7015,7 @@ const SYN_DB = {
     'sediments',
     'stamina'
   ],
-  'bound': [
+  bound: [
     'skip',
     'leap',
     'frisk',
@@ -7028,7 +7028,7 @@ const SYN_DB = {
     'restrict',
     'restrain'
   ],
-  'boundary': [
+  boundary: [
     'margin',
     'limit',
     'confines',
@@ -7047,21 +7047,21 @@ const SYN_DB = {
     'landmark',
     'circumference'
   ],
-  'boundless': [
+  boundless: [
     'unlimited',
     'illimitable',
     'unbounded',
     'measureless',
     'infinite'
   ],
-  'bountiful': [
+  bountiful: [
     'liberal',
     'generous',
     'benevolent',
     'unselfish',
     'munificent'
   ],
-  'bounty': [
+  bounty: [
     'liberality',
     'gift',
     'generosity',
@@ -7075,26 +7075,26 @@ const SYN_DB = {
     'reward',
     'bonus'
   ],
-  'bower': [
+  bower: [
     'recess',
     'arbor',
     'retreat',
     'alcove',
     'summerhouse'
   ],
-  'brag': [
+  brag: [
     'boast',
     'vaunt',
     'bully',
     'swagger'
   ],
-  'braid': [
+  braid: [
     'bind',
     'weave',
     'plait',
     'tie'
   ],
-  'branch': [
+  branch: [
     'member',
     'bough',
     'limb',
@@ -7113,25 +7113,25 @@ const SYN_DB = {
     'tributary',
     'derivativeline'
   ],
-  'brand': [
+  brand: [
     'denounce',
     'mark',
     'stigmatize',
     'disgrace'
   ],
-  'brandish': [
+  brandish: [
     'flourish',
     'wield',
     'whisk',
     'shake',
     'wave'
   ],
-  'bravado': [
+  bravado: [
     'boasting',
     'bragging',
     'bluster'
   ],
-  'brave': [
+  brave: [
     'fearless',
     'heroic',
     'undaunted',
@@ -7151,7 +7151,7 @@ const SYN_DB = {
     'splendid',
     'courteous'
   ],
-  'brawny': [
+  brawny: [
     'muscular',
     'strong',
     'powerful',
@@ -7161,7 +7161,7 @@ const SYN_DB = {
     'robust',
     'stout'
   ],
-  'breach': [
+  breach: [
     'break',
     'rupture',
     'opening',
@@ -7179,7 +7179,7 @@ const SYN_DB = {
     'schism',
     'alienation'
   ],
-  'break': [
+  break: [
     'fracture',
     'rend',
     'part',
@@ -7213,13 +7213,13 @@ const SYN_DB = {
     'split',
     'transgress'
   ],
-  'breast': [
+  breast: [
     'bosom',
     'heart',
     'affection',
     'conscience'
   ],
-  'breathless': [
+  breathless: [
     'lifeless',
     'dead',
     'exhausted',
@@ -7231,7 +7231,7 @@ const SYN_DB = {
     'astounded',
     'bewildered'
   ],
-  'breed': [
+  breed: [
     'lineage',
     'race',
     'pedigree',
@@ -7261,7 +7261,7 @@ const SYN_DB = {
     'cause',
     'evolve'
   ],
-  'breeding': [
+  breeding: [
     'discipline',
     'instruction',
     'education',
@@ -7271,7 +7271,7 @@ const SYN_DB = {
     'manners',
     'deportment'
   ],
-  'brevity': [
+  brevity: [
     'shortness',
     'terseness',
     'conciseness',
@@ -7282,7 +7282,7 @@ const SYN_DB = {
     'abbreviation',
     'abridgment'
   ],
-  'brew': [
+  brew: [
     'concoct',
     'compound',
     'mix',
@@ -7297,7 +7297,7 @@ const SYN_DB = {
     'impend',
     'form'
   ],
-  'bridle': [
+  bridle: [
     'restrain',
     'curb',
     'control',
@@ -7310,12 +7310,12 @@ const SYN_DB = {
     'compress',
     'repress'
   ],
-  'brief': [
+  brief: [
     'short',
     'concise',
     'succinct'
   ],
-  'bright': [
+  bright: [
     'bright',
     'shining',
     'resplendent',
@@ -7362,7 +7362,7 @@ const SYN_DB = {
     'happy',
     'animated'
   ],
-  'brilliant': [
+  brilliant: [
     'bright',
     'radiant',
     'flashing',
@@ -7379,7 +7379,7 @@ const SYN_DB = {
     'renowned',
     'eminent'
   ],
-  'bring': [
+  bring: [
     'bear',
     'fetch',
     'convey',
@@ -7395,7 +7395,7 @@ const SYN_DB = {
     'produce',
     'induce'
   ],
-  'brisk': [
+  brisk: [
     'lively',
     'quick',
     'vivacious',
@@ -7408,7 +7408,7 @@ const SYN_DB = {
     'spry',
     'agile'
   ],
-  'bristling': [
+  bristling: [
     'full',
     'crowded',
     'swarming',
@@ -7424,13 +7424,13 @@ const SYN_DB = {
     'angered',
     'offended'
   ],
-  'brittle': [
+  brittle: [
     'fragile',
     'crumbling',
     'shivery',
     'frail'
   ],
-  'broach': [
+  broach: [
     'open',
     'pierce',
     'tap',
@@ -7445,7 +7445,7 @@ const SYN_DB = {
     'originate',
     'propound'
   ],
-  'broad': [
+  broad: [
     'wide',
     'large',
     'ample',
@@ -7465,12 +7465,12 @@ const SYN_DB = {
     'indecent',
     'coarse'
   ],
-  'broil': [
+  broil: [
     'affray',
     'quarrel',
     'contention'
   ],
-  'brook': [
+  brook: [
     'tolerate',
     'bear',
     'suffer',
@@ -7479,20 +7479,20 @@ const SYN_DB = {
     'undergo',
     'permit'
   ],
-  'brotherhood': [
+  brotherhood: [
     'fraternity',
     'fellowship',
     'association',
     'sodality',
     'society'
   ],
-  'browbeat': [
+  browbeat: [
     'bully',
     'intimidate',
     'bulldoze',
     'overawe'
   ],
-  'bruise': [
+  bruise: [
     'pommel',
     'crush',
     'squeeze',
@@ -7501,7 +7501,7 @@ const SYN_DB = {
     'batter',
     'deface'
   ],
-  'brunt': [
+  brunt: [
     'shock',
     'attack',
     'impulse',
@@ -7509,7 +7509,7 @@ const SYN_DB = {
     'onset',
     'assault'
   ],
-  'brutal': [
+  brutal: [
     'brutish',
     'animal',
     'beastly',
@@ -7525,7 +7525,7 @@ const SYN_DB = {
     'impolite',
     'carnal'
   ],
-  'bubble': [
+  bubble: [
     'toy',
     'trifle',
     'fancy',
@@ -7535,7 +7535,7 @@ const SYN_DB = {
     'froth',
     'trash'
   ],
-  'buffoon': [
+  buffoon: [
     'wag',
     'clown',
     'jester',
@@ -7545,7 +7545,7 @@ const SYN_DB = {
     'punch',
     'fool'
   ],
-  'build': [
+  build: [
     'make',
     'form',
     'shape',
@@ -7555,7 +7555,7 @@ const SYN_DB = {
     'erect',
     'raise'
   ],
-  'building': [
+  building: [
     'architecture',
     'edifice',
     'structure',
@@ -7563,7 +7563,7 @@ const SYN_DB = {
     'pile',
     'erection'
   ],
-  'bulk': [
+  bulk: [
     'magnitude',
     'size',
     'volume',
@@ -7576,7 +7576,7 @@ const SYN_DB = {
     'most',
     'dimension'
   ],
-  'bulwark': [
+  bulwark: [
     'rampart',
     'fortress',
     'fortification',
@@ -7585,13 +7585,13 @@ const SYN_DB = {
     'parapet',
     'citadel'
   ],
-  'bungler': [
+  bungler: [
     'botcher',
     'clown',
     'fumbler',
     'novice'
   ],
-  'buoy': [
+  buoy: [
     'float',
     'support',
     'sustain',
@@ -7601,7 +7601,7 @@ const SYN_DB = {
     'animate',
     'cheer'
   ],
-  'buoyant': [
+  buoyant: [
     'light',
     'cheerful',
     'hopeful',
@@ -7615,7 +7615,7 @@ const SYN_DB = {
     'elastic',
     'floating'
   ],
-  'burden': [
+  burden: [
     'load',
     'weight',
     'cargo',
@@ -7635,20 +7635,20 @@ const SYN_DB = {
     'point',
     'substance'
   ],
-  'burial': [
+  burial: [
     'interment',
     'sepulture',
     'entombment',
     'burying'
   ],
-  'burlesque': [
+  burlesque: [
     'parody',
     'travesty',
     'caricature',
     'ridicule',
     'farce'
   ],
-  'burn': [
+  burn: [
     'char',
     'consume',
     'cremate',
@@ -7662,13 +7662,13 @@ const SYN_DB = {
     'glow',
     'smolder'
   ],
-  'burnish': [
+  burnish: [
     'brighten',
     'polish',
     'glaze',
     'gloss'
   ],
-  'burst': [
+  burst: [
     'break',
     'open',
     'explode',
@@ -7679,7 +7679,7 @@ const SYN_DB = {
     'shatter',
     'disrupt'
   ],
-  'bury': [
+  bury: [
     'inter',
     'entomb',
     'inearth',
@@ -7695,7 +7695,7 @@ const SYN_DB = {
     'compose',
     'hush'
   ],
-  'business': [
+  business: [
     'employment',
     'craft',
     'trade',
@@ -7716,7 +7716,7 @@ const SYN_DB = {
     'office',
     'interest'
   ],
-  'bustle': [
+  bustle: [
     'activity',
     'stir',
     'commotion',
@@ -7727,7 +7727,7 @@ const SYN_DB = {
     'eagerness',
     'flurry'
   ],
-  'busy': [
+  busy: [
     'engaged',
     'employed',
     'occupied',
@@ -7745,7 +7745,7 @@ const SYN_DB = {
     'meddling',
     'officious'
   ],
-  'but': [
+  but: [
     'save',
     'except',
     'furthermore',
@@ -7764,12 +7764,12 @@ const SYN_DB = {
     'provided',
     'moreover'
   ],
-  'buxom': [
+  buxom: [
     'bonny',
     'blithe',
     'shapely'
   ],
-  'buy': [
+  buy: [
     'purchase',
     'bargain',
     'acquire',
@@ -7779,7 +7779,7 @@ const SYN_DB = {
     'suborn',
     'subsidize'
   ],
-  'by': [
+  by: [
     'through',
     'with',
     'at',
@@ -7794,7 +7794,7 @@ const SYN_DB = {
     'per',
     'at'
   ],
-  'cadaverous': [
+  cadaverous: [
     'bloodless',
     'pallid',
     'pale',
@@ -7803,13 +7803,13 @@ const SYN_DB = {
     'deathlike',
     'ashy'
   ],
-  'cage': [
+  cage: [
     'imprison',
     'immure',
     'confine',
     'incarcerate'
   ],
-  'caitiff': [
+  caitiff: [
     'rascal',
     'miscreant',
     'villain',
@@ -7820,7 +7820,7 @@ const SYN_DB = {
     'scoundrel',
     'vagabond'
   ],
-  'cajole': [
+  cajole: [
     'coax',
     'wheedle',
     'flatter',
@@ -7830,7 +7830,7 @@ const SYN_DB = {
     'beguile',
     'inveigle'
   ],
-  'calamitous': [
+  calamitous: [
     'disastrous',
     'unfortunate',
     'unlucky',
@@ -7847,7 +7847,7 @@ const SYN_DB = {
     'hapless',
     'illomened'
   ],
-  'calamity': [
+  calamity: [
     'disaster',
     'misfortune',
     'catastrophe',
@@ -7860,7 +7860,7 @@ const SYN_DB = {
     'hardship',
     'visitation'
   ],
-  'calculate': [
+  calculate: [
     'number',
     'reckon',
     'sumup',
@@ -7875,7 +7875,7 @@ const SYN_DB = {
     'apportion',
     'investigate'
   ],
-  'calculating': [
+  calculating: [
     'wary',
     'cautious',
     'scheming',
@@ -7888,7 +7888,7 @@ const SYN_DB = {
     'sagacious',
     'farsighted'
   ],
-  'calculation': [
+  calculation: [
     'reckoning',
     'computation',
     'expectation',
@@ -7902,7 +7902,7 @@ const SYN_DB = {
     'prudence',
     'deliberation'
   ],
-  'caliber': [
+  caliber: [
     'diameter',
     'gage',
     'capacity',
@@ -7914,7 +7914,7 @@ const SYN_DB = {
     'parts',
     'endowment'
   ],
-  'call': [
+  call: [
     'cry',
     'bellow',
     'clamor',
@@ -7938,7 +7938,7 @@ const SYN_DB = {
     'appoint',
     'invoke'
   ],
-  'calm': [
+  calm: [
     'composed',
     'peaceful',
     'placid',
@@ -7954,7 +7954,7 @@ const SYN_DB = {
     'imperturbable',
     'unruffled'
   ],
-  'calumniate': [
+  calumniate: [
     'slander',
     'traduce',
     'defame',
@@ -7962,11 +7962,11 @@ const SYN_DB = {
     'revile',
     'asperse'
   ],
-  'camp': [
+  camp: [
     'encampment',
     'bivouac'
   ],
-  'cancel': [
+  cancel: [
     'obliterate',
     'erase',
     'efface',
@@ -7979,7 +7979,7 @@ const SYN_DB = {
     'rescind',
     'repeal'
   ],
-  'candid': [
+  candid: [
     'honest',
     'open',
     'straightforward',
@@ -8000,7 +8000,7 @@ const SYN_DB = {
     'unsophisticated',
     'fair'
   ],
-  'candidate': [
+  candidate: [
     'aspirant',
     'solicitant',
     'petitioner',
@@ -8008,7 +8008,7 @@ const SYN_DB = {
     'claimant',
     'solicitor'
   ],
-  'canvass': [
+  canvass: [
     'debate',
     'discuss',
     'dispute',
@@ -8021,7 +8021,7 @@ const SYN_DB = {
     'consider',
     'applyfor'
   ],
-  'capability': [
+  capability: [
     'capacity',
     'ability',
     'skill',
@@ -8035,7 +8035,7 @@ const SYN_DB = {
     'brains',
     'talent'
   ],
-  'capacity': [
+  capacity: [
     'space',
     'magnitude',
     'volume',
@@ -8060,7 +8060,7 @@ const SYN_DB = {
     'character',
     'function'
   ],
-  'capital': [
+  capital: [
     'metropolis',
     'largeletter',
     'stock',
@@ -8080,18 +8080,18 @@ const SYN_DB = {
     'high',
     'important'
   ],
-  'capitulate': [
+  capitulate: [
     'surrender',
     'yield',
     'submit',
     'stipulate'
   ],
-  'caprice': [
+  caprice: [
     'vagary',
     'freak',
     'crotchet'
   ],
-  'capricious': [
+  capricious: [
     'wayward',
     'fanciful',
     'freakish',
@@ -8102,7 +8102,7 @@ const SYN_DB = {
     'fickle',
     'changeable'
   ],
-  'captious': [
+  captious: [
     'carping',
     'hypercritical',
     'censorious',
@@ -8116,7 +8116,7 @@ const SYN_DB = {
     'insidious',
     'ensnaring'
   ],
-  'captivate': [
+  captivate: [
     'charm',
     'enchant',
     'fascinate',
@@ -8126,14 +8126,14 @@ const SYN_DB = {
     'win',
     'catch'
   ],
-  'capture': [
+  capture: [
     'seize',
     'catch',
     'arrest',
     'apprehend',
     'prize'
   ],
-  'care': [
+  care: [
     'anxiety',
     'trouble',
     'solicitude',
@@ -8153,7 +8153,7 @@ const SYN_DB = {
     'oversight',
     'prudence'
   ],
-  'career': [
+  career: [
     'course',
     'passage',
     'race',
@@ -8163,7 +8163,7 @@ const SYN_DB = {
     'progress',
     'success'
   ],
-  'careful': [
+  careful: [
     'thoughtful',
     'provident',
     'considerate',
@@ -8174,7 +8174,7 @@ const SYN_DB = {
     'regardful',
     'contemplative'
   ],
-  'caress': [
+  caress: [
     'embrace',
     'fondle',
     'kiss',
@@ -8184,7 +8184,7 @@ const SYN_DB = {
     'court',
     'flatter'
   ],
-  'cargo': [
+  cargo: [
     'freight',
     'load',
     'goods',
@@ -8192,7 +8192,7 @@ const SYN_DB = {
     'consignment',
     'merchandise'
   ],
-  'caricature': [
+  caricature: [
     'imitation',
     'mimicry',
     'parody',
@@ -8204,14 +8204,14 @@ const SYN_DB = {
     'farce',
     'monstrosity'
   ],
-  'carnage': [
+  carnage: [
     'massacre',
     'bloodshed',
     'slaughter',
     'havoc',
     'butchery'
   ],
-  'carnal': [
+  carnal: [
     'sensual',
     'fleshly',
     'lustful',
@@ -8221,13 +8221,13 @@ const SYN_DB = {
     'earthly',
     'temporal'
   ],
-  'carnival': [
+  carnival: [
     'festival',
     'revel',
     'masquerade',
     'rout'
   ],
-  'carol': [
+  carol: [
     'sing',
     'warble',
     'chirp',
@@ -8237,7 +8237,7 @@ const SYN_DB = {
     'hum',
     'hymn'
   ],
-  'carousal': [
+  carousal: [
     'feast',
     'festival',
     'banquet',
@@ -8246,17 +8246,17 @@ const SYN_DB = {
     'wassail',
     'orgies'
   ],
-  'carp': [
+  carp: [
     'cavil',
     'challenge',
     'censure',
     'hypercriticize'
   ],
-  'carpet': [
+  carpet: [
     'consideration',
     'consultation'
   ],
-  'carry': [
+  carry: [
     'convey',
     'move',
     'transport',
@@ -8274,7 +8274,7 @@ const SYN_DB = {
     'involve',
     'implicate'
   ],
-  'case': [
+  case: [
     'box',
     'covering',
     'sheathe',
@@ -8297,14 +8297,14 @@ const SYN_DB = {
     'form',
     'inflection'
   ],
-  'cash': [
+  cash: [
     'coin',
     'money',
     'specie',
     'currency',
     'capital'
   ],
-  'cast': [
+  cast: [
     'hurl',
     'throw',
     'pitch',
@@ -8329,7 +8329,7 @@ const SYN_DB = {
     'diffuse',
     'communicate'
   ],
-  'caste': [
+  caste: [
     'grade',
     'rank',
     'order',
@@ -8337,25 +8337,25 @@ const SYN_DB = {
     'dignity',
     'respect'
   ],
-  'castigate': [
+  castigate: [
     'whip',
     'flagellate',
     'cane'
   ],
-  'casual': [
+  casual: [
     'accidental',
     'incidental',
     'fortuitous',
     'chance',
     'contingent'
   ],
-  'casuistry': [
+  casuistry: [
     'sophistry',
     'fallacy',
     'quibble',
     'refinement'
   ],
-  'catalogue': [
+  catalogue: [
     'list',
     'register',
     'index',
@@ -8366,7 +8366,7 @@ const SYN_DB = {
     'inventory',
     'schedule'
   ],
-  'catastrophe': [
+  catastrophe: [
     'revolution',
     'disaster',
     'mishap',
@@ -8376,7 +8376,7 @@ const SYN_DB = {
     'blow',
     'visitation'
   ],
-  'catch': [
+  catch: [
     'grasp',
     'seize',
     'clutch',
@@ -8393,7 +8393,7 @@ const SYN_DB = {
     'apprehend',
     'understand'
   ],
-  'categorical': [
+  categorical: [
     'plain',
     'absolute',
     'distinct',
@@ -8401,19 +8401,19 @@ const SYN_DB = {
     'declaratory',
     'affirmative'
   ],
-  'category': [
+  category: [
     'class',
     'division',
     'order',
     'rank'
   ],
-  'causality': [
+  causality: [
     'causation',
     'potentiality',
     'eventuality',
     'operativeness'
   ],
-  'cause': [
+  cause: [
     'agent',
     'origin',
     'source',
@@ -8429,7 +8429,7 @@ const SYN_DB = {
     'condition',
     'principle'
   ],
-  'caution': [
+  caution: [
     'care',
     'heed',
     'wariness',
@@ -8441,26 +8441,26 @@ const SYN_DB = {
     'advice',
     'counsel'
   ],
-  'cavalier': [
+  cavalier: [
     'arrogant',
     'haughty',
     'overbearing',
     'insolent',
     'disdainful'
   ],
-  'cavil': [
+  cavil: [
     'carp',
     'object',
     'censure'
   ],
-  'cavity': [
+  cavity: [
     'opening',
     'gap',
     'aperture',
     'hole',
     'fissure'
   ],
-  'cease': [
+  cease: [
     'end',
     'finish',
     'desist',
@@ -8473,7 +8473,7 @@ const SYN_DB = {
     'pause',
     'terminate'
   ],
-  'celebrated': [
+  celebrated: [
     'famous',
     'renowned',
     'distinguished',
@@ -8484,7 +8484,7 @@ const SYN_DB = {
     'notable',
     'exalted'
   ],
-  'celebration': [
+  celebration: [
     'solemnization',
     'observance',
     'commemoration',
@@ -8492,7 +8492,7 @@ const SYN_DB = {
     'praise',
     'commendation'
   ],
-  'celebrity': [
+  celebrity: [
     'fame',
     'renown',
     'reputation',
@@ -8503,7 +8503,7 @@ const SYN_DB = {
     'distinction',
     'lion'
   ],
-  'celerity': [
+  celerity: [
     'rapidity',
     'speed',
     'haste',
@@ -8512,7 +8512,7 @@ const SYN_DB = {
     'fleetness',
     'despatch'
   ],
-  'celestial': [
+  celestial: [
     'heavenly',
     'angelic',
     'supernal',
@@ -8523,7 +8523,7 @@ const SYN_DB = {
     'divine',
     'godlike'
   ],
-  'censure': [
+  censure: [
     'blame',
     'disapproval',
     'reproach',
@@ -8533,21 +8533,21 @@ const SYN_DB = {
     'remonstrance',
     'rebuke'
   ],
-  'center': [
+  center: [
     'middle',
     'midst'
   ],
-  'central': [
+  central: [
     'convenient',
     'medial',
     'accessible'
   ],
-  'centralize': [
+  centralize: [
     'concentrate',
     'collect',
     'localize'
   ],
-  'ceremonial': [
+  ceremonial: [
     'ritual',
     'rites',
     'formalities',
@@ -8561,7 +8561,7 @@ const SYN_DB = {
     'scenic',
     'functional'
   ],
-  'ceremonious': [
+  ceremonious: [
     'stately',
     'lofty',
     'courtly',
@@ -8571,7 +8571,7 @@ const SYN_DB = {
     'prim',
     'precise'
   ],
-  'certain': [
+  certain: [
     'sure',
     'infallible',
     'positive',
@@ -8585,13 +8585,13 @@ const SYN_DB = {
     'accurate',
     'unmistakable'
   ],
-  'certainty': [
+  certainty: [
     'assurance',
     'conviction',
     'confidence',
     'positiveness'
   ],
-  'certify': [
+  certify: [
     'acknowledge',
     'avow',
     'declare',
@@ -8600,7 +8600,7 @@ const SYN_DB = {
     'assure',
     'attest'
   ],
-  'cessation': [
+  cessation: [
     'stop',
     'pause',
     'abeyance',
@@ -8608,7 +8608,7 @@ const SYN_DB = {
     'lull',
     'respite'
   ],
-  'chafe': [
+  chafe: [
     'vex',
     'irritate',
     'gall',
@@ -8625,7 +8625,7 @@ const SYN_DB = {
     'exasperate',
     'anger'
   ],
-  'chaff': [
+  chaff: [
     'banter',
     'badinage',
     'nonsense',
@@ -8633,7 +8633,7 @@ const SYN_DB = {
     'refuse',
     'trash'
   ],
-  'chagrin': [
+  chagrin: [
     'humiliation',
     'shame',
     'mortification',
@@ -8642,7 +8642,7 @@ const SYN_DB = {
     'dismay',
     'disappointment'
   ],
-  'challenge': [
+  challenge: [
     'dare',
     'brave',
     'defy',
@@ -8650,7 +8650,7 @@ const SYN_DB = {
     'require',
     'claim'
   ],
-  'champion': [
+  champion: [
     'defender',
     'protector',
     'vindicator',
@@ -8660,14 +8660,14 @@ const SYN_DB = {
     'victor',
     'combatant'
   ],
-  'chance': [
+  chance: [
     'hazard',
     'casualty',
     'accident',
     'luck',
     'fortune'
   ],
-  'change': [
+  change: [
     'transformation',
     'variation',
     'transition',
@@ -8693,14 +8693,14 @@ const SYN_DB = {
     'metamorphose',
     'substitute'
   ],
-  'changeless': [
+  changeless: [
     'stationary',
     'undeviating',
     'immovable',
     'reliable',
     'consistent'
   ],
-  'character': [
+  character: [
     'mark',
     'figure',
     'sign',
@@ -8723,7 +8723,7 @@ const SYN_DB = {
     'repute',
     'reputation'
   ],
-  'characteristic': [
+  characteristic: [
     'attribute',
     'peculiarity',
     'trait',
@@ -8736,7 +8736,7 @@ const SYN_DB = {
     'property',
     'idiosyncrasy'
   ],
-  'charge': [
+  charge: [
     'load',
     'freight',
     'burden',
@@ -8755,7 +8755,7 @@ const SYN_DB = {
     'attack',
     'assault'
   ],
-  'charitable': [
+  charitable: [
     'benign',
     'bountiful',
     'liberal',
@@ -8763,14 +8763,14 @@ const SYN_DB = {
     'mild',
     'considerate'
   ],
-  'charity': [
+  charity: [
     'benevolence',
     'liberality',
     'bounty',
     'generosity',
     'philanthropy'
   ],
-  'charlatan': [
+  charlatan: [
     'quack',
     'mountebank',
     'impostor',
@@ -8778,7 +8778,7 @@ const SYN_DB = {
     'humbug',
     'cheat'
   ],
-  'charm': [
+  charm: [
     'spell',
     'incantation',
     'enchantment',
@@ -8790,7 +8790,7 @@ const SYN_DB = {
     'magic',
     'necromancy'
   ],
-  'chary': [
+  chary: [
     'careful',
     'cautious',
     'wary',
@@ -8799,7 +8799,7 @@ const SYN_DB = {
     'saving',
     'reluctant'
   ],
-  'chase': [
+  chase: [
     'pursue',
     'track',
     'hunt',
@@ -8808,7 +8808,7 @@ const SYN_DB = {
     'emboss',
     'enchase'
   ],
-  'chaste': [
+  chaste: [
     'pure',
     'spotless',
     'immaculate',
@@ -8817,7 +8817,7 @@ const SYN_DB = {
     'classic',
     'elegant'
   ],
-  'chasten': [
+  chasten: [
     'discipline',
     'chastise',
     'subdue',
@@ -8826,13 +8826,13 @@ const SYN_DB = {
     'soften',
     'try'
   ],
-  'chattels': [
+  chattels: [
     'goods',
     'wares',
     'effects',
     'furniture'
   ],
-  'cheap': [
+  cheap: [
     'common',
     'inexpensive',
     'mean',
@@ -8843,7 +8843,7 @@ const SYN_DB = {
     'poor',
     'indifferent'
   ],
-  'cheat': [
+  cheat: [
     'fraud',
     'trick',
     'artifice',
@@ -8852,7 +8852,7 @@ const SYN_DB = {
     'fiction',
     'imposture'
   ],
-  'check': [
+  check: [
     'restrain',
     'curb',
     'stop',
@@ -8865,7 +8865,7 @@ const SYN_DB = {
     'reprimand',
     'rebuke'
   ],
-  'cheer': [
+  cheer: [
     'gladness',
     'joy',
     'gaiety',
@@ -8878,7 +8878,7 @@ const SYN_DB = {
     'plenty',
     'hospitality'
   ],
-  'cheerful': [
+  cheerful: [
     'glad',
     'lively',
     'mirthful',
@@ -8890,7 +8890,7 @@ const SYN_DB = {
     'merry',
     'joyous'
   ],
-  'cherish': [
+  cherish: [
     'foster',
     'nurture',
     'protect',
@@ -8899,7 +8899,7 @@ const SYN_DB = {
     'comfort',
     'cheer'
   ],
-  'chief': [
+  chief: [
     'head',
     'important',
     'excellent',
@@ -8907,14 +8907,14 @@ const SYN_DB = {
     'principal',
     'consummate'
   ],
-  'chieftain': [
+  chieftain: [
     'captain',
     'commander',
     'general',
     'leader',
     'chief'
   ],
-  'childish': [
+  childish: [
     'puerile',
     'weak',
     'infantine',
@@ -8923,7 +8923,7 @@ const SYN_DB = {
     'trivial',
     'trifling'
   ],
-  'chimerical': [
+  chimerical: [
     'visionary',
     'imaginary',
     'unreal',
@@ -8931,7 +8931,7 @@ const SYN_DB = {
     'fanciful',
     'fabulous'
   ],
-  'chivalrous': [
+  chivalrous: [
     'knightly',
     'gallant',
     'gentlemanly',
@@ -8939,7 +8939,7 @@ const SYN_DB = {
     'valiant',
     'spirited'
   ],
-  'choice': [
+  choice: [
     'option',
     'preference',
     'alternative',
@@ -8953,13 +8953,13 @@ const SYN_DB = {
     'exquisite',
     'precious'
   ],
-  'choose': [
+  choose: [
     'select',
     'cull',
     'prefer',
     'elect'
   ],
-  'chronicle': [
+  chronicle: [
     'annals',
     'records',
     'register',
@@ -8967,7 +8967,7 @@ const SYN_DB = {
     'archives',
     'history'
   ],
-  'cipher': [
+  cipher: [
     'zero',
     'nothing',
     'nonentity',
@@ -8978,7 +8978,7 @@ const SYN_DB = {
     'monogram',
     'nobody'
   ],
-  'circulate': [
+  circulate: [
     'diffuse',
     'spread',
     'disseminate',
@@ -8988,14 +8988,14 @@ const SYN_DB = {
     'notify',
     'travel'
   ],
-  'circumference': [
+  circumference: [
     'periphery',
     'circuit',
     'boundary',
     'outline',
     'enclosure'
   ],
-  'circumscribe': [
+  circumscribe: [
     'define',
     'limit',
     'delineate',
@@ -9003,7 +9003,7 @@ const SYN_DB = {
     'confine',
     'restrict'
   ],
-  'circumspect': [
+  circumspect: [
     'cautious',
     'wary',
     'heedful',
@@ -9014,7 +9014,7 @@ const SYN_DB = {
     'scrupulous',
     'vigilant'
   ],
-  'circumstance': [
+  circumstance: [
     'event',
     'situation',
     'occurrence',
@@ -9028,7 +9028,7 @@ const SYN_DB = {
     'item',
     'condition'
   ],
-  'cite': [
+  cite: [
     'call',
     'summon',
     'name',
@@ -9036,7 +9036,7 @@ const SYN_DB = {
     'quote',
     'mention'
   ],
-  'citizen': [
+  citizen: [
     'inhabitant',
     'dweller',
     'townsman',
@@ -9045,7 +9045,7 @@ const SYN_DB = {
     'subject',
     'denizen'
   ],
-  'estranged': [ //! !!
+  estranged: [ //! !!
     'alien',
     'exile',
     'visitor',
@@ -9054,14 +9054,14 @@ const SYN_DB = {
     'tourist',
     'sightseer'
   ],
-  'civilization': [
+  civilization: [
     'culture',
     'cultivation',
     'refinement',
     'amelioration',
     'humanization'
   ],
-  'claim': [
+  claim: [
     'assertion',
     'requisition',
     'demand',
@@ -9079,7 +9079,7 @@ const SYN_DB = {
     'maintain',
     'pretend'
   ],
-  'clamor': [
+  clamor: [
     'noise',
     'uproar',
     'hubbub',
@@ -9087,7 +9087,7 @@ const SYN_DB = {
     'vociferation',
     'exclamation'
   ],
-  'clandestine': [
+  clandestine: [
     'secret',
     'private',
     'furtive',
@@ -9097,7 +9097,7 @@ const SYN_DB = {
     'surreptitious',
     'hidden'
   ],
-  'class': [
+  class: [
     'company',
     'grade',
     'order',
@@ -9111,14 +9111,14 @@ const SYN_DB = {
     'coterie',
     'set'
   ],
-  'classical': [
+  classical: [
     'refined',
     'elegant',
     'polished',
     'chaste',
     'pure'
   ],
-  'classification': [
+  classification: [
     'grouping',
     'disposition',
     'arrangement',
@@ -9132,7 +9132,7 @@ const SYN_DB = {
     'character',
     'homogeneity'
   ],
-  'clause': [
+  clause: [
     'portion',
     'section',
     'passage',
@@ -9142,7 +9142,7 @@ const SYN_DB = {
     'chapter',
     'provision'
   ],
-  'clean': [
+  clean: [
     'pure',
     'neat',
     'clear',
@@ -9151,7 +9151,7 @@ const SYN_DB = {
     'untarnished',
     'upright'
   ],
-  'cleanse': [
+  cleanse: [
     'purify',
     'wash',
     'clean',
@@ -9166,7 +9166,7 @@ const SYN_DB = {
     'dust',
     'purge'
   ],
-  'clear': [
+  clear: [
     'pure',
     'bright',
     'transparent',
@@ -9186,7 +9186,7 @@ const SYN_DB = {
     'straightforward',
     'perspicuous'
   ],
-  'clever': [
+  clever: [
     'gifted',
     'expert',
     'capable',
@@ -9207,7 +9207,7 @@ const SYN_DB = {
     'quick',
     'sharp'
   ],
-  'climax': [
+  climax: [
     'acme',
     'top',
     'summit',
@@ -9217,14 +9217,14 @@ const SYN_DB = {
     'zenith',
     'head'
   ],
-  'cling': [
+  cling: [
     'stick',
     'cleave',
     'fasten',
     'hold',
     'adhere'
   ],
-  'close': [
+  close: [
     'packed',
     'condensed',
     'compressed',
@@ -9235,7 +9235,7 @@ const SYN_DB = {
     'reserved',
     'niggardly'
   ],
-  'clownish': [
+  clownish: [
     'rude',
     'rustic',
     'boorish',
@@ -9244,7 +9244,7 @@ const SYN_DB = {
     'bucolic',
     'cloddish'
   ],
-  'clumsy': [
+  clumsy: [
     'awkward',
     'inexpert',
     'uncouth',
@@ -9252,7 +9252,7 @@ const SYN_DB = {
     'unskillful',
     'unwieldly'
   ],
-  'coalesce': [
+  coalesce: [
     'blend',
     'mix',
     'harmonize',
@@ -9261,7 +9261,7 @@ const SYN_DB = {
     'combine',
     'adhere'
   ],
-  'coalition': [
+  coalition: [
     'league',
     'union',
     'alliance',
@@ -9270,7 +9270,7 @@ const SYN_DB = {
     'compact',
     'amalgamation'
   ],
-  'coarse': [
+  coarse: [
     'crude',
     'rough',
     'gross',
@@ -9282,7 +9282,7 @@ const SYN_DB = {
     'common',
     'ordinary'
   ],
-  'coax': [
+  coax: [
     'wheedle',
     'flatter',
     'cajole',
@@ -9291,7 +9291,7 @@ const SYN_DB = {
     'seduce',
     'circumvent'
   ],
-  'coerce': [
+  coerce: [
     'impel',
     'restrain',
     'inhibit',
@@ -9301,13 +9301,13 @@ const SYN_DB = {
     'check',
     'intimidate'
   ],
-  'coexistent': [
+  coexistent: [
     'contemporary',
     'concurrent',
     'coincident',
     'simultaneous'
   ],
-  'cogent': [
+  cogent: [
     'forcible',
     'powerful',
     'effective',
@@ -9318,7 +9318,7 @@ const SYN_DB = {
     'potent',
     'urgent'
   ],
-  'cogitate': [
+  cogitate: [
     'meditate',
     'think',
     'reflect',
@@ -9326,21 +9326,21 @@ const SYN_DB = {
     'ponder',
     'contemplate'
   ],
-  'cognizance': [
+  cognizance: [
     'knowledge',
     'observation',
     'notice',
     'recognition',
     'experience'
   ],
-  'coherent': [
+  coherent: [
     'compact',
     'consecutive',
     'close',
     'logical',
     'consistent'
   ],
-  'coincidence': [
+  coincidence: [
     'chance',
     'fortuity',
     'harmony',
@@ -9349,7 +9349,7 @@ const SYN_DB = {
     'concurrence',
     'contemporaneousness'
   ],
-  'cold': [
+  cold: [
     'frigid',
     'chilly',
     'frosty',
@@ -9364,7 +9364,7 @@ const SYN_DB = {
     'indifferent',
     'spiritless'
   ],
-  'colleague': [
+  colleague: [
     'associate',
     'coadjutor',
     'collaborator',
@@ -9375,7 +9375,7 @@ const SYN_DB = {
     'ally',
     'confederate'
   ],
-  'collect': [
+  collect: [
     'gather',
     'glean',
     'amass',
@@ -9386,7 +9386,7 @@ const SYN_DB = {
     'convoke',
     'accumulate'
   ],
-  'collision': [
+  collision: [
     'clash',
     'shock',
     'impact',
@@ -9396,7 +9396,7 @@ const SYN_DB = {
     'opposition',
     'conflict'
   ],
-  'colloquy': [
+  colloquy: [
     'dialogue',
     'conversation',
     'talk',
@@ -9404,12 +9404,12 @@ const SYN_DB = {
     'consultation',
     'conference'
   ],
-  'collusion': [
+  collusion: [
     'connivance',
     'accompliceship',
     'confederacy'
   ],
-  'color': [
+  color: [
     'hue',
     'tint',
     'tinge',
@@ -9425,7 +9425,7 @@ const SYN_DB = {
     'excuse',
     'makeshift'
   ],
-  'combat': [
+  combat: [
     'conflict',
     'encounter',
     'battle',
@@ -9433,7 +9433,7 @@ const SYN_DB = {
     'contest',
     'contention'
   ],
-  'combination': [
+  combination: [
     'association',
     'connection',
     'union',
@@ -9442,7 +9442,7 @@ const SYN_DB = {
     'mixture',
     'compound'
   ],
-  'comfortable': [
+  comfortable: [
     'agreeable',
     'satisfactory',
     'pleasant',
@@ -9451,7 +9451,7 @@ const SYN_DB = {
     'snug',
     'genial'
   ],
-  'comic': [
+  comic: [
     'laughable',
     'droll',
     'funny',
@@ -9460,7 +9460,7 @@ const SYN_DB = {
     'ludicrous',
     'ridiculous'
   ],
-  'command': [
+  command: [
     'order',
     'direct',
     'bid',
@@ -9470,24 +9470,24 @@ const SYN_DB = {
     'rule',
     'govern'
   ],
-  'commemorate': [
+  commemorate: [
     'celebrate',
     'observe',
     'perpetuate'
   ],
-  'commence': [
+  commence: [
     'begin',
     'start',
     'inaugurate',
     'undertake'
   ],
-  'commend': [
+  commend: [
     'approve',
     'encourage',
     'applaud',
     'praise'
   ],
-  'comment': [
+  comment: [
     'remark',
     'observe',
     'explain',
@@ -9496,27 +9496,27 @@ const SYN_DB = {
     'interpret',
     'illustrate'
   ],
-  'commerce': [
+  commerce: [
     'trade',
     'traffic',
     'business',
     'exchange'
   ],
-  'commodious': [
+  commodious: [
     'ample',
     'spacious',
     'convenient',
     'comfortable',
     'suitable'
   ],
-  'commodity': [
+  commodity: [
     'staple',
     'ware',
     'stock',
     'produce',
     'article'
   ],
-  'common': [
+  common: [
     'ordinary',
     'habitual',
     'everyday',
@@ -9527,7 +9527,7 @@ const SYN_DB = {
     'mean',
     'low'
   ],
-  'commotion': [
+  commotion: [
     'excitement',
     'disturbance',
     'agitation',
@@ -9535,7 +9535,7 @@ const SYN_DB = {
     'tumult',
     'disorder'
   ],
-  'communicate': [
+  communicate: [
     'divulge',
     'impart',
     'disclose',
@@ -9543,12 +9543,12 @@ const SYN_DB = {
     'announce',
     'publish'
   ],
-  'communion': [
+  communion: [
     'fellowship',
     'intercourse',
     'participation'
   ],
-  'community': [
+  community: [
     'aggregation',
     'society',
     'commonwealth',
@@ -9558,7 +9558,7 @@ const SYN_DB = {
     'sympathy',
     'homogeneity'
   ],
-  'commute': [
+  commute: [
     'exchange',
     'replace',
     'barter',
@@ -9568,7 +9568,7 @@ const SYN_DB = {
     'lessen',
     'diminish'
   ],
-  'compact': [
+  compact: [
     'agreement',
     'bond',
     'contract',
@@ -9582,7 +9582,7 @@ const SYN_DB = {
     'concise',
     'terse'
   ],
-  'pithy': [
+  pithy: [
     'pithy',
     'short',
     'brief',
@@ -9591,14 +9591,14 @@ const SYN_DB = {
     'succinct',
     'sententious'
   ],
-  'companion': [
+  companion: [
     'associate',
     'partner',
     'mate',
     'comrade',
     'colleague'
   ],
-  'companionable': [
+  companionable: [
     'sociable',
     'pleasant',
     'affable',
@@ -9606,7 +9606,7 @@ const SYN_DB = {
     'friendly',
     'agreeable'
   ],
-  'company': [
+  company: [
     'concourse',
     'gathering',
     'crowd',
@@ -9620,13 +9620,13 @@ const SYN_DB = {
     'convention',
     'convocation'
   ],
-  'compare': [
+  compare: [
     'collate',
     'estimate',
     'liken',
     'parallel'
   ],
-  'compass': [
+  compass: [
     'surround',
     'enclose',
     'effect',
@@ -9634,7 +9634,7 @@ const SYN_DB = {
     'consummate',
     'complete'
   ],
-  'compassion': [
+  compassion: [
     'pity',
     'sympathy',
     'condolence',
@@ -9642,21 +9642,21 @@ const SYN_DB = {
     'clemency',
     'mercy'
   ],
-  'compatible': [
+  compatible: [
     'consistent',
     'accordant',
     'congruous',
     'congenial',
     'harmonious'
   ],
-  'compel': [
+  compel: [
     'force',
     'oblige',
     'coerce',
     'constrain',
     'necessitate'
   ],
-  'compensation': [
+  compensation: [
     'recompense',
     'reward',
     'requital',
@@ -9665,19 +9665,19 @@ const SYN_DB = {
     'amends',
     'indemnification'
   ],
-  'competence': [
+  competence: [
     'ability',
     'capableness',
     'sufficiency',
     'enough',
     'adequacy'
   ],
-  'competition': [
+  competition: [
     'rivalry',
     'emulation',
     'contest'
   ],
-  'complacent': [
+  complacent: [
     'pleased',
     'satisfied',
     'contented',
@@ -9685,7 +9685,7 @@ const SYN_DB = {
     'pleasant',
     'affable'
   ],
-  'complain': [
+  complain: [
     'murmur',
     'grumble',
     'remonstrate',
@@ -9694,14 +9694,14 @@ const SYN_DB = {
     'grieve',
     'expostulate'
   ],
-  'complement': [
+  complement: [
     'fulfillment',
     'totality',
     'counterpart',
     'supply',
     'correlative'
   ],
-  'complete': [
+  complete: [
     'perfect',
     'finished',
     'total',
@@ -9714,7 +9714,7 @@ const SYN_DB = {
     'exhaustive',
     'thorough'
   ],
-  'complex': [
+  complex: [
     'confused',
     'involved',
     'mixed',
@@ -9726,7 +9726,7 @@ const SYN_DB = {
     'intricate',
     'obscure'
   ],
-  'complexion': [
+  complexion: [
     'face',
     'feature',
     'appearance',
@@ -9735,26 +9735,26 @@ const SYN_DB = {
     'character',
     'indication'
   ],
-  'compliance': [
+  compliance: [
     'yielding',
     'submission',
     'acquiescence',
     'docility',
     'obedience'
   ],
-  'compliment': [
+  compliment: [
     'flattery',
     'praise',
     'homage',
     'commendation',
     'encomium'
   ],
-  'complimentary': [
+  complimentary: [
     'commendatory',
     'flattering',
     'laudatory'
   ],
-  'comport': [
+  comport: [
     'conduct',
     'behave',
     'demean',
@@ -9762,7 +9762,7 @@ const SYN_DB = {
     'agree',
     'harmonize'
   ],
-  'compose': [
+  compose: [
     'compile',
     'construct',
     'constitute',
@@ -9771,7 +9771,7 @@ const SYN_DB = {
     'calm',
     'write'
   ],
-  'composition': [
+  composition: [
     'formation',
     'making',
     'compound',
@@ -9784,21 +9784,21 @@ const SYN_DB = {
     'agreement',
     'compromise'
   ],
-  'composure': [
+  composure: [
     'tranquility',
     'calm',
     'repose',
     'selfpossession',
     'serenity'
   ],
-  'compound': [
+  compound: [
     'mixture',
     'combination',
     'amalgamation',
     'coalescence',
     'synthesis'
   ],
-  'comprehend': [
+  comprehend: [
     'understand',
     'conceive',
     'grasp',
@@ -9806,7 +9806,7 @@ const SYN_DB = {
     'enclose',
     'embrace'
   ],
-  'comprehension': [
+  comprehension: [
     'conception',
     'understanding',
     'perception',
@@ -9817,14 +9817,14 @@ const SYN_DB = {
     'mind',
     'intelligence'
   ],
-  'compress': [
+  compress: [
     'condense',
     'squeeze',
     'contract',
     'epitomize',
     'abridge'
   ],
-  'comprise': [
+  comprise: [
     'include',
     'involve',
     'contain',
@@ -9832,7 +9832,7 @@ const SYN_DB = {
     'embrace',
     'imply'
   ],
-  'compromise': [
+  compromise: [
     'adjust',
     'arbitrate',
     'settle',
@@ -9843,19 +9843,19 @@ const SYN_DB = {
     'involve',
     'endanger'
   ],
-  'compulsion': [
+  compulsion: [
     'force',
     'coercion',
     'constraint',
     'control'
   ],
-  'compunction': [
+  compunction: [
     'regret',
     'remorse',
     'contrition',
     'penitence'
   ],
-  'compute': [
+  compute: [
     'number',
     'calculate',
     'reckon',
@@ -9864,7 +9864,7 @@ const SYN_DB = {
     'estimate',
     'appraise'
   ],
-  'comrade': [
+  comrade: [
     'companion',
     'compeer',
     'colleague',
@@ -9872,32 +9872,32 @@ const SYN_DB = {
     'partner',
     'friend'
   ],
-  'concatenation': [
+  concatenation: [
     'connection',
     'continuity',
     'series',
     'chain',
     'succession'
   ],
-  'concave': [
+  concave: [
     'hollow',
     'depressed',
     'excavated'
   ],
-  'conceal': [
+  conceal: [
     'hide',
     'suppress',
     'secrete',
     'disguise'
   ],
-  'concede': [
+  concede: [
     'surrender',
     'admit',
     'resign',
     'yield',
     'allow'
   ],
-  'conceit': [
+  conceit: [
     'notion',
     'whim',
     'vagary',
@@ -9906,12 +9906,12 @@ const SYN_DB = {
     'affectation',
     'imagination'
   ],
-  'conceited': [
+  conceited: [
     'egoistical',
     'opinionated',
     'vain'
   ],
-  'conceive': [
+  conceive: [
     'imagine',
     'apprehend',
     'believe',
@@ -9919,14 +9919,14 @@ const SYN_DB = {
     'think',
     'understand'
   ],
-  'concentrate': [
+  concentrate: [
     'convene',
     'assemble',
     'congregate',
     'muster',
     'centralize'
   ],
-  'concern': [
+  concern: [
     'interest',
     'anxiety',
     'solicitude',
@@ -9934,13 +9934,13 @@ const SYN_DB = {
     'matter',
     'institution'
   ],
-  'concerning': [
+  concerning: [
     'about',
     'regarding',
     'respecting',
     'of'
   ],
-  'concert': [
+  concert: [
     'agreement',
     'harmony',
     'concord',
@@ -9949,21 +9949,21 @@ const SYN_DB = {
     'union',
     'association'
   ],
-  'concession': [
+  concession: [
     'surrender',
     'grant',
     'boon',
     'acknowledgment',
     'admission'
   ],
-  'conciliate': [
+  conciliate: [
     'win',
     'gain',
     'pacify',
     'reconcile',
     'propitiate'
   ],
-  'concise': [
+  concise: [
     'succinct',
     'condensed',
     'terse',
@@ -9973,14 +9973,14 @@ const SYN_DB = {
     'short',
     'laconic'
   ],
-  'conclave': [
+  conclave: [
     'assembly',
     'synod',
     'cabinet',
     'council',
     'bureau'
   ],
-  'conclude': [
+  conclude: [
     'close',
     'end',
     'terminate',
@@ -9988,40 +9988,40 @@ const SYN_DB = {
     'decide',
     'determine'
   ],
-  'conclusive': [
+  conclusive: [
     'final',
     'decisive',
     'positive',
     'definitive',
     'indisputable'
   ],
-  'concoct': [
+  concoct: [
     'brew',
     'prepare',
     'compound',
     'mix'
   ],
-  'concoction': [
+  concoction: [
     'compound',
     'brew',
     'mixture',
     'scheme',
     'fiction'
   ],
-  'concomitant': [
+  concomitant: [
     'attending',
     'coincident',
     'attendant',
     'synchronous'
   ],
-  'concord': [
+  concord: [
     'harmony',
     'agreement',
     'friendship',
     'unanimity',
     'accord'
   ],
-  'concourse': [
+  concourse: [
     'assembly',
     'throng',
     'crowd',
@@ -10030,7 +10030,7 @@ const SYN_DB = {
     'gathering',
     'multitude'
   ],
-  'concrete': [
+  concrete: [
     'solid',
     'firm',
     'compact',
@@ -10040,7 +10040,7 @@ const SYN_DB = {
     'specific',
     'particular'
   ],
-  'concur': [
+  concur: [
     'approve',
     'harmonize',
     'agree',
@@ -10048,14 +10048,14 @@ const SYN_DB = {
     'combine',
     'conspire'
   ],
-  'concussion': [
+  concussion: [
     'collision',
     'encounter',
     'crash',
     'impact',
     'percussion'
   ],
-  'condemn': [
+  condemn: [
     'blame',
     'censure',
     'denounce',
@@ -10064,21 +10064,21 @@ const SYN_DB = {
     'reprove',
     'doom'
   ],
-  'condense': [
+  condense: [
     'concentrate',
     'abridge',
     'shorten'
   ],
-  'condescend': [
+  condescend: [
     'deign',
     'vouchsafe',
     'stoop'
   ],
-  'condescension': [
+  condescension: [
     'graciousness',
     'favor'
   ],
-  'condign': [
+  condign: [
     'adequate',
     'deserved',
     'merited',
@@ -10086,7 +10086,7 @@ const SYN_DB = {
     'meet',
     'just'
   ],
-  'condiment': [
+  condiment: [
     'sauce',
     'seasoning',
     'preserve',
@@ -10094,7 +10094,7 @@ const SYN_DB = {
     'relish',
     'appetizer'
   ],
-  'condition': [
+  condition: [
     'situation',
     'case',
     'circumstances',
@@ -10106,30 +10106,30 @@ const SYN_DB = {
     'consideration',
     'stipulation'
   ],
-  'conditionally': [
+  conditionally: [
     'provided',
     'provisionally',
     'hypothetically',
     'contingently'
   ],
-  'condole': [
+  condole: [
     'console',
     'commiserate',
     'sympathize'
   ],
-  'condone': [
+  condone: [
     'pardon',
     'overlook',
     'forgive'
   ],
-  'conduce': [
+  conduce: [
     'subserve',
     'promote',
     'forward',
     'advance',
     'aid'
   ],
-  'conduct': [
+  conduct: [
     'lead',
     'direct',
     'guide',
@@ -10142,18 +10142,18 @@ const SYN_DB = {
     'rule',
     'superintend'
   ],
-  'confection': [
+  confection: [
     'candy',
     'cake',
     'condiment',
     'concoction',
     'sweetmeat'
   ],
-  'confederacy': [
+  confederacy: [
     'confederacy',
     'confederation'
   ],
-  'conference': [
+  conference: [
     'discourse',
     'conversation',
     'talk',
@@ -10165,7 +10165,7 @@ const SYN_DB = {
     'convocation',
     'meeting'
   ],
-  'confess': [
+  confess: [
     'acknowledge',
     'admit',
     'disclose',
@@ -10175,7 +10175,7 @@ const SYN_DB = {
     'concede',
     'avow'
   ],
-  'confession': [
+  confession: [
     'admission',
     'avowal',
     'acknowledgment',
@@ -10185,7 +10185,7 @@ const SYN_DB = {
     'catechism',
     'subscription'
   ],
-  'confide': [
+  confide: [
     'trust',
     'rely',
     'lean',
@@ -10193,7 +10193,7 @@ const SYN_DB = {
     'depend',
     'believe'
   ],
-  'confident': [
+  confident: [
     'assured',
     'sure',
     'positive',
@@ -10203,20 +10203,20 @@ const SYN_DB = {
     'impudent',
     'sanguine'
   ],
-  'confidential': [
+  confidential: [
     'intimate',
     'secret',
     'private',
     'trusty',
     'faithful'
   ],
-  'configuration': [
+  configuration: [
     'outline',
     'shape',
     'form',
     'contour'
   ],
-  'confine': [
+  confine: [
     'limit',
     'bound',
     'imprison',
@@ -10224,7 +10224,7 @@ const SYN_DB = {
     'circumscribe',
     'enclose'
   ],
-  'confirm': [
+  confirm: [
     'sanction',
     'uphold',
     'assure',
@@ -10234,21 +10234,21 @@ const SYN_DB = {
     'settle',
     'corroborate'
   ],
-  'confiscate': [
+  confiscate: [
     'forfeit',
     'seize',
     'escheat',
     'condemn',
     'sequestrate'
   ],
-  'conflagration': [
+  conflagration: [
     'fire',
     'arson',
     'ignition',
     'industrialism',
     'combustion'
   ],
-  'conflict': [
+  conflict: [
     'contest',
     'battle',
     'struggle',
@@ -10258,7 +10258,7 @@ const SYN_DB = {
     'disagreement',
     'discord'
   ],
-  'conform': [
+  conform: [
     'agree',
     'consent',
     'harmonize',
@@ -10266,7 +10266,7 @@ const SYN_DB = {
     'correspond',
     'comport'
   ],
-  'confound': [
+  confound: [
     'confuse',
     'perplex',
     'bewilder',
@@ -10282,7 +10282,7 @@ const SYN_DB = {
     'abash',
     'shame'
   ],
-  'confront': [
+  confront: [
     'oppose',
     'threaten',
     'encounter',
@@ -10290,7 +10290,7 @@ const SYN_DB = {
     'face',
     'intimidate'
   ],
-  'confuse': [
+  confuse: [
     'mingle',
     'confound',
     'derange',
@@ -10300,11 +10300,11 @@ const SYN_DB = {
     'obscure',
     'mortify'
   ],
-  'congeal': [
+  congeal: [
     'freeze',
     'benumb'
   ],
-  'congenial': [
+  congenial: [
     'kindred',
     'similar',
     'sympathetic',
@@ -10313,25 +10313,25 @@ const SYN_DB = {
     'proper',
     'agreeable'
   ],
-  'congenital': [
+  congenital: [
     'coeval',
     'connatural',
     'innate',
     'inherent',
     'ingenerate'
   ],
-  'congeries': [
+  congeries: [
     'conglomeration',
     'aggregation',
     'accumulation',
     'plethora',
     'repletion'
   ],
-  'congratulate': [
+  congratulate: [
     'felicitate',
     'compliment'
   ],
-  'congregate': [
+  congregate: [
     'assemble',
     'collect',
     'meet',
@@ -10339,13 +10339,13 @@ const SYN_DB = {
     'gather',
     'throng'
   ],
-  'congregation': [
+  congregation: [
     'assembly',
     'meeting',
     'audience',
     'conference'
   ],
-  'congress': [
+  congress: [
     'parliament',
     'conclave',
     'cabinet',
@@ -10356,7 +10356,7 @@ const SYN_DB = {
     'convention',
     'conference'
   ],
-  'congruous': [
+  congruous: [
     'accordant',
     'agreeing',
     'harmonious',
@@ -10366,7 +10366,7 @@ const SYN_DB = {
     'proper',
     'appropriate'
   ],
-  'conjecture': [
+  conjecture: [
     'supposition',
     'surmise',
     'guess',
@@ -10375,7 +10375,7 @@ const SYN_DB = {
     'notion',
     'divination'
   ],
-  'conjuncture': [
+  conjuncture: [
     'combination',
     'concurrence',
     'emergency',
@@ -10383,14 +10383,14 @@ const SYN_DB = {
     'exigency',
     'juncture'
   ],
-  'connection': [
+  connection: [
     'conjunction',
     'combination',
     'union',
     'association',
     'dependence'
   ],
-  'conquer': [
+  conquer: [
     'overcome',
     'subjugate',
     'master',
@@ -10410,17 +10410,17 @@ const SYN_DB = {
     'down',
     'discomfit'
   ],
-  'conquest': [
+  conquest: [
     'victory',
     'subjugation',
     'triumph'
   ],
-  'conscience': [
+  conscience: [
     'intuition',
     'integrity',
     'principle'
   ],
-  'conscientious': [
+  conscientious: [
     'scrupulous',
     'exact',
     'upright',
@@ -10432,7 +10432,7 @@ const SYN_DB = {
     'fair',
     'faithful'
   ],
-  'conscious': [
+  conscious: [
     'sensible',
     'cognizant',
     'aware',
@@ -10448,17 +10448,17 @@ const SYN_DB = {
     'rational',
     'intellectual'
   ],
-  'conscription': [
+  conscription: [
     'drafting',
     'impressment'
   ],
-  'consecutive': [
+  consecutive: [
     'sequent',
     'continuous',
     'orderly',
     'following'
   ],
-  'consent': [
+  consent: [
     'assent',
     'approve',
     'agree',
@@ -10466,7 +10466,7 @@ const SYN_DB = {
     'comply',
     'acquiesce'
   ],
-  'consequence': [
+  consequence: [
     'result',
     'issue',
     'sequel',
@@ -10479,7 +10479,7 @@ const SYN_DB = {
     'dignity',
     'moment'
   ],
-  'consequential': [
+  consequential: [
     'following',
     'resulting',
     'coherent',
@@ -10490,17 +10490,17 @@ const SYN_DB = {
     'arrogant',
     'vainglorious'
   ],
-  'conservation': [
+  conservation: [
     'protection',
     'perpetuation',
     'preservation',
     'maintenance'
   ],
-  'conservative': [
+  conservative: [
     'stationary',
     'traditional'
   ],
-  'consider': [
+  consider: [
     'think',
     'ponder',
     'meditate',
@@ -10512,7 +10512,7 @@ const SYN_DB = {
     'attend',
     'regard'
   ],
-  'considerate': [
+  considerate: [
     'kindly',
     'thoughtful',
     'reflective',
@@ -10524,14 +10524,14 @@ const SYN_DB = {
     'forbearing',
     'cautious'
   ],
-  'consignment': [
+  consignment: [
     'custody',
     'commission',
     'delegation',
     'sending',
     'shipping'
   ],
-  'consistency': [
+  consistency: [
     'density',
     'solidity',
     'compactness',
@@ -10543,7 +10543,7 @@ const SYN_DB = {
     'harmony',
     'invariableness'
   ],
-  'console': [
+  console: [
     'comfort',
     'sympathize',
     'encourage',
@@ -10551,7 +10551,7 @@ const SYN_DB = {
     'assuage',
     'solace'
   ],
-  'consolidate': [
+  consolidate: [
     'solidify',
     'harden',
     'condense',
@@ -10565,7 +10565,7 @@ const SYN_DB = {
     'conjoin',
     'combine'
   ],
-  'conspicuous': [
+  conspicuous: [
     'visible',
     'apparent',
     'discernible',
@@ -10580,7 +10580,7 @@ const SYN_DB = {
     'noted',
     'manifest'
   ],
-  'conspiracy': [
+  conspiracy: [
     'intrigue',
     'treason',
     'cabal',
@@ -10589,7 +10589,7 @@ const SYN_DB = {
     'combination',
     'sedition'
   ],
-  'constant': [
+  constant: [
     'fixed',
     'immutable',
     'invariable',
@@ -10609,7 +10609,7 @@ const SYN_DB = {
     'loyal',
     'devoted'
   ],
-  'constituent': [
+  constituent: [
     'elector',
     'patron',
     'voter',
@@ -10619,7 +10619,7 @@ const SYN_DB = {
     'component',
     'element'
   ],
-  'constitution': [
+  constitution: [
     'organization',
     'formation',
     'quality',
@@ -10630,7 +10630,7 @@ const SYN_DB = {
     'charter',
     'law'
   ],
-  'construct': [
+  construct: [
     'build',
     'erect',
     'invent',
@@ -10638,7 +10638,7 @@ const SYN_DB = {
     'shape',
     'combine'
   ],
-  'construction': [
+  construction: [
     'building',
     'erection',
     'composition',
@@ -10652,7 +10652,7 @@ const SYN_DB = {
     'rendering',
     'interpretation'
   ],
-  'consult': [
+  consult: [
     'deliberate',
     'confer',
     'canvass',
@@ -10660,7 +10660,7 @@ const SYN_DB = {
     'consider',
     'regard'
   ],
-  'consume': [
+  consume: [
     'devour',
     'destroy',
     'lavish',
@@ -10668,14 +10668,14 @@ const SYN_DB = {
     'waste',
     'spend'
   ],
-  'consummate': [
+  consummate: [
     'perfect',
     'excellent',
     'supreme',
     'finished',
     'complete'
   ],
-  'consummation': [
+  consummation: [
     'achievement',
     'attainment',
     'completion',
@@ -10687,28 +10687,28 @@ const SYN_DB = {
     'finish',
     'finale'
   ],
-  'consumption': [
+  consumption: [
     'expenditure',
     'use',
     'waste',
     'extinction',
     'destruction'
   ],
-  'contact': [
+  contact: [
     'touch',
     'junction',
     'contiguity',
     'closeness',
     'union'
   ],
-  'contagion': [
+  contagion: [
     'infection',
     'contamination',
     'taint',
     'pestilence',
     'corruption'
   ],
-  'contain': [
+  contain: [
     'include',
     'embody',
     'comprehend',
@@ -10717,19 +10717,19 @@ const SYN_DB = {
     'restrain',
     'hold'
   ],
-  'contaminate': [
+  contaminate: [
     'taint',
     'defile',
     'corrupt',
     'sully'
   ],
-  'contemn': [
+  contemn: [
     'despise',
     'scorn',
     'disdain',
     'slight'
   ],
-  'contemplate': [
+  contemplate: [
     'meditate',
     'study',
     'ponder',
@@ -10738,7 +10738,7 @@ const SYN_DB = {
     'intend',
     'design'
   ],
-  'contemptible': [
+  contemptible: [
     'despicable',
     'abject',
     'base',
@@ -10746,7 +10746,7 @@ const SYN_DB = {
     'mean',
     'low'
   ],
-  'contend': [
+  contend: [
     'strive',
     'fight',
     'struggle',
@@ -10759,7 +10759,7 @@ const SYN_DB = {
     'maintain',
     'claim'
   ],
-  'content': [
+  content: [
     'satisfied',
     'pleased',
     'easy',
@@ -10767,7 +10767,7 @@ const SYN_DB = {
     'resigned',
     'gratified'
   ],
-  'contingent': [
+  contingent: [
     'casual',
     'happening',
     'fortuitous',
@@ -10776,7 +10776,7 @@ const SYN_DB = {
     'provisional',
     'uncertain'
   ],
-  'continual': [
+  continual: [
     'incessant',
     'ceaseless',
     'invariable',
@@ -10787,7 +10787,7 @@ const SYN_DB = {
     'unremitting',
     'continuous'
   ],
-  'continually': [
+  continually: [
     'constantly',
     'perpetually',
     'ever',
@@ -10796,7 +10796,7 @@ const SYN_DB = {
     'frequently',
     'continuously'
   ],
-  'continue': [
+  continue: [
     'remain',
     'endure',
     'persist',
@@ -10805,7 +10805,7 @@ const SYN_DB = {
     'tarry',
     'persevere'
   ],
-  'contract': [
+  contract: [
     'compact',
     'stipulation',
     'agreement',
@@ -10829,7 +10829,7 @@ const SYN_DB = {
     'stipulate',
     'bargain'
   ],
-  'contradict': [
+  contradict: [
     'deny',
     'gainsay',
     'dispute',
@@ -10841,7 +10841,7 @@ const SYN_DB = {
     'thwart',
     'abrogate'
   ],
-  'contrary': [
+  contrary: [
     'opposite',
     'opposed',
     'adverse',
@@ -10855,13 +10855,13 @@ const SYN_DB = {
     'stubborn',
     'headstrong'
   ],
-  'contrast': [
+  contrast: [
     'differentiate',
     'discriminate',
     'oppose',
     'compare'
   ],
-  'contribute': [
+  contribute: [
     'add',
     'give',
     'cooperate',
@@ -10869,7 +10869,7 @@ const SYN_DB = {
     'subscribe',
     'supply'
   ],
-  'contribution': [
+  contribution: [
     'donation',
     'offering',
     'gift',
@@ -10878,7 +10878,7 @@ const SYN_DB = {
     'aid',
     'assistance'
   ],
-  'contrive': [
+  contrive: [
     'plan',
     'design',
     'devise',
@@ -10893,7 +10893,7 @@ const SYN_DB = {
     'concert',
     'adjust'
   ],
-  'control': [
+  control: [
     'direct',
     'manage',
     'rule',
@@ -10906,13 +10906,13 @@ const SYN_DB = {
     'curb',
     'check'
   ],
-  'controversy': [
+  controversy: [
     'dispute',
     'altercation',
     'contention',
     'disagreement'
   ],
-  'contumacy': [
+  contumacy: [
     'obstinacy',
     'stubbornness',
     'perverseness',
@@ -10921,7 +10921,7 @@ const SYN_DB = {
     'disobedience',
     'insolence'
   ],
-  'contumely': [
+  contumely: [
     'obloquy',
     'reproach',
     'opprobrium',
@@ -10932,7 +10932,7 @@ const SYN_DB = {
     'disdain',
     'arrogance'
   ],
-  'convene': [
+  convene: [
     'assemble',
     'meet',
     'congregate',
@@ -10940,7 +10940,7 @@ const SYN_DB = {
     'master',
     'collect'
   ],
-  'convenient': [
+  convenient: [
     'suitable',
     'fit',
     'appropriate',
@@ -10952,7 +10952,7 @@ const SYN_DB = {
     'useful',
     'serviceable'
   ],
-  'convention': [
+  convention: [
     'assemblage',
     'conference',
     'meeting',
@@ -10964,7 +10964,7 @@ const SYN_DB = {
     'treaty',
     'compact'
   ],
-  'conventional': [
+  conventional: [
     'usual',
     'customary',
     'ordinary',
@@ -10976,14 +10976,14 @@ const SYN_DB = {
     'everyday',
     'stipulated'
   ],
-  'conversant': [
+  conversant: [
     'familiar',
     'skilled',
     'acquainted',
     'proficient',
     'versed'
   ],
-  'conversation': [
+  conversation: [
     'converse',
     'communion',
     'intercourse',
@@ -10996,26 +10996,26 @@ const SYN_DB = {
     'colloquy',
     'dialogue'
   ],
-  'converse': [
+  converse: [
     'opposite',
     'reverse',
     'contrary',
     'counter',
     'contradictory'
   ],
-  'conversion': [
+  conversion: [
     'alteration',
     'transmutation',
     'change',
     'transformation'
   ],
-  'convertible': [
+  convertible: [
     'equivalent',
     'interchangeable',
     'identical',
     'reversible'
   ],
-  'convey': [
+  convey: [
     'take',
     'transfer',
     'move',
@@ -11028,7 +11028,7 @@ const SYN_DB = {
     'consign',
     'relegate'
   ],
-  'conviction': [
+  conviction: [
     'belief',
     'assurance',
     'persuasion',
@@ -11037,14 +11037,14 @@ const SYN_DB = {
     'proof',
     'detection'
   ],
-  'convince': [
+  convince: [
     'persuade',
     'satisfy',
     'enlighten',
     'indoctrinate',
     'inoculate'
   ],
-  'convivial': [
+  convivial: [
     'social',
     'festive',
     'hospitable',
@@ -11053,32 +11053,32 @@ const SYN_DB = {
     'companionable',
     'gay'
   ],
-  'convocation': [
+  convocation: [
     'convention',
     'congress',
     'assemblage',
     'council',
     'synod'
   ],
-  'convolution': [
+  convolution: [
     'coil',
     'involution',
     'spiral',
     'twist',
     'contortion'
   ],
-  'convoy': [
+  convoy: [
     'escort',
     'guard',
     'attendance',
     'protection'
   ],
-  'convulse': [
+  convulse: [
     'disturb',
     'shake',
     'agitate'
   ],
-  'cool': [
+  cool: [
     'chilling',
     'frigid',
     'freezing',
@@ -11094,7 +11094,7 @@ const SYN_DB = {
     'unconcerned',
     'apathetic'
   ],
-  'coordinate': [
+  coordinate: [
     'equal',
     'equivalent',
     'proportionate',
@@ -11102,7 +11102,7 @@ const SYN_DB = {
     'tantamount',
     'equipollent'
   ],
-  'cordial': [
+  cordial: [
     'earnest',
     'warm',
     'hearty',
@@ -11114,7 +11114,7 @@ const SYN_DB = {
     'pleasing',
     'grateful'
   ],
-  'corner': [
+  corner: [
     'angle',
     'bend',
     'crotch',
@@ -11124,30 +11124,30 @@ const SYN_DB = {
     'niche',
     'retreat'
   ],
-  'corollary': [
+  corollary: [
     'inference',
     'conclusion',
     'deduction',
     'consequence'
   ],
-  'corporal': [
+  corporal: [
     'fleshly',
     'bodily',
     'material',
     'physical'
   ],
-  'corps': [
+  corps: [
     'squadron',
     'band',
     'company'
   ],
-  'corpse': [
+  corpse: [
     'remains',
     'cadaver',
     'carcass',
     'dust'
   ],
-  'corpulent': [
+  corpulent: [
     'fat',
     'fleshy',
     'plump',
@@ -11156,7 +11156,7 @@ const SYN_DB = {
     'round',
     'stout'
   ],
-  'correct': [
+  correct: [
     'true',
     'exact',
     'accurate',
@@ -11164,7 +11164,7 @@ const SYN_DB = {
     'faultless',
     'right'
   ],
-  'corrective': [
+  corrective: [
     'regulative',
     'preventive',
     'alterative',
@@ -11174,7 +11174,7 @@ const SYN_DB = {
     'improving',
     'reformatory'
   ],
-  'correlation': [
+  correlation: [
     'interrelation',
     'correspondence',
     'apposition',
@@ -11184,7 +11184,7 @@ const SYN_DB = {
     'interchange',
     'reciprocity'
   ],
-  'correspond': [
+  correspond: [
     'agree',
     'suit',
     'match',
@@ -11196,7 +11196,7 @@ const SYN_DB = {
     'communicate',
     'write'
   ],
-  'correspondence': [
+  correspondence: [
     'adaptation',
     'agreement',
     'congruity',
@@ -11205,14 +11205,14 @@ const SYN_DB = {
     'despatches',
     'communication'
   ],
-  'corroborate': [
+  corroborate: [
     'strengthen',
     'establish',
     'sustain',
     'support',
     'confirm'
   ],
-  'corrode': [
+  corrode: [
     'consume',
     'waste',
     'impair',
@@ -11221,7 +11221,7 @@ const SYN_DB = {
     'wear',
     'crumble'
   ],
-  'corrupt': [
+  corrupt: [
     'defile',
     'pollute',
     'infect',
@@ -11233,7 +11233,7 @@ const SYN_DB = {
     'spoil',
     'deteriorate'
   ],
-  'cost': [
+  cost: [
     'price',
     'worth',
     'expenditure',
@@ -11248,13 +11248,13 @@ const SYN_DB = {
     'damage',
     'pain'
   ],
-  'costume': [
+  costume: [
     'dress',
     'livery',
     'robes',
     'uniform'
   ],
-  'council': [
+  council: [
     'cabinet',
     'bureau',
     'chamber',
@@ -11267,7 +11267,7 @@ const SYN_DB = {
     'consultation',
     'convention'
   ],
-  'counsel': [
+  counsel: [
     'advice',
     'consultation',
     'opinion',
@@ -11286,7 +11286,7 @@ const SYN_DB = {
     'barrister',
     'attorney'
   ],
-  'count': [
+  count: [
     'compute',
     'reckon',
     'add',
@@ -11297,7 +11297,7 @@ const SYN_DB = {
     'sum',
     'calculate'
   ],
-  'countenance': [
+  countenance: [
     'approve',
     'support',
     'sanction',
@@ -11310,13 +11310,13 @@ const SYN_DB = {
     'assist',
     'favor'
   ],
-  'counter': [
+  counter: [
     'contrary',
     'opposed',
     'opposite',
     'against'
   ],
-  'counteract': [
+  counteract: [
     'oppose',
     'foil',
     'baffle',
@@ -11329,7 +11329,7 @@ const SYN_DB = {
     'frustrate',
     'neutralize'
   ],
-  'counterfeit': [
+  counterfeit: [
     'forgery',
     'cheat',
     'artifice',
@@ -11337,7 +11337,7 @@ const SYN_DB = {
     'sham',
     'fabrication'
   ],
-  'countermand': [
+  countermand: [
     'abrogate',
     'annul',
     'revoke',
@@ -11345,7 +11345,7 @@ const SYN_DB = {
     'recall',
     'makevoid'
   ],
-  'counterpart': [
+  counterpart: [
     'duplicate',
     'copy',
     'correlative',
@@ -11357,13 +11357,13 @@ const SYN_DB = {
     'tally',
     'twin'
   ],
-  'countervail': [
+  countervail: [
     'balance',
     'compensate',
     'counterbalance',
     'offset'
   ],
-  'countryman': [
+  countryman: [
     'rustic',
     'agriculturist',
     'farmer',
@@ -11375,7 +11375,7 @@ const SYN_DB = {
     'clown',
     'boor'
   ],
-  'couple': [
+  couple: [
     'link',
     'unite',
     'connect',
@@ -11390,7 +11390,7 @@ const SYN_DB = {
     'marry',
     'wed'
   ],
-  'courage': [
+  courage: [
     'bravery',
     'valor',
     'fearlessness',
@@ -11405,7 +11405,7 @@ const SYN_DB = {
     'resolution',
     'intrepidity'
   ],
-  'course': [
+  course: [
     'route',
     'way',
     'road',
@@ -11424,32 +11424,32 @@ const SYN_DB = {
     'series',
     'system'
   ],
-  'court': [
+  court: [
     'woo',
     'flatter',
     'seek',
     'invite',
     'solicit'
   ],
-  'courtesy': [
+  courtesy: [
     'politeness',
     'affability',
     'urbanity',
     'civility',
     'complaisance'
   ],
-  'courtly': [
+  courtly: [
     'polished',
     'elegant',
     'dignified'
   ],
-  'lite': [
+  lite: [
     'lite',
     'ceremonious',
     'formal',
     'respectful'
   ],
-  'covenant': [
+  covenant: [
     'agreement',
     'stipulation',
     'bond',
@@ -11461,7 +11461,7 @@ const SYN_DB = {
     'pact',
     'treaty'
   ],
-  'cover': [
+  cover: [
     'hide',
     'conceal',
     'overspread',
@@ -11488,16 +11488,16 @@ const SYN_DB = {
     'compensate',
     'countervail'
   ],
-  'covet': [
+  covet: [
     'desire',
     'wishfor'
   ],
-  'coward': [
+  coward: [
     'craven',
     'recreant',
     'dastard'
   ],
-  'coy': [
+  coy: [
     'bashful',
     'shy',
     'modest',
@@ -11505,7 +11505,7 @@ const SYN_DB = {
     'retreating',
     'shrinking'
   ],
-  'crack': [
+  crack: [
     'split',
     'break',
     'chop',
@@ -11515,7 +11515,7 @@ const SYN_DB = {
     'craze',
     'madden'
   ],
-  'craft': [
+  craft: [
     'skill',
     'ability',
     'power',
@@ -11535,7 +11535,7 @@ const SYN_DB = {
     'calling',
     'vessel'
   ],
-  'cramp': [
+  cramp: [
     'restrain',
     'hinder',
     'check',
@@ -11545,7 +11545,7 @@ const SYN_DB = {
     'fetter',
     'cripple'
   ],
-  'crash': [
+  crash: [
     'jar',
     'uproar',
     'clash',
@@ -11554,14 +11554,14 @@ const SYN_DB = {
     'clang',
     'resonance'
   ],
-  'crassitude': [
+  crassitude: [
     'crossness',
     'thickness',
     'density',
     'corpulence',
     'obesity'
   ],
-  'crave': [
+  crave: [
     'intreat',
     'beg',
     'beseech',
@@ -11571,7 +11571,7 @@ const SYN_DB = {
     'longfor',
     'yearn'
   ],
-  'crazy': [
+  crazy: [
     'shattered',
     'broken',
     'tottering',
@@ -11584,7 +11584,7 @@ const SYN_DB = {
     'demented',
     'deranged'
   ],
-  'create': [
+  create: [
     'form',
     'produce',
     'make',
@@ -11601,7 +11601,7 @@ const SYN_DB = {
     'fashion',
     'design'
   ],
-  'creature': [
+  creature: [
     'being',
     'animal',
     'man',
@@ -11612,7 +11612,7 @@ const SYN_DB = {
     'wretch',
     'miscreant'
   ],
-  'credentials': [
+  credentials: [
     'diploma',
     'missive',
     'title',
@@ -11621,14 +11621,14 @@ const SYN_DB = {
     'certificates',
     'testimonials'
   ],
-  'credible': [
+  credible: [
     'probable',
     'possible',
     'reliable',
     'trustworthy',
     'likely'
   ],
-  'credit': [
+  credit: [
     'trust',
     'belief',
     'faith',
@@ -11643,12 +11643,12 @@ const SYN_DB = {
     'loan',
     'securities'
   ],
-  'credulity': [
+  credulity: [
     'gullibility',
     'credulousness',
     'simplicity'
   ],
-  'creed': [
+  creed: [
     'belief',
     'catechism',
     'confession',
@@ -11656,7 +11656,7 @@ const SYN_DB = {
     'dogmas',
     'doctrines'
   ],
-  'crestfallen': [
+  crestfallen: [
     'downcast',
     'dispirited',
     'dejected',
@@ -11666,7 +11666,7 @@ const SYN_DB = {
     'lowspirited',
     'downhearted'
   ],
-  'crew': [
+  crew: [
     'gang',
     'set',
     'band',
@@ -11675,7 +11675,7 @@ const SYN_DB = {
     'mob',
     'throng'
   ],
-  'crime': [
+  crime: [
     'offense',
     'misdeed',
     'wrong',
@@ -11688,7 +11688,7 @@ const SYN_DB = {
     'wickedness',
     'delinquency'
   ],
-  'criminal': [
+  criminal: [
     'immoral',
     'iniquitous',
     'sinful',
@@ -11702,19 +11702,19 @@ const SYN_DB = {
     'illegal',
     'vicious'
   ],
-  'criminate': [
+  criminate: [
     'accuse',
     'arraign',
     'impeach'
   ],
-  'cripple': [
+  cripple: [
     'weaken',
     'disable',
     'impair',
     'cramp',
     'curtail'
   ],
-  'criterion': [
+  criterion: [
     'standard',
     'test',
     'rule',
@@ -11723,7 +11723,7 @@ const SYN_DB = {
     'canon',
     'proof'
   ],
-  'critic': [
+  critic: [
     'judge',
     'censor',
     'reviewer',
@@ -11733,7 +11733,7 @@ const SYN_DB = {
     'arbiter',
     'savant'
   ],
-  'critical': [
+  critical: [
     'accurate',
     'nice',
     'exact',
@@ -11748,14 +11748,14 @@ const SYN_DB = {
     'dubious',
     'precarious'
   ],
-  'criticism': [
+  criticism: [
     'censure',
     'stricture',
     'animadversion',
     'review',
     'critique'
   ],
-  'criticize': [
+  criticize: [
     'examine',
     'estimate',
     'judge',
@@ -11765,7 +11765,7 @@ const SYN_DB = {
     'scan',
     'animadvert'
   ],
-  'crooked': [
+  crooked: [
     'bent',
     'curved',
     'bowed',
@@ -11785,7 +11785,7 @@ const SYN_DB = {
     'deceitful',
     'tricky'
   ],
-  'cross': [
+  cross: [
     'fretful',
     'petulant',
     'peevish',
@@ -11801,7 +11801,7 @@ const SYN_DB = {
     'crabbed',
     'sulky'
   ],
-  'crowd': [
+  crowd: [
     'throng',
     'multitude',
     'concourse',
@@ -11813,7 +11813,7 @@ const SYN_DB = {
     'mob',
     'populace'
   ],
-  'crown': [
+  crown: [
     'diadem',
     'coronet',
     'garland',
@@ -11838,7 +11838,7 @@ const SYN_DB = {
     'achieve',
     'accomplish'
   ],
-  'crucial': [
+  crucial: [
     'severe',
     'trying',
     'searching',
@@ -11847,7 +11847,7 @@ const SYN_DB = {
     'momentous',
     'strategic'
   ],
-  'crude': [
+  crude: [
     'raw',
     'immature',
     'unripe',
@@ -11859,7 +11859,7 @@ const SYN_DB = {
     'uncouth',
     'awkward'
   ],
-  'cruel': [
+  cruel: [
     'inhuman',
     'merciless',
     'unfeeling',
@@ -11877,7 +11877,7 @@ const SYN_DB = {
     'bitter',
     'hard'
   ],
-  'crush': [
+  crush: [
     'pound',
     'crumble',
     'demolish',
@@ -11889,7 +11889,7 @@ const SYN_DB = {
     'raze',
     'pulverize'
   ],
-  'culmination': [
+  culmination: [
     'zenith',
     'success',
     'consummation',
@@ -11897,7 +11897,7 @@ const SYN_DB = {
     'completion',
     'apex'
   ],
-  'culpable': [
+  culpable: [
     'blameworthy',
     'blamable',
     'censurable',
@@ -11905,14 +11905,14 @@ const SYN_DB = {
     'faulty',
     'wrong'
   ],
-  'culprit': [
+  culprit: [
     'criminal',
     'delinquent',
     'felon',
     'malefactor',
     'offender'
   ],
-  'cultivate': [
+  cultivate: [
     'till',
     'fertilize',
     'improve',
@@ -11928,7 +11928,7 @@ const SYN_DB = {
     'cherish',
     'promote'
   ],
-  'cunning': [
+  cunning: [
     'craft',
     'artifice',
     'deceit',
@@ -11936,7 +11936,7 @@ const SYN_DB = {
     'subtlety',
     'chicane'
   ],
-  'cupidity': [
+  cupidity: [
     'longing',
     'greed',
     'lust',
@@ -11945,14 +11945,14 @@ const SYN_DB = {
     'acquisitiveness',
     'stinginess'
   ],
-  'curb': [
+  curb: [
     'restrain',
     'check',
     'control',
     'repress',
     'bridle'
   ],
-  'cure': [
+  cure: [
     'remedy',
     'antidote',
     'restorative',
@@ -11965,7 +11965,7 @@ const SYN_DB = {
     'alleviation',
     'renovation'
   ],
-  'curiosity': [
+  curiosity: [
     'inquisitiveness',
     'wonder',
     'marvel',
@@ -11976,7 +11976,7 @@ const SYN_DB = {
     'scrutiny',
     'research'
   ],
-  'curious': [
+  curious: [
     'prying',
     'meddling',
     'inquisitive',
@@ -11988,7 +11988,7 @@ const SYN_DB = {
     'elegant',
     'finished'
   ],
-  'current': [
+  current: [
     'common',
     'general',
     'prevalent',
@@ -11998,7 +11998,7 @@ const SYN_DB = {
     'ordinary',
     'vulgar'
   ],
-  'curse': [
+  curse: [
     'execration',
     'malediction',
     'anathema',
@@ -12012,7 +12012,7 @@ const SYN_DB = {
     'ban',
     'oath'
   ],
-  'cursory': [
+  cursory: [
     'hasty',
     'superficial',
     'desultory',
@@ -12020,7 +12020,7 @@ const SYN_DB = {
     'slight',
     'rapid'
   ],
-  'custody': [
+  custody: [
     'care',
     'keeping',
     'protection',
@@ -12028,7 +12028,7 @@ const SYN_DB = {
     'duress',
     'imprisonment'
   ],
-  'custom': [
+  custom: [
     'usage',
     'habit',
     'fashion',
@@ -12041,7 +12041,7 @@ const SYN_DB = {
     'duty',
     'tax'
   ],
-  'cutting': [
+  cutting: [
     'sharp',
     'keen',
     'sarcastic',
@@ -12054,7 +12054,7 @@ const SYN_DB = {
     'sardonic',
     'cruel'
   ],
-  'cynical': [
+  cynical: [
     'censorious',
     'churlish',
     'carping',
@@ -12066,7 +12066,7 @@ const SYN_DB = {
     'pessimistic',
     'misanthropic'
   ],
-  'dainty': [
+  dainty: [
     'exquisite',
     'choice',
     'rare',
@@ -12080,7 +12080,7 @@ const SYN_DB = {
     'fastidious',
     'luxurious'
   ],
-  'damage': [
+  damage: [
     'hurt',
     'injury',
     'detriment',
@@ -12088,7 +12088,7 @@ const SYN_DB = {
     'mischief',
     'impairment'
   ],
-  'danger': [
+  danger: [
     'peril',
     'risk',
     'hazard',
@@ -12097,7 +12097,7 @@ const SYN_DB = {
     'liability',
     'jeopardy'
   ],
-  'daring': [
+  daring: [
     'adventurous',
     'fearless',
     'risky',
@@ -12107,7 +12107,7 @@ const SYN_DB = {
     'intrepid',
     'valorous'
   ],
-  'darling': [
+  darling: [
     'sweetheart',
     'love',
     'pet',
@@ -12115,7 +12115,7 @@ const SYN_DB = {
     'idol',
     'dear'
   ],
-  'dash': [
+  dash: [
     'strike',
     'hurl',
     'cast',
@@ -12135,26 +12135,26 @@ const SYN_DB = {
     'surprise',
     'abash'
   ],
-  'dastard': [
+  dastard: [
     'coward',
     'craven',
     'recreant'
   ],
-  'data': [
+  data: [
     'facts',
     'basis',
     'grounds',
     'postulates',
     'premises'
   ],
-  'date': [
+  date: [
     'time',
     'era',
     'epoch',
     'period',
     'age'
   ],
-  'daub': [
+  daub: [
     'smear',
     'plaster',
     'sully',
@@ -12163,14 +12163,14 @@ const SYN_DB = {
     'deface',
     'defile'
   ],
-  'daunt': [
+  daunt: [
     'terrify',
     'alarm',
     'intimidate',
     'appall',
     'tame'
   ],
-  'dauntless': [
+  dauntless: [
     'valiant',
     'fearless',
     'intrepid',
@@ -12183,20 +12183,20 @@ const SYN_DB = {
     'brave',
     'daring'
   ],
-  'dawn': [
+  dawn: [
     'appear',
     'begin',
     'open',
     'break',
     'rise'
   ],
-  'akt': [
+  akt: [
     'wane',
     'set',
     'tnfc',
     'close'
   ],
-  'dazzle': [
+  dazzle: [
     'daze',
     'blind',
     'astonish',
@@ -12205,7 +12205,7 @@ const SYN_DB = {
     'bewilder',
     'confuse'
   ],
-  'dead': [
+  dead: [
     'lifeless',
     'breathless',
     'inanimate',
@@ -12227,7 +12227,7 @@ const SYN_DB = {
     'still',
     'torpid'
   ],
-  'deadly': [
+  deadly: [
     'mortal',
     'fatal',
     'destructive',
@@ -12238,7 +12238,7 @@ const SYN_DB = {
     'baneful',
     'venomous'
   ],
-  'deaf': [
+  deaf: [
     'dull',
     'insensible',
     'heedless',
@@ -12247,7 +12247,7 @@ const SYN_DB = {
     'disinclined',
     'inaudible'
   ],
-  'deal': [
+  deal: [
     'bargain',
     'chaffer',
     'trade',
@@ -12257,7 +12257,7 @@ const SYN_DB = {
     'divide',
     'share'
   ],
-  'dear': [
+  dear: [
     'costly',
     'highpriced',
     'expensive',
@@ -12265,13 +12265,13 @@ const SYN_DB = {
     'beloved',
     'valued'
   ],
-  'dearth': [
+  dearth: [
     'lack',
     'want',
     'scarcity',
     'poverty'
   ],
-  'death': [
+  death: [
     'decease',
     'dying',
     'dissolution',
@@ -12279,7 +12279,7 @@ const SYN_DB = {
     'exit',
     'expiration'
   ],
-  'debar': [
+  debar: [
     'exclude',
     'stop',
     'prevent',
@@ -12287,7 +12287,7 @@ const SYN_DB = {
     'restrain',
     'hinder'
   ],
-  'debase': [
+  debase: [
     'degrade',
     'deprave',
     'corrupt',
@@ -12296,7 +12296,7 @@ const SYN_DB = {
     'lower',
     'imcair'
   ],
-  'debate': [
+  debate: [
     'discussion',
     'dispute',
     'controversy',
@@ -12304,38 +12304,38 @@ const SYN_DB = {
     'altercation',
     'contest'
   ],
-  'debatable': [
+  debatable: [
     'dubious',
     'doubtful',
     'uncertain',
     'disputable',
     'problematical'
   ],
-  'debauch': [
+  debauch: [
     'seduce',
     'corrupt',
     'vitiate',
     'defile'
   ],
-  'debility': [
+  debility: [
     'infirmity',
     'weakness',
     'languor',
     'exhaustion',
     'feebleness'
   ],
-  'debt': [
+  debt: [
     'liability',
     'obligation',
     'default',
     'claim',
     'score'
   ],
-  'debtor': [
+  debtor: [
     'borrower',
     'mortgagor'
   ],
-  'decay': [
+  decay: [
     'corrupt',
     'putrefy',
     'decompose',
@@ -12345,7 +12345,7 @@ const SYN_DB = {
     'wither',
     'perish'
   ],
-  'deceit': [
+  deceit: [
     'fraud',
     'deception',
     'cheating',
@@ -12353,7 +12353,7 @@ const SYN_DB = {
     'imposition',
     'guile'
   ],
-  'deceive': [
+  deceive: [
     'cheat',
     'dupe',
     'delude',
@@ -12365,7 +12365,7 @@ const SYN_DB = {
     'circumvent',
     'entrap'
   ],
-  'deception': [
+  deception: [
     'craft',
     'cunning',
     'lying',
@@ -12378,7 +12378,7 @@ const SYN_DB = {
     'falsehood',
     'prevarication'
   ],
-  'decide': [
+  decide: [
     'determine',
     'settle',
     'conclude',
@@ -12387,13 +12387,13 @@ const SYN_DB = {
     'end',
     'resolve'
   ],
-  'decipher': [
+  decipher: [
     'reveal',
     'explain',
     'unravel',
     'unfold'
   ],
-  'decision': [
+  decision: [
     'determination',
     'sentence',
     'conclusion',
@@ -12401,46 +12401,46 @@ const SYN_DB = {
     'firmness',
     'resolution'
   ],
-  'decisive': [
+  decisive: [
     'conclusive',
     'positive',
     'final',
     'definitive',
     'indisputable'
   ],
-  'deck': [
+  deck: [
     'adorn',
     'dress',
     'ornament'
   ],
-  'declaim': [
+  declaim: [
     'recite',
     'speak',
     'debate',
     'harangue'
   ],
-  'declamation': [
+  declamation: [
     'harangue',
     'effusion',
     'debate',
     'oratory',
     'elocution'
   ],
-  'declaration': [
+  declaration: [
     'assertion',
     'affirmation',
     'avowal',
     'publication',
     'proclamation'
   ],
-  'declare': [
+  declare: [
     'announce',
     'publish',
     'advertise',
     'reveal',
     'proclaim'
   ],
-  'decline': [
+  decline: [
     'fall',
     'decay',
     'decadence',
@@ -12449,28 +12449,28 @@ const SYN_DB = {
     'rejeotion',
     'repudiation'
   ],
-  'declivity': [
+  declivity: [
     'fall',
     'slope',
     'descent'
   ],
-  'decoction': [
+  decoction: [
     'concoction',
     'mixture',
     'mess'
   ],
-  'decorate': [
+  decorate: [
     'adorn',
     'embellish',
     'improve'
   ],
-  'decorum': [
+  decorum: [
     'dignity',
     'order',
     'propriety',
     'seemliness'
   ],
-  'decrease': [
+  decrease: [
     'lessen',
     'diminish',
     'subside',
@@ -12481,7 +12481,7 @@ const SYN_DB = {
     'reduce',
     'loaver'
   ],
-  'decree': [
+  decree: [
     'decision',
     'determination',
     'law',
@@ -12489,13 +12489,13 @@ const SYN_DB = {
     'mandate',
     'manifesto'
   ],
-  'decrepit': [
+  decrepit: [
     'weak',
     'infirm',
     'tottering',
     'aged'
   ],
-  'decry': [
+  decry: [
     'disparage',
     'detract',
     'depreciate',
@@ -12503,7 +12503,7 @@ const SYN_DB = {
     'abase',
     'traduce'
   ],
-  'dedicate': [
+  dedicate: [
     'devote',
     'hallow',
     'sanctify',
@@ -12513,13 +12513,13 @@ const SYN_DB = {
     'assign',
     'apply'
   ],
-  'deduce': [
+  deduce: [
     'infer',
     'draw',
     'derive',
     'conclude'
   ],
-  'deed': [
+  deed: [
     'performance',
     'act',
     'action',
@@ -12530,7 +12530,7 @@ const SYN_DB = {
     'document',
     'instrument'
   ],
-  'deep': [
+  deep: [
     'profound',
     'difficult',
     'mysterious',
@@ -12546,7 +12546,7 @@ const SYN_DB = {
     'intense',
     'thorough'
   ],
-  'default': [
+  default: [
     'neglect',
     'failure',
     'omission',
@@ -12558,12 +12558,12 @@ const SYN_DB = {
     'delinquency',
     'absence'
   ],
-  'defeat': [
+  defeat: [
     'overthrow',
     'frustration',
     'discomfiture'
   ],
-  'defect': [
+  defect: [
     'fault',
     'flaw',
     'imperfection',
@@ -12571,7 +12571,7 @@ const SYN_DB = {
     'want',
     'shortcoming'
   ],
-  'defense': [
+  defense: [
     'apology',
     'justification',
     'vindication',
@@ -12585,7 +12585,7 @@ const SYN_DB = {
     'safeguard',
     'bulwark'
   ],
-  'at': [
+  at: [
     'surrender',
     'betrayal',
     'exposure',
@@ -12602,7 +12602,7 @@ const SYN_DB = {
     'strangeness',
     'eccentricity'
   ],
-  'defer': [
+  defer: [
     'delay',
     'postpone',
     'procrastinate',
@@ -12610,14 +12610,14 @@ const SYN_DB = {
     'yieldto',
     'respect'
   ],
-  'deference': [
+  deference: [
     'respect',
     'consideration',
     'esteem',
     'veneration',
     'homage'
   ],
-  'defile': [
+  defile: [
     'contaminate',
     'spoil',
     'pollute',
@@ -12626,7 +12626,7 @@ const SYN_DB = {
     'taint',
     'befoul'
   ],
-  'definition': [
+  definition: [
     'description',
     'exposition',
     'comment',
@@ -12635,20 +12635,20 @@ const SYN_DB = {
     'rendering',
     'translation'
   ],
-  'defrayment': [
+  defrayment: [
     'payment',
     'settlement',
     'liquidation',
     'discharge'
   ],
-  'defy': [
+  defy: [
     'challenge',
     'dare',
     'provoke',
     'scorn',
     'brave'
   ],
-  'degeneracy': [
+  degeneracy: [
     'degradation',
     'deterioration',
     'decay',
@@ -12656,7 +12656,7 @@ const SYN_DB = {
     'inferiority',
     'meanness'
   ],
-  'degree': [
+  degree: [
     'grade',
     'rank',
     'step',
@@ -12668,7 +12668,7 @@ const SYN_DB = {
     'interval',
     'space'
   ],
-  'dejected': [
+  dejected: [
     'disheartened',
     'discouraged',
     'depressed',
@@ -12678,13 +12678,13 @@ const SYN_DB = {
     'melancholy',
     'lowspirited'
   ],
-  'delay': [
+  delay: [
     'postponement',
     'procrastination',
     'hindrance',
     'impediment'
   ],
-  'delegate': [
+  delegate: [
     'substitute',
     'proxy',
     'representative',
@@ -12697,7 +12697,7 @@ const SYN_DB = {
     'constitute',
     'ordain'
   ],
-  'deleterious': [
+  deleterious: [
     'destructive',
     'noxious',
     'deadly',
@@ -12708,7 +12708,7 @@ const SYN_DB = {
     'pernicious',
     'unwholesome'
   ],
-  'deliberate': [
+  deliberate: [
     'meditate',
     'ponder',
     'debate',
@@ -12730,7 +12730,7 @@ const SYN_DB = {
     'earnest',
     'unbiased'
   ],
-  'delicacy': [
+  delicacy: [
     'dainty',
     'morsel',
     'tidbit',
@@ -12746,14 +12746,14 @@ const SYN_DB = {
     'purity',
     'sensibility'
   ],
-  'delicious': [
+  delicious: [
     'dainty',
     'savory',
     'delightful',
     'luscious',
     'exquisite'
   ],
-  'delight': [
+  delight: [
     'joy',
     'gladness',
     'charm',
@@ -12766,7 +12766,7 @@ const SYN_DB = {
     'enjoyment',
     'bliss'
   ],
-  'delightful': [
+  delightful: [
     'agreeable',
     'congenial',
     'grateful',
@@ -12778,7 +12778,7 @@ const SYN_DB = {
     'acceptable',
     'pleasurable'
   ],
-  'delineate': [
+  delineate: [
     'describe',
     'figure',
     'represent',
@@ -12788,14 +12788,14 @@ const SYN_DB = {
     'depict',
     'paint'
   ],
-  'delinquent': [
+  delinquent: [
     'offender',
     'culprit',
     'criminal',
     'miscreant',
     'malefactor'
   ],
-  'deliver': [
+  deliver: [
     'free',
     'liberate',
     'release',
@@ -12813,14 +12813,14 @@ const SYN_DB = {
     'discharge',
     'deal'
   ],
-  'deluge': [
+  deluge: [
     'inundation',
     'flood',
     'overflow',
     'rush',
     'cataclysm'
   ],
-  'delusion': [
+  delusion: [
     'error',
     'fallacy',
     'illusion',
@@ -12831,14 +12831,14 @@ const SYN_DB = {
     'deception',
     'imposture'
   ],
-  'demand': [
+  demand: [
     'require',
     'ask',
     'insist',
     'exact',
     'challenge'
   ],
-  'demarcation': [
+  demarcation: [
     'outline',
     'sketch',
     'limit',
@@ -12848,31 +12848,31 @@ const SYN_DB = {
     'separation',
     'distinction'
   ],
-  'demean': [
+  demean: [
     'behave',
     'comport',
     'act'
   ],
-  'demerit': [
+  demerit: [
     'fault',
     'delinquency',
     'misdeed',
     'failure'
   ],
-  'democratic': [
+  democratic: [
     'popular',
     'representative',
     'republican',
     'radical'
   ],
-  'demolish': [
+  demolish: [
     'overthrow',
     'destroy',
     'overturn',
     'raze',
     'ruin'
   ],
-  'demonstration': [
+  demonstration: [
     'exhibition',
     'exemplification',
     'manifestation',
@@ -12886,34 +12886,34 @@ const SYN_DB = {
     'inference',
     'deduction'
   ],
-  'demoralize': [
+  demoralize: [
     'corrupt',
     'deprave',
     'vitiate',
     'undermine',
     'subvert'
   ],
-  'demure': [
+  demure: [
     'sedate',
     'staid',
     'modest',
     'prudish',
     'discreet'
   ],
-  'denial': [
+  denial: [
     'refusal',
     'contradiction',
     'negation',
     'disavowal'
   ],
-  'denizen': [
+  denizen: [
     'citizen',
     'subject',
     'inhabitant',
     'dweller',
     'sojourner'
   ],
-  'denomination': [
+  denomination: [
     'name',
     'designation',
     'description',
@@ -12922,7 +12922,7 @@ const SYN_DB = {
     'sect',
     'school'
   ],
-  'denounce': [
+  denounce: [
     'brand',
     'defame',
     'stigmatize',
@@ -12933,7 +12933,7 @@ const SYN_DB = {
     'proscribe',
     'vituperate'
   ],
-  'dense': [
+  dense: [
     'thick',
     'slow',
     'compact',
@@ -12941,14 +12941,14 @@ const SYN_DB = {
     'close',
     'thickset'
   ],
-  'denunciation': [
+  denunciation: [
     'censure',
     'arraignment',
     'threat',
     'menace',
     'exposure'
   ],
-  'deny': [
+  deny: [
     'refuse',
     'withhold',
     'contradict',
@@ -12957,7 +12957,7 @@ const SYN_DB = {
     'abjure',
     'disown'
   ],
-  'depart': [
+  depart: [
     'leave',
     'go',
     'start',
@@ -12969,7 +12969,7 @@ const SYN_DB = {
     'die',
     'decease'
   ],
-  'dependent': [
+  dependent: [
     'hanging',
     'resting',
     'contingent',
@@ -12978,13 +12978,13 @@ const SYN_DB = {
     'subject',
     'relative'
   ],
-  'depict': [
+  depict: [
     'portray',
     'draw',
     'paint',
     'delineate'
   ],
-  'deplorable': [
+  deplorable: [
     'lamentable',
     'pitiable',
     'sad',
@@ -12995,14 +12995,14 @@ const SYN_DB = {
     'distressing',
     'melancholy'
   ],
-  'deportment': [
+  deportment: [
     'conduct',
     'carriage',
     'behavior',
     'demeanor',
     'character'
   ],
-  'depose': [
+  depose: [
     'dethrone',
     'debase',
     'degrade',
@@ -13010,21 +13010,21 @@ const SYN_DB = {
     'oust',
     'displace'
   ],
-  'deprecate': [
+  deprecate: [
     'regret',
     'disapprove',
     'lament',
     'intercede',
     'expostulate'
   ],
-  'depreciate': [
+  depreciate: [
     'disparage',
     'decry',
     'undervalue',
     'detract',
     'underestimate'
   ],
-  'depredation': [
+  depredation: [
     'robbery',
     'pillage',
     'plunder',
@@ -13035,7 +13035,7 @@ const SYN_DB = {
     'havoc',
     'encroachment'
   ],
-  'depression': [
+  depression: [
     'lowering',
     'degradation',
     'abasement',
@@ -13047,7 +13047,7 @@ const SYN_DB = {
     'valley',
     'decline'
   ],
-  'deprive': [
+  deprive: [
     'bereave',
     'rob',
     'divest',
@@ -13058,7 +13058,7 @@ const SYN_DB = {
     'prevent',
     'hinder'
   ],
-  'deputy': [
+  deputy: [
     'lieutenant',
     'agent',
     'representative',
@@ -13069,7 +13069,7 @@ const SYN_DB = {
     'proxy',
     'delegate'
   ],
-  'derangement': [
+  derangement: [
     'disorder',
     'confusion',
     'disarrangement',
@@ -13083,7 +13083,7 @@ const SYN_DB = {
     'alienation',
     'aberration'
   ],
-  'derision': [
+  derision: [
     'scorn',
     'contempt',
     'ridicule',
@@ -13091,7 +13091,7 @@ const SYN_DB = {
     'contumely',
     'scoffing'
   ],
-  'derivation': [
+  derivation: [
     'source',
     'origin',
     'genesis',
@@ -13100,14 +13100,14 @@ const SYN_DB = {
     'root',
     'etymology'
   ],
-  'derogate': [
+  derogate: [
     'detract',
     'depreciate',
     'disparage',
     'compromise',
     'lessen'
   ],
-  'descendant': [
+  descendant: [
     'offspring',
     'posterity',
     'progeny',
@@ -13118,7 +13118,7 @@ const SYN_DB = {
     'branch',
     'issue'
   ],
-  'describe': [
+  describe: [
     'trace',
     'draw',
     'portray',
@@ -13131,7 +13131,7 @@ const SYN_DB = {
     'explain',
     'characterize'
   ],
-  'descry': [
+  descry: [
     'perceive',
     'discern',
     'recognize',
@@ -13141,7 +13141,7 @@ const SYN_DB = {
     'behold',
     'detect'
   ],
-  'desecrate': [
+  desecrate: [
     'profane',
     'pollute',
     'pervert',
@@ -13149,30 +13149,30 @@ const SYN_DB = {
     'secularize',
     'prostitute'
   ],
-  'desert': [
+  desert: [
     'solitude',
     'wild',
     'wilderness',
     'waste'
   ],
-  'deserter': [
+  deserter: [
     'canter',
     'backslider',
     'abjurer',
     'traitor',
     'apostate'
   ],
-  'deserve': [
+  deserve: [
     'merit',
     'earn',
     'win'
   ],
-  'desideratum': [
+  desideratum: [
     'requisite',
     'want',
     'essential'
   ],
-  'design': [
+  design: [
     'intention',
     'purpose',
     'aim',
@@ -13213,7 +13213,7 @@ const SYN_DB = {
     'outline',
     'plot'
   ],
-  'designate': [
+  designate: [
     'specify',
     'particularize',
     'describe',
@@ -13227,7 +13227,7 @@ const SYN_DB = {
     'appoint',
     'allot'
   ],
-  'desirable': [
+  desirable: [
     'eligible',
     'expedient',
     'advantageous',
@@ -13239,7 +13239,7 @@ const SYN_DB = {
     'proper',
     'judicious'
   ],
-  'desire': [
+  desire: [
     'appetite',
     'inclination',
     'longing',
@@ -13253,7 +13253,7 @@ const SYN_DB = {
     'aspiration',
     'will'
   ],
-  'desolate': [
+  desolate: [
     'bereaved',
     'comfortless',
     'forlorn',
@@ -13267,13 +13267,13 @@ const SYN_DB = {
     'dreary',
     'wild'
   ],
-  'despair': [
+  despair: [
     'desperation',
     'discouragement',
     'hopelessness',
     'despondency'
   ],
-  'despatch': [
+  despatch: [
     'expedite',
     'speed',
     'accelerate',
@@ -13282,7 +13282,7 @@ const SYN_DB = {
     'kill',
     'slay'
   ],
-  'desperate': [
+  desperate: [
     'wild',
     'reckless',
     'despondent',
@@ -13297,14 +13297,14 @@ const SYN_DB = {
     'headlong',
     'frantic'
   ],
-  'despise': [
+  despise: [
     'contemn',
     'scorn',
     'slight',
     'disdain',
     'spurn'
   ],
-  'despoil': [
+  despoil: [
     'strip',
     'denude',
     'ravage',
@@ -13313,7 +13313,7 @@ const SYN_DB = {
     'pillage',
     'devastate'
   ],
-  'destination': [
+  destination: [
     'aim',
     'end',
     'object',
@@ -13322,7 +13322,7 @@ const SYN_DB = {
     'goal',
     'harbor'
   ],
-  'destiny': [
+  destiny: [
     'fate',
     'lot',
     'doom',
@@ -13332,7 +13332,7 @@ const SYN_DB = {
     'end',
     'predestination'
   ],
-  'destructive': [
+  destructive: [
     'ruinous',
     'injurious',
     'pernicious',
@@ -13342,12 +13342,12 @@ const SYN_DB = {
     'hurtful',
     'noxious'
   ],
-  'desuetude': [
+  desuetude: [
     'disuse',
     'nonobservance',
     'obsolescence'
   ],
-  'desultory': [
+  desultory: [
     'rambling',
     'irregular',
     'capricious',
@@ -13359,7 +13359,7 @@ const SYN_DB = {
     'spasmodic',
     'unsystematic'
   ],
-  'detail': [
+  detail: [
     'account',
     'narrative',
     'recital',
@@ -13372,13 +13372,13 @@ const SYN_DB = {
     'point',
     'component'
   ],
-  'detention': [
+  detention: [
     'hindrance',
     'retaining',
     'restraint',
     'stopping'
   ],
-  'deter': [
+  deter: [
     'hinder',
     'discourage',
     'prevent',
@@ -13389,14 +13389,14 @@ const SYN_DB = {
     'dishearten',
     'dissuade'
   ],
-  'deteriorate': [
+  deteriorate: [
     'impair',
     'degrade',
     'debase',
     'decline',
     'degenerate'
   ],
-  'determine': [
+  determine: [
     'settle',
     'adjust',
     'decide',
@@ -13406,17 +13406,17 @@ const SYN_DB = {
     'lead',
     'resolve'
   ],
-  'detest': [
+  detest: [
     'abominate',
     'abhor',
     'execrate',
     'loathe'
   ],
-  'dethrone': [
+  dethrone: [
     'depose',
     'uncrown'
   ],
-  'detract': [
+  detract: [
     'depreciate',
     'disparage',
     'lessen',
@@ -13427,7 +13427,7 @@ const SYN_DB = {
     'decry',
     'vilify'
   ],
-  'detriment': [
+  detriment: [
     'loss',
     'damage',
     'injury',
@@ -13438,7 +13438,7 @@ const SYN_DB = {
     'impairment',
     'inconvenience'
   ],
-  'develop': [
+  develop: [
     'evolve',
     'unfold',
     'educe',
@@ -13451,7 +13451,7 @@ const SYN_DB = {
     'grow',
     'mature'
   ],
-  'deviate': [
+  deviate: [
     'digress',
     'wander',
     'deflect',
@@ -13464,7 +13464,7 @@ const SYN_DB = {
     'differ',
     'vary'
   ],
-  'device': [
+  device: [
     'contrivance',
     'invention',
     'design',
@@ -13482,7 +13482,7 @@ const SYN_DB = {
     'symbol',
     'type'
   ],
-  'devious': [
+  devious: [
     'erratic',
     'wandering',
     'deviating',
@@ -13492,7 +13492,7 @@ const SYN_DB = {
     'treacherous',
     'roundabout'
   ],
-  'devise': [
+  devise: [
     'plan',
     'design',
     'contrive',
@@ -13503,7 +13503,7 @@ const SYN_DB = {
     'bequeath',
     'leave'
   ],
-  'devoid': [
+  devoid: [
     'void',
     'wanting',
     'empty',
@@ -13511,7 +13511,7 @@ const SYN_DB = {
     'vacant',
     'unprovidedfor'
   ],
-  'devolve': [
+  devolve: [
     'transfer',
     'consign',
     'convey',
@@ -13527,7 +13527,7 @@ const SYN_DB = {
     'fall',
     'pass'
   ],
-  'devotion': [
+  devotion: [
     'dedication',
     'consecration',
     'piety',
@@ -13545,7 +13545,7 @@ const SYN_DB = {
     'eagerness',
     'selfsacrifice'
   ],
-  'devour': [
+  devour: [
     'consume',
     'gorge',
     'eatravenously',
@@ -13555,14 +13555,14 @@ const SYN_DB = {
     'waste',
     'expend'
   ],
-  'dexterity': [
+  dexterity: [
     'aptitude',
     'skill',
     'expertness',
     'readiness',
     'adroitness'
   ],
-  'diadem': [
+  diadem: [
     'crown',
     'chaplet',
     'fillet',
@@ -13570,12 +13570,12 @@ const SYN_DB = {
     'tiara',
     'circlet'
   ],
-  'diagnosis': [
+  diagnosis: [
     'investigation',
     'determination',
     'analysis'
   ],
-  'diagnostic': [
+  diagnostic: [
     'symptom',
     'feature',
     'sign',
@@ -13584,7 +13584,7 @@ const SYN_DB = {
     'mark',
     'index'
   ],
-  'dialect': [
+  dialect: [
     'language',
     'phraseology',
     'tongue',
@@ -13593,12 +13593,12 @@ const SYN_DB = {
     'idiom',
     'accent'
   ],
-  'dialogue': [
+  dialogue: [
     'colloquy',
     'discourse',
     'teteatete'
   ],
-  'dictate': [
+  dictate: [
     'direct',
     'ordain',
     'command',
@@ -13613,7 +13613,7 @@ const SYN_DB = {
     'enjoin',
     'instruct'
   ],
-  'dictation': [
+  dictation: [
     'injunction',
     'precept',
     'command',
@@ -13622,7 +13622,7 @@ const SYN_DB = {
     'direction',
     'utterance'
   ],
-  'dictatorial': [
+  dictatorial: [
     'imperious',
     'imperative',
     'domineering',
@@ -13633,7 +13633,7 @@ const SYN_DB = {
     'unrestricted',
     'overbearing'
   ],
-  'diction': [
+  diction: [
     'expression',
     'language',
     'phrase',
@@ -13643,20 +13643,20 @@ const SYN_DB = {
     'vocabulary',
     'wording'
   ],
-  'dictionary': [
+  dictionary: [
     'lexicon',
     'wordbook',
     'glossary',
     'vocabulary'
   ],
-  'didactic': [
+  didactic: [
     'instructive',
     'perceptive',
     'moral',
     'directive',
     'educative'
   ],
-  'die': [
+  die: [
     'expire',
     'decease',
     'depart',
@@ -13672,7 +13672,7 @@ const SYN_DB = {
     'fall',
     'subside'
   ],
-  'diet': [
+  diet: [
     'food',
     'victuals',
     'nourishment',
@@ -13687,7 +13687,7 @@ const SYN_DB = {
     'parliament',
     'congress'
   ],
-  'difference': [
+  difference: [
     'contrast',
     'diversity',
     'variation',
@@ -13699,7 +13699,7 @@ const SYN_DB = {
     'divergence',
     'unlikeness'
   ],
-  'differentiate': [
+  differentiate: [
     'discriminate',
     'individualize',
     'distinguish',
@@ -13708,7 +13708,7 @@ const SYN_DB = {
     'segregate',
     'identify'
   ],
-  'difficult': [
+  difficult: [
     'arduous',
     'exhausting',
     'severe',
@@ -13726,7 +13726,7 @@ const SYN_DB = {
     'opposed',
     'unamenable'
   ],
-  'diffident': [
+  diffident: [
     'modest',
     'doubtful',
     'reluctant',
@@ -13736,7 +13736,7 @@ const SYN_DB = {
     'shy',
     'selfdistrustful'
   ],
-  'diffuse': [
+  diffuse: [
     'prolix',
     'loose',
     'copious',
@@ -13745,7 +13745,7 @@ const SYN_DB = {
     'longwinded',
     'diluted'
   ],
-  'digest': [
+  digest: [
     'methodize',
     'systematize',
     'arrange',
@@ -13760,7 +13760,7 @@ const SYN_DB = {
     'master',
     'assimilate'
   ],
-  'dignified': [
+  dignified: [
     'stately',
     'noble',
     'grand',
@@ -13773,7 +13773,7 @@ const SYN_DB = {
     'exalted',
     'pompous'
   ],
-  'dignify': [
+  dignify: [
     'advance',
     'promote',
     'exalt',
@@ -13785,26 +13785,26 @@ const SYN_DB = {
     'elevate',
     'aggrandize'
   ],
-  'digress': [
+  digress: [
     'deviate',
     'ramble',
     'wander',
     'differ'
   ],
-  'dilapidation': [
+  dilapidation: [
     'ruin',
     'decay',
     'disintegration',
     'downfall',
     'demolition'
   ],
-  'dilate': [
+  dilate: [
     'expand',
     'enlarge',
     'widen',
     'distend'
   ],
-  'dilatory': [
+  dilatory: [
     'slow',
     'loitering',
     'tardy',
@@ -13814,7 +13814,7 @@ const SYN_DB = {
     'lingering',
     'sluggish'
   ],
-  'diligence': [
+  diligence: [
     'industry',
     'assiduity',
     'activity',
@@ -13824,7 +13824,7 @@ const SYN_DB = {
     'care',
     'heed'
   ],
-  'dim': [
+  dim: [
     'obscure',
     'dark',
     'covered',
@@ -13833,7 +13833,7 @@ const SYN_DB = {
     'indistinct',
     'uncertain'
   ],
-  'diminish': [
+  diminish: [
     'lessen',
     'reduce',
     'decrease',
@@ -13843,13 +13843,13 @@ const SYN_DB = {
     'dwarf',
     'retrench'
   ],
-  'din': [
+  din: [
     'racket',
     'clamor',
     'noise',
     'uproar'
   ],
-  'dingy': [
+  dingy: [
     'dirty',
     'dull',
     'soiled',
@@ -13858,13 +13858,13 @@ const SYN_DB = {
     'obscure',
     'somber'
   ],
-  'dip': [
+  dip: [
     'soak',
     'steep',
     'drown',
     'submerge'
   ],
-  'diplomacy': [
+  diplomacy: [
     'negotiation',
     'indirection',
     'tact',
@@ -13874,7 +13874,7 @@ const SYN_DB = {
     'ministry',
     'ambassadorship'
   ],
-  'diplomatic': [
+  diplomatic: [
     'prudent',
     'wise',
     'tactful',
@@ -13884,13 +13884,13 @@ const SYN_DB = {
     'judicious',
     'discreet'
   ],
-  'direct': [
+  direct: [
     'unswerving',
     'straight',
     'rectilinear',
     'undeviating'
   ],
-  'direction': [
+  direction: [
     'course',
     'tendency',
     'aim',
@@ -13905,7 +13905,7 @@ const SYN_DB = {
     'address',
     'superscription'
   ],
-  'directly': [
+  directly: [
     'straightly',
     'immediately',
     'forthwith',
@@ -13918,7 +13918,7 @@ const SYN_DB = {
     'straightway',
     'atonce'
   ],
-  'dirge': [
+  dirge: [
     'requiem',
     'elegy',
     'lament',
@@ -13926,7 +13926,7 @@ const SYN_DB = {
     'threnody',
     'coronach'
   ],
-  'dirt': [
+  dirt: [
     'filth',
     'uncleanness',
     'dung',
@@ -13935,24 +13935,24 @@ const SYN_DB = {
     'filthiness',
     'defilement'
   ],
-  'dis': [
+  dis: [
     'therefore'
   ],
-  'disability': [
+  disability: [
     'unfitness',
     'inability',
     'incompetence',
     'incapacity',
     'disqualification'
   ],
-  'disabuse': [
+  disabuse: [
     'undeceive',
     'correct',
     'enlighten',
     'inform',
     'rectify'
   ],
-  'disappoint': [
+  disappoint: [
     'frustrate',
     'foil',
     'defeat',
@@ -13963,14 +13963,14 @@ const SYN_DB = {
     'betray',
     'tantalize'
   ],
-  'disaster': [
+  disaster: [
     'misfortune',
     'mishap',
     'reverse',
     'calamity',
     'catastrophe'
   ],
-  'disburse': [
+  disburse: [
     'spend',
     'expend',
     'consume',
@@ -13978,7 +13978,7 @@ const SYN_DB = {
     'use',
     'pay'
   ],
-  'discern': [
+  discern: [
     'observe',
     'discriminate',
     'distinguish',
@@ -13991,7 +13991,7 @@ const SYN_DB = {
     'penetrate',
     'differentiate'
   ],
-  'discernible': [
+  discernible: [
     'discoverable',
     'perceptible',
     'visible',
@@ -14002,7 +14002,7 @@ const SYN_DB = {
     'manifest',
     'evident'
   ],
-  'discernment': [
+  discernment: [
     'sagacity',
     'perception',
     'discrimination',
@@ -14016,7 +14016,7 @@ const SYN_DB = {
     'judgment',
     'ingenuity'
   ],
-  'discharge': [
+  discharge: [
     'unburden',
     'unload',
     'expel',
@@ -14037,7 +14037,7 @@ const SYN_DB = {
     'execute',
     'observe'
   ],
-  'disciple': [
+  disciple: [
     'follower',
     'student',
     'believer',
@@ -14048,7 +14048,7 @@ const SYN_DB = {
     'adherent',
     'votary'
   ],
-  'discipline': [
+  discipline: [
     'training',
     'teaching',
     'drill',
@@ -14062,14 +14062,14 @@ const SYN_DB = {
     'coercion',
     'chastisement'
   ],
-  'discomfit': [
+  discomfit: [
     'defeat',
     'overpower',
     'conquer',
     'foil',
     'disconcert'
   ],
-  'disconcert': [
+  disconcert: [
     'frustrate',
     'balk',
     'defeat',
@@ -14084,7 +14084,7 @@ const SYN_DB = {
     'confuse',
     'bewilder'
   ],
-  'disconsolate': [
+  disconsolate: [
     'inconsolable',
     'sorrowful',
     'heartbroken',
@@ -14094,14 +14094,14 @@ const SYN_DB = {
     'forlorn',
     'sad'
   ],
-  'discordance': [
+  discordance: [
     'disagreement',
     'discord',
     'dissonance',
     'conflict',
     'opposition'
   ],
-  'discover': [
+  discover: [
     'find',
     'detect',
     'discern',
@@ -14114,7 +14114,7 @@ const SYN_DB = {
     'indicate',
     'manifest'
   ],
-  'discreet': [
+  discreet: [
     'discerning',
     'wise',
     'sagacious',
@@ -14124,7 +14124,7 @@ const SYN_DB = {
     'considerate',
     'circumspect'
   ],
-  'discrepancy': [
+  discrepancy: [
     'dissonance',
     'discord',
     'discordance',
@@ -14132,7 +14132,7 @@ const SYN_DB = {
     'variation',
     'disagreement'
   ],
-  'discrimination': [
+  discrimination: [
     'acuteness',
     'penetration',
     'sagacity',
@@ -14140,7 +14140,7 @@ const SYN_DB = {
     'shrewdness',
     'insight'
   ],
-  'discursive': [
+  discursive: [
     'reasoning',
     'argumentative',
     'roving',
@@ -14149,14 +14149,14 @@ const SYN_DB = {
     'desultory',
     'inconsequent'
   ],
-  'disdain': [
+  disdain: [
     'contempt',
     'scorn',
     'disregard',
     'haughtiness',
     'arrogance'
   ],
-  'disease': [
+  disease: [
     'infirmity',
     'ailment',
     'distemper',
@@ -14168,7 +14168,7 @@ const SYN_DB = {
     'unsoundness',
     'affection'
   ],
-  'disgust': [
+  disgust: [
     'distaste',
     'loathing',
     'dislike',
@@ -14176,7 +14176,7 @@ const SYN_DB = {
     'aversion',
     'abhorrence'
   ],
-  'dismal': [
+  dismal: [
     'dark',
     'gloomy',
     'cheerless',
@@ -14192,7 +14192,7 @@ const SYN_DB = {
     'terrible',
     'frightful'
   ],
-  'dismay': [
+  dismay: [
     'affright',
     'terrify',
     'appall',
@@ -14200,19 +14200,19 @@ const SYN_DB = {
     'intimidate',
     'daunt'
   ],
-  'dismember': [
+  dismember: [
     'disintegrate',
     'mutilate',
     'separate',
     'sever'
   ],
-  'dismiss': [
+  dismiss: [
     'banish',
     'discard',
     'discharge',
     'remove'
   ],
-  'disparage': [
+  disparage: [
     'depreciate',
     'decry',
     'undervalue',
@@ -14220,13 +14220,13 @@ const SYN_DB = {
     'defame',
     'reproach'
   ],
-  'dispel': [
+  dispel: [
     'disperse',
     'dissipate',
     'banish',
     'scatter'
   ],
-  'dispensation': [
+  dispensation: [
     'apportionment',
     'allotment',
     'distribution',
@@ -14237,7 +14237,7 @@ const SYN_DB = {
     'plan',
     'regime'
   ],
-  'disperse': [
+  disperse: [
     'dispel',
     'scatter',
     'separate',
@@ -14245,7 +14245,7 @@ const SYN_DB = {
     'spread',
     'disseminate'
   ],
-  'display': [
+  display: [
     'expand',
     'unfold',
     'extend',
@@ -14256,7 +14256,7 @@ const SYN_DB = {
     'show',
     'parade'
   ],
-  'disposition': [
+  disposition: [
     'arrangement',
     'location',
     'placing',
@@ -14275,7 +14275,7 @@ const SYN_DB = {
     'willingness',
     'distribution'
   ],
-  'disputant': [
+  disputant: [
     'litigant',
     'debater',
     'arguer',
@@ -14283,7 +14283,7 @@ const SYN_DB = {
     'competitor',
     'claimant'
   ],
-  'dispute': [
+  dispute: [
     'quarrel',
     'wrangle',
     'debate',
@@ -14297,14 +14297,14 @@ const SYN_DB = {
     'oppose',
     'contest'
   ],
-  'disquisition': [
+  disquisition: [
     'treatise',
     'dissertation',
     'discourse',
     'essay',
     'discussion'
   ],
-  'dissect': [
+  dissect: [
     'anatomize',
     'scrutinize',
     'analyze',
@@ -14313,17 +14313,17 @@ const SYN_DB = {
     'examine',
     'sift'
   ],
-  'dissent': [
+  dissent: [
     'differ',
     'disagree',
     'decline'
   ],
-  'dissertation': [
+  dissertation: [
     'disquisition',
     'discussion',
     'treatise'
   ],
-  'dissipate': [
+  dissipate: [
     'scatter',
     'vanish',
     'disperse',
@@ -14331,13 +14331,13 @@ const SYN_DB = {
     'waste',
     'squander'
   ],
-  'deposit': [
+  deposit: [
     'hoard',
     'save',
     'gather',
     'conserve'
   ],
-  'dissociate': [
+  dissociate: [
     'separate',
     'sever',
     'disjoin',
@@ -14346,7 +14346,7 @@ const SYN_DB = {
     'sunder',
     'disconnect'
   ],
-  'dissolute': [
+  dissolute: [
     'abandoned',
     'corrupt',
     'loose',
@@ -14354,7 +14354,7 @@ const SYN_DB = {
     'reprobate',
     'dissipated'
   ],
-  'distance': [
+  distance: [
     'remoteness',
     'space',
     'interval',
@@ -14364,13 +14364,13 @@ const SYN_DB = {
     'coldness',
     'stiffness'
   ],
-  'distend': [
+  distend: [
     'dilate',
     'extend',
     'spread',
     'stretch'
   ],
-  'distill': [
+  distill: [
     'drop',
     'extract',
     'separate',
@@ -14378,7 +14378,7 @@ const SYN_DB = {
     'emanate',
     'drip'
   ],
-  'distinct': [
+  distinct: [
     'separate',
     'definite',
     'different',
@@ -14386,7 +14386,7 @@ const SYN_DB = {
     'plain',
     'unmistakable'
   ],
-  'distinguish': [
+  distinguish: [
     'discern',
     'perceive',
     'tell',
@@ -14398,7 +14398,7 @@ const SYN_DB = {
     'divide',
     'signalize'
   ],
-  'distinguished': [
+  distinguished: [
     'illustrious',
     'famous',
     'celebrated',
@@ -14410,7 +14410,7 @@ const SYN_DB = {
     'extraordinary',
     'consummate'
   ],
-  'distortion': [
+  distortion: [
     'deformity',
     'twist',
     'perversion',
@@ -14419,7 +14419,7 @@ const SYN_DB = {
     'sophistry',
     'corruption'
   ],
-  'distract': [
+  distract: [
     'divert',
     'perplex',
     'confuse',
@@ -14429,7 +14429,7 @@ const SYN_DB = {
     'derange',
     'craze'
   ],
-  'distraction': [
+  distraction: [
     'confusion',
     'perplexity',
     'abstraction',
@@ -14447,7 +14447,7 @@ const SYN_DB = {
     'derangement',
     'lunacy'
   ],
-  'distress': [
+  distress: [
     'affliction',
     'calamity',
     'adversity',
@@ -14462,7 +14462,7 @@ const SYN_DB = {
     'poverty',
     'indigence'
   ],
-  'distribute': [
+  distribute: [
     'dispense',
     'scatter',
     'allot',
@@ -14470,7 +14470,7 @@ const SYN_DB = {
     'grant',
     'appoint'
   ],
-  'district': [
+  district: [
     'region',
     'tract',
     'territory',
@@ -14478,7 +14478,7 @@ const SYN_DB = {
     'circuit',
     'quarter'
   ],
-  'disturb': [
+  disturb: [
     'agitate',
     'shake',
     'stir',
@@ -14494,7 +14494,7 @@ const SYN_DB = {
     'interrupt',
     'hinder'
   ],
-  'diversify': [
+  diversify: [
     'vary',
     'change',
     'alter',
@@ -14503,7 +14503,7 @@ const SYN_DB = {
     'streak',
     'spot'
   ],
-  'diversity': [
+  diversity: [
     'difference',
     'dissimilitude',
     'variation',
@@ -14513,7 +14513,7 @@ const SYN_DB = {
     'heterogeneousness',
     'multiformity'
   ],
-  'divest': [
+  divest: [
     'dismantle',
     'strip',
     'unclothe',
@@ -14521,7 +14521,7 @@ const SYN_DB = {
     'unrobe',
     'deprive'
   ],
-  'divide': [
+  divide: [
     'sever',
     'part',
     'separate',
@@ -14536,7 +14536,7 @@ const SYN_DB = {
     'share',
     'dispense'
   ],
-  'divination': [
+  divination: [
     'magic',
     'foretelling',
     'augury',
@@ -14544,14 +14544,14 @@ const SYN_DB = {
     'presage',
     'prediction'
   ],
-  'divorce': [
+  divorce: [
     'separate',
     'part',
     'sunder',
     'alienate',
     'disunite'
   ],
-  'do': [
+  do: [
     'accomplish',
     'achieve',
     'complete',
@@ -14569,7 +14569,7 @@ const SYN_DB = {
     'workout',
     'transact'
   ],
-  'docile': [
+  docile: [
     'manageable',
     'amenable',
     'compliant',
@@ -14581,7 +14581,7 @@ const SYN_DB = {
     'pliable',
     'obedient'
   ],
-  'doctrine': [
+  doctrine: [
     'tenet',
     'dogma',
     'opinion',
@@ -14591,7 +14591,7 @@ const SYN_DB = {
     'teaching',
     'creed'
   ],
-  'dogmatic': [
+  dogmatic: [
     'arrogant',
     'authoritative',
     'imperious',
@@ -14602,13 +14602,13 @@ const SYN_DB = {
     'magisterial',
     'dictatorial'
   ],
-  'domestic': [
+  domestic: [
     'private',
     'family',
     'familiar',
     'homelike'
   ],
-  'domicile': [
+  domicile: [
     'home',
     'abode',
     'house',
@@ -14616,7 +14616,7 @@ const SYN_DB = {
     'mansion',
     'dwelling'
   ],
-  'dominance': [
+  dominance: [
     'superiority',
     'lordship',
     'mastery',
@@ -14626,14 +14626,14 @@ const SYN_DB = {
     'ascendancy',
     'government'
   ],
-  'domineer': [
+  domineer: [
     'lord',
     'tyrannize',
     'dictate',
     'bully',
     'swagger'
   ],
-  'dominion': [
+  dominion: [
     'government',
     'domination',
     'supremacy',
@@ -14645,7 +14645,7 @@ const SYN_DB = {
     'territory',
     'sovereignty'
   ],
-  'doom': [
+  doom: [
     'condemnation',
     'fate',
     'sentence',
@@ -14653,13 +14653,13 @@ const SYN_DB = {
     'destiny',
     'verdict'
   ],
-  'dormant': [
+  dormant: [
     'sleeping',
     'latent',
     'inert',
     'quiescent'
   ],
-  'doubt': [
+  doubt: [
     'distrust',
     'skepticism',
     'disbelief',
@@ -14673,25 +14673,25 @@ const SYN_DB = {
     'perplexity',
     'uncertainty'
   ],
-  'downwards': [
+  downwards: [
     'below',
     'beneath',
     'down'
   ],
-  'drag': [
+  drag: [
     'draw',
     'pull',
     'haul',
     'bring'
   ],
-  'drain': [
+  drain: [
     'empty',
     'exhaust',
     'draw',
     'strain',
     'dry'
   ],
-  'draw': [
+  draw: [
     'haul',
     'lead',
     'pull',
@@ -14702,7 +14702,7 @@ const SYN_DB = {
     'incline',
     'induce'
   ],
-  'dread': [
+  dread: [
     'fear',
     'terror',
     'awe',
@@ -14710,7 +14710,7 @@ const SYN_DB = {
     'horror',
     'alarm'
   ],
-  'dream': [
+  dream: [
     'reverie',
     'fancy',
     'vision',
@@ -14721,7 +14721,7 @@ const SYN_DB = {
     'trance',
     'vagary'
   ],
-  'dreary': [
+  dreary: [
     'dismal',
     'gloomy',
     'dark',
@@ -14729,7 +14729,7 @@ const SYN_DB = {
     'solitary',
     'cheerless'
   ],
-  'dress': [
+  dress: [
     'clothing',
     'garments',
     'apparel',
@@ -14745,7 +14745,7 @@ const SYN_DB = {
     'habit',
     'vestments'
   ],
-  'drift': [
+  drift: [
     'direction',
     'bearing',
     'course',
@@ -14761,14 +14761,14 @@ const SYN_DB = {
     'heap',
     'mass'
   ],
-  'drink': [
+  drink: [
     'swallow',
     'imbibe',
     'quaff',
     'drain',
     'absorb'
   ],
-  'drive': [
+  drive: [
     'impel',
     'propel',
     'compel',
@@ -14780,7 +14780,7 @@ const SYN_DB = {
     'resist',
     'ride'
   ],
-  'droll': [
+  droll: [
     'whimsical',
     'comical',
     'ludicrous',
@@ -14790,7 +14790,7 @@ const SYN_DB = {
     'queer',
     'facetious'
   ],
-  'droop': [
+  droop: [
     'languish',
     'sink',
     'decline',
@@ -14800,7 +14800,7 @@ const SYN_DB = {
     'fade',
     'writ'
   ],
-  'drown': [
+  drown: [
     'sink',
     'immerse',
     'swamp',
@@ -14812,7 +14812,7 @@ const SYN_DB = {
     'overcome',
     'overpower'
   ],
-  'dry': [
+  dry: [
     'arid',
     'parched',
     'thirsty',
@@ -14827,7 +14827,7 @@ const SYN_DB = {
     'sharp',
     'keen'
   ],
-  'due': [
+  due: [
     'proper',
     'fitting',
     'suitable',
@@ -14836,7 +14836,7 @@ const SYN_DB = {
     'owing',
     'obligatory'
   ],
-  'dull': [
+  dull: [
     'heavy',
     'stupid',
     'unintelligent',
@@ -14860,14 +14860,14 @@ const SYN_DB = {
     'dreary',
     'tedious'
   ],
-  'dumb': [
+  dumb: [
     'speechless',
     'mute',
     'silent',
     'still',
     'inarticulate'
   ],
-  'duplicate': [
+  duplicate: [
     'copy',
     'counterpart',
     'facsimile',
@@ -14878,13 +14878,13 @@ const SYN_DB = {
     'double',
     'transcript'
   ],
-  'duration': [
+  duration: [
     'continuance',
     'term',
     'period',
     'protraction'
   ],
-  'duty': [
+  duty: [
     'office',
     'responsibility',
     'obligation',
@@ -14894,7 +14894,7 @@ const SYN_DB = {
     'right',
     'righteousness'
   ],
-  'dwell': [
+  dwell: [
     'live',
     'reside',
     'rest',
@@ -14904,7 +14904,7 @@ const SYN_DB = {
     'lodge',
     'sojourn'
   ],
-  'eager': [
+  eager: [
     'impatient',
     'anxious',
     'desirous',
@@ -14918,7 +14918,7 @@ const SYN_DB = {
     'impetuous',
     'vehement'
   ],
-  'earn': [
+  earn: [
     'acquire',
     'merit',
     'win',
@@ -14930,7 +14930,7 @@ const SYN_DB = {
     'obtain',
     'realize'
   ],
-  'earnest': [
+  earnest: [
     'eager',
     'zealous',
     'fervent',
@@ -14943,7 +14943,7 @@ const SYN_DB = {
     'important',
     'momentous'
   ],
-  'ease': [
+  ease: [
     'facility',
     'knack',
     'readiness',
@@ -14956,7 +14956,7 @@ const SYN_DB = {
     'refreshment',
     'relief'
   ],
-  'easy': [
+  easy: [
     'quiet',
     'comfortable',
     'tranquil',
@@ -14970,7 +14970,7 @@ const SYN_DB = {
     'moderate',
     'affluent'
   ],
-  'ebb': [
+  ebb: [
     'retire',
     'recede',
     'abate',
@@ -14979,7 +14979,7 @@ const SYN_DB = {
     'wane',
     'sink'
   ],
-  'eccentric': [
+  eccentric: [
     'irregular',
     'abnormal',
     'uncommon',
@@ -14991,14 +14991,14 @@ const SYN_DB = {
     'erratic',
     'whimsical'
   ],
-  'echo': [
+  echo: [
     'resonance',
     'repetition',
     'reverberation',
     'imitation',
     'answer'
   ],
-  'eclipse': [
+  eclipse: [
     'obscuration',
     'dimming',
     'obscurity',
@@ -15011,13 +15011,13 @@ const SYN_DB = {
     'annihilation',
     'destruction'
   ],
-  'economize': [
+  economize: [
     'save',
     'husband',
     'retrench',
     'utilize'
   ],
-  'economy': [
+  economy: [
     'thrift',
     'thriftiness',
     'frugality',
@@ -15031,7 +15031,7 @@ const SYN_DB = {
     'establishedorder',
     'dispensation'
   ],
-  'ecstasy': [
+  ecstasy: [
     'transport',
     'rapture',
     'inspiration',
@@ -15042,7 +15042,7 @@ const SYN_DB = {
     'enthusiasm',
     'happiness'
   ],
-  'edge': [
+  edge: [
     'border',
     'margin',
     'brink',
@@ -15055,13 +15055,13 @@ const SYN_DB = {
     'animation',
     'zest'
   ],
-  'edible': [
+  edible: [
     'eatable',
     'esculent',
     'wholesome',
     'culinary'
   ],
-  'edict': [
+  edict: [
     'decree',
     'command',
     'order',
@@ -15069,20 +15069,20 @@ const SYN_DB = {
     'mandate',
     'ordinance'
   ],
-  'edifice': [
+  edifice: [
     'building',
     'tenement',
     'fabric',
     'structure'
   ],
-  'edify': [
+  edify: [
     'enlighten',
     'improve',
     'stimulate',
     'strengthen',
     'nurture'
   ],
-  'edit': [
+  edit: [
     'revise',
     'correct',
     'annotate',
@@ -15090,7 +15090,7 @@ const SYN_DB = {
     'conduct',
     'manage'
   ],
-  'educate': [
+  educate: [
     'discipline',
     'teach',
     'instruct',
@@ -15099,7 +15099,7 @@ const SYN_DB = {
     'breed',
     'develop'
   ],
-  'education': [
+  education: [
     'training',
     'teaching',
     'tuition',
@@ -15116,13 +15116,13 @@ const SYN_DB = {
     'reading',
     'study'
   ],
-  'educe': [
+  educe: [
     'extract',
     'elicit',
     'evolve',
     'produce'
   ],
-  'efface': [
+  efface: [
     'obliterate',
     'erase',
     'blotout',
@@ -15131,7 +15131,7 @@ const SYN_DB = {
     'eradicate',
     'expunge'
   ],
-  'effect': [
+  effect: [
     'chattels',
     'goods',
     'commodities',
@@ -15151,7 +15151,7 @@ const SYN_DB = {
     'consummate',
     'fulfill'
   ],
-  'effectuate': [
+  effectuate: [
     'accomplish',
     'effect',
     'execute',
@@ -15159,7 +15159,7 @@ const SYN_DB = {
     'secure',
     'fulfill'
   ],
-  'effeminate': [
+  effeminate: [
     'feminine',
     'womanly',
     'delicate',
@@ -15172,7 +15172,7 @@ const SYN_DB = {
     'weak',
     'emasculated'
   ],
-  'effervesce': [
+  effervesce: [
     'boil',
     'bubble',
     'froth',
@@ -15180,7 +15180,7 @@ const SYN_DB = {
     'ferment',
     'sparkle'
   ],
-  'effete': [
+  effete: [
     'barren',
     'unfruitful',
     'decayed',
@@ -15190,7 +15190,7 @@ const SYN_DB = {
     'wasted',
     'decrepit'
   ],
-  'efficacious': [
+  efficacious: [
     'effectual',
     'effective',
     'active',
@@ -15199,7 +15199,7 @@ const SYN_DB = {
     'adequate',
     'cogent'
   ],
-  'efficacy': [
+  efficacy: [
     'power',
     'potency',
     'force',
@@ -15210,7 +15210,7 @@ const SYN_DB = {
     'energy',
     'usefulness'
   ],
-  'efficiency': [
+  efficiency: [
     'power',
     'strength',
     'capability',
@@ -15232,7 +15232,7 @@ const SYN_DB = {
     'genius',
     'acuteness'
   ],
-  'efficient': [
+  efficient: [
     'operative',
     'active',
     'potent',
@@ -15246,7 +15246,7 @@ const SYN_DB = {
     'proficient',
     'competent'
   ],
-  'effigy': [
+  effigy: [
     'image',
     'representation',
     'figure',
@@ -15254,7 +15254,7 @@ const SYN_DB = {
     'likeness',
     'dummy'
   ],
-  'efflorescence': [
+  efflorescence: [
     'flowering',
     'blooming',
     'blossoming',
@@ -15263,7 +15263,7 @@ const SYN_DB = {
     'bloom',
     'luxuriance'
   ],
-  'effluence': [
+  effluence: [
     'emanation',
     'flow',
     'effusion',
@@ -15275,14 +15275,14 @@ const SYN_DB = {
     'abundance',
     'overflow'
   ],
-  'effluvium': [
+  effluvium: [
     'exhalation',
     'emanation',
     'malaria',
     'miasma',
     'stink'
   ],
-  'effort': [
+  effort: [
     'endeavor',
     'attempt',
     'trial',
@@ -15293,7 +15293,7 @@ const SYN_DB = {
     'striving',
     'stretch'
   ],
-  'effulgence': [
+  effulgence: [
     'brilliancy',
     'splendor',
     'luster',
@@ -15305,7 +15305,7 @@ const SYN_DB = {
     'luminosity',
     'resplendence'
   ],
-  'effuse': [
+  effuse: [
     'profuse',
     'lavish',
     'prodigal',
@@ -15313,7 +15313,7 @@ const SYN_DB = {
     'abundant',
     'effluent'
   ],
-  'effusion': [
+  effusion: [
     'outpouring',
     'effluence',
     'discharge',
@@ -15326,7 +15326,7 @@ const SYN_DB = {
     'shedding',
     'spilling'
   ],
-  'effusive': [
+  effusive: [
     'lavish',
     'generous',
     'profuse',
@@ -15335,7 +15335,7 @@ const SYN_DB = {
     'spreadwidely',
     'diffused'
   ],
-  'egoism': [
+  egoism: [
     'selfishness',
     'selfassurance',
     'selfconceit',
@@ -15349,7 +15349,7 @@ const SYN_DB = {
     'selflove',
     'selfexaltation'
   ],
-  'egregious': [
+  egregious: [
     'surpassing',
     'extraordinary',
     'remarkable',
@@ -15362,23 +15362,23 @@ const SYN_DB = {
     'flagrant',
     'gross'
   ],
-  'egress': [
+  egress: [
     'exit',
     'departure',
     'outlet',
     'sally'
   ],
-  'either': [
+  either: [
     'each',
     'both'
   ],
-  'ejaculation': [
+  ejaculation: [
     'exclamation',
     'cry',
     'utterance',
     'expletive'
   ],
-  'eject': [
+  eject: [
     'emit',
     'vomit',
     'void',
@@ -15390,7 +15390,7 @@ const SYN_DB = {
     'reject',
     'banish'
   ],
-  'eke': [
+  eke: [
     'supply',
     'increase',
     'stretch',
@@ -15398,7 +15398,7 @@ const SYN_DB = {
     'augment',
     'help'
   ],
-  'elaborate': [
+  elaborate: [
     'improve',
     'refine',
     'develop',
@@ -15408,13 +15408,13 @@ const SYN_DB = {
     'prepare',
     'concoct'
   ],
-  'elapse': [
+  elapse: [
     'pass',
     'slip',
     'lapse',
     'intervene'
   ],
-  'elastic': [
+  elastic: [
     'flexible',
     'springy',
     'resilient',
@@ -15426,7 +15426,7 @@ const SYN_DB = {
     'rebounding',
     'recoiling'
   ],
-  'elated': [
+  elated: [
     'cheered',
     'excited',
     'exhilarated',
@@ -15435,7 +15435,7 @@ const SYN_DB = {
     'inspirited',
     'inflated'
   ],
-  'elect': [
+  elect: [
     'picked',
     'selected',
     'chosen',
@@ -15447,7 +15447,7 @@ const SYN_DB = {
     'elite',
     'accepted'
   ],
-  'electric': [
+  electric: [
     'inspiring',
     'inspiriting',
     'stimulating',
@@ -15458,7 +15458,7 @@ const SYN_DB = {
     'stirring',
     'exciting'
   ],
-  'electrify': [
+  electrify: [
     'rouse',
     'excite',
     'thrill',
@@ -15468,7 +15468,7 @@ const SYN_DB = {
     'amaze',
     'appeal'
   ],
-  'elegance': [
+  elegance: [
     'grace',
     'beauty',
     'propriety',
@@ -15480,7 +15480,7 @@ const SYN_DB = {
     'gracefulness',
     'taste'
   ],
-  'elegant': [
+  elegant: [
     'graceful',
     'wellformed',
     'symmetrical',
@@ -15493,7 +15493,7 @@ const SYN_DB = {
     'accomplished',
     'polished'
   ],
-  'elegy': [
+  elegy: [
     'dirge',
     'threnody',
     'lament',
@@ -15501,10 +15501,10 @@ const SYN_DB = {
     'requiem',
     'coronach'
   ],
-  'element': [
+  element: [
     'outlines'
   ],
-  'elementary': [
+  elementary: [
     'simple',
     'uncompounded',
     'rudimentary',
@@ -15516,7 +15516,7 @@ const SYN_DB = {
     'component',
     'constituent'
   ],
-  'elevate': [
+  elevate: [
     'raise',
     'exalt',
     'promote',
@@ -15534,7 +15534,7 @@ const SYN_DB = {
     'excite',
     'exhilarate'
   ],
-  'elevation': [
+  elevation: [
     'raising',
     'elevating',
     'promotion',
@@ -15552,7 +15552,7 @@ const SYN_DB = {
     'loftiness',
     'tallness'
   ],
-  'elicit': [
+  elicit: [
     'evoke',
     'educe',
     'deduce',
@@ -15561,7 +15561,7 @@ const SYN_DB = {
     'evolve',
     'extort'
   ],
-  'eligible': [
+  eligible: [
     'desirable',
     'preferable',
     'qualified',
@@ -15570,7 +15570,7 @@ const SYN_DB = {
     'prime',
     'choice'
   ],
-  'elimination': [
+  elimination: [
     'expulsion',
     'exclusion',
     'discharge',
@@ -15581,14 +15581,14 @@ const SYN_DB = {
     'riddance',
     'obliteration'
   ],
-  'elision': [
+  elision: [
     'omission',
     'ejection',
     'ellipsis',
     'abridgment',
     'excerption'
   ],
-  'elliptical': [
+  elliptical: [
     'contracted',
     'abbreviated',
     'suggestive',
@@ -15599,14 +15599,14 @@ const SYN_DB = {
     'defective',
     'incomplete'
   ],
-  'elocution': [
+  elocution: [
     'speech',
     'utterance',
     'delivery',
     'eloquence',
     'oratory'
   ],
-  'elongation': [
+  elongation: [
     'protraction',
     'extension',
     'production',
@@ -15614,18 +15614,18 @@ const SYN_DB = {
     'withdrawal',
     'distance'
   ],
-  'eloquence': [
+  eloquence: [
     'oratory',
     'gracefulutterance'
   ],
-  'elucidate': [
+  elucidate: [
     'explain',
     'illustrate',
     'clear',
     'unfold',
     'expound'
   ],
-  'elucidation': [
+  elucidation: [
     'explanation',
     'exposition',
     'illustration',
@@ -15636,7 +15636,7 @@ const SYN_DB = {
     'gloss',
     'scholium'
   ],
-  'elude': [
+  elude: [
     'escape',
     'avoid',
     'shun',
@@ -15651,7 +15651,7 @@ const SYN_DB = {
     'evade',
     'mock'
   ],
-  'elusive': [
+  elusive: [
     'evasive',
     'delusive',
     'equivocating',
@@ -15667,7 +15667,7 @@ const SYN_DB = {
     'unsubstantial',
     'intangible'
   ],
-  'emaciation': [
+  emaciation: [
     'leanness',
     'lankness',
     'thinness',
@@ -15678,14 +15678,14 @@ const SYN_DB = {
     'skinniness',
     'meagerness'
   ],
-  'emanate': [
+  emanate: [
     'issue',
     'arise',
     'spring',
     'proceed',
     'emerge'
   ],
-  'emancipate': [
+  emancipate: [
     'free',
     'enfranchise',
     'liberate',
@@ -15696,7 +15696,7 @@ const SYN_DB = {
     'unchain',
     'disenthrall'
   ],
-  'embargo': [
+  embargo: [
     'prohibition',
     'ban',
     'restraint',
@@ -15705,7 +15705,7 @@ const SYN_DB = {
     'detention',
     'stoppage'
   ],
-  'embark': [
+  embark: [
     'ship',
     'engage',
     'enlist',
@@ -15714,7 +15714,7 @@ const SYN_DB = {
     'enter',
     'start'
   ],
-  'embarrass': [
+  embarrass: [
     'entangle',
     'perplex',
     'distress',
@@ -15729,14 +15729,14 @@ const SYN_DB = {
     'confound',
     'encumber'
   ],
-  'embellish': [
+  embellish: [
     'adorn',
     'decorate',
     'ornament',
     'deck',
     'beautify'
   ],
-  'embezzle': [
+  embezzle: [
     'appropriate',
     'steal',
     'purloin',
@@ -15745,7 +15745,7 @@ const SYN_DB = {
     'forge',
     'counterfeit'
   ],
-  'embitter': [
+  embitter: [
     'aggravate',
     'exacerbate',
     'exasperate',
@@ -15756,7 +15756,7 @@ const SYN_DB = {
     'provoke',
     'excite'
   ],
-  'emblem': [
+  emblem: [
     'figure',
     'image',
     'sign',
@@ -15771,7 +15771,7 @@ const SYN_DB = {
     'mark',
     'signal'
   ],
-  'embody': [
+  embody: [
     'incorporate',
     'concentrate',
     'compact',
@@ -15785,7 +15785,7 @@ const SYN_DB = {
     'comprise',
     'contain'
   ],
-  'embolden': [
+  embolden: [
     'encourage',
     'animate',
     'reassure',
@@ -15794,14 +15794,14 @@ const SYN_DB = {
     'urge',
     'stimulate'
   ],
-  'embosomed': [
+  embosomed: [
     'concealed',
     'enveloped',
     'surrounded',
     'encircled',
     'enfolded'
   ],
-  'embrace': [
+  embrace: [
     'clasp',
     'hug',
     'press',
@@ -15814,12 +15814,12 @@ const SYN_DB = {
     'contain',
     'embody'
   ],
-  'embroider': [
+  embroider: [
     'embellish',
     'enrich',
     'emboss'
   ],
-  'embroil': [
+  embroil: [
     'implicate',
     'entangle',
     'ensnarl',
@@ -15830,33 +15830,33 @@ const SYN_DB = {
     'distract',
     'trouble'
   ],
-  'embryo': [
+  embryo: [
     'germ',
     'rudiment',
     'nucleus',
     'origin'
   ],
-  'emendation': [
+  emendation: [
     'amendment',
     'correction',
     'rectification',
     'reformation',
     'improvement'
   ],
-  'emerge': [
+  emerge: [
     'eise',
     'issue',
     'emanate',
     'escape',
     'appear'
   ],
-  'emigration': [
+  emigration: [
     'removal',
     'exodus',
     'colonization',
     'departure'
   ],
-  'eminence': [
+  eminence: [
     'prominence',
     'projection',
     'elevation',
@@ -15873,7 +15873,7 @@ const SYN_DB = {
     'conspicuousness',
     'superiority'
   ],
-  'eminent': [
+  eminent: [
     'high',
     'lofty',
     'elevated',
@@ -15887,27 +15887,27 @@ const SYN_DB = {
     'famous',
     'reputed'
   ],
-  'emission': [
+  emission: [
     'ejection',
     'expulsion',
     'issue',
     'issuance'
   ],
-  'emit': [
+  emit: [
     'eject',
     'expel',
     'issue',
     'decree',
     'discharge'
   ],
-  'emollient': [
+  emollient: [
     'softening',
     'laxative',
     'balsamic',
     'soothing',
     'palliative'
   ],
-  'emolument': [
+  emolument: [
     'gain',
     'pay',
     'profit',
@@ -15924,7 +15924,7 @@ const SYN_DB = {
     'gratuity',
     'perquisite'
   ],
-  'emotion': [
+  emotion: [
     'feeling',
     'passion',
     'excitement',
@@ -15934,7 +15934,7 @@ const SYN_DB = {
     'tremor',
     'trepidation'
   ],
-  'emphasis': [
+  emphasis: [
     'stress',
     'force',
     'ictus',
@@ -15942,7 +15942,7 @@ const SYN_DB = {
     'significance',
     'impressiveness'
   ],
-  'emphatic': [
+  emphatic: [
     'significant',
     'expressive',
     'strong',
@@ -15956,7 +15956,7 @@ const SYN_DB = {
     'important',
     'special'
   ],
-  'empire': [
+  empire: [
     'dominion',
     'supremacy',
     'sovereignty',
@@ -15968,7 +15968,7 @@ const SYN_DB = {
     'rule',
     'kingdom'
   ],
-  'empiric': [
+  empiric: [
     'tentative',
     'experimental',
     'provisional',
@@ -15976,7 +15976,7 @@ const SYN_DB = {
     'experiential',
     'quackish'
   ],
-  'employ': [
+  employ: [
     'engage',
     'call',
     'hire',
@@ -15990,7 +15990,7 @@ const SYN_DB = {
     'occupy',
     'economize'
   ],
-  'employment': [
+  employment: [
     'business',
     'vocation',
     'pursuit',
@@ -16006,7 +16006,7 @@ const SYN_DB = {
     'application',
     'engrossment'
   ],
-  'empower': [
+  empower: [
     'commission',
     'authorize',
     'warrant',
@@ -16017,7 +16017,7 @@ const SYN_DB = {
     'sanction',
     'direct'
   ],
-  'Empty': [
+  Empty: [
     'void',
     'vacant',
     'unoccupied',
@@ -16046,7 +16046,7 @@ const SYN_DB = {
     'idle',
     'deficient'
   ],
-  'emulation': [
+  emulation: [
     'rivalry',
     'exceed',
     'competition',
@@ -16057,14 +16057,14 @@ const SYN_DB = {
     'aspiration',
     'contest'
   ],
-  'enable': [
+  enable: [
     'empower',
     'strengthen',
     'qualify',
     'capacitate',
     'invigorate'
   ],
-  'enact': [
+  enact: [
     'decree',
     'ordain',
     'play',
@@ -16075,7 +16075,7 @@ const SYN_DB = {
     'dissimulate',
     'pass'
   ],
-  'enamor': [
+  enamor: [
     'charm',
     'captivate',
     'fascinate',
@@ -16084,19 +16084,19 @@ const SYN_DB = {
     'bewitch',
     'enchain'
   ],
-  'encamp': [
+  encamp: [
     'bivouac',
     'pitch',
     'settle',
     'quarter',
     'camp'
   ],
-  'enchain': [
+  enchain: [
     'fetter',
     'manacle',
     'enslave'
   ],
-  'enchant': [
+  enchant: [
     'charm',
     'fascinate',
     'bewitch',
@@ -16110,7 +16110,7 @@ const SYN_DB = {
     'beatify',
     'delight'
   ],
-  'enchantment': [
+  enchantment: [
     'incantation',
     'fascination',
     'charm',
@@ -16126,7 +16126,7 @@ const SYN_DB = {
     'transport',
     'bliss'
   ],
-  'encircle': [
+  encircle: [
     'surround',
     'encompass',
     'environ',
@@ -16138,7 +16138,7 @@ const SYN_DB = {
     'beset',
     'circumscribe'
   ],
-  'enclose': [
+  enclose: [
     'encompass',
     'encircle',
     'shut',
@@ -16148,7 +16148,7 @@ const SYN_DB = {
     'wrap',
     'circumscribe'
   ],
-  'enclosure': [
+  enclosure: [
     'compass',
     'circle',
     'yard',
@@ -16161,7 +16161,7 @@ const SYN_DB = {
     'boundary',
     'precinct'
   ],
-  'encomium': [
+  encomium: [
     'eulogy',
     'praise',
     'eulogium',
@@ -16171,19 +16171,19 @@ const SYN_DB = {
     'paean',
     'compliment'
   ],
-  'encompass': [
+  encompass: [
     'encircle',
     'enclose',
     'gird',
     'surround',
     'circumscribe'
   ],
-  'encounter': [
+  encounter: [
     'meet',
     'confront',
     'face'
   ],
-  'encourage': [
+  encourage: [
     'inspirit',
     'animate',
     'embolden',
@@ -16206,7 +16206,7 @@ const SYN_DB = {
     'prompt',
     'urge'
   ],
-  'encroach': [
+  encroach: [
     'intrude',
     'trespass',
     'infringe',
@@ -16215,7 +16215,7 @@ const SYN_DB = {
     'advancestealthily',
     'transgress'
   ],
-  'encumber': [
+  encumber: [
     'clog',
     'load',
     'impede',
@@ -16229,7 +16229,7 @@ const SYN_DB = {
     'entangle',
     'complicate'
   ],
-  'encumbrance': [
+  encumbrance: [
     'load',
     'impediment',
     'hindrance',
@@ -16237,7 +16237,7 @@ const SYN_DB = {
     'claim',
     'liability'
   ],
-  'end': [
+  end: [
     'limit',
     'outcome',
     'period',
@@ -16280,7 +16280,7 @@ const SYN_DB = {
     'destroy',
     'kill'
   ],
-  'endanger': [
+  endanger: [
     'hazard',
     'risk',
     'peril',
@@ -16288,12 +16288,12 @@ const SYN_DB = {
     'compromise',
     'jeopardize'
   ],
-  'endear': [
+  endear: [
     'attach',
     'gain',
     'conciliate'
   ],
-  'endeavor': [
+  endeavor: [
     'attempt',
     'essay',
     'try',
@@ -16302,7 +16302,7 @@ const SYN_DB = {
     'labor',
     'aim'
   ],
-  'endless': [
+  endless: [
     'interminable',
     'boundless',
     'limitless',
@@ -16323,7 +16323,7 @@ const SYN_DB = {
     'undying',
     'imperishable'
   ],
-  'endow': [
+  endow: [
     'enrich',
     'endue',
     'invest',
@@ -16333,7 +16333,7 @@ const SYN_DB = {
     'supply',
     'clothe'
   ],
-  'endure': [
+  endure: [
     'suffer',
     'submit',
     'bear',
@@ -16350,7 +16350,7 @@ const SYN_DB = {
     'remain',
     'persist'
   ],
-  'enemy': [
+  enemy: [
     'adversary',
     'competitor',
     'foe',
@@ -16358,7 +16358,7 @@ const SYN_DB = {
     'rival',
     'antagonist'
   ],
-  'energetic': [
+  energetic: [
     'vigorous',
     'active',
     'forcible',
@@ -16370,7 +16370,7 @@ const SYN_DB = {
     'able',
     'capable'
   ],
-  'energy': [
+  energy: [
     'agility',
     'activity',
     'force',
@@ -16388,7 +16388,7 @@ const SYN_DB = {
     'manliness',
     'zeal'
   ],
-  'enervate': [
+  enervate: [
     'unnerve',
     'weaken',
     'enfeeble',
@@ -16398,13 +16398,13 @@ const SYN_DB = {
     'paralyze',
     'incapacitate'
   ],
-  'enfeeble': [
+  enfeeble: [
     'enervate',
     'weaken',
     'debilitate',
     'unnerve'
   ],
-  'enfold': [
+  enfold: [
     'envelop',
     'wrap',
     'enclose',
@@ -16412,7 +16412,7 @@ const SYN_DB = {
     'encircle',
     'encompass'
   ],
-  'enforce': [
+  enforce: [
     'urge',
     'impress',
     'compel',
@@ -16424,21 +16424,21 @@ const SYN_DB = {
     'exert',
     'strain'
   ],
-  'enforcement': [
+  enforcement: [
     'inculcation',
     'execution',
     'sanction',
     'constraint',
     'compulsion'
   ],
-  'enfranchise': [
+  enfranchise: [
     'free',
     'emancipate',
     'release',
     'qualify',
     'manumit'
   ],
-  'engage': [
+  engage: [
     'promise',
     'bind',
     'pledge',
@@ -16468,7 +16468,7 @@ const SYN_DB = {
     'agree',
     'adopt'
   ],
-  'engagement': [
+  engagement: [
     'promise',
     'stipulation',
     'contract',
@@ -16489,7 +16489,7 @@ const SYN_DB = {
     'action',
     'conflict'
   ],
-  'engaging': [
+  engaging: [
     'attractive',
     'winning',
     'charming',
@@ -16497,7 +16497,7 @@ const SYN_DB = {
     'interesting',
     'delightful'
   ],
-  'engender': [
+  engender: [
     'beget',
     'generate',
     'create',
@@ -16507,7 +16507,7 @@ const SYN_DB = {
     'occasion',
     'propagate'
   ],
-  'engross': [
+  engross: [
     'absorb',
     'engage',
     'monopolize',
@@ -16516,7 +16516,7 @@ const SYN_DB = {
     'forestall',
     'copy'
   ],
-  'enhance': [
+  enhance: [
     'heighten',
     'swell',
     'advance',
@@ -16524,7 +16524,7 @@ const SYN_DB = {
     'increase',
     'aggrandize'
   ],
-  'enigmatic': [
+  enigmatic: [
     'obscure',
     'puzzling',
     'hidden',
@@ -16537,7 +16537,7 @@ const SYN_DB = {
     'mystical',
     'occult'
   ],
-  'enjoin': [
+  enjoin: [
     'urge',
     'admonish',
     'advise',
@@ -16553,11 +16553,11 @@ const SYN_DB = {
     'oblige',
     'prescribe'
   ],
-  'enjoy': [
+  enjoy: [
     'possess',
     'like'
   ],
-  'enjoyment': [
+  enjoyment: [
     'pleasure',
     'delight',
     'happiness',
@@ -16568,7 +16568,7 @@ const SYN_DB = {
     'gladness',
     'felicity'
   ],
-  'enlarge': [
+  enlarge: [
     'amplify',
     'augment',
     'increase',
@@ -16582,7 +16582,7 @@ const SYN_DB = {
     'swell',
     'grow'
   ],
-  'enlighten': [
+  enlighten: [
     'illuminate',
     'lightup',
     'inform',
@@ -16591,7 +16591,7 @@ const SYN_DB = {
     'makeintelligent',
     'instruct'
   ],
-  'enlist': [
+  enlist: [
     'enroll',
     'register',
     'incorporate',
@@ -16601,7 +16601,7 @@ const SYN_DB = {
     'chronicle',
     'muster'
   ],
-  'enliven': [
+  enliven: [
     'amuse',
     'quicken',
     'animate',
@@ -16614,7 +16614,7 @@ const SYN_DB = {
     'gladden',
     'exhilarate'
   ],
-  'enmity': [
+  enmity: [
     'hatred',
     'hostility',
     'malice',
@@ -16634,7 +16634,7 @@ const SYN_DB = {
     'hate',
     'discord'
   ],
-  'ennoble': [
+  ennoble: [
     'dignify',
     'elevate',
     'exalt',
@@ -16642,7 +16642,7 @@ const SYN_DB = {
     'enlarge',
     'makegreat'
   ],
-  'enormity': [
+  enormity: [
     'depravity',
     'atrocity',
     'wickedness',
@@ -16654,14 +16654,14 @@ const SYN_DB = {
     'perpetration',
     'sin'
   ],
-  'enough': [
+  enough: [
     'sufficient',
     'plenty',
     'satisfactory',
     'ample',
     'abundant'
   ],
-  'enrage': [
+  enrage: [
     'exasperate',
     'provoke',
     'irritate',
@@ -16674,7 +16674,7 @@ const SYN_DB = {
     'aggravate',
     'anger'
   ],
-  'enrapture': [
+  enrapture: [
     'enchant',
     'entrance',
     'enravish',
@@ -16692,7 +16692,7 @@ const SYN_DB = {
     'enamor',
     'enslave'
   ],
-  'enrich': [
+  enrich: [
     'aggrandize',
     'enhance',
     'endow',
@@ -16705,7 +16705,7 @@ const SYN_DB = {
     'embellish',
     'fertilize'
   ],
-  'enroll': [
+  enroll: [
     'enlist',
     'register',
     'record',
@@ -16714,19 +16714,19 @@ const SYN_DB = {
     'list',
     'catalogue'
   ],
-  'enrollment': [
+  enrollment: [
     'registration',
     'register',
     'record'
   ],
-  'enshrine': [
+  enshrine: [
     'treasure',
     'preserve',
     'cherish',
     'embalm',
     'consecrate'
   ],
-  'enslave': [
+  enslave: [
     'captivate',
     'charm',
     'enthrall',
@@ -16737,7 +16737,7 @@ const SYN_DB = {
     'delight',
     'fascinate'
   ],
-  'ensue': [
+  ensue: [
     'follow',
     'result',
     'eventuate',
@@ -16751,7 +16751,7 @@ const SYN_DB = {
     'spring',
     'come'
   ],
-  'entail': [
+  entail: [
     'transfer',
     'transmit',
     'fix',
@@ -16763,7 +16763,7 @@ const SYN_DB = {
     'induce',
     'necessitate'
   ],
-  'entangle': [
+  entangle: [
     'implicate',
     'involve',
     'compromise',
@@ -16776,7 +16776,7 @@ const SYN_DB = {
     'interweave',
     'intertwine'
   ],
-  'enter': [
+  enter: [
     'pierce',
     'penetrate',
     'begin',
@@ -16792,7 +16792,7 @@ const SYN_DB = {
     'join',
     'invade'
   ],
-  'enterprise': [
+  enterprise: [
     'adventure',
     'undertaking',
     'effort',
@@ -16807,7 +16807,7 @@ const SYN_DB = {
     'willingness',
     'progress'
   ],
-  'enterprising': [
+  enterprising: [
     'venturesome',
     'adventurous',
     'daring',
@@ -16826,7 +16826,7 @@ const SYN_DB = {
     'progressive',
     'speculative'
   ],
-  'entertain': [
+  entertain: [
     'amuse',
     'interest',
     'divert',
@@ -16847,7 +16847,7 @@ const SYN_DB = {
     'hold',
     'receive'
   ],
-  'entertainment': [
+  entertainment: [
     'delight',
     'diversion',
     'amusement',
@@ -16864,13 +16864,13 @@ const SYN_DB = {
     'reception',
     'lodging'
   ],
-  'enthrone': [
+  enthrone: [
     'crown',
     'install',
     'exalt',
     'elevate'
   ],
-  'enthusiasm': [
+  enthusiasm: [
     'ardor',
     'earnestness',
     'excitement',
@@ -16890,7 +16890,7 @@ const SYN_DB = {
     'intensity',
     'transport'
   ],
-  'entice': [
+  entice: [
     'lure',
     'attract',
     'seduce',
@@ -16904,7 +16904,7 @@ const SYN_DB = {
     'inveigle',
     'induce'
   ],
-  'entire': [
+  entire: [
     'whole',
     'complete',
     'perfect',
@@ -16926,7 +16926,7 @@ const SYN_DB = {
     'total',
     'absolute'
   ],
-  'entitle': [
+  entitle: [
     'name',
     'designate',
     'denominate',
@@ -16939,17 +16939,17 @@ const SYN_DB = {
     'empower',
     'qualify'
   ],
-  'entity': [
+  entity: [
     'being',
     'essence',
     'existence'
   ],
-  'entomb': [
+  entomb: [
     'bury',
     'inter',
     'inhume'
   ],
-  'entrance': [
+  entrance: [
     'approach',
     'doorway',
     'opening',
@@ -16972,7 +16972,7 @@ const SYN_DB = {
     'commencement',
     'initiation'
   ],
-  'entreat': [
+  entreat: [
     'beg',
     'supplicate',
     'solicit',
@@ -16987,7 +16987,7 @@ const SYN_DB = {
     'enjoin',
     'urge'
   ],
-  'entry': [
+  entry: [
     'entrance',
     'ingress',
     'access',
@@ -17003,12 +17003,12 @@ const SYN_DB = {
     'initiation',
     'beginning'
   ],
-  'entwine': [
+  entwine: [
     'interlace',
     'weave',
     'entwist'
   ],
-  'enunciate': [
+  enunciate: [
     'announce',
     'proclaim',
     'declare',
@@ -17022,7 +17022,7 @@ const SYN_DB = {
     'publish',
     'promulgate'
   ],
-  'envelop': [
+  envelop: [
     'wrap',
     'surround',
     'encircle',
@@ -17031,7 +17031,7 @@ const SYN_DB = {
     'cover',
     'hide'
   ],
-  'envenom': [
+  envenom: [
     'poison',
     'taint',
     'vitiate',
@@ -17045,12 +17045,12 @@ const SYN_DB = {
     'madden',
     'inflame'
   ],
-  'envious': [
+  envious: [
     'jealous',
     'suspicious',
     'grudging'
   ],
-  'environ': [
+  environ: [
     'surround',
     'encircle',
     'encompass',
@@ -17062,13 +17062,13 @@ const SYN_DB = {
     'besiege',
     'beset'
   ],
-  'envoy': [
+  envoy: [
     'ambassador',
     'minister',
     'legate',
     'plenipotentiary'
   ],
-  'envy': [
+  envy: [
     'malice',
     'jealousy',
     'hate',
@@ -17079,7 +17079,7 @@ const SYN_DB = {
     'discontent',
     'mortification'
   ],
-  'ephemeral': [
+  ephemeral: [
     'transient',
     'momentary',
     'daily',
@@ -17090,21 +17090,21 @@ const SYN_DB = {
     'evanescent',
     'transitory'
   ],
-  'epigrammatic': [
+  epigrammatic: [
     'pointed',
     'terse',
     'laconic',
     'concise',
     'graphic'
   ],
-  'epitome': [
+  epitome: [
     'summary',
     'compend',
     'abstract',
     'curtailment',
     'reduction'
   ],
-  'equable': [
+  equable: [
     'even',
     'uniform',
     'steady',
@@ -17114,7 +17114,7 @@ const SYN_DB = {
     'easy',
     'invariable'
   ],
-  'equal': [
+  equal: [
     'like',
     'equivalent',
     'identical',
@@ -17135,21 +17135,21 @@ const SYN_DB = {
     'equitable',
     'just'
   ],
-  'equality': [
+  equality: [
     'likeness',
     'uniformity',
     'identity',
     'evenness',
     'equableness'
   ],
-  'equanimity': [
+  equanimity: [
     'composure',
     'calmness',
     'tranquility',
     'steadiness',
     'serenity'
   ],
-  'equip': [
+  equip: [
     'accouter',
     'arm',
     'provide',
@@ -17162,7 +17162,7 @@ const SYN_DB = {
     'invest',
     'clothe'
   ],
-  'equipment': [
+  equipment: [
     'accouterments',
     'apparatus',
     'furnishings',
@@ -17176,7 +17176,7 @@ const SYN_DB = {
     'arms',
     'supplies'
   ],
-  'equitable': [
+  equitable: [
     'upright',
     'just',
     'impartial',
@@ -17190,7 +17190,7 @@ const SYN_DB = {
     'evenhanded',
     'proportionate'
   ],
-  'equity': [
+  equity: [
     'justice',
     'right',
     'uprightness',
@@ -17200,7 +17200,7 @@ const SYN_DB = {
     'honesty',
     'integrity'
   ],
-  'equivalent': [
+  equivalent: [
     'equal',
     'equipollent',
     'tantamount',
@@ -17208,7 +17208,7 @@ const SYN_DB = {
     'interchangeable',
     'equiponderant'
   ],
-  'equivocal': [
+  equivocal: [
     'ambiguous',
     'indefinite',
     'enigmatical',
@@ -17221,7 +17221,7 @@ const SYN_DB = {
     'indistinct',
     'suspicious'
   ],
-  'eradicate': [
+  eradicate: [
     'abolish',
     'extinguish',
     'exterminate',
@@ -17231,14 +17231,14 @@ const SYN_DB = {
     'annihilate',
     'excise'
   ],
-  'erase': [
+  erase: [
     'efface',
     'expunge',
     'cancel',
     'obliterate',
     'scratchout'
   ],
-  'erect': [
+  erect: [
     'upright',
     'standing',
     'elevated',
@@ -17258,7 +17258,7 @@ const SYN_DB = {
     'found',
     'plant'
   ],
-  'err': [
+  err: [
     'deviate',
     'wander',
     'ramble',
@@ -17276,7 +17276,7 @@ const SYN_DB = {
     'stray',
     'stumble'
   ],
-  'errand': [
+  errand: [
     'message',
     'mandate',
     'commission',
@@ -17284,7 +17284,7 @@ const SYN_DB = {
     'charge',
     'delegation'
   ],
-  'erratic': [
+  erratic: [
     'wandering',
     'nomadic',
     'roving',
@@ -17300,14 +17300,14 @@ const SYN_DB = {
     'changeful',
     'capricious'
   ],
-  'erring': [
+  erring: [
     'sinful',
     'fallible',
     'wandering',
     'misguided',
     'misled'
   ],
-  'error': [
+  error: [
     'blunder',
     'mistake',
     'misapprehension',
@@ -17329,14 +17329,14 @@ const SYN_DB = {
     'falsity',
     'hallucination'
   ],
-  'erudition': [
+  erudition: [
     'knowledge',
     'learning',
     'lore',
     'scholarship',
     'letters'
   ],
-  'eruption': [
+  eruption: [
     'explosion',
     'outbreak',
     'outburst',
@@ -17346,7 +17346,7 @@ const SYN_DB = {
     'exsufnation',
     'ejection'
   ],
-  'escape': [
+  escape: [
     'avoid',
     'shun',
     'evade',
@@ -17356,7 +17356,7 @@ const SYN_DB = {
     'fly',
     'hide'
   ],
-  'esoteric': [
+  esoteric: [
     'private',
     'secret',
     'acroamatic',
@@ -17367,7 +17367,7 @@ const SYN_DB = {
     'special',
     'advanced'
   ],
-  'essence': [
+  essence: [
     'nature',
     'quintessence',
     'substance',
@@ -17381,7 +17381,7 @@ const SYN_DB = {
     'entity',
     'life'
   ],
-  'essential': [
+  essential: [
     'vital',
     'necessary',
     'indispensable',
@@ -17395,7 +17395,7 @@ const SYN_DB = {
     'immanent',
     'leading'
   ],
-  'establish': [
+  establish: [
     'fix',
     'settle',
     'makesteadfast',
@@ -17423,7 +17423,7 @@ const SYN_DB = {
     'endow',
     'demonstrate'
   ],
-  'estate': [
+  estate: [
     'state',
     'condition',
     'rank',
@@ -17440,7 +17440,7 @@ const SYN_DB = {
     'domain',
     'freehold'
   ],
-  'esteem': [
+  esteem: [
     'estimate',
     'favor',
     'regard',
@@ -17468,7 +17468,7 @@ const SYN_DB = {
     'love',
     'like'
   ],
-  'estimable': [
+  estimable: [
     'appreciable',
     'calculable',
     'computable',
@@ -17482,7 +17482,7 @@ const SYN_DB = {
     'delectable',
     'praiseworthy'
   ],
-  'eternal': [
+  eternal: [
     'immortal',
     'perpetual',
     'fadeless',
@@ -17502,13 +17502,13 @@ const SYN_DB = {
     'unfading',
     'infinite'
   ],
-  'etiquette': [
+  etiquette: [
     'manners',
     'breeding',
     'fashion',
     'conventionality'
   ],
-  'euphonious': [
+  euphonious: [
     'euphonic',
     'mellifluous',
     'clear',
@@ -17519,14 +17519,14 @@ const SYN_DB = {
     'harmonious',
     'mellow'
   ],
-  'euphuism': [
+  euphuism: [
     'purism',
     'affectedelegance',
     'affectation',
     'factitiousness',
     'pedantry'
   ],
-  'evacuate': [
+  evacuate: [
     'empty',
     'eject',
     'expel',
@@ -17540,7 +17540,7 @@ const SYN_DB = {
     'abandon',
     'relinquish'
   ],
-  'evaporate': [
+  evaporate: [
     'vaporize',
     'disappear',
     'evanesce',
@@ -17552,7 +17552,7 @@ const SYN_DB = {
     'dissolve',
     'distill'
   ],
-  'evasion': [
+  evasion: [
     'prevarication',
     'equivocation',
     'quibbling',
@@ -17565,7 +17565,7 @@ const SYN_DB = {
     'quibble',
     'fencing'
   ],
-  'even': [
+  even: [
     'smooth',
     'level',
     'hat',
@@ -17582,7 +17582,7 @@ const SYN_DB = {
     'flush',
     'wellbalanced'
   ],
-  'event': [
+  event: [
     'circumstance',
     'chance',
     'incident',
@@ -17602,7 +17602,7 @@ const SYN_DB = {
     'adventure',
     'accident'
   ],
-  'eventful': [
+  eventful: [
     'stirring',
     'memorable',
     'signal',
@@ -17614,7 +17614,7 @@ const SYN_DB = {
     'noted',
     'notable'
   ],
-  'ever': [
+  ever: [
     'always',
     'perpetually',
     'continually',
@@ -17625,7 +17625,7 @@ const SYN_DB = {
     'constantly',
     'incessantly'
   ],
-  'everlasting': [
+  everlasting: [
     'endless',
     'unending',
     'perpetual',
@@ -17647,19 +17647,19 @@ const SYN_DB = {
     'everliving',
     'infinite'
   ],
-  'every': [
+  every: [
     'all',
     'any',
     'both',
     'either',
     'each'
   ],
-  'evict': [
+  evict: [
     'dispossess',
     'eject',
     'throwout'
   ],
-  'evidence': [
+  evidence: [
     'testimony',
     'proof',
     'manifestation',
@@ -17675,7 +17675,7 @@ const SYN_DB = {
     'exemplification',
     'illustration'
   ],
-  'evil': [ //! !
+  evil: [ //! !
     'ill',
     'noxious',
     'deleterious',
@@ -17695,7 +17695,7 @@ const SYN_DB = {
     'miserable',
     'sorrowful'
   ],
-  'evince': [
+  evince: [
     'prove',
     'show',
     'evidence',
@@ -17706,7 +17706,7 @@ const SYN_DB = {
     'indicate',
     'display'
   ],
-  'evoke': [
+  evoke: [
     'summon',
     'excite',
     'arouse',
@@ -17718,13 +17718,13 @@ const SYN_DB = {
     'eliminate',
     'extract'
   ],
-  'exactly': [
+  exactly: [
     'precisely',
     'accurately',
     'strictly',
     'nicely'
   ],
-  'exaggerate': [
+  exaggerate: [
     'overstate',
     'strain',
     'overcharge',
@@ -17738,7 +17738,7 @@ const SYN_DB = {
     'overpaint',
     'overestimate'
   ],
-  'examine': [
+  examine: [
     'inspect',
     'observe',
     'investigate',
@@ -17756,7 +17756,7 @@ const SYN_DB = {
     'overhaul',
     'explore'
   ],
-  'example': [
+  example: [
     'model',
     'pattern',
     'ideal',
@@ -17776,7 +17776,7 @@ const SYN_DB = {
     'issue',
     'development'
   ],
-  'excavate': [
+  excavate: [
     'hollow',
     'dig',
     'scoopout',
@@ -17785,7 +17785,7 @@ const SYN_DB = {
     'discover',
     'disinter'
   ],
-  'except': [
+  except: [
     'excepting',
     'without',
     'saving',
@@ -17797,7 +17797,7 @@ const SYN_DB = {
     'segregate',
     'negative'
   ],
-  'exception': [
+  exception: [
     'exclusion',
     'omission',
     'noninclusion',
@@ -17808,11 +17808,11 @@ const SYN_DB = {
     'qualification',
     'separation'
   ],
-  'exceptionable': [
+  exceptionable: [
     'undesirable',
     'objectionable'
   ],
-  'exceptional': [
+  exceptional: [
     'irregular',
     'rare',
     'unusual',
@@ -17824,7 +17824,7 @@ const SYN_DB = {
     'aberrant',
     'exceptive'
   ],
-  'excessive': [
+  excessive: [
     'superabundant',
     'disproportionate',
     'undue',
@@ -17842,14 +17842,14 @@ const SYN_DB = {
     'unreasonable',
     'extravagant'
   ],
-  'excitability': [
+  excitability: [
     'sensibility',
     'sensitiveness',
     'irritability',
     'irascibility',
     'passionateness'
   ],
-  'excommunicate': [
+  excommunicate: [
     'dismiss',
     'expel',
     'denounce',
@@ -17862,19 +17862,19 @@ const SYN_DB = {
     'eject',
     'blackball'
   ],
-  'excrescence': [
+  excrescence: [
     'tumor',
     'protuberance',
     'superfluity',
     'redundancy'
   ],
-  'excruciate': [
+  excruciate: [
     'torture',
     'torment',
     'rack',
     'agonize'
   ],
-  'exculpate': [
+  exculpate: [
     'absolve',
     'exonerate',
     'acquit',
@@ -17883,7 +17883,7 @@ const SYN_DB = {
     'defend',
     'release'
   ],
-  'excursion': [
+  excursion: [
     'trip',
     'ramble',
     'tour',
@@ -17891,11 +17891,11 @@ const SYN_DB = {
     'journey',
     'expedition'
   ],
-  'excusable': [
+  excusable: [
     'pardonable',
     'venial'
   ],
-  'excuse': [
+  excuse: [
     'pardon',
     'forgive',
     'absolve',
@@ -17914,7 +17914,7 @@ const SYN_DB = {
     'defend',
     'mitigate'
   ],
-  'execrable': [
+  execrable: [
     'detestable',
     'cursed',
     'loathsome',
@@ -17934,7 +17934,7 @@ const SYN_DB = {
     'revolting',
     'vile'
   ],
-  'execration': [
+  execration: [
     'curse',
     'malediction',
     'ban',
@@ -17946,13 +17946,13 @@ const SYN_DB = {
     'abomination',
     'denunciation'
   ],
-  'execute': [
+  execute: [
     'administer',
     'perform',
     'enforce',
     'do'
   ],
-  'exemplary': [
+  exemplary: [
     'laudable',
     'praiseworthy',
     'excellent',
@@ -17971,21 +17971,21 @@ const SYN_DB = {
     'punctual',
     'rigorous'
   ],
-  'exemplify': [
+  exemplify: [
     'illustrate',
     'manifest',
     'embody',
     'exhibit',
     'represent'
   ],
-  'exempt': [
+  exempt: [
     'relieve',
     'release',
     'excuse',
     'exonerate',
     'except'
   ],
-  'exemption': [
+  exemption: [
     'immunity',
     'privilege',
     'exception',
@@ -17993,7 +17993,7 @@ const SYN_DB = {
     'dispensation',
     'license'
   ],
-  'exercise': [
+  exercise: [
     'application',
     'drill',
     'employment',
@@ -18008,7 +18008,7 @@ const SYN_DB = {
     'activity',
     'action'
   ],
-  'exertion': [
+  exertion: [
     'use',
     'exercise',
     'effort',
@@ -18021,7 +18021,7 @@ const SYN_DB = {
     'labor',
     'toil'
   ],
-  'exhalation': [
+  exhalation: [
     'evaporation',
     'vapor',
     'fume',
@@ -18033,13 +18033,13 @@ const SYN_DB = {
     'damp',
     'effluvium'
   ],
-  'exhale': [
+  exhale: [
     'emit',
     'giveout',
     'evaporate',
     'vaporize'
   ],
-  'exhaust': [
+  exhaust: [
     'drain',
     'empty',
     'expend',
@@ -18059,7 +18059,7 @@ const SYN_DB = {
     'wearout',
     'weary'
   ],
-  'exhibit': [
+  exhibit: [
     'show',
     'display',
     'manifest',
@@ -18074,7 +18074,7 @@ const SYN_DB = {
     'demonstrate',
     'illustrate'
   ],
-  'exhibition': [
+  exhibition: [
     'sight',
     'representation',
     'pageant',
@@ -18082,7 +18082,7 @@ const SYN_DB = {
     'manifestation',
     'show'
   ],
-  'exhilarate': [
+  exhilarate: [
     'cheer',
     'enliven',
     'inspire',
@@ -18095,7 +18095,7 @@ const SYN_DB = {
     'delight',
     'please'
   ],
-  'exhort': [
+  exhort: [
     'urge',
     'stimulate',
     'persuade',
@@ -18105,7 +18105,7 @@ const SYN_DB = {
     'counsel',
     'enjoin'
   ],
-  'exigency': [
+  exigency: [
     'demand',
     'urgency',
     'need',
@@ -18122,7 +18122,7 @@ const SYN_DB = {
     'pinch',
     'strait'
   ],
-  'exile': [
+  exile: [
     'banishment',
     'expulsion',
     'ostracism',
@@ -18137,7 +18137,7 @@ const SYN_DB = {
     'proscribe',
     'relegate'
   ],
-  'existence': [
+  existence: [
     'being',
     'subsistence',
     'entity',
@@ -18149,7 +18149,7 @@ const SYN_DB = {
     'continuation',
     'duration'
   ],
-  'expand': [
+  expand: [
     'open',
     'dilate',
     'enlarge',
@@ -18163,7 +18163,7 @@ const SYN_DB = {
     'unfold',
     'amplify'
   ],
-  'expanse': [
+  expanse: [
     'extent',
     'stretch',
     'expansion',
@@ -18177,14 +18177,14 @@ const SYN_DB = {
     'space',
     'breadth'
   ],
-  'expect': [
+  expect: [
     'await',
     'anticipate',
     'forecast',
     'forebode',
     'foresee'
   ],
-  'expectation': [
+  expectation: [
     'anticipation',
     'expectance',
     'prospect',
@@ -18196,7 +18196,7 @@ const SYN_DB = {
     'trust',
     'hope'
   ],
-  'expediency': [
+  expediency: [
     'fitness',
     'propriety',
     'suitableness',
@@ -18210,7 +18210,7 @@ const SYN_DB = {
     'advantageousness',
     'interest'
   ],
-  'expedition': [
+  expedition: [
     'haste',
     'speed',
     'celerity',
@@ -18224,7 +18224,7 @@ const SYN_DB = {
     'march',
     'voyage'
   ],
-  'expend': [
+  expend: [
     'disburse',
     'spend',
     'layout',
@@ -18238,7 +18238,7 @@ const SYN_DB = {
     'scatter',
     'dissipate'
   ],
-  'expense': [
+  expense: [
     'expenditure',
     'outgo',
     'cost',
@@ -18247,7 +18247,7 @@ const SYN_DB = {
     'charge',
     'payment'
   ],
-  'expensive': [
+  expensive: [
     'dear',
     'costly',
     'highpriced',
@@ -18257,7 +18257,7 @@ const SYN_DB = {
     'valuable',
     'rich'
   ],
-  'experience': [
+  experience: [
     'feeling',
     'practice',
     'experiment',
@@ -18273,7 +18273,7 @@ const SYN_DB = {
     'try',
     'encounter'
   ],
-  'experienced': [
+  experienced: [
     'practiced',
     'versed',
     'accomplished',
@@ -18286,7 +18286,7 @@ const SYN_DB = {
     'accustomed',
     'conversant'
   ],
-  'experiment': [
+  experiment: [
     'trial',
     'test',
     'assay',
@@ -18300,7 +18300,7 @@ const SYN_DB = {
     'illustration',
     'exemplification'
   ],
-  'explain': [
+  explain: [
     'elucidate',
     'expound',
     'interpret',
@@ -18312,7 +18312,7 @@ const SYN_DB = {
     'teach',
     'decipher'
   ],
-  'explanation': [
+  explanation: [
     'elucidation',
     'interpretation',
     'exposition',
@@ -18327,7 +18327,7 @@ const SYN_DB = {
     'mutualunderstanding',
     'sense'
   ],
-  'explicit': [
+  explicit: [
     'express',
     'clear',
     'plain',
@@ -18342,7 +18342,7 @@ const SYN_DB = {
     'unobscure',
     'stated'
   ],
-  'exponent': [
+  exponent: [
     'index',
     'indication',
     'example',
@@ -18354,22 +18354,22 @@ const SYN_DB = {
     'interpreter',
     'propounder'
   ],
-  'export': [
+  export: [
     'ship',
     'produce'
   ],
-  'exposed': [
+  exposed: [
     'unprotected',
     'defenseless',
     'unguarded',
     'endangered'
   ],
-  'expostulate': [
+  expostulate: [
     'object',
     'dissuade',
     'remonstrate'
   ],
-  'express': [
+  express: [
     'utter',
     'declare',
     'assert',
@@ -18403,7 +18403,7 @@ const SYN_DB = {
     'pointed',
     'direct'
   ],
-  'expression': [
+  expression: [
     'assertion',
     'statement',
     'utterance',
@@ -18416,14 +18416,14 @@ const SYN_DB = {
     'execution',
     'indication'
   ],
-  'expunge': [
+  expunge: [
     'erase',
     'efface',
     'obliterate',
     'cancel',
     'delete'
   ],
-  'exquisite': [
+  exquisite: [
     'nice',
     'accurate',
     'delicate',
@@ -18446,7 +18446,7 @@ const SYN_DB = {
     'intense',
     'delicious'
   ],
-  'extemporaneous': [
+  extemporaneous: [
     'improvised',
     'unpremeditated',
     'extempore',
@@ -18454,7 +18454,7 @@ const SYN_DB = {
     'extemporary',
     'offhand'
   ],
-  'extend': [
+  extend: [
     'stretch',
     'reach',
     'prolong',
@@ -18476,7 +18476,7 @@ const SYN_DB = {
     'avail',
     'apply'
   ],
-  'extent': [
+  extent: [
     'expanse',
     'amplitude',
     'extension',
@@ -18492,7 +18492,7 @@ const SYN_DB = {
     'distance',
     'quantity'
   ],
-  'extenuate': [
+  extenuate: [
     'lessen',
     'diminish',
     'reduce',
@@ -18501,7 +18501,7 @@ const SYN_DB = {
     'excuse',
     'qualify'
   ],
-  'exterior': [
+  exterior: [
     'outward',
     'external',
     'outer',
@@ -18510,7 +18510,7 @@ const SYN_DB = {
     'foreign',
     'extrinsic'
   ],
-  'exterminate': [
+  exterminate: [
     'eradicate',
     'overthrow',
     'uproot',
@@ -18521,7 +18521,7 @@ const SYN_DB = {
     'destroy',
     'remove'
   ],
-  'extermination': [
+  extermination: [
     'extirpation',
     'annihilation',
     'eradication',
@@ -18531,7 +18531,7 @@ const SYN_DB = {
     'excision',
     'elimination'
   ],
-  'external': [
+  external: [
     'outward',
     'outer',
     'exterior',
@@ -18544,7 +18544,7 @@ const SYN_DB = {
     'manifest',
     'palpable'
   ],
-  'extinction': [
+  extinction: [
     'destruction',
     'annihilation',
     'extirpation',
@@ -18557,7 +18557,7 @@ const SYN_DB = {
     'cessation',
     'obsolescence'
   ],
-  'extinguish': [
+  extinguish: [
     'quench',
     'destroy',
     'suppress',
@@ -18567,7 +18567,7 @@ const SYN_DB = {
     'kill',
     'annihilate'
   ],
-  'extort': [
+  extort: [
     'exact',
     'wrest',
     'wrench',
@@ -18577,7 +18577,7 @@ const SYN_DB = {
     'fleece',
     'extract'
   ],
-  'extortionate': [
+  extortionate: [
     'oppressive',
     'exacting',
     'severe',
@@ -18589,7 +18589,7 @@ const SYN_DB = {
     'monstrous',
     'preposterous'
   ],
-  'extract': [
+  extract: [
     'selection',
     'excerpt',
     'passage',
@@ -18610,7 +18610,7 @@ const SYN_DB = {
     'collect',
     'extort'
   ],
-  'extraneous': [
+  extraneous: [
     'foreign',
     'extrinsic',
     'nonpertinent',
@@ -18622,7 +18622,7 @@ const SYN_DB = {
     'adventitious',
     'ascititious'
   ],
-  'extraordinary': [
+  extraordinary: [
     'unusual',
     'remarkable',
     'uncommon',
@@ -18641,7 +18641,7 @@ const SYN_DB = {
     'preposterous',
     'strange'
   ],
-  'extravagance': [
+  extravagance: [
     'excess',
     'exorbitance',
     'enormity',
@@ -18655,7 +18655,7 @@ const SYN_DB = {
     'profusion',
     'waste'
   ],
-  'extravagant': [
+  extravagant: [
     'excessive',
     'inordinate',
     'unreasonable',
@@ -18671,7 +18671,7 @@ const SYN_DB = {
     'spendthrift',
     'prodigal'
   ],
-  'extreme': [
+  extreme: [
     'utmost',
     'farthest',
     'uttermost',
@@ -18689,14 +18689,14 @@ const SYN_DB = {
     'terminal',
     'distant'
   ],
-  'exudation': [
+  exudation: [
     'ooze',
     'drip',
     'percolation',
     'excretion',
     'secretion'
   ],
-  'exultant': [
+  exultant: [
     'exulting',
     'jubilant',
     'triumphant',
@@ -18704,7 +18704,7 @@ const SYN_DB = {
     'joyous',
     'transported'
   ],
-  'exultation': [
+  exultation: [
     'elation',
     'joy',
     'triumph',
@@ -18712,7 +18712,7 @@ const SYN_DB = {
     'transport',
     'ecstasy'
   ],
-  'fable': [ //! !
+  fable: [ //! !
     'story',
     'myth',
     'legend',
@@ -18732,7 +18732,7 @@ const SYN_DB = {
     'parable',
     'novel'
   ],
-  'fabric': [
+  fabric: [
     'building',
     'structure',
     'edifice',
@@ -18746,7 +18746,7 @@ const SYN_DB = {
     'tissue',
     'web'
   ],
-  'fabricate': [
+  fabricate: [
     'build',
     'frame',
     'construct',
@@ -18762,7 +18762,7 @@ const SYN_DB = {
     'devise',
     'misrepresent'
   ],
-  'fabulous': [
+  fabulous: [
     'invented',
     'fabricated',
     'feigned',
@@ -18775,7 +18775,7 @@ const SYN_DB = {
     'false',
     'monstrous'
   ],
-  'facetious': [
+  facetious: [
     'witty',
     'jocose',
     'jocular',
@@ -18793,7 +18793,7 @@ const SYN_DB = {
     'sprightly',
     'playful'
   ],
-  'facile': [
+  facile: [
     'docile',
     'easy',
     'mild',
@@ -18816,7 +18816,7 @@ const SYN_DB = {
     'irresolute',
     'characterless'
   ],
-  'facility': [
+  facility: [
     'easiness',
     'ease',
     'readiness',
@@ -18841,7 +18841,7 @@ const SYN_DB = {
     'quickness',
     'adroitness'
   ],
-  'fact': [
+  fact: [
     'occurrence',
     'event',
     'deed',
@@ -18854,7 +18854,7 @@ const SYN_DB = {
     'certainty',
     'truth'
   ],
-  'factitious': [
+  factitious: [
     'artificial',
     'euphuistic',
     'affected',
@@ -18863,7 +18863,7 @@ const SYN_DB = {
     'conventional',
     'spurious'
   ],
-  'fade': [
+  fade: [
     'vanish',
     'evanesce',
     'disappear',
@@ -18883,7 +18883,7 @@ const SYN_DB = {
     'etiolate',
     'fail'
   ],
-  'fag': [
+  fag: [
     'droop',
     'sink',
     'flag',
@@ -18896,7 +18896,7 @@ const SYN_DB = {
     'work',
     'slave'
   ],
-  'pail': [
+  pail: [
     'decline',
     'sink',
     'decay',
@@ -18913,7 +18913,7 @@ const SYN_DB = {
     'trip',
     'lose'
   ],
-  'paint': [
+  paint: [
     'weak',
     'exhausted',
     'worn',
@@ -18943,7 +18943,7 @@ const SYN_DB = {
     'draw',
     'portray'
   ],
-  'fair': [
+  fair: [
     'spotless',
     'unspotted',
     'unblemished',
@@ -18984,7 +18984,7 @@ const SYN_DB = {
     'tolerable',
     'serene'
   ],
-  'faith': [
+  faith: [
     'creed',
     'doctrine',
     'assurance',
@@ -18997,7 +18997,7 @@ const SYN_DB = {
     'credit',
     'reliance'
   ],
-  'faithful': [
+  faithful: [
     'firm',
     'loyal',
     'devoted',
@@ -19016,7 +19016,7 @@ const SYN_DB = {
     'exact',
     'equivalent'
   ],
-  'fall': [
+  fall: [
     'drop',
     'descend',
     'sink',
@@ -19043,7 +19043,7 @@ const SYN_DB = {
     'get',
     'pass'
   ],
-  'fallible': [
+  fallible: [
     'erring',
     'uncertain',
     'ignorant',
@@ -19051,7 +19051,7 @@ const SYN_DB = {
     'frail',
     'imperfect'
   ],
-  'fallow': [
+  fallow: [
     'untilled',
     'unsowed',
     'neglected',
@@ -19063,7 +19063,7 @@ const SYN_DB = {
     'uncultivated',
     'unproductive'
   ],
-  'false': [
+  false: [
     'untrue',
     'mendacious',
     'unveracious',
@@ -19109,7 +19109,7 @@ const SYN_DB = {
     'fabricated',
     'unfaithful'
   ],
-  'falsehood': [
+  falsehood: [
     'falsity',
     'lie',
     'fabrication',
@@ -19125,7 +19125,7 @@ const SYN_DB = {
     'forgery',
     'deception'
   ],
-  'falsify': [
+  falsify: [
     'misrepresent',
     'counterfeit',
     'belie',
@@ -19137,7 +19137,7 @@ const SYN_DB = {
     'misinterpret',
     'betray'
   ],
-  'falter': [
+  falter: [
     'hesitate',
     'stutter',
     'stammer',
@@ -19154,7 +19154,7 @@ const SYN_DB = {
     'flinch',
     'vacillate'
   ],
-  'fame': [
+  fame: [
     'celebrity',
     'honor',
     'laurels',
@@ -19172,7 +19172,7 @@ const SYN_DB = {
     'bruit',
     'news'
   ],
-  'familiar': [
+  familiar: [
     'conversant',
     'wellacquainted',
     'wellversed',
@@ -19203,7 +19203,7 @@ const SYN_DB = {
     'everyday',
     'accustomed'
   ],
-  'famous': [
+  famous: [
     'celebrated',
     'renowned',
     'distinguished',
@@ -19214,13 +19214,13 @@ const SYN_DB = {
     'illustrious',
     'glorious'
   ],
-  'fanatic': [
+  fanatic: [
     'enthusiast',
     'zealot',
     'visionary',
     'bigot'
   ],
-  'fanaticism': [
+  fanaticism: [
     'intolerance',
     'superstition',
     'bigotry',
@@ -19228,7 +19228,7 @@ const SYN_DB = {
     'enthusiasm',
     'frenzy'
   ],
-  'fanciful': [
+  fanciful: [
     'fantastic',
     'grotesque',
     'visionary',
@@ -19247,7 +19247,7 @@ const SYN_DB = {
     'whimsical',
     'absurd'
   ],
-  'fancy': [
+  fancy: [
     'imagination',
     'whim',
     'vagary',
@@ -19267,7 +19267,7 @@ const SYN_DB = {
     'thought',
     'notion'
   ],
-  'farcical': [
+  farcical: [
     'droll',
     'absurd',
     'ridiculous',
@@ -19277,7 +19277,7 @@ const SYN_DB = {
     'nonsensical',
     'pantomimic'
   ],
-  'fare': [
+  fare: [
     'go',
     'travel',
     'journey',
@@ -19291,7 +19291,7 @@ const SYN_DB = {
     'speed',
     'do'
   ],
-  'farewell': [
+  farewell: [
     'adieu',
     'goodbye',
     'valedictory',
@@ -19300,7 +19300,7 @@ const SYN_DB = {
     'departure',
     'parting'
   ],
-  'fashion': [
+  fashion: [
     'form',
     'shape',
     'figure',
@@ -19328,7 +19328,7 @@ const SYN_DB = {
     'practice',
     'ceremony'
   ],
-  'fast': [
+  fast: [
     'insecure',
     'loose',
     'slow',
@@ -19337,7 +19337,7 @@ const SYN_DB = {
     'sober',
     'virtuous'
   ],
-  'fasten': [
+  fasten: [
     'secure',
     'bind',
     'tie',
@@ -19350,7 +19350,7 @@ const SYN_DB = {
     'grapple',
     'fix'
   ],
-  'fastidious': [
+  fastidious: [
     'dainty',
     'squeamish',
     'difficult',
@@ -19362,7 +19362,7 @@ const SYN_DB = {
     'particular',
     'punctilious'
   ],
-  'fat': [
+  fat: [
     'unctuous',
     'greasy',
     'fatty',
@@ -19389,7 +19389,7 @@ const SYN_DB = {
     'stout',
     'oleaginous'
   ],
-  'fatal': [
+  fatal: [
     'deadly',
     'mortal',
     'lethal',
@@ -19402,7 +19402,7 @@ const SYN_DB = {
     'pernicious',
     'fateful'
   ],
-  'fathom': [
+  fathom: [
     'sound',
     'divine',
     'penetrate',
@@ -19414,12 +19414,12 @@ const SYN_DB = {
     'measure',
     'probe'
   ],
-  'fathomless': [
+  fathomless: [
     'bottomless',
     'profound',
     'abysmal'
   ],
-  'fatigue': [
+  fatigue: [
     'weariness',
     'exhaustion',
     'lassitude',
@@ -19435,7 +19435,7 @@ const SYN_DB = {
     'exhaust',
     'fag'
   ],
-  'fatuity': [
+  fatuity: [
     'foolishness',
     'imbecility',
     'idiocy',
@@ -19444,7 +19444,7 @@ const SYN_DB = {
     'absurdity',
     'infatuation'
   ],
-  'fault': [
+  fault: [
     'defect',
     'blemish',
     'imperfection',
@@ -19468,7 +19468,7 @@ const SYN_DB = {
     'want',
     'drawback'
   ],
-  'faultless': [
+  faultless: [
     'perfect',
     'innocent',
     'guileless',
@@ -19482,7 +19482,7 @@ const SYN_DB = {
     'correct',
     'accurate'
   ],
-  'faulty': [
+  faulty: [
     'bad',
     'defective',
     'imperfect',
@@ -19491,7 +19491,7 @@ const SYN_DB = {
     'culpable',
     'reprehensible'
   ],
-  'favor': [
+  favor: [
     'kindness',
     'grace',
     'countenance',
@@ -19538,7 +19538,7 @@ const SYN_DB = {
     'spare',
     'resemble'
   ],
-  'favorable': [
+  favorable: [
     'kind',
     'friendly',
     'propitious',
@@ -19558,17 +19558,17 @@ const SYN_DB = {
     'fond',
     'liberal'
   ],
-  'favorite': [
+  favorite: [
     'dear',
     'beloved',
     'pet',
     'darling'
   ],
-  'favoritism': [
+  favoritism: [
     'partiality',
     'invidiousness'
   ],
-  'fawn': [
+  fawn: [
     'flatter',
     'wheedle',
     'cajole',
@@ -19576,7 +19576,7 @@ const SYN_DB = {
     'palaver',
     'slaver'
   ],
-  'fealty': [
+  fealty: [
     'homage',
     'loyalty',
     'allegiance',
@@ -19585,7 +19585,7 @@ const SYN_DB = {
     'honor',
     'devotion'
   ],
-  'pear': [
+  pear: [
     'dismay',
     'alarm',
     'horror',
@@ -19609,7 +19609,7 @@ const SYN_DB = {
     'veneration',
     'reverence'
   ],
-  'fearful': [
+  fearful: [
     'afraid',
     'apprehensive',
     'timid',
@@ -19627,14 +19627,14 @@ const SYN_DB = {
     'horrible',
     'hesitating'
   ],
-  'feasible': [
+  feasible: [
     'manageable',
     'possible',
     'permissible',
     'practicable',
     'contrivable'
   ],
-  'feast': [
+  feast: [
     'treat',
     'banquet',
     'regalement',
@@ -19645,13 +19645,13 @@ const SYN_DB = {
     'delight',
     'enjoyment'
   ],
-  'featly': [
+  featly: [
     'neatly',
     'cleverly',
     'dexterously',
     'adroitly'
   ],
-  'feature': [
+  feature: [
     'lineament',
     'fashion',
     'make',
@@ -19670,7 +19670,7 @@ const SYN_DB = {
     'portion',
     'sign'
   ],
-  'federation': [
+  federation: [
     'uniting',
     'federating',
     'confederation',
@@ -19682,7 +19682,7 @@ const SYN_DB = {
     'confederacy',
     'combination'
   ],
-  'fee': [
+  fee: [
     'pay',
     'reward',
     'recompense',
@@ -19692,7 +19692,7 @@ const SYN_DB = {
     'fief',
     'feesimple'
   ],
-  'feeble': [
+  feeble: [
     'weak',
     'enervated',
     'debilitated',
@@ -19719,7 +19719,7 @@ const SYN_DB = {
     'scanty',
     'pitiable'
   ],
-  'feed': [
+  feed: [
     'supply',
     'nourish',
     'cherish',
@@ -19729,7 +19729,7 @@ const SYN_DB = {
     'sustainlife',
     'subsist'
   ],
-  'feel': [
+  feel: [
     'perceive',
     'beperceived',
     'beimpressed',
@@ -19741,7 +19741,7 @@ const SYN_DB = {
     'sound',
     'try'
   ],
-  'feeling': [
+  feeling: [
     'sensation',
     'sensibility',
     'emotion',
@@ -19756,7 +19756,7 @@ const SYN_DB = {
     'consciousness',
     'sensitiveness'
   ],
-  'feign': [
+  feign: [
     'invent',
     'imagine',
     'devise',
@@ -19768,7 +19768,7 @@ const SYN_DB = {
     'simulate',
     'pretendto'
   ],
-  'felicitous': [
+  felicitous: [
     'fit',
     'appropriate',
     'apt',
@@ -19788,7 +19788,7 @@ const SYN_DB = {
     'timely',
     'joyous'
   ],
-  'felicity': [
+  felicity: [
     'bliss',
     'blessedness',
     'happiness',
@@ -19802,7 +19802,7 @@ const SYN_DB = {
     'luck',
     'fortune'
   ],
-  'fell': [
+  fell: [
     'inhuman',
     'cruel',
     'barbarous',
@@ -19833,7 +19833,7 @@ const SYN_DB = {
     'waste',
     'bare'
   ],
-  'fellow': [
+  fellow: [
     'associate',
     'companion',
     'comrade',
@@ -19851,7 +19851,7 @@ const SYN_DB = {
     'partner',
     'friend'
   ],
-  'fellowship': [
+  fellowship: [
     'companionship',
     'familiarity',
     'intimacy',
@@ -19870,7 +19870,7 @@ const SYN_DB = {
     'membership',
     'society'
   ],
-  'felonious': [
+  felonious: [
     'malignant',
     'malign',
     'malicious',
@@ -19885,7 +19885,7 @@ const SYN_DB = {
     'disloyal',
     'base'
   ],
-  'feminine': [
+  feminine: [
     'female',
     'womanish',
     'womanly',
@@ -19895,7 +19895,7 @@ const SYN_DB = {
     'modest',
     'soft'
   ],
-  'fen': [
+  fen: [
     'marsh',
     'swamp',
     'bog',
@@ -19903,7 +19903,7 @@ const SYN_DB = {
     'morass',
     'quagmire'
   ],
-  'fence': [
+  fence: [
     'enclose',
     'guard',
     'fortify',
@@ -19914,7 +19914,7 @@ const SYN_DB = {
     'parry',
     'stave'
   ],
-  'ferment': [
+  ferment: [
     'yeast',
     'leaven',
     'fermentation',
@@ -19925,7 +19925,7 @@ const SYN_DB = {
     'heat',
     'glow'
   ],
-  'fertile': [
+  fertile: [
     'prolific',
     'fecund',
     'breeding',
@@ -19944,7 +19944,7 @@ const SYN_DB = {
     'ingenious',
     'inventive'
   ],
-  'festive': [
+  festive: [
     'convivial',
     'jovial',
     'joyous',
@@ -19953,7 +19953,7 @@ const SYN_DB = {
     'mirthful',
     'festival'
   ],
-  'fetid': [
+  fetid: [
     'stinking',
     'offensive',
     'rank',
@@ -19965,7 +19965,7 @@ const SYN_DB = {
     'strongsmelling',
     'corrupt'
   ],
-  'fetter': [
+  fetter: [
     'chains',
     'bondage',
     'custody',
@@ -19992,7 +19992,7 @@ const SYN_DB = {
     'hinder',
     'impede'
   ],
-  'feud': [
+  feud: [
     'contest',
     'controversy',
     'dispute',
@@ -20010,7 +20010,7 @@ const SYN_DB = {
     'fray',
     'antipathy'
   ],
-  'fever': [
+  fever: [
     'heat',
     'flush',
     'excitement',
@@ -20021,12 +20021,12 @@ const SYN_DB = {
     'broil',
     'passion'
   ],
-  'few': [
+  few: [
     'scant',
     'rare',
     'lacking'
   ],
-  'fiber': [
+  fiber: [
     'strength',
     'sinews',
     'thews',
@@ -20036,7 +20036,7 @@ const SYN_DB = {
     'pile',
     'filament'
   ],
-  'fickle': [
+  fickle: [
     'wavering',
     'unsteady',
     'unstable',
@@ -20057,7 +20057,7 @@ const SYN_DB = {
     'restless',
     'shifting'
   ],
-  'fiction': [
+  fiction: [
     'fable',
     'falsehood',
     'myth',
@@ -20072,7 +20072,7 @@ const SYN_DB = {
     'apologue',
     'creation'
   ],
-  'fictitious': [
+  fictitious: [
     'feigned',
     'imaginary',
     'invented',
@@ -20083,7 +20083,7 @@ const SYN_DB = {
     'spurious',
     'supposititious'
   ],
-  'fidelity': [
+  fidelity: [
     'faithfulness',
     'devotedness',
     'devotion',
@@ -20101,7 +20101,7 @@ const SYN_DB = {
     'allegiance',
     'integrity'
   ],
-  'field': [
+  field: [
     'battlefield',
     'surface',
     'expanse',
@@ -20117,7 +20117,7 @@ const SYN_DB = {
     'room',
     'opportunity'
   ],
-  'fierce': [
+  fierce: [
     'ravenous',
     'infuriate',
     'barbarous',
@@ -20138,7 +20138,7 @@ const SYN_DB = {
     'uncultivated',
     'untrained'
   ],
-  'fiery': [
+  fiery: [
     'hot',
     'ardent',
     'heated',
@@ -20157,7 +20157,7 @@ const SYN_DB = {
     'hotblooded',
     'irritable'
   ],
-  'fight': [
+  fight: [
     'combat',
     'conflict',
     'contest',
@@ -20176,7 +20176,7 @@ const SYN_DB = {
     'resistance',
     'contention'
   ],
-  'figurative': [
+  figurative: [
     'typical',
     'representative',
     'emblematical',
@@ -20189,7 +20189,7 @@ const SYN_DB = {
     'rhetorical',
     'symbolical'
   ],
-  'figure': [
+  figure: [
     'form',
     'shape',
     'configuration',
@@ -20235,7 +20235,7 @@ const SYN_DB = {
     'act',
     'perform'
   ],
-  'file': [
+  file: [
     'rasp',
     'smooth',
     'finish',
@@ -20244,7 +20244,7 @@ const SYN_DB = {
     'refine',
     'improve'
   ],
-  'fill': [
+  fill: [
     'pervade',
     'occupy',
     'dilate',
@@ -20275,7 +20275,7 @@ const SYN_DB = {
     'grow',
     'increase'
   ],
-  'filter': [
+  filter: [
     'strain',
     'ooze',
     'percolate',
@@ -20290,7 +20290,7 @@ const SYN_DB = {
     'defecate',
     'clarify'
   ],
-  'filthy': [
+  filthy: [
     'dirty',
     'nasty',
     'foul',
@@ -20304,7 +20304,7 @@ const SYN_DB = {
     'unsanitary',
     'unwholesome'
   ],
-  'final': [
+  final: [
     'latest',
     'last',
     'eventual',
@@ -20316,7 +20316,7 @@ const SYN_DB = {
     'definite',
     'developed'
   ],
-  'fine': [
+  fine: [
     'forfeit',
     'penalty',
     'forfeiture',
@@ -20369,7 +20369,7 @@ const SYN_DB = {
     'presumptuous',
     'casuistical'
   ],
-  'finery': [
+  finery: [
     'gewgaws',
     'trinkets',
     'ornaments',
@@ -20382,7 +20382,7 @@ const SYN_DB = {
     'trash',
     'dressiness'
   ],
-  'finical': [
+  finical: [
     'fastidious',
     'dainty',
     'overparticular',
@@ -20394,7 +20394,7 @@ const SYN_DB = {
     'foppish',
     'spruce'
   ],
-  'finish': [
+  finish: [
     'accomplish',
     'execute',
     'complete',
@@ -20410,20 +20410,20 @@ const SYN_DB = {
     'conclude',
     'shape'
   ],
-  'finished': [
+  finished: [
     'perfect',
     'artistic',
     'refined',
     'high'
   ],
-  'finite': [
+  finite: [
     'bounded',
     'limited',
     'conditioned',
     'contracted',
     'restrictedterminated'
   ],
-  'fire': [
+  fire: [
     'blaze',
     'burning',
     'conflagration',
@@ -20455,7 +20455,7 @@ const SYN_DB = {
     'trouble',
     'persecution'
   ],
-  'first': [
+  first: [
     'foremost',
     'leading',
     'chief',
@@ -20472,7 +20472,7 @@ const SYN_DB = {
     'original',
     'onmost'
   ],
-  'fitful': [
+  fitful: [
     'variable',
     'irregular',
     'impulsive',
@@ -20485,7 +20485,7 @@ const SYN_DB = {
     'fantastic',
     'humorsome'
   ],
-  'odd': [
+  odd: [
     'odd',
     'eventful',
     'checkered',
@@ -20505,7 +20505,7 @@ const SYN_DB = {
     'singular',
     'peculiar'
   ],
-  'fix': [
+  fix: [
     'set',
     'place',
     'establish',
@@ -20530,7 +20530,7 @@ const SYN_DB = {
     'secure',
     'decide'
   ],
-  'flaccid': [
+  flaccid: [
     'limber',
     'lax',
     'drooping',
@@ -20542,7 +20542,7 @@ const SYN_DB = {
     'inelastic',
     'pendulous'
   ],
-  'flag': [
+  flag: [
     'flagstone',
     'streamer',
     'banner',
@@ -20565,7 +20565,7 @@ const SYN_DB = {
     'weary',
     'tire'
   ],
-  'flagitious': [
+  flagitious: [
     'atrocious',
     'heinous',
     'flagrant',
@@ -20580,7 +20580,7 @@ const SYN_DB = {
     'nefarious',
     'aggravated'
   ],
-  'flaring': [
+  flaring: [
     'flaming',
     'glaring',
     'conspicuous',
@@ -20593,7 +20593,7 @@ const SYN_DB = {
     'showy',
     'tawdry'
   ],
-  'flat': [
+  flat: [
     'level',
     'horizontal',
     'even',
@@ -20622,7 +20622,7 @@ const SYN_DB = {
     'downright',
     'mawkish'
   ],
-  'flaunt': [
+  flaunt: [
     'insolently',
     'brazenly',
     'display',
@@ -20637,7 +20637,7 @@ const SYN_DB = {
     'parade',
     'figure'
   ],
-  'flavor': [
+  flavor: [
     'taste',
     'savor',
     'relish',
@@ -20650,7 +20650,7 @@ const SYN_DB = {
     'soul',
     'odor'
   ],
-  'flexible': [
+  flexible: [
     'pliable',
     'pliant',
     'limber',
@@ -20669,7 +20669,7 @@ const SYN_DB = {
     'flexile',
     'yielding'
   ],
-  'flicker': [
+  flicker: [
     'quiver',
     'flutter',
     'falter',
@@ -20679,7 +20679,7 @@ const SYN_DB = {
     'shimmer',
     'scintillate'
   ],
-  'plight': [
+  plight: [
     'olley',
     'shower',
     'escape',
@@ -20689,7 +20689,7 @@ const SYN_DB = {
     'hegira',
     'exodus'
   ],
-  'flimsy': [
+  flimsy: [
     'gauzy',
     'poor',
     'transparent',
@@ -20709,14 +20709,14 @@ const SYN_DB = {
     'light',
     'trashy'
   ],
-  'flinch': [
+  flinch: [
     'wince',
     'swerve',
     'recoil',
     'blench',
     'shrink'
   ],
-  'fling': [
+  fling: [
     'throw',
     'cast',
     'toss',
@@ -20737,7 +20737,7 @@ const SYN_DB = {
     'emit',
     'ejaculate'
   ],
-  'flippant': [
+  flippant: [
     'fluent',
     'voluble',
     'glib',
@@ -20751,13 +20751,13 @@ const SYN_DB = {
     'saucy',
     'thoughtless'
   ],
-  'float': [
+  float: [
     'waft',
     'swim',
     'spread',
     'prevail'
   ],
-  'flock': [
+  flock: [
     'brood',
     'bevy',
     'herd',
@@ -20780,7 +20780,7 @@ const SYN_DB = {
     'crowd',
     'troop'
   ],
-  'flood': [
+  flood: [
     'deluge',
     'abundance',
     'inundation',
@@ -20789,7 +20789,7 @@ const SYN_DB = {
     'downrush',
     'multitude'
   ],
-  'florid': [
+  florid: [
     'flowery',
     'flushed',
     'rubicund',
@@ -20801,7 +20801,7 @@ const SYN_DB = {
     'sanguine',
     'meretricious'
   ],
-  'flounder': [
+  flounder: [
     'struggle',
     'toss',
     'wallow',
@@ -20811,7 +20811,7 @@ const SYN_DB = {
     'blunder',
     'bungle'
   ],
-  'flourish': [
+  flourish: [
     'thrive',
     'grow',
     'prosper',
@@ -20826,7 +20826,7 @@ const SYN_DB = {
     'speed',
     'triumph'
   ],
-  'flow': [
+  flow: [
     'stream',
     'run',
     'pour',
@@ -20856,7 +20856,7 @@ const SYN_DB = {
     'progress',
     'course'
   ],
-  'flower': [
+  flower: [
     'blossom',
     'bloom',
     'bestpart',
@@ -20871,7 +20871,7 @@ const SYN_DB = {
     'gem',
     'cream'
   ],
-  'flowing': [
+  flowing: [
     'running',
     'fluent',
     'copious',
@@ -20881,7 +20881,7 @@ const SYN_DB = {
     'easy',
     'eloquent'
   ],
-  'fluctuate': [
+  fluctuate: [
     'veer',
     'waver',
     'swerve',
@@ -20891,7 +20891,7 @@ const SYN_DB = {
     'oscillate',
     'hesitate'
   ],
-  'fluctuation': [
+  fluctuation: [
     'oscillation',
     'undulation',
     'unsteadiness',
@@ -20903,14 +20903,14 @@ const SYN_DB = {
     'wavering',
     'vacillation'
   ],
-  'fluency': [
+  fluency: [
     'smoothness',
     'flowingquality',
     'liquidness',
     'copiousness',
     'affluence'
   ],
-  'flurry': [
+  flurry: [
     'excite',
     'agitate',
     'disconcert',
@@ -20922,7 +20922,7 @@ const SYN_DB = {
     'worry',
     'fluster'
   ],
-  'flutter': [
+  flutter: [
     'hover',
     'flap',
     'flirt',
@@ -20938,7 +20938,7 @@ const SYN_DB = {
     'quiver',
     'flicker'
   ],
-  'flux': [
+  flux: [
     'flow',
     'flowing',
     'mutation',
@@ -20953,14 +20953,14 @@ const SYN_DB = {
     'substitution',
     'transmutation'
   ],
-  'focus': [
+  focus: [
     'center',
     'standpoint',
     'convergence',
     'rendezvous',
     'nucleus'
   ],
-  'foggy': [
+  foggy: [
     'misty',
     'hazy',
     'confused',
@@ -20972,7 +20972,7 @@ const SYN_DB = {
     'stupid',
     'obscure'
   ],
-  'foible': [
+  foible: [
     'frailty',
     'weakness',
     'failing',
@@ -20982,7 +20982,7 @@ const SYN_DB = {
     'fault',
     'peccadillo'
   ],
-  'foil': [
+  foil: [
     'contrast',
     'background',
     'setoff',
@@ -20991,7 +20991,7 @@ const SYN_DB = {
     'setting',
     'elucidation'
   ],
-  'foist': [
+  foist: [
     'impose',
     'thrust',
     'falsify',
@@ -20999,7 +20999,7 @@ const SYN_DB = {
     'palm',
     'pass'
   ],
-  'fold': [
+  fold: [
     'double',
     'enfold',
     'enwrap',
@@ -21008,7 +21008,7 @@ const SYN_DB = {
     'embrace',
     'enclose'
   ],
-  'follow': [
+  follow: [
     'attend',
     'accompany',
     'result',
@@ -21025,7 +21025,7 @@ const SYN_DB = {
     'practice',
     'shadow'
   ],
-  'follower': [
+  follower: [
     'pursuer',
     'attendant',
     'retainer',
@@ -21040,7 +21040,7 @@ const SYN_DB = {
     'imitator',
     'copier'
   ],
-  'folly': [
+  folly: [
     'foolishness',
     'imbecility',
     'fatuity',
@@ -21062,7 +21062,7 @@ const SYN_DB = {
     'silliness',
     'weakness'
   ],
-  'foment': [
+  foment: [
     'bathe',
     'excite',
     'instigate',
@@ -21075,7 +21075,7 @@ const SYN_DB = {
     'cherish',
     'propagate'
   ],
-  'pond': [
+  pond: [
     'foolish',
     'silly',
     'weak',
@@ -21091,7 +21091,7 @@ const SYN_DB = {
     'enamored',
     'devoted'
   ],
-  'fondle': [
+  fondle: [
     'caress',
     'coddle',
     'blandish',
@@ -21100,7 +21100,7 @@ const SYN_DB = {
     'spoil',
     'indulge'
   ],
-  'fondness': [
+  fondness: [
     'delusion',
     'folly',
     'silliness',
@@ -21116,7 +21116,7 @@ const SYN_DB = {
     'relish',
     'appetite'
   ],
-  'fod': [
+  fod: [
     'aliment',
     'nourishment',
     'nutriment',
@@ -21140,7 +21140,7 @@ const SYN_DB = {
     'rations',
     'subsistence'
   ],
-  'fool': [
+  fool: [
     'idiot',
     'natural',
     'dolt',
@@ -21157,7 +21157,7 @@ const SYN_DB = {
     'jester',
     'clown'
   ],
-  'foolish': [
+  foolish: [
     'senseless',
     'idiotic',
     'silly',
@@ -21187,7 +21187,7 @@ const SYN_DB = {
     'nonsensical',
     'crazed'
   ],
-  'footing': [
+  footing: [
     'foothold',
     'foundation',
     'basis',
@@ -21201,14 +21201,14 @@ const SYN_DB = {
     'settlement',
     'establishment'
   ],
-  'foppish': [
+  foppish: [
     'dandyish',
     'vain',
     'coxcombical',
     'dressy',
     'dandified'
   ],
-  'foray': [
+  foray: [
     'inroad',
     'irruption',
     'raid',
@@ -21218,7 +21218,7 @@ const SYN_DB = {
     'escapade',
     'dragonade'
   ],
-  'forbear': [
+  forbear: [
     'abstain',
     'avoid',
     'withhold',
@@ -21237,7 +21237,7 @@ const SYN_DB = {
     'spare',
     'tolerate'
   ],
-  'forbidding': [
+  forbidding: [
     'repulsive',
     'repellent',
     'unpleasant',
@@ -21248,7 +21248,7 @@ const SYN_DB = {
     'deterrent',
     'prohibitory'
   ],
-  'pore': [
+  pore: [
     'anterior',
     'preceding',
     'antecedent',
@@ -21264,12 +21264,12 @@ const SYN_DB = {
     'foremost',
     'first'
   ],
-  'forefather': [
+  forefather: [
     'progenitor',
     'ancestor',
     'father'
   ],
-  'forefend': [
+  forefend: [
     'avert',
     'prevent',
     'wardoff',
@@ -21278,7 +21278,7 @@ const SYN_DB = {
     'stave',
     'obviate'
   ],
-  'forego': [
+  forego: [
     'relinquish',
     'resign',
     'renounce',
@@ -21291,7 +21291,7 @@ const SYN_DB = {
     'drop',
     'abjure'
   ],
-  'foreign': [
+  foreign: [
     'alien',
     'external',
     'exterior',
@@ -21304,7 +21304,7 @@ const SYN_DB = {
     'irrelevant',
     'outlandish'
   ],
-  'forerunner': [
+  forerunner: [
     'precursor',
     'herald',
     'harbinger',
@@ -21317,7 +21317,7 @@ const SYN_DB = {
     'premonition',
     'predecessor'
   ],
-  'foresee': [
+  foresee: [
     'foreknow',
     'forecast',
     'predict',
@@ -21326,7 +21326,7 @@ const SYN_DB = {
     'forebode',
     'divine'
   ],
-  'foretell': [
+  foretell: [
     'foreshow',
     'foreshadow',
     'betoken',
@@ -21340,7 +21340,7 @@ const SYN_DB = {
     'preindicate',
     'forewarn'
   ],
-  'forethought': [
+  forethought: [
     'foresight',
     'anticipation',
     'precaution',
@@ -21348,7 +21348,7 @@ const SYN_DB = {
     'provision',
     'prudence'
   ],
-  'forever': [
+  forever: [
     'always',
     'perpetually',
     'eternally',
@@ -21358,7 +21358,7 @@ const SYN_DB = {
     'evermore',
     'aye'
   ],
-  'forfeit': [
+  forfeit: [
     'loss',
     'fine',
     'mulct',
@@ -21367,7 +21367,7 @@ const SYN_DB = {
     'penalty',
     'damages'
   ],
-  'forge': [
+  forge: [
     'beat',
     'fabricate',
     'frame',
@@ -21383,11 +21383,11 @@ const SYN_DB = {
     'feign',
     'shape'
   ],
-  'forgery': [
+  forgery: [
     'counterfeit',
     'falsification'
   ],
-  'forget': [
+  forget: [
     'overlook',
     'slight',
     'neglect',
@@ -21395,7 +21395,7 @@ const SYN_DB = {
     'pretermit',
     'obliterate'
   ],
-  'forgetful': [
+  forgetful: [
     'negligent',
     'inattentive',
     'careless',
@@ -21403,14 +21403,14 @@ const SYN_DB = {
     'neglectful',
     'mindless'
   ],
-  'forgetfulness': [
+  forgetfulness: [
     'negligence',
     'inattention',
     'carelessness',
     'heedlessness',
     'oblivion'
   ],
-  'forgotten': [
+  forgotten: [
     'unremembered',
     'bygone',
     'slighted',
@@ -21419,7 +21419,7 @@ const SYN_DB = {
     'neglected',
     'disregarded'
   ],
-  'forlorn': [
+  forlorn: [
     'deserted',
     'forsaken',
     'solitary',
@@ -21440,7 +21440,7 @@ const SYN_DB = {
     'lone',
     'lonesome'
   ],
-  'form': [
+  form: [
     'shape',
     'figure',
     'configuration',
@@ -21486,7 +21486,7 @@ const SYN_DB = {
     'dispose',
     'combine'
   ],
-  'formal': [
+  formal: [
     'express',
     'explicit',
     'positive',
@@ -21516,7 +21516,7 @@ const SYN_DB = {
     'dignified',
     'pompous'
   ],
-  'formalism': [
+  formalism: [
     'rigidity',
     'parade',
     'ceremoniousness',
@@ -21524,7 +21524,7 @@ const SYN_DB = {
     'externalism',
     'punctilio'
   ],
-  'formality': [
+  formality: [
     'custom',
     'establishedmode',
     'ceremony',
@@ -21535,7 +21535,7 @@ const SYN_DB = {
     'punctiliousness',
     'stateliness'
   ],
-  'formation': [
+  formation: [
     'creation',
     'production',
     'composition',
@@ -21548,7 +21548,7 @@ const SYN_DB = {
     'shape',
     'structure'
   ],
-  'former': [
+  former: [
     'anterior',
     'antecedent',
     'previous',
@@ -21567,7 +21567,7 @@ const SYN_DB = {
     'earlier',
     'ancient'
   ],
-  'formidable': [
+  formidable: [
     'terrible',
     'redoubted',
     'tremendous',
@@ -21583,13 +21583,13 @@ const SYN_DB = {
     'fearful',
     'shocking'
   ],
-  'forthwith': [
+  forthwith: [
     'instantly',
     'directly',
     'immediately',
     'instantaneously'
   ],
-  'fortification': [
+  fortification: [
     'fort',
     'stronghold',
     'fortress',
@@ -21598,7 +21598,7 @@ const SYN_DB = {
     'citadel',
     'bulwark'
   ],
-  'fortify': [
+  fortify: [
     'protect',
     'surround',
     'reinforce',
@@ -21610,7 +21610,7 @@ const SYN_DB = {
     'garrison',
     'intrench'
   ],
-  'fortitude': [
+  fortitude: [
     'endurance',
     'heroism',
     'resolution',
@@ -21624,13 +21624,13 @@ const SYN_DB = {
     'composure',
     'stoicism'
   ],
-  'fortuitous': [
+  fortuitous: [
     'contingent',
     'chance',
     'incidental',
     'undesigned'
   ],
-  'fortunate': [
+  fortunate: [
     'favored',
     'lucky',
     'successful',
@@ -21643,7 +21643,7 @@ const SYN_DB = {
     'advantageous',
     'providential'
   ],
-  'fortune': [
+  fortune: [
     'chance',
     'accident',
     'luck',
@@ -21670,7 +21670,7 @@ const SYN_DB = {
     'event',
     'success'
   ],
-  'forward': [
+  forward: [
     'onward',
     'progressive',
     'advancing',
@@ -21714,7 +21714,7 @@ const SYN_DB = {
     'transmit',
     'ship'
   ],
-  'foul': [
+  foul: [
     'impure',
     'nasty',
     'dirty',
@@ -21759,7 +21759,7 @@ const SYN_DB = {
     'entangled',
     'tangled'
   ],
-  'found': [
+  found: [
     'base',
     'set',
     'fix',
@@ -21779,7 +21779,7 @@ const SYN_DB = {
     'endow',
     'root'
   ],
-  'foundation': [
+  foundation: [
     'base',
     'groundwork',
     'basis',
@@ -21794,7 +21794,7 @@ const SYN_DB = {
     'ground',
     'substratum'
   ],
-  'founder': [
+  founder: [
     'originator',
     'institutor',
     'establisher',
@@ -21803,14 +21803,14 @@ const SYN_DB = {
     'caster',
     'author'
   ],
-  'fountain': [
+  fountain: [
     'spring',
     'well',
     'jet',
     'source',
     'origin'
   ],
-  'fraction': [
+  fraction: [
     'part',
     'portion',
     'fragment',
@@ -21819,7 +21819,7 @@ const SYN_DB = {
     'scrap',
     'section'
   ],
-  'fragile': [
+  fragile: [
     'brittle',
     'frangible',
     'infirm',
@@ -21829,7 +21829,7 @@ const SYN_DB = {
     'delicate',
     'slight'
   ],
-  'fragment': [
+  fragment: [
     'remnant',
     'fraction',
     'scrap',
@@ -21838,14 +21838,14 @@ const SYN_DB = {
     'piece',
     'morsel'
   ],
-  'fragrance': [
+  fragrance: [
     'redolence',
     'perfume',
     'aroma',
     'balminess',
     'incense'
   ],
-  'fragrant': [
+  fragrant: [
     'aromatic',
     'redolent',
     'spicy',
@@ -21856,7 +21856,7 @@ const SYN_DB = {
     'odorous',
     'sweetsmelling'
   ],
-  'frail': [
+  frail: [
     'fragile',
     'brittle',
     'frangible',
@@ -21867,7 +21867,7 @@ const SYN_DB = {
     'erring',
     'mutable'
   ],
-  'frame': [
+  frame: [
     'framework',
     'skeleton',
     'carcass',
@@ -21883,14 +21883,14 @@ const SYN_DB = {
     'temper',
     'mood'
   ],
-  'franchise': [
+  franchise: [
     'right',
     'privilege',
     'exemption',
     'immunity',
     'freedom'
   ],
-  'frank': [
+  frank: [
     'open',
     'ingenuous',
     'free',
@@ -21905,7 +21905,7 @@ const SYN_DB = {
     'easy',
     'plain'
   ],
-  'frantic': [
+  frantic: [
     'furious',
     'raving',
     'raging',
@@ -21916,7 +21916,7 @@ const SYN_DB = {
     'distracted',
     'maniacal'
   ],
-  'fraternity': [
+  fraternity: [
     'association',
     'circle',
     'society',
@@ -21927,7 +21927,7 @@ const SYN_DB = {
     'clan',
     'brotherliness'
   ],
-  'fraternize': [
+  fraternize: [
     'harmonize',
     'sympathize',
     'consort',
@@ -21935,7 +21935,7 @@ const SYN_DB = {
     'associatewith',
     'coalesce'
   ],
-  'fraud': [
+  fraud: [
     'duplicity',
     'deceit',
     'deception',
@@ -21949,7 +21949,7 @@ const SYN_DB = {
     'treachery',
     'imposition'
   ],
-  'fraught': [
+  fraught: [
     'filled',
     'stored',
     'laden',
@@ -21961,7 +21961,7 @@ const SYN_DB = {
     'loaded',
     'teeming'
   ],
-  'freakish': [
+  freakish: [
     'whimsical',
     'erratic',
     'capricious',
@@ -21973,7 +21973,7 @@ const SYN_DB = {
     'joking',
     'mirthful'
   ],
-  'freedom': [
+  freedom: [
     'independence',
     'liberty',
     'scope',
@@ -21987,7 +21987,7 @@ const SYN_DB = {
     'looseness',
     'familiarity'
   ],
-  'frenzy': [
+  frenzy: [
     'madness',
     'rage',
     'fury',
@@ -22001,7 +22001,7 @@ const SYN_DB = {
     'fanaticism',
     'fire'
   ],
-  'frequent': [
+  frequent: [
     'oftrepeated',
     'common',
     'usual',
@@ -22013,7 +22013,7 @@ const SYN_DB = {
     'numerous',
     'continual'
   ],
-  'fresh': [
+  fresh: [
     'new',
     'recent',
     'novel',
@@ -22067,7 +22067,7 @@ const SYN_DB = {
     'untried',
     'modern'
   ],
-  'fretful': [
+  fretful: [
     'touchy',
     'peevish',
     'petulant',
@@ -22084,7 +22084,7 @@ const SYN_DB = {
     'impatient',
     'discontented'
   ],
-  'friction': [
+  friction: [
     'attrition',
     'abrasion',
     'resistance',
@@ -22093,7 +22093,7 @@ const SYN_DB = {
     'grating',
     'contact'
   ],
-  'friend': [
+  friend: [
     'confidant',
     'intimate',
     'associate',
@@ -22115,7 +22115,7 @@ const SYN_DB = {
     'messmate',
     'coadjutor'
   ],
-  'friendly': [
+  friendly: [
     'companionable',
     'genial',
     'neighborly',
@@ -22138,7 +22138,7 @@ const SYN_DB = {
     'hearty',
     'sincere'
   ],
-  'friendship': [
+  friendship: [
     'affection',
     'devotion',
     'attachment',
@@ -22152,7 +22152,7 @@ const SYN_DB = {
     'esteem',
     'admiration'
   ],
-  'frighten': [
+  frighten: [
     'alarm',
     'affright',
     'intimidate',
@@ -22164,7 +22164,7 @@ const SYN_DB = {
     'depress',
     'dismay'
   ],
-  'frightful': [
+  frightful: [
     'terrible',
     'fearful',
     'terrific',
@@ -22184,7 +22184,7 @@ const SYN_DB = {
     'ugly',
     'monstrous'
   ],
-  'frigid': [
+  frigid: [
     'cold',
     'dull',
     'cool',
@@ -22206,7 +22206,7 @@ const SYN_DB = {
     'passionless',
     'distant'
   ],
-  'frisk': [
+  frisk: [
     'leap',
     'skip',
     'hop',
@@ -22219,7 +22219,7 @@ const SYN_DB = {
     'sport',
     'play'
   ],
-  'frisky': [
+  frisky: [
     'gay',
     'lively',
     'sportive',
@@ -22228,7 +22228,7 @@ const SYN_DB = {
     'wanton',
     'frolicsome'
   ],
-  'fritter': [
+  fritter: [
     'slice',
     'break',
     'shiver',
@@ -22238,7 +22238,7 @@ const SYN_DB = {
     'dissipate',
     'idle'
   ],
-  'frivolous': [
+  frivolous: [
     'trivial',
     'worthless',
     'light',
@@ -22252,7 +22252,7 @@ const SYN_DB = {
     'foolish',
     'trashy'
   ],
-  'frolic': [
+  frolic: [
     'gambol',
     'lark',
     'escapade',
@@ -22270,7 +22270,7 @@ const SYN_DB = {
     'gaiety',
     'spree'
   ],
-  'froward': [
+  froward: [
     'contrary',
     'fractious',
     'perverse',
@@ -22286,7 +22286,7 @@ const SYN_DB = {
     'captious',
     'petulant'
   ],
-  'frugal': [
+  frugal: [
     'provident',
     'economical',
     'careful',
@@ -22301,7 +22301,7 @@ const SYN_DB = {
     'abstemious',
     'temperate'
   ],
-  'frugality': [
+  frugality: [
     'parsimony',
     'thrift',
     'providence',
@@ -22312,7 +22312,7 @@ const SYN_DB = {
     'parsimoniousness',
     'scrimping'
   ],
-  'fruit': [
+  fruit: [
     'harvest',
     'crop',
     'product',
@@ -22328,7 +22328,7 @@ const SYN_DB = {
     'reward',
     'outgrowth'
   ],
-  'fruitful': [
+  fruitful: [
     'productive',
     'prolific',
     'fertile',
@@ -22344,7 +22344,7 @@ const SYN_DB = {
     'effectual',
     'useful'
   ],
-  'fugacious': [
+  fugacious: [
     'transitory',
     'transient',
     'evanescent',
@@ -22352,7 +22352,7 @@ const SYN_DB = {
     'ephemeral',
     'fleeting'
   ],
-  'fulfill': [
+  fulfill: [
     'accomplish',
     'effectuate',
     'effect',
@@ -22375,7 +22375,7 @@ const SYN_DB = {
     'verify',
     'achieve'
   ],
-  'fulminate': [
+  fulminate: [
     'explode',
     'detonate',
     'thunder',
@@ -22385,7 +22385,7 @@ const SYN_DB = {
     'denounce',
     'vociferate'
   ],
-  'fulsome': [
+  fulsome: [
     'gross',
     'excessive',
     'offensive',
@@ -22400,7 +22400,7 @@ const SYN_DB = {
     'sickening',
     'fawning'
   ],
-  'fume': [
+  fume: [
     'smoke',
     'reek',
     'exhale',
@@ -22411,7 +22411,7 @@ const SYN_DB = {
     'bluster',
     'fret'
   ],
-  'function': [
+  function: [
     'exercise',
     'performance',
     'execution',
@@ -22429,7 +22429,7 @@ const SYN_DB = {
     'administration',
     'power'
   ],
-  'functionary': [
+  functionary: [
     'officeholder',
     'official',
     'officer',
@@ -22437,7 +22437,7 @@ const SYN_DB = {
     'personage',
     'incumbent'
   ],
-  'fund': [
+  fund: [
     'stock',
     'capital',
     'supply',
@@ -22449,7 +22449,7 @@ const SYN_DB = {
     'resources',
     'investment'
   ],
-  'fundamental': [
+  fundamental: [
     'essential',
     'radical',
     'primary',
@@ -22459,7 +22459,7 @@ const SYN_DB = {
     'principal',
     'important'
   ],
-  'funereal': [
+  funereal: [
     'mournful',
     'sad',
     'lugubrious',
@@ -22475,7 +22475,7 @@ const SYN_DB = {
     'solemn',
     'deathlike'
   ],
-  'funny': [
+  funny: [
     'ludicrous',
     'droll',
     'comical',
@@ -22488,14 +22488,14 @@ const SYN_DB = {
     'jocose',
     'ridiculous'
   ],
-  'furbish': [
+  furbish: [
     'burnish',
     'polish',
     'rub',
     'scour',
     'brighten'
   ],
-  'furnish': [
+  furnish: [
     'provide',
     'supply',
     'fit',
@@ -22508,7 +22508,7 @@ const SYN_DB = {
     'purvey',
     'yield'
   ],
-  'furry': [
+  furry: [
     'soft',
     'fluffy',
     'fleecy',
@@ -22516,7 +22516,7 @@ const SYN_DB = {
     'fuzzy',
     'fuzzy'
   ],
-  'furtive': [
+  furtive: [
     'secret',
     'sly',
     'clandestine',
@@ -22525,7 +22525,7 @@ const SYN_DB = {
     'surreptitious',
     'secretive'
   ],
-  'fuse': [
+  fuse: [
     'melt',
     'liquefy',
     'smelt',
@@ -22536,7 +22536,7 @@ const SYN_DB = {
     'intermingle',
     'coalesce'
   ],
-  'futile': [
+  futile: [
     'trifling',
     'frivolous',
     'trivial',
@@ -22555,12 +22555,12 @@ const SYN_DB = {
     'useless',
     'nugatory'
   ],
-  'future': [
+  future: [
     'forthcoming',
     'coming',
     'advenient'
   ],
-  'gabble': [
+  gabble: [
     'prate',
     'jargon',
     'stuff',
@@ -22577,14 +22577,14 @@ const SYN_DB = {
     'prattle',
     'cackle'
   ],
-  'gag': [
+  gag: [
     'silence',
     'stifle',
     'muzzle',
     'muffle',
     'hush'
   ],
-  'gage': [
+  gage: [
     'measure',
     'standard',
     'dimensions',
@@ -22597,7 +22597,7 @@ const SYN_DB = {
     'fathom',
     'probe'
   ],
-  'gain': [
+  gain: [
     'profits',
     'earnings',
     'increase',
@@ -22629,7 +22629,7 @@ const SYN_DB = {
     'realize',
     'reap'
   ],
-  'gainful': [
+  gainful: [
     'advantageous',
     'profitable',
     'beneficial',
@@ -22639,7 +22639,7 @@ const SYN_DB = {
     'remunerative',
     'winning'
   ],
-  'gallant': [
+  gallant: [
     'gay',
     'fine',
     'magnificent',
@@ -22667,7 +22667,7 @@ const SYN_DB = {
     'amorous',
     'heroic'
   ],
-  'gambol': [
+  gambol: [
     'frisk',
     'frolic',
     'romp',
@@ -22678,7 +22678,7 @@ const SYN_DB = {
     'jump',
     'sport'
   ],
-  'game': [
+  game: [
     'sport',
     'play',
     'amusement',
@@ -22697,7 +22697,7 @@ const SYN_DB = {
     'frolic',
     'diversion'
   ],
-  'garble': [
+  garble: [
     'mutilate',
     'falsify',
     'corrupt',
@@ -22709,7 +22709,7 @@ const SYN_DB = {
     'color',
     'distort'
   ],
-  'garnish': [
+  garnish: [
     'adorn',
     'embellish',
     'decorate',
@@ -22722,7 +22722,7 @@ const SYN_DB = {
     'furnish',
     'furbish'
   ],
-  'garrulity': [
+  garrulity: [
     'loquacity',
     'babble',
     'loquaciousness',
@@ -22733,13 +22733,13 @@ const SYN_DB = {
     'verbosity',
     'chatter'
   ],
-  'garrulous': [
+  garrulous: [
     'chattering',
     'loquacious',
     'verbose',
     'talkative'
   ],
-  'gaud': [
+  gaud: [
     'trinket',
     'finery',
     'gewgaw',
@@ -22750,7 +22750,7 @@ const SYN_DB = {
     'bauble',
     'trifle'
   ],
-  'gaudy': [
+  gaudy: [
     'flaunting',
     'garish',
     'glittering',
@@ -22765,7 +22765,7 @@ const SYN_DB = {
     'gay',
     'meretricious'
   ],
-  'gaunt': [
+  gaunt: [
     'lean',
     'lank',
     'thin',
@@ -22778,7 +22778,7 @@ const SYN_DB = {
     'savage',
     'hungry'
   ],
-  'gawky': [
+  gawky: [
     'awkward',
     'clownish',
     'ungainly',
@@ -22790,7 +22790,7 @@ const SYN_DB = {
     'uncouth',
     'loutish'
   ],
-  'gay': [
+  gay: [
     'showy',
     'bright',
     'fine',
@@ -22821,7 +22821,7 @@ const SYN_DB = {
     'festive',
     'pleasuresome'
   ],
-  'gaze': [
+  gaze: [
     'stare',
     'scan',
     'behold',
@@ -22831,7 +22831,7 @@ const SYN_DB = {
     'gloat',
     'glower'
   ],
-  'general': [
+  general: [
     'ordinary',
     'universal',
     'common',
@@ -22847,14 +22847,14 @@ const SYN_DB = {
     'frequent',
     'usual'
   ],
-  'generality': [
+  generality: [
     'universality',
     'bulk',
     'mass',
     'body',
     'majority'
   ],
-  'generate': [
+  generate: [
     'beget',
     'procreate',
     'engender',
@@ -22867,7 +22867,7 @@ const SYN_DB = {
     'bringabout',
     'originate'
   ],
-  'generation': [
+  generation: [
     'procreation',
     'production',
     'formation',
@@ -22885,14 +22885,14 @@ const SYN_DB = {
     'lifetime',
     'origination'
   ],
-  'generic': [
+  generic: [
     'general',
     'common',
     'collective',
     'racial',
     'comprehensive'
   ],
-  'genial': [
+  genial: [
     'fostering',
     'cheering',
     'enlivening',
@@ -22913,7 +22913,7 @@ const SYN_DB = {
     'rejuvenating',
     'restorative'
   ],
-  'genius': [
+  genius: [
     'bent',
     'turn',
     'aptitude',
@@ -22949,7 +22949,7 @@ const SYN_DB = {
     'ideality',
     'talents'
   ],
-  'genteel': [
+  genteel: [
     'refined',
     'polite',
     'courteous',
@@ -22965,7 +22965,7 @@ const SYN_DB = {
     'cultivated',
     'cultured'
   ],
-  'gentle': [
+  gentle: [
     'mild',
     'bland',
     'moderate',
@@ -23003,7 +23003,7 @@ const SYN_DB = {
     'placid',
     'amiable'
   ],
-  'genuine': [
+  genuine: [
     'pure',
     'uncorrupt',
     'unalloyed',
@@ -23018,7 +23018,7 @@ const SYN_DB = {
     'sound',
     'natural'
   ],
-  'germ': [
+  germ: [
     'embryo',
     'ovule',
     'seedbud',
@@ -23028,7 +23028,7 @@ const SYN_DB = {
     'seed',
     'bud'
   ],
-  'germane': [
+  germane: [
     'related',
     'akin',
     'cognate',
@@ -23042,14 +23042,14 @@ const SYN_DB = {
     'kindred',
     'homogeneous'
   ],
-  'germinate': [
+  germinate: [
     'bud',
     'shoot',
     'vegetate',
     'sprout',
     'push'
   ],
-  'get': [
+  get: [
     'attain',
     'earn',
     'achieve',
@@ -23061,7 +23061,7 @@ const SYN_DB = {
     'secure',
     'gain'
   ],
-  'ghastly': [
+  ghastly: [
     'pale',
     'wan',
     'cadaverous',
@@ -23077,7 +23077,7 @@ const SYN_DB = {
     'spectral',
     'pallid'
   ],
-  'ghost': [
+  ghost: [
     'spirit',
     'soul',
     'apparition',
@@ -23087,13 +23087,13 @@ const SYN_DB = {
     'shade',
     'vision'
   ],
-  'gibe': [
+  gibe: [
     'sneer',
     'scoff',
     'taunt',
     'flout'
   ],
-  'jest': [
+  jest: [
     'jest',
     'jeer',
     'ridicule',
@@ -23114,7 +23114,7 @@ const SYN_DB = {
     'mock',
     'grin'
   ],
-  'giddy': [
+  giddy: [
     'dizzy',
     'vertiginous',
     'inconstant',
@@ -23138,7 +23138,7 @@ const SYN_DB = {
     'beetling',
     'flighty'
   ],
-  'gift': [
+  gift: [
     'bequest',
     'benefaction',
     'donation',
@@ -23170,7 +23170,7 @@ const SYN_DB = {
     'dower',
     'demise'
   ],
-  'gigantic': [
+  gigantic: [
     'vast',
     'huge',
     'colossal',
@@ -23181,7 +23181,7 @@ const SYN_DB = {
     'immense',
     'tremendous'
   ],
-  'girdle': [
+  girdle: [
     'girth',
     'surround',
     'encircle',
@@ -23194,7 +23194,7 @@ const SYN_DB = {
     'engirdle',
     'begird'
   ],
-  'girl': [
+  girl: [
     'damsel',
     'lass',
     'lassie',
@@ -23204,7 +23204,7 @@ const SYN_DB = {
     'virgin',
     'young'
   ],
-  'gist': [
+  gist: [
     'essence',
     'pith',
     'core',
@@ -23215,7 +23215,7 @@ const SYN_DB = {
     'ground',
     'foundation'
   ],
-  'give': [
+  give: [
     'deliver',
     'bestow',
     'supply',
@@ -23252,7 +23252,7 @@ const SYN_DB = {
     'recede',
     'retire'
   ],
-  'glad': [
+  glad: [
     'rejoiced',
     'pleased',
     'gratified',
@@ -23276,7 +23276,7 @@ const SYN_DB = {
     'blithesome',
     'gleeful'
   ],
-  'gladden': [
+  gladden: [
     'delight',
     'cheer',
     'exhilarate',
@@ -23284,7 +23284,7 @@ const SYN_DB = {
     'rejoice',
     'gratify'
   ],
-  'glare': [
+  glare: [
     'glitter',
     'glisten',
     'dazzle',
@@ -23298,7 +23298,7 @@ const SYN_DB = {
     'ray',
     'radiate'
   ],
-  'glassy': [
+  glassy: [
     'vitreous',
     'crystal',
     'crystalline',
@@ -23317,14 +23317,14 @@ const SYN_DB = {
     'glossy',
     'silken'
   ],
-  'glaze': [
+  glaze: [
     'calendar',
     'polish',
     'burnish',
     'gloss',
     'vitrify'
   ],
-  'glimpse': [
+  glimpse: [
     'glance',
     'glimmering',
     'sight',
@@ -23334,7 +23334,7 @@ const SYN_DB = {
     'trace',
     'tinge'
   ],
-  'gloom': [
+  gloom: [
     'obscurity',
     'darkness',
     'dimness',
@@ -23352,7 +23352,7 @@ const SYN_DB = {
     'dullness',
     'cloudiness'
   ],
-  'glorify': [
+  glorify: [
     'extol',
     'exalt',
     'magnify',
@@ -23368,7 +23368,7 @@ const SYN_DB = {
     'aggrandize',
     'panegyrize'
   ],
-  'glorious': [
+  glorious: [
     'illustrious',
     'renowned',
     'celebrated',
@@ -23390,7 +23390,7 @@ const SYN_DB = {
     'excellent',
     'consummate'
   ],
-  'glory': [
+  glory: [
     'honor',
     'renown',
     'celebrity',
@@ -23412,7 +23412,7 @@ const SYN_DB = {
     'parade',
     'magnificence'
   ],
-  'gloss': [
+  gloss: [
     'interpretation',
     'comment',
     'note',
@@ -23433,7 +23433,7 @@ const SYN_DB = {
     'plea',
     'speciousness'
   ],
-  'glowing': [
+  glowing: [
     'shining',
     'hot',
     'intense',
@@ -23443,7 +23443,7 @@ const SYN_DB = {
     'fervid',
     'fervent'
   ],
-  'glut': [
+  glut: [
     'repletion',
     'superabundance',
     'surplus',
@@ -23462,13 +23462,13 @@ const SYN_DB = {
     'fill',
     'overfeed'
   ],
-  'gluttony': [
+  gluttony: [
     'voracity',
     'greed',
     'gorinandizement',
     'deglutition'
   ],
-  'good': [
+  good: [
     'benefit',
     'gain',
     'advantage',
@@ -23555,11 +23555,11 @@ const SYN_DB = {
     'reputable',
     'just'
   ],
-  'goodbye': [
+  goodbye: [
     'farewell',
     'adieu'
   ],
-  'goodhumored': [
+  goodhumored: [
     'cheerful',
     'buoyant',
     'placid',
@@ -23567,7 +23567,7 @@ const SYN_DB = {
     'goodnatured',
     'goodtempered'
   ],
-  'goodly': [
+  goodly: [
     'graceful',
     'comely',
     'beautiful',
@@ -23581,7 +23581,7 @@ const SYN_DB = {
     'fine',
     'considerable'
   ],
-  'gorgeous': [
+  gorgeous: [
     'showy',
     'glittering',
     'splendid',
@@ -23596,7 +23596,7 @@ const SYN_DB = {
     'grand',
     'strong'
   ],
-  'govern': [
+  govern: [
     'manage',
     'direct',
     'command',
@@ -23615,7 +23615,7 @@ const SYN_DB = {
     'steer',
     'bridle'
   ],
-  'grace': [
+  grace: [
     'favor',
     'kindness',
     'condescension',
@@ -23644,7 +23644,7 @@ const SYN_DB = {
     'excellence',
     'charm'
   ],
-  'graceful': [
+  graceful: [
     'beautiful',
     'comely',
     'elegant',
@@ -23656,7 +23656,7 @@ const SYN_DB = {
     'rounded',
     'sinuous'
   ],
-  'graceless': [
+  graceless: [
     'depraved',
     'degenerate',
     'corrupt',
@@ -23676,7 +23676,7 @@ const SYN_DB = {
     'vicious',
     'worthless'
   ],
-  'gracious': [
+  gracious: [
     'benevolent',
     'benign',
     'kind',
@@ -23698,7 +23698,7 @@ const SYN_DB = {
     'courteous',
     'beneficent'
   ],
-  'gradation': [
+  gradation: [
     'progress',
     'progression',
     'succession',
@@ -23712,7 +23712,7 @@ const SYN_DB = {
     'stage',
     'tier'
   ],
-  'gradual': [
+  gradual: [
     'regular',
     'progressive',
     'slow',
@@ -23721,7 +23721,7 @@ const SYN_DB = {
     'unintermittent',
     'gradational'
   ],
-  'grand': [
+  grand: [
     'stately',
     'lordly',
     'princely',
@@ -23753,7 +23753,7 @@ const SYN_DB = {
     'pompous',
     'gorgeous'
   ],
-  'grandeur': [
+  grandeur: [
     'greatness',
     'vastness',
     'loftiness',
@@ -23770,7 +23770,7 @@ const SYN_DB = {
     'display',
     'ostentation'
   ],
-  'grandiloquence': [
+  grandiloquence: [
     'bombast',
     'fustian',
     'turgidity',
@@ -23782,7 +23782,7 @@ const SYN_DB = {
     'stiltedness',
     'euphuism'
   ],
-  'grant': [
+  grant: [
     'yield',
     'admit',
     'concede',
@@ -23799,7 +23799,7 @@ const SYN_DB = {
     'cede',
     'impart'
   ],
-  'graphic': [
+  graphic: [
     'vivid',
     'lively',
     'picturesque',
@@ -23813,7 +23813,7 @@ const SYN_DB = {
     'feeling',
     'described'
   ],
-  'grasp': [
+  grasp: [
     'clasp',
     'gripe',
     'seize',
@@ -23826,7 +23826,7 @@ const SYN_DB = {
     'retain',
     'comprehend'
   ],
-  'grateful': [
+  grateful: [
     'obliged',
     'thankful',
     'indebted',
@@ -23839,7 +23839,7 @@ const SYN_DB = {
     'gratifying',
     'welcome'
   ],
-  'gratification': [
+  gratification: [
     'satisfaction',
     'indulgence',
     'enjoyment',
@@ -23849,7 +23849,7 @@ const SYN_DB = {
     'reward',
     'recompense'
   ],
-  'gratify': [
+  gratify: [
     'please',
     'delight',
     'gladden',
@@ -23858,12 +23858,12 @@ const SYN_DB = {
     'humor',
     'fulfill'
   ],
-  'gratitude': [
+  gratitude: [
     'thankfulness',
     'obligation',
     'gratefulness'
   ],
-  'gratuitous': [
+  gratuitous: [
     'free',
     'voluntary',
     'uncompensated',
@@ -23875,7 +23875,7 @@ const SYN_DB = {
     'baseless',
     'unrecompensed'
   ],
-  'grave': [
+  grave: [
     'important',
     'weighty',
     'serious',
@@ -23897,7 +23897,7 @@ const SYN_DB = {
     'aggravated',
     'heavy'
   ],
-  'great': [
+  great: [
     'large',
     'big',
     'vast',
@@ -23956,7 +23956,7 @@ const SYN_DB = {
     'protracted',
     'noticeable'
   ],
-  'greediness': [
+  greediness: [
     'avidity',
     'hunger',
     'voracity',
@@ -23970,7 +23970,7 @@ const SYN_DB = {
     'rapacity',
     'selfishness'
   ],
-  'greedy': [
+  greedy: [
     'voracious',
     'ravenous',
     'insatiable',
@@ -23984,7 +23984,7 @@ const SYN_DB = {
     'avaricious',
     'hungry'
   ],
-  'grief': [
+  grief: [
     'bitterness',
     'misery',
     'agony',
@@ -24004,7 +24004,7 @@ const SYN_DB = {
     'distress',
     'regret'
   ],
-  'grievance': [
+  grievance: [
     'hardship',
     'wrong',
     'injury',
@@ -24020,7 +24020,7 @@ const SYN_DB = {
     'trouble',
     'injustice'
   ],
-  'grievous': [
+  grievous: [
     'sad',
     'heavy',
     'distressing',
@@ -24047,7 +24047,7 @@ const SYN_DB = {
     'unhappy',
     'disastrous'
   ],
-  'grim': [
+  grim: [
     'fierce',
     'ruthless',
     'cruel',
@@ -24066,7 +24066,7 @@ const SYN_DB = {
     'sullen',
     'stern'
   ],
-  'gross': [
+  gross: [
     'great',
     'large',
     'big',
@@ -24100,7 +24100,7 @@ const SYN_DB = {
     'animal',
     'bloated'
   ],
-  'grotesque': [
+  grotesque: [
     'wild',
     'bizarre',
     'extravagant',
@@ -24115,7 +24115,7 @@ const SYN_DB = {
     'distorted',
     'caricatured'
   ],
-  'ground': [
+  ground: [
     'basis',
     'base',
     'groundwork',
@@ -24144,7 +24144,7 @@ const SYN_DB = {
     'premise',
     'plea'
   ],
-  'grounded': [
+  grounded: [
     'rooted',
     'established',
     'initiated',
@@ -24155,7 +24155,7 @@ const SYN_DB = {
     'set',
     'indoctrinated'
   ],
-  'groundless': [
+  groundless: [
     'vain',
     'supposititious',
     'unfounded',
@@ -24165,7 +24165,7 @@ const SYN_DB = {
     'chimerical',
     'gratuitous'
   ],
-  'group': [
+  group: [
     'cluster',
     'collection',
     'assemblage',
@@ -24177,7 +24177,7 @@ const SYN_DB = {
     'assembly',
     'collocation'
   ],
-  'grovel': [
+  grovel: [
     'creep',
     'crawl',
     'sneak',
@@ -24188,7 +24188,7 @@ const SYN_DB = {
     'grub',
     'wallow'
   ],
-  'grow': [
+  grow: [
     'enlarge',
     'increase',
     'swell',
@@ -24212,7 +24212,7 @@ const SYN_DB = {
     'develop',
     'amplify'
   ],
-  'grudge': [
+  grudge: [
     'hatred',
     'pique',
     'rancor',
@@ -24225,7 +24225,7 @@ const SYN_DB = {
     'discontent',
     'refusal'
   ],
-  'guardian': [
+  guardian: [
     'warden',
     'keeper',
     'protector',
@@ -24234,7 +24234,7 @@ const SYN_DB = {
     'custodian',
     'conservator'
   ],
-  'guess': [
+  guess: [
     'conjecture',
     'divine',
     'surmise',
@@ -24252,7 +24252,7 @@ const SYN_DB = {
     'hazard',
     'risk'
   ],
-  'guide': [
+  guide: [
     'director',
     'conductor',
     'pilot',
@@ -24278,7 +24278,7 @@ const SYN_DB = {
     'influence',
     'train'
   ],
-  'guile': [
+  guile: [
     'cunning',
     'craft',
     'subtlety',
@@ -24294,7 +24294,7 @@ const SYN_DB = {
     'insidiousness',
     'hypocrisy'
   ],
-  'guilt': [
+  guilt: [
     'guiltiness',
     'culpability',
     'criminality',
@@ -24305,7 +24305,7 @@ const SYN_DB = {
     'sin',
     'offense'
   ],
-  'guise': [
+  guise: [
     'aspect',
     'appearance',
     'garb',
@@ -24324,7 +24324,7 @@ const SYN_DB = {
     'demeanor',
     'mien'
   ],
-  'gumption': [
+  gumption: [
     'shrewdness',
     'discernment',
     'sagacity',
@@ -24335,7 +24335,7 @@ const SYN_DB = {
     'power',
     'penetration'
   ],
-  'gush': [
+  gush: [
     'burst',
     'stream',
     'flow',
@@ -24343,7 +24343,7 @@ const SYN_DB = {
     'spout',
     'sentimentalize'
   ],
-  'gust': [
+  gust: [
     'taste',
     'relish',
     'zest',
@@ -24366,7 +24366,7 @@ const SYN_DB = {
     'breeze',
     'gale'
   ],
-  'habiliment': [
+  habiliment: [
     'dress',
     'garments',
     'clothes',
@@ -24381,7 +24381,7 @@ const SYN_DB = {
     'uniform',
     'clothing'
   ],
-  'habit': [
+  habit: [
     'condition',
     'constitution',
     'temperament',
@@ -24405,7 +24405,7 @@ const SYN_DB = {
     'usage',
     'wont'
   ],
-  'habitation': [
+  habitation: [
     'abode',
     'dwelling',
     'lodging',
@@ -24414,7 +24414,7 @@ const SYN_DB = {
     'quarters',
     'dwellingplace'
   ],
-  'habitual': [
+  habitual: [
     'usual',
     'customary',
     'wonted',
@@ -24426,7 +24426,7 @@ const SYN_DB = {
     'everyday',
     'perpetual'
   ],
-  'haggard': [
+  haggard: [
     'wild',
     'wayward',
     'intractable',
@@ -24445,7 +24445,7 @@ const SYN_DB = {
     'ghastly',
     'holloweyed'
   ],
-  'hail': [
+  hail: [
     'accost',
     'address',
     'salute',
@@ -24455,7 +24455,7 @@ const SYN_DB = {
     'speak',
     'signal'
   ],
-  'halcyon': [
+  halcyon: [
     'calm',
     'quiet',
     'placid',
@@ -24470,7 +24470,7 @@ const SYN_DB = {
     'golden',
     'balmy'
   ],
-  'hale': [
+  hale: [
     'healthy',
     'sound',
     'strong',
@@ -24479,12 +24479,12 @@ const SYN_DB = {
     'hardy',
     'well'
   ],
-  'half': [
+  half: [
     'bisection',
     'dimidiation',
     'moiety'
   ],
-  'hallow': [
+  hallow: [
     'consecrate',
     'dedicate',
     'sanctify',
@@ -24495,7 +24495,7 @@ const SYN_DB = {
     'respect',
     'enshrine'
   ],
-  'halt': [
+  halt: [
     'stop',
     'hold',
     'stand',
@@ -24509,7 +24509,7 @@ const SYN_DB = {
     'pause',
     'hesitate'
   ],
-  'hamper': [
+  hamper: [
     'hinder',
     'fetter',
     'entangle',
@@ -24519,7 +24519,7 @@ const SYN_DB = {
     'restrain',
     'impede'
   ],
-  'hand': [
+  hand: [
     'side',
     'direction',
     'part',
@@ -24555,7 +24555,7 @@ const SYN_DB = {
     'handful',
     'bunch'
   ],
-  'handsome': [
+  handsome: [
     'comely',
     'stately',
     'wellformed',
@@ -24578,7 +24578,7 @@ const SYN_DB = {
     'lovely',
     'elegant'
   ],
-  'handy': [
+  handy: [
     'dexterous',
     'adroit',
     'skillful',
@@ -24589,7 +24589,7 @@ const SYN_DB = {
     'convenient',
     'near'
   ],
-  'hang': [
+  hang: [
     'rest',
     'lean',
     'depend',
@@ -24613,7 +24613,7 @@ const SYN_DB = {
     'play',
     'attend'
   ],
-  'happen': [
+  happen: [
     'chance',
     'occur',
     'befall',
@@ -24622,7 +24622,7 @@ const SYN_DB = {
     'fall',
     'supervene'
   ],
-  'happiness': [
+  happiness: [
     'pleasure',
     'satisfaction',
     'comfort',
@@ -24647,7 +24647,7 @@ const SYN_DB = {
     'beatitude',
     'prosperity'
   ],
-  'happy': [
+  happy: [
     'gay',
     'glad',
     'joyous',
@@ -24698,7 +24698,7 @@ const SYN_DB = {
     'propitious',
     'favorable'
   ],
-  'harangue': [
+  harangue: [
     'speech',
     'oration',
     'bombast',
@@ -24708,7 +24708,7 @@ const SYN_DB = {
     'effusion',
     'rant'
   ],
-  'harass': [
+  harass: [
     'fatigue',
     'tire',
     'weary',
@@ -24731,13 +24731,13 @@ const SYN_DB = {
     'pester',
     'perplex'
   ],
-  'harbinger': [
+  harbinger: [
     'herald',
     'forerunner',
     'precursor',
     'announcer'
   ],
-  'harbor': [
+  harbor: [
     'asylum',
     'refuge',
     'shelter',
@@ -24751,7 +24751,7 @@ const SYN_DB = {
     'home',
     'anchorage'
   ],
-  'hard': [
+  hard: [
     'firm',
     'solid',
     'compact',
@@ -24815,7 +24815,7 @@ const SYN_DB = {
     'hardy',
     'hardened'
   ],
-  'harden': [
+  harden: [
     'indurate',
     'habituate',
     'inure',
@@ -24834,7 +24834,7 @@ const SYN_DB = {
     'consolidate',
     'compact'
   ],
-  'hardihood': [
+  hardihood: [
     'firmness',
     'fortitude',
     'resolution',
@@ -24852,7 +24852,7 @@ const SYN_DB = {
     'assurance',
     'brass'
   ],
-  'hardly': [
+  hardly: [
     'scarcely',
     'barely',
     'just',
@@ -24864,7 +24864,7 @@ const SYN_DB = {
     'merely',
     'narrowly'
   ],
-  'hardship': [
+  hardship: [
     'toil',
     'fatigue',
     'weariness',
@@ -24881,7 +24881,7 @@ const SYN_DB = {
     'infliction',
     'endurance'
   ],
-  'hardy': [
+  hardy: [
     'bold',
     'intrepid',
     'resolute',
@@ -24905,7 +24905,7 @@ const SYN_DB = {
     'inured',
     'vigorous'
   ],
-  'harm': [
+  harm: [
     'injury',
     'hurt',
     'detriment',
@@ -24921,7 +24921,7 @@ const SYN_DB = {
     'ill',
     'mishap'
   ],
-  'harmless': [
+  harmless: [
     'innocuous',
     'innocent',
     'innocuous',
@@ -24931,7 +24931,7 @@ const SYN_DB = {
     'unharmed',
     'uninjured'
   ],
-  'harmonious': [
+  harmonious: [
     'concordant',
     'harmonic',
     'consonant',
@@ -24956,7 +24956,7 @@ const SYN_DB = {
     'peaceful',
     'agreeable'
   ],
-  'harmony': [
+  harmony: [
     'concord',
     'amity',
     'accordance',
@@ -24975,7 +24975,7 @@ const SYN_DB = {
     'concurrence',
     'consistency'
   ],
-  'harsh': [
+  harsh: [
     'rough',
     'sour',
     'crabbed',
@@ -25007,7 +25007,7 @@ const SYN_DB = {
     'rigorous',
     'rancorous'
   ],
-  'harvest': [
+  harvest: [
     'fruit',
     'crop',
     'increase',
@@ -25023,7 +25023,7 @@ const SYN_DB = {
     'harvesttime',
     'harvesthome'
   ],
-  'haste': [
+  haste: [
     'despatch',
     'celerity',
     'speed',
@@ -25038,7 +25038,7 @@ const SYN_DB = {
     'heedlessness',
     'swiftness'
   ],
-  'hasten': [
+  hasten: [
     'expedite',
     'despatch',
     'accelerate',
@@ -25052,7 +25052,7 @@ const SYN_DB = {
     'urge',
     'press'
   ],
-  'hasty': [
+  hasty: [
     'quick',
     'swift',
     'fleet',
@@ -25087,7 +25087,7 @@ const SYN_DB = {
     'immature',
     'undeveloped'
   ],
-  'hateful': [
+  hateful: [
     'malignant',
     'malevolent',
     'malign',
@@ -25112,7 +25112,7 @@ const SYN_DB = {
     'repugnant',
     'heinous'
   ],
-  'hatred': [
+  hatred: [
     'enmity',
     'dislike',
     'hostility',
@@ -25133,7 +25133,7 @@ const SYN_DB = {
     'detestation',
     'malevolence'
   ],
-  'have': [
+  have: [
     'hold',
     'occupy',
     'own',
@@ -25157,7 +25157,7 @@ const SYN_DB = {
     'enjoy',
     'keep'
   ],
-  'hazard': [
+  hazard: [
     'chance',
     'peril',
     'venture',
@@ -25169,7 +25169,7 @@ const SYN_DB = {
     'jeopardy',
     'fortuity'
   ],
-  'hazy': [
+  hazy: [
     'foggy',
     'misty',
     'nebulous',
@@ -25179,7 +25179,7 @@ const SYN_DB = {
     'murky',
     'gloomy'
   ],
-  'head': [
+  head: [
     'top',
     'summit',
     'acme',
@@ -25218,7 +25218,7 @@ const SYN_DB = {
     'leadership',
     'guide'
   ],
-  'heal': [
+  heal: [
     'cure',
     'remedy',
     'restore',
@@ -25244,7 +25244,7 @@ const SYN_DB = {
     'true',
     'unquestionable'
   ],
-  'healthy': [
+  healthy: [
     'healthful',
     'sanitary',
     'hearty',
@@ -25260,7 +25260,7 @@ const SYN_DB = {
     'invigorating',
     'bracing'
   ],
-  'heart': [
+  heart: [
     'interior',
     'center',
     'essence',
@@ -25289,7 +25289,7 @@ const SYN_DB = {
     'life',
     'benevolence'
   ],
-  'heartbroken': [
+  heartbroken: [
     'forlorn',
     'disconsolate',
     'inconsolable',
@@ -25301,13 +25301,13 @@ const SYN_DB = {
     'brokenhearted',
     'wobegone'
   ],
-  'heartily': [
+  heartily: [
     'cordially',
     'zealously',
     'sincerely',
     'earnestly'
   ],
-  'hearty': [
+  hearty: [
     'earnest',
     'warm',
     'cordial',
@@ -25337,7 +25337,7 @@ const SYN_DB = {
     'honest',
     'genuine'
   ],
-  'heathenish': [
+  heathenish: [
     'heathen',
     'pagan',
     'gentile',
@@ -25350,7 +25350,7 @@ const SYN_DB = {
     'unbelieving',
     'uncivilized'
   ],
-  'heave': [
+  heave: [
     'lift',
     'hoist',
     'raise',
@@ -25366,7 +25366,7 @@ const SYN_DB = {
     'upraise',
     'subelevate'
   ],
-  'heaven': [
+  heaven: [
     'firmament',
     'sky',
     'welkin',
@@ -25380,7 +25380,7 @@ const SYN_DB = {
     'happiness',
     'rapture'
   ],
-  'heavenly': [
+  heavenly: [
     'celestial',
     'divine',
     'angelic',
@@ -25404,7 +25404,7 @@ const SYN_DB = {
     'blissful',
     'golden'
   ],
-  'heavy': [
+  heavy: [
     'tempestuous',
     'stormy',
     'strong',
@@ -25423,7 +25423,7 @@ const SYN_DB = {
     'lowering',
     'thick'
   ],
-  'hector': [
+  hector: [
     'threaten',
     'bully',
     'menace',
@@ -25441,7 +25441,7 @@ const SYN_DB = {
     'boast',
     'vaunt'
   ],
-  'heed': [
+  heed: [
     'observe',
     'regard',
     'notice',
@@ -25451,7 +25451,7 @@ const SYN_DB = {
     'obey',
     'care'
   ],
-  'heedful': [
+  heedful: [
     'observing',
     'regardful',
     'watchful',
@@ -25463,7 +25463,7 @@ const SYN_DB = {
     'circumspect',
     'mindful'
   ],
-  'height': [
+  height: [
     'altitude',
     'elevation',
     'eminence',
@@ -25482,7 +25482,7 @@ const SYN_DB = {
     'culmination',
     'crisis'
   ],
-  'heinous': [
+  heinous: [
     'flagrant',
     'flagitious',
     'infamous',
@@ -25498,7 +25498,7 @@ const SYN_DB = {
     'abominable',
     'execrable'
   ],
-  'help': [
+  help: [
     'foster',
     'aid',
     'assist',
@@ -25517,26 +25517,26 @@ const SYN_DB = {
     'promote',
     'relieve'
   ],
-  'hereditary': [
+  hereditary: [
     'ancestral',
     'patrimonial',
     'transmitted',
     'inherited',
     'lineal'
   ],
-  'heresy': [
+  heresy: [
     'heterodoxy',
     'error',
     'schism',
     'unorthodoxy'
   ],
-  'heretic': [
+  heretic: [
     'dissenter',
     'schismatic',
     'nonconformist',
     'heresiarch'
   ],
-  'heritage': [
+  heritage: [
     'inheritance',
     'entailment',
     'legacy',
@@ -25545,7 +25545,7 @@ const SYN_DB = {
     'patrimony',
     'estate'
   ],
-  'hermetically': [
+  hermetically: [
     'secretly',
     'mysteriously',
     'mystically',
@@ -25555,7 +25555,7 @@ const SYN_DB = {
     'airtight',
     'closely'
   ],
-  'heroic': [
+  heroic: [
     'brave',
     'valiant',
     'courageous',
@@ -25576,7 +25576,7 @@ const SYN_DB = {
     'chivalrous',
     'romantic'
   ],
-  'hesitate': [
+  hesitate: [
     'doubt',
     'pause',
     'delay',
@@ -25588,13 +25588,13 @@ const SYN_DB = {
     'dubitate',
     'scruple'
   ],
-  'heterodox': [
+  heterodox: [
     'unsound',
     'unorthodox',
     'heretical',
     'freethinking'
   ],
-  'heterogeneous': [
+  heterogeneous: [
     'unlike',
     'variant',
     'various',
@@ -25613,7 +25613,7 @@ const SYN_DB = {
     'contrary',
     'contrasted'
   ],
-  'hew': [
+  hew: [
     'cut',
     'chop',
     'hack',
@@ -25627,14 +25627,14 @@ const SYN_DB = {
     'sculpture',
     'turn'
   ],
-  'hibernal': [
+  hibernal: [
     'wintry',
     'brumal',
     'arctic',
     'glacial',
     'frigid'
   ],
-  'hide': [
+  hide: [
     'conceal',
     'secrete',
     'mask',
@@ -25656,7 +25656,7 @@ const SYN_DB = {
     'entomb',
     'overwhelm'
   ],
-  'high': [
+  high: [
     'prominent',
     'superior',
     'distinguished',
@@ -25714,7 +25714,7 @@ const SYN_DB = {
     'eminent',
     'lofty'
   ],
-  'hinder': [
+  hinder: [
     'delay',
     'embarrass',
     'oppose',
@@ -25740,7 +25740,7 @@ const SYN_DB = {
     'balk',
     'debar'
   ],
-  'hinge': [
+  hinge: [
     'turn',
     'depend',
     'hang',
@@ -25750,7 +25750,7 @@ const SYN_DB = {
     'rotate',
     'circulate'
   ],
-  'hire': [
+  hire: [
     'engage',
     'commission',
     'rent',
@@ -25759,7 +25759,7 @@ const SYN_DB = {
     'lease',
     'let'
   ],
-  'history': [
+  history: [
     'annals',
     'chronicle',
     'recital',
@@ -25776,7 +25776,7 @@ const SYN_DB = {
     'autobiography',
     'biography'
   ],
-  'hit': [
+  hit: [
     'strike',
     'reach',
     'attain',
@@ -25792,7 +25792,7 @@ const SYN_DB = {
     'touch',
     'mistake'
   ],
-  'hitch': [
+  hitch: [
     'catch',
     'fasten',
     'unite',
@@ -25804,7 +25804,7 @@ const SYN_DB = {
     'stitkle',
     'jam'
   ],
-  'hoard': [
+  hoard: [
     'store',
     'deposit',
     'save',
@@ -25815,7 +25815,7 @@ const SYN_DB = {
     'amass',
     'treasure'
   ],
-  'hoarse': [
+  hoarse: [
     'husky',
     'raucous',
     'grating',
@@ -25825,14 +25825,14 @@ const SYN_DB = {
     'guttural',
     'gruff'
   ],
-  'hoary': [
+  hoary: [
     'hoar',
     'white',
     'gray',
     'silvery',
     'frosty'
   ],
-  'hoax': [
+  hoax: [
     'deceive',
     'cheat',
     'imposeupon',
@@ -25841,7 +25841,7 @@ const SYN_DB = {
     'trick',
     'dupe'
   ],
-  'hobby': [
+  hobby: [
     'nag',
     'hobbyhorse',
     'pursuit',
@@ -25850,7 +25850,7 @@ const SYN_DB = {
     'specialty',
     'idiosyncrasy'
   ],
-  'hollow': [
+  hollow: [
     'empty',
     'void',
     'vacant',
@@ -25875,7 +25875,7 @@ const SYN_DB = {
     'low',
     'rumbling'
   ],
-  'holy': [
+  holy: [
     'hallowed',
     'sacred',
     'consecrated',
@@ -25896,7 +25896,7 @@ const SYN_DB = {
     'sanctified',
     'divine'
   ],
-  'homage': [
+  homage: [
     'fealty',
     'allegiance',
     'devotion',
@@ -25915,7 +25915,7 @@ const SYN_DB = {
     'submission',
     'veneration'
   ],
-  'home': [
+  home: [
     'habitation',
     'hearth',
     'residence',
@@ -25927,7 +25927,7 @@ const SYN_DB = {
     'hearthstone',
     'ingleside'
   ],
-  'homely': [
+  homely: [
     'domestic',
     'homelike',
     'plain',
@@ -25936,7 +25936,7 @@ const SYN_DB = {
     'inelegant',
     'homespun'
   ],
-  'honest': [
+  honest: [
     'honorable',
     'fair',
     'open',
@@ -25968,7 +25968,7 @@ const SYN_DB = {
     'candid',
     'good'
   ],
-  'honesty': [
+  honesty: [
     'integrity',
     'uprightness',
     'probity',
@@ -25994,7 +25994,7 @@ const SYN_DB = {
     'straightforwardness',
     'rectitude'
   ],
-  'honor': [
+  honor: [
     'veneration',
     'reverence',
     'respect',
@@ -26024,7 +26024,7 @@ const SYN_DB = {
     'grandeur',
     'renown'
   ],
-  'honorable': [
+  honorable: [
     'honest',
     'upright',
     'highminded',
@@ -26043,14 +26043,14 @@ const SYN_DB = {
     'creditable',
     'equitable'
   ],
-  'honorary': [
+  honorary: [
     'unofficial',
     'nominal',
     'gratuitous',
     'titular',
     'unremunerative'
   ],
-  'hoot': [
+  hoot: [
     'shout',
     'denounce',
     'hiss',
@@ -26059,7 +26059,7 @@ const SYN_DB = {
     'decry',
     'sibilate'
   ],
-  'hope': [
+  hope: [
     'trust',
     'confidence',
     'faith',
@@ -26074,14 +26074,14 @@ const SYN_DB = {
     'vision',
     'desire'
   ],
-  'horizontal': [
+  horizontal: [
     'plain',
     'flat',
     'level',
     'even',
     'plane'
   ],
-  'horrible': [
+  horrible: [
     'horrid',
     'frightful',
     'terrible',
@@ -26104,12 +26104,12 @@ const SYN_DB = {
     'hateful',
     'direful'
   ],
-  'horror': [
+  horror: [
     'fright',
     'alarm',
     'dread'
   ],
-  'fear': [
+  fear: [
     'fear',
     'consternation',
     'terror',
@@ -26125,7 +26125,7 @@ const SYN_DB = {
     'antipathy',
     'shrinking'
   ],
-  'horse': [
+  horse: [
     'steed',
     'charger',
     'stallion',
@@ -26144,7 +26144,7 @@ const SYN_DB = {
     'support',
     'frame'
   ],
-  'hospitable': [
+  hospitable: [
     'generous',
     'liberal',
     'bountiful',
@@ -26158,7 +26158,7 @@ const SYN_DB = {
     'neighborly',
     'charitable'
   ],
-  'host': [
+  host: [
     'entertainer',
     'innkeeper',
     'landlord',
@@ -26170,12 +26170,12 @@ const SYN_DB = {
     'number',
     'assemblage'
   ],
-  'hostage': [
+  hostage: [
     'sponsor',
     'bail',
     'surety'
   ],
-  'hostile': [
+  hostile: [
     'inimical',
     'unfriendly',
     'adverse',
@@ -26185,7 +26185,7 @@ const SYN_DB = {
     'opposing',
     'opposed'
   ],
-  'hostility': [
+  hostility: [
     'enmity',
     'animosity',
     'hatred',
@@ -26195,7 +26195,7 @@ const SYN_DB = {
     'variance',
     'contrariety'
   ],
-  'hot': [
+  hot: [
     'burning',
     'fiery',
     'scalding',
@@ -26224,7 +26224,7 @@ const SYN_DB = {
     'highflavored',
     'choleric'
   ],
-  'huge': [
+  huge: [
     'immense',
     'enormous',
     'colossal',
@@ -26240,14 +26240,14 @@ const SYN_DB = {
     'monstrous',
     'prodigious'
   ],
-  'human': [
+  human: [
     'cosmical',
     'ethnical',
     'anthropological',
     'rational',
     'civilized'
   ],
-  'humane': [
+  humane: [
     'kind',
     'benevolent',
     'benignant',
@@ -26273,7 +26273,7 @@ const SYN_DB = {
     'human',
     'forgiving'
   ],
-  'humanity': [
+  humanity: [
     'mankind',
     'benevolence',
     'kindness',
@@ -26289,7 +26289,7 @@ const SYN_DB = {
     'compassion',
     'sensibility'
   ],
-  'humanize': [
+  humanize: [
     'soften',
     'civilize',
     'cultivate',
@@ -26302,7 +26302,7 @@ const SYN_DB = {
     'ameliorate',
     'christianize'
   ],
-  'humble': [
+  humble: [
     'meek',
     'modest',
     'unassuming',
@@ -26315,7 +26315,7 @@ const SYN_DB = {
     'low',
     'obscure'
   ],
-  'humid': [
+  humid: [
     'damp',
     'wet',
     'moist',
@@ -26323,7 +26323,7 @@ const SYN_DB = {
     'dank',
     'spongy'
   ],
-  'humor': [
+  humor: [
     'disposition',
     'temper',
     'bent',
@@ -26343,7 +26343,7 @@ const SYN_DB = {
     'wit',
     'facetiousness'
   ],
-  'humorous': [
+  humorous: [
     'facetious',
     'jocular',
     'jocose',
@@ -26355,7 +26355,7 @@ const SYN_DB = {
     'pleasant',
     'witty'
   ],
-  'hurry': [
+  hurry: [
     'flutter',
     'flurry',
     'precipitation',
@@ -26379,7 +26379,7 @@ const SYN_DB = {
     'despatch',
     'accelerate'
   ],
-  'hurt': [
+  hurt: [
     'damage',
     'harm',
     'injury',
@@ -26398,7 +26398,7 @@ const SYN_DB = {
     'afflict',
     'bruise'
   ],
-  'hurtful': [
+  hurtful: [
     'harmful',
     'injurious',
     'mischievous',
@@ -26411,14 +26411,14 @@ const SYN_DB = {
     'pernicious',
     'baleful'
   ],
-  'hybrid': [
+  hybrid: [
     'mixed',
     'impure',
     'mongrel',
     'mule',
     'halfbreed'
   ],
-  'hypocrisy': [
+  hypocrisy: [
     'formalism',
     'pharisaism',
     'cant',
@@ -26434,7 +26434,7 @@ const SYN_DB = {
     'sham',
     'affectation'
   ],
-  'hypocrite': [
+  hypocrite: [
     'deceiver',
     'impostor',
     'pretender',
@@ -26443,7 +26443,7 @@ const SYN_DB = {
     'pharisee',
     'formalist'
   ],
-  'hypocritical': [
+  hypocritical: [
     'canting',
     'pharisaical',
     'sanctimonious',
@@ -26458,7 +26458,7 @@ const SYN_DB = {
     'smooth',
     'mincing'
   ],
-  'hypothesis': [
+  hypothesis: [
     'scheme',
     'speculation',
     'system',
@@ -26468,7 +26468,7 @@ const SYN_DB = {
     'surmise',
     'theory'
   ],
-  'idea': [
+  idea: [
     'concept',
     'conception',
     'impression',
@@ -26497,7 +26497,7 @@ const SYN_DB = {
     'understanding',
     'fiction'
   ],
-  'ideal': [
+  ideal: [
     'idea',
     'archetype',
     'original',
@@ -26519,7 +26519,7 @@ const SYN_DB = {
     'imaginative',
     'chimerical'
   ],
-  'ideality': [
+  ideality: [
     'imagination',
     'conception',
     'invention',
@@ -26527,13 +26527,13 @@ const SYN_DB = {
     'creativeness',
     'genius'
   ],
-  'identical': [
+  identical: [
     'same',
     'selfsame',
     'notdifferent',
     'particular'
   ],
-  'identify': [
+  identify: [
     'makeidentical',
     'confound',
     'unite',
@@ -26542,7 +26542,7 @@ const SYN_DB = {
     'recognize',
     'verify'
   ],
-  'identity': [
+  identity: [
     'sameness',
     'unity',
     'oneness',
@@ -26551,14 +26551,14 @@ const SYN_DB = {
     'individuality',
     'convertibility'
   ],
-  'idiom': [
+  idiom: [
     'specialty',
     'phrase',
     'turn',
     'peculiarity',
     'characteristic'
   ],
-  'idiosyncrasy': [ // mark
+  idiosyncrasy: [ // mark
     'peculiarity',
     'idiocrasy',
     'constitution',
@@ -26569,12 +26569,12 @@ const SYN_DB = {
     'singularity',
     'eccentricity'
   ],
-  'idiot': [
+  idiot: [
     'fool',
     'natural',
     'imbecile'
   ],
-  'idle': [
+  idle: [
     'unbusied',
     'unused',
     'leisure',
@@ -26604,14 +26604,14 @@ const SYN_DB = {
     'sluggish',
     'unemployed'
   ],
-  'idolize': [
+  idolize: [
     'deify',
     'adore',
     'worship',
     'reverence',
     'venerate'
   ],
-  'ignoble': [
+  ignoble: [
     'plebeian',
     'vulgar',
     'untitled',
@@ -26629,7 +26629,7 @@ const SYN_DB = {
     'unworthy',
     'humble'
   ],
-  'ignominious': [
+  ignominious: [
     'dishonorable',
     'infamous',
     'disgraceful',
@@ -26641,7 +26641,7 @@ const SYN_DB = {
     'base',
     'contemptible'
   ],
-  'ignominy': [
+  ignominy: [
     'dishonor',
     'disgrace',
     'discredit',
@@ -26657,7 +26657,7 @@ const SYN_DB = {
     'reprobation',
     'reproach'
   ],
-  'ignoramus': [
+  ignoramus: [
     'smatterer',
     'novice',
     'wiseacre',
@@ -26667,14 +26667,14 @@ const SYN_DB = {
     'greenhorn',
     'numskull'
   ],
-  'ignorance': [
+  ignorance: [
     'illiteracy',
     'stupidity',
     'nescience',
     'blindness',
     'darkness'
   ],
-  'ignorant': [
+  ignorant: [
     'illiterate',
     'unlearned',
     'unlettered',
@@ -26686,7 +26686,7 @@ const SYN_DB = {
     'uninstructed',
     'uninformed'
   ],
-  'ignore': [
+  ignore: [
     'disregard',
     'neglect',
     'overlook',
@@ -26694,7 +26694,7 @@ const SYN_DB = {
     'disown',
     'repudiate'
   ],
-  'hi': [
+  hi: [
     'wickedness',
     'depravity',
     'evil',
@@ -26736,7 +26736,7 @@ const SYN_DB = {
     'dislike',
     'aversion'
   ],
-  'illbred': [
+  illbred: [
     'illbred',
     'impolite',
     'uncivil',
@@ -26748,7 +26748,7 @@ const SYN_DB = {
     'illbehaved',
     'illmannered'
   ],
-  'illuminate': [
+  illuminate: [
     'light',
     'illumine',
     'illume',
@@ -26758,7 +26758,7 @@ const SYN_DB = {
     'emblazon',
     'irradiate'
   ],
-  'illusion': [
+  illusion: [
     'delusion',
     'hallucination',
     'deception',
@@ -26772,7 +26772,7 @@ const SYN_DB = {
     'vision',
     'myth'
   ],
-  'illusive': [
+  illusive: [
     'delusive',
     'deceptive',
     'deceitful',
@@ -26787,7 +26787,7 @@ const SYN_DB = {
     'illusory',
     'chimerical'
   ],
-  'illustrate': [
+  illustrate: [
     'elucidate',
     'explain',
     'exemplify',
@@ -26798,7 +26798,7 @@ const SYN_DB = {
     'paint',
     'image'
   ],
-  'illustrious': [
+  illustrious: [
     'glorious',
     'splendid',
     'brilliant',
@@ -26817,7 +26817,7 @@ const SYN_DB = {
     'deathless',
     'noble'
   ],
-  'image': [
+  image: [
     'statue',
     'idol',
     'likeness',
@@ -26836,7 +26836,7 @@ const SYN_DB = {
     'shadow',
     'vision'
   ],
-  'imagery': [
+  imagery: [
     'phantasm',
     'phantom',
     'vision',
@@ -26848,7 +26848,7 @@ const SYN_DB = {
     'metaphor',
     'similitude'
   ],
-  'imagination': [
+  imagination: [
     'conception',
     'invention',
     'ideality',
@@ -26862,7 +26862,7 @@ const SYN_DB = {
     'plot',
     'illusion'
   ],
-  'imaginative': [
+  imaginative: [
     'inventive',
     'creative',
     'plastic',
@@ -26874,7 +26874,7 @@ const SYN_DB = {
     'ideal',
     'original'
   ],
-  'imbecile': [
+  imbecile: [
     'weak',
     'feeble',
     'helpless',
@@ -26886,7 +26886,7 @@ const SYN_DB = {
     'driveling',
     'fatuous'
   ],
-  'imbecility': [
+  imbecility: [
     'weakness',
     'debility',
     'feebleness',
@@ -26899,7 +26899,7 @@ const SYN_DB = {
     'dotage',
     'senility'
   ],
-  'imbibe': [
+  imbibe: [
     'absorb',
     'suckin',
     'receive',
@@ -26910,7 +26910,7 @@ const SYN_DB = {
     'assimilate',
     'learn'
   ],
-  'imitate': [
+  imitate: [
     'copy',
     'follow',
     'patternafter',
@@ -26928,7 +26928,7 @@ const SYN_DB = {
     'repeat',
     'counterfeit'
   ],
-  'imitative': [
+  imitative: [
     'imitating',
     'copying',
     'mimicking',
@@ -26938,7 +26938,7 @@ const SYN_DB = {
     'unoriginal',
     'servile'
   ],
-  'immaculate': [
+  immaculate: [
     'spotless',
     'unspotted',
     'stainless',
@@ -26960,7 +26960,7 @@ const SYN_DB = {
     'virgin',
     'unpolluted'
   ],
-  'immanent': [
+  immanent: [
     'intrinsic',
     'inherent',
     'internal',
@@ -26973,7 +26973,7 @@ const SYN_DB = {
     'natural',
     'implicit'
   ],
-  'immaterial': [
+  immaterial: [
     'incorporeal',
     'unbodied',
     'unfleshly',
@@ -26986,14 +26986,14 @@ const SYN_DB = {
     'trivial',
     'trifling'
   ],
-  'immature': [
+  immature: [
     'ripe',
     'complete',
     'developed',
     'mature',
     'finished'
   ],
-  'immeasurable': [
+  immeasurable: [
     'illimitable',
     'unbounded',
     'boundless',
@@ -27004,7 +27004,7 @@ const SYN_DB = {
     'vast',
     'unfathomable'
   ],
-  'immediate': [
+  immediate: [
     'proximate',
     'close',
     'near',
@@ -27016,7 +27016,7 @@ const SYN_DB = {
     'present',
     'contiguous'
   ],
-  'immediately': [
+  immediately: [
     'presently',
     'thisinstant',
     'straightway',
@@ -27026,7 +27026,7 @@ const SYN_DB = {
     'rightoff',
     'instantly'
   ],
-  'immemorial': [
+  immemorial: [
     'olden',
     'ancient',
     'hoary',
@@ -27036,17 +27036,17 @@ const SYN_DB = {
     'timehonored',
     'primordial'
   ],
-  'immigration': [
+  immigration: [
     'migration',
     'colonization',
     'settlement'
   ],
-  'imminent': [
+  imminent: [
     'impending',
     'hovering',
     'threatening'
   ],
-  'immunity': [
+  immunity: [
     'freedom',
     'exemption',
     'release',
@@ -27059,7 +27059,7 @@ const SYN_DB = {
     'franchise',
     'dispensation'
   ],
-  'imp': [
+  imp: [
     'sprite',
     'hobgoblin',
     'demon',
@@ -27068,7 +27068,7 @@ const SYN_DB = {
     'scamp',
     'brat'
   ],
-  'impact': [
+  impact: [
     'impulse',
     'shock',
     'impression',
@@ -27079,7 +27079,7 @@ const SYN_DB = {
     'impinging',
     'application'
   ],
-  'impair': [
+  impair: [
     'deteriorate',
     'vitiate',
     'injure',
@@ -27093,7 +27093,7 @@ const SYN_DB = {
     'reduce',
     'damage'
   ],
-  'impassioned': [
+  impassioned: [
     'passionate',
     'vehement',
     'impetuous',
@@ -27108,7 +27108,7 @@ const SYN_DB = {
     'zealous',
     'spirited'
   ],
-  'impatience': [
+  impatience: [
     'uneasiness',
     'disquietude',
     'restlessness',
@@ -27121,7 +27121,7 @@ const SYN_DB = {
     'irritability',
     'irritableness'
   ],
-  'impediment': [
+  impediment: [
     'bar',
     'hindrance',
     'obstacle',
@@ -27132,7 +27132,7 @@ const SYN_DB = {
     'stumblingblock',
     'check'
   ],
-  'imperative': [
+  imperative: [
     'commanding',
     'authoritative',
     'peremptory',
@@ -27144,7 +27144,7 @@ const SYN_DB = {
     'inexorable',
     'compulsory'
   ],
-  'imperial': [
+  imperial: [
     'kingly',
     'regal',
     'sovereign',
@@ -27159,7 +27159,7 @@ const SYN_DB = {
     'consummate',
     'superb'
   ],
-  'imperious': [
+  imperious: [
     'magisterial',
     'dictatorial',
     'despotic',
@@ -27172,7 +27172,7 @@ const SYN_DB = {
     'authoritative',
     'exacting'
   ],
-  'impetuous': [
+  impetuous: [
     'fierce',
     'vehement',
     'violent',
@@ -27186,13 +27186,13 @@ const SYN_DB = {
     'rash',
     'excitiable'
   ],
-  'implement': [
+  implement: [
     'utensil',
     'tool',
     'appliance',
     'instrument'
   ],
-  'implication': [
+  implication: [
     'entanglement',
     'involution',
     'inference',
@@ -27206,7 +27206,7 @@ const SYN_DB = {
     'innuendo',
     'adumbration'
   ],
-  'implicit': [
+  implicit: [
     'understood',
     'implied',
     'inferred',
@@ -27219,7 +27219,7 @@ const SYN_DB = {
     'undoubtlng',
     'involved'
   ],
-  'imply': [
+  imply: [
     'involve',
     'import',
     'include',
@@ -27230,7 +27230,7 @@ const SYN_DB = {
     'hint',
     'denote'
   ],
-  'import': [
+  import: [
     'meaning',
     'sense',
     'purport',
@@ -27250,7 +27250,7 @@ const SYN_DB = {
     'concern',
     'introduce'
   ],
-  'importance': [
+  importance: [
     'consequence',
     'moment',
     'weight',
@@ -27262,7 +27262,7 @@ const SYN_DB = {
     'selfimportance',
     'pomposity'
   ],
-  'important': [
+  important: [
     'grave',
     'weighty',
     'momentous',
@@ -27283,7 +27283,7 @@ const SYN_DB = {
     'great',
     'dignified'
   ],
-  'importunate': [
+  importunate: [
     'urgent',
     'pertinacious',
     'pressing',
@@ -27293,7 +27293,7 @@ const SYN_DB = {
     'overurgent',
     'overentreative'
   ],
-  'importune': [
+  importune: [
     'urge',
     'entreat',
     'press',
@@ -27305,7 +27305,7 @@ const SYN_DB = {
     'worry',
     'trouble'
   ],
-  'impose': [
+  impose: [
     'put',
     'set',
     'lay',
@@ -27318,7 +27318,7 @@ const SYN_DB = {
     'inflict',
     'subject'
   ],
-  'imposing': [
+  imposing: [
     'stately',
     'august',
     'majestic',
@@ -27330,7 +27330,7 @@ const SYN_DB = {
     'effective',
     'dignified'
   ],
-  'imposition': [
+  imposition: [
     'imposing',
     'putting',
     'placing',
@@ -27351,7 +27351,7 @@ const SYN_DB = {
     'exaction',
     'encroachment'
   ],
-  'impost': [
+  impost: [
     'tax',
     'duty',
     'custom',
@@ -27362,7 +27362,7 @@ const SYN_DB = {
     'rate',
     'imposition'
   ],
-  'imposture': [
+  imposture: [
     'cheat',
     'trick',
     'deception',
@@ -27377,7 +27377,7 @@ const SYN_DB = {
     'stratagem',
     'hoax'
   ],
-  'impotence': [
+  impotence: [
     'disability',
     'incapacity',
     'incompetence',
@@ -27392,7 +27392,7 @@ const SYN_DB = {
     'helplessness',
     'disqualification'
   ],
-  'impoverish': [
+  impoverish: [
     'exhaust',
     'deplete',
     'rob',
@@ -27400,7 +27400,7 @@ const SYN_DB = {
     'fleece',
     'denude'
   ],
-  'impregnable': [
+  impregnable: [
     'invincible',
     'inassailable',
     'invulnerable',
@@ -27410,7 +27410,7 @@ const SYN_DB = {
     'tenable',
     'irrefragable'
   ],
-  'impregnate': [
+  impregnate: [
     'fecundate',
     'imbue',
     'infuse',
@@ -27425,7 +27425,7 @@ const SYN_DB = {
     'vivify',
     'teach'
   ],
-  'impression': [
+  impression: [
     'printing',
     'stamping',
     'imprinting',
@@ -27441,7 +27441,7 @@ const SYN_DB = {
     'opinion',
     'fancy'
   ],
-  'impressive': [
+  impressive: [
     'affecting',
     'touching',
     'moving',
@@ -27454,7 +27454,7 @@ const SYN_DB = {
     'imposing',
     'important'
   ],
-  'improve': [
+  improve: [
     'mend',
     'gain',
     'becomebetter',
@@ -27469,7 +27469,7 @@ const SYN_DB = {
     'correct',
     'reform'
   ],
-  'improvement': [
+  improvement: [
     'amending',
     'bettering',
     'amelioration',
@@ -27483,7 +27483,7 @@ const SYN_DB = {
     'increase',
     'correction'
   ],
-  'impudence': [
+  impudence: [
     'assurance',
     'boldness',
     'impertinence',
@@ -27498,7 +27498,7 @@ const SYN_DB = {
     'officiousness',
     'intrusiveness'
   ],
-  'impugn': [
+  impugn: [
     'attack',
     'assail',
     'contradict',
@@ -27509,7 +27509,7 @@ const SYN_DB = {
     'deny',
     'blame'
   ],
-  'impulse': [
+  impulse: [
     'thrust',
     'push',
     'impetus',
@@ -27525,7 +27525,7 @@ const SYN_DB = {
     'incentive',
     'force'
   ],
-  'impulsive': [
+  impulsive: [
     'propulsive',
     'impelling',
     'moving',
@@ -27537,7 +27537,7 @@ const SYN_DB = {
     'wayward',
     'impressible'
   ],
-  'impute': [
+  impute: [
     'ascribe',
     'refer',
     'charge',
@@ -27545,7 +27545,7 @@ const SYN_DB = {
     'imply',
     'insinuate'
   ],
-  'inane': [
+  inane: [
     'empty',
     'void',
     'worthless',
@@ -27559,7 +27559,7 @@ const SYN_DB = {
     'vapid',
     'characterless'
   ],
-  'inanition': [
+  inanition: [
     'emptiness',
     'vacuity',
     'inanity',
@@ -27571,7 +27571,7 @@ const SYN_DB = {
     'exhaustion',
     'starvation'
   ],
-  'inaugurate': [
+  inaugurate: [
     'install',
     'invest',
     'induct',
@@ -27581,7 +27581,7 @@ const SYN_DB = {
     'initiate',
     'originate'
   ],
-  'inauguration': [
+  inauguration: [
     'investiture',
     'installation',
     'induction',
@@ -27592,11 +27592,11 @@ const SYN_DB = {
     'beginning',
     'origination'
   ],
-  'incandescence': [
+  incandescence: [
     'incalescence',
     'glow'
   ],
-  'incantation': [
+  incantation: [
     'sorcery',
     'charm',
     'enchantment',
@@ -27609,18 +27609,18 @@ const SYN_DB = {
     'recitation',
     'invocation'
   ],
-  'incarnation': [
+  incarnation: [
     'embodiment',
     'impersonation',
     'manifestation',
     'exemplification',
     'personification'
   ],
-  'incendiarism': [
+  incendiarism: [
     'arson',
     'conflagration'
   ],
-  'incense': [
+  incense: [
     'enrage',
     'exasperate',
     'irritate',
@@ -27634,7 +27634,7 @@ const SYN_DB = {
     'nettle',
     'gall'
   ],
-  'incentive': [
+  incentive: [
     'inducement',
     'incitement',
     'spur',
@@ -27647,12 +27647,12 @@ const SYN_DB = {
     'rousing',
     'excitation'
   ],
-  'inception': [
+  inception: [
     'beginning',
     'inauguration',
     'commencement'
   ],
-  'incessant': [
+  incessant: [
     'ceaseless',
     'continual',
     'unceasing',
@@ -27664,12 +27664,12 @@ const SYN_DB = {
     'uninterrupted',
     'unintermittent'
   ],
-  'incidence': [
+  incidence: [
     'impact',
     'stroke',
     'impingement'
   ],
-  'incident': [
+  incident: [
     'event',
     'occurrence',
     'circumstance',
@@ -27695,13 +27695,13 @@ const SYN_DB = {
     'concomitant',
     'accidental'
   ],
-  'incipient': [
+  incipient: [
     'beginning',
     'inchoate',
     'commencing',
     'embryonic'
   ],
-  'inclination': [
+  inclination: [
     'inclining',
     'slope',
     'leaning',
@@ -27728,7 +27728,7 @@ const SYN_DB = {
     'attachment',
     'affection'
   ],
-  'incline': [
+  incline: [
     'slant',
     'lean',
     'slope',
@@ -27746,7 +27746,7 @@ const SYN_DB = {
     'induce',
     'prompt'
   ],
-  'include': [
+  include: [
     'hold',
     'contain',
     'comprise',
@@ -27754,7 +27754,7 @@ const SYN_DB = {
     'comprehend',
     'embrace'
   ],
-  'inclusive': [
+  inclusive: [
     'enclosing',
     'encircling',
     'including',
@@ -27764,7 +27764,7 @@ const SYN_DB = {
     'additive',
     'implied'
   ],
-  'income': [
+  income: [
     'revenue',
     'profits',
     'gains',
@@ -27772,7 +27772,7 @@ const SYN_DB = {
     'pay',
     'allowance'
   ],
-  'incongruous': [
+  incongruous: [
     'inconsistent',
     'unsuitable',
     'absurd',
@@ -27791,7 +27791,7 @@ const SYN_DB = {
     'irreconcilable',
     'mismatched'
   ],
-  'increase': [
+  increase: [
     'accession',
     'growth',
     'extension',
@@ -27826,7 +27826,7 @@ const SYN_DB = {
     'grow',
     'multiply'
   ],
-  'inculcate': [
+  inculcate: [
     'infuse',
     'impress',
     'enforce',
@@ -27836,7 +27836,7 @@ const SYN_DB = {
     'urge',
     'teach'
   ],
-  'incumbent': [
+  incumbent: [
     'obligatory',
     'binding',
     'devolving',
@@ -27852,12 +27852,12 @@ const SYN_DB = {
     'threatening',
     'impending'
   ],
-  'incur': [
+  incur: [
     'contract',
     'meet',
     'run'
   ],
-  'incursion': [
+  incursion: [
     'inroad',
     'raid',
     'invasion',
@@ -27867,7 +27867,7 @@ const SYN_DB = {
     'sally',
     'encroachment'
   ],
-  'indeed': [
+  indeed: [
     'truly',
     'really',
     'verily',
@@ -27877,7 +27877,7 @@ const SYN_DB = {
     'certainly',
     'strictly'
   ],
-  'indefatigable': [
+  indefatigable: [
     'unwearied',
     'untiring',
     'persevering',
@@ -27889,7 +27889,7 @@ const SYN_DB = {
     'incessant',
     'indomitable'
   ],
-  'indelible': [
+  indelible: [
     'ineffaceable',
     'indestructible',
     'ingrained',
@@ -27897,7 +27897,7 @@ const SYN_DB = {
     'irreversible',
     'persistent'
   ],
-  'indemnify': [
+  indemnify: [
     'secure',
     'save',
     'compensate',
@@ -27906,7 +27906,7 @@ const SYN_DB = {
     'requite',
     'satisfy'
   ],
-  'indicate': [
+  indicate: [
     'show',
     'denote',
     'mark',
@@ -27920,7 +27920,7 @@ const SYN_DB = {
     'manifest',
     'declare'
   ],
-  'indication': [
+  indication: [
     'mark',
     'note',
     'index',
@@ -27934,7 +27934,7 @@ const SYN_DB = {
     'proof',
     'prognostic'
   ],
-  'indictment': [
+  indictment: [
     'indicting',
     'presentment',
     'accusation',
@@ -27943,7 +27943,7 @@ const SYN_DB = {
     'arraignment',
     'crimination'
   ],
-  'indifference': [
+  indifference: [
     'neutrality',
     'impartiality',
     'disinterestedness',
@@ -27961,7 +27961,7 @@ const SYN_DB = {
     'insensibility',
     'composure'
   ],
-  'indifferent': [
+  indifferent: [
     'neutral',
     'unbiased',
     'impartial',
@@ -27985,7 +27985,7 @@ const SYN_DB = {
     'lukewarm',
     'careless'
   ],
-  'indigent': [
+  indigent: [
     'poor',
     'needy',
     'destitute',
@@ -27998,7 +27998,7 @@ const SYN_DB = {
     'impecunious',
     'straitened'
   ],
-  'indignation': [
+  indignation: [
     'resentment',
     'anger',
     'ire',
@@ -28011,7 +28011,7 @@ const SYN_DB = {
     'displeasure',
     'protestation'
   ],
-  'indignity': [
+  indignity: [
     'insult',
     'outrage',
     'affront',
@@ -28028,7 +28028,7 @@ const SYN_DB = {
     'ignominy',
     'disgrace'
   ],
-  'indiscriminate': [
+  indiscriminate: [
     'undistinguishing',
     'undiscriminating',
     'mixed',
@@ -28039,7 +28039,7 @@ const SYN_DB = {
     'illassorted',
     'undiscerning'
   ],
-  'indite': [
+  indite: [
     'compose',
     'write',
     'dictate',
@@ -28050,7 +28050,7 @@ const SYN_DB = {
     'describe',
     'phrase'
   ],
-  'individual': [
+  individual: [
     'person',
     'personage',
     'character',
@@ -28074,7 +28074,7 @@ const SYN_DB = {
     'identical',
     'idiosyncratic'
   ],
-  'individuality': [
+  individuality: [
     'personality',
     'character',
     'decision',
@@ -28083,7 +28083,7 @@ const SYN_DB = {
     'selfdetermination',
     'uniqueness'
   ],
-  'indolence': [
+  indolence: [
     'laziness',
     'sloth',
     'inertness',
@@ -28091,7 +28091,7 @@ const SYN_DB = {
     'sluggishness',
     'slothfulness'
   ],
-  'indomitable': [
+  indomitable: [
     'unyielding',
     'unconquerable',
     'invincible',
@@ -28099,7 +28099,7 @@ const SYN_DB = {
     'irrepressible',
     'indefatigable'
   ],
-  'endorse': [ //! !
+  endorse: [ //! !
     'superscribe',
     'sanction',
     'approve',
@@ -28107,7 +28107,7 @@ const SYN_DB = {
     'ratify',
     'accept'
   ],
-  'induce': [
+  induce: [
     'influence',
     'impel',
     'move',
@@ -28122,7 +28122,7 @@ const SYN_DB = {
     'produce',
     'effect'
   ],
-  'induction': [
+  induction: [
     'induction',
     'introduction',
     'installation',
@@ -28134,7 +28134,7 @@ const SYN_DB = {
     'collation',
     'application'
   ],
-  'indulge': [
+  indulge: [
     'gratify',
     'yield',
     'satisfy',
@@ -28151,7 +28151,7 @@ const SYN_DB = {
     'revel',
     'grovel'
   ],
-  'indulgence': [
+  indulgence: [
     'gratification',
     'humoring',
     'pampering',
@@ -28161,7 +28161,7 @@ const SYN_DB = {
     'favor',
     'liberality'
   ],
-  'indulgent': [
+  indulgent: [
     'yielding',
     'compliant',
     'lenient',
@@ -28173,7 +28173,7 @@ const SYN_DB = {
     'tender',
     'forbearing'
   ],
-  'industrious': [
+  industrious: [
     'diligent',
     'active',
     'busy',
@@ -28188,7 +28188,7 @@ const SYN_DB = {
     'persistent',
     'persevering'
   ],
-  'industry': [
+  industry: [
     'diligence',
     'labor',
     'application',
@@ -28206,7 +28206,7 @@ const SYN_DB = {
     'activity',
     'toil'
   ],
-  'inert': [
+  inert: [
     'inactive',
     'lifeless',
     'dead',
@@ -28223,7 +28223,7 @@ const SYN_DB = {
     'heavy',
     'dormant'
   ],
-  'inevitable': [
+  inevitable: [
     'necessary',
     'unavoidable',
     'infallible',
@@ -28231,7 +28231,7 @@ const SYN_DB = {
     'fixed',
     'irresistible'
   ],
-  'infamy': [
+  infamy: [
     'dishonor',
     'shame',
     'disgrace',
@@ -28248,7 +28248,7 @@ const SYN_DB = {
     'despair',
     'degradation'
   ],
-  'infantile': [
+  infantile: [
     'young',
     'childish',
     'tender',
@@ -28259,7 +28259,7 @@ const SYN_DB = {
     'puerile',
     'imbecile'
   ],
-  'infatuation': [
+  infatuation: [
     'folly',
     'stupefaction',
     'foolishness',
@@ -28270,7 +28270,7 @@ const SYN_DB = {
     'madness',
     'selfdeception'
   ],
-  'infection': [
+  infection: [
     'contagion',
     'contamination',
     'taint',
@@ -28282,7 +28282,7 @@ const SYN_DB = {
     'vitiation',
     'pollution'
   ],
-  'infectious': [
+  infectious: [
     'contagious',
     'catching',
     'pestilential',
@@ -28294,7 +28294,7 @@ const SYN_DB = {
     'poisoning',
     'vitiating'
   ],
-  'infer': [
+  infer: [
     'deduce',
     'conclude',
     'gather',
@@ -28302,7 +28302,7 @@ const SYN_DB = {
     'derive',
     'argue'
   ],
-  'inference': [
+  inference: [
     'conclusion',
     'deduction',
     'corollary',
@@ -28310,7 +28310,7 @@ const SYN_DB = {
     'generalization',
     'induction'
   ],
-  'inferiority': [
+  inferiority: [
     'subordination',
     'deficiency',
     'imperfection',
@@ -28321,7 +28321,7 @@ const SYN_DB = {
     'depression',
     'mediocrity'
   ],
-  'infernal': [
+  infernal: [
     'hellish',
     'diabolical',
     'devilish',
@@ -28334,7 +28334,7 @@ const SYN_DB = {
     'accursed',
     'abominable'
   ],
-  'infest': [
+  infest: [
     'throng',
     'overrun',
     'beset',
@@ -28349,7 +28349,7 @@ const SYN_DB = {
     'worry',
     'pester'
   ],
-  'infidel': [
+  infidel: [
     'unbeliever',
     'disbeliever',
     'atheist',
@@ -28359,7 +28359,7 @@ const SYN_DB = {
     'skeptic',
     'heretic'
   ],
-  'infidelity': [
+  infidelity: [
     'unbelief',
     'disbelief',
     'skepticism',
@@ -28367,7 +28367,7 @@ const SYN_DB = {
     'unfaithfulness',
     'disloyalty'
   ],
-  'infinite': [
+  infinite: [
     'absolute',
     'illimitable',
     'limitless',
@@ -28384,7 +28384,7 @@ const SYN_DB = {
     'innumerable',
     'countless'
   ],
-  'infinitesimal': [
+  infinitesimal: [
     'minute',
     'atomic',
     'microscopic',
@@ -28392,7 +28392,7 @@ const SYN_DB = {
     'inconspicuous',
     'undiscernible'
   ],
-  'infinitude': [
+  infinitude: [
     'boundlessness',
     'vastness',
     'immensity',
@@ -28402,7 +28402,7 @@ const SYN_DB = {
     'selfdetermination',
     'selfexistence'
   ],
-  'infirm': [
+  infirm: [
     'weak',
     'feeble',
     'frail',
@@ -28421,7 +28421,7 @@ const SYN_DB = {
     'failing',
     'impotent'
   ],
-  'infirmity': [
+  infirmity: [
     'weakness',
     'decrepitude',
     'debility',
@@ -28435,7 +28435,7 @@ const SYN_DB = {
     'disease',
     'malady'
   ],
-  'inflame': [
+  inflame: [
     'excite',
     'stimulate',
     'incite',
@@ -28456,7 +28456,7 @@ const SYN_DB = {
     'fan',
     'embitter'
   ],
-  'inflate': [
+  inflate: [
     'distend',
     'expand',
     'swell',
@@ -28465,7 +28465,7 @@ const SYN_DB = {
     'increase',
     'enlarge'
   ],
-  'inflated': [
+  inflated: [
     'distended',
     'swollen',
     'bloated',
@@ -28479,7 +28479,7 @@ const SYN_DB = {
     'highflown',
     'pompous'
   ],
-  'inflection': [
+  inflection: [
     'bend',
     'bending',
     'curvature',
@@ -28491,11 +28491,11 @@ const SYN_DB = {
     'comparison',
     'flexion'
   ],
-  'inflict': [
+  inflict: [
     'impose',
     'afflict'
   ],
-  'infliction': [
+  infliction: [
     'imposition',
     'inflicting',
     'punishment',
@@ -28504,7 +28504,7 @@ const SYN_DB = {
     'trouble',
     'nuisance'
   ],
-  'influence': [
+  influence: [
     'authority',
     'ascendency',
     'control',
@@ -28541,7 +28541,7 @@ const SYN_DB = {
     'direct',
     'bias'
   ],
-  'influential': [
+  influential: [
     'potent',
     'powerful',
     'controlling',
@@ -28552,12 +28552,12 @@ const SYN_DB = {
     'considerable',
     'authoritative'
   ],
-  'operative': [
+  operative: [
     'operative',
     'inconsiderable',
     'unpersuasive'
   ],
-  'information': [
+  information: [
     'advice',
     'notice',
     'intelligence',
@@ -28569,14 +28569,14 @@ const SYN_DB = {
     'counsel',
     'notification'
   ],
-  'infringe': [
+  infringe: [
     'transgress',
     'violate',
     'break',
     'disobey',
     'nullify'
   ],
-  'infuse': [
+  infuse: [
     'instill',
     'inspire',
     'introduce',
@@ -28591,7 +28591,7 @@ const SYN_DB = {
     'insinuate',
     'breatheinto'
   ],
-  'ingenious': [
+  ingenious: [
     'inventive',
     'gifted',
     'able',
@@ -28602,7 +28602,7 @@ const SYN_DB = {
     'adept',
     'skillful'
   ],
-  'ingenuity': [
+  ingenuity: [
     'inventiveness',
     'ingeniousness',
     'acuteness',
@@ -28616,7 +28616,7 @@ const SYN_DB = {
     'gift',
     'genius'
   ],
-  'ingenuous': [
+  ingenuous: [
     'artless',
     'open',
     'candid',
@@ -28633,16 +28633,16 @@ const SYN_DB = {
     'generous',
     'honorable'
   ],
-  'ingratiate': [
+  ingratiate: [
     'insinuate',
     'recommend'
   ],
-  'ingredient': [
+  ingredient: [
     'element',
     'component',
     'constituent'
   ],
-  'inherent': [
+  inherent: [
     'adhering',
     'essential',
     'immanent',
@@ -28663,12 +28663,12 @@ const SYN_DB = {
     'inseparable',
     'inwrought'
   ],
-  'inherit': [
+  inherit: [
     'occupy',
     'possess',
     'enjoy'
   ],
-  'inheritance': [
+  inheritance: [
     'inheriting',
     'heritage',
     'patrimony',
@@ -28676,13 +28676,13 @@ const SYN_DB = {
     'possession',
     'legacy'
   ],
-  'inheritor': [
+  inheritor: [
     'heir',
     'successor',
     'legatee',
     'devisee'
   ],
-  'inimical': [
+  inimical: [
     'antagonistic',
     'hostile',
     'unfriendly',
@@ -28695,7 +28695,7 @@ const SYN_DB = {
     'hurtful',
     'harmful'
   ],
-  'iniquity': [
+  iniquity: [
     'injustice',
     'wickedness',
     'sin',
@@ -28706,21 +28706,21 @@ const SYN_DB = {
     'grievance',
     'evildoing'
   ],
-  'initiative': [
+  initiative: [
     'commencement',
     'beginning',
     'start',
     'leadersnip',
     'example'
   ],
-  'injunction': [
+  injunction: [
     'command',
     'order',
     'mandate',
     'precept',
     'exhortation'
   ],
-  'injure': [
+  injure: [
     'maltreat',
     'wrong',
     'abuse',
@@ -28733,7 +28733,7 @@ const SYN_DB = {
     'cripple',
     'sully'
   ],
-  'injurious': [
+  injurious: [
     'wrong',
     'unjust',
     'iniquitous',
@@ -28754,7 +28754,7 @@ const SYN_DB = {
     'slanderous',
     'prejudicial'
   ],
-  'injury': [
+  injury: [
     'blemish',
     'damage',
     'evil',
@@ -28770,7 +28770,7 @@ const SYN_DB = {
     'outrage',
     'harm'
   ],
-  'injustice': [
+  injustice: [
     'wrong',
     'unrighteousness',
     'iniquity',
@@ -28778,13 +28778,13 @@ const SYN_DB = {
     'unfairness',
     'injury'
   ],
-  'inlet': [
+  inlet: [
     'opening',
     'entrance',
     'commencement',
     'ingress'
   ],
-  'inmate': [
+  inmate: [
     'occupant',
     'dweller',
     'denizen',
@@ -28792,12 +28792,12 @@ const SYN_DB = {
     'tenant',
     'resident'
   ],
-  'inn': [
+  inn: [
     'inn',
     'hotel',
     'tavern'
   ],
-  'innate': [
+  innate: [
     'inherent',
     'inborn',
     'natural',
@@ -28806,7 +28806,7 @@ const SYN_DB = {
     'congenital',
     'organic'
   ],
-  'inner': [
+  inner: [
     'inmost',
     'within',
     'interior',
@@ -28814,7 +28814,7 @@ const SYN_DB = {
     'close',
     'vital'
   ],
-  'innocence': [
+  innocence: [
     'harmlessness',
     'inoffensiveness',
     'innocuousness',
@@ -28826,7 +28826,7 @@ const SYN_DB = {
     'guiltlessness',
     'blamelessness'
   ],
-  'innocent': [
+  innocent: [
     'pure',
     'sinless',
     'virtuous',
@@ -28846,20 +28846,20 @@ const SYN_DB = {
     'immaculate',
     'innocuous'
   ],
-  'innocuous': [
+  innocuous: [
     'harmless',
     'innocent',
     'inoffensive',
     'wholesome',
     'innoxious'
   ],
-  'innovation': [
+  innovation: [
     'change',
     'alteration',
     'novelty',
     'reversal'
   ],
-  'inoculate': [
+  inoculate: [
     'vaccinate',
     'impregnate',
     'indoctrinate',
@@ -28869,11 +28869,11 @@ const SYN_DB = {
     'ingraft',
     'ingrain'
   ],
-  'inquiry': [
+  inquiry: [
     'query',
     'interrogation'
   ],
-  'inquisitive': [
+  inquisitive: [
     'curious',
     'meddlesome',
     'intrusive',
@@ -28884,7 +28884,7 @@ const SYN_DB = {
     'peeping',
     'scrutinizing'
   ],
-  'inroad': [
+  inroad: [
     'incursion',
     'foray',
     'raid',
@@ -28894,7 +28894,7 @@ const SYN_DB = {
     'infringement',
     'dragonnade'
   ],
-  'insane': [
+  insane: [
     'crazy',
     'lunatic',
     'mad',
@@ -28903,7 +28903,7 @@ const SYN_DB = {
     'crazed',
     'delirious'
   ],
-  'insanity': [
+  insanity: [
     'delirium',
     'dementia',
     'frenzy',
@@ -28917,7 +28917,7 @@ const SYN_DB = {
     'hallucination',
     'craziness'
   ],
-  'inscribe': [
+  inscribe: [
     'write',
     'engrave',
     'impress',
@@ -28929,7 +28929,7 @@ const SYN_DB = {
     'mark',
     'delineate'
   ],
-  'inscrutable': [
+  inscrutable: [
     'incomprehensible',
     'unsearchable',
     'impenetrable',
@@ -28940,14 +28940,14 @@ const SYN_DB = {
     'insolvable',
     'profound'
   ],
-  'insert': [
+  insert: [
     'introduce'
   ],
-  'inside': [
+  inside: [
     'within',
     'internally'
   ],
-  'insidious': [
+  insidious: [
     'artful',
     'crafty',
     'scheming',
@@ -28958,7 +28958,7 @@ const SYN_DB = {
     'secret',
     'deceptive'
   ],
-  'insinuate': [
+  insinuate: [
     'ingratiate',
     'infuse',
     'inculcate',
@@ -28968,7 +28968,7 @@ const SYN_DB = {
     'introduce',
     'insert'
   ],
-  'insipid': [
+  insipid: [
     'tasteless',
     'stale',
     'flat',
@@ -28984,7 +28984,7 @@ const SYN_DB = {
     'characterless',
     'flavorless'
   ],
-  'insist': [
+  insist: [
     'demand',
     'maintain',
     'urge',
@@ -28993,7 +28993,7 @@ const SYN_DB = {
     'press',
     'persevere'
   ],
-  'insolence': [
+  insolence: [
     'rudeness',
     'contempt',
     'disrespect',
@@ -29007,13 +29007,13 @@ const SYN_DB = {
     'arrogance',
     'assumption'
   ],
-  'insolvent': [
+  insolvent: [
     'bankrupt',
     'penniless',
     'beggared',
     'ruined'
   ],
-  'inspect': [
+  inspect: [
     'examine',
     'scrutinize',
     'investigate',
@@ -29022,7 +29022,7 @@ const SYN_DB = {
     'supervise',
     'overhaul'
   ],
-  'inspector': [
+  inspector: [
     'examiner',
     'critic',
     'visitor',
@@ -29030,7 +29030,7 @@ const SYN_DB = {
     'censor',
     'supervisor'
   ],
-  'instance': [
+  instance: [
     'request',
     'impulse',
     'instigation',
@@ -29051,7 +29051,7 @@ const SYN_DB = {
     'persuasion',
     'occurrence'
   ],
-  'instant': [
+  instant: [
     'moment',
     'twinkling',
     'second',
@@ -29069,14 +29069,14 @@ const SYN_DB = {
     'present',
     'passing'
   ],
-  'instantly': [
+  instantly: [
     'immediately',
     'forthwith',
     'directly',
     'presently',
     'straightway'
   ],
-  'instigate': [
+  instigate: [
     'incite',
     'impel',
     'move',
@@ -29089,7 +29089,7 @@ const SYN_DB = {
     'encourage',
     'persuade'
   ],
-  'instill': [
+  instill: [
     'infuse',
     'insinuate',
     'implant',
@@ -29099,7 +29099,7 @@ const SYN_DB = {
     'import',
     'introduce'
   ],
-  'instinct': [
+  instinct: [
     'impulse',
     'proclivity',
     'tendency',
@@ -29107,7 +29107,7 @@ const SYN_DB = {
     'prompting',
     'intuition'
   ],
-  'instinctive': [
+  instinctive: [
     'natural',
     'spontaneous',
     'impulsive',
@@ -29115,7 +29115,7 @@ const SYN_DB = {
     'voluntary',
     'intuitive'
   ],
-  'institute': [
+  institute: [
     'found',
     'establish',
     'originate',
@@ -29133,7 +29133,7 @@ const SYN_DB = {
     'induct',
     'organize'
   ],
-  'institution': [
+  institution: [
     'establishment',
     'investiture',
     'custom',
@@ -29144,7 +29144,7 @@ const SYN_DB = {
     'seminary',
     'university'
   ],
-  'instruct': [
+  instruct: [
     'teach',
     'inform',
     'train',
@@ -29158,7 +29158,7 @@ const SYN_DB = {
     'discipline',
     'initiate'
   ],
-  'instruction': [
+  instruction: [
     'teaching',
     'education',
     'training',
@@ -29174,7 +29174,7 @@ const SYN_DB = {
     'command',
     'mandate'
   ],
-  'instrument': [
+  instrument: [
     'tool',
     'utensil',
     'implement',
@@ -29188,7 +29188,7 @@ const SYN_DB = {
     'indenture',
     'record'
   ],
-  'instrumentality': [
+  instrumentality: [
     'intervention',
     'medium',
     'means',
@@ -29197,7 +29197,7 @@ const SYN_DB = {
     'use',
     'employment'
   ],
-  'insult': [
+  insult: [
     'outrage',
     'offend',
     'dishonor',
@@ -29206,7 +29206,7 @@ const SYN_DB = {
     'mock',
     'ridicule'
   ],
-  'insure': [
+  insure: [
     'assure',
     'underwrite',
     'provide',
@@ -29215,7 +29215,7 @@ const SYN_DB = {
     'guarantee',
     'stabilitate'
   ],
-  'insurgent': [
+  insurgent: [
     'rebel',
     'malcontent',
     'mutineer',
@@ -29228,7 +29228,7 @@ const SYN_DB = {
     'insubordinate',
     'seditious'
   ],
-  'insurrection': [
+  insurrection: [
     'rebellion',
     'revolt',
     'uprising',
@@ -29239,7 +29239,7 @@ const SYN_DB = {
     'anarchy',
     'pronouncement'
   ],
-  'intact': [
+  intact: [
     'untouched',
     'unhurt',
     'unharmed',
@@ -29256,7 +29256,7 @@ const SYN_DB = {
     'uncorrupted',
     'uncontaminated'
   ],
-  'integrate': [
+  integrate: [
     'unite',
     'combine',
     'consolidate',
@@ -29265,7 +29265,7 @@ const SYN_DB = {
     'sum',
     'complete'
   ],
-  'integrity': [
+  integrity: [
     'completeness',
     'entirety',
     'wholeness',
@@ -29281,7 +29281,7 @@ const SYN_DB = {
     'truthfulness',
     'conscientiousness'
   ],
-  'intellect': [
+  intellect: [
     'reason',
     'mind',
     'sense',
@@ -29293,7 +29293,7 @@ const SYN_DB = {
     'genius',
     'talent'
   ],
-  'intellectual': [
+  intellectual: [
     'mental',
     'psychological',
     'inventive',
@@ -29302,7 +29302,7 @@ const SYN_DB = {
     'philosophical',
     'metaphysical'
   ],
-  'intelligence': [
+  intelligence: [
     'knowledge',
     'information',
     'understanding',
@@ -29326,7 +29326,7 @@ const SYN_DB = {
     'intellect',
     'spirit'
   ],
-  'intelligible': [
+  intelligible: [
     'clear',
     'plain',
     'understandable',
@@ -29337,7 +29337,7 @@ const SYN_DB = {
     'selfevident',
     'obvious'
   ],
-  'intend': [
+  intend: [
     'design',
     'resolve',
     'mean',
@@ -29347,7 +29347,7 @@ const SYN_DB = {
     'determine',
     'meditate'
   ],
-  'intense': [
+  intense: [
     'close',
     'severe',
     'strict',
@@ -29363,7 +29363,7 @@ const SYN_DB = {
     'excessive',
     'immoderate'
   ],
-  'intensity': [
+  intensity: [
     'intenseness',
     'closeness',
     'severity',
@@ -29384,7 +29384,7 @@ const SYN_DB = {
     'activity',
     'strength'
   ],
-  'intent': [
+  intent: [
     'purpose',
     'aim',
     'object',
@@ -29403,14 +29403,14 @@ const SYN_DB = {
     'bent',
     'set'
   ],
-  'intention': [
+  intention: [
     'design',
     'purpose',
     'intent',
     'meaning',
     'purport'
   ],
-  'intentional': [
+  intentional: [
     'deliberate',
     'contemplated',
     'designed',
@@ -29419,7 +29419,7 @@ const SYN_DB = {
     'purposed',
     'premeditated'
   ],
-  'inter': [
+  inter: [
     'bury',
     'entomb',
     'inhume',
@@ -29427,7 +29427,7 @@ const SYN_DB = {
     'amidst',
     'mutually'
   ],
-  'intercede': [
+  intercede: [
     'mediate',
     'arbitrate',
     'interpose',
@@ -29435,7 +29435,7 @@ const SYN_DB = {
     'advocate',
     'interfere'
   ],
-  'intercept': [
+  intercept: [
     'stop',
     'cease',
     'arrest',
@@ -29443,7 +29443,7 @@ const SYN_DB = {
     'obstruct',
     'interrupt'
   ],
-  'intercourse': [
+  intercourse: [
     'converse',
     'communication',
     'communion',
@@ -29454,7 +29454,7 @@ const SYN_DB = {
     'dealing',
     'intercommunication'
   ],
-  'interdict': [
+  interdict: [
     'prohibit',
     'forbid',
     'proscribe',
@@ -29464,7 +29464,7 @@ const SYN_DB = {
     'debar',
     'disallow'
   ],
-  'interest': [
+  interest: [
     'advantage',
     'benefit',
     'profit',
@@ -29483,26 +29483,26 @@ const SYN_DB = {
     'influence',
     'premium'
   ],
-  'interfere': [
+  interfere: [
     'intermeddle',
     'interpose',
     'clash',
     'conflict',
     'intervene'
   ],
-  'interior': [
+  interior: [
     'inside',
     'internal',
     'inner',
     'inward',
     'inland'
   ],
-  'interloper': [
+  interloper: [
     'intruder',
     'meddler',
     'supernumerary'
   ],
-  'intermediate': [
+  intermediate: [
     'intervening',
     'interposed',
     'interjacent',
@@ -29511,12 +29511,12 @@ const SYN_DB = {
     'middle',
     'moderate'
   ],
-  'interment': [
+  interment: [
     'burial',
     'sepulture',
     'inhumation'
   ],
-  'intermit': [
+  intermit: [
     'suspend',
     'interrupt',
     'relax',
@@ -29527,13 +29527,13 @@ const SYN_DB = {
     'abate',
     'subside'
   ],
-  'internal': [
+  internal: [
     'inner',
     'interior',
     'inside',
     'within'
   ],
-  'internecine': [
+  internecine: [
     'destructive',
     'exterminating',
     'deadly',
@@ -29542,7 +29542,7 @@ const SYN_DB = {
     'mortal',
     'internecinal'
   ],
-  'interpolate': [
+  interpolate: [
     'introduce',
     'insert',
     'intercalate',
@@ -29553,7 +29553,7 @@ const SYN_DB = {
     'intersperse',
     'gloss'
   ],
-  'interpose': [
+  interpose: [
     'interfere',
     'intercede',
     'interrupt',
@@ -29562,7 +29562,7 @@ const SYN_DB = {
     'arbitrate',
     'intermeddle'
   ],
-  'interpret': [
+  interpret: [
     'explain',
     'define',
     'expound',
@@ -29576,7 +29576,7 @@ const SYN_DB = {
     'represent',
     'solve'
   ],
-  'interpretation': [
+  interpretation: [
     'exposition',
     'explanation',
     'elucidation',
@@ -29590,13 +29590,13 @@ const SYN_DB = {
     'signification',
     'solution'
   ],
-  'interrogate': [
+  interrogate: [
     'question',
     'ask',
     'examine',
     'catechise'
   ],
-  'interrupt': [
+  interrupt: [
     'disturb',
     'stop',
     'hinder',
@@ -29612,7 +29612,7 @@ const SYN_DB = {
     'discontinue',
     'intersect'
   ],
-  'interstice': [
+  interstice: [
     'crevice',
     'hole',
     'interval',
@@ -29624,7 +29624,7 @@ const SYN_DB = {
     'fissure',
     'interspace'
   ],
-  'interval': [
+  interval: [
     'interstice',
     'spell',
     'season',
@@ -29636,7 +29636,7 @@ const SYN_DB = {
     'interspace',
     'cessation'
   ],
-  'intervention': [
+  intervention: [
     'interposition',
     'interference',
     'intrusion',
@@ -29645,7 +29645,7 @@ const SYN_DB = {
     'agency',
     'mediation'
   ],
-  'interview': [
+  interview: [
     'meeting',
     'parley',
     'conference',
@@ -29653,12 +29653,12 @@ const SYN_DB = {
     'colloquy',
     'confabulation'
   ],
-  'intestate': [
+  intestate: [
     'unwilled',
     'undevised',
     'unbequeathed'
   ],
-  'intestine': [
+  intestine: [
     'internal',
     'domestic',
     'interior',
@@ -29666,7 +29666,7 @@ const SYN_DB = {
     'civil',
     'subjective'
   ],
-  'intimate': [
+  intimate: [
     'confidant',
     'associate',
     'crony',
@@ -29689,7 +29689,7 @@ const SYN_DB = {
     'exact',
     'conversant'
   ],
-  'intimidate': [
+  intimidate: [
     'frighten',
     'alarm',
     'scare',
@@ -29701,18 +29701,18 @@ const SYN_DB = {
     'deter',
     'dishearten'
   ],
-  'intolerable': [
+  intolerable: [
     'insufferable',
     'unendurable',
     'insupportable',
     'unbearable'
   ],
-  'intolerant': [
+  intolerant: [
     'bigoted',
     'unforbearing',
     'extreme'
   ],
-  'intoxication': [
+  intoxication: [
     'inebriety',
     'inebriation',
     'drunkenness',
@@ -29726,7 +29726,7 @@ const SYN_DB = {
     'poison',
     'venom'
   ],
-  'intrenchment': [
+  intrenchment: [
     'ditch',
     'dike',
     'fortification',
@@ -29741,7 +29741,7 @@ const SYN_DB = {
     'infringement',
     'trespass'
   ],
-  'intrepid': [
+  intrepid: [
     'bold',
     'brave',
     'fearless',
@@ -29757,7 +29757,7 @@ const SYN_DB = {
     'valiant',
     'doughty'
   ],
-  'intricacy': [
+  intricacy: [
     'complexity',
     'complication',
     'entanglement',
@@ -29767,7 +29767,7 @@ const SYN_DB = {
     'obscurity',
     'confusion'
   ],
-  'intricate': [ // mark
+  intricate: [ // mark
     'involved',
     'perplexed',
     'complicated',
@@ -29777,7 +29777,7 @@ const SYN_DB = {
     'labyrinthine',
     'tortuous'
   ],
-  'intrigue': [
+  intrigue: [
     'plot',
     'scheme',
     'cabal',
@@ -29792,7 +29792,7 @@ const SYN_DB = {
     'liaison',
     'amour'
   ],
-  'intrinsic': [
+  intrinsic: [
     'inward',
     'internal',
     'essential',
@@ -29807,13 +29807,13 @@ const SYN_DB = {
     'inbred',
     'inborn'
   ],
-  'introduce': [
+  introduce: [
     'present',
     'commence',
     'begin',
     'preface'
   ],
-  'introduction': [
+  introduction: [
     'introducing',
     'presentation',
     'preface',
@@ -29831,7 +29831,7 @@ const SYN_DB = {
     'vestibule',
     'entrance'
   ],
-  'intrude': [
+  intrude: [
     'obtrude',
     'encroach',
     'infringe',
@@ -29840,14 +29840,14 @@ const SYN_DB = {
     'interfere',
     'meddle'
   ],
-  'intrusion': [
+  intrusion: [
     'encroachment',
     'interference',
     'intruding',
     'obtrusion',
     'infringement'
   ],
-  'intuition': [
+  intuition: [
     'apprehension',
     'cognition',
     'perception',
@@ -29856,7 +29856,7 @@ const SYN_DB = {
     'insight',
     'recognition'
   ],
-  'inundate': [
+  inundate: [
     'flood',
     'deluge',
     'overflow',
@@ -29864,7 +29864,7 @@ const SYN_DB = {
     'cover',
     'overwhelm'
   ],
-  'invade': [
+  invade: [
     'attack',
     'infringe',
     'violate',
@@ -29872,7 +29872,7 @@ const SYN_DB = {
     'assail',
     'occupy'
   ],
-  'invalid': [
+  invalid: [
     'week',
     'feeble',
     'infirm',
@@ -29886,20 +29886,20 @@ const SYN_DB = {
     'unfounded',
     'fallacious'
   ],
-  'invalidate': [
+  invalidate: [
     'nullify',
     'cancel',
     'annul',
     'overthrow'
   ],
-  'invasion': [
+  invasion: [
     'trespass',
     'incursion',
     'irruption',
     'encroachment',
     'inroad'
   ],
-  'invective': [
+  invective: [
     'satire',
     'sarcasm',
     'diatribe',
@@ -29911,7 +29911,7 @@ const SYN_DB = {
     'reproach',
     'castigation'
   ],
-  'invent': [
+  invent: [
     'discover',
     'devise',
     'contrive',
@@ -29926,7 +29926,7 @@ const SYN_DB = {
     'forge',
     'frame'
   ],
-  'invention': [
+  invention: [
     'contrivance',
     'construction',
     'device',
@@ -29936,20 +29936,20 @@ const SYN_DB = {
     'thought',
     'idea'
   ],
-  'inventive': [
+  inventive: [
     'ingenious',
     'skilful',
     'clever',
     'adept',
     'resourceful'
   ],
-  'inventor': [
+  inventor: [
     'contriver',
     'originator',
     'author',
     'creator'
   ],
-  'inventory': [
+  inventory: [
     'list',
     'catalogue',
     'register',
@@ -29957,7 +29957,7 @@ const SYN_DB = {
     'enrolment',
     'enumeration'
   ],
-  'inversion': [
+  inversion: [
     'reversal',
     'transposition',
     'alteration',
@@ -29965,13 +29965,13 @@ const SYN_DB = {
     'violation',
     'permutation'
   ],
-  'invert': [
+  invert: [
     'upset',
     'overthrow',
     'reverse',
     'subvert'
   ],
-  'invest': [
+  invest: [
     'clothe',
     'dress',
     'array',
@@ -29979,7 +29979,7 @@ const SYN_DB = {
     'attend',
     'surround'
   ],
-  'investigate': [
+  investigate: [
     'inquire',
     'examine',
     'test',
@@ -29992,13 +29992,13 @@ const SYN_DB = {
     'discuss',
     'study'
   ],
-  'investiture': [
+  investiture: [
     'installation',
     'induction',
     'investment',
     'habilitation'
   ],
-  'inveterate': [
+  inveterate: [
     'longestablished',
     'obstinate',
     'malignant',
@@ -30014,7 +30014,7 @@ const SYN_DB = {
     'hardened',
     'accustomed'
   ],
-  'invidious': [
+  invidious: [
     'hateful',
     'offensive',
     'odious',
@@ -30023,7 +30023,7 @@ const SYN_DB = {
     'inconsiderate',
     'gratuitous'
   ],
-  'invigorate': [
+  invigorate: [
     'strengthen',
     'brace',
     'harden',
@@ -30033,12 +30033,12 @@ const SYN_DB = {
     'animate',
     'exhilarate'
   ],
-  'invitation': [
+  invitation: [
     'solicitation',
     'allurement',
     'enticement'
   ],
-  'invoke': [
+  invoke: [
     'supplicate',
     'implore',
     'solicit',
@@ -30051,21 +30051,21 @@ const SYN_DB = {
     'conjure',
     'imprecate'
   ],
-  'involution': [
+  involution: [
     'complication',
     'entanglement',
     'envelope',
     'implication',
     'mingling'
   ],
-  'awt': [
+  awt: [
     'evolution',
     'disconnection',
     'evolvement',
     'extrication',
     'separation'
   ],
-  'involve': [
+  involve: [
     'envelop',
     'wrap',
     'cover',
@@ -30087,7 +30087,7 @@ const SYN_DB = {
     'overwhelm',
     'imply'
   ],
-  'inward': [
+  inward: [
     'secretly',
     'privately',
     'internal',
@@ -30095,13 +30095,13 @@ const SYN_DB = {
     'inner',
     'within'
   ],
-  'iota': [
+  iota: [
     'jot',
     'tittle',
     'particle',
     'atom'
   ],
-  'irate': [
+  irate: [
     'hasty',
     'angry',
     'enraged',
@@ -30109,7 +30109,7 @@ const SYN_DB = {
     'choleric',
     'irritable'
   ],
-  'ire': [
+  ire: [
     'anger',
     'wrath',
     'rage',
@@ -30120,19 +30120,19 @@ const SYN_DB = {
     'displeasure',
     'vexation'
   ],
-  'irridescent': [
+  irridescent: [
     'prismatic',
     'opaline',
     'polychromatous',
     'nacreous'
   ],
-  'isolate': [
+  isolate: [
     'separate',
     'detach',
     'dissociate',
     'insulate'
   ],
-  'isolation': [
+  isolation: [
     'separation',
     'loneliness',
     'segregation',
@@ -30142,7 +30142,7 @@ const SYN_DB = {
     'solitariness',
     'solitude'
   ],
-  'issue': [
+  issue: [
     'egress',
     'exit',
     'outlet',
@@ -30167,7 +30167,7 @@ const SYN_DB = {
     'controversy',
     'contest'
   ],
-  'iteration': [
+  iteration: [
     'recital',
     'repetition',
     'reiteration',
@@ -30175,7 +30175,7 @@ const SYN_DB = {
     'harping',
     'succession'
   ],
-  'itinerant': [
+  itinerant: [
     'traveling',
     'wandering',
     'roving',
@@ -30184,12 +30184,12 @@ const SYN_DB = {
     'unsettled',
     'nomadic'
   ],
-  'itinerary': [
+  itinerary: [
     'guide',
     'guidebook',
     'schedule'
   ],
-  'jade': [
+  jade: [
     'tire',
     'weary',
     'fatigue',
@@ -30199,13 +30199,13 @@ const SYN_DB = {
     'harass',
     'oppress'
   ],
-  'jagged': [
+  jagged: [
     'notched',
     'indented',
     'uneven',
     'ragged'
   ],
-  'jangle': [
+  jangle: [
     'jargon',
     'babel',
     'bickering',
@@ -30214,7 +30214,7 @@ const SYN_DB = {
     'squabble',
     'contention'
   ],
-  'jar': [
+  jar: [
     'shake',
     'agitate',
     'clash',
@@ -30227,7 +30227,7 @@ const SYN_DB = {
     'squabble',
     'jangle'
   ],
-  'jargon': [
+  jargon: [
     'gabble',
     'gibberish',
     'nonsense',
@@ -30240,14 +30240,14 @@ const SYN_DB = {
     'lingo',
     'patois'
   ],
-  'jaundiced': [
+  jaundiced: [
     'biased',
     'prejudiced',
     'warped',
     'prepossessed',
     'bilious'
   ],
-  'jaunty': [
+  jaunty: [
     'airy',
     'showy',
     'finical',
@@ -30259,7 +30259,7 @@ const SYN_DB = {
     'fantastic',
     'flaunting'
   ],
-  'jealous': [
+  jealous: [
     'envious',
     'suspicious',
     'resentful',
@@ -30271,13 +30271,13 @@ const SYN_DB = {
     'zealous',
     'watchful'
   ],
-  'jealousy': [
+  jealousy: [
     'suspicion',
     'envy',
     'rivalry',
     'solicitude'
   ],
-  'jeer': [
+  jeer: [
     'scoff',
     'taunt',
     'jibe',
@@ -30288,7 +30288,7 @@ const SYN_DB = {
     'deride',
     'banter'
   ],
-  'jejune': [
+  jejune: [
     'empty',
     'barren',
     'meager',
@@ -30303,14 +30303,14 @@ const SYN_DB = {
     'poor',
     'void'
   ],
-  'jeopardy': [
+  jeopardy: [
     'hazard',
     'peril',
     'risk',
     'danger',
     'venture'
   ],
-  'jocose': [
+  jocose: [
     'humorous',
     'facetious',
     'witty',
@@ -30322,7 +30322,7 @@ const SYN_DB = {
     'merry',
     'waggish'
   ],
-  'join': [
+  join: [
     'add',
     'attach',
     'annex',
@@ -30336,7 +30336,7 @@ const SYN_DB = {
     'confederate',
     'league'
   ],
-  'joint': [
+  joint: [
     'juncture',
     'union',
     'flexure',
@@ -30344,7 +30344,7 @@ const SYN_DB = {
     'knee',
     'articulation'
   ],
-  'jollification': [
+  jollification: [
     'revelry',
     'conviviality',
     'festivity',
@@ -30355,7 +30355,7 @@ const SYN_DB = {
     'fun',
     'carnival'
   ],
-  'jolly': [
+  jolly: [
     'merry',
     'joyous',
     'gay',
@@ -30377,7 +30377,7 @@ const SYN_DB = {
     'stout',
     'plump'
   ],
-  'jostle': [
+  jostle: [
     'push',
     'crowd',
     'hustle',
@@ -30388,7 +30388,7 @@ const SYN_DB = {
     'jog',
     'jolt'
   ],
-  'jot': [
+  jot: [
     'iota',
     'whit',
     'tittle',
@@ -30406,7 +30406,7 @@ const SYN_DB = {
     'morsel',
     'fraction'
   ],
-  'journey': [
+  journey: [
     'travel',
     'transit',
     'expedition',
@@ -30416,7 +30416,7 @@ const SYN_DB = {
     'trip',
     'pilgrimage'
   ],
-  'jovial': [
+  jovial: [
     'merry',
     'joyous',
     'gay',
@@ -30428,7 +30428,7 @@ const SYN_DB = {
     'genial',
     'convivial'
   ],
-  'joviality': [
+  joviality: [
     'merriment',
     'jollity',
     'mirth',
@@ -30437,7 +30437,7 @@ const SYN_DB = {
     'frolic',
     'fun'
   ],
-  'joy': [
+  joy: [
     'gladness',
     'delight',
     'pleasure',
@@ -30454,7 +30454,7 @@ const SYN_DB = {
     'beatitude',
     'ravishment'
   ],
-  'joyful': [
+  joyful: [
     'glad',
     'joyous',
     'merry',
@@ -30468,7 +30468,7 @@ const SYN_DB = {
     'delighted',
     'buoyant'
   ],
-  'jubilant': [
+  jubilant: [
     'rejoicing',
     'exultant',
     'triumphant',
@@ -30477,13 +30477,13 @@ const SYN_DB = {
     'exulting',
     'congratulatory'
   ],
-  'jubilee': [
+  jubilee: [
     'fast',
     'mourning',
     'humiliation',
     'penitence'
   ],
-  'judge': [
+  judge: [
     'justice',
     'referee',
     'arbiter',
@@ -30494,14 +30494,14 @@ const SYN_DB = {
     'critic',
     'connoisseur'
   ],
-  'judicial': [
+  judicial: [
     'just',
     'wellbalanced',
     'deliberative',
     'juridical',
     'forensic'
   ],
-  'judicious': [
+  judicious: [
     'discreet',
     'wise',
     'prudent',
@@ -30519,7 +30519,7 @@ const SYN_DB = {
     'discerning',
     'thoughtful'
   ],
-  'juggle': [
+  juggle: [
     'cheat',
     'conjure',
     'impose',
@@ -30533,12 +30533,12 @@ const SYN_DB = {
     'mislead',
     'overreach'
   ],
-  'jumble': [
+  jumble: [
     'confusion',
     'disorder',
     'hodgepodge'
   ],
-  'jump': [
+  jump: [
     'leap',
     'skip',
     'bound',
@@ -30553,7 +30553,7 @@ const SYN_DB = {
     'agree',
     'accord'
   ],
-  'junction': [
+  junction: [
     'joining',
     'union',
     'combination',
@@ -30569,7 +30569,7 @@ const SYN_DB = {
     'alliance',
     'confederacy'
   ],
-  'jungle': [
+  jungle: [
     'thicket',
     'brake',
     'wilderness',
@@ -30577,11 +30577,11 @@ const SYN_DB = {
     'underbrush',
     'entanglement'
   ],
-  'junior': [
+  junior: [
     'younger',
     'subordinate'
   ],
-  'jurisdiction': [
+  jurisdiction: [
     'right',
     'authority',
     'sphere',
@@ -30592,7 +30592,7 @@ const SYN_DB = {
     'administration',
     'magistracy'
   ],
-  'just': [
+  just: [
     'upright',
     'righteous',
     'honest',
@@ -30624,7 +30624,7 @@ const SYN_DB = {
     'proper',
     'harmonious'
   ],
-  'justice': [
+  justice: [
     'legality',
     'eqtiity',
     'rectitude',
@@ -30643,7 +30643,7 @@ const SYN_DB = {
     'desert',
     'propriety'
   ],
-  'justification': [
+  justification: [
     'vindication',
     'defense',
     'exoneration',
@@ -30654,7 +30654,7 @@ const SYN_DB = {
     'plea',
     'maintenance'
   ],
-  'justness': [
+  justness: [
     'exactness',
     'propriety',
     'correctness',
@@ -30664,7 +30664,7 @@ const SYN_DB = {
     'fidelity',
     'nicety'
   ],
-  'juvenile': [
+  juvenile: [
     'young',
     'youthful',
     'puerile',
@@ -30675,14 +30675,14 @@ const SYN_DB = {
     'immature',
     'adolescent'
   ],
-  'juxtaposition': [
+  juxtaposition: [
     'nearness',
     'contiguity',
     'adjacency',
     'proximity',
     'contact'
   ],
-  'keen': [
+  keen: [
     'sharp',
     'acute',
     'bitter',
@@ -30707,7 +30707,7 @@ const SYN_DB = {
     'quick',
     'astute'
   ],
-  'keep': [
+  keep: [
     'retain',
     'hold',
     'reserve',
@@ -30738,7 +30738,7 @@ const SYN_DB = {
     'prevent',
     'refrain'
   ],
-  'keeping': [
+  keeping: [
     'charge',
     'guardianship',
     'custody',
@@ -30756,11 +30756,11 @@ const SYN_DB = {
     'conformity',
     'agreement'
   ],
-  'keepsake': [
+  keepsake: [
     'souvenir',
     'token'
   ],
-  'ken': [
+  ken: [
     'sight',
     'view',
     'cognizance',
@@ -30768,14 +30768,14 @@ const SYN_DB = {
     'survey',
     'range'
   ],
-  'kernel': [
+  kernel: [
     'seed',
     'grain',
     'nucleus',
     'core',
     'gist'
   ],
-  'key': [
+  key: [
     'clue',
     'guide',
     'solution',
@@ -30786,13 +30786,13 @@ const SYN_DB = {
     'clamp',
     'lever'
   ],
-  'kick': [
+  kick: [
     'recoil',
     'resist',
     'rebel',
     'spurn'
   ],
-  'kill': [
+  kill: [
     'murder',
     'massacre',
     'assassinate',
@@ -30802,7 +30802,7 @@ const SYN_DB = {
     'slay',
     'slaughter'
   ],
-  'kin': [
+  kin: [
     'family',
     'birth',
     'blood',
@@ -30815,7 +30815,7 @@ const SYN_DB = {
     'affinity',
     'alliance'
   ],
-  'kind': [
+  kind: [
     'race',
     'family',
     'species',
@@ -30855,7 +30855,7 @@ const SYN_DB = {
     'affectionate',
     'tenderhearted'
   ],
-  'kindle': [
+  kindle: [
     'light',
     'ignite',
     'inflame',
@@ -30871,7 +30871,7 @@ const SYN_DB = {
     'provoke',
     'enrage'
   ],
-  'kindness': [
+  kindness: [
     'benevolence',
     'humanity',
     'charity',
@@ -30881,7 +30881,7 @@ const SYN_DB = {
     'gentleness',
     'softness'
   ],
-  'kindred': [
+  kindred: [
     'relationship',
     'consanguinity',
     'affinity',
@@ -30898,14 +30898,14 @@ const SYN_DB = {
     'responsive',
     'sympathetic'
   ],
-  'kingdom': [
+  kingdom: [
     'empire',
     'monarchy',
     'sovereignty',
     'domain',
     'dominion'
   ],
-  'kingly': [
+  kingly: [
     'regal',
     'royal',
     'monarchical',
@@ -30919,7 +30919,7 @@ const SYN_DB = {
     'grand',
     'majestic'
   ],
-  'knack': [
+  knack: [
     'toy',
     'plaything',
     'gimcrack',
@@ -30932,7 +30932,7 @@ const SYN_DB = {
     'expertness',
     'quickness'
   ],
-  'knave': [
+  knave: [
     'villain',
     'rascal',
     'rogue',
@@ -30943,7 +30943,7 @@ const SYN_DB = {
     'swindler',
     'scapegrace'
   ],
-  'knavish': [
+  knavish: [
     'trickish',
     'cheating',
     'mischievous',
@@ -30952,7 +30952,7 @@ const SYN_DB = {
     'fraudulent',
     'villainous'
   ],
-  'knot': [
+  knot: [
     'tie',
     'bond',
     'intricacy',
@@ -30966,7 +30966,7 @@ const SYN_DB = {
     'gang',
     'crew'
   ],
-  'knotty': [
+  knotty: [
     'knotted',
     'difficult',
     'intricate',
@@ -30975,7 +30975,7 @@ const SYN_DB = {
     'hard',
     'complicated'
   ],
-  'know': [
+  know: [
     'perceive',
     'apprehend',
     'understand',
@@ -30984,7 +30984,7 @@ const SYN_DB = {
     'distinguish',
     'comprehend'
   ],
-  'cipient': [
+  cipient: [
     'cipient',
     'thinking',
     'cunning',
@@ -30995,7 +30995,7 @@ const SYN_DB = {
     'discerning',
     'sagacious'
   ],
-  'knowledge': [
+  knowledge: [
     'learning',
     'wisdom',
     'scholarship',
@@ -31023,7 +31023,7 @@ const SYN_DB = {
     'acquirements',
     'attainments'
   ],
-  'labor': [
+  labor: [
     'toil',
     'exertion',
     'work',
@@ -31036,14 +31036,14 @@ const SYN_DB = {
     'burden',
     'duties'
   ],
-  'labored': [
+  labored: [
     'elaborate',
     'studied',
     'overwrought',
     'stiff',
     'heavy'
   ],
-  'laborer': [
+  laborer: [
     'workman',
     'operative',
     'workingman',
@@ -31051,7 +31051,7 @@ const SYN_DB = {
     'employee',
     'breadwinner'
   ],
-  'laborious': [
+  laborious: [
     'toilsome',
     'difficult',
     'tiresome',
@@ -31073,7 +31073,7 @@ const SYN_DB = {
     'indefatigable',
     'active'
   ],
-  'labyrinth': [
+  labyrinth: [
     'maze',
     'confusion',
     'intricacy',
@@ -31084,7 +31084,7 @@ const SYN_DB = {
     'involutions',
     'difficulty'
   ],
-  'lack': [
+  lack: [
     'deficiency',
     'want',
     'need',
@@ -31098,7 +31098,7 @@ const SYN_DB = {
     'shortness',
     'insufficiency'
   ],
-  'laconic': [
+  laconic: [
     'short',
     'epigrammatic',
     'brusk',
@@ -31109,7 +31109,7 @@ const SYN_DB = {
     'terse',
     'curt'
   ],
-  'laggard': [
+  laggard: [
     'loiterer',
     'lingerer',
     'sluggard',
@@ -31117,7 +31117,7 @@ const SYN_DB = {
     'dawdler',
     'idler'
   ],
-  'laical': [
+  laical: [
     'laic',
     'lay',
     'unprofessional',
@@ -31126,10 +31126,10 @@ const SYN_DB = {
     'civil',
     'nonlegal'
   ],
-  'laity': [
+  laity: [
     'laymen'
   ],
-  'lame': [
+  lame: [
     'hobbling',
     'crippled',
     'limping',
@@ -31145,7 +31145,7 @@ const SYN_DB = {
     'faltering',
     'impotent'
   ],
-  'language': [
+  language: [
     'idiom',
     'speech',
     'dialect',
@@ -31166,7 +31166,7 @@ const SYN_DB = {
     'utterance',
     'voice'
   ],
-  'languid': [
+  languid: [
     'drooping',
     'indisposed',
     'inanimate',
@@ -31187,14 +31187,14 @@ const SYN_DB = {
     'unnerved',
     'unbraced'
   ],
-  'languish': [
+  languish: [
     'pine',
     'droop',
     'sink',
     'faint',
     'decline'
   ],
-  'languor': [
+  languor: [
     'feebleness',
     'weakness',
     'faintness',
@@ -31204,7 +31204,7 @@ const SYN_DB = {
     'heaviness',
     'dulness'
   ],
-  'lank': [
+  lank: [
     'slender',
     'thin',
     'shrunken',
@@ -31214,7 +31214,7 @@ const SYN_DB = {
     'long',
     'lax'
   ],
-  'lapse': [
+  lapse: [
     'slipping',
     'falling',
     'slip',
@@ -31229,7 +31229,7 @@ const SYN_DB = {
     'elapsing',
     'apostasy'
   ],
-  'large': [
+  large: [
     'colossal',
     'ample',
     'broad',
@@ -31262,7 +31262,7 @@ const SYN_DB = {
     'enlightened',
     'catholic'
   ],
-  'lash': [
+  lash: [
     'strike',
     'whip',
     'scourge',
@@ -31274,14 +31274,14 @@ const SYN_DB = {
     'satirize',
     'castigate'
   ],
-  'lassitude': [
+  lassitude: [
     'languor',
     'weariness',
     'weakness',
     'debility',
     'inertia'
   ],
-  'last': [
+  last: [
     'continue',
     'endure',
     'persist',
@@ -31302,7 +31302,7 @@ const SYN_DB = {
     'concluding',
     'ultimate'
   ],
-  'lasting': [
+  lasting: [
     'durable',
     'permanent',
     'unending',
@@ -31310,7 +31310,7 @@ const SYN_DB = {
     'abiding',
     'perpetual'
   ],
-  'late': [
+  late: [
     'slow',
     'tardy',
     'deceased',
@@ -31318,7 +31318,7 @@ const SYN_DB = {
     'recent',
     'delayed'
   ],
-  'latent': [
+  latent: [
     'hidden',
     'secret',
     'invisible',
@@ -31331,7 +31331,7 @@ const SYN_DB = {
     'undeveloped',
     'inherent'
   ],
-  'lateral': [
+  lateral: [
     'oblique',
     'indirect',
     'secondary',
@@ -31339,17 +31339,17 @@ const SYN_DB = {
     'parallel',
     'incidental'
   ],
-  'latter': [
+  latter: [
     'later',
     'modern',
     'last',
     'final'
   ],
-  'laudable': [
+  laudable: [
     'praiseworthy',
     'commendable'
   ],
-  'laughter': [
+  laughter: [
     'laughing',
     'mirth',
     'merriment',
@@ -31358,7 +31358,7 @@ const SYN_DB = {
     'ridicule',
     'contempt'
   ],
-  'launch': [
+  launch: [
     'hurl',
     'throw',
     'start',
@@ -31367,7 +31367,7 @@ const SYN_DB = {
     'expatiate',
     'enlarge'
   ],
-  'lavish': [
+  lavish: [
     'profuse',
     'prodigal',
     'superabundant',
@@ -31376,7 +31376,7 @@ const SYN_DB = {
     'bountiful',
     'wasteful'
   ],
-  'law': [
+  law: [
     'code',
     'canon',
     'edict',
@@ -31402,7 +31402,7 @@ const SYN_DB = {
     'adjudication',
     'jurisdiction'
   ],
-  'lawful': [
+  lawful: [
     'legitimate',
     'competent',
     'constituted',
@@ -31417,7 +31417,7 @@ const SYN_DB = {
     'allowable',
     'fair'
   ],
-  'lawless': [
+  lawless: [
     'illegal',
     'unrestrained',
     'unregulated',
@@ -31426,13 +31426,13 @@ const SYN_DB = {
     'savage',
     'disorderly'
   ],
-  'lawyer': [
+  lawyer: [
     'counselor',
     'attorney',
     'counsel',
     'advocate'
   ],
-  'lax': [
+  lax: [
     'slack',
     'vague',
     'unconfined',
@@ -31444,7 +31444,7 @@ const SYN_DB = {
     'remiss',
     'flabby'
   ],
-  'lay': [
+  lay: [
     'put',
     'place',
     'establish',
@@ -31455,7 +31455,7 @@ const SYN_DB = {
     'allay',
     'prostrate'
   ],
-  'lazy': [
+  lazy: [
     'shirking',
     'idle',
     'inactive',
@@ -31463,7 +31463,7 @@ const SYN_DB = {
     'slow',
     'sluggish'
   ],
-  'lead': [
+  lead: [
     'guidance',
     'direction',
     'initiative',
@@ -31486,7 +31486,7 @@ const SYN_DB = {
     'persuade',
     'influence'
   ],
-  'league': [
+  league: [
     'alliance',
     'compact',
     'coalition',
@@ -31496,7 +31496,7 @@ const SYN_DB = {
     'combination',
     'union'
   ],
-  'lean': [
+  lean: [
     'incline',
     'deviate',
     'bend',
@@ -31524,7 +31524,7 @@ const SYN_DB = {
     'bony',
     'scraggy'
   ],
-  'leaning': [
+  leaning: [
     'tendency',
     'proclivity',
     'propensity',
@@ -31533,7 +31533,7 @@ const SYN_DB = {
     'partiality',
     'inclination'
   ],
-  'leap': [
+  leap: [
     'jump',
     'vault',
     'spring',
@@ -31541,7 +31541,7 @@ const SYN_DB = {
     'hop',
     'bounce'
   ],
-  'learn': [
+  learn: [
     'acquire',
     'imbibe',
     'attain',
@@ -31551,7 +31551,7 @@ const SYN_DB = {
     'understand',
     'study'
   ],
-  'learned': [
+  learned: [
     'erudite',
     'versed',
     'wellinformed',
@@ -31561,14 +31561,14 @@ const SYN_DB = {
     'conversant',
     'read'
   ],
-  'learner': [
+  learner: [
     'pupil',
     'scholar',
     'student',
     'disciple',
     'novice'
   ],
-  'learning': [
+  learning: [
     'knowledge',
     'erudition',
     'skill',
@@ -31583,14 +31583,14 @@ const SYN_DB = {
     'attainments',
     'scholarship'
   ],
-  'least': [
+  least: [
     'smallest',
     'shortest',
     'lowest',
     'meanest',
     'last'
   ],
-  'leave': [
+  leave: [
     'quit',
     'abandon',
     'giveup',
@@ -31604,7 +31604,7 @@ const SYN_DB = {
     'depart',
     'bequeath'
   ],
-  'legal': [
+  legal: [
     'authorized',
     'legitimate',
     'constitutional',
@@ -31612,7 +31612,7 @@ const SYN_DB = {
     'lawful',
     'allowable'
   ],
-  'legend': [
+  legend: [
     'chronicle',
     'myth',
     'fable',
@@ -31621,7 +31621,7 @@ const SYN_DB = {
     'hearsay',
     'fiction'
   ],
-  'legible': [
+  legible: [
     'distinct',
     'plain',
     'apparent',
@@ -31631,7 +31631,7 @@ const SYN_DB = {
     'decipherable',
     'wellwritten'
   ],
-  'legitimate': [
+  legitimate: [
     'lawful',
     'valid',
     'authorized',
@@ -31642,7 +31642,7 @@ const SYN_DB = {
     'normal',
     'standard'
   ],
-  'leisure': [
+  leisure: [
     'freedom',
     'ease',
     'vacation',
@@ -31650,13 +31650,13 @@ const SYN_DB = {
     'opportunity',
     'retirement'
   ],
-  'leisurely': [
+  leisurely: [
     'deliberate',
     'convenient',
     'easy',
     'sauntering'
   ],
-  'lend': [
+  lend: [
     'let',
     'afford',
     'furnish',
@@ -31664,7 +31664,7 @@ const SYN_DB = {
     'advance',
     'grant'
   ],
-  'ant': [
+  ant: [
     'refuse',
     'withhold',
     'retain',
@@ -31672,20 +31672,20 @@ const SYN_DB = {
     'withdraw',
     'recall'
   ],
-  'lengthen': [
+  lengthen: [
     'elongate',
     'stretch',
     'extend',
     'prolong'
   ],
-  'lengthy': [
+  lengthy: [
     'long',
     'tedious',
     'verbose',
     'diffuse',
     'prolix'
   ],
-  'lenient': [
+  lenient: [
     'merciful',
     'mild',
     'relaxing',
@@ -31693,7 +31693,7 @@ const SYN_DB = {
     'softening',
     'compassionate'
   ],
-  'lessen': [
+  lessen: [
     'diminish',
     'reduce',
     'decrease',
@@ -31703,7 +31703,7 @@ const SYN_DB = {
     'degrade',
     'weaken'
   ],
-  'lesson': [
+  lesson: [
     'instruction',
     'precept',
     'doctrine',
@@ -31714,7 +31714,7 @@ const SYN_DB = {
     'lecture',
     'homily'
   ],
-  'let': [
+  let: [
     'permit',
     'allow',
     'suffer',
@@ -31725,7 +31725,7 @@ const SYN_DB = {
     'give',
     'contract'
   ],
-  'lethal': [
+  lethal: [
     'fatal',
     'deadly',
     'mortal',
@@ -31734,7 +31734,7 @@ const SYN_DB = {
     'baneful',
     'noxious'
   ],
-  'lethargy': [
+  lethargy: [
     'drowsiness',
     'torpor',
     'swoon',
@@ -31743,10 +31743,10 @@ const SYN_DB = {
     'oblivion',
     'indifference'
   ],
-  'letter': [
+  letter: [
     'learning'
   ],
-  'level': [
+  level: [
     'plane',
     'surface',
     'floor',
@@ -31773,7 +31773,7 @@ const SYN_DB = {
     'plane',
     'smooth'
   ],
-  'levity': [
+  levity: [
     'inconstancy',
     'unsteadiness',
     'thoughtlessness',
@@ -31782,7 +31782,7 @@ const SYN_DB = {
     'flightiness',
     'volatility'
   ],
-  'levy': [
+  levy: [
     'raise',
     'collect',
     'assess',
@@ -31793,7 +31793,7 @@ const SYN_DB = {
     'impose',
     'muster'
   ],
-  'liable': [
+  liable: [
     'accountable',
     'bound',
     'responsible',
@@ -31803,7 +31803,7 @@ const SYN_DB = {
     'obnoxious',
     'amenable'
   ],
-  'libel': [
+  libel: [
     'lampoon',
     'satire',
     'defamation',
@@ -31812,7 +31812,7 @@ const SYN_DB = {
     'calumny',
     'traducement'
   ],
-  'liberal': [
+  liberal: [
     'generous',
     'munificent',
     'beneficent',
@@ -31825,17 +31825,17 @@ const SYN_DB = {
     'ample',
     'profuse'
   ],
-  'liberate': [
+  liberate: [
     'deliver',
     'disengage',
     'release'
   ],
-  'libertine': [
+  libertine: [
     'rake',
     'debauchee',
     'profligate'
   ],
-  'liberty': [
+  liberty: [
     'emancipation',
     'choice',
     'freedom',
@@ -31848,7 +31848,7 @@ const SYN_DB = {
     'franchise',
     'immunity'
   ],
-  'aiicen': [
+  aiicen: [
     'permission',
     'leave',
     'privilege',
@@ -31859,12 +31859,12 @@ const SYN_DB = {
     'anarchy',
     'lawlessness'
   ],
-  'license': [
+  license: [
     'permit',
     'authorize',
     'let'
   ],
-  'licentious': [
+  licentious: [
     'excessive',
     'abusive',
     'unrestrained',
@@ -31885,11 +31885,11 @@ const SYN_DB = {
     'unchaste',
     'lascivious'
   ],
-  'licit': [
+  licit: [
     'lawful',
     'legal'
   ],
-  'lie': [
+  lie: [
     'untruth',
     'fiction',
     'fable',
@@ -31909,7 +31909,7 @@ const SYN_DB = {
     'lodge',
     'sleep'
   ],
-  'life': [
+  life: [
     'being',
     'soul',
     'spirit',
@@ -31918,14 +31918,14 @@ const SYN_DB = {
     'vivacity',
     'biography'
   ],
-  'lift': [
+  lift: [
     'raise',
     'elevate',
     'exalt',
     'improve',
     'steal'
   ],
-  'ligament': [
+  ligament: [
     'bandage',
     'bond',
     'connection',
@@ -31938,7 +31938,7 @@ const SYN_DB = {
     'tying',
     'binding'
   ],
-  'light': [
+  light: [
     'gleam',
     'shine',
     'glitter',
@@ -31996,7 +31996,7 @@ const SYN_DB = {
     'capricious',
     'thoughtless'
   ],
-  'like': [
+  like: [
     'approve',
     'enjoy',
     'love',
@@ -32011,13 +32011,13 @@ const SYN_DB = {
     'likely',
     'correspondent'
   ],
-  'likelihood': [
+  likelihood: [
     'probability',
     'semblance',
     'appearance',
     'verisimilitude'
   ],
-  'likely': [
+  likely: [
     'probable',
     'presumable',
     'reasonable',
@@ -32026,7 +32026,7 @@ const SYN_DB = {
     'conceivable',
     'conjectural'
   ],
-  'likeness': [
+  likeness: [
     'resemblance',
     'similarity',
     'guise',
@@ -32040,13 +32040,13 @@ const SYN_DB = {
     'ffigy',
     'picture'
   ],
-  'likewise': [
+  likewise: [
     'also',
     'moreover',
     'too',
     'besides'
   ],
-  'liking': [
+  liking: [
     'inclination',
     'pleasure',
     'desire',
@@ -32057,7 +32057,7 @@ const SYN_DB = {
     'taste',
     'partiality'
   ],
-  'limit': [
+  limit: [
     'boundary',
     'termination',
     'restriction',
@@ -32065,7 +32065,7 @@ const SYN_DB = {
     'enclosure',
     'border'
   ],
-  'limitless': [
+  limitless: [
     'boundless',
     'illimitable',
     'immeasurable',
@@ -32077,7 +32077,7 @@ const SYN_DB = {
     'unhindered',
     'tunobstructed'
   ],
-  'limpid': [
+  limpid: [
     'clear',
     'transparent',
     'lucid',
@@ -32087,7 +32087,7 @@ const SYN_DB = {
     'bright',
     'crystal'
   ],
-  'line': [
+  line: [
     'thread',
     'cord',
     'hawser',
@@ -32105,7 +32105,7 @@ const SYN_DB = {
     'sequence',
     'succession'
   ],
-  'lineage': [
+  lineage: [
     'ancestry',
     'family',
     'descendants',
@@ -32115,20 +32115,20 @@ const SYN_DB = {
     'descent',
     'progeny'
   ],
-  'lineament': [
+  lineament: [
     'profile',
     'form',
     'feature',
     'mark',
     'outline'
   ],
-  'linear': [
+  linear: [
     'direct',
     'straight',
     'rectilinear',
     'lineal'
   ],
-  'linger': [
+  linger: [
     'lag',
     'saunter',
     'tarry',
@@ -32139,7 +32139,7 @@ const SYN_DB = {
     'wait',
     'pause'
   ],
-  'liquid': [
+  liquid: [
     'fluid',
     'flowing',
     'fluent',
@@ -32151,7 +32151,7 @@ const SYN_DB = {
     'limpid',
     'clear'
   ],
-  'list': [
+  list: [
     'roll',
     'catalogue',
     'schedule',
@@ -32160,7 +32160,7 @@ const SYN_DB = {
     'register',
     'index'
   ],
-  'listen': [
+  listen: [
     'harken',
     'hear',
     'attend',
@@ -32168,7 +32168,7 @@ const SYN_DB = {
     'heed',
     'list'
   ],
-  'listless': [
+  listless: [
     'indifferent',
     'spiritless',
     'heedless',
@@ -32180,7 +32180,7 @@ const SYN_DB = {
     'supine',
     'torpid'
   ],
-  'literal': [
+  literal: [
     'unimaginative',
     'matteroffact',
     'real',
@@ -32195,7 +32195,7 @@ const SYN_DB = {
     'actual',
     'specific'
   ],
-  'literary': [
+  literary: [
     'learned',
     'bookish',
     'literate',
@@ -32207,7 +32207,7 @@ const SYN_DB = {
     'instructed',
     'educated'
   ],
-  'literature': [
+  literature: [
     'books',
     'publications',
     'writings',
@@ -32225,7 +32225,7 @@ const SYN_DB = {
     'letters',
     'erudition'
   ],
-  'lithe': [
+  lithe: [
     'pliant',
     'flexible',
     'limber',
@@ -32234,13 +32234,13 @@ const SYN_DB = {
     'agile',
     'flexile'
   ],
-  'litter': [
+  litter: [
     'clutter',
     'disorder',
     'untidiness',
     'rubbish'
   ],
-  'little': [
+  little: [
     'small',
     'diminutive',
     'insignificant',
@@ -32263,7 +32263,7 @@ const SYN_DB = {
     'dwarf',
     'puny'
   ],
-  'live': [
+  live: [
     'abide',
     'dwell',
     'reside',
@@ -32288,7 +32288,7 @@ const SYN_DB = {
     'energetic',
     'animate'
   ],
-  'livelihood': [
+  livelihood: [
     'support',
     'maintenance',
     'sustenance',
@@ -32296,7 +32296,7 @@ const SYN_DB = {
     'substance',
     'living'
   ],
-  'lively': [
+  lively: [
     'quick',
     'nimble',
     'smart',
@@ -32321,7 +32321,7 @@ const SYN_DB = {
     'spirited',
     'vigorous'
   ],
-  'livery': [
+  livery: [
     'release',
     'deliverance',
     'clothing',
@@ -32334,7 +32334,7 @@ const SYN_DB = {
     'badge',
     'retinue'
   ],
-  'living': [
+  living: [
     'subsistence',
     'estate',
     'existence',
@@ -32350,7 +32350,7 @@ const SYN_DB = {
     'vegetating',
     'growing'
   ],
-  'load': [
+  load: [
     'burden',
     'charge',
     'weight',
@@ -32365,12 +32365,12 @@ const SYN_DB = {
     'oppression',
     'pressure'
   ],
-  'loan': [
+  loan: [
     'advance',
     'mortgage',
     'hypothecation'
   ],
-  'loath': [
+  loath: [
     'averse',
     'unwilling',
     'reluctant',
@@ -32378,7 +32378,7 @@ const SYN_DB = {
     'indisposed',
     'disinclined'
   ],
-  'loathe': [
+  loathe: [
     'abominate',
     'execrate',
     'abhor',
@@ -32386,7 +32386,7 @@ const SYN_DB = {
     'detest',
     'hate'
   ],
-  'locality': [
+  locality: [
     'position',
     'location',
     'town',
@@ -32396,7 +32396,7 @@ const SYN_DB = {
     'place',
     'habitat'
   ],
-  'locate': [
+  locate: [
     'place',
     'set',
     'designate',
@@ -32407,7 +32407,7 @@ const SYN_DB = {
     'fix',
     'dispose'
   ],
-  'lock': [
+  lock: [
     'clasp',
     'catch',
     'bar',
@@ -32417,13 +32417,13 @@ const SYN_DB = {
     'hook',
     'latch'
   ],
-  'locomotion': [
+  locomotion: [
     'movement',
     'travel',
     'passage',
     'migration'
   ],
-  'lodge': [
+  lodge: [
     'rest',
     'remain',
     'shelter',
@@ -32431,7 +32431,7 @@ const SYN_DB = {
     'abide',
     'stop'
   ],
-  'lofty': [
+  lofty: [
     'tall',
     'sublime',
     'exalted',
@@ -32446,7 +32446,7 @@ const SYN_DB = {
     'high',
     'eminent'
   ],
-  'logical': [
+  logical: [
     'dialectical',
     'reasonable',
     'coherent',
@@ -32456,7 +32456,7 @@ const SYN_DB = {
     'close',
     'discriminating'
   ],
-  'lonely': [
+  lonely: [
     'forlorn',
     'forsaken',
     'dreary',
@@ -32468,7 +32468,7 @@ const SYN_DB = {
     'alone',
     'retired'
   ],
-  'look': [
+  look: [
     'appearance',
     'aspect',
     'manner',
@@ -32486,7 +32486,7 @@ const SYN_DB = {
     'expect',
     'anticipate'
   ],
-  'loose': [
+  loose: [
     'unbound',
     'untied',
     'free',
@@ -32506,11 +32506,11 @@ const SYN_DB = {
     'sparse',
     'inexact'
   ],
-  'loquacity': [
+  loquacity: [
     'garrulity',
     'talkativeness'
   ],
-  'lordly': [
+  lordly: [
     'imperious',
     'noble',
     'honorable',
@@ -32520,7 +32520,7 @@ const SYN_DB = {
     'majestic',
     'magnificent'
   ],
-  'lordship': [
+  lordship: [
     'manor',
     'dominion',
     'power',
@@ -32528,14 +32528,14 @@ const SYN_DB = {
     'rule',
     'jurisdiction'
   ],
-  'lore': [
+  lore: [
     'knowledge',
     'instruction',
     'wisdom',
     'advice',
     'counsel'
   ],
-  'lose': [
+  lose: [
     'destroy',
     'waste',
     'squander',
@@ -32543,7 +32543,7 @@ const SYN_DB = {
     'miss',
     'ruin'
   ],
-  'loss': [
+  loss: [
     'failure',
     'destruction',
     'privation',
@@ -32560,7 +32560,7 @@ const SYN_DB = {
     'damage',
     'disadvantage'
   ],
-  'lot': [
+  lot: [
     'chance',
     'accident',
     'fate',
@@ -32576,7 +32576,7 @@ const SYN_DB = {
     'parcel',
     'land'
   ],
-  'loud': [
+  loud: [
     'noisy',
     'clamorous',
     'boisterous',
@@ -32587,7 +32587,7 @@ const SYN_DB = {
     'ostentatious',
     'gaudy'
   ],
-  'love': [
+  love: [
     'friendship',
     'liking',
     'tenderness',
@@ -32604,7 +32604,7 @@ const SYN_DB = {
     'inclination',
     'benevolence'
   ],
-  'lovely': [
+  lovely: [
     'beautiful',
     'charming',
     'delightful',
@@ -32617,7 +32617,7 @@ const SYN_DB = {
     'sweet',
     'admirable'
   ],
-  'lowering': [
+  lowering: [
     'gloomy',
     'threatening',
     'sullen',
@@ -32626,7 +32626,7 @@ const SYN_DB = {
     'murky',
     'dark'
   ],
-  'lowly': [
+  lowly: [
     'low',
     'humble',
     'unimportant',
@@ -32636,21 +32636,21 @@ const SYN_DB = {
     'unpretending',
     'mild'
   ],
-  'loyal': [
+  loyal: [
     'devoted',
     'staunch',
     'trusty',
     'obedient',
     'submissive'
   ],
-  'loyalty': [
+  loyalty: [
     'allegiance',
     'fidelity',
     'fealty',
     'faithfulness',
     'constancy'
   ],
-  'lucid': [
+  lucid: [
     'luminous',
     'transparent',
     'sane',
@@ -32669,7 +32669,7 @@ const SYN_DB = {
     'sober',
     'sound'
   ],
-  'luck': [
+  luck: [
     'chance',
     'hap',
     'fate',
@@ -32679,7 +32679,7 @@ const SYN_DB = {
     'accident',
     'success'
   ],
-  'luckless': [
+  luckless: [
     'unfortunate',
     'unsuccessful',
     'unlucky',
@@ -32689,7 +32689,7 @@ const SYN_DB = {
     'unpropitious',
     'unhappy'
   ],
-  'lucky': [
+  lucky: [
     'fortunate',
     'successful',
     'auspicious',
@@ -32698,13 +32698,13 @@ const SYN_DB = {
     'favored',
     'blessed'
   ],
-  'lucrative': [
+  lucrative: [
     'profitable',
     'gainful',
     'paying',
     'remunerative'
   ],
-  'lucre': [
+  lucre: [
     'gain',
     'profit',
     'riches',
@@ -32713,12 +32713,12 @@ const SYN_DB = {
     'greed',
     'mammon'
   ],
-  'lucubration': [
+  lucubration: [
     'meditation',
     'speculation',
     'cogitation'
   ],
-  'ludicrous': [
+  ludicrous: [
     'laughable',
     'comic',
     'burlesque',
@@ -32731,7 +32731,7 @@ const SYN_DB = {
     'farcical',
     'absurd'
   ],
-  'lull': [
+  lull: [
     'compose',
     'calm',
     'quiet',
@@ -32740,7 +32740,7 @@ const SYN_DB = {
     'tranquilize',
     'still'
   ],
-  'luminous': [
+  luminous: [
     'shining',
     'brilliant',
     'bright',
@@ -32750,7 +32750,7 @@ const SYN_DB = {
     'clear',
     'intelligible'
   ],
-  'lunacy': [
+  lunacy: [
     'derangement',
     'mania',
     'craziness',
@@ -32758,7 +32758,7 @@ const SYN_DB = {
     'madness',
     'aberration'
   ],
-  'lunatic': [
+  lunatic: [
     'maniac',
     'madman',
     'insane',
@@ -32767,7 +32767,7 @@ const SYN_DB = {
     'cracked',
     'deranged'
   ],
-  'lure': [
+  lure: [
     'enticement',
     'decoy',
     'allurement',
@@ -32782,7 +32782,7 @@ const SYN_DB = {
     'inveigle',
     'seduce'
   ],
-  'lurid': [
+  lurid: [
     'yellow',
     'pale',
     'wan',
@@ -32792,11 +32792,11 @@ const SYN_DB = {
     'murky',
     'lowering'
   ],
-  'lurk': [
+  lurk: [
     'hide',
     'skulk'
   ],
-  'luscious': [
+  luscious: [
     'sweet',
     'delicious',
     'fulsome',
@@ -32811,7 +32811,7 @@ const SYN_DB = {
     'nauseous',
     'unctuous'
   ],
-  'luster': [
+  luster: [
     'brilliancy',
     'brightness',
     'splendor',
@@ -32827,13 +32827,13 @@ const SYN_DB = {
     'celebrity',
     'honor'
   ],
-  'lustration': [
+  lustration: [
     'washing',
     'purification',
     'cleansing',
     'lustrum'
   ],
-  'lustrous': [
+  lustrous: [
     'bright',
     'shiny',
     'gleaming',
@@ -32841,7 +32841,7 @@ const SYN_DB = {
     'brilliant',
     'radiant'
   ],
-  'lusty': [
+  lusty: [
     'stout',
     'strong',
     'vigorous',
@@ -32854,7 +32854,7 @@ const SYN_DB = {
     'large',
     'fat'
   ],
-  'luxuriant': [
+  luxuriant: [
     'exuberant',
     'excessive',
     'rank',
@@ -32863,14 +32863,14 @@ const SYN_DB = {
     'plentiful',
     'plenteous'
   ],
-  'luxuriate': [
+  luxuriate: [
     'flourish',
     'indulge',
     'revel',
     'wanton',
     'delight'
   ],
-  'luxurious': [
+  luxurious: [
     'voluptuous',
     'epicurean',
     'sensual',
@@ -32878,7 +32878,7 @@ const SYN_DB = {
     'effeminate',
     'selfindulgent'
   ],
-  'luxury': [
+  luxury: [
     'voluptuousness',
     'epicurism',
     'effeminacy',
@@ -32892,14 +32892,14 @@ const SYN_DB = {
     'treat',
     'animalism'
   ],
-  'lying': [
+  lying: [
     'false',
     'mendacious',
     'untruthful',
     'untrue',
     'recumbent'
   ],
-  'macerate': [
+  macerate: [
     'weaken',
     'soften',
     'attenuate',
@@ -32912,7 +32912,7 @@ const SYN_DB = {
     'soak',
     'digest'
   ],
-  'machinate': [
+  machinate: [
     'plan',
     'contrive',
     'devise',
@@ -32920,7 +32920,7 @@ const SYN_DB = {
     'scheme',
     'harm'
   ],
-  'machination': [
+  machination: [
     'plot',
     'conspiracy',
     'intrigue',
@@ -32932,7 +32932,7 @@ const SYN_DB = {
     'contrivance',
     'scheme'
   ],
-  'machine': [
+  machine: [
     'engine',
     'instrument',
     'tool',
@@ -32942,7 +32942,7 @@ const SYN_DB = {
     'system',
     'supernaturalagency'
   ],
-  'maculate': [
+  maculate: [
     'blotched',
     'defiled',
     'impure',
@@ -32952,7 +32952,7 @@ const SYN_DB = {
     'unclean',
     'mottled'
   ],
-  'mad': [
+  mad: [
     'crazy',
     'insane',
     'excited',
@@ -32979,14 +32979,14 @@ const SYN_DB = {
     'frantic',
     'raving'
   ],
-  'madden': [
+  madden: [
     'enrage',
     'irritate',
     'provoke',
     'inflame',
     'infuriate'
   ],
-  'madness': [
+  madness: [
     'insanity',
     'craziness',
     'derangement',
@@ -32997,7 +32997,7 @@ const SYN_DB = {
     'rage',
     'delirium'
   ],
-  'magazine': [
+  magazine: [
     'warehouse',
     'receptacle',
     'storehouse',
@@ -33005,7 +33005,7 @@ const SYN_DB = {
     'repository',
     'periodical'
   ],
-  'magic': [
+  magic: [
     'sorcery',
     'witchcraft',
     'conjuration',
@@ -33016,7 +33016,7 @@ const SYN_DB = {
     'witchery',
     'charm'
   ],
-  'magisterial': [
+  magisterial: [
     'stately',
     'pompous',
     'august',
@@ -33036,10 +33036,10 @@ const SYN_DB = {
     'imposing',
     'authoritative'
   ],
-  'magistrate': [
+  magistrate: [
     'judge'
   ],
-  'magnanimous': [
+  magnanimous: [
     'great',
     'elevated',
     'generous',
@@ -33056,7 +33056,7 @@ const SYN_DB = {
     'highminded',
     'honorable'
   ],
-  'magnificent': [
+  magnificent: [
     'glorious',
     'grand',
     'majestic',
@@ -33071,7 +33071,7 @@ const SYN_DB = {
     'august',
     'dignified'
   ],
-  'magnify': [
+  magnify: [
     'enlarge',
     'augment',
     'increase',
@@ -33084,7 +33084,7 @@ const SYN_DB = {
     'bless',
     'praise'
   ],
-  'magniloquent': [
+  magniloquent: [
     'pompous',
     'grandiloquent',
     'bombastic',
@@ -33095,7 +33095,7 @@ const SYN_DB = {
     'inflated',
     'boastful'
   ],
-  'magnitude': [
+  magnitude: [
     'extent',
     'size',
     'grandeur',
@@ -33108,14 +33108,14 @@ const SYN_DB = {
     'sublimity',
     'loftiness'
   ],
-  'maid': [
+  maid: [
     'maiden',
     'girl',
     'damsel',
     'virgin',
     'lass'
   ],
-  'maim': [
+  maim: [
     'disable',
     'cripple',
     'mangle',
@@ -33124,7 +33124,7 @@ const SYN_DB = {
     'disfigure',
     'lame'
   ],
-  'main': [
+  main: [
     'bulk',
     'majority',
     'body',
@@ -33156,7 +33156,7 @@ const SYN_DB = {
     'gross',
     'majority'
   ],
-  'mainly': [
+  mainly: [
     'chiefly',
     'principally',
     'largely',
@@ -33166,7 +33166,7 @@ const SYN_DB = {
     'primarily',
     'entirely'
   ],
-  'maintain': [
+  maintain: [
     'uphold',
     'assert',
     'vindicate',
@@ -33179,7 +33179,7 @@ const SYN_DB = {
     'provide',
     'affirm'
   ],
-  'maintenance': [
+  maintenance: [
     'sustenance',
     'support',
     'vindication',
@@ -33189,7 +33189,7 @@ const SYN_DB = {
     'subsistence',
     'livelihood'
   ],
-  'majestic': [
+  majestic: [
     'august',
     'sublime',
     'magnificent',
@@ -33204,7 +33204,7 @@ const SYN_DB = {
     'grand',
     'imposing'
   ],
-  'majesty': [
+  majesty: [
     'dignity',
     'power',
     'authority',
@@ -33214,7 +33214,7 @@ const SYN_DB = {
     'grandeur',
     'elevation'
   ],
-  'stake': [
+  stake: [
     'produce',
     'falsify',
     'find',
@@ -33259,7 +33259,7 @@ const SYN_DB = {
     'get',
     'render'
   ],
-  'maker': [
+  maker: [
     'creator',
     'former',
     'manufacturer',
@@ -33270,7 +33270,7 @@ const SYN_DB = {
     'writer',
     'compiler'
   ],
-  'make': [
+  make: [
     'collect',
     'constitute',
     'form',
@@ -33284,7 +33284,7 @@ const SYN_DB = {
     'provide',
     'determine'
   ],
-  'malady': [
+  malady: [
     'disorder',
     'distemper',
     'disease',
@@ -33294,7 +33294,7 @@ const SYN_DB = {
     'complaint',
     'indisposition'
   ],
-  'malediction': [
+  malediction: [
     'curse',
     'cursing',
     'execration',
@@ -33302,7 +33302,7 @@ const SYN_DB = {
     'denunciation',
     'anathema'
   ],
-  'malefactor': [
+  malefactor: [
     'evildoer',
     'culprit',
     'felon',
@@ -33310,7 +33310,7 @@ const SYN_DB = {
     'convict',
     'outlaw'
   ],
-  'malice': [
+  malice: [
     'spite',
     'malevolence',
     'grudge',
@@ -33322,7 +33322,7 @@ const SYN_DB = {
     'maliciousness',
     'virulence'
   ],
-  'manacle': [
+  manacle: [
     'handcuff',
     'shackle',
     'fetter',
@@ -33332,7 +33332,7 @@ const SYN_DB = {
     'bind',
     'chain'
   ],
-  'manage': [
+  manage: [
     'direct',
     'govern',
     'control',
@@ -33349,14 +33349,14 @@ const SYN_DB = {
     'handle',
     'rule'
   ],
-  'manageable': [
+  manageable: [
     'tractable',
     'governable',
     'controllable',
     'tamable',
     'docile'
   ],
-  'management': [
+  management: [
     'conduct',
     'administration',
     'government',
@@ -33389,7 +33389,7 @@ const SYN_DB = {
     'tactics',
     'contrivance'
   ],
-  'manager': [
+  manager: [
     'director',
     'superintendent',
     'supervisor',
@@ -33399,7 +33399,7 @@ const SYN_DB = {
     'conductor',
     'economist'
   ],
-  'mandate': [
+  mandate: [
     'command',
     'commission',
     'order',
@@ -33409,7 +33409,7 @@ const SYN_DB = {
     'requirement',
     'edict'
   ],
-  'maneuver': [
+  maneuver: [
     'move',
     'scheme',
     'plot',
@@ -33417,7 +33417,7 @@ const SYN_DB = {
     'manage',
     'contrive'
   ],
-  'mangle': [
+  mangle: [
     'cut',
     'bruise',
     'mutilate',
@@ -33433,7 +33433,7 @@ const SYN_DB = {
     'smooth',
     'press'
   ],
-  'manhood': [
+  manhood: [
     'virility',
     'maturity',
     'humanity',
@@ -33445,7 +33445,7 @@ const SYN_DB = {
     'manliness',
     'manfulness'
   ],
-  'mania': [
+  mania: [
     'insanity',
     'derangement',
     'madness',
@@ -33455,13 +33455,13 @@ const SYN_DB = {
     'delirium',
     'frenzy'
   ],
-  'maniac': [
+  maniac: [
     'lunatic',
     'madman',
     'insane',
     'bedlamite'
   ],
-  'manifest': [
+  manifest: [
     'open',
     'clear',
     'evident',
@@ -33486,7 +33486,7 @@ const SYN_DB = {
     'evidence',
     'expose'
   ],
-  'manifold': [
+  manifold: [
     'various',
     'duplicate',
     'multiplied',
@@ -33497,14 +33497,14 @@ const SYN_DB = {
     'multifarious',
     'sundry'
   ],
-  'mankind': [
+  mankind: [
     'man',
     'humanity',
     'humankind',
     'men',
     'society'
   ],
-  'manly': [
+  manly: [
     'bold',
     'daring',
     'valorous',
@@ -33522,7 +33522,7 @@ const SYN_DB = {
     'masculine',
     'manlike'
   ],
-  'manner': [
+  manner: [
     'mode',
     'custom',
     'habit',
@@ -33539,7 +33539,7 @@ const SYN_DB = {
     'form',
     'style'
   ],
-  'mannerism': [
+  mannerism: [
     'characteristic',
     'peculiarity',
     'uniformity',
@@ -33549,7 +33549,7 @@ const SYN_DB = {
     'idiosyncrasy',
     'specialty'
   ],
-  'mannerly': [
+  mannerly: [
     'civil',
     'complaisant',
     'respectful',
@@ -33561,14 +33561,14 @@ const SYN_DB = {
     'ceremonious',
     'wellbred'
   ],
-  'manumit': [
+  manumit: [
     'release',
     'liberate',
     'enfranchise',
     'free',
     'emancipate'
   ],
-  'many': [
+  many: [
     'frequent',
     'manifold',
     'diverse',
@@ -33580,7 +33580,7 @@ const SYN_DB = {
     'abundant',
     'multifarious'
   ],
-  'mar': [
+  mar: [
     'injure',
     'mark',
     'spoil',
@@ -33595,7 +33595,7 @@ const SYN_DB = {
     'maim',
     'deform'
   ],
-  'marauder': [
+  marauder: [
     'plunderer',
     'robber',
     'ravager',
@@ -33607,7 +33607,7 @@ const SYN_DB = {
     'rover',
     'invader'
   ],
-  'margin': [
+  margin: [
     'border',
     'edge',
     'brim',
@@ -33625,14 +33625,14 @@ const SYN_DB = {
     'interest',
     'leeway'
   ],
-  'marine': [
+  marine: [
     'naval',
     'nautical',
     'oceanic',
     'saltwater',
     'pelagic'
   ],
-  'marital': [
+  marital: [
     'connubial',
     'nuptial',
     'hymeneal',
@@ -33640,12 +33640,12 @@ const SYN_DB = {
     'wedded',
     'matrimonial'
   ],
-  'maritime': [
+  maritime: [
     'marine',
     'oceanic',
     'nautical'
   ],
-  'mark': [
+  mark: [
     'impress',
     'stamp',
     'vestige',
@@ -33681,7 +33681,7 @@ const SYN_DB = {
     'specialize',
     'decorate'
   ],
-  'marked': [
+  marked: [
     'noted',
     'notable',
     'prominent',
@@ -33690,7 +33690,7 @@ const SYN_DB = {
     'distinguished',
     'conspicuous'
   ],
-  'marriage': [
+  marriage: [
     'matrimony',
     'wedlock',
     'wedding',
@@ -33699,7 +33699,7 @@ const SYN_DB = {
     'spousal',
     'union'
   ],
-  'marrow': [
+  marrow: [
     'medulla',
     'pith',
     'essence',
@@ -33709,7 +33709,7 @@ const SYN_DB = {
     'cream',
     'kernel'
   ],
-  'marsh': [
+  marsh: [
     'fen',
     'swamp',
     'quagmire',
@@ -33717,7 +33717,7 @@ const SYN_DB = {
     'bog',
     'slough'
   ],
-  'marshal': [
+  marshal: [
     'order',
     'arrange',
     'direct',
@@ -33728,19 +33728,19 @@ const SYN_DB = {
     'dispose',
     'herald'
   ],
-  'martial': [
+  martial: [
     'warlike',
     'military',
     'soldierly',
     'brave'
   ],
-  'martyrdom': [
+  martyrdom: [
     'torture',
     'torment',
     'persecution',
     'confession'
   ],
-  'marvel': [
+  marvel: [
     'wonder',
     'prodigy',
     'miracle',
@@ -33751,7 +33751,7 @@ const SYN_DB = {
     'portent',
     'phenomenon'
   ],
-  'marvelous': [
+  marvelous: [
     'wonderful',
     'astonishing',
     'surprising',
@@ -33766,7 +33766,7 @@ const SYN_DB = {
     'portentous',
     'prodigious'
   ],
-  'masculine': [
+  masculine: [
     'male',
     'manly',
     'virile',
@@ -33778,7 +33778,7 @@ const SYN_DB = {
     'hardy',
     'courageous'
   ],
-  'mask': [
+  mask: [
     'cover',
     'disguise',
     'pretext',
@@ -33804,7 +33804,7 @@ const SYN_DB = {
     'shroud',
     'screen'
   ],
-  'mass': [
+  mass: [
     'quantity',
     'sum',
     'bulk',
@@ -33820,14 +33820,14 @@ const SYN_DB = {
     'combination',
     'concretion'
   ],
-  'massacre': [
+  massacre: [
     'murder',
     'butcher',
     'kill',
     'slaughter',
     'slay'
   ],
-  'massive': [
+  massive: [
     'compacted',
     'weighty',
     'heavy',
@@ -33840,7 +33840,7 @@ const SYN_DB = {
     'solid',
     'colossal'
   ],
-  'master': [
+  master: [
     'ruler',
     'director',
     'manager',
@@ -33867,7 +33867,7 @@ const SYN_DB = {
     'acquire',
     'learn'
   ],
-  'masterly': [
+  masterly: [
     'imperious',
     'domineering',
     'arbitrary',
@@ -33882,7 +33882,7 @@ const SYN_DB = {
     'artistic',
     'consummate'
   ],
-  'mastery': [
+  mastery: [
     'authority',
     'dominion',
     'supremacy',
@@ -33899,11 +33899,11 @@ const SYN_DB = {
     'cleverness',
     'ability'
   ],
-  'masticate': [
+  masticate: [
     'grind',
     'chew'
   ],
-  'match': [
+  match: [
     'equal',
     'mate',
     'contest',
@@ -33927,7 +33927,7 @@ const SYN_DB = {
     'couple',
     'combine'
   ],
-  'matchless': [
+  matchless: [
     'unequaled',
     'peerless',
     'unparalleled',
@@ -33939,7 +33939,7 @@ const SYN_DB = {
     'surpassing',
     'unrivaled'
   ],
-  'mate': [
+  mate: [
     'companion',
     'associate',
     'compeer',
@@ -33951,7 +33951,7 @@ const SYN_DB = {
     'subordinate',
     'peer'
   ],
-  'material': [
+  material: [
     'substance',
     'solidity',
     'weight',
@@ -33966,18 +33966,18 @@ const SYN_DB = {
     'weighty',
     'bodily'
   ],
-  'matrimony': [
+  matrimony: [
     'marriage',
     'wedlock'
   ],
-  'matron': [
+  matron: [
     'wife',
     'widow',
     'dame',
     'housekeeper',
     'dowager'
   ],
-  'matter': [
+  matter: [
     'substance',
     'body',
     'material',
@@ -34001,7 +34001,7 @@ const SYN_DB = {
     'thing',
     'event'
   ],
-  'mature': [
+  mature: [
     'ripe',
     'perfect',
     'ready',
@@ -34009,13 +34009,13 @@ const SYN_DB = {
     'completed',
     'fullgrown'
   ],
-  'matutinal': [
+  matutinal: [
     'morning',
     'dawning',
     'early',
     'waking'
   ],
-  'maudlin': [
+  maudlin: [
     'tearful',
     'sentimental',
     'weak',
@@ -34026,7 +34026,7 @@ const SYN_DB = {
     'tipsy',
     'muddled'
   ],
-  'mawkish': [
+  mawkish: [
     'nauseous',
     'disgusted',
     'squeamish',
@@ -34038,7 +34038,7 @@ const SYN_DB = {
     'loathsome',
     'maudlin'
   ],
-  'maxim': [
+  maxim: [
     'principle',
     'axiom',
     'proverb',
@@ -34051,7 +34051,7 @@ const SYN_DB = {
     'precept',
     'rule'
   ],
-  'maximum': [
+  maximum: [
     'greatest',
     'climax',
     'zenith',
@@ -34062,13 +34062,13 @@ const SYN_DB = {
     'utmost',
     'ultimate'
   ],
-  'maybe': [
+  maybe: [
     'perhaps',
     'possibly',
     'haply',
     'mayhap'
   ],
-  'maze': [
+  maze: [
     'labyrinth',
     'intricacy',
     'bewilderment',
@@ -34076,7 +34076,7 @@ const SYN_DB = {
     'perplexity',
     'embarrassment'
   ],
-  'meager': [
+  meager: [
     'thin',
     'lean',
     'lank',
@@ -34088,7 +34088,7 @@ const SYN_DB = {
     'barren',
     'scanty'
   ],
-  'mean': [
+  mean: [
     'purpose',
     'intend',
     'design',
@@ -34117,7 +34117,7 @@ const SYN_DB = {
     'paltry',
     'sordid'
   ],
-  'meaning': [
+  meaning: [
     'purpose',
     'aim',
     'intention',
@@ -34132,7 +34132,7 @@ const SYN_DB = {
     'purport',
     'acceptation'
   ],
-  'meanness': [
+  meanness: [
     'stinginess',
     'illiberality',
     'sordidness',
@@ -34143,7 +34143,7 @@ const SYN_DB = {
     'baseness',
     'destitution'
   ],
-  'poverty': [
+  poverty: [
     'poverty',
     'lowness',
     'scantiness',
@@ -34161,7 +34161,7 @@ const SYN_DB = {
     'need',
     'mendicancy'
   ],
-  'measure': [
+  measure: [
     'dimension',
     'capacity',
     'quantity',
@@ -34169,7 +34169,7 @@ const SYN_DB = {
     'extent',
     'limit'
   ],
-  'measureless': [
+  measureless: [
     'unlimited',
     'infiniteimmeasurable',
     'immense',
@@ -34178,7 +34178,7 @@ const SYN_DB = {
     'vast',
     'unbounded'
   ],
-  'mechanic': [
+  mechanic: [
     'artificer',
     'artisan',
     'handicraftsman',
@@ -34187,7 +34187,7 @@ const SYN_DB = {
     'operative',
     'workman'
   ],
-  'mechanical': [
+  mechanical: [
     'approximate',
     'empirical',
     'machinemade',
@@ -34200,7 +34200,7 @@ const SYN_DB = {
     'effortless',
     'unimpassioned'
   ],
-  'meddle': [
+  meddle: [
     'interfere',
     'handle',
     'disturb',
@@ -34211,7 +34211,7 @@ const SYN_DB = {
     'mediate',
     'arbitrate'
   ],
-  'meddlesome': [
+  meddlesome: [
     'meddling',
     'intrusive',
     'officious',
@@ -34220,14 +34220,14 @@ const SYN_DB = {
     'impertinent',
     'obtrusive'
   ],
-  'mediate': [
+  mediate: [
     'intervene',
     'reconcile',
     'interpose',
     'intercede',
     'arbitrate'
   ],
-  'mediation': [
+  mediation: [
     'interposition',
     'intercession',
     'intervention',
@@ -34236,7 +34236,7 @@ const SYN_DB = {
     'adjustment',
     'reconciliation'
   ],
-  'mediator': [
+  mediator: [
     'reconciler',
     'intercessor',
     'interceder',
@@ -34244,7 +34244,7 @@ const SYN_DB = {
     'umpire',
     'propitiator'
   ],
-  'medicament': [
+  medicament: [
     'remedy',
     'specific',
     'medicine',
@@ -34253,7 +34253,7 @@ const SYN_DB = {
     'help',
     'restorative'
   ],
-  'medicine': [
+  medicine: [
     'drug',
     'physic',
     'remedy',
@@ -34264,7 +34264,7 @@ const SYN_DB = {
     'cure',
     'therapeutics'
   ],
-  'mediocre': [
+  mediocre: [
     'moderate',
     'indifferent',
     'ordinary',
@@ -34274,7 +34274,7 @@ const SYN_DB = {
     'middling',
     'commonplace'
   ],
-  'mediocrity': [
+  mediocrity: [
     'inferiority',
     'average',
     'medium',
@@ -34283,7 +34283,7 @@ const SYN_DB = {
     'mean',
     'sufficiency'
   ],
-  'meditate': [
+  meditate: [
     'consider',
     'ponder',
     'revolve',
@@ -34301,7 +34301,7 @@ const SYN_DB = {
     'think',
     'cogitate'
   ],
-  'medium': [
+  medium: [
     'middle',
     'mean',
     'moderation',
@@ -34320,7 +34320,7 @@ const SYN_DB = {
     'mediocre',
     'central'
   ],
-  'medley': [
+  medley: [
     'mixture',
     'jumble',
     'miscellany',
@@ -34332,7 +34332,7 @@ const SYN_DB = {
     'diversity',
     'complexity'
   ],
-  'meed': [
+  meed: [
     'merit',
     'reward',
     'recompense',
@@ -34346,7 +34346,7 @@ const SYN_DB = {
     'gift',
     'present'
   ],
-  'meek': [
+  meek: [
     'submissive',
     'yielding',
     'unassuming',
@@ -34357,7 +34357,7 @@ const SYN_DB = {
     'lowly',
     'modest'
   ],
-  'meet': [
+  meet: [
     'join',
     'confront',
     'encounter',
@@ -34382,7 +34382,7 @@ const SYN_DB = {
     'qualified',
     'convenient'
   ],
-  'meeting': [
+  meeting: [
     'conference',
     'assembly',
     'company',
@@ -34397,7 +34397,7 @@ const SYN_DB = {
     'concourse',
     'gathering'
   ],
-  'melancholy': [
+  melancholy: [
     'melancholia',
     'depression',
     'dejection',
@@ -34423,7 +34423,7 @@ const SYN_DB = {
     'somber',
     'dark'
   ],
-  'mellifluous': [
+  mellifluous: [
     'smooth',
     'honeyed',
     'sweet',
@@ -34432,7 +34432,7 @@ const SYN_DB = {
     'silvery',
     'dulcet'
   ],
-  'mellow': [
+  mellow: [
     'ripe',
     'soft',
     'tender',
@@ -34441,7 +34441,7 @@ const SYN_DB = {
     'genial',
     'jovial'
   ],
-  'melodious': [
+  melodious: [
     'musical',
     'agreeable',
     'harmonious',
@@ -34452,7 +34452,7 @@ const SYN_DB = {
     'concordant',
     'mellifluous'
   ],
-  'melody': [
+  melody: [
     'harmony',
     'rhythm',
     'air',
@@ -34464,7 +34464,7 @@ const SYN_DB = {
     'unison',
     'symphony'
   ],
-  'melt': [
+  melt: [
     'liquefy',
     'fuse',
     'thaw',
@@ -34475,7 +34475,7 @@ const SYN_DB = {
     'flow',
     'dissolve'
   ],
-  'member': [
+  member: [
     'organ',
     'limb',
     'constituent',
@@ -34486,7 +34486,7 @@ const SYN_DB = {
     'portion',
     'component'
   ],
-  'memoir': [
+  memoir: [
     'memorial',
     'biography',
     'record',
@@ -34494,7 +34494,7 @@ const SYN_DB = {
     'chronicle',
     'register'
   ],
-  'memorable': [
+  memorable: [
     'important',
     'illustrious',
     'remarkable',
@@ -34507,14 +34507,14 @@ const SYN_DB = {
     'conspicuous',
     'prominent'
   ],
-  'memorial': [
+  memorial: [
     'monument',
     'record',
     'memorandum',
     'memento',
     'souvenir'
   ],
-  'memory': [
+  memory: [
     'remembrance',
     'recollection',
     'reminiscence',
@@ -34527,12 +34527,12 @@ const SYN_DB = {
     'perpetuation',
     'retention'
   ],
-  'menace': [
+  menace: [
     'threat',
     'denunciation',
     'threatening'
   ],
-  'mend': [
+  mend: [
     'help',
     'amend',
     'emend',
@@ -34545,7 +34545,7 @@ const SYN_DB = {
     'restore',
     'ameliorate'
   ],
-  'mendacity': [
+  mendacity: [
     'lying',
     'deceit',
     'falsehood',
@@ -34556,14 +34556,14 @@ const SYN_DB = {
     'deception',
     'prevarication'
   ],
-  'menial': [
+  menial: [
     'servile',
     'mean',
     'domestic',
     'dependent',
     'attendant'
   ],
-  'mental': [
+  mental: [
     'intellectual',
     'spiritual',
     'metaphysical',
@@ -34572,7 +34572,7 @@ const SYN_DB = {
     'psychical',
     'intelligent'
   ],
-  'mention': [
+  mention: [
     'reference',
     'allusion',
     'notice',
@@ -34594,7 +34594,7 @@ const SYN_DB = {
     'name',
     'referto'
   ],
-  'mercenary': [
+  mercenary: [
     'paid',
     'hired',
     'hireling',
@@ -34604,7 +34604,7 @@ const SYN_DB = {
     'avaricious',
     'selfish'
   ],
-  'merchandise': [
+  merchandise: [
     'wares',
     'commodities',
     'goods',
@@ -34613,7 +34613,7 @@ const SYN_DB = {
     'commerce',
     'stock'
   ],
-  'merchant': [
+  merchant: [
     'trader',
     'shopkeeper',
     'dealer',
@@ -34621,7 +34621,7 @@ const SYN_DB = {
     'trafficker',
     'importer'
   ],
-  'merciful': [
+  merciful: [
     'compassionate',
     'tender',
     'humane',
@@ -34635,7 +34635,7 @@ const SYN_DB = {
     'forgiving',
     'tenderhearted'
   ],
-  'mercy': [
+  mercy: [
     'compassion',
     'grace',
     'favor',
@@ -34656,7 +34656,7 @@ const SYN_DB = {
     'lenience',
     'leniency'
   ],
-  'mere': [
+  mere: [
     'unmixed',
     'pure',
     'absolute',
@@ -34666,7 +34666,7 @@ const SYN_DB = {
     'unaffected',
     'unadulterated'
   ],
-  'meridian': [
+  meridian: [
     'midday',
     'noon',
     'zenith',
@@ -34677,7 +34677,7 @@ const SYN_DB = {
     'pinnacle',
     'acme'
   ],
-  'merit': [
+  merit: [
     'desert',
     'worth',
     'excellence',
@@ -34687,7 +34687,7 @@ const SYN_DB = {
     'credit',
     'goodness'
   ],
-  'merry': [
+  merry: [
     'gay',
     'jovial',
     'sportive',
@@ -34703,7 +34703,7 @@ const SYN_DB = {
     'jocund',
     'hilarious'
   ],
-  'message': [
+  message: [
     'notice',
     'word',
     'communication',
@@ -34711,7 +34711,7 @@ const SYN_DB = {
     'letter',
     'intimation'
   ],
-  'messenger': [
+  messenger: [
     'carrier',
     'harbinger',
     'intelligencer',
@@ -34720,7 +34720,7 @@ const SYN_DB = {
     'herald',
     'precursor'
   ],
-  'metaphysical': [
+  metaphysical: [
     'mental',
     'intellectual',
     'psychological',
@@ -34733,7 +34733,7 @@ const SYN_DB = {
     'abstruse',
     'conceptual'
   ],
-  'method': [
+  method: [
     'order',
     'system',
     'rule',
@@ -34746,7 +34746,7 @@ const SYN_DB = {
     'means',
     'regularity'
   ],
-  'midst': [
+  midst: [
     'middle',
     'center',
     'heart',
@@ -34754,7 +34754,7 @@ const SYN_DB = {
     'press',
     'burden'
   ],
-  'mien': [
+  mien: [
     'aspect',
     'manner',
     'bearing',
@@ -34763,7 +34763,7 @@ const SYN_DB = {
     'deportment',
     'appearance'
   ],
-  'mild': [
+  mild: [
     'gentle',
     'pleasant',
     'clement',
@@ -34776,7 +34776,7 @@ const SYN_DB = {
     'genial',
     'meek'
   ],
-  'mind': [
+  mind: [
     'understanding',
     'intellect',
     'soul',
@@ -34802,7 +34802,7 @@ const SYN_DB = {
     'thought',
     'instinct'
   ],
-  'mindful': [
+  mindful: [
     'regardful',
     'attentive',
     'heedful',
@@ -34810,7 +34810,7 @@ const SYN_DB = {
     'thoughtful',
     'careful'
   ],
-  'mingle': [
+  mingle: [
     'combine',
     'join',
     'confuse',
@@ -34822,7 +34822,7 @@ const SYN_DB = {
     'blend',
     'amalgamate'
   ],
-  'minister': [
+  minister: [
     'delegate',
     'official',
     'ambassador',
@@ -34836,7 +34836,7 @@ const SYN_DB = {
     'curate',
     'envoy'
   ],
-  'minor': [
+  minor: [
     'inferior',
     'smaller',
     'less',
@@ -34844,7 +34844,7 @@ const SYN_DB = {
     'unimportant',
     'younger'
   ],
-  'minute': [
+  minute: [
     'small',
     'tiny',
     'slender',
@@ -34863,18 +34863,18 @@ const SYN_DB = {
     'inconsiderable',
     'microscopic'
   ],
-  'miraculous': [
+  miraculous: [
     'supernatural',
     'superphysical',
     'wonderful',
     'awesome'
   ],
-  'misanthropy': [
+  misanthropy: [
     'cynicism',
     'hatred',
     'egoism'
   ],
-  'miscellany': [
+  miscellany: [
     'mass',
     'mixture',
     'collection',
@@ -34884,7 +34884,7 @@ const SYN_DB = {
     'hodgepodge',
     'diversity'
   ],
-  'mischief': [
+  mischief: [
     'damage',
     'harm',
     'hurt',
@@ -34895,13 +34895,13 @@ const SYN_DB = {
     'miahap',
     'trouble'
   ],
-  'miser': [
+  miser: [
     'niggard',
     'skinflint',
     'curmudgeon',
     'churl'
   ],
-  'miserable': [
+  miserable: [
     'abject',
     'forlorn',
     'pitiable',
@@ -34911,7 +34911,7 @@ const SYN_DB = {
     'despicable',
     'unlucky'
   ],
-  'misery': [
+  misery: [
     'unhappiness',
     'wretchedness',
     'woe',
@@ -34919,7 +34919,7 @@ const SYN_DB = {
     'disaster',
     'misfortune'
   ],
-  'misfortune': [
+  misfortune: [
     'adversity',
     'failure',
     'hardship',
@@ -34947,7 +34947,7 @@ const SYN_DB = {
     'bereavement',
     'mishap'
   ],
-  'mission': [
+  mission: [
     'message',
     'errand',
     'commission',
@@ -34958,7 +34958,7 @@ const SYN_DB = {
     'trust',
     'office'
   ],
-  'mist': [
+  mist: [
     'fog',
     'vapor',
     'obscuration',
@@ -34967,14 +34967,14 @@ const SYN_DB = {
     'bewilderment',
     'haze'
   ],
-  'mob': [
+  mob: [
     'elite',
     'aristocracy',
     'nobility',
     'nobles',
     'patricians'
   ],
-  'mobile': [
+  mobile: [
     'movable',
     'excitable',
     'inconstant',
@@ -34984,7 +34984,7 @@ const SYN_DB = {
     'ductile',
     'sensitive'
   ],
-  'model': [
+  model: [
     'mold',
     'copy',
     'design',
@@ -35001,7 +35001,7 @@ const SYN_DB = {
     'archetype',
     'norm'
   ],
-  'moderate': [
+  moderate: [
     'sparing',
     'temperate',
     'frugal',
@@ -35017,7 +35017,7 @@ const SYN_DB = {
     'austere',
     'ascetic'
   ],
-  'modern': [
+  modern: [
     'new',
     'novel',
     'modish',
@@ -35027,7 +35027,7 @@ const SYN_DB = {
     'extant',
     'recent'
   ],
-  'modesty': [
+  modesty: [
     'humility',
     'lowliness',
     'humbleness',
@@ -35042,7 +35042,7 @@ const SYN_DB = {
     'unobtrusiveness',
     'coyness'
   ],
-  'moment': [
+  moment: [
     'instant',
     'twinkling',
     'consequence',
@@ -35055,7 +35055,7 @@ const SYN_DB = {
     'second',
     'trice'
   ],
-  'monarch': [
+  monarch: [
     'ruler',
     'sovereign',
     'king',
@@ -35063,7 +35063,7 @@ const SYN_DB = {
     'emperor',
     'queen'
   ],
-  'money': [
+  money: [
     'coin',
     'cash',
     'currency',
@@ -35077,7 +35077,7 @@ const SYN_DB = {
     'notes',
     'capital'
   ],
-  'monotonous': [
+  monotonous: [
     'unvarying',
     'uniform',
     'wearisome',
@@ -35090,7 +35090,7 @@ const SYN_DB = {
     'similar',
     'like'
   ],
-  'monster': [
+  monster: [
     'prodigy',
     'enormity',
     'marvel',
@@ -35105,7 +35105,7 @@ const SYN_DB = {
     'leviathan',
     'ogre'
   ],
-  'monstrous': [
+  monstrous: [
     'abnormal',
     'extraordinary',
     'prodigious',
@@ -35122,7 +35122,7 @@ const SYN_DB = {
     'terrible',
     'hideous'
   ],
-  'moral': [
+  moral: [
     'dutiful',
     'right',
     'virtuous',
@@ -35136,14 +35136,14 @@ const SYN_DB = {
     'righteous',
     'ideal'
   ],
-  'moreover': [
+  moreover: [
     'besides',
     'further',
     'inaddition',
     'also',
     'likewise'
   ],
-  'morose': [
+  morose: [
     'gruff',
     'gloomy',
     'crusty',
@@ -35159,7 +35159,7 @@ const SYN_DB = {
     'illnatured',
     'sulky'
   ],
-  'mortal': [
+  mortal: [
     'deathlike',
     'deadly',
     'destructive',
@@ -35172,7 +35172,7 @@ const SYN_DB = {
     'transient',
     'transitory'
   ],
-  'motherly': [
+  motherly: [
     'maternal',
     'motherlike',
     'parental',
@@ -35180,7 +35180,7 @@ const SYN_DB = {
     'loving',
     'affectionate'
   ],
-  'motion': [
+  motion: [
     'movement',
     'change',
     'action',
@@ -35191,7 +35191,7 @@ const SYN_DB = {
     'transit',
     'transition'
   ],
-  'motive': [
+  motive: [
     'incentive',
     'incitement',
     'inducement',
@@ -35206,7 +35206,7 @@ const SYN_DB = {
     'impulse',
     'prompting'
   ],
-  'mourn': [
+  mourn: [
     'lament',
     'grieve',
     'regret',
@@ -35214,7 +35214,7 @@ const SYN_DB = {
     'bewail',
     'sorrow'
   ],
-  'mournful': [
+  mournful: [
     'lugubrious',
     'heavy',
     'sad',
@@ -35222,7 +35222,7 @@ const SYN_DB = {
     'grievous',
     'calamitous'
   ],
-  'move': [
+  move: [
     'stir',
     'agitate',
     'trouble',
@@ -35236,7 +35236,7 @@ const SYN_DB = {
     'offer',
     'induce'
   ],
-  'much': [
+  much: [
     'great',
     'long',
     'considerable',
@@ -35245,7 +35245,7 @@ const SYN_DB = {
     'ample',
     'plenteous'
   ],
-  'multiplication': [
+  multiplication: [
     'teeming',
     'multiplicity',
     'multitude',
@@ -35257,7 +35257,7 @@ const SYN_DB = {
     'multifariousness',
     'multitudinousness'
   ],
-  'multitude': [
+  multitude: [
     'throng',
     'crowd',
     'assembly',
@@ -35270,7 +35270,7 @@ const SYN_DB = {
     'mob',
     'concourse'
   ],
-  'mundane': [
+  mundane: [
     'worldly',
     'terrestrial',
     'earthly',
@@ -35278,7 +35278,7 @@ const SYN_DB = {
     'secular',
     'temporal'
   ],
-  'munificent': [
+  munificent: [
     'bounteous',
     'bountiful',
     'liberal',
@@ -35288,7 +35288,7 @@ const SYN_DB = {
     'lavish',
     'extravagant'
   ],
-  'musical': [
+  musical: [
     'melodious',
     'harmonious',
     'tuneful',
@@ -35296,7 +35296,7 @@ const SYN_DB = {
     'mellifluous',
     'rhythmical'
   ],
-  'mute': [
+  mute: [
     'silent',
     'dumb',
     'speechless',
@@ -35306,14 +35306,14 @@ const SYN_DB = {
     'unresponsive',
     'taciturn'
   ],
-  'mutual': [
+  mutual: [
     'common',
     'correlative',
     'reciprocal',
     'joint',
     'interchangeable'
   ],
-  'mysterious': [
+  mysterious: [
     'abstruse',
     'enigmatical',
     'dark',
@@ -35332,7 +35332,7 @@ const SYN_DB = {
     'incomprehensible',
     'recondite'
   ],
-  'mystic': [
+  mystic: [
     'unknowable',
     'obscure',
     'mysterious',
@@ -35342,7 +35342,7 @@ const SYN_DB = {
     'cabalistic',
     'symbolical'
   ],
-  'myth': [
+  myth: [
     'fable',
     'tradition',
     'legend',
@@ -35353,7 +35353,7 @@ const SYN_DB = {
     'falsehood',
     'lie'
   ],
-  'naked': [
+  naked: [
     'nude',
     'bare',
     'defenseless',
@@ -35370,7 +35370,7 @@ const SYN_DB = {
     'uncolored',
     'unvarnished'
   ],
-  'name': [
+  name: [
     'appellation',
     'denomination',
     'cognomen',
@@ -35388,7 +35388,7 @@ const SYN_DB = {
     'style',
     'nominate'
   ],
-  'narrate': [
+  narrate: [
     'relate',
     'tell',
     'recount',
@@ -35398,7 +35398,7 @@ const SYN_DB = {
     'report',
     'recite'
   ],
-  'narrative': [
+  narrative: [
     'narration',
     'recital',
     'account',
@@ -35409,7 +35409,7 @@ const SYN_DB = {
     'tale',
     'history'
   ],
-  'narrow': [
+  narrow: [
     'straitened',
     'limited',
     'bigoted',
@@ -35426,13 +35426,13 @@ const SYN_DB = {
     'contracted',
     'cramped'
   ],
-  'nascent': [
+  nascent: [
     'embryo',
     'rudimental',
     'budding',
     'incipient'
   ],
-  'nasty': [
+  nasty: [
     'filthy',
     'foul',
     'dirty',
@@ -35444,7 +35444,7 @@ const SYN_DB = {
     'indecent',
     'obscene'
   ],
-  'nation': [
+  nation: [
     'people',
     'race',
     'stock',
@@ -35453,14 +35453,14 @@ const SYN_DB = {
     'state',
     'commonwealth'
   ],
-  'native': [
+  native: [
     'innate',
     'natal',
     'natural',
     'original',
     'indigenous'
   ],
-  'natural': [
+  natural: [
     'native',
     'essential',
     'normal',
@@ -35476,7 +35476,7 @@ const SYN_DB = {
     'genuine',
     'unaffected'
   ],
-  'nature': [
+  nature: [
     'creation',
     'universe',
     'essence',
@@ -35492,12 +35492,12 @@ const SYN_DB = {
     'intelligence',
     'vitality'
   ],
-  'naught': [
+  naught: [
     'nothing',
     'cipher',
     'zero'
   ],
-  'naughty': [
+  naughty: [
     'mischievous',
     'perverse',
     'bad',
@@ -35507,7 +35507,7 @@ const SYN_DB = {
     'refractory',
     'wicked'
   ],
-  'nausea': [
+  nausea: [
     'seasickness',
     'loathing',
     'disgust',
@@ -35515,7 +35515,7 @@ const SYN_DB = {
     'repugnance',
     'aversion'
   ],
-  'near': [
+  near: [
     'nigh',
     'almost',
     'nearly',
@@ -35545,14 +35545,14 @@ const SYN_DB = {
     'present',
     'ready'
   ],
-  'nearly': [
+  nearly: [
     'almost',
     'wellnigh',
     'intimately',
     'closely',
     'approximately'
   ],
-  'neat': [
+  neat: [
     'trim',
     'tidy',
     'prim',
@@ -35565,7 +35565,7 @@ const SYN_DB = {
     'dapper',
     'nice'
   ],
-  'necessary': [
+  necessary: [
     'essential',
     'inevitable',
     'needful',
@@ -35576,7 +35576,7 @@ const SYN_DB = {
     'requisite',
     'unavoidable'
   ],
-  'necessitate': [
+  necessitate: [
     'force',
     'compel',
     'coerce',
@@ -35586,7 +35586,7 @@ const SYN_DB = {
     'drive',
     'impel'
   ],
-  'necessity': [
+  necessity: [
     'need',
     'requirement',
     'want',
@@ -35603,7 +35603,7 @@ const SYN_DB = {
     'urgency',
     'unavoidableness'
   ],
-  'need': [
+  need: [
     'exigency',
     'emergency',
     'extremity',
@@ -35612,7 +35612,7 @@ const SYN_DB = {
     'indigence',
     'penury'
   ],
-  'needful': [
+  needful: [
     'requisite',
     'needy',
     'necessitous',
@@ -35620,14 +35620,14 @@ const SYN_DB = {
     'essential',
     'indispensable'
   ],
-  'needless': [
+  needless: [
     'unnecessary',
     'useless',
     'superfluous',
     'groundless',
     'gratuitous'
   ],
-  'nefarious': [
+  nefarious: [
     'wicked',
     'abominable',
     'iniquitous',
@@ -35635,20 +35635,20 @@ const SYN_DB = {
     'atrocious',
     'impious'
   ],
-  'negation': [
+  negation: [
     'denial',
     'disavowal',
     'disclaimer',
     'contradiction'
   ],
-  'negative': [
+  negative: [
     'denying',
     'indirect',
     'unaffirmative',
     'privative',
     'disclaiming'
   ],
-  'neglect': [
+  neglect: [
     'negligence',
     'failure',
     'omission',
@@ -35667,7 +35667,7 @@ const SYN_DB = {
     'inattention',
     'scorn'
   ],
-  'neighborly': [
+  neighborly: [
     'kind',
     'civil',
     'social',
@@ -35679,7 +35679,7 @@ const SYN_DB = {
     'friendly',
     'attentive'
   ],
-  'nerve': [
+  nerve: [
     'steadiness',
     'firmness',
     'fortitude',
@@ -35691,7 +35691,7 @@ const SYN_DB = {
     'endurance',
     'coolness'
   ],
-  'nervous': [
+  nervous: [
     'excitable',
     'agitated',
     'annoyed',
@@ -35704,7 +35704,7 @@ const SYN_DB = {
     'nervy',
     'forceful'
   ],
-  'neutral': [
+  neutral: [
     'neuter',
     'undecided',
     'indifferent',
@@ -35715,13 +35715,13 @@ const SYN_DB = {
     'unavowed',
     'unaffiliated'
   ],
-  'neutralize': [
+  neutralize: [
     'invalidate',
     'counteract',
     'counterbalance',
     'countervail'
   ],
-  'new': [
+  new: [
     'fresh',
     'modern',
     'novel',
@@ -35734,7 +35734,7 @@ const SYN_DB = {
     'youthful',
     'newfashioned'
   ],
-  'news': [
+  news: [
     'information',
     'tidings',
     'intelligence',
@@ -35745,7 +35745,7 @@ const SYN_DB = {
     'announcement',
     'rumor'
   ],
-  'nice': [
+  nice: [
     'exquisite',
     'accurate',
     'correct',
@@ -35773,7 +35773,7 @@ const SYN_DB = {
     'pleasant',
     'agreeable'
   ],
-  'nicety': [
+  nicety: [
     'fastidiousness',
     'accuracy',
     'scrupulousness',
@@ -35784,7 +35784,7 @@ const SYN_DB = {
     'distinction',
     'exactness'
   ],
-  'niggardly': [
+  niggardly: [
     'avaricious',
     'covetous',
     'parsimonious',
@@ -35794,7 +35794,7 @@ const SYN_DB = {
     'penurious',
     'stingy'
   ],
-  'nimble': [
+  nimble: [
     'alert',
     'brisk',
     'bustling',
@@ -35808,7 +35808,7 @@ const SYN_DB = {
     'sprightly',
     'active'
   ],
-  'nobility': [
+  nobility: [
     'greatness',
     'dignity',
     'superiority',
@@ -35823,7 +35823,7 @@ const SYN_DB = {
     'aristocracy',
     'peerage'
   ],
-  'noble': [
+  noble: [
     'honorable',
     'worthy',
     'dignified',
@@ -35834,18 +35834,18 @@ const SYN_DB = {
     'eminent',
     'stately'
   ],
-  'nobody': [
+  nobody: [
     'notanybody',
     'cipher',
     'nonentity'
   ],
-  'nocturnal': [
+  nocturnal: [
     'nightly',
     'dark',
     'tenebrose',
     'gloomy'
   ],
-  'noise': [
+  noise: [
     'cry',
     'outcry',
     'clamor',
@@ -35857,12 +35857,12 @@ const SYN_DB = {
     'rattle',
     'tumult'
   ],
-  'noiseless': [
+  noiseless: [
     'silent',
     'quiet',
     'inaudible'
   ],
-  'noisome': [
+  noisome: [
     'noxious',
     'insalubrious',
     'unwholesome',
@@ -35873,14 +35873,14 @@ const SYN_DB = {
     'pestilential',
     'harmful'
   ],
-  'noisy': [
+  noisy: [
     'loud',
     'clamorous',
     'stunning',
     'boisterous',
     'turbulent'
   ],
-  'nominal': [
+  nominal: [
     'literal',
     'verbal',
     'titular',
@@ -35890,14 +35890,14 @@ const SYN_DB = {
     'ostensible',
     'supposititious'
   ],
-  'nominate': [
+  nominate: [
     'name',
     'specify',
     'appoint',
     'designate',
     'entitle'
   ],
-  'nonsense': [
+  nonsense: [
     'folly',
     'silliness',
     'absurdity',
@@ -35906,7 +35906,7 @@ const SYN_DB = {
     'platitude',
     'pretense'
   ],
-  'normal': [
+  normal: [
     'regular',
     'standard',
     'usual',
@@ -35914,7 +35914,7 @@ const SYN_DB = {
     'recognized',
     'common'
   ],
-  'notable': [
+  notable: [
     'plain',
     'evident',
     'noted',
@@ -35926,7 +35926,7 @@ const SYN_DB = {
     'manifest',
     'notorious'
   ],
-  'note': [
+  note: [
     'memorandum',
     'comment',
     'remark',
@@ -35944,7 +35944,7 @@ const SYN_DB = {
     'repute',
     'renown'
   ],
-  'notice': [
+  notice: [
     'observation',
     'regard',
     'cognizance',
@@ -35971,7 +35971,7 @@ const SYN_DB = {
     'attend',
     'mind'
   ],
-  'notification': [
+  notification: [
     'information',
     'notice',
     'declaration',
@@ -35979,7 +35979,7 @@ const SYN_DB = {
     'announcement',
     'advertisement'
   ],
-  'notify': [
+  notify: [
     'intimate',
     'declare',
     'publish',
@@ -35990,7 +35990,7 @@ const SYN_DB = {
     'communicate',
     'inform'
   ],
-  'notion': [
+  notion: [
     'idea',
     'conception',
     'apprehension',
@@ -36003,7 +36003,7 @@ const SYN_DB = {
     'conceit',
     'conviction'
   ],
-  'notorious': [
+  notorious: [
     'distinguished',
     'conspicuous',
     'remarkable',
@@ -36012,7 +36012,7 @@ const SYN_DB = {
     'noted',
     'renowned'
   ],
-  'notwithstanding': [
+  notwithstanding: [
     'still',
     'however',
     'although',
@@ -36023,7 +36023,7 @@ const SYN_DB = {
     'though',
     'despite'
   ],
-  'nourish': [
+  nourish: [
     'feed',
     'foster',
     'cherish',
@@ -36035,12 +36035,12 @@ const SYN_DB = {
     'educate',
     'promote'
   ],
-  'novel': [
+  novel: [
     '1eneroblc',
     'ancient',
     'onored'
   ],
-  'noxious': [
+  noxious: [
     'noisome',
     'injurious',
     'hurtful',
@@ -36049,19 +36049,19 @@ const SYN_DB = {
     'deadly',
     'poisonous'
   ],
-  'nucleus': [
+  nucleus: [
     'kernel',
     'core',
     'center'
   ],
-  'nudity': [
+  nudity: [
     'nakedness',
     'exposure'
   ],
-  'bareness': [
+  bareness: [
     'bareness'
   ],
-  'nugatory': [
+  nugatory: [
     'trifling',
     'vain',
     'insignificant',
@@ -36073,7 +36073,7 @@ const SYN_DB = {
     'useless',
     'null'
   ],
-  'nuisance': [
+  nuisance: [
     'annoyance',
     'plague',
     'pest',
@@ -36081,7 +36081,7 @@ const SYN_DB = {
     'bane',
     'trouble'
   ],
-  'nullify': [
+  nullify: [
     'revoke',
     'annul',
     'cancel',
@@ -36090,7 +36090,7 @@ const SYN_DB = {
     'neutralize',
     'repeal'
   ],
-  'numb': [
+  numb: [
     'enfeebled',
     'destitute',
     'torpid',
@@ -36099,7 +36099,7 @@ const SYN_DB = {
     'paralyzed',
     'deadened'
   ],
-  'number': [
+  number: [
     'aggregation',
     'multitude',
     'collection',
@@ -36114,12 +36114,12 @@ const SYN_DB = {
     'reckon',
     'estimate'
   ],
-  'numberless': [
+  numberless: [
     'innumerable',
     'infinite',
     'countless'
   ],
-  'numerous': [
+  numerous: [
     'many',
     'abundant',
     'diverse',
@@ -36127,7 +36127,7 @@ const SYN_DB = {
     'manifold',
     'sundry'
   ],
-  'nuptial': [
+  nuptial: [
     'wedding',
     'marriage',
     'hymeneal',
@@ -36135,7 +36135,7 @@ const SYN_DB = {
     'connubial',
     'bridal'
   ],
-  'nurse': [
+  nurse: [
     'nourish',
     'cherish',
     'foster',
@@ -36147,7 +36147,7 @@ const SYN_DB = {
     'feed',
     'nurture'
   ],
-  'nurture': [
+  nurture: [
     'nourish',
     'nurse',
     'tend',
@@ -36156,7 +36156,7 @@ const SYN_DB = {
     'train',
     'feed'
   ],
-  'nutriment': [
+  nutriment: [
     'aliment',
     'food',
     'sustenance',
@@ -36165,12 +36165,12 @@ const SYN_DB = {
     'subsistence',
     'nutrition'
   ],
-  'nutrition': [
+  nutrition: [
     'nutriment',
     'feeding',
     'sustentation'
   ],
-  'oath': [
+  oath: [
     'curse',
     'imprecation',
     'profanity',
@@ -36186,7 +36186,7 @@ const SYN_DB = {
     'vow',
     'reprobation'
   ],
-  'obdurate': [
+  obdurate: [
     'firm',
     'unbending',
     'inflexible',
@@ -36198,7 +36198,7 @@ const SYN_DB = {
     'unfeeling',
     'insensible'
   ],
-  'obedience': [
+  obedience: [
     'submission',
     'duty',
     'compliance',
@@ -36206,7 +36206,7 @@ const SYN_DB = {
     'dutifulness',
     'subservience'
   ],
-  'obedient': [
+  obedient: [
     'dutiful',
     'respectful',
     'compliant',
@@ -36217,18 +36217,18 @@ const SYN_DB = {
     'modest',
     'docile'
   ],
-  'obesity': [
+  obesity: [
     'fatness',
     'corpulence',
     'fleshiness',
     'corpulency'
   ],
-  'obey': [
+  obey: [
     'submit',
     'yield',
     'comply'
   ],
-  'object': [
+  object: [
     'reality',
     'fact',
     'existence',
@@ -36244,7 +36244,7 @@ const SYN_DB = {
     'view',
     'goal'
   ],
-  'objective': [
+  objective: [
     'outward',
     'external',
     'extrinsic',
@@ -36254,14 +36254,14 @@ const SYN_DB = {
     'positive',
     'real'
   ],
-  'oblation': [
+  oblation: [
     'offering',
     'gift',
     'sacrifice',
     'contribution',
     'presentation'
   ],
-  'obligation': [
+  obligation: [
     'responsibility',
     'engagement',
     'contract',
@@ -36274,7 +36274,7 @@ const SYN_DB = {
     'duty',
     'compulsion'
   ],
-  'oblige': [
+  oblige: [
     'bind',
     'please',
     'gratify',
@@ -36288,7 +36288,7 @@ const SYN_DB = {
     'necessitate',
     'obligate'
   ],
-  'obliging': [
+  obliging: [
     'civil',
     'courteous',
     'complaisant',
@@ -36297,7 +36297,7 @@ const SYN_DB = {
     'accommodating',
     'compliant'
   ],
-  'oblique': [
+  oblique: [
     'indirect',
     'slanting',
     'inclined',
@@ -36307,18 +36307,18 @@ const SYN_DB = {
     'divergent',
     'angular'
   ],
-  'oblivion': [
+  oblivion: [
     'forgetfulness',
     'disremembrance'
   ],
-  'obnoxious': [
+  obnoxious: [
     'odious',
     'detrimental',
     'blameworthy',
     'pernicious',
     'offensive'
   ],
-  'obscure': [
+  obscure: [
     'doubtful',
     'intricate',
     'dusky',
@@ -36334,7 +36334,7 @@ const SYN_DB = {
     'unascertained',
     'remote'
   ],
-  'obsequious': [
+  obsequious: [
     'servile',
     'cringing',
     'fawning',
@@ -36344,7 +36344,7 @@ const SYN_DB = {
     'sycophantic',
     'flattering'
   ],
-  'observance': [
+  observance: [
     'observation',
     'heeding',
     'form',
@@ -36355,7 +36355,7 @@ const SYN_DB = {
     'ceremony',
     'performance'
   ],
-  'observant': [
+  observant: [
     'observing',
     'watchful',
     'attentive',
@@ -36365,7 +36365,7 @@ const SYN_DB = {
     'careful',
     'heedful'
   ],
-  'observation': [
+  observation: [
     'contemplation',
     'remark',
     'study',
@@ -36378,7 +36378,7 @@ const SYN_DB = {
     'note',
     'observance'
   ],
-  'observe': [
+  observe: [
     'remark',
     'note',
     'watch',
@@ -36388,7 +36388,7 @@ const SYN_DB = {
     'attend',
     'comment'
   ],
-  'obsolete': [
+  obsolete: [
     'disused',
     'ancient',
     'neglected',
@@ -36401,7 +36401,7 @@ const SYN_DB = {
     'rare',
     'obsolescent'
   ],
-  'obstacle': [
+  obstacle: [
     'impediment',
     'obstruction',
     'difficulty',
@@ -36409,7 +36409,7 @@ const SYN_DB = {
     'barrier',
     'check'
   ],
-  'obstinacy': [
+  obstinacy: [
     'pertinacity',
     'firmness',
     'resoluteness',
@@ -36418,7 +36418,7 @@ const SYN_DB = {
     'perverseness',
     'contumacy'
   ],
-  'obstinate': [
+  obstinate: [
     'perverse',
     'obdurate',
     'intractable',
@@ -36446,7 +36446,7 @@ const SYN_DB = {
     'refractory',
     'unconquerable'
   ],
-  'obstruct': [
+  obstruct: [
     'bar',
     'barricade',
     'hinder',
@@ -36462,7 +36462,7 @@ const SYN_DB = {
     'retard',
     'interrupt'
   ],
-  'obstruction': [
+  obstruction: [
     'obstacle',
     'barrier',
     'bar',
@@ -36471,7 +36471,7 @@ const SYN_DB = {
     'clog',
     'hindrance'
   ],
-  'obtain': [
+  obtain: [
     'attain',
     'gain',
     'procure',
@@ -36479,24 +36479,24 @@ const SYN_DB = {
     'earn',
     'win'
   ],
-  'obtrude': [
+  obtrude: [
     'intrude',
     'force',
     'interfere',
     'thrust'
   ],
-  'obtuse': [
+  obtuse: [
     'blunt',
     'dull',
     'stupid',
     'unintelligent',
     'stolid'
   ],
-  'obverse': [
+  obverse: [
     'opposite',
     'facing'
   ],
-  'obvious': [
+  obvious: [
     'opposing',
     'plain',
     'evident',
@@ -36509,7 +36509,7 @@ const SYN_DB = {
     'explicit',
     'patent'
   ],
-  'occasion': [
+  occasion: [
     'cause',
     'produce',
     'create',
@@ -36520,12 +36520,12 @@ const SYN_DB = {
     'constitute',
     'generate'
   ],
-  'occasionally': [
+  occasionally: [
     'sometimes',
     'casually',
     'rarely'
   ],
-  'occult': [
+  occult: [
     'secrot',
     'concealed',
     'hidden',
@@ -36536,12 +36536,12 @@ const SYN_DB = {
     'unrevealed',
     'mysterious'
   ],
-  'occupancy': [
+  occupancy: [
     'possession',
     'occupation',
     'tenurv'
   ],
-  'occupation': [
+  occupation: [
     'occupancy',
     'avocation',
     'employment',
@@ -36550,7 +36550,7 @@ const SYN_DB = {
     'office',
     'trade'
   ],
-  'profession': [
+  profession: [
     'profession',
     'avowal',
     'declaration',
@@ -36566,13 +36566,13 @@ const SYN_DB = {
     'pretense',
     'protestation'
   ],
-  'occupy': [
+  occupy: [
     'possess',
     'hold',
     'employ',
     'fill'
   ],
-  'occurrence': [
+  occurrence: [
     'event',
     'happening',
     'incident',
@@ -36582,7 +36582,7 @@ const SYN_DB = {
     'transaction',
     'episode'
   ],
-  'odious': [
+  odious: [
     'hateful',
     'detestable',
     'disgusting',
@@ -36593,7 +36593,7 @@ const SYN_DB = {
     'invidious',
     'loathsome'
   ],
-  'odium': [
+  odium: [
     'hatred',
     'abhorrence',
     'detestation',
@@ -36601,7 +36601,7 @@ const SYN_DB = {
     'unpopularity',
     'offensiveness'
   ],
-  'oclor': [
+  oclor: [
     'scent',
     'perfume',
     'smell',
@@ -36612,14 +36612,14 @@ const SYN_DB = {
     'effluvium',
     'fume'
   ],
-  'odorous': [
+  odorous: [
     'fragrant',
     'perfumed',
     'balmy',
     'aromatic',
     'odorant'
   ],
-  'offend': [
+  offend: [
     'displease',
     'affront',
     'harm',
@@ -36627,7 +36627,7 @@ const SYN_DB = {
     'annoy',
     'transgress'
   ],
-  'offensive': [
+  offensive: [
     'disagreeable',
     'obnoxious',
     'distasteful',
@@ -36643,7 +36643,7 @@ const SYN_DB = {
     'invading',
     'assailant'
   ],
-  'offer': [
+  offer: [
     'propose',
     'propound',
     'tender',
@@ -36654,7 +36654,7 @@ const SYN_DB = {
     'try',
     'proffer'
   ],
-  'offhand': [
+  offhand: [
     'instant',
     'ready',
     'extemporaneous',
@@ -36662,7 +36662,7 @@ const SYN_DB = {
     'unstudied',
     'impromptu'
   ],
-  'office': [
+  office: [
     'service',
     'duty',
     'custom',
@@ -36672,7 +36672,7 @@ const SYN_DB = {
     'function',
     'business'
   ],
-  'officer': [
+  officer: [
     'official',
     'functionary',
     'director',
@@ -36680,18 +36680,18 @@ const SYN_DB = {
     'manager',
     'administrator'
   ],
-  'official': [
+  official: [
     'administrative',
     'authoritative',
     'functional',
     'professional'
   ],
-  'officiate': [
+  officiate: [
     'act',
     'serve',
     'perform'
   ],
-  'officious': [
+  officious: [
     'impertinent',
     'meddlesome',
     'interfering',
@@ -36699,12 +36699,12 @@ const SYN_DB = {
     'intrusive',
     'pushing'
   ],
-  'often': [
+  often: [
     'frequently',
     'repeatedly',
     'commonly'
   ],
-  'old': [
+  old: [
     'aged',
     'ancient',
     'primitive',
@@ -36726,7 +36726,7 @@ const SYN_DB = {
     'venerable',
     'timeworn'
   ],
-  'omen': [
+  omen: [
     'prognostic',
     'augury',
     'presage',
@@ -36734,7 +36734,7 @@ const SYN_DB = {
     'portent',
     'foreboding'
   ],
-  'ominous': [
+  ominous: [
     'significant',
     'portentous',
     'unpropitious',
@@ -36744,24 +36744,24 @@ const SYN_DB = {
     'premonitory',
     'suggestive'
   ],
-  'omit': [
+  omit: [
     'neglect',
     'forbear',
     'fail',
     'miss',
     'overlook'
   ],
-  'omnipotent': [
+  omnipotent: [
     'allpowerful',
     'irresistible',
     'almighty'
   ],
-  'omniscient': [
+  omniscient: [
     'allknowing',
     'infallible',
     'allwise'
   ],
-  'one': [
+  one: [
     'single',
     'individual',
     'solitary',
@@ -36771,7 +36771,7 @@ const SYN_DB = {
     'united',
     'unitary'
   ],
-  'onerous': [
+  onerous: [
     'burdensome',
     'oppressive',
     'heavy',
@@ -36780,7 +36780,7 @@ const SYN_DB = {
     'laborious',
     'responsible'
   ],
-  'only': [
+  only: [
     'solely',
     'singly',
     'exclusively',
@@ -36793,23 +36793,23 @@ const SYN_DB = {
     'preeminent',
     'chief'
   ],
-  'onset': [
+  onset: [
     'assault',
     'attack',
     'storming',
     'aggression',
     'invasion'
   ],
-  'onward': [
+  onward: [
     'forward',
     'ahead'
   ],
-  'opaque': [
+  opaque: [
     'impervious',
     'obscure',
     'unintelligible'
   ],
-  'pen': [
+  pen: [
     'unclose',
     'disclose',
     'expose',
@@ -36833,7 +36833,7 @@ const SYN_DB = {
     'undisguised',
     'ingenuous'
   ],
-  'opening': [
+  opening: [
     'aperture',
     'hole',
     'space',
@@ -36847,7 +36847,7 @@ const SYN_DB = {
     'beginning',
     'opportunity'
   ],
-  'operation': [
+  operation: [
     'agency',
     'action',
     'exercise',
@@ -36860,7 +36860,7 @@ const SYN_DB = {
     'effect',
     'execution'
   ],
-  'opinion': [
+  opinion: [
     'persuasion',
     'idea',
     'sentiment',
@@ -36871,14 +36871,14 @@ const SYN_DB = {
     'impression',
     'estimation'
   ],
-  'opponent': [
+  opponent: [
     'antagonist',
     'foe',
     'adversary',
     'enemy',
     'rival'
   ],
-  'opportune': [
+  opportune: [
     'timely',
     'seasonable',
     'convenient',
@@ -36888,14 +36888,14 @@ const SYN_DB = {
     'meet',
     'appropriate'
   ],
-  'opportunity': [
+  opportunity: [
     'occasion',
     'convenience',
     'occurrence',
     'turn',
     'opening'
   ],
-  'oppose': [
+  oppose: [
     'combat',
     'withstand',
     'contradict',
@@ -36906,7 +36906,7 @@ const SYN_DB = {
     'check',
     'obstruct'
   ],
-  'opposite': [
+  opposite: [
     'facing',
     'contrary',
     'repugnant',
@@ -36916,7 +36916,7 @@ const SYN_DB = {
     'contradictory',
     'opposed'
   ],
-  'opposition': [
+  opposition: [
     'restraint',
     'defeat',
     'resistance',
@@ -36925,7 +36925,7 @@ const SYN_DB = {
     'obstruction',
     'animosity'
   ],
-  'oppress': [
+  oppress: [
     'impose',
     'burden',
     'grind',
@@ -36935,14 +36935,14 @@ const SYN_DB = {
     'overpower',
     'subdue'
   ],
-  'oppression': [
+  oppression: [
     'cruelty',
     'tyranny',
     'hardship',
     'injustice',
     'severity'
   ],
-  'oppressive': [
+  oppressive: [
     'heavy',
     'oppressing',
     'rigorous',
@@ -36951,7 +36951,7 @@ const SYN_DB = {
     'extortionate',
     'grinding'
   ],
-  'opprobrium': [
+  opprobrium: [
     'disgrace',
     'infamy',
     'reproach',
@@ -36960,7 +36960,7 @@ const SYN_DB = {
     'obloquy',
     'odium'
   ],
-  'option': [
+  option: [
     'choice',
     'preference',
     'selection',
@@ -36968,19 +36968,19 @@ const SYN_DB = {
     'wish',
     'election'
   ],
-  'opulence': [
+  opulence: [
     'wealth',
     'riches',
     'fortune',
     'affluence',
     'independence'
   ],
-  'oracle': [
+  oracle: [
     'revelation',
     'prophet',
     'angel'
   ],
-  'oracular': [
+  oracular: [
     'prophetic',
     'ominous',
     'portentous',
@@ -36994,14 +36994,14 @@ const SYN_DB = {
     'equivocal',
     'ambiguous'
   ],
-  'oral': [
+  oral: [
     'verbal',
     'unwritten',
     'vocal',
     'spoken',
     'traditional'
   ],
-  'oration': [
+  oration: [
     'address',
     'speech',
     'discourse',
@@ -37011,13 +37011,13 @@ const SYN_DB = {
     'declamation',
     'effusion'
   ],
-  'oratory': [
+  oratory: [
     'eloquence',
     'rhetoric',
     'elocution',
     'declamation'
   ],
-  'orb': [
+  orb: [
     'sphere',
     'globe',
     'ball',
@@ -37027,13 +37027,13 @@ const SYN_DB = {
     'disk',
     'revolution'
   ],
-  'orbit': [
+  orbit: [
     'revolution',
     'path',
     'circuit',
     'sphere'
   ],
-  'ordain': [
+  ordain: [
     'set',
     'regulate',
     'establish',
@@ -37044,7 +37044,7 @@ const SYN_DB = {
     'prescribe',
     'dictate'
   ],
-  'ordeal': [
+  ordeal: [
     'test',
     'trial',
     'experiment',
@@ -37054,7 +37054,7 @@ const SYN_DB = {
     'assay',
     'investigation'
   ],
-  'order': [
+  order: [
     'arrangement',
     'system',
     'procedure',
@@ -37075,7 +37075,7 @@ const SYN_DB = {
     'requirement',
     'instruction'
   ],
-  'orderly': [
+  orderly: [
     'regular',
     'obedient',
     'systematic',
@@ -37084,7 +37084,7 @@ const SYN_DB = {
     'methodical',
     'wellregulated'
   ],
-  'ordinance': [
+  ordinance: [
     'statue',
     'law',
     'edict',
@@ -37094,7 +37094,7 @@ const SYN_DB = {
     'institute',
     'rule'
   ],
-  'ordinary': [
+  ordinary: [
     'normal',
     'usual',
     'common',
@@ -37108,7 +37108,7 @@ const SYN_DB = {
     'plain',
     'commonplace'
   ],
-  'organic': [
+  organic: [
     'inherent',
     'fundamental',
     'essential',
@@ -37118,13 +37118,13 @@ const SYN_DB = {
     'organized',
     'systematized'
   ],
-  'organization': [
+  organization: [
     'structure',
     'form',
     'construction',
     'organism'
   ],
-  'organize': [
+  organize: [
     'arrange',
     'constitute',
     'shape',
@@ -37134,7 +37134,7 @@ const SYN_DB = {
     'construct',
     'systematize'
   ],
-  'origin': [
+  origin: [
     'source',
     'rise',
     'commencement',
@@ -37145,7 +37145,7 @@ const SYN_DB = {
     'root',
     'foundation'
   ],
-  'originate': [
+  originate: [
     'begin',
     'cause',
     'commence',
@@ -37155,12 +37155,12 @@ const SYN_DB = {
     'spring',
     'rise'
   ],
-  'ornament': [
+  ornament: [
     'decoration',
     'embellishment',
     'adornment'
   ],
-  'ornate': [
+  ornate: [
     'adorned',
     'beautiful',
     'embellished',
@@ -37169,13 +37169,13 @@ const SYN_DB = {
     'rich',
     'ornamented'
   ],
-  'orthodox': [
+  orthodox: [
     'sound',
     'conventional',
     'approved',
     'correct'
   ],
-  'ostensible': [
+  ostensible: [
     'exhibited',
     'avowed',
     'professed',
@@ -37187,7 +37187,7 @@ const SYN_DB = {
     'plausible',
     'outward'
   ],
-  'ostentation': [
+  ostentation: [
     'display',
     'boasting',
     'show',
@@ -37199,7 +37199,7 @@ const SYN_DB = {
     'parade',
     'pageantry'
   ],
-  'ostracism': [
+  ostracism: [
     'banishment',
     'exclusion',
     'expulsion',
@@ -37207,7 +37207,7 @@ const SYN_DB = {
     'excommunication',
     'separation'
   ],
-  'outbreak': [
+  outbreak: [
     'outburst',
     'eruption',
     'tumult',
@@ -37217,7 +37217,7 @@ const SYN_DB = {
     'riot',
     'conflict'
   ],
-  'outcast': [
+  outcast: [
     'exile',
     'vagabond',
     'reprobate',
@@ -37225,7 +37225,7 @@ const SYN_DB = {
     'pariah',
     'vagrant'
   ],
-  'outcry': [
+  outcry: [
     'clamor',
     'tumult',
     'vociferation',
@@ -37234,13 +37234,13 @@ const SYN_DB = {
     'scream',
     'noise'
   ],
-  'outer': [
+  outer: [
     'outside',
     'outward',
     'external',
     'exterior'
   ],
-  'outlaw': [
+  outlaw: [
     'brigand',
     'bandit',
     'robber',
@@ -37248,19 +37248,19 @@ const SYN_DB = {
     'marauder',
     'freebooter'
   ],
-  'outlet': [
+  outlet: [
     'egress',
     'exit',
     'vent'
   ],
-  'outline': [
+  outline: [
     'contour',
     'sketch',
     'delineation',
     'draft',
     'plan'
   ],
-  'outrage': [
+  outrage: [
     'outbreak',
     'offense',
     'violence',
@@ -37270,7 +37270,7 @@ const SYN_DB = {
     'insult',
     'indignity'
   ],
-  'outrageous': [
+  outrageous: [
     'violent',
     'furious',
     'excessive',
@@ -37281,7 +37281,7 @@ const SYN_DB = {
     'nefarious',
     'heinous'
   ],
-  'outskirts': [
+  outskirts: [
     'border',
     'edge',
     'outpost',
@@ -37289,7 +37289,7 @@ const SYN_DB = {
     'environs',
     'suburbs'
   ],
-  'outstanding': [
+  outstanding: [
     'uncollected',
     'undischarged',
     'unappropriated',
@@ -37297,7 +37297,7 @@ const SYN_DB = {
     'projecting',
     'opposing'
   ],
-  'outward': [
+  outward: [
     'out',
     'outer',
     'external',
@@ -37311,7 +37311,7 @@ const SYN_DB = {
     'extrinsic',
     'ostensible'
   ],
-  'overcast': [
+  overcast: [
     'cloudy',
     'lowering',
     'obscured',
@@ -37320,7 +37320,7 @@ const SYN_DB = {
     'overspread',
     'eclipsed'
   ],
-  'overcome': [
+  overcome: [
     'vanquish',
     'conquer',
     'surmount',
@@ -37329,14 +37329,14 @@ const SYN_DB = {
     'subjugate',
     'rule'
   ],
-  'overflow': [
+  overflow: [
     'redundancy',
     'inundation',
     'deluge',
     'exuberance',
     'superabundance'
   ],
-  'overruling': [
+  overruling: [
     'governing',
     'controlling',
     'superior',
@@ -37344,7 +37344,7 @@ const SYN_DB = {
     'directing',
     'prevailing'
   ],
-  'oversight': [
+  oversight: [
     'charge',
     'superintendence',
     'management',
@@ -37361,7 +37361,7 @@ const SYN_DB = {
     'error',
     'inadvertence'
   ],
-  'overt': [
+  overt: [
     'public',
     'manifest',
     'apparent',
@@ -37369,7 +37369,7 @@ const SYN_DB = {
     'open',
     'avowed'
   ],
-  'overthrow': [
+  overthrow: [
     'upset',
     'ruin',
     'demolish',
@@ -37377,7 +37377,7 @@ const SYN_DB = {
     'overcome',
     'defeat'
   ],
-  'overture': [
+  overture: [
     'proposal',
     'proposition',
     'offer',
@@ -37387,7 +37387,7 @@ const SYN_DB = {
     'advance',
     'initiation'
   ],
-  'overweening': [
+  overweening: [
     'rash',
     'arrogant',
     'egoistic',
@@ -37395,7 +37395,7 @@ const SYN_DB = {
     'haughty',
     'conceited'
   ],
-  'overwhelm': [
+  overwhelm: [
     'submerge',
     'engulf',
     'immerse',
@@ -37409,12 +37409,12 @@ const SYN_DB = {
     'conquer',
     'defeat'
   ],
-  'owe': [
+  owe: [
     'borrow',
     'hypothecate',
     'attribute'
   ],
-  'own': [
+  own: [
     'possess',
     'grant',
     'acknowledge',
@@ -37422,7 +37422,7 @@ const SYN_DB = {
     'confess',
     'avow'
   ],
-  'pacific': [
+  pacific: [
     'appeasing',
     'reconciling',
     'tranquil',
@@ -37431,14 +37431,14 @@ const SYN_DB = {
     'peaceful',
     'conciliatory'
   ],
-  'pacification': [
+  pacification: [
     'conciliation',
     'compromise',
     'reconcilement',
     'adjustment',
     'reconciliation'
   ],
-  'pact': [
+  pact: [
     'agreement',
     'league',
     'compact',
@@ -37448,20 +37448,20 @@ const SYN_DB = {
     'alliance',
     'bond'
   ],
-  'paean': [
+  paean: [
     'jubilation'
   ],
-  'pagan': [
+  pagan: [
     'gentile',
     'heathen',
     'idolater'
   ],
-  'paganism': [
+  paganism: [
     'heathenism',
     'polytheism',
     'pantheism'
   ],
-  'pageantry': [
+  pageantry: [
     'pomp',
     'parade',
     'display',
@@ -37470,7 +37470,7 @@ const SYN_DB = {
     'splendor',
     'magnificence'
   ],
-  'pain': [
+  pain: [
     'agony',
     'ache',
     'distress',
@@ -37494,7 +37494,7 @@ const SYN_DB = {
     'torment',
     'torture'
   ],
-  'painful': [
+  painful: [
     'disquieting',
     'troublesome',
     'afflictive',
@@ -37505,21 +37505,21 @@ const SYN_DB = {
     'arduous',
     'difficult'
   ],
-  'painstaking': [
+  painstaking: [
     'careful',
     'diligent',
     'attentive',
     'faithful',
     'laborious'
   ],
-  'pair': [
+  pair: [
     'two',
     'couple',
     'span',
     'brace',
     'yoke'
   ],
-  'pale': [
+  pale: [
     'pallid',
     'white',
     'wan',
@@ -37527,7 +37527,7 @@ const SYN_DB = {
     'dim',
     'sallow'
   ],
-  'palliate': [
+  palliate: [
     'cover',
     'conceal',
     'extenuate',
@@ -37537,14 +37537,14 @@ const SYN_DB = {
     'cloak',
     'mitigate'
   ],
-  'palm': [
+  palm: [
     'laurels',
     'bays',
     'prize',
     'trophy',
     'crown'
   ],
-  'palpable': [
+  palpable: [
     'perceptible',
     'obvious',
     'plain',
@@ -37556,7 +37556,7 @@ const SYN_DB = {
     'patent',
     'distinct'
   ],
-  'paltry': [
+  paltry: [
     'contemptible',
     'worthless',
     'mean',
@@ -37564,27 +37564,27 @@ const SYN_DB = {
     'pitiful',
     'trifling'
   ],
-  'panegyric': [
+  panegyric: [
     'eulogy',
     'encomium',
     'praise',
     'laudation',
     'commendation'
   ],
-  'pang': [
+  pang: [
     'agony',
     'anguish',
     'distress',
     'paroxysm',
     'throe'
   ],
-  'parable': [
+  parable: [
     'fable',
     'allegory',
     'apologue',
     'similitude'
   ],
-  'parade': [
+  parade: [
     'ostentation',
     'display',
     'show',
@@ -37593,40 +37593,40 @@ const SYN_DB = {
     'spectacle',
     'procession'
   ],
-  'paradise': [
+  paradise: [
     'bliss',
     'heaven',
     'eden',
     'ecstasy',
     'elysium'
   ],
-  'paradox': [
+  paradox: [
     'contradiction',
     'ambiguity',
     'absurdity',
     'enigma',
     'mystery'
   ],
-  'parallel': [
+  parallel: [
     'correspondent',
     'correllative',
     'analogous',
     'concurrent',
     'equidistant'
   ],
-  'paramount': [
+  paramount: [
     'supreme',
     'preeminent',
     'chief',
     'superior',
     'principal'
   ],
-  'parasite': [
+  parasite: [
     'flatterer',
     'sycophant',
     'courtier'
   ],
-  'pardon': [
+  pardon: [
     'absolution',
     'mercy',
     'forgiveness',
@@ -37642,12 +37642,12 @@ const SYN_DB = {
     'remit',
     'acquit'
   ],
-  'pardonable': [
+  pardonable: [
     'excusable',
     'forgivable',
     'venial'
   ],
-  'parentage': [
+  parentage: [
     'descent',
     'extraction',
     'lineage',
@@ -37655,7 +37655,7 @@ const SYN_DB = {
     'stock',
     'pedigree'
   ],
-  'parsimonious': [
+  parsimonious: [
     'avaricious',
     'frugal',
     'sparing',
@@ -37665,7 +37665,7 @@ const SYN_DB = {
     'niggardly',
     'illiberal'
   ],
-  'part': [
+  part: [
     'fraction',
     'fragment',
     'section',
@@ -37683,11 +37683,11 @@ const SYN_DB = {
     'share',
     'subdivision'
   ],
-  'partake': [
+  partake: [
     'share',
     'participate'
   ],
-  'partial': [
+  partial: [
     'biased',
     'restricted',
     'specific',
@@ -37700,7 +37700,7 @@ const SYN_DB = {
     'interested',
     'inequitable'
   ],
-  'particle': [
+  particle: [
     'atom',
     'corpuscle',
     'iota',
@@ -37714,7 +37714,7 @@ const SYN_DB = {
     'scrap',
     'shredscintilla'
   ],
-  'particular': [
+  particular: [
     'detail',
     'point',
     'feature',
@@ -37733,7 +37733,7 @@ const SYN_DB = {
     'critical',
     'circumstantial'
   ],
-  'parting': [
+  parting: [
     'separation',
     'leavetaking',
     'farewell',
@@ -37742,13 +37742,13 @@ const SYN_DB = {
     'disruption',
     'detachment'
   ],
-  'partisan': [
+  partisan: [
     'adherent',
     'follower',
     'supporter',
     'disciple'
   ],
-  'partition': [
+  partition: [
     'division',
     'distribution',
     'separation',
@@ -37758,11 +37758,11 @@ const SYN_DB = {
     'interspace',
     'barrier'
   ],
-  'partly': [
+  partly: [
     'somewhat',
     'partially'
   ],
-  'partner': [
+  partner: [
     'associate',
     'colleague',
     'coadjutor',
@@ -37773,11 +37773,11 @@ const SYN_DB = {
     'mate',
     'companion'
   ],
-  'partnership': [
+  partnership: [
     'company',
     'firm'
   ],
-  'pass': [
+  pass: [
     'go',
     'move',
     'proceed',
@@ -37799,7 +37799,7 @@ const SYN_DB = {
     'pledge',
     'finish'
   ],
-  'passable': [
+  passable: [
     'navigable',
     'current',
     'acceptable',
@@ -37809,7 +37809,7 @@ const SYN_DB = {
     'traversible',
     'mediocre'
   ],
-  'passage': [
+  passage: [
     'transit',
     'conveyance',
     'journey',
@@ -37823,13 +37823,13 @@ const SYN_DB = {
     'vestibule',
     'corridor'
   ],
-  'passible': [
+  passible: [
     'susceptible',
     'sensitive',
     'sensible',
     'impressible'
   ],
-  'passion': [
+  passion: [
     'feeling',
     'emotion',
     'susceptibility',
@@ -37841,7 +37841,7 @@ const SYN_DB = {
     'warmth',
     'vehemence'
   ],
-  'passive': [
+  passive: [
     'quiescent',
     'unopposing',
     'enduring',
@@ -37853,7 +37853,7 @@ const SYN_DB = {
     'relaxed',
     'negative'
   ],
-  'past': [
+  past: [
     'elapsed',
     'ended',
     'spent',
@@ -37861,7 +37861,7 @@ const SYN_DB = {
     'late',
     'accomplished'
   ],
-  'pastime': [
+  pastime: [
     'entertainment',
     'recreation',
     'sport',
@@ -37869,7 +37869,7 @@ const SYN_DB = {
     'amusement',
     'diversion'
   ],
-  'patent': [
+  patent: [
     'open',
     'expanded',
     'evident',
@@ -37877,13 +37877,13 @@ const SYN_DB = {
     'manifest',
     'public'
   ],
-  'paternal': [
+  paternal: [
     'fatherly',
     'tender',
     'careful',
     'hereditary'
   ],
-  'path': [
+  path: [
     'footway',
     'track',
     'pathway',
@@ -37892,7 +37892,7 @@ const SYN_DB = {
     'road',
     'method'
   ],
-  'pathetic': [
+  pathetic: [
     'affecting',
     'emotional',
     'moving',
@@ -37902,12 +37902,12 @@ const SYN_DB = {
     'melting',
     'plaintive'
   ],
-  'pathless': [
+  pathless: [
     'untrodden',
     'impenetrable',
     'trackless'
   ],
-  'patience': [
+  patience: [
     'composure',
     'calmness',
     'leniency',
@@ -37919,7 +37919,7 @@ const SYN_DB = {
     'resignation',
     'longsuffering'
   ],
-  'patient': [
+  patient: [
     'resigned',
     'passive',
     'enduring',
@@ -37928,18 +37928,18 @@ const SYN_DB = {
     'forbearing',
     'longsuffering'
   ],
-  'patrician': [
+  patrician: [
     'noble',
     'aristocratic',
     'highborn',
     'wellborn'
   ],
-  'patrimony': [
+  patrimony: [
     'heritage',
     'inheritance',
     'estate'
   ],
-  'pattern': [
+  pattern: [
     'archetype',
     'exemplar',
     'specimen',
@@ -37947,7 +37947,7 @@ const SYN_DB = {
     'design',
     'mold'
   ],
-  'paucity': [
+  paucity: [
     'scantiness',
     'deficiency',
     'fewness',
@@ -37955,7 +37955,7 @@ const SYN_DB = {
     'want',
     'rarity'
   ],
-  'pause': [
+  pause: [
     'stop',
     'cease',
     'intermit',
@@ -37965,7 +37965,7 @@ const SYN_DB = {
     'demur',
     'hesitate'
   ],
-  'pay': [
+  pay: [
     'earnings',
     'stipend',
     'salary',
@@ -37990,7 +37990,7 @@ const SYN_DB = {
     'liquidate',
     'disburse'
   ],
-  'payment': [
+  payment: [
     'pay',
     'compensation',
     'satisfaction',
@@ -38002,7 +38002,7 @@ const SYN_DB = {
     'requital',
     'return'
   ],
-  'peace': [
+  peace: [
     'quiet',
     'calm',
     'repose',
@@ -38016,7 +38016,7 @@ const SYN_DB = {
     'order',
     'pacification'
   ],
-  'peaceable': [
+  peaceable: [
     'peaceful',
     'pacific',
     'undisturbed',
@@ -38026,14 +38026,14 @@ const SYN_DB = {
     'serene',
     'still'
   ],
-  'peasant': [
+  peasant: [
     'countryman',
     'rustic',
     'swain',
     'laborer',
     'villager'
   ],
-  'peculiar': [
+  peculiar: [
     'special',
     'especial',
     'individual',
@@ -38044,7 +38044,7 @@ const SYN_DB = {
     'strange',
     'rare'
   ],
-  'peculiarity': [
+  peculiarity: [
     'individuality',
     'singularity',
     'idiosyncrasy',
@@ -38053,7 +38053,7 @@ const SYN_DB = {
     'characteristic',
     'particularity'
   ],
-  'pedigree': [
+  pedigree: [
     'lineage',
     'descent',
     'ancestry',
@@ -38061,7 +38061,7 @@ const SYN_DB = {
     'birth',
     'parentage'
   ],
-  'peer': [
+  peer: [
     'equal',
     'match',
     'mate',
@@ -38069,7 +38069,7 @@ const SYN_DB = {
     'associate',
     'nobleman'
   ],
-  'peerless': [
+  peerless: [
     'unmatched',
     'matchless',
     'unequaled',
@@ -38077,7 +38077,7 @@ const SYN_DB = {
     'superlative',
     'paramount'
   ],
-  'peevish': [
+  peevish: [
     'querulous',
     'cross',
     'testy',
@@ -38089,12 +38089,12 @@ const SYN_DB = {
     'illnatured',
     'irascible'
   ],
-  'penal': [
+  penal: [
     'punitive',
     'retributive',
     'corrective'
   ],
-  'penalty': [
+  penalty: [
     'retribution',
     'forfeiture',
     'fine',
@@ -38102,14 +38102,14 @@ const SYN_DB = {
     'amercement',
     'mulct'
   ],
-  'pendent': [
+  pendent: [
     'pendulous',
     'overhanging',
     'hanging',
     'suspended',
     'depending'
   ],
-  'penetrate': [
+  penetrate: [
     'enter',
     'pierce',
     'comprehend',
@@ -38119,7 +38119,7 @@ const SYN_DB = {
     'permeate',
     'fathom'
   ],
-  'penetration': [
+  penetration: [
     'discernment',
     'sagacity',
     'acuteness',
@@ -38128,7 +38128,7 @@ const SYN_DB = {
     'observation',
     'insight'
   ],
-  'penitence': [
+  penitence: [
     'repentance',
     'contrition',
     'remorse',
@@ -38136,11 +38136,11 @@ const SYN_DB = {
     'regret',
     'compunction'
   ],
-  'penitent': [
+  penitent: [
     'repentant',
     'contrite'
   ],
-  'pensive': [
+  pensive: [
     'thoughtful',
     'sad',
     'wistful',
@@ -38153,7 +38153,7 @@ const SYN_DB = {
     'solemn',
     'reflective'
   ],
-  'penurious': [
+  penurious: [
     'covetous',
     'parsimonious',
     'stingy',
@@ -38161,7 +38161,7 @@ const SYN_DB = {
     'niggardly',
     'sordid'
   ],
-  'penury': [
+  penury: [
     'want',
     'privation',
     'indigence',
@@ -38170,7 +38170,7 @@ const SYN_DB = {
     'beggary',
     'need'
   ],
-  'people': [
+  people: [
     'nation',
     'race',
     'population',
@@ -38179,19 +38179,19 @@ const SYN_DB = {
     'community',
     'commonwealth'
   ],
-  'perceivable': [
+  perceivable: [
     'discernible',
     'distinguishable',
     'cognizable',
     'observable'
   ],
-  'perceive': [
+  perceive: [
     'comprehend',
     'apprehend',
     'conceive',
     'understand'
   ],
-  'perception': [
+  perception: [
     'discernment',
     'apprehension',
     'recognition',
@@ -38201,21 +38201,21 @@ const SYN_DB = {
     'sensation',
     'sense'
   ],
-  'percolate': [
+  percolate: [
     'filter',
     'strain',
     'exude',
     'drain',
     'ooze'
   ],
-  'percussion': [
+  percussion: [
     'shock',
     'clash',
     'collision',
     'concussion',
     'encounter'
   ],
-  'perdition': [
+  perdition: [
     'loss',
     'ruin',
     'destruction',
@@ -38223,7 +38223,7 @@ const SYN_DB = {
     'wreck',
     'demolition'
   ],
-  'peremptory': [
+  peremptory: [
     'decisive',
     'positive',
     'absolute',
@@ -38235,7 +38235,7 @@ const SYN_DB = {
     'determined',
     'resolute'
   ],
-  'perennial': [
+  perennial: [
     'perpetual',
     'unceasing',
     'enduring',
@@ -38244,7 +38244,7 @@ const SYN_DB = {
     'permanent',
     'uninterrupted'
   ],
-  'perfect': [
+  perfect: [
     'finished',
     'complete',
     'entire',
@@ -38265,7 +38265,7 @@ const SYN_DB = {
     'spotless',
     'unblemished'
   ],
-  'perfection': [
+  perfection: [
     'excellence',
     'completeness',
     'faultlessness',
@@ -38274,7 +38274,7 @@ const SYN_DB = {
     'consummation',
     'perfectness'
   ],
-  'perfidious': [
+  perfidious: [
     'false',
     'treacherous',
     'faithless',
@@ -38282,7 +38282,7 @@ const SYN_DB = {
     'dishonest',
     'untrustworthy'
   ],
-  'perform': [
+  perform: [
     'complete',
     'accomplish',
     'execute',
@@ -38296,7 +38296,7 @@ const SYN_DB = {
     'consummate',
     'achieve'
   ],
-  'performance': [
+  performance: [
     'completion',
     'consummation',
     'execution',
@@ -38310,7 +38310,7 @@ const SYN_DB = {
     'exploit',
     'feat'
   ],
-  'perfume': [
+  perfume: [
     'odor',
     'redolence',
     'balminess',
@@ -38319,20 +38319,20 @@ const SYN_DB = {
     'aroma',
     'scent'
   ],
-  'perfunctory': [
+  perfunctory: [
     'mechanical',
     'careless',
     'listless',
     'indifferent'
   ],
-  'perhaps': [
+  perhaps: [
     'peradventure',
     'perchance',
     'maybe',
     'haply',
     'possibly'
   ],
-  'peril': [
+  peril: [
     'hazard',
     'risk',
     'jeopardy',
@@ -38341,7 +38341,7 @@ const SYN_DB = {
     'insecurity',
     'liability'
   ],
-  'period': [
+  period: [
     'time',
     'cycle',
     'age',
@@ -38358,7 +38358,7 @@ const SYN_DB = {
     'conclusion',
     'bound'
   ],
-  'periodical': [
+  periodical: [
     'recurring',
     'regular',
     'stated',
@@ -38367,7 +38367,7 @@ const SYN_DB = {
     'calculable',
     'serial'
   ],
-  'permanent': [
+  permanent: [
     'enduring',
     'abiding',
     'changeless',
@@ -38384,7 +38384,7 @@ const SYN_DB = {
     'persistent',
     'perpetual'
   ],
-  'permission': [
+  permission: [
     'authority',
     'allowance',
     'consent',
@@ -38394,7 +38394,7 @@ const SYN_DB = {
     'permit',
     'authorization'
   ],
-  'pernicious': [
+  pernicious: [
     'mischievous',
     'baneful',
     'destructive',
@@ -38417,7 +38417,7 @@ const SYN_DB = {
     'perverting',
     'ruinous'
   ],
-  'perpetual': [
+  perpetual: [
     'continual',
     'endless',
     'unceasing',
@@ -38430,7 +38430,7 @@ const SYN_DB = {
     'permanent',
     'enduring'
   ],
-  'perplex': [
+  perplex: [
     'entangle',
     'involve',
     'complicate',
@@ -38448,7 +38448,7 @@ const SYN_DB = {
     'bother',
     'mystify'
   ],
-  'perplexity': [
+  perplexity: [
     'confusion',
     'bewilderment',
     'disturbance',
@@ -38458,7 +38458,7 @@ const SYN_DB = {
     'astonishment',
     'amazement'
   ],
-  'perseverance': [
+  perseverance: [
     'persistency',
     'tenacity',
     'steadfastness',
@@ -38468,7 +38468,7 @@ const SYN_DB = {
     'indefatigableness',
     'resolution'
   ],
-  'perspicacity': [
+  perspicacity: [
     'acuteness',
     'keenness',
     'discernment',
@@ -38480,7 +38480,7 @@ const SYN_DB = {
     'distinctness',
     'explicitness'
   ],
-  'perspicuity': [
+  perspicuity: [
     'plainess',
     'lucidity',
     'clearness',
@@ -38489,7 +38489,7 @@ const SYN_DB = {
     'transparency',
     'perspicuousness'
   ],
-  'persuade': [
+  persuade: [
     'dispose',
     'allure',
     'entice',
@@ -38504,7 +38504,7 @@ const SYN_DB = {
     'incite',
     'impel'
   ],
-  'pertinent': [
+  pertinent: [
     'apposite',
     'relevant',
     'suitable',
@@ -38513,7 +38513,7 @@ const SYN_DB = {
     'fit',
     'adapted'
   ],
-  'pertness': [
+  pertness: [
     'impertinence',
     'boldness',
     'forwardness',
@@ -38525,7 +38525,7 @@ const SYN_DB = {
     'smartness',
     'sprightliness'
   ],
-  'perverse': [
+  perverse: [
     'obstinate',
     'contrary',
     'fractious',
@@ -38539,7 +38539,7 @@ const SYN_DB = {
     'factious',
     'untoward'
   ],
-  'petition': [
+  petition: [
     'prayer',
     'supplication',
     'entreaty',
@@ -38549,14 +38549,14 @@ const SYN_DB = {
     'appeal',
     'address'
   ],
-  'philanthropy': [
+  philanthropy: [
     'love',
     'charity',
     'benevolence',
     'humanity',
     'publicspiritedness'
   ],
-  'philosopher': [
+  philosopher: [
     'student',
     'theorist',
     'speculator',
@@ -38567,7 +38567,7 @@ const SYN_DB = {
     'doctor',
     'adept'
   ],
-  'philosophical': [
+  philosophical: [
     'rational',
     'wise',
     'temperate',
@@ -38581,7 +38581,7 @@ const SYN_DB = {
     'tranquil',
     'platonic'
   ],
-  'physical': [
+  physical: [
     'material',
     'natural',
     'corporal',
@@ -38591,7 +38591,7 @@ const SYN_DB = {
     'bodily',
     'corporeal'
   ],
-  'piquant': [
+  piquant: [
     'tart',
     'sharp',
     'pungent',
@@ -38602,7 +38602,7 @@ const SYN_DB = {
     'cutting',
     'severe'
   ],
-  'pique': [
+  pique: [
     'resentment',
     'umbrage',
     'irritation',
@@ -38610,7 +38610,7 @@ const SYN_DB = {
     'grudge',
     'offense'
   ],
-  'piteous': [
+  piteous: [
     'sorrowful',
     'mournful',
     'affecting',
@@ -38622,7 +38622,7 @@ const SYN_DB = {
     'pitiable',
     'pitiful'
   ],
-  'pitiful': [
+  pitiful: [
     'lamentable',
     'mournful',
     'base',
@@ -38638,7 +38638,7 @@ const SYN_DB = {
     'moving',
     'paltry'
   ],
-  'pity': [
+  pity: [
     'sympathy',
     'mercy',
     'tenderness',
@@ -38646,7 +38646,7 @@ const SYN_DB = {
     'compassion',
     'commiseration'
   ],
-  'placid': [
+  placid: [
     'pleased',
     'contented',
     'unruffled',
@@ -38661,7 +38661,7 @@ const SYN_DB = {
     'composed',
     'passionless'
   ],
-  'plain': [
+  plain: [
     'artless',
     'undisguised',
     'sincere',
@@ -38693,13 +38693,13 @@ const SYN_DB = {
     'simple',
     'frugal'
   ],
-  'plant': [
+  plant: [
     'seed',
     'set',
     'sow',
     'seeddown'
   ],
-  'plausible': [
+  plausible: [
     'specious',
     'seeming',
     'pretending',
@@ -38711,7 +38711,7 @@ const SYN_DB = {
     'colorable',
     'feasible'
   ],
-  'plead': [
+  plead: [
     'advocate',
     'ask',
     'beg',
@@ -38722,7 +38722,7 @@ const SYN_DB = {
     'implore',
     'press'
   ],
-  'pleasant': [
+  pleasant: [
     'kindly',
     'obliging',
     'attractive',
@@ -38732,7 +38732,7 @@ const SYN_DB = {
     'kind',
     'goodnatured'
   ],
-  'pleasure': [
+  pleasure: [
     'satisfaction',
     'comfort',
     'solace',
@@ -38750,7 +38750,7 @@ const SYN_DB = {
     'selfindulgence',
     'voluptuousness'
   ],
-  'plenitude': [
+  plenitude: [
     'fulness',
     'abundance',
     'completeness',
@@ -38768,7 +38768,7 @@ const SYN_DB = {
     'supply',
     'sufficiency'
   ],
-  'plentiful': [
+  plentiful: [
     'bountiful',
     'generous',
     'large',
@@ -38793,7 +38793,7 @@ const SYN_DB = {
     'overflowing',
     'abounding'
   ],
-  'plot': [
+  plot: [
     'intrigue',
     'conspiracy',
     'cabal',
@@ -38805,14 +38805,14 @@ const SYN_DB = {
     'machination',
     'story'
   ],
-  'poet': [
+  poet: [
     'bard',
     'singer',
     'rimster',
     'rimer',
     'versifier'
   ],
-  'poetical': [
+  poetical: [
     'metrical',
     'rhythmical',
     'lyric',
@@ -38822,7 +38822,7 @@ const SYN_DB = {
     'fictitious',
     'creative'
   ],
-  'poetry': [
+  poetry: [
     'meter',
     'rime',
     'numbers',
@@ -38831,7 +38831,7 @@ const SYN_DB = {
     'verse',
     'poem'
   ],
-  'poignant': [
+  poignant: [
     'pricking',
     'piercing',
     'sharp',
@@ -38840,7 +38840,7 @@ const SYN_DB = {
     'keen',
     'satirical'
   ],
-  'poisonous': [
+  poisonous: [
     'venomous',
     'baneful',
     'corrupting',
@@ -38852,7 +38852,7 @@ const SYN_DB = {
     'deleterious',
     'mephitic'
   ],
-  'polite': [
+  polite: [
     'courteous',
     'civil',
     'courtly',
@@ -38870,7 +38870,7 @@ const SYN_DB = {
     'wellmannered',
     'wellbred'
   ],
-  'politeness': [
+  politeness: [
     'courtesy',
     'civility',
     'gentility',
@@ -38883,7 +38883,7 @@ const SYN_DB = {
     'complaisance',
     'affability'
   ],
-  'poor': [
+  poor: [
     'needy',
     'indigent',
     'destitute',
@@ -38902,7 +38902,7 @@ const SYN_DB = {
     'insufficient',
     'meek'
   ],
-  'popular': [
+  popular: [
     'cheap',
     'common',
     'ordinary',
@@ -38924,7 +38924,7 @@ const SYN_DB = {
     'plebeian',
     'mediocre'
   ],
-  'position': [
+  position: [
     'situation',
     'station',
     'assertion',
@@ -38944,7 +38944,7 @@ const SYN_DB = {
     'thesis',
     'rank'
   ],
-  'positive': [
+  positive: [
     'real',
     'actual',
     'absolute',
@@ -38970,12 +38970,12 @@ const SYN_DB = {
     'assured',
     'express'
   ],
-  'possession': [
+  possession: [
     'estate',
     'wealth',
     'dominion'
   ],
-  'potent': [
+  potent: [
     'powerful',
     'mighty',
     'puissant',
@@ -38990,7 +38990,7 @@ const SYN_DB = {
     'active',
     'energetic'
   ],
-  'potential': [
+  potential: [
     'possible',
     'implicit',
     'undeveloped',
@@ -38999,7 +38999,7 @@ const SYN_DB = {
     'inherent',
     'intrinsic'
   ],
-  'power': [
+  power: [
     'ability',
     'competency',
     'capacity',
@@ -39022,7 +39022,7 @@ const SYN_DB = {
     'cogency',
     'susceptibility'
   ],
-  'practice': [
+  practice: [
     'usage',
     'habit',
     'custom',
@@ -39033,7 +39033,7 @@ const SYN_DB = {
     'mode',
     'experience'
   ],
-  'praise': [
+  praise: [
     'applause',
     'approval',
     'cheering',
@@ -39061,7 +39061,7 @@ const SYN_DB = {
     'extol',
     'compliment'
   ],
-  'pray': [
+  pray: [
     'ask',
     'beg',
     'beseech',
@@ -39076,7 +39076,7 @@ const SYN_DB = {
     'plead',
     'conjure'
   ],
-  'precarious': [
+  precarious: [
     'doubtful',
     'dubious',
     'hazardous',
@@ -39089,7 +39089,7 @@ const SYN_DB = {
     'unstable',
     'unassured'
   ],
-  'precaution': [
+  precaution: [
     'foresight',
     'prudence',
     'forethought',
@@ -39097,7 +39097,7 @@ const SYN_DB = {
     'wariness',
     'care'
   ],
-  'precedent': [
+  precedent: [
     'example',
     'antecedent',
     'case',
@@ -39106,7 +39106,7 @@ const SYN_DB = {
     'authority',
     'warrant'
   ],
-  'precept': [
+  precept: [
     'commandment',
     'law',
     'injunction',
@@ -39120,7 +39120,7 @@ const SYN_DB = {
     'order',
     'instruction'
   ],
-  'precise': [
+  precise: [
     'accurate',
     'exact',
     'correct',
@@ -39133,20 +39133,20 @@ const SYN_DB = {
     'explicit',
     'terse'
   ],
-  'predatory': [
+  predatory: [
     'plundering',
     'pillaging',
     'ravaging',
     'rapacious',
     'marauding'
   ],
-  'predestination': [
+  predestination: [
     'fate',
     'necessity',
     'foreknowledge',
     'foreordination'
   ],
-  'prediction': [
+  prediction: [
     'prophecy',
     'prognostication',
     'foreboding',
@@ -39157,7 +39157,7 @@ const SYN_DB = {
     'foretelling',
     'presage'
   ],
-  'preface': [
+  preface: [
     'introduction',
     'proem',
     'preamble',
@@ -39165,7 +39165,7 @@ const SYN_DB = {
     'exordium',
     'prelude'
   ],
-  'prefer': [
+  prefer: [
     'choose',
     'elect',
     'select',
@@ -39179,7 +39179,7 @@ const SYN_DB = {
     'present',
     'address'
   ],
-  'prejudice': [
+  prejudice: [
     'bias',
     'partiality',
     'unfairness',
@@ -39187,7 +39187,7 @@ const SYN_DB = {
     'prepossession',
     'presumption'
   ],
-  'preliminary': [
+  preliminary: [
     'prior',
     'introductory',
     'preparatory',
@@ -39197,7 +39197,7 @@ const SYN_DB = {
     'precedent',
     'antecedent'
   ],
-  'premium': [
+  premium: [
     'reward',
     'remuneration',
     'recompense',
@@ -39211,7 +39211,7 @@ const SYN_DB = {
     'enhancement',
     'gratuity'
   ],
-  'preposterous': [
+  preposterous: [
     'irrational',
     'foolish',
     'monstrous',
@@ -39221,7 +39221,7 @@ const SYN_DB = {
     'ridiculous',
     'exorbitant'
   ],
-  'presence': [
+  presence: [
     'person',
     'personality',
     'individuality',
@@ -39233,7 +39233,7 @@ const SYN_DB = {
     'vicinity',
     'neighborhood'
   ],
-  'preservation': [
+  preservation: [
     'security',
     'safety',
     'maintenance',
@@ -39244,7 +39244,7 @@ const SYN_DB = {
     'guardianship',
     'soundness'
   ],
-  'presumption': [
+  presumption: [
     'assumption',
     'arrogance',
     'effrontery',
@@ -39261,7 +39261,7 @@ const SYN_DB = {
     'concession',
     'condition'
   ],
-  'pretend': [
+  pretend: [
     'claim',
     'represent',
     'allege',
@@ -39270,7 +39270,7 @@ const SYN_DB = {
     'profess',
     'counterfeit'
   ],
-  'pretense': [
+  pretense: [
     'disguise',
     'excuse',
     'affectation',
@@ -39291,7 +39291,7 @@ const SYN_DB = {
     'cloak',
     'color'
   ],
-  'prevalence': [
+  prevalence: [
     'success',
     'superiority',
     'predominance',
@@ -39307,7 +39307,7 @@ const SYN_DB = {
     'custom',
     'operation'
   ],
-  'previous': [
+  previous: [
     'antecedent',
     'before',
     'earlier',
@@ -39322,7 +39322,7 @@ const SYN_DB = {
     'foregoing',
     'anterior'
   ],
-  'pride': [
+  pride: [
     'arrogance',
     'insolence',
     'reserve',
@@ -39340,7 +39340,7 @@ const SYN_DB = {
     'selfconceit',
     'selfcomplacency'
   ],
-  'primary': [
+  primary: [
     'first',
     'fundamental',
     'primitive',
@@ -39352,7 +39352,7 @@ const SYN_DB = {
     'elementary',
     'leading'
   ],
-  'prime': [
+  prime: [
     'perfection',
     'culmination',
     'apex',
@@ -39365,7 +39365,7 @@ const SYN_DB = {
     'cream',
     'flower'
   ],
-  'primeval': [
+  primeval: [
     'immemorial',
     'original',
     'old',
@@ -39383,7 +39383,7 @@ const SYN_DB = {
     'primary',
     'primordial'
   ],
-  'principal': [
+  principal: [
     'highest',
     'chief',
     'main',
@@ -39395,7 +39395,7 @@ const SYN_DB = {
     'primary',
     'first'
   ],
-  'principle': [
+  principle: [
     'source',
     'cause',
     'origin',
@@ -39422,7 +39422,7 @@ const SYN_DB = {
     'worth',
     'honor'
   ],
-  'prize': [
+  prize: [
     'trophy',
     'honor',
     'reward',
@@ -39437,7 +39437,7 @@ const SYN_DB = {
     'plunder',
     'booty'
   ],
-  'probation': [
+  probation: [
     'examination',
     'trial',
     'ordeal',
@@ -39446,7 +39446,7 @@ const SYN_DB = {
     'proof',
     'experiment'
   ],
-  'proclaim': [
+  proclaim: [
     'publish',
     'announce',
     'declare',
@@ -39458,7 +39458,7 @@ const SYN_DB = {
     'blazeabroad',
     'report'
   ],
-  'prodigal': [
+  prodigal: [
     'extravagant',
     'profuse',
     'lavish',
@@ -39466,7 +39466,7 @@ const SYN_DB = {
     'wasteful',
     'squandering'
   ],
-  'proficient': [
+  proficient: [
     'expert',
     'adept',
     'skilful',
@@ -39479,7 +39479,7 @@ const SYN_DB = {
     'finished',
     'trained'
   ],
-  'profitable': [
+  profitable: [
     'lucrative',
     'beneficial',
     'useful',
@@ -39489,7 +39489,7 @@ const SYN_DB = {
     'gainful',
     'remunerative'
   ],
-  'profound': [
+  profound: [
     'deep',
     'descending',
     'thorough',
@@ -39506,7 +39506,7 @@ const SYN_DB = {
     'intense',
     'philosophical'
   ],
-  'progress': [
+  progress: [
     'advance',
     'advancement',
     'attainment',
@@ -39517,7 +39517,7 @@ const SYN_DB = {
     'growth',
     'development'
   ],
-  'prohibit': [
+  prohibit: [
     'forbid',
     'hinder',
     'inhibit',
@@ -39527,7 +39527,7 @@ const SYN_DB = {
     'debar',
     'disallow'
   ],
-  'prolific': [
+  prolific: [
     'fertile',
     'fruitful',
     'productive',
@@ -39535,7 +39535,7 @@ const SYN_DB = {
     'teeming',
     'active'
   ],
-  'prolix': [
+  prolix: [
     'long',
     'diffuse',
     'tiresome',
@@ -39549,7 +39549,7 @@ const SYN_DB = {
     'tedious',
     'wearisome'
   ],
-  'prominent': [
+  prominent: [
     'projecting',
     'manifest',
     'protuberant',
@@ -39564,7 +39564,7 @@ const SYN_DB = {
     'leading',
     'characteristic'
   ],
-  'promote': [
+  promote: [
     'encourage',
     'forward',
     'foster',
@@ -39581,7 +39581,7 @@ const SYN_DB = {
     'elevate',
     'exalt'
   ],
-  'prompt': [
+  prompt: [
     'ready',
     'quick',
     'agile',
@@ -39596,7 +39596,7 @@ const SYN_DB = {
     'responsive',
     'unhesitating'
   ],
-  'pronounce': [
+  pronounce: [
     'deliver',
     'speak',
     'utter',
@@ -39608,7 +39608,7 @@ const SYN_DB = {
     'assert',
     'express'
   ],
-  'propagate': [
+  propagate: [
     'increase',
     'diffuse',
     'disseminate',
@@ -39619,7 +39619,7 @@ const SYN_DB = {
     'promulgate',
     'circulate'
   ],
-  'proper': [
+  proper: [
     'own',
     'individual',
     'peculiar',
@@ -39638,13 +39638,13 @@ const SYN_DB = {
     'decent',
     'respectable'
   ],
-  'propitiation': [
+  propitiation: [
     'expiation',
     'satisfaction',
     'atonement',
     'reconciliation'
   ],
-  'propitious': [
+  propitious: [
     'auspicious',
     'kind',
     'benign',
@@ -39656,7 +39656,7 @@ const SYN_DB = {
     'favorable',
     'merciful'
   ],
-  'proportion': [
+  proportion: [
     'ratio',
     'symmetry',
     'relation',
@@ -39670,13 +39670,13 @@ const SYN_DB = {
     'arrangement',
     'adaptation'
   ],
-  'proposal': [
+  proposal: [
     'bid',
     'offer',
     'overture',
     'proposition'
   ],
-  'proposition': [
+  proposition: [
     'proposal',
     'statement',
     'offer',
@@ -39692,7 +39692,7 @@ const SYN_DB = {
     'affirmation',
     'doctrine'
   ],
-  'prosperity': [
+  prosperity: [
     'thrift',
     'weal',
     'welfare',
@@ -39700,7 +39700,7 @@ const SYN_DB = {
     'wellbeing',
     'success'
   ],
-  'protest': [
+  protest: [
     'assert',
     'aver',
     'attest',
@@ -39716,7 +39716,7 @@ const SYN_DB = {
     'deprecate',
     'denounce'
   ],
-  'protract': [
+  protract: [
     'defer',
     'continue',
     'delay',
@@ -39727,7 +39727,7 @@ const SYN_DB = {
     'postpone',
     'prolong'
   ],
-  'proud': [
+  proud: [
     'arrogant',
     'haughty',
     'presumptuous',
@@ -39746,7 +39746,7 @@ const SYN_DB = {
     'imposing',
     'vainglorious'
   ],
-  'proverb': [
+  proverb: [
     'axiom',
     'byword',
     'dictum',
@@ -39760,7 +39760,7 @@ const SYN_DB = {
     'saw',
     'apothegm'
   ],
-  'provide': [
+  provide: [
     'prepare',
     'supply',
     'afford',
@@ -39772,7 +39772,7 @@ const SYN_DB = {
     'stipulate',
     'procure'
   ],
-  'prowess': [
+  prowess: [
     'heroism',
     'valor',
     'gallantry',
@@ -39780,7 +39780,7 @@ const SYN_DB = {
     'courage',
     'intrepidity'
   ],
-  'prudence': [
+  prudence: [
     'discretion',
     'frugality',
     'forethought',
@@ -39795,7 +39795,7 @@ const SYN_DB = {
     'carefulness',
     'circumspection'
   ],
-  'prudent': [
+  prudent: [
     'cautious',
     'considerate',
     'judicious',
@@ -39808,7 +39808,7 @@ const SYN_DB = {
     'economical',
     'thrifty'
   ],
-  'public': [
+  public: [
     'common',
     'general',
     'popular',
@@ -39816,7 +39816,7 @@ const SYN_DB = {
     'open',
     'notorious'
   ],
-  'punctilious': [
+  punctilious: [
     'exact',
     'particular',
     'precise',
@@ -39827,7 +39827,7 @@ const SYN_DB = {
     'punctual',
     'ceremonious'
   ],
-  'puny': [
+  puny: [
     'small',
     'feeble',
     'inferior',
@@ -39840,7 +39840,7 @@ const SYN_DB = {
     'undersized',
     'tiny'
   ],
-  'pupil': [
+  pupil: [
     'learner',
     'disciple',
     'student',
@@ -39848,7 +39848,7 @@ const SYN_DB = {
     'ward',
     'tyro'
   ],
-  'purchase': [
+  purchase: [
     'buy',
     'obtain',
     'procure',
@@ -39857,7 +39857,7 @@ const SYN_DB = {
     'bargainfor',
     'get'
   ],
-  'pure': [
+  pure: [
     'innocent',
     'unsullied',
     'spotless',
@@ -39892,7 +39892,7 @@ const SYN_DB = {
     'upright',
     'perfect'
   ],
-  'purpose': [
+  purpose: [
     'design',
     'end',
     'intention',
@@ -39906,7 +39906,7 @@ const SYN_DB = {
     'effect',
     'project'
   ],
-  'put': [
+  put: [
     'deposit',
     'place',
     'set',
@@ -39923,7 +39923,7 @@ const SYN_DB = {
     'entice',
     'constrain'
   ],
-  'putrid': [
+  putrid: [
     'decayed',
     'decomposed',
     'rotten',
@@ -39932,7 +39932,7 @@ const SYN_DB = {
     'foul',
     'offensive'
   ],
-  'quality': [
+  quality: [
     'property',
     'peculiarity',
     'sort',
@@ -39953,7 +39953,7 @@ const SYN_DB = {
     'capacity',
     'tendency'
   ],
-  'quantity': [
+  quantity: [
     'greatness',
     'measure',
     'amount',
@@ -39966,7 +39966,7 @@ const SYN_DB = {
     'content',
     'comprehensiveness'
   ],
-  'queer': [
+  queer: [
     'curious',
     'bizarre',
     'droll',
@@ -39994,7 +39994,7 @@ const SYN_DB = {
     'eccentric',
     'crotchety'
   ],
-  'querimonious': [
+  querimonious: [
     'lamenting',
     'complaining',
     'whining',
@@ -40005,7 +40005,7 @@ const SYN_DB = {
     'dissatisfied',
     'malcontent'
   ],
-  'query': [
+  query: [
     'inquiry',
     'doubt',
     'point',
@@ -40020,7 +40020,7 @@ const SYN_DB = {
     'scrutiny',
     'interrogation'
   ],
-  'question': [
+  question: [
     'ask',
     'interrogate',
     'catechize',
@@ -40033,7 +40033,7 @@ const SYN_DB = {
     'query',
     'tlubitate'
   ],
-  'quick': [
+  quick: [
     'speedy',
     'expeditious',
     'active',
@@ -40062,7 +40062,7 @@ const SYN_DB = {
     'perceptive',
     'intelligent'
   ],
-  'quicken': [
+  quicken: [
     'hasten',
     'hurry',
     'accelerate',
@@ -40076,7 +40076,7 @@ const SYN_DB = {
     'promote',
     'advance'
   ],
-  'quiet': [
+  quiet: [
     'rest',
     'repose',
     'tranquillity',
@@ -40102,7 +40102,7 @@ const SYN_DB = {
     'undemonstrative',
     'meek'
   ],
-  'quote': [
+  quote: [
     'cite',
     'recite',
     'plagiarize',
@@ -40111,7 +40111,7 @@ const SYN_DB = {
     'extract',
     'paraphrase'
   ],
-  'racy': [
+  racy: [
     'lively',
     'piquant',
     'pungent',
@@ -40121,7 +40121,7 @@ const SYN_DB = {
     'flavorous',
     'rich'
   ],
-  'radiant': [
+  radiant: [
     'lustrous',
     'brilliant',
     'splendid',
@@ -40137,7 +40137,7 @@ const SYN_DB = {
     'effulgent',
     'glorious'
   ],
-  'radical': [
+  radical: [
     'fundamental',
     'innate',
     'essential',
@@ -40157,7 +40157,7 @@ const SYN_DB = {
     'ingrained',
     'constitutional'
   ],
-  'liaise': [
+  liaise: [
     'lift',
     'elevate',
     'heave',
@@ -40188,7 +40188,7 @@ const SYN_DB = {
     'summon',
     'cultivate'
   ],
-  'ramble': [
+  ramble: [
     'rove',
     'roam',
     'wander',
@@ -40198,7 +40198,7 @@ const SYN_DB = {
     'straggle',
     'stray'
   ],
-  'random': [
+  random: [
     'chance',
     'haphazard',
     'fortuitous',
@@ -40212,7 +40212,7 @@ const SYN_DB = {
     'accidental',
     'vague'
   ],
-  'ransom': [
+  ransom: [
     'redeem',
     'liberate',
     'rescue',
@@ -40221,7 +40221,7 @@ const SYN_DB = {
     'emancipate',
     'indemnify'
   ],
-  'rapid': [
+  rapid: [
     'swift',
     'quick',
     'fast',
@@ -40231,7 +40231,7 @@ const SYN_DB = {
     'expeditious',
     'hurried'
   ],
-  'rapidity': [
+  rapidity: [
     'rapidness',
     'haste',
     'celerity',
@@ -40243,7 +40243,7 @@ const SYN_DB = {
     'quickness',
     'despatch'
   ],
-  'hash': [
+  hash: [
     'precipitate',
     'headlong',
     'indiscreet',
@@ -40256,7 +40256,7 @@ const SYN_DB = {
     'inconsiderate',
     'unwary'
   ],
-  'bational': [
+  bational: [
     'sane',
     'sound',
     'intelligent',
@@ -40271,7 +40271,7 @@ const SYN_DB = {
     'equitable',
     'enlightened'
   ],
-  'haw': [
+  haw: [
     'unprepared',
     'uncooked',
     'immature',
@@ -40287,14 +40287,14 @@ const SYN_DB = {
     'chilly',
     'bleak'
   ],
-  'heach': [
+  heach: [
     'attain',
     'arrive',
     'enter',
     'land',
     'gain'
   ],
-  'heady': [
+  heady: [
     'prompt',
     'expeditious',
     'speedy',
@@ -40314,7 +40314,7 @@ const SYN_DB = {
     'willing',
     'cheerful'
   ],
-  'reality': [
+  reality: [
     'verity',
     'actuality',
     'substance',
@@ -40325,7 +40325,7 @@ const SYN_DB = {
     'substantiality',
     'existence'
   ],
-  'realm': [
+  realm: [
     'domain',
     'kingdom',
     'region',
@@ -40338,7 +40338,7 @@ const SYN_DB = {
     'sovereignty',
     'dominion'
   ],
-  'rear': [
+  rear: [
     'lift',
     'elevate',
     'erect',
@@ -40355,7 +40355,7 @@ const SYN_DB = {
     'discipline',
     'cherish'
   ],
-  'reason': [
+  reason: [
     'cause',
     'ground',
     'aim',
@@ -40380,13 +40380,13 @@ const SYN_DB = {
     'wrangle',
     'dispute'
   ],
-  'reasoning': [
+  reasoning: [
     'argument',
     'argumentation',
     'debate',
     'ratiocination'
   ],
-  'rebellious': [
+  rebellious: [
     'intractable',
     'refractory',
     'seditious',
@@ -40398,7 +40398,7 @@ const SYN_DB = {
     'ungovernable',
     'uncontrollable'
   ],
-  'recant': [
+  recant: [
     'retract',
     'revoke',
     'recall',
@@ -40407,7 +40407,7 @@ const SYN_DB = {
     'disavow',
     'renounce'
   ],
-  'reception': [
+  reception: [
     'admission',
     'receipt',
     'entertainment',
@@ -40415,7 +40415,7 @@ const SYN_DB = {
     'credence',
     'welcome'
   ],
-  'recite': [
+  recite: [
     'describe',
     'recapitulate',
     'detail',
@@ -40431,7 +40431,7 @@ const SYN_DB = {
     'enumerate',
     'tell'
   ],
-  'reckless': [
+  reckless: [
     'mindless',
     'negligent',
     'thoughtless',
@@ -40443,7 +40443,7 @@ const SYN_DB = {
     'rash',
     'inconsiderate'
   ],
-  'recognize': [
+  recognize: [
     'acknowledge',
     'confess',
     'own',
@@ -40452,7 +40452,7 @@ const SYN_DB = {
     'identify',
     'avow'
   ],
-  'reconcile': [
+  reconcile: [
     'placate',
     'propitiate',
     'pacify',
@@ -40465,7 +40465,7 @@ const SYN_DB = {
     'settle',
     'compose'
   ],
-  'reconciliation': [
+  reconciliation: [
     'reconcilement',
     'reunion',
     'pacification',
@@ -40477,7 +40477,7 @@ const SYN_DB = {
     'restoration',
     'harmony'
   ],
-  'record': [
+  record: [
     'account',
     'entry',
     'enrolment',
@@ -40498,7 +40498,7 @@ const SYN_DB = {
     'schedule',
     'scroll'
   ],
-  'recover': [
+  recover: [
     'cure',
     'heal',
     'retrieve',
@@ -40509,7 +40509,7 @@ const SYN_DB = {
     'reanimate',
     'repossess'
   ],
-  'recovery': [
+  recovery: [
     'repossession',
     'resumption',
     'recruiting',
@@ -40526,7 +40526,7 @@ const SYN_DB = {
     'reinstatement',
     'reestablishment'
   ],
-  'recreation': [
+  recreation: [
     'sport',
     'amusement',
     'diversion',
@@ -40536,7 +40536,7 @@ const SYN_DB = {
     'pastime',
     'relaxation'
   ],
-  'redemption': [
+  redemption: [
     'ransom',
     'release',
     'rescue',
@@ -40550,7 +40550,7 @@ const SYN_DB = {
     'atonement',
     'compensation'
   ],
-  'reduce': [
+  reduce: [
     'lessen',
     'decrease',
     'curtail',
@@ -40566,7 +40566,7 @@ const SYN_DB = {
     'contract',
     'subdue'
   ],
-  'redundant': [
+  redundant: [
     'exuberant',
     'superabundant',
     'overflowing',
@@ -40577,14 +40577,14 @@ const SYN_DB = {
     'plentiful',
     'unnecessary'
   ],
-  'refinement': [
+  refinement: [
     'culture',
     'elegance',
     'cultivation',
     'civilization',
     'politeness'
   ],
-  'reflect': [
+  reflect: [
     'consider',
     'think',
     'cogitate',
@@ -40595,7 +40595,7 @@ const SYN_DB = {
     'muse',
     'animadvert'
   ],
-  'reform': [
+  reform: [
     'amend',
     'correct',
     'rectify',
@@ -40608,7 +40608,7 @@ const SYN_DB = {
     'mend',
     'remodel'
   ],
-  'refuge': [
+  refuge: [
     'shelter',
     'asylum',
     'retreat',
@@ -40620,7 +40620,7 @@ const SYN_DB = {
     'hidingplace',
     'harbor'
   ],
-  'regard': [
+  regard: [
     'consider',
     'observe',
     'remark',
@@ -40634,7 +40634,7 @@ const SYN_DB = {
     'revere',
     'reverence'
   ],
-  'regret': [
+  regret: [
     'grief',
     'concern',
     'sorrow',
@@ -40646,7 +40646,7 @@ const SYN_DB = {
     'remorse',
     'contrition'
   ],
-  'regular': [
+  regular: [
     'orderly',
     'methodical',
     'conformable',
@@ -40666,7 +40666,7 @@ const SYN_DB = {
     'recurrent',
     'certain'
   ],
-  'regulation': [
+  regulation: [
     'rule',
     'method',
     'principle',
@@ -40679,7 +40679,7 @@ const SYN_DB = {
     'government',
     'control'
   ],
-  'rejoice': [
+  rejoice: [
     'delight',
     'joy',
     'exult',
@@ -40693,7 +40693,7 @@ const SYN_DB = {
     'enliven',
     'gratify'
   ],
-  'relation': [
+  relation: [
     'recital',
     'rehearsal',
     'account',
@@ -40713,7 +40713,7 @@ const SYN_DB = {
     'relevancy',
     'agreement'
   ],
-  'belease': [
+  belease: [
     'discharge',
     'extricate',
     'disengage',
@@ -40727,7 +40727,7 @@ const SYN_DB = {
     'deliver',
     'remit'
   ],
-  'relief': [
+  relief: [
     'alleviation',
     'mitigation',
     'aid',
@@ -40743,7 +40743,7 @@ const SYN_DB = {
     'support',
     'comfort'
   ],
-  'religion': [
+  religion: [
     'devotion',
     'faith',
     'piety',
@@ -40755,7 +40755,7 @@ const SYN_DB = {
     'worship',
     'theology'
   ],
-  'relinquish': [
+  relinquish: [
     'resign',
     'leave',
     'quit',
@@ -40768,7 +40768,7 @@ const SYN_DB = {
     'surrender',
     'discontinue'
   ],
-  'reluctant': [
+  reluctant: [
     'loath',
     'slow',
     'disinclined',
@@ -40778,7 +40778,7 @@ const SYN_DB = {
     'opposed',
     'unwilling'
   ],
-  'remain': [
+  remain: [
     'wait',
     'tarry',
     'rest',
@@ -40792,14 +40792,14 @@ const SYN_DB = {
     'survive',
     'outlive'
   ],
-  'remark': [
+  remark: [
     'comment',
     'note',
     'observation',
     'utterance',
     'annotation'
   ],
-  'remarkable': [
+  remarkable: [
     'observable',
     'rare',
     'noticeable',
@@ -40815,7 +40815,7 @@ const SYN_DB = {
     'peculiar',
     'individual'
   ],
-  'remembrance': [
+  remembrance: [
     'memory',
     'recollection',
     'reminiscence',
@@ -40825,7 +40825,7 @@ const SYN_DB = {
     'memorial',
     'token'
   ],
-  'reminiscence': [
+  reminiscence: [
     'memory',
     'recollection',
     'remembrance',
@@ -40833,7 +40833,7 @@ const SYN_DB = {
     'relic',
     'trace'
   ],
-  'remote': [
+  remote: [
     'removed',
     'far',
     'distant',
@@ -40846,7 +40846,7 @@ const SYN_DB = {
     'separate',
     'abstract'
   ],
-  'rend': [
+  rend: [
     'burst',
     'break',
     'rip',
@@ -40859,7 +40859,7 @@ const SYN_DB = {
     'rive',
     'slit'
   ],
-  'render': [
+  render: [
     'return',
     'restore',
     'requite',
@@ -40876,7 +40876,7 @@ const SYN_DB = {
     'present',
     'assign'
   ],
-  'renounce': [
+  renounce: [
     'abandon',
     'abjure',
     'deny',
@@ -40893,7 +40893,7 @@ const SYN_DB = {
     'discard',
     'recant'
   ],
-  'renown': [
+  renown: [
     'fame',
     'distinction',
     'notice',
@@ -40905,7 +40905,7 @@ const SYN_DB = {
     'glory',
     'eminence'
   ],
-  'renunciation': [
+  renunciation: [
     'denial',
     'disownment',
     'renouncement',
@@ -40915,7 +40915,7 @@ const SYN_DB = {
     'recantation',
     'abandonment'
   ],
-  'repeat': [
+  repeat: [
     'reiterate',
     'renew',
     'relate',
@@ -40925,7 +40925,7 @@ const SYN_DB = {
     'rehearse',
     'renovate'
   ],
-  'repentance': [
+  repentance: [
     'penitence',
     'regret',
     'remorse',
@@ -40935,7 +40935,7 @@ const SYN_DB = {
     'selfcondemnation',
     'contriteness'
   ],
-  'repletion': [
+  repletion: [
     'fulness',
     'superabundance',
     'plethora',
@@ -40944,18 +40944,18 @@ const SYN_DB = {
     'sufficiency',
     'enough'
   ],
-  'reply': [
+  reply: [
     'answer',
     'respond',
     'rejoin',
     'replicate'
   ],
-  'report': [
+  report: [
     'rumor',
     'statement',
     'story'
   ],
-  'repose': [
+  repose: [
     'rest',
     'recumbency',
     'reclination',
@@ -40967,7 +40967,7 @@ const SYN_DB = {
     'calmness',
     'quiescence'
   ],
-  'represent': [
+  represent: [
     'portray',
     'typify',
     'delineate',
@@ -40979,7 +40979,7 @@ const SYN_DB = {
     'show',
     'exhibit'
   ],
-  'reproach': [
+  reproach: [
     'disrepute',
     'opprobrium',
     'discredit',
@@ -41000,7 +41000,7 @@ const SYN_DB = {
     'disgrace',
     'infamy'
   ],
-  'reproof': [
+  reproof: [
     'comment',
     'criticism',
     'disapproval',
@@ -41021,7 +41021,7 @@ const SYN_DB = {
     'reflection',
     'check'
   ],
-  'reprove': [
+  reprove: [
     'admonish',
     'blame',
     'reproach',
@@ -41036,7 +41036,7 @@ const SYN_DB = {
     'rebuke',
     'reprehend'
   ],
-  'repugnant': [
+  repugnant: [
     'opposite',
     'opposed',
     'adverse',
@@ -41049,13 +41049,13 @@ const SYN_DB = {
     'loath',
     'heterogeneous'
   ],
-  'reputable': [
+  reputable: [
     'honorable',
     'respectable',
     'estimable',
     'creditable'
   ],
-  'requite': [
+  requite: [
     'avenge',
     'quit',
     'punish',
@@ -41070,7 +41070,7 @@ const SYN_DB = {
     'compensate',
     'reciprocate'
   ],
-  'research': [
+  research: [
     'inquiry',
     'scrutiny',
     'examination',
@@ -41081,7 +41081,7 @@ const SYN_DB = {
     'study',
     'observation'
   ],
-  'reserve': [
+  reserve: [
     'reservation',
     'retention',
     'limitation',
@@ -41095,7 +41095,7 @@ const SYN_DB = {
     'repression',
     'constraint'
   ],
-  'resignation': [
+  resignation: [
     'relinquishment',
     'forsaking',
     'abandonment',
@@ -41108,7 +41108,7 @@ const SYN_DB = {
     'acquiescence',
     'submission'
   ],
-  'resolute': [
+  resolute: [
     'determined',
     'decided',
     'fixed',
@@ -41123,7 +41123,7 @@ const SYN_DB = {
     'unflinching',
     'stouthearted'
   ],
-  'resources': [
+  resources: [
     'expedient',
     'means',
     'resort',
@@ -41135,7 +41135,7 @@ const SYN_DB = {
     'appliances',
     'funds'
   ],
-  'resplendent': [
+  resplendent: [
     'brilliant',
     'splendid',
     'glorious',
@@ -41146,7 +41146,7 @@ const SYN_DB = {
     'glittering',
     'burnished'
   ],
-  'best': [
+  best: [
     'pause',
     'peace',
     'quiet',
@@ -41167,7 +41167,7 @@ const SYN_DB = {
     'sleep',
     'slumber'
   ],
-  'restive': [
+  restive: [
     'restless',
     'restiff',
     'fidgety',
@@ -41188,7 +41188,7 @@ const SYN_DB = {
     'mutinous',
     'obstinate'
   ],
-  'restore': [
+  restore: [
     'return',
     'replace',
     'refund',
@@ -41201,7 +41201,7 @@ const SYN_DB = {
     'cure',
     'recover'
   ],
-  'restrain': [
+  restrain: [
     'constrain',
     'check',
     'repress',
@@ -41219,7 +41219,7 @@ const SYN_DB = {
     'keepback',
     'keepunder'
   ],
-  'result': [
+  result: [
     'consequence',
     'issue',
     'conclusion',
@@ -41234,7 +41234,7 @@ const SYN_DB = {
     'resolution',
     'determination'
   ],
-  'retinue': [
+  retinue: [
     'attendants',
     'suite',
     'followers',
@@ -41244,13 +41244,13 @@ const SYN_DB = {
     'escort',
     'cortege'
   ],
-  'retirement': [
+  retirement: [
     'privacy',
     'solitude',
     'loneliness',
     'seclusion'
   ],
-  'retribution': [
+  retribution: [
     'requital',
     'retaliation',
     'payment',
@@ -41263,7 +41263,7 @@ const SYN_DB = {
     'punishment',
     'visitation'
   ],
-  'retrospect': [
+  retrospect: [
     'review',
     'survey',
     'reconsideration',
@@ -41272,7 +41272,7 @@ const SYN_DB = {
     'reminiscence',
     'memory'
   ],
-  'return': [
+  return: [
     'comeback',
     'reply',
     'respond',
@@ -41286,12 +41286,12 @@ const SYN_DB = {
     'revert',
     'retaliate'
   ],
-  'revelation': [
+  revelation: [
     'disclosure',
     'manifestation',
     'apocalypse'
   ],
-  'bevenue': [
+  bevenue: [
     'income',
     'taxes',
     'excise',
@@ -41304,7 +41304,7 @@ const SYN_DB = {
     'wealth',
     'proceeds'
   ],
-  'beverse': [
+  beverse: [
     'contrary',
     'opposite',
     'counterpart',
@@ -41319,7 +41319,7 @@ const SYN_DB = {
     'misfortune',
     'defeat'
   ],
-  'bevive': [
+  bevive: [
     'reanimate',
     'reinvigorate',
     'restore',
@@ -41331,7 +41331,7 @@ const SYN_DB = {
     'revivify',
     'resuscitate'
   ],
-  'revolution': [
+  revolution: [
     'lawlessness',
     'insurrection',
     'revolt',
@@ -41346,12 +41346,12 @@ const SYN_DB = {
     'tumult',
     'disintegration'
   ],
-  'bevolve': [
+  bevolve: [
     'roll',
     'rotate',
     'turn'
   ],
-  'steward': [
+  steward: [
     'recompense',
     'compensation',
     'remuneration',
@@ -41360,7 +41360,7 @@ const SYN_DB = {
     'retribution',
     'punishment'
   ],
-  'rich': [
+  rich: [
     'wealthy',
     'opulent',
     'affluent',
@@ -41379,7 +41379,7 @@ const SYN_DB = {
     'luscious',
     'vivid'
   ],
-  'riches': [
+  riches: [
     'opulence',
     'wealth',
     'affluence',
@@ -41387,14 +41387,14 @@ const SYN_DB = {
     'plenty',
     'abundance'
   ],
-  'biddle': [
+  biddle: [
     'conundrum',
     'paradox',
     'problem',
     'puzzle',
     'enigma'
   ],
-  'ridicule': [
+  ridicule: [
     'derision',
     'raillery',
     'banter',
@@ -41407,7 +41407,7 @@ const SYN_DB = {
     'jeer',
     'sneer'
   ],
-  'bight': [
+  bight: [
     'claim',
     'liberty',
     'prerogative',
@@ -41430,7 +41430,7 @@ const SYN_DB = {
     'fitness',
     'suitableness'
   ],
-  'righteous': [
+  righteous: [
     'holy',
     'uncorrupt',
     'honest',
@@ -41442,7 +41442,7 @@ const SYN_DB = {
     'good',
     'conscientious'
   ],
-  'rise': [
+  rise: [
     'arise',
     'issue',
     'flow',
@@ -41451,7 +41451,7 @@ const SYN_DB = {
     'ascend',
     'emanate'
   ],
-  'rival': [
+  rival: [
     'emulate',
     'antagonize',
     'contend',
@@ -41459,7 +41459,7 @@ const SYN_DB = {
     'oppose',
     'equal'
   ],
-  'bobber': [
+  bobber: [
     'brigand',
     'marauder',
     'pirate',
@@ -41476,7 +41476,7 @@ const SYN_DB = {
     'forager',
     'freebooter'
   ],
-  'robust': [
+  robust: [
     'strong',
     'lusty',
     'sinewy',
@@ -41492,7 +41492,7 @@ const SYN_DB = {
     'rude',
     'rough'
   ],
-  'romantic': [
+  romantic: [
     'sentimental',
     'fanciful',
     'fantastic',
@@ -41501,7 +41501,7 @@ const SYN_DB = {
     'extravagant',
     'chimerical'
   ],
-  'root': [
+  root: [
     'radix',
     'radicle',
     'stock',
@@ -41516,7 +41516,7 @@ const SYN_DB = {
     'radical',
     'bottom'
   ],
-  'rough': [
+  rough: [
     'uneven',
     'uncut',
     'boisterous',
@@ -41541,7 +41541,7 @@ const SYN_DB = {
     'churlish',
     'blunt'
   ],
-  'routine': [
+  routine: [
     'practice',
     'custom',
     'procedure',
@@ -41557,7 +41557,7 @@ const SYN_DB = {
     'method',
     'regulation'
   ],
-  'royal': [
+  royal: [
     'august',
     'kinglike',
     'majestic',
@@ -41567,7 +41567,7 @@ const SYN_DB = {
     'magnificent',
     'kingly'
   ],
-  'rude': [
+  rude: [
     'rough',
     'uneven',
     'shapeless',
@@ -41601,7 +41601,7 @@ const SYN_DB = {
     'inclement',
     'severe'
   ],
-  'rugged': [
+  rugged: [
     'rough',
     'uneven',
     'rude',
@@ -41625,7 +41625,7 @@ const SYN_DB = {
     'ruffled',
     'blunt'
   ],
-  'rule': [
+  rule: [
     'regulation',
     'law',
     'precept',
@@ -41646,7 +41646,7 @@ const SYN_DB = {
     'criterion',
     'formula'
   ],
-  'bun': [
+  bun: [
     'race',
     'hasten',
     'speed',
@@ -41681,7 +41681,7 @@ const SYN_DB = {
     'manage',
     'flee'
   ],
-  'hustle': [
+  hustle: [
     'rural',
     'sylvan',
     'pastoral',
@@ -41705,20 +41705,20 @@ const SYN_DB = {
     'hoydenish',
     'uncouth'
   ],
-  'ruthless': [
+  ruthless: [
     'cruel',
     'pitiless',
     'harsh',
     'relentless',
     'unsparing'
   ],
-  'ssable': [
+  ssable: [
     'dark',
     'black',
     'ebon',
     'somber'
   ],
-  'sacrament': [
+  sacrament: [
     'eucharist',
     'lordssupper',
     'communion',
@@ -41729,7 +41729,7 @@ const SYN_DB = {
     'ordinance',
     'observance'
   ],
-  'sacred': [
+  sacred: [
     'holy',
     'divine',
     'hallowed',
@@ -41740,7 +41740,7 @@ const SYN_DB = {
     'venerable',
     'reverend'
   ],
-  'sacrifice': [
+  sacrifice: [
     'offering',
     'propitiation',
     'expiation',
@@ -41752,7 +41752,7 @@ const SYN_DB = {
     'oblation',
     'atonement'
   ],
-  'sad': [
+  sad: [
     'sorrowml',
     'mournful',
     'dejected',
@@ -41776,7 +41776,7 @@ const SYN_DB = {
     'disastrous',
     'deplorable'
   ],
-  'sagacious': [
+  sagacious: [
     'sage',
     'sensible',
     'keen',
@@ -41797,7 +41797,7 @@ const SYN_DB = {
     'quickscented',
     'sharpwitted'
   ],
-  'sale': [
+  sale: [
     'bargain',
     'barter',
     'deal',
@@ -41805,7 +41805,7 @@ const SYN_DB = {
     'trade',
     'change'
   ],
-  'salient': [
+  salient: [
     'leaping',
     'bounding',
     'jumping',
@@ -41816,14 +41816,14 @@ const SYN_DB = {
     'significant',
     'strategic'
   ],
-  'salvation': [
+  salvation: [
     'saving',
     'preservation',
     'deliverance',
     'redemption',
     'rescue'
   ],
-  'sample': [
+  sample: [
     'specimen',
     'example',
     'illustration',
@@ -41831,7 +41831,7 @@ const SYN_DB = {
     'instance',
     'exemplification'
   ],
-  'sanction': [
+  sanction: [
     'authorization',
     'authority',
     'countenance',
@@ -41843,7 +41843,7 @@ const SYN_DB = {
     'seal',
     'allowance'
   ],
-  'sanguine': [
+  sanguine: [
     'bloodred',
     'crimson',
     'warm',
@@ -41857,7 +41857,7 @@ const SYN_DB = {
     'buoyant',
     'trustful'
   ],
-  'sanity': [
+  sanity: [
     'saneness',
     'soundness',
     'rationality',
@@ -41865,7 +41865,7 @@ const SYN_DB = {
     'wisdom',
     'amenableness'
   ],
-  'sarcasm': [
+  sarcasm: [
     'taunt',
     'gibe',
     'scorn',
@@ -41875,7 +41875,7 @@ const SYN_DB = {
     'sneer',
     'ridicule'
   ],
-  'satisfy': [
+  satisfy: [
     'satiate',
     'sate',
     'compensate',
@@ -41894,7 +41894,7 @@ const SYN_DB = {
     'gratify',
     'fulfil'
   ],
-  'savage': [
+  savage: [
     'wild',
     'uncultivated',
     'untamed',
@@ -41913,7 +41913,7 @@ const SYN_DB = {
     'murderous',
     'violent'
   ],
-  'save': [
+  save: [
     'preserve',
     'rescue',
     'deliver',
@@ -41928,7 +41928,7 @@ const SYN_DB = {
     'snatch',
     'catch'
   ],
-  'say': [
+  say: [
     'utter',
     'express',
     'tell',
@@ -41950,7 +41950,7 @@ const SYN_DB = {
     'deny',
     'allege'
   ],
-  'scarce': [
+  scarce: [
     'rare',
     'infrequent',
     'deficient',
@@ -41966,7 +41966,7 @@ const SYN_DB = {
     'few',
     'precious'
   ],
-  'scheme': [
+  scheme: [
     'plan',
     'project',
     'contrivance',
@@ -41983,14 +41983,14 @@ const SYN_DB = {
     'conspiracy',
     'theory'
   ],
-  'scholar': [
+  scholar: [
     'learner',
     'pupil',
     'student',
     'savant',
     'disciple'
   ],
-  'scorn': [
+  scorn: [
     'disdain',
     'derision',
     'contumely',
@@ -42003,7 +42003,7 @@ const SYN_DB = {
     'sneer',
     'opprobrium'
   ],
-  'scruple': [
+  scruple: [
     'unwillingness',
     'hesitation',
     'doubt',
@@ -42012,7 +42012,7 @@ const SYN_DB = {
     'reluctance',
     'misgiving'
   ],
-  'scrupulous': [
+  scrupulous: [
     'cautious',
     'careful',
     'conscientious',
@@ -42026,7 +42026,7 @@ const SYN_DB = {
     'diffident',
     'dubious'
   ],
-  'scrutiny': [
+  scrutiny: [
     'examination',
     'inspection',
     'observation',
@@ -42036,7 +42036,7 @@ const SYN_DB = {
     'inquisition',
     'inquiry'
   ],
-  'season': [
+  season: [
     'time',
     'period',
     'term',
@@ -42048,7 +42048,7 @@ const SYN_DB = {
     'timeliness',
     'seasonableness'
   ],
-  'seasonable': [
+  seasonable: [
     'opportune',
     'suitable',
     'timely',
@@ -42059,7 +42059,7 @@ const SYN_DB = {
     'periodical',
     'welcome'
   ],
-  'secure': [
+  secure: [
     'undisturbed',
     'assured',
     'heedless',
@@ -42079,7 +42079,7 @@ const SYN_DB = {
     'sheltered',
     'safe'
   ],
-  'sedate': [
+  sedate: [
     'settled',
     'composed',
     'calm',
@@ -42094,7 +42094,7 @@ const SYN_DB = {
     'serious',
     'passive'
   ],
-  'sedition': [
+  sedition: [
     'riot',
     'rebellion',
     'revolt',
@@ -42109,7 +42109,7 @@ const SYN_DB = {
     'turmoil',
     'anarchy'
   ],
-  'see': [
+  see: [
     'perceive',
     'behold',
     'descry',
@@ -42130,7 +42130,7 @@ const SYN_DB = {
     'heed',
     'gaze'
   ],
-  'seek': [
+  seek: [
     'search',
     'solicit',
     'hunt',
@@ -42141,19 +42141,19 @@ const SYN_DB = {
     'endeavor',
     'investigate'
   ],
-  'seldom': [
+  seldom: [
     'rarely',
     'infre',
     'occasionally'
   ],
-  'selection': [
+  selection: [
     'choice',
     'pick',
     'preference',
     'election',
     'option'
   ],
-  'selfabnegation': [
+  selfabnegation: [
     'selfrenunciation',
     'selfsacrifice',
     'selfcontrol',
@@ -42161,7 +42161,7 @@ const SYN_DB = {
     'selfimmolation',
     'selfdenial'
   ],
-  'selfish': [
+  selfish: [
     'selfseeking',
     'mean',
     'ungenerous',
@@ -42172,7 +42172,7 @@ const SYN_DB = {
     'egoistical',
     'selfindulgent'
   ],
-  'send': [
+  send: [
     'sling',
     'throw',
     'fling',
@@ -42194,13 +42194,13 @@ const SYN_DB = {
     'delegate',
     'depute'
   ],
-  'sensation': [
+  sensation: [
     'emotion',
     'sense',
     'feeling',
     'perception'
   ],
-  'sense': [
+  sense: [
     'understanding',
     'reason',
     'cognition',
@@ -42218,13 +42218,13 @@ const SYN_DB = {
     'import',
     'signification'
   ],
-  'sensibility': [
+  sensibility: [
     'feeling',
     'sensitiveness',
     'susceptibility',
     'impressibility'
   ],
-  'sentiment': [
+  sentiment: [
     'thought',
     'opinion',
     'notion',
@@ -42239,7 +42239,7 @@ const SYN_DB = {
     'saying',
     'toast'
   ],
-  'separate': [
+  separate: [
     'disunite',
     'divide',
     'sever',
@@ -42254,7 +42254,7 @@ const SYN_DB = {
     'remove',
     'segregate'
   ],
-  'sequence': [
+  sequence: [
     'succession',
     'following',
     'consequence',
@@ -42264,7 +42264,7 @@ const SYN_DB = {
     'progression',
     'continuity'
   ],
-  'serious': [
+  serious: [
     'sober',
     'earnest',
     'momentous',
@@ -42276,7 +42276,7 @@ const SYN_DB = {
     'weighty',
     'dangerous'
   ],
-  'settle': [
+  settle: [
     'regulate',
     'arrange',
     'compose',
@@ -42299,7 +42299,7 @@ const SYN_DB = {
     'colonize',
     'people'
   ],
-  'severe': [
+  severe: [
     'stern',
     'strict',
     'austere',
@@ -42320,7 +42320,7 @@ const SYN_DB = {
     'grave',
     'serious'
   ],
-  'shade': [
+  shade: [
     'shadow',
     'darkness',
     'obscurity',
@@ -42336,7 +42336,7 @@ const SYN_DB = {
     'minuteness',
     'seclusion'
   ],
-  'shake': [
+  shake: [
     'agitate',
     'fluctuate',
     'flutter',
@@ -42357,7 +42357,7 @@ const SYN_DB = {
     'thrill',
     'jar'
   ],
-  'shame': [
+  shame: [
     'disgrace',
     'reproach',
     'dishonor',
@@ -42373,7 +42373,7 @@ const SYN_DB = {
     'decency',
     'decorum'
   ],
-  'shape': [
+  shape: [
     'appearance',
     'figure',
     'aspect',
@@ -42388,7 +42388,7 @@ const SYN_DB = {
     'cast',
     'model'
   ],
-  'sharp': [
+  sharp: [
     'quick',
     'sagacious',
     'witty',
@@ -42433,7 +42433,7 @@ const SYN_DB = {
     'exacting',
     'close'
   ],
-  'short': [
+  short: [
     'brief',
     'contracted',
     'inadequate',
@@ -42462,7 +42462,7 @@ const SYN_DB = {
     'narrow',
     'destitute'
   ],
-  'show': [
+  show: [
     'prove',
     'manifest',
     'explain',
@@ -42478,7 +42478,7 @@ const SYN_DB = {
     'teach',
     'evidence'
   ],
-  'shrewd': [
+  shrewd: [
     'keen',
     'critical',
     'subtle',
@@ -42500,7 +42500,7 @@ const SYN_DB = {
     'discriminating',
     'intelligent'
   ],
-  'sick': [
+  sick: [
     'diseased',
     'ill',
     'disordered',
@@ -42517,7 +42517,7 @@ const SYN_DB = {
     'disgusted',
     'surfeited'
   ],
-  'side': [
+  side: [
     'margin',
     'edge',
     'verge',
@@ -42537,7 +42537,7 @@ const SYN_DB = {
     'declivity',
     'half'
   ],
-  'sight': [
+  sight: [
     'vision',
     'show',
     'representation',
@@ -42557,7 +42557,7 @@ const SYN_DB = {
     'insight',
     'appearance'
   ],
-  'sign': [
+  sign: [
     'mark',
     'manifestation',
     'indication',
@@ -42572,7 +42572,7 @@ const SYN_DB = {
     'prognostic',
     'symptom'
   ],
-  'significant': [
+  significant: [
     'expressive',
     'suggestive',
     'important',
@@ -42590,7 +42590,7 @@ const SYN_DB = {
     'forcible',
     'conspicuous'
   ],
-  'silence': [
+  silence: [
     'stillness',
     'hush',
     'restfulness',
@@ -42606,7 +42606,7 @@ const SYN_DB = {
     'secrecy',
     'oblivion'
   ],
-  'similar': [
+  similar: [
     'corresponding',
     'like',
     'resembling',
@@ -42615,7 +42615,7 @@ const SYN_DB = {
     'congruous',
     'harmonious'
   ],
-  'simple': [
+  simple: [
     'silly',
     'single',
     'uncombined',
@@ -42637,7 +42637,7 @@ const SYN_DB = {
     'innocent',
     'elementary'
   ],
-  'sin': [
+  sin: [
     'evil',
     'crime',
     'guilt',
@@ -42658,7 +42658,7 @@ const SYN_DB = {
     'depravity',
     'delinquency'
   ],
-  'sing': [
+  sing: [
     'chant',
     'carol',
     'chirp',
@@ -42666,7 +42666,7 @@ const SYN_DB = {
     'warble',
     'chirrup'
   ],
-  'singular': [
+  singular: [
     'unexampled',
     'eminent',
     'unprecedented',
@@ -42689,7 +42689,7 @@ const SYN_DB = {
     'curious',
     'queer'
   ],
-  'sink': [
+  sink: [
     'subside',
     'drop',
     'droop',
@@ -42715,7 +42715,7 @@ const SYN_DB = {
     'drown',
     'attenuate'
   ],
-  'situation': [
+  situation: [
     'site',
     'station',
     'post',
@@ -42740,7 +42740,7 @@ const SYN_DB = {
     'birth',
     'standing'
   ],
-  'skeptic': [
+  skeptic: [
     'agnostic',
     'doubter',
     'freethinker',
@@ -42750,7 +42750,7 @@ const SYN_DB = {
     'atheist',
     'disbeliever'
   ],
-  'sketch': [
+  sketch: [
     'outline',
     'picture',
     'design',
@@ -42760,7 +42760,7 @@ const SYN_DB = {
     'plan',
     'brief'
   ],
-  'skilful': [
+  skilful: [
     'expert',
     'dexterous',
     'apt',
@@ -42779,7 +42779,7 @@ const SYN_DB = {
     'masterly',
     'cunning'
   ],
-  'slander': [
+  slander: [
     'defame',
     'disparage',
     'depreciate',
@@ -42793,13 +42793,13 @@ const SYN_DB = {
     'decry',
     'backbite'
   ],
-  'slang': [
+  slang: [
     'vulgarity',
     'cant',
     'colloquialism',
     'vulgarism'
   ],
-  'slender': [
+  slender: [
     'small',
     'narrow',
     'slim',
@@ -42814,7 +42814,7 @@ const SYN_DB = {
     'abstemious',
     'frugal'
   ],
-  'slippery': [
+  slippery: [
     'smooth',
     'glib',
     'mutable',
@@ -42837,7 +42837,7 @@ const SYN_DB = {
     'evasive',
     'unprincipled'
   ],
-  'slow': [
+  slow: [
     'deliberate',
     'dilatory',
     'lingering',
@@ -42853,7 +42853,7 @@ const SYN_DB = {
     'delaying',
     'dawdling'
   ],
-  'small': [
+  small: [
     'little',
     'diminutive',
     'inconsiderable',
@@ -42882,7 +42882,7 @@ const SYN_DB = {
     'ungifted',
     'unintelligent'
   ],
-  'smart': [
+  smart: [
     'acute',
     'quick',
     'lively',
@@ -42905,7 +42905,7 @@ const SYN_DB = {
     'spruce',
     'fresh'
   ],
-  'sneer': [
+  sneer: [
     'jeer',
     'mock',
     'gibe',
@@ -42913,7 +42913,7 @@ const SYN_DB = {
     'fling',
     'scoff'
   ],
-  'sober': [
+  sober: [
     'abstinent',
     'abstemious',
     'moderate',
@@ -42932,12 +42932,12 @@ const SYN_DB = {
     'solemn',
     'sedate'
   ],
-  'socialism': [
+  socialism: [
     'communism',
     'collectivism',
     'fabianism'
   ],
-  'society': [
+  society: [
     'companionship',
     'fellowship',
     'company',
@@ -42950,7 +42950,7 @@ const SYN_DB = {
     'communion',
     'intercourse'
   ],
-  'soft': [
+  soft: [
     'yielding',
     'impressible',
     'malleable',
@@ -42971,7 +42971,7 @@ const SYN_DB = {
     'peaceful',
     'tranquil'
   ],
-  'solemnity': [
+  solemnity: [
     'gravity',
     'formality',
     'ritual',
@@ -42987,7 +42987,7 @@ const SYN_DB = {
     'sacredness',
     'impressiveness'
   ],
-  'solid': [
+  solid: [
     'hard',
     'sound',
     'real',
@@ -43005,7 +43005,7 @@ const SYN_DB = {
     'impenetrable',
     'cubic'
   ],
-  'solitude': [
+  solitude: [
     'loneliness',
     'solitariness',
     'loneness',
@@ -43024,7 +43024,7 @@ const SYN_DB = {
     'privacy',
     'isolation'
   ],
-  'solution': [
+  solution: [
     'disruption',
     'separation',
     'breach',
@@ -43041,7 +43041,7 @@ const SYN_DB = {
     'answer',
     'elucidation'
   ],
-  'soothe': [
+  soothe: [
     'soften',
     'allay',
     'compose',
@@ -43058,7 +43058,7 @@ const SYN_DB = {
     'mitigate',
     'relieve'
   ],
-  'sordid': [
+  sordid: [
     'vile',
     'base',
     'gross',
@@ -43075,7 +43075,7 @@ const SYN_DB = {
     'penurious',
     'illiberal'
   ],
-  'soul': [
+  soul: [
     'spirit',
     'life',
     'courage',
@@ -43095,7 +43095,7 @@ const SYN_DB = {
     'ghost',
     'specter'
   ],
-  'sound': [
+  sound: [
     'noise',
     'note',
     'tone',
@@ -43127,7 +43127,7 @@ const SYN_DB = {
     'substantial',
     'irrefutable'
   ],
-  'sovereign': [
+  sovereign: [
     'king',
     'prince',
     'potentate',
@@ -43135,7 +43135,7 @@ const SYN_DB = {
     'emperor',
     'ruler'
   ],
-  'space': [
+  space: [
     'extension',
     'room',
     'interval',
@@ -43150,7 +43150,7 @@ const SYN_DB = {
     'immeasurableness',
     'immensity'
   ],
-  'spare': [
+  spare: [
     'scanty',
     'sparing',
     'frugal',
@@ -43165,7 +43165,7 @@ const SYN_DB = {
     'thin',
     'gaunt'
   ],
-  'sparse': [
+  sparse: [
     'scattered',
     'sprinkled',
     'infrequent',
@@ -43174,7 +43174,7 @@ const SYN_DB = {
     'meager',
     'few'
   ],
-  'speak': [
+  speak: [
     'say',
     'talk',
     'tell',
@@ -43192,7 +43192,7 @@ const SYN_DB = {
     'declare',
     'deliver'
   ],
-  'speculation': [
+  speculation: [
     'venture',
     'theory',
     'view',
@@ -43206,7 +43206,7 @@ const SYN_DB = {
     'hypothesis',
     'scheme'
   ],
-  'speech': [
+  speech: [
     'address',
     'discourse',
     'language',
@@ -43220,7 +43220,7 @@ const SYN_DB = {
     'oratory',
     'disquisition'
   ],
-  'spirit': [
+  spirit: [
     'life',
     'soul',
     'ghost',
@@ -43251,7 +43251,7 @@ const SYN_DB = {
     'principle',
     'motive'
   ],
-  'spiritual': [
+  spiritual: [
     'immaterial',
     'incorporeal',
     'mental',
@@ -43265,7 +43265,7 @@ const SYN_DB = {
     'religious',
     'ethical'
   ],
-  'splendid': [
+  splendid: [
     'shining',
     'showy',
     'magnificent',
@@ -43282,7 +43282,7 @@ const SYN_DB = {
     'heroic',
     'noble'
   ],
-  'spontaneous': [
+  spontaneous: [
     'free',
     'intentional',
     'voluntary',
@@ -43293,7 +43293,7 @@ const SYN_DB = {
     'instinctive',
     'deliberate'
   ],
-  'spring': [
+  spring: [
     'leap',
     'bound',
     'jump',
@@ -43314,12 +43314,12 @@ const SYN_DB = {
     'originate',
     'germinate'
   ],
-  'spy': [
+  spy: [
     'scout',
     'emissary',
     'detective'
   ],
-  'stable': [
+  stable: [
     'steady',
     'abiding',
     'firm',
@@ -43340,7 +43340,7 @@ const SYN_DB = {
     'rigid',
     'unmovable'
   ],
-  'stain': [
+  stain: [
     'blot',
     'spot',
     'sully',
@@ -43354,7 +43354,7 @@ const SYN_DB = {
     'dye',
     'soil'
   ],
-  'stand': [
+  stand: [
     'rest',
     'cease',
     'stop',
@@ -43372,7 +43372,7 @@ const SYN_DB = {
     'bear',
     'withstand'
   ],
-  'standard': [
+  standard: [
     'flag',
     'colors',
     'banner',
@@ -43390,7 +43390,7 @@ const SYN_DB = {
     'upright',
     'exemplar'
   ],
-  'state': [
+  state: [
     'declare',
     'tell',
     'assert',
@@ -43415,7 +43415,7 @@ const SYN_DB = {
     'aver',
     'certify'
   ],
-  'station': [
+  station: [
     'depot',
     'place',
     'spot',
@@ -43429,7 +43429,7 @@ const SYN_DB = {
     'occupation',
     'business'
   ],
-  'stay': [
+  stay: [
     'stop',
     'prop',
     'support',
@@ -43453,7 +43453,7 @@ const SYN_DB = {
     'depend',
     'rely'
   ],
-  'steadfast': [
+  steadfast: [
     'established',
     'firm',
     'constant',
@@ -43465,14 +43465,14 @@ const SYN_DB = {
     'unwavering',
     'stanch'
   ],
-  'steep': [
+  steep: [
     'sharp',
     'sheer',
     'high',
     'precipitous',
     'abrupt'
   ],
-  'still': [
+  still: [
     'noiseless',
     'inert',
     'stagnant',
@@ -43495,7 +43495,7 @@ const SYN_DB = {
     'pacific',
     'peaceful'
   ],
-  'stop': [
+  stop: [
     'suppress',
     'discontinue',
     'delay',
@@ -43517,12 +43517,12 @@ const SYN_DB = {
     'end',
     'terminate'
   ],
-  'storm': [
+  storm: [
     'agitation',
     'disturbance',
     'tempest'
   ],
-  'story': [
+  story: [
     'narrative',
     'legend',
     'anecdote',
@@ -43536,7 +43536,7 @@ const SYN_DB = {
     'novel',
     'relation'
   ],
-  'stout': [
+  stout: [
     'corpulent',
     'portly',
     'vigorous',
@@ -43553,7 +43553,7 @@ const SYN_DB = {
     'valiantcourageous',
     'redoubtable'
   ],
-  'strange': [
+  strange: [
     'outlandish',
     'wonderful',
     'astonishing',
@@ -43573,7 +43573,7 @@ const SYN_DB = {
     'unaccustomed',
     'inexperienced'
   ],
-  'strength': [
+  strength: [
     'robustness',
     'toughness',
     'hardness',
@@ -43598,7 +43598,7 @@ const SYN_DB = {
     'fiber',
     'soundness'
   ],
-  'strenuous': [
+  strenuous: [
     'eager',
     'pressing',
     'urgent',
@@ -43615,7 +43615,7 @@ const SYN_DB = {
     'vehement',
     'forceful'
   ],
-  'strong': [
+  strong: [
     'powerful',
     'cogent',
     'muscular',
@@ -43644,7 +43644,7 @@ const SYN_DB = {
     'hardy',
     'tenacious'
   ],
-  'stubborn': [
+  stubborn: [
     'obstinate',
     'inflexible',
     'obdurate',
@@ -43659,7 +43659,7 @@ const SYN_DB = {
     'persistent',
     'refractory'
   ],
-  'studious': [
+  studious: [
     'contemplative',
     'observant',
     'sedulous',
@@ -43679,7 +43679,7 @@ const SYN_DB = {
     'reflective',
     'assiduous'
   ],
-  'study': [
+  study: [
     'application',
     'learning',
     'acquisition',
@@ -43696,7 +43696,7 @@ const SYN_DB = {
     'attention',
     'concentration'
   ],
-  'stupid': [
+  stupid: [
     'simple',
     'insensible',
     'sottish',
@@ -43710,7 +43710,7 @@ const SYN_DB = {
     'obtuse',
     'prosy'
   ],
-  'stupidity': [
+  stupidity: [
     'slowness',
     'dulness',
     'obtusenesa',
@@ -43719,7 +43719,7 @@ const SYN_DB = {
     'stupor',
     'apathy'
   ],
-  'stupor': [
+  stupor: [
     'apathy',
     'awoon',
     'torpor',
@@ -43733,7 +43733,7 @@ const SYN_DB = {
     'insensibility',
     'syncope'
   ],
-  'sublime': [
+  sublime: [
     'exalted',
     'lofty',
     'noble',
@@ -43749,7 +43749,7 @@ const SYN_DB = {
     'eminent',
     'glorious'
   ],
-  'submissive': [
+  submissive: [
     'obedient',
     'compliant',
     'yielding',
@@ -43761,7 +43761,7 @@ const SYN_DB = {
     'docile',
     'acquiescent'
   ],
-  'subsidy': [
+  subsidy: [
     'aid',
     'allowance',
     'gift',
@@ -43776,7 +43776,7 @@ const SYN_DB = {
     'grant',
     'indemnity'
   ],
-  'substantial': [
+  substantial: [
     'real',
     'solid',
     'true',
@@ -43792,7 +43792,7 @@ const SYN_DB = {
     'bulky',
     'sensuous'
   ],
-  'subtle': [
+  subtle: [
     'artful',
     'crafty',
     'cunning',
@@ -43805,7 +43805,7 @@ const SYN_DB = {
     'insinuating',
     'sophistical'
   ],
-  'subvert': [
+  subvert: [
     'destroy',
     'ruin',
     'supplant',
@@ -43815,7 +43815,7 @@ const SYN_DB = {
     'overthrow',
     'overturn'
   ],
-  'succeed': [
+  succeed: [
     'follow',
     'pursue',
     'ensue',
@@ -43833,7 +43833,7 @@ const SYN_DB = {
     'prosper',
     'thrive'
   ],
-  'succession': [
+  succession: [
     'succeeding',
     'series',
     'sequence',
@@ -43846,7 +43846,7 @@ const SYN_DB = {
     'rotation',
     'regularity'
   ],
-  'sudden': [
+  sudden: [
     'unexpected',
     'unusual',
     'abrupt',
@@ -43858,7 +43858,7 @@ const SYN_DB = {
     'heedless',
     'reckless'
   ],
-  'suffer': [
+  suffer: [
     'support',
     'sustain',
     'tolerate',
@@ -43871,7 +43871,7 @@ const SYN_DB = {
     'undergo',
     'experience'
   ],
-  'sufficient': [
+  sufficient: [
     'competent',
     'satisfactory',
     'full',
@@ -43886,14 +43886,14 @@ const SYN_DB = {
     'adapted',
     'fitted'
   ],
-  'suggestion': [
+  suggestion: [
     'hint',
     'innuendo',
     'intimation',
     'insinuation',
     'implication'
   ],
-  'suitable': [
+  suitable: [
     'proper',
     'competent',
     'correspondent',
@@ -43913,7 +43913,7 @@ const SYN_DB = {
     'uniform',
     'homogeneous'
   ],
-  'sum': [
+  sum: [
     'aggregate',
     'quantity',
     'magnitude',
@@ -43932,7 +43932,7 @@ const SYN_DB = {
     'drift',
     'bearing'
   ],
-  'superb': [
+  superb: [
     'grand',
     'magnificent',
     'august',
@@ -43946,12 +43946,12 @@ const SYN_DB = {
     'splendid',
     'proud'
   ],
-  'supernatural': [
+  supernatural: [
     'miraculous',
     'preternatural',
     'superhuman'
   ],
-  'supple': [
+  supple: [
     'pliant',
     'flexible',
     'bending',
@@ -43970,7 +43970,7 @@ const SYN_DB = {
     'limber',
     'elastic'
   ],
-  'support': [
+  support: [
     'maintain',
     'sustain',
     'uphold',
@@ -43982,7 +43982,7 @@ const SYN_DB = {
     'tolerate',
     'keepup'
   ],
-  'suppose': [
+  suppose: [
     'deem',
     'guess',
     'imagine',
@@ -43990,7 +43990,7 @@ const SYN_DB = {
     'conjecture',
     'surmise'
   ],
-  'suppress': [
+  suppress: [
     'repress',
     'subdue',
     'restrain',
@@ -44005,7 +44005,7 @@ const SYN_DB = {
     'extinguish',
     'destroy'
   ],
-  'sure': [
+  sure: [
     'unfailing',
     'infallible',
     'permanent',
@@ -44026,7 +44026,7 @@ const SYN_DB = {
     'abiding',
     'fast'
   ],
-  'surrender': [
+  surrender: [
     'abandon',
     'relinquish',
     'resign',
@@ -44038,7 +44038,7 @@ const SYN_DB = {
     'letgo',
     'sacrifice'
   ],
-  'suspense': [
+  suspense: [
     'uncertainty',
     'expectation',
     'apprehension',
@@ -44053,7 +44053,7 @@ const SYN_DB = {
     'pause',
     'stop'
   ],
-  'sustenance': [
+  sustenance: [
     'subsistence',
     'food',
     'provision',
@@ -44068,7 +44068,7 @@ const SYN_DB = {
     'nutrition',
     'sustentation'
   ],
-  'sweet': [
+  sweet: [
     'sugary',
     'saccharine',
     'dulcet',
@@ -44084,7 +44084,7 @@ const SYN_DB = {
     'fresh',
     'amiable'
   ],
-  'swift': [
+  swift: [
     'quick',
     'fleet',
     'speedy',
@@ -44099,7 +44099,7 @@ const SYN_DB = {
     'eager',
     'fast'
   ],
-  'symmetry': [
+  symmetry: [
     'proportion',
     'grace',
     'conformity',
@@ -44111,7 +44111,7 @@ const SYN_DB = {
     'agreement',
     'comeliness'
   ],
-  'sympathy': [
+  sympathy: [
     'pity',
     'compassion',
     'commiseration',
@@ -44123,7 +44123,7 @@ const SYN_DB = {
     'reciprocity',
     'congeniality'
   ],
-  'synonymous': [
+  synonymous: [
     'similar',
     'correspondent',
     'like',
@@ -44135,7 +44135,7 @@ const SYN_DB = {
     'synonymic',
     'equivalent'
   ],
-  'system': [
+  system: [
     'order',
     'mode',
     'method',
@@ -44143,7 +44143,7 @@ const SYN_DB = {
     'rule',
     'manner'
   ],
-  'tacit': [
+  tacit: [
     'silent',
     'implied',
     'granted',
@@ -44151,7 +44151,7 @@ const SYN_DB = {
     'understood',
     'implicit'
   ],
-  'taciturn': [
+  taciturn: [
     'mute',
     'silent',
     'speechless',
@@ -44161,7 +44161,7 @@ const SYN_DB = {
     'uncommunicntive',
     'reticent'
   ],
-  'take': [
+  take: [
     'seize',
     'grasp',
     'obtain',
@@ -44202,7 +44202,7 @@ const SYN_DB = {
     'receive',
     'bear'
   ],
-  'talent': [
+  talent: [
     'ability',
     'gift',
     'endowment',
@@ -44213,7 +44213,7 @@ const SYN_DB = {
     'aptitude',
     'forte'
   ],
-  'tangible': [
+  tangible: [
     'perceptible',
     'tactile',
     'palpable',
@@ -44226,7 +44226,7 @@ const SYN_DB = {
     'sensible',
     'obvious'
   ],
-  'tart': [
+  tart: [
     'sharp',
     'acid',
     'sour',
@@ -44237,7 +44237,7 @@ const SYN_DB = {
     'petulant',
     'acrimonious'
   ],
-  'taste': [
+  taste: [
     'savor',
     'relish',
     'flavor',
@@ -44250,7 +44250,7 @@ const SYN_DB = {
     'elegancy',
     'refinement'
   ],
-  'tasteful': [
+  tasteful: [
     'delicate',
     'artistic',
     'elegant',
@@ -44265,7 +44265,7 @@ const SYN_DB = {
     'delicious',
     'esthetical'
   ],
-  'taunt': [
+  taunt: [
     'ridicule',
     'mock',
     'jeer',
@@ -44279,7 +44279,7 @@ const SYN_DB = {
     'rebuke',
     'censure'
   ],
-  'teach': [
+  teach: [
     'discipline',
     'instruct',
     'tutor',
@@ -44296,7 +44296,7 @@ const SYN_DB = {
     'instill',
     'nurture'
   ],
-  'tedious': [
+  tedious: [
     'wearisome',
     'fatiguing',
     'irksome',
@@ -44308,7 +44308,7 @@ const SYN_DB = {
     'tiring',
     'trying'
   ],
-  'tell': [
+  tell: [
     'enumerate',
     'communicate',
     'impart',
@@ -44331,7 +44331,7 @@ const SYN_DB = {
     'command',
     'request'
   ],
-  'temerity': [
+  temerity: [
     'audacity',
     'foolhardiness',
     'rashness',
@@ -44345,7 +44345,7 @@ const SYN_DB = {
     'precipitancy',
     'venturesomeness'
   ],
-  'temporal': [
+  temporal: [
     'transient',
     'fleeting',
     'transitory',
@@ -44355,7 +44355,7 @@ const SYN_DB = {
     'secular',
     'mundane'
   ],
-  'tendency': [
+  tendency: [
     'proneness',
     'drift',
     'aim',
@@ -44372,7 +44372,7 @@ const SYN_DB = {
     'propensity',
     'liability'
   ],
-  'tender': [
+  tender: [
     'effeminate',
     'soft',
     'sensitive',
@@ -44387,7 +44387,7 @@ const SYN_DB = {
     'mild',
     'susceptible'
   ],
-  'tension': [
+  tension: [
     'strain',
     'stretch',
     'effort',
@@ -44400,7 +44400,7 @@ const SYN_DB = {
     'stiffness',
     'tightness'
   ],
-  'term': [
+  term: [
     'boundary',
     'limit',
     'expression',
@@ -44411,7 +44411,7 @@ const SYN_DB = {
     'condition',
     'denomination'
   ],
-  'termination': [
+  termination: [
     'limit',
     'end',
     'conclusion',
@@ -44429,7 +44429,7 @@ const SYN_DB = {
     'exit',
     'issue'
   ],
-  'terse': [
+  terse: [
     'concise',
     'pithy',
     'succinct',
@@ -44442,7 +44442,7 @@ const SYN_DB = {
     'compendious',
     'neat'
   ],
-  'testimony': [
+  testimony: [
     'affirmation',
     'certification',
     'deposition',
@@ -44453,7 +44453,7 @@ const SYN_DB = {
     'attestation',
     'oath'
   ],
-  'theory': [
+  theory: [
     'hypothesis',
     'speculation',
     'doctrine',
@@ -44469,7 +44469,7 @@ const SYN_DB = {
     'rationale',
     'supposition'
   ],
-  'therefore': [
+  therefore: [
     'consequently',
     'then',
     'hence',
@@ -44478,7 +44478,7 @@ const SYN_DB = {
     'wherefore',
     'accordingly'
   ],
-  'thick': [
+  thick: [
     'dense',
     'close',
     'compact',
@@ -44495,7 +44495,7 @@ const SYN_DB = {
     'numerous',
     'inarticulate'
   ],
-  'think': [
+  think: [
     'cogitate',
     'contemplate',
     'remember',
@@ -44517,7 +44517,7 @@ const SYN_DB = {
     'imagine',
     'apprehend'
   ],
-  'thought': [
+  thought: [
     'imagination',
     'fancy',
     'conceit',
@@ -44542,13 +44542,13 @@ const SYN_DB = {
     'intention',
     'provision'
   ],
-  'threat': [
+  threat: [
     'menace',
     'denunciation',
     'threatening',
     'intimidation'
   ],
-  'thrifty': [
+  thrifty: [
     'economical',
     'saving',
     'careful',
@@ -44560,7 +44560,7 @@ const SYN_DB = {
     'provident',
     'foresighted'
   ],
-  'throng': [
+  throng: [
     'concourse',
     'crowd',
     'host',
@@ -44569,7 +44569,7 @@ const SYN_DB = {
     'multitude',
     'press'
   ],
-  'tidings': [
+  tidings: [
     'message',
     'information',
     'intelligence',
@@ -44579,7 +44579,7 @@ const SYN_DB = {
     'advices',
     'announcement'
   ],
-  'time': [
+  time: [
     'epoch',
     'era',
     'period',
@@ -44593,7 +44593,7 @@ const SYN_DB = {
     'sequence',
     'duration'
   ],
-  'timid': [
+  timid: [
     'fearful',
     'timorous',
     'cowardly',
@@ -44606,7 +44606,7 @@ const SYN_DB = {
     'diffident',
     'bashful'
   ],
-  'tip': [
+  tip: [
     'incline',
     'lean',
     'list',
@@ -44617,7 +44617,7 @@ const SYN_DB = {
     'careen',
     'dip'
   ],
-  'tire': [
+  tire: [
     'exhaust',
     'fag',
     'weary',
@@ -44625,7 +44625,7 @@ const SYN_DB = {
     'jade',
     'harass'
   ],
-  'title': [
+  title: [
     'epithet',
     'name',
     'appellation',
@@ -44637,7 +44637,7 @@ const SYN_DB = {
     'heading',
     'style'
   ],
-  'together': [
+  together: [
     'with',
     'associated',
     'conjoined',
@@ -44646,7 +44646,7 @@ const SYN_DB = {
     'contemporaneously',
     'coincidently'
   ],
-  'toil': [
+  toil: [
     'labor',
     'drudgery',
     'work',
@@ -44656,7 +44656,7 @@ const SYN_DB = {
     'task',
     'travail'
   ],
-  'tolerable': [
+  tolerable: [
     'endurable',
     'bearable',
     'supportable',
@@ -44666,7 +44666,7 @@ const SYN_DB = {
     'mediocre',
     'indifferent'
   ],
-  'tool': [
+  tool: [
     'appliance',
     'implement',
     'apparatus',
@@ -44675,7 +44675,7 @@ const SYN_DB = {
     'machine',
     'weapon'
   ],
-  'topic': [
+  topic: [
     'head',
     'division',
     'motion',
@@ -44687,7 +44687,7 @@ const SYN_DB = {
     'theme',
     'matter'
   ],
-  'torment': [
+  torment: [
     'pain',
     'misery',
     'agony',
@@ -44695,7 +44695,7 @@ const SYN_DB = {
     'torture',
     'distress'
   ],
-  'total': [
+  total: [
     'whole',
     'entire',
     'full',
@@ -44703,7 +44703,7 @@ const SYN_DB = {
     'complete',
     'undivided'
   ],
-  'trace': [
+  trace: [
     'mark',
     'remains',
     'sign',
@@ -44718,7 +44718,7 @@ const SYN_DB = {
     'memorial',
     'remnant'
   ],
-  'trade': [
+  trade: [
     'profession',
     'occupation',
     'office',
@@ -44729,14 +44729,14 @@ const SYN_DB = {
     'dealing',
     'traffic'
   ],
-  'tragedy': [
+  tragedy: [
     'catastrophe',
     'calamity',
     'adversity',
     'disaster',
     'affliction'
   ],
-  'traitor': [
+  traitor: [
     'betrayer',
     'turncoat',
     'renegade',
@@ -44747,7 +44747,7 @@ const SYN_DB = {
     'deserter',
     'mutineer'
   ],
-  'tranquil': [
+  tranquil: [
     'quiet',
     'calm',
     'undisturbed',
@@ -44759,7 +44759,7 @@ const SYN_DB = {
     'collected',
     'cool'
   ],
-  'transact': [
+  transact: [
     'conduct',
     'perform',
     'act',
@@ -44768,7 +44768,7 @@ const SYN_DB = {
     'negotiate',
     'treat'
   ],
-  'transaction': [
+  transaction: [
     'business',
     'action',
     'deed',
@@ -44779,7 +44779,7 @@ const SYN_DB = {
     'negotiation',
     'performance'
   ],
-  'transgression': [
+  transgression: [
     'infringement',
     'misdemeanor',
     'misdeed',
@@ -44791,7 +44791,7 @@ const SYN_DB = {
     'offense',
     'sin'
   ],
-  'transient': [
+  transient: [
     'fleeting',
     'temporary',
     'transitory',
@@ -44805,7 +44805,7 @@ const SYN_DB = {
     'fugitive',
     'short'
   ],
-  'transparent': [
+  transparent: [
     'translucent',
     'pellucid',
     'clear',
@@ -44818,7 +44818,7 @@ const SYN_DB = {
     'bright',
     'perspicuous'
   ],
-  'travel': [
+  travel: [
     'go',
     'pass',
     'journey',
@@ -44828,7 +44828,7 @@ const SYN_DB = {
     'wander',
     'roam'
   ],
-  'treasure': [
+  treasure: [
     'wealth',
     'abundance',
     'plenty',
@@ -44841,7 +44841,7 @@ const SYN_DB = {
     'bullion',
     'reserve'
   ],
-  'treaty': [
+  treaty: [
     'negotiation',
     'compact',
     'agreement',
@@ -44850,7 +44850,7 @@ const SYN_DB = {
     'convention',
     'contract'
   ],
-  'tremendous': [
+  tremendous: [
     'frightful',
     'terrific',
     'horrible',
@@ -44861,7 +44861,7 @@ const SYN_DB = {
     'horrifying',
     'dreadful'
   ],
-  'trial': [
+  trial: [
     'attempt',
     'endeavor',
     'essay',
@@ -44883,7 +44883,7 @@ const SYN_DB = {
     'suffering',
     'tribulation'
   ],
-  'trick': [
+  trick: [
     'stratagem',
     'wile',
     'fraud',
@@ -44900,7 +44900,7 @@ const SYN_DB = {
     'contrivance',
     'legerdemain'
   ],
-  'triumph': [
+  triumph: [
     'success',
     'conquest',
     'victory',
@@ -44912,7 +44912,7 @@ const SYN_DB = {
     'achievement',
     'attainment'
   ],
-  'trouble': [
+  trouble: [
     'affliction',
     'sorrow',
     'disturbance',
@@ -44932,7 +44932,7 @@ const SYN_DB = {
     'difficulty',
     'anxiety'
   ],
-  'true': [
+  true: [
     'correct',
     'accurate',
     'precise',
@@ -44946,7 +44946,7 @@ const SYN_DB = {
     'genuine',
     'veritable'
   ],
-  'trust': [
+  trust: [
     'confidence',
     'belief',
     'expectation',
@@ -44954,7 +44954,7 @@ const SYN_DB = {
     'hope',
     'reliance'
   ],
-  'truth': [
+  truth: [
     'fact',
     'reality',
     'fidelity',
@@ -44967,7 +44967,7 @@ const SYN_DB = {
     'precision',
     'faithfulness'
   ],
-  'tumult': [
+  tumult: [
     'ferment',
     'disturbance',
     'turbulence',
@@ -44979,14 +44979,14 @@ const SYN_DB = {
     'riot',
     'ex'
   ],
-  'citement': [
+  citement: [
     'citement',
     'distraction',
     'confusion',
     'turmoil',
     'noise'
   ],
-  'turn': [
+  turn: [
     'revolution',
     'alteration',
     'vicissitude',
@@ -45041,7 +45041,7 @@ const SYN_DB = {
     'issue',
     'terminate'
   ],
-  'tutor': [
+  tutor: [
     'teacher',
     'instructor',
     'professor',
@@ -45051,7 +45051,7 @@ const SYN_DB = {
     'guardian',
     'governor'
   ],
-  'twist': [
+  twist: [
     'contort',
     'writhe',
     'convolve',
@@ -45062,7 +45062,7 @@ const SYN_DB = {
     'insinuate',
     'encircle'
   ],
-  'type': [
+  type: [
     'mark',
     'stamp',
     'sign',
@@ -45083,11 +45083,11 @@ const SYN_DB = {
     'mold',
     'fashion'
   ],
-  'ubiquity': [
+  ubiquity: [
     'omnipresence',
     'allpervasiveness'
   ],
-  'ugly': [
+  ugly: [
     'loathsome',
     'unsightly',
     'repulsive',
@@ -45102,7 +45102,7 @@ const SYN_DB = {
     'cross',
     'vicious'
   ],
-  'ultimate': [
+  ultimate: [
     'final',
     'last',
     'conclusive',
@@ -45111,7 +45111,7 @@ const SYN_DB = {
     'mostremote',
     'elemental'
   ],
-  'unction': [
+  unction: [
     'anointing',
     'ointment',
     'power',
@@ -45124,7 +45124,7 @@ const SYN_DB = {
     'spirit',
     'emotion'
   ],
-  'unctuous': [
+  unctuous: [
     'fatty',
     'oily',
     'greasy',
@@ -45137,12 +45137,12 @@ const SYN_DB = {
     'servile',
     'syeophantic'
   ],
-  'under': [
+  under: [
     'below',
     'beneath',
     'underneath'
   ],
-  'understand': [
+  understand: [
     'know',
     'comprehend',
     'learn',
@@ -45158,7 +45158,7 @@ const SYN_DB = {
     'conceive',
     'penetrate'
   ],
-  'understanding': [
+  understanding: [
     'sense',
     'intelligence',
     'conception',
@@ -45172,7 +45172,7 @@ const SYN_DB = {
     'mind',
     'brains'
   ],
-  'undertake': [
+  undertake: [
     'engage',
     'enter',
     'setabout',
@@ -45186,7 +45186,7 @@ const SYN_DB = {
     'commence',
     'stipulate'
   ],
-  'undertaking': [
+  undertaking: [
     'enterprise',
     'engagement',
     'attempt',
@@ -45201,7 +45201,7 @@ const SYN_DB = {
     'matter',
     'concern'
   ],
-  'uniform': [
+  uniform: [
     'unchanging',
     'equable',
     'consistent',
@@ -45215,7 +45215,7 @@ const SYN_DB = {
     'unvaried',
     'alike'
   ],
-  'union': [
+  union: [
     'unity',
     'connection',
     'concord',
@@ -45234,7 +45234,7 @@ const SYN_DB = {
     'juncture',
     'unification'
   ],
-  'unique': [
+  unique: [
     'sole',
     'only',
     'unmatched',
@@ -45245,14 +45245,14 @@ const SYN_DB = {
     'exceptional',
     'rare'
   ],
-  'unison': [
+  unison: [
     'harmony',
     'agreement',
     'concord',
     'union',
     'accordance'
   ],
-  'unit': [
+  unit: [
     'oneness',
     'unity',
     'one',
@@ -45260,7 +45260,7 @@ const SYN_DB = {
     'item',
     'individual'
   ],
-  'unity': [
+  unity: [
     'oneness',
     'concord',
     'conjunction',
@@ -45272,7 +45272,7 @@ const SYN_DB = {
     'singleness',
     'unanimity'
   ],
-  'universal': [
+  universal: [
     'general',
     'unlimited',
     'allreaching',
@@ -45285,7 +45285,7 @@ const SYN_DB = {
     'exhaustive',
     'complete'
   ],
-  'upbraid': [
+  upbraid: [
     'reproach',
     'censure',
     'blame',
@@ -45294,19 +45294,19 @@ const SYN_DB = {
     'chide',
     'reprove'
   ],
-  'upon': [
+  upon: [
     'on',
     'about',
     'concerning',
     'with',
     'forthwith'
   ],
-  'upper': [
+  upper: [
     'higher',
     'superior',
     'ontop'
   ],
-  'upright': [
+  upright: [
     'erect',
     'perpendicular',
     'vertical',
@@ -45320,7 +45320,7 @@ const SYN_DB = {
     'true',
     'trustworthy'
   ],
-  'uproar': [
+  uproar: [
     'tumult',
     'disturbance',
     'confusion',
@@ -45332,7 +45332,7 @@ const SYN_DB = {
     'noise',
     'din'
   ],
-  'urbane': [
+  urbane: [
     'courteous',
     'polite',
     'refined',
@@ -45341,7 +45341,7 @@ const SYN_DB = {
     'civil',
     'polished'
   ],
-  'urge': [
+  urge: [
     'animate',
     'instigate',
     'stimulate',
@@ -45360,7 +45360,7 @@ const SYN_DB = {
     'accelerate',
     'expedite'
   ],
-  'urgent': [
+  urgent: [
     'urging',
     'pressing',
     'importunate',
@@ -45376,7 +45376,7 @@ const SYN_DB = {
     'emergency',
     'necessitous'
   ],
-  'usage': [
+  usage: [
     'custom',
     'wont',
     'habit',
@@ -45389,7 +45389,7 @@ const SYN_DB = {
     'procedure',
     'fashion'
   ],
-  'use': [
+  use: [
     'employment',
     'application',
     'occasion',
@@ -45407,7 +45407,7 @@ const SYN_DB = {
     'need',
     'benefit'
   ],
-  'usual': [
+  usual: [
     'familiar',
     'frequent',
     'ordinary',
@@ -45424,13 +45424,13 @@ const SYN_DB = {
     'prevailing',
     'public'
   ],
-  'usurp': [
+  usurp: [
     'arrogate',
     'assume',
     'appropriate',
     'seize'
   ],
-  'utility': [
+  utility: [
     'profit',
     'expediency',
     'use',
@@ -45441,7 +45441,7 @@ const SYN_DB = {
     'service',
     'usableness'
   ],
-  'utmost': [
+  utmost: [
     'farthest',
     'extreme',
     'remotest',
@@ -45449,7 +45449,7 @@ const SYN_DB = {
     'uttermost',
     'greatest'
   ],
-  'utter': [
+  utter: [
     'issue',
     'deliver',
     'liberate',
@@ -45472,12 +45472,12 @@ const SYN_DB = {
     'unqualified',
     'thorough'
   ],
-  'utterly': [
+  utterly: [
     'fully',
     'totally',
     'thoroughly'
   ],
-  'vacancy': [
+  vacancy: [
     'emptiness',
     'leisure',
     'intermission',
@@ -45490,7 +45490,7 @@ const SYN_DB = {
     'space',
     'void'
   ],
-  'vacant': [
+  vacant: [
     'blank',
     'empty',
     'void',
@@ -45515,7 +45515,7 @@ const SYN_DB = {
     'leisure',
     'unmeaning'
   ],
-  'vacate': [
+  vacate: [
     'empty',
     'quit',
     'resign',
@@ -45529,14 +45529,14 @@ const SYN_DB = {
     'overrule',
     'neutralize'
   ],
-  'vacation': [
+  vacation: [
     'interval',
     'intermission',
     'holidays',
     'rest',
     'leisure'
   ],
-  'vacillation': [
+  vacillation: [
     'wavering',
     'fluctuating',
     'swaying',
@@ -45547,7 +45547,7 @@ const SYN_DB = {
     'inconstancy',
     'unsteadiness'
   ],
-  'vacuity': [
+  vacuity: [
     'emptiness',
     'vacancy',
     'void',
@@ -45558,7 +45558,7 @@ const SYN_DB = {
     'unreality',
     'space'
   ],
-  'vagabond': [
+  vagabond: [
     'wanderer',
     'vagrant',
     'tramp',
@@ -45570,7 +45570,7 @@ const SYN_DB = {
     'beggar',
     'rogue'
   ],
-  'vagary': [
+  vagary: [
     'whim',
     'freak',
     'crotchet',
@@ -45578,7 +45578,7 @@ const SYN_DB = {
     'caprice',
     'fancy'
   ],
-  'vagrant': [
+  vagrant: [
     'wandering',
     'erratic',
     'unsettled',
@@ -45588,7 +45588,7 @@ const SYN_DB = {
     'sauntering',
     'nomadic'
   ],
-  'vague': [
+  vague: [
     'unsettled',
     'undetermined',
     'indefinite',
@@ -45607,7 +45607,7 @@ const SYN_DB = {
     'unwarranted',
     'unauthorized'
   ],
-  'vain': [
+  vain: [
     'futile',
     'trivial',
     'vapid',
@@ -45641,13 +45641,13 @@ const SYN_DB = {
     'arrogant',
     'ostentatious'
   ],
-  'valediction': [
+  valediction: [
     'farewell',
     'valedictory',
     'leavetaking',
     'adieu'
   ],
-  'valiant': [
+  valiant: [
     'strong',
     'powerful',
     'intrepid',
@@ -45665,7 +45665,7 @@ const SYN_DB = {
     'undaunted',
     'stouthearted'
   ],
-  'valid': [
+  valid: [
     'sound',
     'good',
     'justified',
@@ -45684,7 +45684,7 @@ const SYN_DB = {
     'substantial',
     'sufficient'
   ],
-  'validity': [
+  validity: [
     'soundness',
     'justness',
     'efficacy',
@@ -45693,7 +45693,7 @@ const SYN_DB = {
     'cogency',
     'importance'
   ],
-  'valor': [
+  valor: [
     'bravery',
     'courage',
     'prowess',
@@ -45702,7 +45702,7 @@ const SYN_DB = {
     'boldness',
     'daring'
   ],
-  'valuable': [
+  valuable: [
     'worthy',
     'estimable',
     'costly',
@@ -45712,7 +45712,7 @@ const SYN_DB = {
     'dear',
     'serviceable'
   ],
-  'value': [
+  value: [
     'worth',
     'utility',
     'desirability',
@@ -45738,14 +45738,14 @@ const SYN_DB = {
     'treasure',
     'account'
   ],
-  'vanish': [
+  vanish: [
     'disappear',
     'fade',
     'passaway',
     'dissolve',
     'beannihilated'
   ],
-  'vanity': [
+  vanity: [
     'pride',
     'conceit',
     'unreality',
@@ -45760,7 +45760,7 @@ const SYN_DB = {
     'show',
     'ostentation'
   ],
-  'vanquish': [
+  vanquish: [
     'conquer',
     'overcome',
     'subdue',
@@ -45777,7 +45777,7 @@ const SYN_DB = {
     'disprove',
     'confound'
   ],
-  'vapid': [
+  vapid: [
     'dead',
     'spiritless',
     'flat',
@@ -45792,7 +45792,7 @@ const SYN_DB = {
     'feeble',
     'prosy'
   ],
-  'vapor': [
+  vapor: [
     'fume',
     'steam',
     'reek',
@@ -45808,7 +45808,7 @@ const SYN_DB = {
     'flatulence',
     'fantasy'
   ],
-  'variable': [
+  variable: [
     'changeable',
     'fickle',
     'inconstant',
@@ -45821,7 +45821,7 @@ const SYN_DB = {
     'versatile',
     'capricious'
   ],
-  'variance': [
+  variance: [
     'variation',
     'dissension',
     'disagreement',
@@ -45834,7 +45834,7 @@ const SYN_DB = {
     'discrepancy',
     'estrangement'
   ],
-  'variation': [
+  variation: [
     'modification',
     'alteration',
     'mutation',
@@ -45847,7 +45847,7 @@ const SYN_DB = {
     'difference',
     'discrepancy'
   ],
-  'variegated': [
+  variegated: [
     'streaked',
     'dappled',
     'particolored',
@@ -45857,7 +45857,7 @@ const SYN_DB = {
     'figured',
     'mottled'
   ],
-  'variety': [
+  variety: [
     'diversity',
     'difference',
     'assortment',
@@ -45868,7 +45868,7 @@ const SYN_DB = {
     'multiplicity',
     'kind'
   ],
-  'various': [
+  various: [
     'different',
     'diverse',
     'several',
@@ -45881,7 +45881,7 @@ const SYN_DB = {
     'sundry',
     'diversified'
   ],
-  'varnish': [
+  varnish: [
     'gloss',
     'palliate',
     'conceal',
@@ -45893,7 +45893,7 @@ const SYN_DB = {
     'excuse',
     'mitigate'
   ],
-  'vast': [
+  vast: [
     'spacious',
     'huge',
     'immense',
@@ -45911,14 +45911,14 @@ const SYN_DB = {
     'remarkable',
     'extraordinary'
   ],
-  'vaticination': [
+  vaticination: [
     'prediction',
     'divination',
     'prophecy',
     'prognostication',
     'augury'
   ],
-  'vault': [
+  vault: [
     'jump',
     'spring',
     'bound',
@@ -45926,7 +45926,7 @@ const SYN_DB = {
     'tumble',
     'turn'
   ],
-  'vaunt': [
+  vaunt: [
     'boast',
     'brag',
     'display',
@@ -45934,14 +45934,14 @@ const SYN_DB = {
     'flourish',
     'parade'
   ],
-  'veer': [
+  veer: [
     'shift',
     'turn',
     'change',
     'trim',
     'vacillate'
   ],
-  'vegetate': [
+  vegetate: [
     'sprout',
     'grow',
     'germinate',
@@ -45949,7 +45949,7 @@ const SYN_DB = {
     'idle',
     'hibernate'
   ],
-  'vehemence': [
+  vehemence: [
     'impetuosity',
     'violence',
     'fury',
@@ -45964,7 +45964,7 @@ const SYN_DB = {
     'force',
     'intensity'
   ],
-  'vehement': [
+  vehement: [
     'raging',
     'hot',
     'ardent',
@@ -45982,7 +45982,7 @@ const SYN_DB = {
     'sanguine',
     'enthusiastic'
   ],
-  'veil': [
+  veil: [
     'cover',
     'invest',
     'hide',
@@ -45992,7 +45992,7 @@ const SYN_DB = {
     'shroud',
     'envelop'
   ],
-  'velocity': [
+  velocity: [
     'celerity',
     'fleetness',
     'rapidity',
@@ -46001,7 +46001,7 @@ const SYN_DB = {
     'impetus',
     'momentum'
   ],
-  'venal': [
+  venal: [
     'mercenary',
     'hireling',
     'sordid',
@@ -46009,14 +46009,14 @@ const SYN_DB = {
     'salable',
     'prostitute'
   ],
-  'vend': [
+  vend: [
     'barter',
     'trade',
     'sell',
     'hawk',
     'retail'
   ],
-  'venerable': [
+  venerable: [
     'worthy',
     'honorable',
     'estimable',
@@ -46026,7 +46026,7 @@ const SYN_DB = {
     'wise',
     'grave'
   ],
-  'venerate': [
+  venerate: [
     'honor',
     'respect',
     'revere',
@@ -46035,7 +46035,7 @@ const SYN_DB = {
     'admire',
     'worship'
   ],
-  'veneration': [
+  veneration: [
     'reverence',
     'adoration',
     'respect',
@@ -46044,20 +46044,20 @@ const SYN_DB = {
     'esteem',
     'dread'
   ],
-  'vengeance': [
+  vengeance: [
     'punishment',
     'retribution',
     'revenge',
     'retaliation'
   ],
-  'venial': [
+  venial: [
     'excusable',
     'justifiable',
     'pardonable',
     'slight',
     'trivial'
   ],
-  'venom': [
+  venom: [
     'virus',
     'bane',
     'poison',
@@ -46071,7 +46071,7 @@ const SYN_DB = {
     'bitterness',
     'acrimony'
   ],
-  'venomous': [
+  venomous: [
     'poisonous',
     'malignant',
     'noxious',
@@ -46079,7 +46079,7 @@ const SYN_DB = {
     'virulent',
     'spiteful'
   ],
-  'vent': [
+  vent: [
     'outlet',
     'escape',
     'emission',
@@ -46091,7 +46091,7 @@ const SYN_DB = {
     'market',
     'sale'
   ],
-  'venture': [
+  venture: [
     'chance',
     'risk',
     'hazard',
@@ -46113,7 +46113,7 @@ const SYN_DB = {
     'imperil',
     'chance'
   ],
-  'venturesome': [
+  venturesome: [
     'bold',
     'daring',
     'adventurous',
@@ -46124,13 +46124,13 @@ const SYN_DB = {
     'doughty',
     'fearless'
   ],
-  'venturous': [
+  venturous: [
     'bold',
     'daring',
     'fearless',
     'venturesome'
   ],
-  'veracious': [
+  veracious: [
     'true',
     'truthful',
     'reliable',
@@ -46139,7 +46139,7 @@ const SYN_DB = {
     'honest',
     'credible'
   ],
-  'veracity': [
+  veracity: [
     'honesty',
     'truthfulness',
     'reality',
@@ -46152,7 +46152,7 @@ const SYN_DB = {
     'correctness',
     'accuracy'
   ],
-  'verbal': [
+  verbal: [
     'spoken',
     'oral',
     'literal',
@@ -46161,14 +46161,14 @@ const SYN_DB = {
     'unwritten',
     'unrecorded'
   ],
-  'verbose': [
+  verbose: [
     'wordy',
     'prolix',
     'diffuse',
     'prosy',
     'tedious'
   ],
-  'verdict': [
+  verdict: [
     'decision',
     'judgment',
     'opinion',
@@ -46176,7 +46176,7 @@ const SYN_DB = {
     'finding',
     'sentence'
   ],
-  'verge': [
+  verge: [
     'border',
     'limit',
     'boundary',
@@ -46200,7 +46200,7 @@ const SYN_DB = {
     'approach',
     'approximate'
   ],
-  'verify': [
+  verify: [
     'prove',
     'correct',
     'establish',
@@ -46214,7 +46214,7 @@ const SYN_DB = {
     'demonstrate',
     'warrant'
   ],
-  'veritable': [
+  veritable: [
     'actual',
     'real',
     'genuine',
@@ -46224,7 +46224,7 @@ const SYN_DB = {
     'original',
     'authentic'
   ],
-  'verity': [
+  verity: [
     'fact',
     'truth',
     'reality',
@@ -46232,13 +46232,13 @@ const SYN_DB = {
     'existence',
     'truthfulness'
   ],
-  'vernal': [
+  vernal: [
     'spring',
     'balmy',
     'genial',
     'youthful'
   ],
-  'versatile': [
+  versatile: [
     'changeable',
     'inconsistent',
     'variable',
@@ -46251,7 +46251,7 @@ const SYN_DB = {
     'plastic',
     'ready'
   ],
-  'versed': [
+  versed: [
     'experienced',
     'studied',
     'practiced',
@@ -46263,7 +46263,7 @@ const SYN_DB = {
     'clever',
     'indoctrinated'
   ],
-  'version': [
+  version: [
     'account',
     'description',
     'translation',
@@ -46272,12 +46272,12 @@ const SYN_DB = {
     'reading',
     'statement'
   ],
-  'vertical': [
+  vertical: [
     'perpendicular',
     'plumb',
     'upright'
   ],
-  'very': [
+  very: [
     'absolutely',
     'awfully',
     'certainly',
@@ -46322,7 +46322,7 @@ const SYN_DB = {
     'surpassingly',
     'vastly'
   ],
-  'vestige': [
+  vestige: [
     'trace',
     'mark',
     'footstep',
@@ -46334,18 +46334,18 @@ const SYN_DB = {
     'remnant',
     'record'
   ],
-  'veteran': [
+  veteran: [
     'expert',
     'adept',
     'proficient',
     'habitus'
   ],
-  'veto': [
+  veto: [
     'prohibit',
     'forbid',
     'negative'
   ],
-  'vex': [
+  vex: [
     'agitate',
     'disquiet',
     'harass',
@@ -46370,7 +46370,7 @@ const SYN_DB = {
     'disturb',
     'tantalize'
   ],
-  'vexation': [
+  vexation: [
     'chagrin',
     'agitation',
     'mortification',
@@ -46385,7 +46385,7 @@ const SYN_DB = {
     'plague',
     'torment'
   ],
-  'vibrate': [
+  vibrate: [
     'swing',
     'oscillate',
     'fluctuate',
@@ -46394,7 +46394,7 @@ const SYN_DB = {
     'undulate',
     'quake'
   ],
-  'vice': [
+  vice: [
     'crime',
     'sin',
     'fault',
@@ -46409,14 +46409,14 @@ const SYN_DB = {
     'evil',
     'corruption'
   ],
-  'vicinity': [
+  vicinity: [
     'neighborhood',
     'vicinage',
     'nearness',
     'proximity',
     'propinquity'
   ],
-  'vicious': [
+  vicious: [
     'faulty',
     'wicked',
     'corrupt',
@@ -46431,7 +46431,7 @@ const SYN_DB = {
     'mischievous',
     'immoral'
   ],
-  'vicissitude': [
+  vicissitude: [
     'change',
     'alternation',
     'mutation',
@@ -46439,7 +46439,7 @@ const SYN_DB = {
     'variation',
     'revolution'
   ],
-  'victory': [
+  victory: [
     'success',
     'supremacy',
     'triumph',
@@ -46448,14 +46448,14 @@ const SYN_DB = {
     'conquest',
     'mastery'
   ],
-  'victuals': [
+  victuals: [
     'food',
     'provisions',
     'viands',
     'sustenance',
     'meat'
   ],
-  'view': [
+  view: [
     'sight',
     'look',
     'survey',
@@ -46496,7 +46496,7 @@ const SYN_DB = {
     'study',
     'reconnoiter'
   ],
-  'vigilance': [
+  vigilance: [
     'sleeplessness',
     'wakefulness',
     'watchfulness',
@@ -46510,7 +46510,7 @@ const SYN_DB = {
     'alertness',
     'observation'
   ],
-  'vigilant': [
+  vigilant: [
     'alert',
     'awake',
     'careful',
@@ -46522,7 +46522,7 @@ const SYN_DB = {
     'cautious',
     'circumspect'
   ],
-  'vigorous': [
+  vigorous: [
     'strong',
     'lusty',
     'robust',
@@ -46536,7 +46536,7 @@ const SYN_DB = {
     'spirited',
     'lively'
   ],
-  'vile': [
+  vile: [
     'low',
     'base',
     'worthless',
@@ -46554,7 +46554,7 @@ const SYN_DB = {
     'infamous',
     'lowminded'
   ],
-  'villain': [
+  villain: [
     'scoundrel',
     'knave',
     'rascal',
@@ -46563,7 +46563,7 @@ const SYN_DB = {
     'rogu',
     'malefactor'
   ],
-  'villainous': [
+  villainous: [
     'base',
     'vile',
     'mean',
@@ -46577,7 +46577,7 @@ const SYN_DB = {
     'outrageous',
     'atrocious'
   ],
-  'vindicate': [
+  vindicate: [
     'maintain',
     'defend',
     'justify',
@@ -46592,7 +46592,7 @@ const SYN_DB = {
     'support',
     'advocate'
   ],
-  'vindictive': [
+  vindictive: [
     'revengeful',
     'unforgiving',
     'implacable',
@@ -46600,7 +46600,7 @@ const SYN_DB = {
     'unrelenting',
     'malicious'
   ],
-  'violate': [
+  violate: [
     'injure',
     'disturb',
     'interrupt',
@@ -46614,7 +46614,7 @@ const SYN_DB = {
     'infringe',
     'ravish'
   ],
-  'violence': [
+  violence: [
     'vehemence',
     'impetuosity',
     'fierceness',
@@ -46627,7 +46627,7 @@ const SYN_DB = {
     'assault',
     'outrage'
   ],
-  'violent': [
+  violent: [
     'fierce',
     'vehement',
     'outrageous',
@@ -46638,7 +46638,7 @@ const SYN_DB = {
     'severe',
     'extreme'
   ],
-  'virgin': [
+  virgin: [
     'maid',
     'maiden',
     'girl',
@@ -46651,7 +46651,7 @@ const SYN_DB = {
     'fresh',
     'new'
   ],
-  'virile': [
+  virile: [
     'mature',
     'masculine',
     'masterful',
@@ -46659,7 +46659,7 @@ const SYN_DB = {
     'robust',
     'vigorous'
   ],
-  'virtual': [
+  virtual: [
     'potential',
     'efficacious',
     'energizing',
@@ -46669,7 +46669,7 @@ const SYN_DB = {
     'essential',
     'equivalent'
   ],
-  'virtue': [
+  virtue: [
     'energy',
     'strength',
     'potency',
@@ -46701,7 +46701,7 @@ const SYN_DB = {
     'faithfulness',
     'justice'
   ],
-  'virtuous': [
+  virtuous: [
     'excellent',
     'upright',
     'righteous',
@@ -46714,7 +46714,7 @@ const SYN_DB = {
     'worthy',
     'modest'
   ],
-  'virulence': [
+  virulence: [
     'malignancy',
     'virus',
     'contagion',
@@ -46724,7 +46724,7 @@ const SYN_DB = {
     'malevolence',
     'acrimony'
   ],
-  'visible': [
+  visible: [
     'perceptible',
     'noticeable',
     'apparent',
@@ -46739,7 +46739,7 @@ const SYN_DB = {
     'palpable',
     'discernible'
   ],
-  'vision': [
+  vision: [
     'sight',
     'apparition',
     'creation',
@@ -46751,7 +46751,7 @@ const SYN_DB = {
     'illusion',
     'phantasm'
   ],
-  'vital': [
+  vital: [
     'living',
     'mortal',
     'important',
@@ -46762,7 +46762,7 @@ const SYN_DB = {
     'material',
     'paramount'
   ],
-  'vitiate': [
+  vitiate: [
     'impair',
     'contaminate',
     'annul',
@@ -46773,7 +46773,7 @@ const SYN_DB = {
     'taint',
     'invalidate'
   ],
-  'vivacious': [
+  vivacious: [
     'animated',
     'sportive',
     'gay',
@@ -46787,7 +46787,7 @@ const SYN_DB = {
     'cheerful',
     'mirthful'
   ],
-  'vivid': [
+  vivid: [
     'clear',
     'lucid',
     'striking',
@@ -46808,7 +46808,7 @@ const SYN_DB = {
     'scintillant',
     'sunny'
   ],
-  'vocation': [
+  vocation: [
     'call',
     'summons',
     'citation',
@@ -46822,7 +46822,7 @@ const SYN_DB = {
     'mission',
     'office'
   ],
-  'vogue': [
+  vogue: [
     'mode',
     'custom',
     'way',
@@ -46831,7 +46831,7 @@ const SYN_DB = {
     'practice',
     'usage'
   ],
-  'voice': [
+  voice: [
     'sound',
     'utterance',
     'tone',
@@ -46845,7 +46845,7 @@ const SYN_DB = {
     'precept',
     'opinion'
   ],
-  'void': [
+  void: [
     'empty',
     'vacant',
     'devoid',
@@ -46864,7 +46864,7 @@ const SYN_DB = {
     'imaginary',
     'unsubstantial'
   ],
-  'volatile': [
+  volatile: [
     'lighthearted',
     'airy',
     'changeable',
@@ -46882,7 +46882,7 @@ const SYN_DB = {
     'unsteady',
     'reckless'
   ],
-  'voluble': [
+  voluble: [
     'rotating',
     'nimble',
     'glib',
@@ -46894,7 +46894,7 @@ const SYN_DB = {
     'running',
     'coursing'
   ],
-  'volume': [
+  volume: [
     'book',
     'tome',
     'convolution',
@@ -46905,21 +46905,21 @@ const SYN_DB = {
     'bulk',
     'size'
   ],
-  'volunteer': [
+  volunteer: [
     'offer',
     'bestow',
     'proffer',
     'tender',
     'present'
   ],
-  'voluptuous': [
+  voluptuous: [
     'sensual',
     'sensuous',
     'pleasurable',
     'licentious',
     'selfindulgent'
   ],
-  'voracious': [
+  voracious: [
     'hungry',
     'greedy',
     'rapacious',
@@ -46929,7 +46929,7 @@ const SYN_DB = {
     'insatiate',
     'omnivorous'
   ],
-  'vouch': [
+  vouch: [
     'declare',
     'affirm',
     'attest',
@@ -46942,7 +46942,7 @@ const SYN_DB = {
     'warrant',
     'guarantee'
   ],
-  'vouchsafe': [
+  vouchsafe: [
     'grant',
     'concede',
     'bestow',
@@ -46952,7 +46952,7 @@ const SYN_DB = {
     'descend',
     'yield'
   ],
-  'vow': [
+  vow: [
     'promise',
     'pledge',
     'oath',
@@ -46965,7 +46965,7 @@ const SYN_DB = {
     'asseverate',
     'swear'
   ],
-  'vulgar': [
+  vulgar: [
     'common',
     'general',
     'ordinary',
@@ -46980,7 +46980,7 @@ const SYN_DB = {
     'base',
     'underbred'
   ],
-  'vulnerable': [
+  vulnerable: [
     'susceptible',
     'liable',
     'subject',
@@ -46989,14 +46989,14 @@ const SYN_DB = {
     'tender',
     'exposed'
   ],
-  'waft': [
+  waft: [
     'bear',
     'convey',
     'transmit',
     'carry',
     'transport'
   ],
-  'wages': [
+  wages: [
     'salary',
     'stipend',
     'allowance',
@@ -47009,7 +47009,7 @@ const SYN_DB = {
     'reward',
     'emolument'
   ],
-  'wait': [
+  wait: [
     'stay',
     'tarry',
     'delay',
@@ -47022,7 +47022,7 @@ const SYN_DB = {
     'watch',
     'await'
   ],
-  'waive': [
+  waive: [
     'relinquish',
     'forbear',
     'refuse',
@@ -47037,7 +47037,7 @@ const SYN_DB = {
     'renounce',
     'surrender'
   ],
-  'wake': [
+  wake: [
     'watch',
     'excite',
     'arouse',
@@ -47049,14 +47049,14 @@ const SYN_DB = {
     'summon',
     'provoke'
   ],
-  'wakeful': [
+  wakeful: [
     'awake',
     'sleepless',
     'watchful',
     'observant',
     'wary'
   ],
-  'walk': [
+  walk: [
     'proceed',
     'behave',
     'pursue',
@@ -47072,7 +47072,7 @@ const SYN_DB = {
     'trudge',
     'tread'
   ],
-  'wan': [
+  wan: [
     'pale',
     'sickly',
     'languid',
@@ -47084,7 +47084,7 @@ const SYN_DB = {
     'livid',
     'bloodless'
   ],
-  'wander': [
+  wander: [
     'straggle',
     'stroll',
     'range',
@@ -47106,7 +47106,7 @@ const SYN_DB = {
     'ewerve',
     'digress'
   ],
-  'wane': [
+  wane: [
     'decrease',
     'decline',
     'fail',
@@ -47121,7 +47121,7 @@ const SYN_DB = {
     'contract',
     'recede'
   ],
-  'want': [
+  want: [
     'defect',
     'failure',
     'dearth',
@@ -47137,7 +47137,7 @@ const SYN_DB = {
     'insufficiency',
     'scantiness'
   ],
-  'ward': [
+  ward: [
     'watch',
     'guardianship',
     'guard',
@@ -47164,7 +47164,7 @@ const SYN_DB = {
     'parry',
     'fend'
   ],
-  'warfare': [
+  warfare: [
     'hostilities',
     'war',
     'contest',
@@ -47178,7 +47178,7 @@ const SYN_DB = {
     'skirmish',
     'engagement'
   ],
-  'warlike': [
+  warlike: [
     'military',
     'martial',
     'hostile',
@@ -47188,7 +47188,7 @@ const SYN_DB = {
     'unfriendly',
     'belligerent'
   ],
-  'warm': [
+  warm: [
     'ardent',
     'zealous',
     'fervent',
@@ -47217,7 +47217,7 @@ const SYN_DB = {
     'interested',
     'irascible'
   ],
-  'warmth': [
+  warmth: [
     'fervency',
     'glow',
     'earnestness',
@@ -47238,7 +47238,7 @@ const SYN_DB = {
     'emotion',
     'life'
   ],
-  'warrant': [
+  warrant: [
     'guaranty',
     'security',
     'voucher',
@@ -47255,7 +47255,7 @@ const SYN_DB = {
     'undertake',
     'authorize'
   ],
-  'wary': [
+  wary: [
     'circumspect',
     'watchful',
     'cautious',
@@ -47269,7 +47269,7 @@ const SYN_DB = {
     'scrupulous',
     'chary'
   ],
-  'wash': [
+  wash: [
     'cleanse',
     'wet',
     'scrub',
@@ -47287,7 +47287,7 @@ const SYN_DB = {
     'cleanse',
     'rinse'
   ],
-  'waste': [
+  waste: [
     'squandering',
     'devastation',
     'loss',
@@ -47335,7 +47335,7 @@ const SYN_DB = {
     'unused',
     'superfluous'
   ],
-  'wasteful': [
+  wasteful: [
     'destructive',
     'ruinous',
     'lavish',
@@ -47343,13 +47343,13 @@ const SYN_DB = {
     'profuse',
     'extravagant'
   ],
-  'watch': [
+  watch: [
     'tend',
     'heed',
     'observe',
     'expect'
   ],
-  'watchful': [
+  watchful: [
     'circumspect',
     'wakeful',
     'heedful',
@@ -47360,7 +47360,7 @@ const SYN_DB = {
     'cautious',
     'observant'
   ],
-  'waver': [
+  waver: [
     'reel',
     'totter',
     'vacillate',
@@ -47372,7 +47372,7 @@ const SYN_DB = {
     'beperplexed',
     'scruple'
   ],
-  'wavering': [
+  wavering: [
     'fluctuation',
     'hesitancy',
     'indecision',
@@ -47380,7 +47380,7 @@ const SYN_DB = {
     'uncertainty',
     'irresolution'
   ],
-  'wayward': [
+  wayward: [
     'disobedient',
     'headstrong',
     'froward',
@@ -47392,7 +47392,7 @@ const SYN_DB = {
     'capricious',
     'contrary'
   ],
-  'weak': [
+  weak: [
     'feeble',
     'infirm',
     'sickly',
@@ -47443,7 +47443,7 @@ const SYN_DB = {
     'untrustworthy',
     'ineffectual'
   ],
-  'weaken': [
+  weaken: [
     'debilitate',
     'enfeeble',
     'enervate',
@@ -47456,7 +47456,7 @@ const SYN_DB = {
     'dilute',
     'attenuate'
   ],
-  'weakness': [
+  weakness: [
     'feebleness',
     'debility',
     'languor',
@@ -47466,7 +47466,7 @@ const SYN_DB = {
     'faintness',
     'frailty'
   ],
-  'wealth': [
+  wealth: [
     'riches',
     'affluence',
     'opulence',
@@ -47483,7 +47483,7 @@ const SYN_DB = {
     'luxury',
     'satiety'
   ],
-  'wear': [
+  wear: [
     'carry',
     'bear',
     'useup',
@@ -47496,7 +47496,7 @@ const SYN_DB = {
     'exhibit',
     'sport'
   ],
-  'weariness': [
+  weariness: [
     'fatigue',
     'languor',
     'exhaustion',
@@ -47504,7 +47504,7 @@ const SYN_DB = {
     'prostration',
     'depression'
   ],
-  'wearisome': [
+  wearisome: [
     'tiresome',
     'tedious',
     'irksome',
@@ -47519,7 +47519,7 @@ const SYN_DB = {
     'toilsome',
     'laborious'
   ],
-  'weary': [
+  weary: [
     'fatigued',
     'tiresome',
     'irksome',
@@ -47528,7 +47528,7 @@ const SYN_DB = {
     'sick',
     'exhausted'
   ],
-  'weave': [
+  weave: [
     'interlace',
     'unite',
     'compose',
@@ -47538,23 +47538,23 @@ const SYN_DB = {
     'braid',
     'plat'
   ],
-  'wed': [
+  wed: [
     'marry',
     'espouse',
     'unite',
     'attach'
   ],
-  'wedding': [
+  wedding: [
     'marriage',
     'bridal',
     'espousals',
     'nuptials'
   ],
-  'wedlock': [
+  wedlock: [
     'marriage',
     'matrimony'
   ],
-  'weep': [
+  weep: [
     'cry',
     'lament',
     'complain',
@@ -47564,7 +47564,7 @@ const SYN_DB = {
     'bemoan',
     'droop'
   ],
-  'weight': [
+  weight: [
     'heaviness',
     'pressure',
     'burden',
@@ -47579,7 +47579,7 @@ const SYN_DB = {
     'efficacy',
     'impressiveness'
   ],
-  'weighty': [
+  weighty: [
     'heavy',
     'ponderous',
     'burdensome',
@@ -47590,7 +47590,7 @@ const SYN_DB = {
     'impressive',
     'cogent'
   ],
-  'welcome': [
+  welcome: [
     'greeting',
     'salutation',
     'reception',
@@ -47602,7 +47602,7 @@ const SYN_DB = {
     'gratuitous',
     'free'
   ],
-  'welfare': [
+  welfare: [
     'prosperity',
     'happiness',
     'wellbeing',
@@ -47615,7 +47615,7 @@ const SYN_DB = {
     'luck',
     'thrift'
   ],
-  'well': [
+  well: [
     'good',
     'desirable',
     'fortunate',
@@ -47636,20 +47636,20 @@ const SYN_DB = {
     'conveniently',
     'properly'
   ],
-  'wheedle': [
+  wheedle: [
     'cajole',
     'flatter',
     'entice',
     'coax',
     'inveigle'
   ],
-  'whereas': [
+  whereas: [
     'since',
     'considering',
     'while',
     'although'
   ],
-  'whimsical': [
+  whimsical: [
     'capricious',
     'fanciful',
     'queer',
@@ -47658,7 +47658,7 @@ const SYN_DB = {
     'quaint',
     'fantastic'
   ],
-  'white': [
+  white: [
     'snowy',
     'pale',
     'pallid',
@@ -47671,7 +47671,7 @@ const SYN_DB = {
     'happy',
     'favorable'
   ],
-  'whole': [
+  whole: [
     'all',
     'total',
     'complete',
@@ -47688,7 +47688,7 @@ const SYN_DB = {
     'well',
     'healthy'
   ],
-  'wholesome': [
+  wholesome: [
     'salubrious',
     'salutary',
     'healthy',
@@ -47702,7 +47702,7 @@ const SYN_DB = {
     'sound',
     'uncorrupt'
   ],
-  'wholly': [
+  wholly: [
     'entirely',
     'completely',
     'perfectly',
@@ -47711,7 +47711,7 @@ const SYN_DB = {
     'altogether',
     'utterly'
   ],
-  'wicked': [
+  wicked: [
     'sinful',
     'criminal',
     'guilty',
@@ -47739,7 +47739,7 @@ const SYN_DB = {
     'monstrous',
     'villainous'
   ],
-  'wickedness': [
+  wickedness: [
     'crime',
     'sin',
     'vice',
@@ -47752,7 +47752,7 @@ const SYN_DB = {
     'vileness',
     'corruption'
   ],
-  'wide': [
+  wide: [
     'broad',
     'spacious',
     'vast',
@@ -47765,12 +47765,12 @@ const SYN_DB = {
     'ample',
     'expanded'
   ],
-  'wife': [
+  wife: [
     'consort',
     'spouse',
     'helpmate'
   ],
-  'wild': [
+  wild: [
     'untamed',
     'uncultivated',
     'undomesticated',
@@ -47787,7 +47787,7 @@ const SYN_DB = {
     'unsheltered',
     'exposed'
   ],
-  'wile': [
+  wile: [
     'trick',
     'snare',
     'artifice',
@@ -47802,7 +47802,7 @@ const SYN_DB = {
     'contrivance',
     'device'
   ],
-  'wilful': [
+  wilful: [
     'selfdetermined',
     'voluntary',
     'obstinate',
@@ -47820,7 +47820,7 @@ const SYN_DB = {
     'deliberate',
     'purposed'
   ],
-  'will': [
+  will: [
     'choice',
     'determination',
     'preference',
@@ -47852,7 +47852,7 @@ const SYN_DB = {
     'wish',
     'desire'
   ],
-  'willing': [
+  willing: [
     'inclined',
     'consenting',
     'ready',
@@ -47864,7 +47864,7 @@ const SYN_DB = {
     'desirous',
     'voluntary'
   ],
-  'win': [
+  win: [
     'gain',
     'get',
     'procure',
@@ -47877,7 +47877,7 @@ const SYN_DB = {
     'succeed',
     'accomplish'
   ],
-  'wind': [
+  wind: [
     'coil',
     'twine',
     'wreathe',
@@ -47888,7 +47888,7 @@ const SYN_DB = {
     'direct',
     'insinuate'
   ],
-  'winding': [
+  winding: [
     'twisting',
     'circuitous',
     'bending',
@@ -47898,7 +47898,7 @@ const SYN_DB = {
     'serpentine',
     'sinuous'
   ],
-  'winning': [
+  winning: [
     'charming',
     'attractive',
     'alluring',
@@ -47912,7 +47912,7 @@ const SYN_DB = {
     'prepossessing',
     'enchanting'
   ],
-  'wisdom': [
+  wisdom: [
     'judgment',
     'prudence',
     'reason',
@@ -47936,7 +47936,7 @@ const SYN_DB = {
     'erudition',
     'enlightenment'
   ],
-  'wise': [
+  wise: [
     'knowing',
     'erudite',
     'wary',
@@ -47956,12 +47956,12 @@ const SYN_DB = {
     'profound',
     'philosophical'
   ],
-  'wish': [
+  wish: [
     'desire',
     'invoke',
     'imprecate'
   ],
-  'wit': [
+  wit: [
     'ingenuity',
     'humor',
     'satire',
@@ -47991,7 +47991,7 @@ const SYN_DB = {
     'jest',
     'raillery'
   ],
-  'witchcraft': [
+  witchcraft: [
     'sorcery',
     'enchantment',
     'magic',
@@ -48002,7 +48002,7 @@ const SYN_DB = {
     'spell',
     'thaumaturgy'
   ],
-  'witchery': [
+  witchery: [
     'sorcery',
     'witchcraft',
     'fascination',
@@ -48011,7 +48011,7 @@ const SYN_DB = {
     'entrancement',
     'ravishment'
   ],
-  'with': [
+  with: [
     'by',
     'attending',
     'accompanying',
@@ -48020,14 +48020,14 @@ const SYN_DB = {
     'accordingto',
     'upon'
   ],
-  'withdraw': [
+  withdraw: [
     'recall',
     'retire',
     'remove',
     'recede',
     'depart'
   ],
-  'withhold': [
+  withhold: [
     'restrain',
     'impede',
     'hamper',
@@ -48040,19 +48040,19 @@ const SYN_DB = {
     'forbear',
     'detain'
   ],
-  'within': [
+  within: [
     'inside',
     'inwardly',
     'internally',
     'indoors'
   ],
-  'without': [
+  without: [
     'beyond',
     'omitting',
     'unless',
     'except'
   ],
-  'withstand': [
+  withstand: [
     'oppose',
     'resist',
     'confront',
@@ -48061,7 +48061,7 @@ const SYN_DB = {
     'prevent',
     'contradict'
   ],
-  'witness': [
+  witness: [
     'attestation',
     'testimony',
     'evidence',
@@ -48073,7 +48073,7 @@ const SYN_DB = {
     'auditor',
     'voucher'
   ],
-  'witty': [
+  witty: [
     'acute',
     'sharp',
     'smart',
@@ -48086,7 +48086,7 @@ const SYN_DB = {
     'taunting',
     'ironical'
   ],
-  'woe': [
+  woe: [
     'grief',
     'sorrow',
     'misery',
@@ -48100,7 +48100,7 @@ const SYN_DB = {
     'depression',
     'unhappiness'
   ],
-  'woful': [
+  woful: [
     'sorrowful',
     'distressed',
     'wretched',
@@ -48115,23 +48115,23 @@ const SYN_DB = {
     'burdened',
     'troubled'
   ],
-  'womanhood': [
+  womanhood: [
     'muliebrity',
     'feminality',
     'womanliness',
     'woman',
     'womankind'
   ],
-  'womanish': [
+  womanish: [
     'effeminate',
     'weak'
   ],
-  'womanly': [
+  womanly: [
     'feminine',
     'delicate',
     'refined'
   ],
-  'wonder': [
+  wonder: [
     'astonishment',
     'admiration',
     'amazement',
@@ -48148,7 +48148,7 @@ const SYN_DB = {
     'rarity',
     'spectacle'
   ],
-  'wonderful': [
+  wonderful: [
     'amazing',
     'astonishing',
     'marvelous',
@@ -48163,7 +48163,7 @@ const SYN_DB = {
     'prodigious',
     'wondrous'
   ],
-  'wonted': [
+  wonted: [
     'accustomed',
     'usual',
     'habitual',
@@ -48175,7 +48175,7 @@ const SYN_DB = {
     'frequent',
     'common'
   ],
-  'wood': [
+  wood: [
     'forest',
     'grove',
     'thicket',
@@ -48185,7 +48185,7 @@ const SYN_DB = {
     'woodland',
     'forestland'
   ],
-  'work': [
+  work: [
     'drudgery',
     'labor',
     'toil',
@@ -48206,7 +48206,7 @@ const SYN_DB = {
     'lead',
     'ferment'
   ],
-  'workman': [
+  workman: [
     'worker',
     'artificer',
     'laborer',
@@ -48218,7 +48218,7 @@ const SYN_DB = {
     'hand',
     'master'
   ],
-  'workmanship': [
+  workmanship: [
     'handicraft',
     'execution',
     'skill',
@@ -48226,7 +48226,7 @@ const SYN_DB = {
     'manipulation',
     'handiwork'
   ],
-  'world': [
+  world: [
     'earth',
     'universe',
     'creation',
@@ -48245,7 +48245,7 @@ const SYN_DB = {
     'public',
     'society'
   ],
-  'worldly': [
+  worldly: [
     'human',
     'common',
     'secular',
@@ -48263,7 +48263,7 @@ const SYN_DB = {
     'earthborn',
     'groveling'
   ],
-  'worry': [
+  worry: [
     'care',
     'anxiety',
     'fret',
@@ -48281,7 +48281,7 @@ const SYN_DB = {
     'uneasiness',
     'misgiving'
   ],
-  'worship': [
+  worship: [
     'reverence',
     'homage',
     'adoration',
@@ -48300,7 +48300,7 @@ const SYN_DB = {
     'honor',
     'exalt'
   ],
-  'worth': [
+  worth: [
     'desert',
     'merit',
     'excellence',
@@ -48317,7 +48317,7 @@ const SYN_DB = {
     'cost',
     'estimate'
   ],
-  'worthless': [
+  worthless: [
     'undeserving',
     'useless',
     'valueless',
@@ -48334,7 +48334,7 @@ const SYN_DB = {
     'refuse',
     'waste'
   ],
-  'worthy': [
+  worthy: [
     'valuable',
     'deserving',
     'estimable',
@@ -48348,7 +48348,7 @@ const SYN_DB = {
     'honest',
     'honorable'
   ],
-  'wrap': [
+  wrap: [
     'wind',
     'fold',
     'cover',
@@ -48359,7 +48359,7 @@ const SYN_DB = {
     'hide',
     'muffle'
   ],
-  'wrath': [
+  wrath: [
     'fury',
     'ire',
     'resentment',
@@ -48371,7 +48371,7 @@ const SYN_DB = {
     'choler',
     'irritation'
   ],
-  'wrathful': [
+  wrathful: [
     'furious',
     'raging',
     'indignant',
@@ -48387,7 +48387,7 @@ const SYN_DB = {
     'provoked',
     'resentful'
   ],
-  'wreath': [
+  wreath: [
     'garland',
     'chaplet',
     'festoon',
@@ -48395,7 +48395,7 @@ const SYN_DB = {
     'bays',
     'diadem'
   ],
-  'wreck': [
+  wreck: [
     'ruins',
     'remains',
     'rubbish',
@@ -48409,7 +48409,7 @@ const SYN_DB = {
     'perdition',
     'demolition'
   ],
-  'curitywrench': [
+  curitywrench: [
     'pull',
     'twist',
     'wrest',
@@ -48420,7 +48420,7 @@ const SYN_DB = {
     'distort',
     'wring'
   ],
-  'wretched': [
+  wretched: [
     'miserable',
     'calamitous',
     'afflicted',
@@ -48443,7 +48443,7 @@ const SYN_DB = {
     'debased',
     'humiliated'
   ],
-  'wrong': [
+  wrong: [
     'injurious',
     'unjust',
     'faulty',
@@ -48456,7 +48456,7 @@ const SYN_DB = {
     'illegal',
     'immoral'
   ],
-  'wrought': [
+  wrought: [
     'worked',
     'elaborated',
     'performed',
@@ -48466,7 +48466,7 @@ const SYN_DB = {
     'produced',
     'manufactured'
   ],
-  'wry': [
+  wry: [
     'twisted',
     'distorted',
     'misdirected',
@@ -48479,23 +48479,23 @@ const SYN_DB = {
     'crooked',
     'awry'
   ],
-  'yearly': [
+  yearly: [
     'annual',
     'everyyear'
   ],
-  'yearn': [
+  yearn: [
     'long',
     'desire',
     'covet',
     'crave',
     'hanker'
   ],
-  'yell': [
+  yell: [
     'shriek',
     'scream',
     'holler'
   ],
-  'yet': [
+  yet: [
     'besides',
     'nevertheless',
     'notwithstanding',
@@ -48508,7 +48508,7 @@ const SYN_DB = {
     'further',
     'now'
   ],
-  'yield': [
+  yield: [
     'furnish',
     'produce',
     'afford',
@@ -48530,7 +48530,7 @@ const SYN_DB = {
     'consent',
     'agree'
   ],
-  'yielding': [
+  yielding: [
     'conceding',
     'producing',
     'surrendering',
@@ -48544,7 +48544,7 @@ const SYN_DB = {
     'compliant',
     'accommodating'
   ],
-  'yoke': [
+  yoke: [
     'bond',
     'chain',
     'link',
@@ -48563,7 +48563,7 @@ const SYN_DB = {
     'enslave',
     'subjugate'
   ],
-  'young': [
+  young: [
     'juvenile',
     'immature',
     'inexperienced',
@@ -48574,7 +48574,7 @@ const SYN_DB = {
     'girlish',
     'childlike'
   ],
-  'youth': [
+  youth: [
     'adolescence',
     'childhood',
     'infancy',
@@ -48585,7 +48585,7 @@ const SYN_DB = {
     'girl',
     'youngster'
   ],
-  'youthful': [
+  youthful: [
     'puerile',
     'juvenile',
     'immature',
@@ -48600,7 +48600,7 @@ const SYN_DB = {
     'girlish',
     'adolescent'
   ],
-  'zeal': [
+  zeal: [
     'ardor',
     'eagerness',
     'earnestness',
@@ -48613,7 +48613,7 @@ const SYN_DB = {
     'passion',
     'spirit'
   ],
-  'zealot': [
+  zealot: [
     'partisan',
     'bigot',
     'enthusiast',
@@ -48622,7 +48622,7 @@ const SYN_DB = {
     'visionary',
     'dreamer'
   ],
-  'zenith': [
+  zenith: [
     'height',
     'pinnacle',
     'acme',
@@ -48632,15 +48632,15 @@ const SYN_DB = {
     'apex',
     'top'
   ],
-  'eephyr': [
+  eephyr: [
     'breeze'
   ],
-  'zero': [
+  zero: [
     'naught',
     'cipher',
     'nothing'
   ],
-  'zest': [
+  zest: [
     'flavor',
     'appetizer',
     'pleasure',
@@ -48656,7 +48656,7 @@ const SYN_DB = {
     'sauce',
     'appetite'
   ],
-  'zone': [
+  zone: [
     'girdle',
     'belt',
     'girth',

@@ -29,15 +29,15 @@ function Reader () {
   }
 
   this.alert = function (t) {
-    setTimeout((t) => { left.stats.el.innerHTML = `<b>Reader</b> Select some text before starting the reader.` }, 400)
+    setTimeout((t) => { left.stats.el.innerHTML = '<b>Reader</b> Select some text before starting the reader.' }, 400)
   }
 
   this.run = function () {
     if (left.reader.queue.length === 0) { left.reader.stop(); return }
 
-    let words = left.reader.segment.text.split(' ')
-    let word = left.reader.queue[0]
-    let orp = left.reader.find_orp(word, words)
+    const words = left.reader.segment.text.split(' ')
+    const word = left.reader.queue[0]
+    const orp = left.reader.find_orp(word, words)
 
     let html = ': '
     html += "<span style='opacity:0'>" + left.reader.orp_pad(words, orp) + '</span>'
@@ -48,7 +48,7 @@ function Reader () {
     left.reader.queue = left.reader.queue.splice(1, left.reader.queue.length - 1)
     left.reader.index += 1
 
-    let range = words.splice(0, left.reader.index).join(' ').length
+    const range = words.splice(0, left.reader.index).join(' ').length
     left.select(left.reader.segment.from, left.reader.segment.from + range)
     left.go.scroll_to(0, left.reader.segment.from + range)
 
@@ -68,23 +68,23 @@ function Reader () {
   }
 
   this.find_orp = function (w, words) {
-    let word = w.toLowerCase().trim()
-    let index = parseInt(word.length / 2) - 1
-    let before = word.substr(0, index)
-    let after = word.substr(index + 1, word.length - index)
+    const word = w.toLowerCase().trim()
+    const index = parseInt(word.length / 2) - 1
+    const before = word.substr(0, index)
+    const after = word.substr(index + 1, word.length - index)
 
     return { before: before, key: word.substr(index, 1), after: after, index: index }
   }
 
   this.orp_pad = function (words, orp) {
     let longest = ''
-    for (let i in words) {
+    for (const i in words) {
       if (words[i].length < longest.length) { continue }
       longest = words[i]
     }
 
-    let longestOrp = left.reader.find_orp(longest)
-    let longestPad = longestOrp.index
+    const longestOrp = left.reader.find_orp(longest)
+    const longestPad = longestOrp.index
 
     let pad = ''
 

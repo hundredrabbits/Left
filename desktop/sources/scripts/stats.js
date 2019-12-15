@@ -30,8 +30,8 @@ function Stats () {
   }
 
   this._default = function () {
-    let stats = this.parse(left.selected())
-    let date = new Date()
+    const stats = this.parse(left.selected())
+    const date = new Date()
     return `${stats.l}L ${stats.w}W ${stats.v}V ${stats.c}C ${stats.p}% <span class='right'>${date.getHours()}:${('0' + date.getMinutes()).slice(-2)}</span>`
   }
 
@@ -95,15 +95,15 @@ function Stats () {
   }
 
   this._url = function () {
-    let date = new Date()
+    const date = new Date()
     return `Open <b>${left.selection.url}</b> with &lt;c-b&gt; <span class='right'>${date.getHours()}:${date.getMinutes()}</span>`
   }
 
   this.on_scroll = function () {
-    let scrollDistance = left.textarea_el.scrollTop
-    let scrollMax = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight
-    let ratio = Math.min(1, (scrollMax === 0) ? 0 : (scrollDistance / scrollMax))
-    let progress = ['|', '|', '|', '|', '|', '|', '|', '|', '|', '|'].map((v, i) => { return i < ratio * 10 ? '<b>|</b>' : v }).join('')
+    const scrollDistance = left.textarea_el.scrollTop
+    const scrollMax = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight
+    const ratio = Math.min(1, (scrollMax === 0) ? 0 : (scrollDistance / scrollMax))
+    const progress = ['|', '|', '|', '|', '|', '|', '|', '|', '|', '|'].map((v, i) => { return i < ratio * 10 ? '<b>|</b>' : v }).join('')
 
     this.el.innerHTML = `${progress} ${(ratio * 100).toFixed(2)}%`
   }
@@ -111,13 +111,13 @@ function Stats () {
   this.parse = function (text = left.textarea_el.value) {
     text = text.length > 5 ? text.trim() : left.textarea_el.value
 
-    let h = {}
-    let words = text.toLowerCase().replace(/[^a-z0-9 ]/g, '').split(' ')
+    const h = {}
+    const words = text.toLowerCase().replace(/[^a-z0-9 ]/g, '').split(' ')
     for (const id in words) {
       h[words[id]] = 1
     }
 
-    let stats = {}
+    const stats = {}
     stats.l = text.split(EOL).length // lines_count
     stats.w = text.split(' ').length // words_count
     stats.c = text.length // chars_count

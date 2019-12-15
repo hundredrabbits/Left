@@ -17,7 +17,7 @@ function Project () {
     // Load previous files
     if (localStorage.hasOwnProperty('paths')) {
       if (isJSON(localStorage.getItem('paths'))) {
-        let paths = JSON.parse(localStorage.getItem('paths'))
+        const paths = JSON.parse(localStorage.getItem('paths'))
         for (const id in paths) {
           left.project.add(paths[id])
         }
@@ -86,7 +86,7 @@ function Project () {
   this.open = function () {
     console.log('Open Pages')
 
-    let paths = dialog.showOpenDialog(app.win, { properties: ['openFile', 'multiSelections'] })
+    const paths = dialog.showOpenDialog(app.win, { properties: ['openFile', 'multiSelections'] })
 
     if (!paths) { console.log('Nothing to load'); return }
 
@@ -100,7 +100,7 @@ function Project () {
   this.save = function () {
     console.log('Save Page')
 
-    let page = this.page()
+    const page = this.page()
 
     if (!page.path) { this.save_as(); return }
 
@@ -114,8 +114,8 @@ function Project () {
   this.save_as = function () {
     console.log('Save As Page')
 
-    let page = this.page()
-    let path = dialog.showSaveDialog(app.win)
+    const page = this.page()
+    const path = dialog.showSaveDialog(app.win)
 
     if (!path) { console.log('Nothing to save'); return }
 
@@ -135,7 +135,7 @@ function Project () {
     if (this.pages.length === 1) { console.warn('Cannot close'); return }
 
     if (this.page().has_changes()) {
-      let response = dialog.showMessageBox(app.win, {
+      const response = dialog.showMessageBox(app.win, {
         type: 'question',
         buttons: ['Yes', 'No'],
         title: 'Confirm',
@@ -160,7 +160,7 @@ function Project () {
   }
 
   this.discard = function () {
-    let response = dialog.showMessageBox(app.win, {
+    const response = dialog.showMessageBox(app.win, {
       type: 'question',
       buttons: ['Yes', 'No'],
       title: 'Confirm',
@@ -188,7 +188,7 @@ function Project () {
   }
 
   this.quit_dialog = function () {
-    let response = dialog.showMessageBox(app.win, {
+    const response = dialog.showMessageBox(app.win, {
       type: 'question',
       buttons: ['Yes', 'No'],
       title: 'Confirm',
@@ -202,7 +202,7 @@ function Project () {
 
   this.remove_splash = function () {
     for (const id in this.pages) {
-      let page = this.pages[id]
+      const page = this.pages[id]
       if (page.text === new Splash().text) {
         this.pages.splice(0, 1)
         return
@@ -211,9 +211,9 @@ function Project () {
   }
 
   this.paths = function () {
-    let a = []
+    const a = []
     for (const id in this.pages) {
-      let page = this.pages[id]
+      const page = this.pages[id]
       if (page.path) { a.push(page.path) }
     }
     return a

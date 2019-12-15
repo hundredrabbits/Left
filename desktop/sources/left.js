@@ -87,7 +87,7 @@ function Left () {
   }
 
   this.update = function (hard = false) {
-    let nextChar = left.textarea_el.value.substr(left.textarea_el.selectionEnd, 1)
+    const nextChar = left.textarea_el.value.substr(left.textarea_el.selectionEnd, 1)
 
     left.selection.word = this.active_word()
     left.suggestion = (nextChar === '' || nextChar === ' ' || nextChar === EOL) ? left.dictionary.find_suggestion(left.selection.word) : null
@@ -122,16 +122,16 @@ function Left () {
   }
 
   this.select_word = function (target) {
-    let from = left.textarea_el.value.split(target)[0].length
+    const from = left.textarea_el.value.split(target)[0].length
     this.select(from, from + target.length)
   }
 
   this.select_line = function (id) {
-    let lineArr = this.textarea_el.value.split(EOL, parseInt(id) + 1)
-    let arrJoin = lineArr.join(EOL)
+    const lineArr = this.textarea_el.value.split(EOL, parseInt(id) + 1)
+    const arrJoin = lineArr.join(EOL)
 
-    let from = arrJoin.length - lineArr[id].length
-    let to = arrJoin.length
+    const from = arrJoin.length - lineArr[id].length
+    const to = arrJoin.length
 
     this.select(from, to)
   }
@@ -149,9 +149,9 @@ function Left () {
   // Location tools
 
   this.selected = function () {
-    let from = this.textarea_el.selectionStart
-    let to = this.textarea_el.selectionEnd
-    let length = to - from
+    const from = this.textarea_el.selectionStart
+    const to = this.textarea_el.selectionEnd
+    const length = to - from
     return this.textarea_el.value.substr(from, length)
   }
 
@@ -160,7 +160,7 @@ function Left () {
 
     // Find beginning of word
     while (from > -1) {
-      let char = this.textarea_el.value[from]
+      const char = this.textarea_el.value[from]
       if (!char || !char.match(/[a-z]/i)) {
         break
       }
@@ -170,7 +170,7 @@ function Left () {
     // Find end of word
     let to = from + 1
     while (to < from + 30) {
-      let char = this.textarea_el.value[to]
+      const char = this.textarea_el.value[to]
       if (!char || !char.match(/[a-z]/i)) {
         break
       }
@@ -183,23 +183,23 @@ function Left () {
   }
 
   this.active_line_id = function () {
-    let segments = left.textarea_el.value.substr(0, left.textarea_el.selectionEnd).split(EOL)
+    const segments = left.textarea_el.value.substr(0, left.textarea_el.selectionEnd).split(EOL)
     return segments.length - 1
   }
 
   this.active_line = function () {
-    let text = left.textarea_el.value
-    let lines = text.split(EOL)
+    const text = left.textarea_el.value
+    const lines = text.split(EOL)
     return lines[this.active_line_id()]
   }
 
   this.active_word = function () {
-    let l = this.active_word_location()
+    const l = this.active_word_location()
     return left.textarea_el.value.substr(l.from, l.to - l.from)
   }
 
   this.active_url = function () {
-    let words = this.active_line().split(' ')
+    const words = this.active_line().split(' ')
     for (const id in words) {
       if (words[id].indexOf('://') > -1 || words[id].indexOf('www.') > -1) {
         return words[id]
@@ -209,13 +209,13 @@ function Left () {
   }
 
   this.prev_character = function () {
-    let l = this.active_word_location()
+    const l = this.active_word_location()
     return left.textarea_el.value.substr(l.from - 1, 1)
   }
 
   this.replace_active_word_with = function (word) {
-    let l = this.active_word_location()
-    let w = left.textarea_el.value.substr(l.from, l.to - l.from)
+    const l = this.active_word_location()
+    const w = left.textarea_el.value.substr(l.from, l.to - l.from)
 
     // Preserve capitalization
     if (w.substr(0, 1) === w.substr(0, 1).toUpperCase()) {
@@ -236,24 +236,24 @@ function Left () {
 
   // del is an optional arg for deleting the line, used in actions
   this.replace_line = function (id, newText, del = false) {
-    let lineArr = this.textarea_el.value.split(EOL, parseInt(id) + 1)
-    let arrJoin = lineArr.join(EOL)
+    const lineArr = this.textarea_el.value.split(EOL, parseInt(id) + 1)
+    const arrJoin = lineArr.join(EOL)
 
-    let from = arrJoin.length - lineArr[id].length
-    let to = arrJoin.length
+    const from = arrJoin.length - lineArr[id].length
+    const to = arrJoin.length
 
     // splicing the string
-    let newTextValue = this.textarea_el.value.slice(0, del ? from - 1 : from) + newText + this.textarea_el.value.slice(to)
+    const newTextValue = this.textarea_el.value.slice(0, del ? from - 1 : from) + newText + this.textarea_el.value.slice(to)
 
     // the cursor automatically moves to the changed position, so we have to set it back
     let cursorStart = this.textarea_el.selectionStart
     let cursorEnd = this.textarea_el.selectionEnd
-    let oldLength = this.textarea_el.value.length
-    let oldScroll = this.textarea_el.scrollTop
+    const oldLength = this.textarea_el.value.length
+    const oldScroll = this.textarea_el.scrollTop
     // setting text area
     this.load(newTextValue)
     // adjusting the cursor position for the change in length
-    let lengthDif = this.textarea_el.value.length - oldLength
+    const lengthDif = this.textarea_el.value.length - oldLength
     if (cursorStart > to) {
       cursorStart += lengthDif
       cursorEnd += lengthDif
@@ -262,7 +262,7 @@ function Left () {
     if (this.textarea_el.setSelectionRange) {
       this.textarea_el.setSelectionRange(cursorStart, cursorEnd)
     } else if (this.textarea_el.createTextRange) {
-      let range = this.textarea_el.createTextRange()
+      const range = this.textarea_el.createTextRange()
       range.collapse(true)
       range.moveEnd('character', cursorEnd)
       range.moveStart('character', cursorStart)
@@ -274,7 +274,7 @@ function Left () {
   }
 
   this.inject = function (characters = '__') {
-    let pos = this.textarea_el.selectionStart
+    const pos = this.textarea_el.selectionStart
     this.textarea_el.setSelectionRange(pos, pos)
     document.execCommand('insertText', false, characters)
     this.update()
@@ -286,23 +286,23 @@ function Left () {
   }
 
   this.inject_multiline = function (characters = '__') {
-    let lines = this.selected().match(/[^\r\n]+/g)
+    const lines = this.selected().match(/[^\r\n]+/g)
     let text = ''
     for (const id in lines) {
-      let line = lines[id]
+      const line = lines[id]
       text += `${characters}${line}\n`
     }
     this.replace_selection_with(text)
   }
 
   this.find = function (word) {
-    let text = left.textarea_el.value.toLowerCase()
-    let parts = text.split(word.toLowerCase())
-    let a = []
+    const text = left.textarea_el.value.toLowerCase()
+    const parts = text.split(word.toLowerCase())
+    const a = []
     let sum = 0
 
     for (const id in parts) {
-      let p = parts[id].length
+      const p = parts[id].length
       a.push(sum + p)
       sum += p + word.length
     }
