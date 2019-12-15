@@ -86,13 +86,13 @@ function Left () {
     this.update()
   }
 
-  this.update = function (hard = false) {
-    const nextChar = left.textarea_el.value.substr(left.textarea_el.selectionEnd, 1)
+  this.update = (hard = false) => {
+    const nextChar = this.textarea_el.value.substr(this.textarea_el.selectionEnd, 1)
 
-    left.selection.word = this.active_word()
-    left.suggestion = (nextChar === '' || nextChar === ' ' || nextChar === EOL) ? left.dictionary.find_suggestion(left.selection.word) : null
-    left.synonyms = left.dictionary.find_synonym(left.selection.word)
-    left.selection.url = this.active_url()
+    this.selection.word = this.active_word()
+    this.suggestion = (nextChar === '' || nextChar === ' ' || nextChar === EOL) ? this.dictionary.find_suggestion(this.selection.word) : null
+    this.synonyms = this.dictionary.find_synonym(this.selection.word)
+    this.selection.url = this.active_url()
 
     this.project.update()
     this.navi.update()
@@ -101,28 +101,28 @@ function Left () {
 
   //
 
-  this.select_autocomplete = function () {
-    if (left.selection.word.trim() !== '' && left.suggestion && left.suggestion.toLowerCase() !== left.active_word().toLowerCase()) {
-      left.autocomplete()
+  this.select_autocomplete = () => {
+    if (this.selection.word.trim() !== '' && this.suggestion && this.suggestion.toLowerCase() !== this.active_word().toLowerCase()) {
+      this.autocomplete()
     } else {
-      left.inject('\u00a0\u00a0')
+      this.inject('\u00a0\u00a0')
     }
   }
 
-  this.select_synonym = function () {
-    if (left.synonyms) {
-      left.replace_active_word_with(left.synonyms[left.selection.index % left.synonyms.length])
-      left.stats.update()
-      left.selection.index = (left.selection.index + 1) % left.synonyms.length
+  this.select_synonym = () => {
+    if (this.synonyms) {
+      this.replace_active_word_with(this.synonyms[this.selection.index % this.synonyms.length])
+      this.stats.update()
+      this.selection.index = (this.selection.index + 1) % this.synonyms.length
     }
   }
 
-  this.select = function (from, to) {
-    left.textarea_el.setSelectionRange(from, to)
+  this.select = (from, to) => {
+    this.textarea_el.setSelectionRange(from, to)
   }
 
-  this.select_word = function (target) {
-    const from = left.textarea_el.value.split(target)[0].length
+  this.select_word = (target) => {
+    const from = this.textarea_el.value.split(target)[0].length
     this.select(from, from + target.length)
   }
 
@@ -155,7 +155,7 @@ function Left () {
     return this.textarea_el.value.substr(from, length)
   }
 
-  this.active_word_location = function (position = left.textarea_el.selectionEnd) {
+  this.active_word_location = (position = this.textarea_el.selectionEnd) => {
     let from = position - 1
 
     // Find beginning of word
@@ -182,20 +182,20 @@ function Left () {
     return { from: from, to: to }
   }
 
-  this.active_line_id = function () {
-    const segments = left.textarea_el.value.substr(0, left.textarea_el.selectionEnd).split(EOL)
+  this.active_line_id = () => {
+    const segments = this.textarea_el.value.substr(0, this.textarea_el.selectionEnd).split(EOL)
     return segments.length - 1
   }
 
-  this.active_line = function () {
-    const text = left.textarea_el.value
+  this.active_line = () => {
+    const text = this.textarea_el.value
     const lines = text.split(EOL)
     return lines[this.active_line_id()]
   }
 
-  this.active_word = function () {
+  this.active_word = () => {
     const l = this.active_word_location()
-    return left.textarea_el.value.substr(l.from, l.to - l.from)
+    return this.textarea_el.value.substr(l.from, l.to - l.from)
   }
 
   this.active_url = function () {
@@ -208,14 +208,14 @@ function Left () {
     return null
   }
 
-  this.prev_character = function () {
+  this.prev_character = () => {
     const l = this.active_word_location()
-    return left.textarea_el.value.substr(l.from - 1, 1)
+    return this.textarea_el.value.substr(l.from - 1, 1)
   }
 
-  this.replace_active_word_with = function (word) {
+  this.replace_active_word_with = (word) => {
     const l = this.active_word_location()
-    const w = left.textarea_el.value.substr(l.from, l.to - l.from)
+    const w = this.textarea_el.value.substr(l.from, l.to - l.from)
 
     // Preserve capitalization
     if (w.substr(0, 1) === w.substr(0, 1).toUpperCase()) {
@@ -280,8 +280,8 @@ function Left () {
     this.update()
   }
 
-  this.inject_line = function (characters = '__') {
-    left.select_line(left.active_line_id())
+  this.inject_line = (characters = '__') => {
+    this.select_line(this.active_line_id())
     this.inject(characters)
   }
 
@@ -295,8 +295,8 @@ function Left () {
     this.replace_selection_with(text)
   }
 
-  this.find = function (word) {
-    const text = left.textarea_el.value.toLowerCase()
+  this.find = (word) => {
+    const text = this.textarea_el.value.toLowerCase()
     const parts = text.split(word.toLowerCase())
     const a = []
     let sum = 0
@@ -312,8 +312,8 @@ function Left () {
     return a
   }
 
-  this.autocomplete = function () {
-    this.inject(left.suggestion.substr(left.selection.word.length, left.suggestion.length) + ' ')
+  this.autocomplete = () => {
+    this.inject(this.suggestion.substr(this.selection.word.length, this.suggestion.length) + ' ')
   }
 
   this.open_url = function (target = this.active_url()) {
@@ -323,10 +323,10 @@ function Left () {
     setTimeout(() => { require('electron').shell.openExternal(target) }, 500)
   }
 
-  this.reset = function () {
-    left.theme.reset()
-    left.font.reset()
-    left.update()
+  this.reset = () => {
+    this.theme.reset()
+    this.font.reset()
+    this.update()
   }
 }
 

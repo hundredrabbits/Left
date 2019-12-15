@@ -1,7 +1,9 @@
-const { app, BrowserWindow, webFrame, Menu } = require('electron')
+'use strict'
+
+/* global createWindow */
+
+const { app, BrowserWindow, Menu } = require('electron')
 const path = require('path')
-const url = require('url')
-const shell = require('electron').shell
 
 let isShown = true
 
@@ -9,14 +11,14 @@ app.win = null
 
 app.on('ready', () => {
   app.win = new BrowserWindow({
-    width: 800,
-    height: 530,
-    minWidth: 310,
-    minHeight: 350,
+    width: 780,
+    height: 462,
+    minWidth: 380,
+    minHeight: 360,
     backgroundColor: '#000',
     icon: path.join(__dirname, { darwin: 'icon.icns', linux: 'icon.png', win32: 'icon.ico' }[process.platform] || 'icon.ico'),
     resizable: true,
-    frame: (process.argv.indexOf('frameless') == -1) && (process.platform !== 'darwin'),
+    frame: process.platform !== 'darwin',
     skipTaskbar: process.platform === 'darwin',
     autoHideMenuBar: process.platform === 'darwin',
     webPreferences: { zoomFactor: 1.0, nodeIntegration: true, backgroundThrottling: false }
@@ -26,7 +28,6 @@ app.on('ready', () => {
   // app.inspect()
 
   app.win.on('closed', () => {
-    win = null
     app.quit()
   })
 
@@ -59,11 +60,15 @@ app.toggleFullscreen = function () {
   app.win.setFullScreen(!app.win.isFullScreen())
 }
 
+app.toggleMenubar = function () {
+  app.win.setMenuBarVisibility(!app.win.isMenuBarVisible())
+}
+
 app.toggleVisible = function () {
-  if (process.platform === 'darwin') {
-    if (isShown && !app.win.isFullScreen()) { app.win.hide() } else { app.win.show() }
-  } else {
+  if (process.platform !== 'darwin') {
     if (!app.win.isMinimized()) { app.win.minimize() } else { app.win.restore() }
+  } else {
+    if (isShown && !app.win.isFullScreen()) { app.win.hide() } else { app.win.show() }
   }
 }
 

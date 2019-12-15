@@ -3,6 +3,7 @@
 :root { --font-size: 12px; --line-height: 20px; --font-family: 'custom_mono'; }
 
 ::-webkit-scrollbar { display: none; margin: 0; padding: 0; }
+
 body { height: 100vh; font-family: var(--font-family); font-size: 12px; overflow: auto; transition: background-color 500ms,filter 150ms; overflow: hidden;}
 body navi { display: block;width: calc((100vw / 4) - 40px);left: 0px;position: absolute;padding: 30px 0px 0px 30px; -webkit-user-select: none;-webkit-app-region: drag;overflow: auto;padding-top:30px;transition: opacity 200ms 200ms, translateY 150ms, width 200ms; opacity:1; height: calc(100vh - 120px); padding-bottom: 40px;}
 body navi li { display: flex; flex-direction: row; justify-content: space-between; align-items: center; line-height: 20px; cursor: pointer; position: relative; -webkit-app-region: no-drag; height:20px;}
@@ -13,7 +14,9 @@ body navi li.page {}
 body navi li.header { }
 body navi li.note { padding-left:15px;}
 body navi li.note::before { content:"#"; left:0px; }
-body navi li.comment {padding-left: 15px;}
+body navi li.subheader { padding-left: 15px;}
+body navi li.subheader::before { content:""; left:0px; }
+body navi li.comment { padding-left: 30px;}
 body navi li.comment::before { content:""; left:0px; }
 body navi li.changes::after { content:"*"; position: absolute; right: 15px; }
 body navi li i { padding-right:15px; }
@@ -39,7 +42,6 @@ body #operator { display: block;border-bottom: 0px;margin-top: 30px;position: fi
 body #operator.inactive { bottom:-40px; }
 body #operator.active { bottom:0px; }
 
-body {}
 * { background-color: inherit; }
 
 body.mobile navi { opacity:0; transition: opacity 10ms; }
