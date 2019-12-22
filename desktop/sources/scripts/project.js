@@ -86,11 +86,13 @@ function Project () {
   this.open = function () {
     console.log('Open Pages')
 
-    const paths = dialog.showOpenDialog(app.win, { properties: ['openFile', 'multiSelections'] })
+    const paths = dialog.showOpenDialogSync(app.win, { properties: ['openFile', 'multiSelections'] })
 
+    console.log(paths)
     if (!paths) { console.log('Nothing to load'); return }
 
     for (const id in paths) {
+      console.log(id)
       this.add(paths[id])
     }
 
@@ -115,7 +117,7 @@ function Project () {
     console.log('Save As Page')
 
     const page = this.page()
-    const path = dialog.showSaveDialog(app.win)
+    const path = dialog.showSaveDialogSync(app.win)
 
     if (!path) { console.log('Nothing to save'); return }
 
@@ -135,7 +137,7 @@ function Project () {
     if (this.pages.length === 1) { console.warn('Cannot close'); return }
 
     if (this.page().has_changes()) {
-      const response = dialog.showMessageBox(app.win, {
+      const response = dialog.showMessageBoxSync(app.win, {
         type: 'question',
         buttons: ['Yes', 'No'],
         title: 'Confirm',
@@ -151,7 +153,7 @@ function Project () {
   }
 
   this.force_close = function () {
-    if (this.pages.length === 1) { console.warn('Cannot close'); return }
+    if (this.pages.length === 1) { this.quit(); return }
 
     console.log('Closing..')
 
@@ -160,7 +162,7 @@ function Project () {
   }
 
   this.discard = function () {
-    const response = dialog.showMessageBox(app.win, {
+    const response = dialog.showMessageBoxSync(app.win, {
       type: 'question',
       buttons: ['Yes', 'No'],
       title: 'Confirm',
@@ -188,7 +190,7 @@ function Project () {
   }
 
   this.quit_dialog = function () {
-    const response = dialog.showMessageBox(app.win, {
+    const response = dialog.showMessageBoxSync(app.win, {
       type: 'question',
       buttons: ['Yes', 'No'],
       title: 'Confirm',
