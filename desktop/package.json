@@ -20,8 +20,8 @@
     "push": "npm run build ; npm run push_osx ; npm run push_linux ; npm run push_win ; npm run clean ; npm run status"
   },
   "devDependencies": {
-    "electron": "^7.1.5",
-    "electron-packager": "^14.1.1"
+    "electron": "^7.1.11",
+    "electron-packager": "^14.2.1"
   },
   "standard": {
     "globals": [
