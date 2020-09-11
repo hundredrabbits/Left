@@ -61,14 +61,8 @@ document.onkeyup = (e) => {
     let matches
     if ( (matches = /^.*?([\s\t]+)$/gm.exec(line)) !== null) { // found indent
       indent      = matches[1].split('').reverse().join('') // reverse
-      let t_start = left.textarea_el.value.substring(0, cur_pos)
-      let t_end   = left.textarea_el.value.substring(cur_pos,
-        left.textarea_el.value.length)
-      left.textarea_el.value = (t_start + indent + t_end)
-
-      // set new cursor pos
-      left.textarea_el.selectionStart =
-        left.textarea_el.selectionEnd = cur_pos + indent.length
+      left.textarea_el.selectionStart = cur_pos
+      left.inject(indent)
     }
   }
 
