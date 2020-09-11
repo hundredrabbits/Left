@@ -32,7 +32,7 @@ function Stats () {
   this._default = function () {
     const stats = this.parse(left.selected())
     const date = new Date()
-    return `${stats.l}L ${stats.w}W ${stats.v}V ${stats.c}C ${stats.p}% <span id="autoindent_stat" ${stats.a}>AI</span> <span class='right'>${date.getHours()}:${('0' + date.getMinutes()).slice(-2)}</span>`
+    return `${stats.l}L ${stats.w}W ${stats.v}V ${stats.c}C ${stats.p}% <span ${stats.a}>AI</span> <span class='right'>${date.getHours()}:${('0' + date.getMinutes()).slice(-2)}</span>`
   }
 
   this.incrementSynonym = function () {
