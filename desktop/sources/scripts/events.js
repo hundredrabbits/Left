@@ -44,6 +44,34 @@ document.onkeydown = function keyDown (e) {
 }
 
 document.onkeyup = (e) => {
+  if (e.key === 'Enter' && left.autoindent) { // autoindent
+    let cur_pos = left.textarea_el.selectionStart // get new position in textarea
+
+    // go back until beginning of last line and count spaces/tabs
+    let indent  = ''
+    let line    = ''
+    for ( let pos = cur_pos - 2; // -2 because of cur and \n
+        pos > 0 &&
+          left.textarea_el.value.charAt(pos) != '\n';
+        pos--
+      ){
+      line += left.textarea_el.value.charAt(pos)
+    }
+
+    let matches
+    if ( (matches = /^.*?([\s\t]+)$/gm.exec(line)) !== null) { // found indent
+      indent      = matches[1].split('').reverse().join('') // reverse
+      let t_start = left.textarea_el.value.substring(0, cur_pos)
+      let t_end   = left.textarea_el.value.substring(cur_pos,
+        left.textarea_el.value.length)
+      left.textarea_el.value = (t_start + indent + t_end)
+
+      // set new cursor pos
+      left.textarea_el.selectionStart =
+        left.textarea_el.selectionEnd = cur_pos + indent.length
+    }
+  }
+
   if (e.keyCode === 16) { // Shift
     left.stats.applySynonym()
     left.update()
