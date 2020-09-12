@@ -51,7 +51,7 @@ document.onkeyup = (e) => {
     let indent  = ''
     let line    = ''
     for ( let pos = cur_pos - 2; // -2 because of cur and \n
-        pos > 0 &&
+        pos >= 0 &&
           left.textarea_el.value.charAt(pos) != '\n';
         pos--
       ){
