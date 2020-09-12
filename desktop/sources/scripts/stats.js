@@ -32,7 +32,7 @@ function Stats () {
   this._default = function () {
     const stats = this.parse(left.selected())
     const date = new Date()
-    return `${stats.l}L ${stats.w}W ${stats.v}V ${stats.c}C ${stats.p}% <span class='right'>${date.getHours()}:${('0' + date.getMinutes()).slice(-2)}</span>`
+    return `${stats.l}L ${stats.w}W ${stats.v}V ${stats.c}C ${stats.p}% <span ${stats.a}>AI</span> <span class='right'>${date.getHours()}:${('0' + date.getMinutes()).slice(-2)}</span>`
   }
 
   this.incrementSynonym = function () {
@@ -123,6 +123,7 @@ function Stats () {
     stats.c = text.length // chars_count
     stats.v = Object.keys(h).length
     stats.p = stats.c > 0 ? clamp((left.textarea_el.selectionEnd / stats.c) * 100, 0, 100).toFixed(2) : 0
+    stats.a = left.autoindent ? 'class="fh"' : ''
     return stats
   }
 

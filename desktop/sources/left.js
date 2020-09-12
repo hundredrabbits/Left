@@ -39,6 +39,8 @@ function Left () {
   this.synonyms = null
   this.last_char = 's' // this is not a typo. it's bad code, but it has to be a length one string
 
+  this.autoindent = true
+
   this.install = function (host = document.body) {
     this.navi.install(host)
     this.stats.install(host)
@@ -327,6 +329,10 @@ function Left () {
     this.theme.reset()
     this.font.reset()
     this.update()
+  }
+
+  this.toggle_autoindent = () => {
+    this.autoindent = !this.autoindent
   }
 }
 
