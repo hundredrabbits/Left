@@ -32,7 +32,7 @@ function Page (text = '', path = null) {
         type: "question",
         title: "Confirm",
         message: "File was modified outside Left. Do you want to reload it?",
-        buttons: ['Yes', 'No', 'Ignore future ocurrencies'],
+        buttons: ['Yes', 'No', 'Ignore future occurrencies'],
         detail: `New size of file is: ${this.size} bytes.`,
         icon: `${app.getAppPath()}/icon.png`
       })
