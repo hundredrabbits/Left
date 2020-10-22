@@ -27,14 +27,14 @@ function Stats () {
     } else {
       this.el.innerHTML = this._default()
       if (left.clock === false)
-        left.update_time();
+        this._update_clock()
     }
   }
 
   this._default = function () {
     const stats = this.parse(left.selected())
-
-    return `${stats.l}L ${stats.w}W ${stats.v}V ${stats.c}C ${stats.p}% <span ${stats.a}>AI</span> <span class='right' id='clock'></span>`
+    const time  = left.time()
+    return `${stats.l}L ${stats.w}W ${stats.v}V ${stats.c}C ${stats.p}% <span ${stats.a}>AI</span> <span class='right' id='clock'>${time}</span>`
   }
 
   this.incrementSynonym = function () {
@@ -97,8 +97,18 @@ function Stats () {
   }
 
   this._url = function () {
-    const date = new Date()
-    return `Open <b>${left.selection.url}</b> with &lt;c-b&gt; <span class='right'>${date.getHours()}:${date.getMinutes()}</span>`
+    const time  = left.time()
+    return `Open <b>${left.selection.url}</b> with &lt;c-b&gt; <span class='right' id='clock'>${time}</span>`
+  }
+
+  this._update_clock = () => {
+    left.clock = true
+
+    setInterval(function() {
+      let e = document.getElementById('clock')
+      if (e !== null)
+        e.innerHTML = left.time()
+    }, 1000)
   }
 
   this.on_scroll = function () {

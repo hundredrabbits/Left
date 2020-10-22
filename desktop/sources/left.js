@@ -336,14 +336,9 @@ function Left () {
     this.autoindent = !this.autoindent
   }
 
-  this.update_time = () => {
-    this.clock = true
-
-    setInterval(function() {
-      const date = new Date()
-      document.getElementById('clock').innerHTML =
-        `${date.getHours()}:${('0' + date.getMinutes()).slice(-2)}`
-    }, 1000)
+  this.time = function() {
+    const date = new Date()
+    return `${date.getHours()}:${('0' + date.getMinutes()).slice(-2)}`
   }
 }
 
