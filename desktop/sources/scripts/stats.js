@@ -26,13 +26,15 @@ function Stats () {
       this.el.innerHTML = this._url()
     } else {
       this.el.innerHTML = this._default()
+      if (left.clock === false)
+        left.update_time();
     }
   }
 
   this._default = function () {
     const stats = this.parse(left.selected())
-    const date = new Date()
-    return `${stats.l}L ${stats.w}W ${stats.v}V ${stats.c}C ${stats.p}% <span ${stats.a}>AI</span> <span class='right'>${date.getHours()}:${('0' + date.getMinutes()).slice(-2)}</span>`
+
+    return `${stats.l}L ${stats.w}W ${stats.v}V ${stats.c}C ${stats.p}% <span ${stats.a}>AI</span> <span class='right' id='clock'></span>`
   }
 
   this.incrementSynonym = function () {

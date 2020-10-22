@@ -40,6 +40,7 @@ function Left () {
   this.last_char = 's' // this is not a typo. it's bad code, but it has to be a length one string
 
   this.autoindent = true
+  this.clock = false
 
   this.install = function (host = document.body) {
     this.navi.install(host)
@@ -333,6 +334,16 @@ function Left () {
 
   this.toggle_autoindent = () => {
     this.autoindent = !this.autoindent
+  }
+
+  this.update_time = () => {
+    this.clock = true
+
+    setInterval(function() {
+      const date = new Date()
+      document.getElementById('clock').innerHTML =
+        `${date.getHours()}:${('0' + date.getMinutes()).slice(-2)}`
+    }, 1000)
   }
 }
 
