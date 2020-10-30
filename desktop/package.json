@@ -10,11 +10,11 @@
     "fix": "standard --fix",
     "clean": "rm -r ~/Documents/Left-darwin-x64/ ; rm -r ~/Documents/Left-linux-x64/ ; rm -r ~/Documents/Left-win32-x64/ ; echo 'cleaned build location'",
     "build_osx": "electron-packager . Left --platform=darwin --arch=x64 --out ~/Documents/ --overwrite --icon=icon.icns ; echo 'Built for OSX'",
-    "build_linux": "electron-packager . Left --platform=linux  --arch=x64 --out ~/Documents/ --overwrite --icon=icon.ico ; echo 'Built for LINUX'",
+    "build_linux": "electron-packager . left --platform=linux  --arch=x64 --out ~/Documents/ --overwrite --icon=icon.ico ; cp ../post_install/* ~/Documents/left-linux-x64/ ; echo 'Built for LINUX'",
     "build_win": "electron-packager . Left --platform=win32  --arch=x64 --out ~/Documents/ --overwrite --icon=icon.ico ; echo 'Built for WIN'",
     "build": "npm run clean ; npm run build_osx ; npm run build_linux ; npm run build_win",
     "push_osx": "~/Applications/butler push ~/Documents/Left-darwin-x64/ hundredrabbits/left:osx-64",
-    "push_linux": "~/Applications/butler push ~/Documents/Left-linux-x64/ hundredrabbits/left:linux-64",
+    "push_linux": "~/Applications/butler push ~/Documents/left-linux-x64/ hundredrabbits/left:linux-64",
     "push_win": "~/Applications/butler push ~/Documents/Left-win32-x64/ hundredrabbits/left:windows-64",
     "status": "~/Applications/butler status hundredrabbits/left",
     "push": "npm run build ; npm run push_osx ; npm run push_linux ; npm run push_win ; npm run clean ; npm run status"
