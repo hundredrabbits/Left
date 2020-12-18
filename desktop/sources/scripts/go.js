@@ -27,6 +27,8 @@ function Go () {
   }
 
   this.to = function (from, to, scroll = true) {
+    if (scroll) this.scroll_to(from, to)
+
     if (left.textarea_el.setSelectionRange) {
       left.textarea_el.setSelectionRange(from, to)
     } else if (left.textarea_el.createTextRange) {
@@ -35,11 +37,6 @@ function Go () {
       range.moveEnd('character', to)
       range.moveStart('character', from)
       range.select()
-    }
-    left.textarea_el.focus()
-
-    if (scroll) {
-      this.scroll_to(from, to)
     }
 
     return from === -1 ? null : from
@@ -54,12 +51,26 @@ function Go () {
   }
 
   this.scroll_to = function (from, to) {
-    const textVal = left.textarea_el.value
-    const div = document.createElement('div')
-    div.innerHTML = textVal.slice(0, to)
-    document.body.appendChild(div)
-    animateScrollTo(left.textarea_el, div.offsetHeight - 60, 200)
-    div.remove()
+    const ta = left.textarea_el
+    const text = ta.value
+    const sliceText = text.slice(0, to)
+    const scrollFrom = ta.scrollTop
+    const taPaddingTop = 30
+
+    // Textarea hack to get the proper scroll position of the selection
+    // This relies on textarea behavior where it scrolls to the bottom when focused
+    ta.scrollTop = 0
+    ta.blur()
+    ta.style.paddingTop = `${ta.clientHeight}px`
+    ta.value = sliceText
+    ta.focus()
+    const scrollTo = ta.scrollTop - 60
+    ta.style.paddingTop = `${taPaddingTop}px`
+    ta.value = text
+
+    // Reset scroll position and scroll to new position
+    ta.scrollTop = scrollFrom
+    animateScrollTo(ta, scrollTo, 200)
   }
 
   function animateScrollTo (element, to, duration) {
