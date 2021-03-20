@@ -19,9 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-The assets and text content are under the **BY-NC-SA4.0 License**.
-
-You are free to: Share: copy and redistribute the material in any medium or format. Adapt: remix, transform, and build upon the material.
-
-Under the following terms: Attribution: You must give appropriate credit. NonCommercial: You may not use the material for commercial purposes. ShareAlike: You must distribute your contributions under the same license.
