@@ -25,9 +25,6 @@ npm start
 
 - This application supports the [Ecosystem Theme](https://github.com/hundredrabbits/Themes).
 - Support this project through [Patreon](https://patreon.com/100).
-- See the [License](LICENSE.md) file for license rights and limitations (MIT).
+- Left's source code is licensed under [MIT](https://github.com/hundredrabbits/Left/blob/master/LICENSE) and the **images, text and assets** are licensed under [BY-NC-SA 4.0](https://github.com/hundredrabbits/Left/blob/master/LICENSE.by-nc-sa-4.0.md). View individual licenses for details.
 - Pull Requests are welcome!
 
-# Licenses
-
-Left's source code is licensed under **MIT** and the **images, text and assets** are licensed under [BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). View individual licenses for details.
