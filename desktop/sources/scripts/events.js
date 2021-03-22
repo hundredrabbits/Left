@@ -4,7 +4,7 @@ document.onkeydown = function keyDown (e) {
   left.last_char = e.key
 
   // Faster than Electron
-  if (e.keyCode === 9) {
+  if (e.key === 'Tab') {
     if (e.shiftKey) {
       left.stats.nextSynonym()
     } else {
@@ -15,13 +15,13 @@ document.onkeydown = function keyDown (e) {
   }
   // Faster than Electron
   if (e.metaKey || e.ctrlKey) {
-    if (e.keyCode === 221) {
-      left.navi.next_marker()
+    if (e.key === ']') {
+      e.shiftKey ? left.navi.next_page() : left.navi.next_marker()
       e.preventDefault()
       return
     }
-    if (e.keyCode === 291) {
-      left.navi.prev_marker()
+    if (e.key === '[') {
+      e.shiftKey ? left.navi.prev_page() : left.navi.prev_marker()
       e.preventDefault()
       return
     }
@@ -66,12 +66,12 @@ document.onkeyup = (e) => {
     }
   }
 
-  if (e.keyCode === 16) { // Shift
+  if (e.key === 'Shift') {
     left.stats.applySynonym()
     left.update()
     return
   }
-  if (e.keyCode !== 9) {
+  if (e.key !== 'Tab') {
     left.update()
   }
 }
