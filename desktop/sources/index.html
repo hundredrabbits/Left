@@ -74,6 +74,7 @@
       left.controller.add('default', 'Navigation', 'Prev Marker', () => { left.navi.prev_marker() }, 'CmdOrCtrl+[')
 
       left.controller.add('default', 'View', 'Toggle Navigation', () => { left.navi.toggle() }, 'CmdOrCtrl+\\')
+      left.controller.add('default', 'View', 'Toggle Menubar', () => { app.toggleMenubar() }, 'F11')
       left.controller.add('default', 'View', 'Previous Font', () => { left.font.previousFont() }, 'CmdOrCtrl+Shift+,')
       left.controller.add('default', 'View', 'Next Font', () => { left.font.nextFont() }, 'CmdOrCtrl+Shift+.')
       left.controller.add('default', 'View', 'Decrease Font Size', () => { left.font.decreaseFontSize() }, 'CmdOrCtrl+-')
