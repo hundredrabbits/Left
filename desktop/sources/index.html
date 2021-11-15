@@ -34,8 +34,10 @@
 
       // Menu
 
-      left.controller.add('default', '*', 'About', () => { shell.openExternal('https://github.com/hundredrabbits/Left') }, 'CmdOrCtrl+,')
+      const LoadMenu = () => {
+      left.controller.add('default', '*', 'About', () => { shell.openExternal('https://github.com/CrispyBaccoon/Forest') }, 'CmdOrCtrl+,')
       left.controller.add('default', '*', 'Fullscreen', () => { app.toggleFullscreen() }, 'CmdOrCtrl+Enter')
+      left.controller.add('default', '*', 'Toggle Menu Bar', () => { app.toggleMenubar() }, 'Alt+Enter')
       left.controller.add('default', '*', 'Hide', () => { app.toggleVisible() }, 'CmdOrCtrl+H')
       left.controller.addRole('default', '*', 'reload')
       left.controller.addRole('default', '*', 'forcereload')
@@ -130,6 +132,8 @@
       left.controller.add('operator', 'Operator', 'Stop', () => { left.operator.stop() }, 'Esc')
 
       left.controller.commit()
+    }
+      LoadMenu();
     </script>
   </body>
 </html>
