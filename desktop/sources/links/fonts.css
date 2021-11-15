@@ -1,20 +1,20 @@
 @font-face {
-  font-family: 'custom_mono';
-  src: url('../media/fonts/mono.ttf') format('truetype');
+  font-family: "custom_mono";
+  src: url("../media/fonts/FiraCode-Retina.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'custom_serif';
-  src: url('../media/fonts/serif.ttf') format('truetype');
+  font-family: "custom_serif";
+  src: url("../media/fonts/FiraCode-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'custom_sans_serif';
-  src: url('../media/fonts/sans_serif.ttf') format('truetype');
+  font-family: "custom_sans_serif";
+  src: url("../media/fonts/FiraCode-SemiBold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
