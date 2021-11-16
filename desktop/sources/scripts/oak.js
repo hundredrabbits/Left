@@ -8,7 +8,7 @@ function Oak() {
     var themes = [];
     paths.map((path) => {
       console.log(`[Theme Found] ${path}`);
-      themes.push(path);
+      themes.push(path.replace(".svg", ""));
     });
     return themes;
   };
