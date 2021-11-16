@@ -19,6 +19,7 @@ function Oak() {
     const themeExists = fs.existsSync(themePath);
     if (themeExists) {
       const theme = fs.readFileSync(themePath, "utf-8");
+      return theme;
     }
   };
 }
