@@ -1,7 +1,7 @@
 "use strict";
 
 function Oak() {
-  this.get = () => {
+  this.getThemeNames = () => {
     console.log("Oak", "Getting Themes..");
     const fs = require("fs");
     const paths = fs.readdirSync(`${__dirname}/../media/themes/`);
@@ -12,7 +12,7 @@ function Oak() {
     });
     return themes;
   };
-  this.load = (name) => {
+  this.getTheme = (name) => {
     console.log("Oak", `Loading Theme ${name}..`);
     const fs = require("fs");
     const themePath = `${__dirname}/../media/themes/${name}.svg`;
