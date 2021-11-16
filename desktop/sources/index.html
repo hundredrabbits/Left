@@ -34,7 +34,7 @@
       }
 
       // Themes
-      const Themes = left.oak.get()
+      const Themes = left.oak.getThemeNames()
 
       // Menu
 
@@ -140,6 +140,8 @@
       Themes.map((theme) => {
         left.controller.add("default", "Themes", theme, () => {
           console.log(`[Theme]: ${theme}`)
+          var themeData = left.oak.getTheme(theme)
+          left.theme.load(themeData)
         }, "")
       })
       left.controller.addSpacer('default', 'Themes', 'Theme')
