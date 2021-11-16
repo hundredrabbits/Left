@@ -18,10 +18,12 @@
 
       const { shell, remote } = require('electron')
       const Left = require('./left')
+      const Oak = require('./scripts/oak')
       const { app } = remote
       const EOL = '\n'
 
       const left = new Left()
+      const oak = new Oak()
 
       left.install(document.body)
       left.start()
@@ -31,6 +33,9 @@
       if (process.platform === 'win32' && remote.process.argv.length > 1) {
         left.project.add(remote.process.argv[1])
       }
+
+      // Themes
+      const Themes = oak.get()
 
       // Menu
 
@@ -133,6 +138,11 @@
       left.controller.add('operator', 'Find', 'Find Next', () => { left.operator.find_next() }, 'CmdOrCtrl+N')
       left.controller.add('operator', 'Operator', 'Stop', () => { left.operator.stop() }, 'Esc')
 
+      Themes.map((theme) => {
+        left.controller.add("default", "Themes", theme, () => {
+          console.log(`[Theme]: ${theme}`)
+        }, "")
+      })
       left.controller.addSpacer('default', 'Themes', 'Theme')
       left.controller.add("default","Themes","Open Theme",() => { left.theme.open() },"CmdOrCtrl+Shift+O")
       left.controller.add("default","Themes","Reset Theme",() => { left.theme.reset() },"CmdOrCtrl+Shift+Backspace")
