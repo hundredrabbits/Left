@@ -85,10 +85,12 @@
       left.controller.add('default', 'Mode', 'Reader', () => { left.reader.start() }, 'CmdOrCtrl+K')
       left.controller.add('default', 'Mode', 'Insert', () => { left.insert.start() }, 'CmdOrCtrl+I')
 
+      /* // Theme
       left.controller.add("default","Theme","Open Theme",() => { left.theme.open() },"CmdOrCtrl+Shift+O")
       left.controller.add("default","Theme","Reset Theme",() => { left.theme.reset() },"CmdOrCtrl+Shift+Backspace")
       left.controller.addSpacer('default', 'Theme', 'Download')
       left.controller.add("default","Theme","Download Themes..",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Themes') })
+      */
 
       left.controller.add('reader', '*', 'About', () => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left') }, 'CmdOrCtrl+,')
       left.controller.add('reader', '*', 'Fullscreen', () => { app.toggleFullscreen() }, 'CmdOrCtrl+Enter')
@@ -130,6 +132,12 @@
       left.controller.add('operator', 'Find', 'Find', () => { left.operator.start('find: ') }, 'CmdOrCtrl+F')
       left.controller.add('operator', 'Find', 'Find Next', () => { left.operator.find_next() }, 'CmdOrCtrl+N')
       left.controller.add('operator', 'Operator', 'Stop', () => { left.operator.stop() }, 'Esc')
+
+      left.controller.addSpacer('default', 'Themes', 'Theme')
+      left.controller.add("default","Themes","Open Theme",() => { left.theme.open() },"CmdOrCtrl+Shift+O")
+      left.controller.add("default","Themes","Reset Theme",() => { left.theme.reset() },"CmdOrCtrl+Shift+Backspace")
+      left.controller.addSpacer('default', 'Themes', 'Download')
+      left.controller.add("default","Themes","Download Themes..",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Themes') })
 
       left.controller.commit()
     }
