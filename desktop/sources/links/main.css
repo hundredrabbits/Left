@@ -85,6 +85,7 @@ body {
 body navi {
   display: block;
   width: calc((100vw / 4) - 40px);
+  top: calc(100vh - 100%);
   left: 0px;
   position: absolute;
   padding: 20px 0px 0px 30px;
@@ -216,6 +217,7 @@ body textarea {
   display: block;
   width: 80ch;
   position: fixed;
+  top: calc(100vh - 100%);
   left: 25vw;
   font-size: var(--font-size);
   line-height: var(--line-height);
