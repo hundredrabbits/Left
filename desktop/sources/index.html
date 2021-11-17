@@ -13,6 +13,8 @@
     <script src="scripts/events.js"></script>
   </head>
   <body>
+    <header id="titlebar"></header>
+    <div id="main"></div>
     <script>
       'use strict'
 
@@ -24,7 +26,7 @@
 
       const left = new Left()
 
-      left.install(document.body)
+      left.install(document.getElementById('main'))
       left.start()
 
       // On Windows: open the file specified in the first argument
