@@ -17,12 +17,13 @@
   position: fixed;
   height: 26px;
   width: calc(100% - 2px);
-  background: #254053;
+  background: var(--background);
 }
 #window-controls {
   display: grid;
   grid-template-columns: repeat(3, 46px);
   position: absolute;
+  left: auto;
   top: 0;
   right: 0;
   height: 100%;
@@ -36,6 +37,22 @@
   width: 100%;
   height: 100%;
 }
+
+/* // not Draggable and inverted colors */
+#window-controls {
+  -webkit-app-region: no-drag;
+}
+
+#window-controls .button {
+  user-select: none;
+}
+
+/* // by default hide the restore button */
+#restore-window {
+  display: none !important;
+}
+
+/* // grid */
 #minimize-window {
   grid-column: 1;
 }
