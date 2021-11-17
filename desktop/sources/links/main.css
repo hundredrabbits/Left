@@ -51,6 +51,22 @@
 #restore-window {
   display: none !important;
 }
+.maximized #titlebar {
+  width: 100%;
+  padding: 0;
+}
+
+.maximized #window-title {
+  margin-left: 12px;
+}
+
+.maximized #restore-window {
+  display: flex !important;
+}
+
+.maximized #maximize-window {
+  display: none;
+}
 
 /* // grid */
 #minimize-window {
