@@ -19,6 +19,33 @@
   width: calc(100% - 2px);
   background: #254053;
 }
+#window-controls {
+  display: grid;
+  grid-template-columns: repeat(3, 46px);
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  justify-content: end;
+}
+#window-controls .button {
+  grid-row: 1 / span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+#minimize-window {
+  grid-column: 1;
+}
+#maximize-window,
+#restore-window {
+  grid-column: 2;
+}
+#close-window {
+  grid-column: 3;
+}
 
 body {
   height: 100vh;
