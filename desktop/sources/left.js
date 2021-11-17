@@ -42,6 +42,22 @@ function Left() {
   this.textarea_el = document.createElement("textarea");
   this.drag_el = document.createElement("drag");
 
+  this.drag_el.innerHTML =
+    '\
+      <header id="titlebar">\
+      <div id="window-controls" class="disable-drag">\
+        <div id="minimize-window" class="button"><img src="./media/img/chrome-minimize-dark.svg" alt="" class="icon">\
+        </div>\
+        <div id="maximize-window" class="button"><img src="./media/img/chrome-maximize-dark.svg" alt="" class="icon">\
+        </div>\
+        <div id="restore-window" class="button"><img src="./media/img/chrome-restore-dark.svg" alt="" class="icon">\
+        </div>\
+        <div id="close-window" class="button"><img src="./media/img/chrome-close-dark.svg" alt="" class="icon">\
+        </div>\
+      </div>\
+    </header>\
+    ';
+
   this.selection = { word: null, index: 1 };
 
   this.words_count = null;

@@ -11,20 +11,9 @@
     <link rel="stylesheet" href="links/theme.css"/>
 
     <script src="scripts/events.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
   </head>
   <body>
-    <header id="titlebar">
-      <div id="window-controls">
-        <div id="minimize-window" class="button"><img src="./media/img/chrome-minimize-dark.svg" alt="" class="icon">
-        </div>
-        <div id="maximize-window" class="button"><img src="./media/img/chrome-maximize-dark.svg" alt="" class="icon">
-        </div>
-        <div id="restore-window" class="button"><img src="./media/img/chrome-restore-dark.svg" alt="" class="icon">
-        </div>
-        <div id="close-window" class="button"><img src="./media/img/chrome-close-dark.svg" alt="" class="icon">
-        </div>
-      </div>
-    </header>
     <div id="main">
       
     <script>
@@ -167,6 +156,56 @@
       left.controller.commit()
     }
       LoadMenu();
+
+      const win = remote.getCurrentWindow(); /* Note this is different to the html global `window` variable */
+
+      const handleWindowControls = () => {
+        // Make minimise/maximise/restore/close buttons work when they are clicked
+        document.getElementById('minimize-window').addEventListener("click", event => {
+            win.minimize();
+        });
+
+        document.getElementById('maximize-window').addEventListener("click", event => {
+            win.maximize();
+        });
+
+        document.getElementById('restore-window').addEventListener("click", event => {
+            win.unmaximize();
+        });
+
+        document.getElementById('close-window').addEventListener("click", event => {
+            win.close();
+        });
+
+        // Toggle maximise/restore buttons when maximisation/restoring occurs
+        toggleMaxRestoreButtons();
+        win.on('maximize', toggleMaxRestoreButtons);
+        win.on('unmaximize', toggleMaxRestoreButtons);
+
+        function toggleMaxRestoreButtons() {
+            if (win.isMaximized()) {
+                document.body.classList.add('maximized');
+            } else {
+                document.body.classList.remove('maximized');
+            }
+        }
+      }
+      // When document has loaded, initialise
+      document.onreadystatechange = (event) => {
+          if (document.readyState == "complete") {
+            $(".disable-drag").on("touchstart mousedown click", (e) => {
+              e.stopPropagation()
+            })
+              handleWindowControls();
+          }
+      };
+
+      window.onbeforeunload = (event) => {
+          /* If window is reloaded, remove win event listeners
+          (DOM element listeners get auto garbage collected but not
+          Electron win listeners as the win is not dereferenced unless closed) */
+          win.removeAllListeners();
+      }
     </script>
     
   </div>

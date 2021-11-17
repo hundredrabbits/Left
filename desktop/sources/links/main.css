@@ -12,13 +12,6 @@
   padding: 0;
 }
 
-#titlebar {
-  display: block;
-  position: fixed;
-  height: 26px;
-  width: calc(100% - 2px);
-  background: var(--background);
-}
 #window-controls {
   display: grid;
   grid-template-columns: repeat(3, 46px);
@@ -28,6 +21,7 @@
   right: 0;
   height: 100%;
   justify-content: end;
+  width: fit-content;
 }
 #window-controls .button {
   grid-row: 1 / span 1;
