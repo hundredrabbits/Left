@@ -15,6 +15,10 @@ function Branch() {
   this.inject = () => {
     document.getElementById("titlebar").appendChild(this.branch_el);
   };
+
+  this.configureMenuItem = (menuItem, subMenu) => {
+    var menu_el = document.createElement("div");
+  };
 }
 
 module.exports = Branch;
