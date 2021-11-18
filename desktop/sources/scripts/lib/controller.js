@@ -115,6 +115,7 @@ function Controller() {
   this.docs = function () {
     // TODO
     console.log(this.menu.default);
+    return this.menu.default;
   };
 }
 
