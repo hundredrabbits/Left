@@ -8,6 +8,11 @@ function Branch() {
 
   this.start = () => {
     this.branch_el = document.createElement("div");
+
+    for (var key in this.menu) {
+      this.branch_el.appendChild(this.configureMenuItem(key, this.menu[key]));
+    }
+    this.inject();
   };
 
   this.setMenu = (menu) => {
@@ -21,11 +26,15 @@ function Branch() {
   this.configureMenuItem = (menuItem, subMenu) => {
     var menu_el = document.createElement("div");
 
-    const menu = Menu.buildFromTemplate(submenu);
+    menu_el.innerText = menuItem;
+
+    const menu = Menu.buildFromTemplate(subMenu);
     menu_el.addEventListener("click", (event) => {
       event.preventDefault();
       menu.popup();
     });
+
+    return menu_el;
   };
 }
 
