@@ -6,6 +6,8 @@ function Branch() {
   this.setMenu = (menu) => {
     this.menu = menu;
   };
+
+  this.inject = () => {};
 }
 
 module.exports = Branch;
