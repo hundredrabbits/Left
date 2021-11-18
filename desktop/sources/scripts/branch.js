@@ -3,28 +3,28 @@
 const { app, Menu } = require("electron").remote;
 
 function Branch() {
-  this.menu = {};
-  this.branch_el;
+  this.menuTemplate = {};
 
   this.start = () => {
-    this.branch_el = document.createElement("div");
-
-    for (var key in this.menu) {
-      this.branch_el.appendChild(this.configureMenuItem(key, this.menu[key]));
-    }
     this.inject();
   };
 
   this.setMenu = (menu) => {
-    this.menu = menu;
+    this.menuTemplate = menu;
   };
 
   this.inject = () => {
-    document.getElementById("titlebar").appendChild(this.branch_el);
+    document
+      .getElementById("titlebar")
+      .addEventListener("contextmenu", (event) => {
+        event.preventDefault();
+        Menu.buildFromTemplate(this.format()).popup();
+      });
   };
 
-  this.format = function (m) {
+  this.format = function () {
     const f = [];
+    const m = this.menuTemplate;
     for (const cat in m) {
       const submenu = [];
       for (const name in m[cat]) {
@@ -44,20 +44,6 @@ function Branch() {
       f.push({ label: cat, submenu: submenu });
     }
     return f;
-  };
-
-  this.configureMenuItem = (menuItem, subMenu) => {
-    var menu_el = document.createElement("div");
-
-    menu_el.innerText = menuItem;
-
-    const menu = Menu.buildFromTemplate(this.format(subMenu));
-    menu_el.addEventListener("click", (event) => {
-      event.preventDefault();
-      menu.popup();
-    });
-
-    return menu_el;
   };
 }
 
