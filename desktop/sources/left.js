@@ -12,6 +12,7 @@ const Project = require("./scripts/project");
 const Reader = require("./scripts/reader");
 const Insert = require("./scripts/insert");
 const Font = require("./scripts/font");
+const Branch = require("./scripts/branch");
 
 const EOL = "\n";
 
@@ -29,6 +30,7 @@ function Left() {
   });
   this.oak = new Oak();
   this.controller = new Controller();
+  this.branch = new Branch();
   this.dictionary = new Dictionary();
   this.operator = new Operator();
   this.navi = new Navi();
