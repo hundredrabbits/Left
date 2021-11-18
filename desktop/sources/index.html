@@ -154,6 +154,7 @@
       left.controller.add("default","Themes","Download Themes..",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Themes') })
 
       left.controller.commit()
+      left.branch.setMenu(left.controller.docs())
     }
       LoadMenu();
 
