@@ -13,6 +13,7 @@ const Reader = require("./scripts/reader");
 const Insert = require("./scripts/insert");
 const Font = require("./scripts/font");
 const Branch = require("./scripts/branch");
+const Leaf = require("./scripts/leaf");
 
 const EOL = "\n";
 
@@ -40,6 +41,7 @@ function Left() {
   this.reader = new Reader();
   this.insert = new Insert();
   this.font = new Font();
+  this.leaf = new Leaf();
 
   this.textarea_el = document.createElement("textarea");
   this.drag_el = document.createElement("drag");
