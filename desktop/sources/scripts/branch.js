@@ -51,7 +51,7 @@ function Branch() {
 
     menu_el.innerText = menuItem;
 
-    const menu = Menu.buildFromTemplate(subMenu);
+    const menu = Menu.buildFromTemplate(this.format(subMenu));
     menu_el.addEventListener("click", (event) => {
       event.preventDefault();
       menu.popup();
