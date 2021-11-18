@@ -12,7 +12,9 @@ function Branch() {
     this.menu = menu;
   };
 
-  this.inject = () => {};
+  this.inject = () => {
+    document.getElementById("titlebar").appendChild(this.branch_el);
+  };
 }
 
 module.exports = Branch;
