@@ -1,6 +1,6 @@
 "use strict";
 
-const { app, Menu } = require("electron");
+const { app, Menu } = require("electron").remote;
 
 function Branch() {
   this.menu = {};
