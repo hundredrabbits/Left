@@ -23,6 +23,29 @@ function Branch() {
     document.getElementById("titlebar").appendChild(this.branch_el);
   };
 
+  this.format = function (m) {
+    const f = [];
+    for (const cat in m) {
+      const submenu = [];
+      for (const name in m[cat]) {
+        const option = m[cat][name];
+        if (option.role) {
+          submenu.push({ role: option.role });
+        } else if (option.type) {
+          submenu.push({ type: option.type });
+        } else {
+          submenu.push({
+            label: name,
+            accelerator: option.accelerator,
+            click: option.fn,
+          });
+        }
+      }
+      f.push({ label: cat, submenu: submenu });
+    }
+    return f;
+  };
+
   this.configureMenuItem = (menuItem, subMenu) => {
     var menu_el = document.createElement("div");
 
