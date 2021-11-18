@@ -1,5 +1,7 @@
 "use strict";
 
+const { app, Menu } = require("electron");
+
 function Branch() {
   this.menu = {};
   this.branch_el;
@@ -18,6 +20,12 @@ function Branch() {
 
   this.configureMenuItem = (menuItem, subMenu) => {
     var menu_el = document.createElement("div");
+
+    const menu = Menu.buildFromTemplate(submenu);
+    menu_el.addEventListener("click", (event) => {
+      event.preventDefault();
+      menu.popup();
+    });
   };
 }
 
