@@ -40,6 +40,7 @@ function Left () {
   this.last_char = 's' // this is not a typo. it's bad code, but it has to be a length one string
 
   this.autoindent = true
+  this.clock = false
 
   this.install = function (host = document.body) {
     this.navi.install(host)
@@ -336,6 +337,11 @@ function Left () {
   ipcRenderer.on('left-toggle-autoindent', () => {
     this.autoindent = !this.autoindent
   })
+
+  this.time = function() {
+    const date = new Date()
+    return `${date.getHours()}:${('0' + date.getMinutes()).slice(-2)}`
+  }
 }
 
 module.exports = Left
