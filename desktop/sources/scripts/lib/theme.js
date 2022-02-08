@@ -42,6 +42,7 @@ function Theme (_default) {
   this.reset = function () {
     this.load(_default)
   }
+  ipcRenderer.on('left-theme-reset', () => this.reset())
 
   this.setImage = function (path) {
     document.body.style.backgroundImage = path && fs.existsSync(path) && document.body.style.backgroundImage !== `url(${path})` ? `url(${path})` : ''
@@ -73,16 +74,24 @@ function Theme (_default) {
     reader.readAsText(file)
   }
 
-  this.open = function () {
+  ipcRenderer.on('left-theme-open', async () => {
     const fs = require('fs')
-    const { dialog, app } = require('electron').remote
-    const paths = dialog.showOpenDialog(app.win, { properties: ['openFile'], filters: [{ name: 'Themes', extensions: ['svg'] }] })
-    if (!paths) { console.log('Nothing to load'); return }
-    fs.readFile(paths[0], 'utf8', function (err, data) {
+    const paths = await ipcRenderer.invoke('show-dialog','showOpenDialog',
+      {
+        properties: ['openFile'],
+        filters: [{ name: 'Themes', extensions: ['svg'] }]
+      }
+    )
+
+    if (paths.cancelled || paths.filePaths.length === 0) {
+      console.log('Nothing to load')
+      return
+    }
+    fs.readFile(paths.filePaths[0], 'utf8', function (err, data) {
       if (err) throw err
       themer.load(data)
     })
-  }
+  })
 
   window.addEventListener('dragover', this.drag)
   window.addEventListener('drop', this.drop)

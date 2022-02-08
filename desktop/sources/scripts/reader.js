@@ -1,5 +1,7 @@
 'use strict'
 
+const { ipcRenderer } = require('electron')
+
 function Reader () {
   this.segment = { from: 0, to: 0, text: '', words: [] }
   this.queue = []
@@ -7,7 +9,7 @@ function Reader () {
   this.speed = 175
   this.active = false
 
-  this.start = function () {
+  ipcRenderer.on('left-reader-start', () => {
     this.segment.from = left.textarea_el.selectionStart
     this.segment.to = left.textarea_el.selectionEnd
     this.segment.text = left.textarea_el.value.substr(this.segment.from, this.segment.to - this.segment.from).replace(/\n/g, ' ')
@@ -19,14 +21,14 @@ function Reader () {
       return
     }
 
-    left.controller.set('reader')
+    ipcRenderer.invoke('controller-set', 'reader')
     this.active = true
     this.queue = this.segment.words
     this.index = 0
 
     // Small delay before starting the reader
     setTimeout(() => { this.run() }, 250)
-  }
+  })
 
   this.alert = function (t) {
     setTimeout((t) => { left.stats.el.innerHTML = '<b>Reader</b> Select some text before starting the reader.' }, 400)
@@ -58,7 +60,7 @@ function Reader () {
   this.stop = function () {
     if (!this.active) { return }
 
-    left.controller.set('default')
+    ipcRenderer.invoke('controller-set', 'default')
     this.segment = { from: 0, to: 0, text: '', words: [] }
     this.queue = []
     this.index = 0
@@ -66,6 +68,7 @@ function Reader () {
     left.operator.stop()
     left.update()
   }
+  ipcRenderer.on('left-reader-stop', () => this.stop())
 
   this.find_orp = function (w, words) {
     const word = w.toLowerCase().trim()

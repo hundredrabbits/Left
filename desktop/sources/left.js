@@ -1,7 +1,8 @@
 'use strict'
 
+const { ipcRenderer } = require('electron')
+
 const Theme = require('./scripts/lib/theme')
-const Controller = require('./scripts/lib/controller')
 const Dictionary = require('./scripts/dictionary')
 const Operator = require('./scripts/operator')
 const Navi = require('./scripts/navi')
@@ -16,7 +17,6 @@ const EOL = '\n'
 
 function Left () {
   this.theme = new Theme({ background: '#222', f_high: '#eee', f_med: '#888', f_low: '#666', f_inv: '#00f', b_high: '#f9a', b_med: '#a9f', b_low: '#000', b_inv: '#af9' })
-  this.controller = new Controller()
   this.dictionary = new Dictionary()
   this.operator = new Operator()
   this.navi = new Navi()
@@ -110,14 +110,15 @@ function Left () {
       this.inject('\u00a0\u00a0')
     }
   }
+  ipcRenderer.on('left-select-autocomplete', () => this.select_autocomplete())
 
-  this.select_synonym = () => {
+  ipcRenderer.on('left-select-synonym', () => {
     if (this.synonyms) {
       this.replace_active_word_with(this.synonyms[this.selection.index % this.synonyms.length])
       this.stats.update()
       this.selection.index = (this.selection.index + 1) % this.synonyms.length
     }
-  }
+  })
 
   this.select = (from, to) => {
     this.textarea_el.setSelectionRange(from, to)
@@ -281,6 +282,7 @@ function Left () {
     document.execCommand('insertText', false, characters)
     this.update()
   }
+  ipcRenderer.on('left-inject', (_, characters) => this.inject(characters))
 
   this.inject_line = (characters = '__') => {
     this.select_line(this.active_line_id())
@@ -318,22 +320,22 @@ function Left () {
     this.inject(this.suggestion.substr(this.selection.word.length, this.suggestion.length) + ' ')
   }
 
-  this.open_url = function (target = this.active_url()) {
+  ipcRenderer.on('left-open-url', async (_, target = this.active_url()) => {
     if (!target) { return }
 
     this.select_word(target)
     setTimeout(() => { require('electron').shell.openExternal(target) }, 500)
-  }
+  })
 
-  this.reset = () => {
+  ipcRenderer.on('left-reset', () => {
     this.theme.reset()
     this.font.reset()
     this.update()
-  }
+  })
 
-  this.toggle_autoindent = () => {
+  ipcRenderer.on('left-toggle-autoindent', () => {
     this.autoindent = !this.autoindent
-  }
+  })
 }
 
 module.exports = Left

@@ -1,5 +1,6 @@
 'use strict'
 
+const { ipcRenderer } = require('electron')
 const EOL = '\n'
 
 function Go () {
@@ -45,13 +46,13 @@ function Go () {
     return from === -1 ? null : from
   }
 
-  this.to_next = function (str, scroll = true) {
+  ipcRenderer.on('left-go-to-next', async (_, str, scroll = true) => {
     const ta = left.textarea_el
     const text = ta.value
     const range = text.substr(ta.selectionStart, text.length - ta.selectionStart)
     const next = ta.selectionStart + range.indexOf(EOL)
     this.to(next, next, scroll)
-  }
+  })
 
   this.scroll_to = function (from, to) {
     const textVal = left.textarea_el.value

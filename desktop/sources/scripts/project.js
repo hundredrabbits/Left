@@ -1,8 +1,7 @@
 'use strict'
 
 const fs = require('fs')
-const { remote } = require('electron')
-const { app, dialog } = remote
+const { ipcRenderer, dialog } = require('electron')
 
 const Page = require('./page')
 const Splash = require('./splash')
@@ -74,19 +73,22 @@ function Project () {
 
   // ========================
 
-  this.new = function () {
+  ipcRenderer.on('left-project-new', () => {
     console.log('New Page')
 
     this.add()
     left.reload()
 
     setTimeout(() => { left.navi.next_page(); left.textarea_el.focus() }, 200)
-  }
+  })
 
-  this.open = function () {
+  ipcRenderer.on('left-project-open', async () => {
     console.log('Open Pages')
 
-    const paths = dialog.showOpenDialogSync(app.win, { properties: ['openFile', 'multiSelections'] })
+    const paths =  await ipcRenderer.invoke(
+      'show-dialog', 'showOpenDialogSync',
+      { properties: ['openFile', 'multiSelections'] }
+    )
 
     console.log(paths)
     if (!paths) { console.log('Nothing to load'); return }
@@ -97,9 +99,9 @@ function Project () {
     }
 
     setTimeout(() => { left.navi.next_page(); left.update() }, 200)
-  }
+  })
 
-  this.save = function () {
+  ipcRenderer.on('left-project-save', () => {
     console.log('Save Page')
 
     const page = this.page()
@@ -111,13 +113,15 @@ function Project () {
       left.update()
       setTimeout(() => { left.stats.el.innerHTML = `<b>Saved</b> ${page.path}` }, 200)
     })
-  }
+  })
 
-  this.save_as = function () {
+  ipcRenderer.on('left-project-save-as', async () => {
     console.log('Save As Page')
 
     const page = this.page()
-    const path = dialog.showSaveDialogSync(app.win)
+    const path = await ipcRenderer.invoke(
+      'show-dialog', 'showSaveDialogSync'
+    )
 
     if (!path) { console.log('Nothing to save'); return }
 
@@ -131,48 +135,57 @@ function Project () {
       left.update()
       setTimeout(() => { left.stats.el.innerHTML = `<b>Saved</b> ${page.path}` }, 200)
     })
-  }
+  })
 
-  this.close = function () {
+  ipcRenderer.on('left-project-close', async () => {
     if (this.pages.length === 1) { console.warn('Cannot close'); return }
 
     if (this.page().has_changes()) {
-      const response = dialog.showMessageBoxSync(app.win, {
-        type: 'question',
-        buttons: ['Yes', 'No'],
-        title: 'Confirm',
-        message: 'Are you sure you want to discard changes?',
-        icon: `${app.getAppPath()}/icon.png`
-      })
+      const path = await ipcRenderer.invoke('app-path')
+      const response = await ipcRenderer.invoke(
+        'show-dialog', 'showMessageBoxSync',
+        {
+          type: 'question',
+          buttons: ['Yes', 'No'],
+          title: 'Confirm',
+          message: 'Are you sure you want to discard changes?',
+          icon: `${path}/icon.png`
+        }
+      )
       if (response !== 0) {
         return
       }
     }
     this.force_close()
     localStorage.setItem('paths', JSON.stringify(this.paths()))
-  }
+  })
 
   this.force_close = function () {
     if (this.pages.length === 1) { this.quit(); return }
 
-    console.log('Closing..')
+    console.log('Closing...')
 
     this.pages.splice(this.index, 1)
     left.go.to_page(this.index - 1)
   }
+  ipcRenderer.on('left-project-force-close', () => this.force_close())
 
-  this.discard = function () {
-    const response = dialog.showMessageBoxSync(app.win, {
-      type: 'question',
-      buttons: ['Yes', 'No'],
-      title: 'Confirm',
-      message: 'Are you sure you want to discard changes?',
-      icon: `${app.getAppPath()}/icon.png`
-    })
+  ipcRenderer.on('left-project-discard', async () => {
+    const path = await ipcRenderer.invoke('app-path')
+    const response = await ipcRenderer.invoke(
+      'show-dialog', 'showMessageBoxSync',
+      {
+        type: 'question',
+        buttons: ['Yes', 'No'],
+        title: 'Confirm',
+        message: 'Are you sure you want to discard changes?',
+        icon: `${path}/icon.png`
+      }
+    )
     if (response === 0) { // Runs the following if 'Yes' is clicked
       left.reload(true)
     }
-  }
+  })
 
   this.has_changes = function () {
     for (const id in this.pages) {
@@ -181,24 +194,29 @@ function Project () {
     return false
   }
 
-  this.quit = function () {
+  ipcRenderer.on('left-project-quit', (e) => {
     if (this.has_changes()) {
       this.quit_dialog()
     } else {
-      app.exit()
+      e.sender.send('exit')
     }
-  }
+  })
 
-  this.quit_dialog = function () {
-    const response = dialog.showMessageBoxSync(app.win, {
-      type: 'question',
-      buttons: ['Yes', 'No'],
-      title: 'Confirm',
-      message: 'Unsaved data will be lost. Are you sure you want to quit?',
-      icon: `${app.getAppPath()}/icon.png`
-    })
+  this.quit_dialog = async function () {
+    const path = await ipcRenderer.invoke('app-path')
+    const response = await ipcRenderer.invoke(
+      'show-dialog',
+      'showMessageBoxSync',
+      {
+        type: 'question',
+        buttons: ['Yes', 'No'],
+        title: 'Confirm',
+        message: 'Unsaved data will be lost. Are you sure you want to quit?',
+        icon: `${path}/icon.png`
+      }
+    )
     if (response === 0) {
-      app.exit()
+      ipcRenderer.send('exit')
     }
   }
 

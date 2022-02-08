@@ -1,7 +1,7 @@
 'use strict'
 
 const fs = require('fs')
-const { app, dialog } = require('electron').remote
+const { app, dialog } = require('electron')
 const EOL = '\n'
 
 function Page (text = '', path = null) {
@@ -25,7 +25,7 @@ function Page (text = '', path = null) {
 
     const last_size = this.size
     const ret = (this.load() !== this.text)
-    
+
     // was this change done outside Left?
     if (ret && ( last_size !== this.size && this.watchdog )){
       const response = dialog.showMessageBoxSync(app.win, {

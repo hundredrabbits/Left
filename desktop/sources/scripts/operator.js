@@ -1,5 +1,7 @@
 'use strict'
 
+const { ipcRenderer } = require('electron')
+
 const EOL = '\n'
 
 function Operator () {
@@ -14,9 +16,9 @@ function Operator () {
     host.appendChild(this.el)
   }
 
-  this.start = function (f = '') {
+  ipcRenderer.on('left-operator-start', (_, f = '') => {
     console.log('started')
-    left.controller.set('operator')
+    ipcRenderer.invoke('controller-set', 'operator')
     this.is_active = true
 
     left.textarea_el.blur()
@@ -25,7 +27,7 @@ function Operator () {
 
     this.update()
     left.update()
-  }
+  })
 
   this.update = function () {
     this.el.className = this.is_active ? 'active' : 'inactive'
@@ -39,7 +41,7 @@ function Operator () {
     if (!this.is_active) { return }
 
     console.log('stopped')
-    left.controller.set('default')
+    ipcRenderer.invoke('controller-set', 'default')
     this.is_active = false
 
     this.el.value = ''
@@ -49,6 +51,7 @@ function Operator () {
     this.update()
     left.update()
   }
+  ipcRenderer.on('left-operator-stop', () => this.stop())
 
   this.on_change = function (e, down = false) {
     if (!this.is_active) { return }
@@ -91,13 +94,13 @@ function Operator () {
     this[cmd](params, true)
   }
 
-  this.find_next = function () {
+  ipcRenderer.on('left-operator-find-next', () => {
     if (!this.prev || !this.prev.includes('find:')) { return }
     const word = this.prev.replace('find:', '').trim()
 
     // Find next occurence
     this.find(word, true)
-  }
+  })
 
   this.find = function (q, bang = false) {
     if (q.length < 3) { return }
@@ -120,10 +123,8 @@ function Operator () {
       return
     }
 
-    if (bang && result) {
+    if (bang && result)
       left.go.to(result, result + q.length)
-      setTimeout(() => { left.operator.stop() }, 250)
-    }
   }
 
   this.replace = function (q, bang = false) {

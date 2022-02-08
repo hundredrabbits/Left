@@ -1,5 +1,7 @@
 'use strict'
 
+const { ipcRenderer } = require('electron')
+
 function Navi () {
   this.el = document.createElement('navi')
 
@@ -38,11 +40,13 @@ function Navi () {
     const page = clamp(parseInt(left.project.index) + 1, 0, left.project.pages.length - 1)
     left.go.to_page(page, 0)
   }
+  ipcRenderer.on('left-navi-next-page', () => this.next_page)
 
   this.prev_page = function () {
     const page = clamp(parseInt(left.project.index) - 1, 0, left.project.pages.length - 1)
     left.go.to_page(page, 0)
   }
+  ipcRenderer.on('left-navi-prev-page', () => this.prev_page)
 
   this.next_marker = function () {
     const page = clamp(parseInt(left.project.index), 0, left.project.pages.length - 1)
@@ -55,6 +59,7 @@ function Navi () {
 
     left.go.to_page(page, markers[nextIndex].line)
   }
+  ipcRenderer.on('left-navi-next-marker', () => this.next_marker)
 
   this.prev_marker = function () {
     const page = clamp(parseInt(left.project.index), 0, left.project.pages.length - 1)
@@ -67,6 +72,7 @@ function Navi () {
 
     left.go.to_page(page, markers[nextIndex].line)
   }
+  ipcRenderer.on('left-navi-prev-marker', () => this.prev_marker)
 
   this.marker = function () {
     if (!left.project.page()) { return [] }
@@ -92,9 +98,9 @@ function Navi () {
     left.navi.el.style.transform = 'translateY(' + (-100 * scrollPerc * naviOverflowPerc) + '%)'
   }
 
-  this.toggle = function () {
+  ipcRenderer.on('left-navi-toggle', () => {
     document.body.classList.toggle('mobile')
-  }
+  })
 
   function clamp (v, min, max) { return v < min ? min : v > max ? max : v }
 }

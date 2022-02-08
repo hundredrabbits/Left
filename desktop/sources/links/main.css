@@ -10,7 +10,7 @@ body navi li { display: flex; flex-direction: row; justify-content: space-betwee
 body navi li span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 body navi li::before { position: absolute; left:-15px;}
 body navi li:hover { text-decoration: none; }
-body navi li.page {}
+body navi li.page { white-space: nowrap; }
 body navi li.header { }
 body navi li.note { padding-left:15px;}
 body navi li.note::before { content:"#"; left:0px; }
