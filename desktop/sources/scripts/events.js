@@ -48,8 +48,8 @@ document.onkeyup = (e) => {
     let cur_pos = left.textarea_el.selectionStart // get new position in textarea
 
     // go back until beginning of last line and count spaces/tabs
-    let indent  = ''
-    let line    = ''
+    let indent = ''
+    let line = ''
     for ( let pos = cur_pos - 2; // -2 because of cur and \n
         pos >= 0 &&
           left.textarea_el.value.charAt(pos) != '\n';
@@ -60,7 +60,7 @@ document.onkeyup = (e) => {
 
     let matches
     if ( (matches = /^.*?([\s\t]+)$/gm.exec(line)) !== null) { // found indent
-      indent      = matches[1].split('').reverse().join('') // reverse
+      indent = matches[1].split('').reverse().join('') // reverse
       left.textarea_el.selectionStart = cur_pos
       left.inject(indent)
     }
@@ -103,7 +103,7 @@ window.addEventListener('drop', function (e) {
 
 document.onclick = function onClick (e) {
   left.selection.index = 0
-  left.operator.stop()
-  left.reader.stop()
+  if (left.operator.is_active) left.operator.stop()
+  if (left.reader.active) left.reader.stop()
   left.update()
 }

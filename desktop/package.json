@@ -5,9 +5,9 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
+    "dev": "electron . --inspect",
     "clean": "rm -r ../builds",
     "dist": "CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder build --mac --win --linux -p always",
-    "postinstall": "npm run postinstall:electron && electron-builder install-app-deps",
     "build:linux": "electron-builder build --linux",
     "build:windows": "electron-builder build --windows",
     "build:mac": "CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder build --mac"
