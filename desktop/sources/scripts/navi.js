@@ -90,8 +90,8 @@ function Navi () {
   }
 
   this.on_scroll = function () {
-    const scrollDistance = left.textarea_el.scrollTop
-    const scrollMax = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight
+    const scrollDistance = left.editor_el.scrollTop
+    const scrollMax = left.editor_el.scrollHeight - left.editor_el.offsetHeight
     const scrollPerc = Math.min(1, (scrollMax === 0) ? 0 : (scrollDistance / scrollMax))
     const naviOverflowPerc = Math.max(0, (left.navi.el.scrollHeight / window.innerHeight) - 1)
 

@@ -21,7 +21,7 @@ function Operator () {
     ipcRenderer.invoke('controller-set', 'operator')
     this.is_active = true
 
-    left.textarea_el.blur()
+    left.editor_el.blur()
     this.el.value = f
     this.el.focus()
 
@@ -46,7 +46,7 @@ function Operator () {
 
     this.el.value = ''
     this.el.blur()
-    left.textarea_el.focus()
+    left.editor_el.focus()
 
     this.update()
     left.update()
@@ -109,7 +109,7 @@ function Operator () {
 
     if (results.length < 1) { return }
 
-    const from = left.textarea_el.selectionStart
+    const from = left.editor_el.selectionStart
     let result = 0
     for (const id in results) {
       result = results[id]
@@ -117,8 +117,8 @@ function Operator () {
     }
 
     // Found final occurence, start from the top
-    if (result === left.textarea_el.selectionStart) {
-      left.textarea_el.setSelectionRange(0, 0)
+    if (result === left.editor_el.selectionStart) {
+      left.editor_el.setSelectionRange(0, 0)
       this.find(q, true)
       return
     }
@@ -140,7 +140,7 @@ function Operator () {
 
     if (results.length < 1) { return }
 
-    const from = left.textarea_el.selectionStart
+    const from = left.editor_el.selectionStart
     let result = 0
     for (const id in results) {
       result = results[id]
@@ -157,7 +157,7 @@ function Operator () {
   this.goto = function (q, bang = false) {
     const target = parseInt(q, 10)
 
-    const linesCount = left.textarea_el.value.split(EOL).length - 1
+    const linesCount = left.editor_el.value.split(EOL).length - 1
 
     if (q === '' || target < 1 || target > linesCount || Number.isNaN(target)) {
       return

@@ -55,7 +55,7 @@ function Project () {
   this.update = function () {
     if (!this.page()) { console.warn('Missing page'); return }
 
-    this.page().commit(left.textarea_el.value)
+    this.page().commit(left.editor_el.innerText)
   }
 
   this.load = function (path) {
@@ -79,7 +79,7 @@ function Project () {
     this.add()
     left.reload()
 
-    setTimeout(() => { left.navi.next_page(); left.textarea_el.focus() }, 200)
+    setTimeout(() => { left.navi.next_page(); left.editor_el.focus() }, 200)
   })
 
   ipcRenderer.on('left-project-open', async () => {

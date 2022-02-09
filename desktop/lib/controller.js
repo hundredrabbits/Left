@@ -84,6 +84,17 @@ class Controller {
       return acc
     }
 
+    ipcMain.handle('call-accelerator', async (_, key) => {
+      const menus = this.menu[this.mode]
+      for (const menu in menus) {
+        for (const submenus in menus[menu]) {
+          if (!menus[menu][submenus].fn) continue;
+          if (menus[menu][submenus].accelerator === key)
+            menus[menu][submenus].fn()
+        }
+      }
+    })
+
     this.docs = function () {
       // TODO
       console.log(this.menu.default)

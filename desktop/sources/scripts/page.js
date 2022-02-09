@@ -1,11 +1,16 @@
 'use strict'
 
-const fs = require('fs')
-const { app, dialog } = require('electron')
+const fs = require('fs'),
+      crypto = require('crypto')
+const { ipcRenderer } = require('electron')
 const EOL = '\n'
+
+
+const hash = (data) => crypto.createHash('sha256').update(data).digest('hex')
 
 function Page (text = '', path = null) {
   this.text = text.replace(/\r?\n/g, '\n')
+  this.digest = hash(text)
   this.path = path
   this.size = 0
   this.watchdog = true
@@ -17,37 +22,45 @@ function Page (text = '', path = null) {
     return parts[parts.length - 1]
   }
 
-  this.has_changes = function () {
+  this.has_changes = () => {
     if (!this.path) {
       if (this.text && this.text.length > 0) { return true }
       return false
     }
 
-    const last_size = this.size
-    const ret = (this.load() !== this.text)
+    const old_size = this.size
+    const new_text = this.load()
+    const ret = (hash(new_text) !== this.digest)
 
     // was this change done outside Left?
-    if (ret && ( last_size !== this.size && this.watchdog )){
-      const response = dialog.showMessageBoxSync(app.win, {
-        type: "question",
-        title: "Confirm",
-        message: "File was modified outside Left. Do you want to reload it?",
-        buttons: ['Yes', 'No', 'Ignore future occurrencies'],
-        detail: `New size of file is: ${this.size} bytes.`,
-        icon: `${app.getAppPath()}/icon.png`
-      })
+    if (ret && (old_size !== this.size && this.watchdog)) {
+      return (async () => {
+        const path = await ipcRenderer.invoke('app-path')
+        const response = await ipcRenderer.invoke(
+          'show-dialog', 'showMessageBoxSync',
+          {
+            type: "question",
+            title: "Confirm",
+            message: "File was modified outside Left. Do you want to reload it?",
+            buttons: ['Yes', 'No', 'Ignore future occurrencies'],
+            detail: `New size of file is: ${this.size} bytes.`,
+            icon: `${path}/icon.png`
+          }
+        )
 
-      if (response === 0) {
-        this.commit( this.load() )
-        left.reload()
-        return !ret // return false as it was reloaded
-      } else if (response === 2)
-        this.watchdog = !this.watchdog
+        if (response === 0) {
+          this.commit( new_text )
+          left.reload()
+          return !ret // return false as it was reloaded
+        } else if (response === 2)
+          this.watchdog = !this.watchdog
+      })()
     }
     return ret
   }
 
-  this.commit = function (text = left.textarea_el.value) {
+  this.commit = function (text = left.editor_el.value) {
+    this.digest = hash(text)
     this.text = text
   }
 
@@ -71,7 +84,6 @@ function Page (text = '', path = null) {
 
     // update file size
     this.size = fs.statSync(this.path).size
-
     return data
   }
 

@@ -19,7 +19,7 @@ function Go () {
   }
 
   this.to_line = function (id) {
-    const lineArr = left.textarea_el.value.split(EOL, parseInt(id) + 1)
+    const lineArr = left.editor_el.value.split(EOL, parseInt(id) + 1)
     const arrJoin = lineArr.join(EOL)
     const from = arrJoin.length - lineArr[id].length
     const to = arrJoin.length
@@ -28,16 +28,16 @@ function Go () {
   }
 
   this.to = function (from, to, scroll = true) {
-    if (left.textarea_el.setSelectionRange) {
-      left.textarea_el.setSelectionRange(from, to)
-    } else if (left.textarea_el.createTextRange) {
-      const range = left.textarea_el.createTextRange()
+    if (left.editor_el.setSelectionRange) {
+      left.editor_el.setSelectionRange(from, to)
+    } else if (left.editor_el.createTextRange) {
+      const range = left.editor_el.createTextRange()
       range.collapse(true)
       range.moveEnd('character', to)
       range.moveStart('character', from)
       range.select()
     }
-    left.textarea_el.focus()
+    left.editor_el.focus()
 
     if (scroll) {
       this.scroll_to(from, to)
@@ -47,7 +47,7 @@ function Go () {
   }
 
   ipcRenderer.on('left-go-to-next', async (_, str, scroll = true) => {
-    const ta = left.textarea_el
+    const ta = left.editor_el
     const text = ta.value
     const range = text.substr(ta.selectionStart, text.length - ta.selectionStart)
     const next = ta.selectionStart + range.indexOf(EOL)
@@ -55,11 +55,11 @@ function Go () {
   })
 
   this.scroll_to = function (from, to) {
-    const textVal = left.textarea_el.value
+    const textVal = left.editor_el.value
     const div = document.createElement('div')
     div.innerHTML = textVal.slice(0, to)
     document.body.appendChild(div)
-    animateScrollTo(left.textarea_el, div.offsetHeight - 60, 200)
+    animateScrollTo(left.editor_el, div.offsetHeight - 60, 200)
     div.remove()
   }
 

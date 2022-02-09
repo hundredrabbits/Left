@@ -10,9 +10,9 @@ function Reader () {
   this.active = false
 
   ipcRenderer.on('left-reader-start', () => {
-    this.segment.from = left.textarea_el.selectionStart
-    this.segment.to = left.textarea_el.selectionEnd
-    this.segment.text = left.textarea_el.value.substr(this.segment.from, this.segment.to - this.segment.from).replace(/\n/g, ' ')
+    this.segment.from = left.editor_el.selectionStart
+    this.segment.to = left.editor_el.selectionEnd
+    this.segment.text = left.editor_el.value.substr(this.segment.from, this.segment.to - this.segment.from).replace(/\n/g, ' ')
     this.segment.words = this.segment.text.split(' ')
 
     if (this.segment.words.length < 5) {

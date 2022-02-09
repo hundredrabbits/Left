@@ -34,7 +34,7 @@ app.on('ready', () => {
   })
 
   app.win.loadURL(`file://${__dirname}/sources/index.html`)
-  //app.inspect()
+  app.inspect()
   loadMenu()
 
   app.win.on('closed', () => {
@@ -136,7 +136,7 @@ function loadMenu()
   Controller.add('default', 'Select', 'Find', () => { content.send('left-operator-start', 'find: ') }, 'CmdOrCtrl+F')
   Controller.add('default', 'Select', 'Replace', () => { content.send('left-operator-start', 'replace: a -> b') }, 'CmdOrCtrl+Shift+F')
   Controller.add('default', 'Select', 'Goto', () => { content.send('left-operator-start', 'goto: ') }, 'CmdOrCtrl+G')
-  Controller.add('default', 'Select', 'Open Url', () => { content.send('left-operator-start') }, 'CmdOrCtrl+B')
+  Controller.add('default', 'Select', 'Open Url', () => { content.send('left-open-url') }, 'CmdOrCtrl+B')
 
   Controller.add('default', 'Navigation', 'Next File', () => { content.send('left-navi-next-page') }, 'CmdOrCtrl+Shift+]')
   Controller.add('default', 'Navigation', 'Prev File', () => { content.send('left-navi-prev-page') }, 'CmdOrCtrl+Shift+[') // FIXME
