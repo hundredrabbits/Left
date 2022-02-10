@@ -18,10 +18,12 @@ function Navi () {
       if (!page) { continue }
       html += `<ul class="${left.project.index === parseInt(pid) ? 'active' : ''}">`
       html += this._page(parseInt(pid), page)
-      const markers = page.markers()
-      for (const i in markers) {
-        const marker = markers[i]
-        html += this._marker(pid, current, marker, markers)
+      if (!current) {
+        const markers = page.markers()
+        for (const i in markers) {
+          const marker = markers[i]
+          html += this._marker(pid, current, marker, markers)
+        }
       }
       html += '</ul>'
     }
@@ -75,9 +77,10 @@ function Navi () {
   ipcRenderer.on('left-navi-prev-marker', () => this.prev_marker)
 
   this.marker = function () {
-    if (!left.project.page()) { return [] }
+    const page = left.project.page()
+    if (!page || !page.is_markdown) { return [] }
 
-    const markers = left.project.page().markers()
+    const markers = page
     const pos = left.active_line_id()
 
     if (markers.length < 1) { return }

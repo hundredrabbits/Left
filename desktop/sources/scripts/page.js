@@ -5,18 +5,23 @@ const fs = require('fs'),
 const { ipcRenderer } = require('electron')
 
 const EOL = '\n'
+const markdowns = ['.md', '.txt', '.log']
 const hash = (data) => crypto.createHash('sha256').update(data).digest('hex')
 
 function Page (text = '', path = null) {
   this.text = text.replace(/\r?\n/g, '\n')
   this.digest = hash(text)
   this.path = path
+  this.is_markdown = true
   this.lines = 0
   this.size = 0
   this.watchdog = true
 
   this.name = function () {
     if (!this.path) { return 'Untitled' }
+
+    if (!markdowns.map(e => this.path.endsWith(e)).find(e => e))
+      this.is_markdown = false
 
     const parts = this.path.replace(/\\/g, '/').split('/')
     return parts[parts.length - 1]
@@ -76,6 +81,7 @@ function Page (text = '', path = null) {
   this.load = function () {
     if (!this.path) { return }
 
+
     let data
     try {
       data = fs.readFileSync(this.path, 'utf-8')
@@ -99,7 +105,13 @@ function Page (text = '', path = null) {
     const lines = this.text.split(EOL)
     for (const id in lines) {
       const line = lines[id].trim()
-      if (line.substr(0, 2) === '##') { a.push({ id: a.length, text: line.replace('##', '').trim(), line: parseInt(id), type: 'subheader' }) } else if (line.substr(0, 1) === '#') { a.push({ id: a.length, text: line.replace('#', '').trim(), line: parseInt(id), type: 'header' }) } else if (line.substr(0, 2) === '--') { a.push({ id: a.length, text: line.replace('--', '').trim(), line: parseInt(id), type: 'comment' }) }
+      if (line.substr(0, 2) === '##') {
+        a.push({ id: a.length, text: line.replace('##', '◎').trim(), line: parseInt(id), type: 'subheader' })
+      } else if (line.substr(0, 1) === '#') {
+        a.push({ id: a.length, text: line.replace('#', '⦿').trim(), line: parseInt(id), type: 'header' })
+      } else if (line.substr(0, 2) === '--') {
+        a.push({ id: a.length, text: line.replace('--', '▶︎').trim(), line: parseInt(id), type: 'comment' })
+      }
     }
     return a
   }

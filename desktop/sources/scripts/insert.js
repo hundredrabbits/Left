@@ -6,10 +6,12 @@ const EOL = '\n'
 
 function Insert () {
   this.is_active = false
+  this.page = null
 
   ipcRenderer.on('left-insert-start', () => {
     ipcRenderer.invoke('controller-set', 'insert')
     this.is_active = true
+    this.page = left.project.page()
     left.update()
   })
 
@@ -50,58 +52,60 @@ function Insert () {
   })
 
   ipcRenderer.on('left-insert-header', () => {
-    const isMultiline = left.selected().match(/[^\r\n]+/g)
-
-    if (left.prev_character() === EOL && !isMultiline) {
-      left.inject('# ')
-    } else if (isMultiline) {
-      left.inject_multiline('# ')
-    } else {
-      left.inject_line('# ')
+    if (!this.page.is_markdown) {
+      this.stop()
+      return
     }
-    this.stop()
+
+    this.insert_markdown('#')
   })
 
   ipcRenderer.on('left-insert-subheader', () => {
-    const isMultiline = left.selected().match(/[^\r\n]+/g)
-
-    if (left.prev_character() === EOL && !isMultiline) {
-      left.inject('## ')
-    } else if (isMultiline) {
-      left.inject_multiline('## ')
-    } else {
-      left.inject_line('## ')
+    if (!this.page.is_markdown) {
+      this.stop()
+      return
     }
-    this.stop()
+
+    this.insert_markdown('##')
   })
 
   ipcRenderer.on('left-insert-comment', () => {
-    const isMultiline = left.selected().match(/[^\r\n]+/g)
-
-    if (left.prev_character() === EOL && !isMultiline) {
-      left.inject('-- ')
-    } else if (isMultiline) {
-      left.inject_multiline('-- ')
-    } else {
-      left.inject_line('-- ')
+    if (!this.page.is_markdown) {
+      this.stop()
+      return
     }
-    this.stop()
+
+    this.insert_markdown('--')
   })
 
   ipcRenderer.on('left-insert-list', () => {
-    const isMultiline = left.selected().match(/[^\r\n]+/g)
-
-    if (left.prev_character() === EOL && !isMultiline) {
-      left.inject('- ')
-    } else if (isMultiline) {
-      left.inject_multiline('- ')
-    } else {
-      left.inject_line('- ')
+    if (!this.page.is_markdown) {
+      this.stop()
+      return
     }
-    this.stop()
+
+    this.insert_markdown('-')
   })
 
+  this.insert_markdown = (characters) => {
+    const isMultiline = left.selected().match(/[^\r\n]+/g)
+    const content = `${characters} `
+
+    if (left.prev_character() === EOL && !isMultiline) {
+      left.inject(content)
+    } else if (isMultiline) {
+      left.inject_multiline(content)
+    } else {
+      left.inject_line(content)
+    }
+    this.stop()
+  }
+
   ipcRenderer.on('left-insert-line', () => {
+    if (!this.page.is_markdown) {
+      this.stop()
+      return
+    }
     if (left.prev_character() !== EOL) {
       left.inject(EOL)
     }
@@ -110,7 +114,12 @@ function Insert () {
   })
 
   this.status = function () {
-    return `<b>Insert Mode</b> c-D <i>Date</i> c-T <i>Time</i> ${left.project.paths().length > 0 ? 'c-P <i>Path</i> ' : ''}c-H <i>Header</i> c-/ <i>Comment</i> Esc <i>Exit</i>.`
+    let status = `<b>Insert Mode</b> c-D <i>Date</i> c-T <i>Time</i> ${left.project.paths().length > 0 ? 'c-P <i>Path</i> ' : ''}`
+    if (left.project.page().is_markdown)
+      status += 'c-H <i>Header</i> c-/ <i>Comment</i> '
+    status += 'Esc <i>Exit</i>.'
+
+    return status
   }
 }
 
