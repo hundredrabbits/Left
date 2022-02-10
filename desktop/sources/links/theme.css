@@ -25,3 +25,8 @@ body #theme_button_icon_fg { background-color: var(--f_med) !important }
 .fh { color:var(--f_high) !important; }
 .fm { color:var(--f_med) !important; }
 .fl { color:var(--f_low) !important; }
+.fi { color:var(--f_inv) !important; }
+.bh { color:var(--b_high) !important; }
+.bm { color:var(--b_med) !important; }
+.bl { color:var(--b_low) !important; }
+.bi { color:var(--b_inv) !important; }

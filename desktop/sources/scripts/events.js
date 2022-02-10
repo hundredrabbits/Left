@@ -45,25 +45,21 @@ document.onkeydown = function keyDown (e) {
 
 document.onkeyup = (e) => {
   if (e.key === 'Enter' && left.autoindent) { // autoindent
-    let cur_pos = left.editor_el.selectionStart // get new position in textarea
+    let cur_pos = left.editor_el.selectionStart - 2
 
     // go back until beginning of last line and count spaces/tabs
-    let indent = ''
     let line = ''
-    for ( let pos = cur_pos - 2; // -2 because of cur and \n
-        pos >= 0 &&
+    for ( pos = cur_pos;
+        pos > 0 &&
           left.editor_el.value.charAt(pos) != '\n';
         pos--
       ){
       line += left.editor_el.value.charAt(pos)
     }
 
-    let matches
-    if ( (matches = /^.*?([\s\t]+)$/gm.exec(line)) !== null) { // found indent
-      indent = matches[1].split('').reverse().join('') // reverse
-      left.editor_el.selectionStart = cur_pos
-      left.inject(indent)
-    }
+    if (/([\s\t]+)$/.test(line))
+      left.inject(RegExp.$1)
+    return
   }
 
   if (e.keyCode === 16) { // Shift

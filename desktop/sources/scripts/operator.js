@@ -40,7 +40,7 @@ function Operator () {
   this.stop = function () {
     if (!this.is_active) { return }
 
-    console.log('stopped')
+    // console.log('stopped')
     ipcRenderer.invoke('controller-set', 'default')
     this.is_active = false
 
@@ -65,6 +65,7 @@ function Operator () {
     if (!down && (e.key === 'Enter' || e.code === 'Enter')) {
       this.active()
       e.preventDefault()
+      e.stopPropagation()
     } else if (!down) {
       this.passive()
     }

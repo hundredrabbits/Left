@@ -12,6 +12,7 @@ function Reader () {
   ipcRenderer.on('left-reader-start', () => {
     this.segment.from = left.editor_el.selectionStart
     this.segment.to = left.editor_el.selectionEnd
+
     this.segment.text = left.editor_el.value.substr(this.segment.from, this.segment.to - this.segment.from).replace(/\n/g, ' ')
     this.segment.words = this.segment.text.split(' ')
 

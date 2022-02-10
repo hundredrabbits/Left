@@ -1,3 +1,5 @@
+const { ipcRenderer } = require('electron')
+
 class Editor extends HTMLPreElement {
   constructor() {
     super();
@@ -15,16 +17,17 @@ class Editor extends HTMLPreElement {
       const selection = document.getSelection()
 
       range.setStart(this.childNodes[0], f)
-      if (f != t)
-        range.setEnd(this.childNodes[0], t)
+      range.setEnd(this.childNodes[0], !t ? f : t)
       selection.removeAllRanges()
       selection.addRange(range)
-    } // TODO
+    }
 
     this.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') { // avoid injecting DIV
-        document.execCommand('insertHTML', false, '\n');
+        //left.inject('\n');
+        document.execCommand('insertHTML', false, '\n')
         e.preventDefault()
+        return
       }
 
       if ((e.ctrlKey || e.metaKey) &&
@@ -37,26 +40,66 @@ class Editor extends HTMLPreElement {
             `CmdOrCtrl+${e.key.toUpperCase()}`
           )
           e.preventDefault()
+          return
+      }
+
+      if (["'", '"', "{", "("].find(c => c === e.key)) {
+        const sels = this.selectionStart
+        const sele = this.selectionEnd
+        let data = ''
+        let chars = []
+
+        if (sels != sele)
+          data = this.innerHTML.substr(sels, sele)
+
+        switch (e.key) {
+          case '"': case "'": chars = [e.key, e.key]; break;
+          case '{': chars = [e.key, '}']; break;
+          case "(": chars = [e.key, ')']; break;
+        }
+
+        if (!data) {
+          left.inject(chars.join(''))
+          this.setSelectionRange(sele + 1)
+        } else {
+          this.setSelectionRange(sels)
+          left.inject(chars[0])
+          this.setSelectionRange(sele+1)
+          left.inject(chars[1])
+        }
+        e.preventDefault()
       }
     })
   }
 
-  get selectionStart() { return this.getSelection()[0] }
+  get selectionStart() {
+    const p = this.getSelection()
+    return p[0] > p[1] ? p[1] : p[0]
+  }
   set selectionStart(pos) {
     this.setSelectionRange(pos, pos)
   }
 
-  get selectionEnd() { return this.getSelection()[1] }
+  get selectionEnd() {
+    const p = this.getSelection()
+    return p[1] < p[0] ? p[0] : p[1]
+  }
 
   get value() { return this.innerText }
   set value(data) {
     this.innerText = data
-    this.innerHTML = this.innerHTML.replace(/<br\/*>/g, '\r');
+    this.normalize()
   }
 
   getSelection() {
     const selection = window.getSelection()
     return [selection.baseOffset, selection.extentOffset]
+  }
+
+  normalize() {
+    return this.innerHTML = this.innerHTML
+      .replace(/<br\/*>/ig, '\n')
+      .replace(/(<([^>]+)>)/ig, '')
   }
 }
 customElements.define('left-editor', Editor, {

@@ -29,6 +29,7 @@ function Left () {
   this.font = new Font()
 
   this.editor_el = new Editor()
+  this.number_el = document.createElement('pre')
   this.drag_el = document.createElement('drag')
 
   this.selection = { word: null, index: 1 }
@@ -48,13 +49,17 @@ function Left () {
     this.stats.install(host)
     this.operator.install(host)
 
+    host.appendChild(this.number_el)
     host.appendChild(this.editor_el)
     host.appendChild(this.drag_el)
 
     host.className = window.location.hash.replace('#', '')
 
+    this.number_el.id = 'number'
+
     this.editor_el.addEventListener('scroll', () => {
       if (!this.reader.active) { this.stats.on_scroll() }
+      this.number_el.scrollTop = this.editor_el.scrollTop
     })
 
     // Trigger update when selection changes

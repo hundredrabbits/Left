@@ -3,15 +3,15 @@
 const fs = require('fs'),
       crypto = require('crypto')
 const { ipcRenderer } = require('electron')
+
 const EOL = '\n'
-
-
 const hash = (data) => crypto.createHash('sha256').update(data).digest('hex')
 
 function Page (text = '', path = null) {
   this.text = text.replace(/\r?\n/g, '\n')
   this.digest = hash(text)
   this.path = path
+  this.lines = 0
   this.size = 0
   this.watchdog = true
 
@@ -62,6 +62,7 @@ function Page (text = '', path = null) {
   this.commit = function (text = left.editor_el.value) {
     this.digest = hash(text)
     this.text = text
+    this.update_lines()
   }
 
   this.reload = function (force = false) {
@@ -74,6 +75,7 @@ function Page (text = '', path = null) {
 
   this.load = function () {
     if (!this.path) { return }
+
     let data
     try {
       data = fs.readFileSync(this.path, 'utf-8')
@@ -82,9 +84,14 @@ function Page (text = '', path = null) {
       return
     }
 
-    // update file size
-    this.size = fs.statSync(this.path).size
+    this.size = fs.statSync(this.path).size //  update file size
     return data
+  }
+
+  this.update_lines =  () => {
+    const lines = []
+    for (let n = 0; n < this.text.split(EOL).length; lines.push(++n)) ;
+    left.number_el.innerHTML = lines.join('\n')
   }
 
   this.markers = function () {
