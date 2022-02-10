@@ -49,7 +49,7 @@ document.onkeyup = (e) => {
 
     // go back until beginning of last line and count spaces/tabs
     let line = ''
-    for ( pos = cur_pos;
+    for (let pos = cur_pos;
         pos > 0 &&
           left.editor_el.value.charAt(pos) != '\n';
         pos--
