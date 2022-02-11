@@ -136,7 +136,6 @@ function Page (text = '', path = null) {
       }
 
       if (marker.length) {
-        console.log(line.replace(marker[1].mark, marker[1].symbol).trim())
         a.push({
           id: a.length,
           text: line.replace(new RegExp(`${marker[1].mark}+`), marker[1].symbol).trim(),
