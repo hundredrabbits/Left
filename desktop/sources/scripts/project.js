@@ -90,15 +90,19 @@ function Project () {
       { properties: ['openFile', 'multiSelections'] }
     )
 
-    console.log(paths)
     if (!paths) { console.log('Nothing to load'); return }
 
-    for (const id in paths) {
-      console.log(id)
+    for (const id in paths)
       this.add(paths[id])
-    }
 
     setTimeout(() => { left.navi.next_page(); left.update() }, 200)
+  })
+
+  ipcRenderer.on('left-project-execute', async () => {
+    console.log('Execute')
+
+    const path =  await ipcRenderer.invoke('app-path')
+    console.log(path)
   })
 
   ipcRenderer.on('left-project-save', () => {

@@ -114,6 +114,9 @@ function loadMenu()
   Controller.add('default', 'File', 'Discard Changes', () => { content.send('left-project-discard') }, 'CmdOrCtrl+D')
   Controller.add('default', 'File', 'Close File', () => { content.send('left-project-close') }, 'CmdOrCtrl+W')
   Controller.add('default', 'File', 'Force Close', () => { content.send('left-project-force-close') }, 'CmdOrCtrl+Shift+W')
+  Controller.addSpacer('default', 'File', '')
+  Controller.add('default', 'File', 'Execute', () => { content.send('left-operator-start', 'execute: ') }, 'CmdOrCtrl+E')
+
 
   for (const i of ['default', 'operator']) {
     Controller.addRole(i, 'Edit', 'undo')
@@ -163,15 +166,15 @@ function loadMenu()
   Controller.add('insert', 'Insert', 'Date', () => { content.send('left-insert-date') }, 'CmdOrCtrl+D')
   Controller.add('insert', 'Insert', 'Time', () => { content.send('left-insert-time') }, 'CmdOrCtrl+T')
   Controller.add('insert', 'Insert', 'Path', () => { content.send('left-insert-path') }, 'CmdOrCtrl+P')
-  // Controller.add('insert', 'Insert', 'Header', () => { content.send('left-insert-header') }, 'CmdOrCtrl+H')
-  // Controller.add('insert', 'Insert', 'SubHeader', () => { content.send('left-insert-subheader') }, 'CmdOrCtrl+Shift+H')
+  Controller.add('insert', 'Insert', 'Header', () => { content.send('left-insert-header') }, 'CmdOrCtrl+H')
+  Controller.add('insert', 'Insert', 'SubHeader', () => { content.send('left-insert-subheader') }, 'CmdOrCtrl+Shift+H')
   Controller.add('insert', 'Insert', 'Comment', () => { content.send('left-insert-comment') }, 'CmdOrCtrl+/')
   Controller.add('insert', 'Insert', 'Line', () => { content.send('left-insert-line') }, 'CmdOrCtrl+L')
   Controller.add('insert', 'Insert', 'List', () => { content.send('left-insert-list') }, 'CmdOrCtrl+-')
   Controller.add('insert', 'Mode', 'Stop', () => { content.send('left-insert-stop') }, 'Esc')
 
   Controller.add('operator', 'Find', 'Find', () => { content.send('left-operator-start', 'find: ') }, 'CmdOrCtrl+F')
-  Controller.add('operator', 'Find', 'Find Next', () => { content.send('left-operator-find-next') }, 'CmdOrCtrl+N') // FIXME
+  Controller.add('operator', 'Find', 'Find Next', () => { content.send('left-operator-find-next') }, 'CmdOrCtrl+N')
   Controller.add('operator', 'Operator', 'Stop', () => { content.send('left-operator-stop') }, 'Esc')
 
   Controller.commit()

@@ -16,6 +16,8 @@ class Editor extends HTMLPreElement {
       const range = document.createRange()
       const selection = document.getSelection()
 
+      if (!this.childNodes.length)
+        return
       range.setStart(this.childNodes[0], f)
       range.setEnd(this.childNodes[0], !t ? f : t)
       selection.removeAllRanges()
@@ -53,7 +55,7 @@ class Editor extends HTMLPreElement {
           data = this.innerHTML.substr(sels, sele)
 
         switch (e.key) {
-          case '"': case "'": chars = [e.key, e.key]; break;
+          case '"': case "'":  case "`": chars = [e.key, e.key]; break;
           case '{': chars = [e.key, '}']; break;
           case "(": chars = [e.key, ')']; break;
         }

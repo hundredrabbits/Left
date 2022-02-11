@@ -4,8 +4,13 @@ const fs = require('fs'),
       crypto = require('crypto')
 const { ipcRenderer } = require('electron')
 
-const EOL = '\n'
-const markdowns = ['.md', '.txt', '.log']
+const EOL = '\n',
+      markdowns = ['.md', '.txt', '.log'],
+      markers = {
+        header: { mark: '#', symbol: '◎'},
+        subheader: { mark: '##', symbol: '⦿'},
+        comment: { mark: '--', symbol: '▶︎'},
+      }
 const hash = (data) => crypto.createHash('sha256').update(data).digest('hex')
 
 function Page (text = '', path = null) {
@@ -67,6 +72,7 @@ function Page (text = '', path = null) {
   this.commit = function (text = left.editor_el.value) {
     this.digest = hash(text)
     this.text = text
+
     this.update_lines()
   }
 
@@ -96,7 +102,21 @@ function Page (text = '', path = null) {
 
   this.update_lines =  () => {
     const lines = []
-    for (let n = 0; n < this.text.split(EOL).length; lines.push(++n)) ;
+
+    left.number_el.innerHTML = ''
+    if (!this.is_markdown) {
+      for (let n = 0; n < this.text.split(EOL).length; lines.push(++n)) ;
+    } else {
+      for (let n = 0, l = this.text.split(EOL); n < l.length; n++) {
+        const line = l[n]
+
+        if (line.startsWith(markers.subheader.mark)) { lines.push(markers.subheader.symbol) }
+        else if (line.startsWith(markers.header.mark)) { lines.push(markers.header.symbol) }
+        else if (line.startsWith(markers.comment.mark)) { lines.push(markers.comment.symbol) }
+        else { lines.push('') }
+      }
+    }
+
     left.number_el.innerHTML = lines.join('\n')
   }
 
@@ -105,12 +125,24 @@ function Page (text = '', path = null) {
     const lines = this.text.split(EOL)
     for (const id in lines) {
       const line = lines[id].trim()
-      if (line.substr(0, 2) === '##') {
-        a.push({ id: a.length, text: line.replace('##', '◎').trim(), line: parseInt(id), type: 'subheader' })
-      } else if (line.substr(0, 1) === '#') {
-        a.push({ id: a.length, text: line.replace('#', '⦿').trim(), line: parseInt(id), type: 'header' })
-      } else if (line.substr(0, 2) === '--') {
-        a.push({ id: a.length, text: line.replace('--', '▶︎').trim(), line: parseInt(id), type: 'comment' })
+      let marker = []
+
+      if (line.startsWith(markers.subheader.mark)) {
+        marker = [ 'subheader', markers.subheader ]
+      } else if (line.startsWith(markers.header.mark)) {
+        marker = [ 'header', markers.header ]
+      } else if (line.startsWith(markers.comment.mark)) {
+        marker = [ 'comment', markers.comment ]
+      }
+
+      if (marker.length) {
+        console.log(line.replace(marker[1].mark, marker[1].symbol).trim())
+        a.push({
+          id: a.length,
+          text: line.replace(new RegExp(`${marker[1].mark}+`), marker[1].symbol).trim(),
+          line: parseInt(id),
+          type: marker[0]
+        })
       }
     }
     return a

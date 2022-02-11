@@ -1,6 +1,8 @@
 'use strict'
 
 const { ipcRenderer } = require('electron')
+const path = require('path'),
+      cp = require('child_process')
 
 const EOL = '\n'
 
@@ -16,7 +18,7 @@ function Operator () {
     host.appendChild(this.el)
   }
 
-  ipcRenderer.on('left-operator-start', (_, f = '') => {
+  this.start = (f = '') => {
     console.log('started')
     ipcRenderer.invoke('controller-set', 'operator')
     this.is_active = true
@@ -27,7 +29,8 @@ function Operator () {
 
     this.update()
     left.update()
-  })
+  }
+  ipcRenderer.on('left-operator-start', (_, f = '') => this.start(f))
 
   this.update = function () {
     this.el.className = this.is_active ? 'active' : 'inactive'
@@ -57,7 +60,8 @@ function Operator () {
     if (!this.is_active) { return }
 
     if (e.key === 'ArrowUp' && down) {
-      this.el.value = this.prev
+      if (this.prev)
+        this.el.value = this.prev
       e.preventDefault()
       return
     }
@@ -167,6 +171,25 @@ function Operator () {
     if (bang) {
       this.stop()
       left.go.to_line(target)
+    }
+  }
+
+  this.execute = async (c, bang = false) => {
+    console.log('Execute')
+
+    if (bang) {
+      const cmd = c.split(' ')
+      const page = left.project.page()
+      let cwd = ''
+
+      if (page.path) {
+        cwd = path.dirname(page.path)
+      } else {
+        cwd = await ipcRenderer.invoke('app-path')
+      }
+
+      cp.spawn(cmd[0], cmd.splice(1), {cwd: cwd})
+      this.stop()
     }
   }
 }

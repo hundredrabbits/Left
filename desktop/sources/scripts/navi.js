@@ -80,7 +80,7 @@ function Navi () {
     const page = left.project.page()
     if (!page || !page.is_markdown) { return [] }
 
-    const markers = page
+    const markers = page.markers()
     const pos = left.active_line_id()
 
     if (markers.length < 1) { return }
