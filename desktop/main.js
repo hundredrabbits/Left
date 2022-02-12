@@ -34,7 +34,7 @@ app.on('ready', () => {
   })
 
   app.win.loadURL(`file://${__dirname}/sources/index.html`)
-  app.inspect()
+  // app.inspect()
   loadMenu()
 
   app.win.on('closed', () => {
