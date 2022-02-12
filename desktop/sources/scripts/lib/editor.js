@@ -20,7 +20,8 @@ class Editor extends HTMLPreElement {
         return
       range.setStart(this.childNodes[0], f)
       range.setEnd(this.childNodes[0], !t ? f : t)
-      selection.removeAllRanges()
+      if (selection.rangeCount > 0)
+        selection.removeAllRanges()
       selection.addRange(range)
     }
 
@@ -74,6 +75,12 @@ class Editor extends HTMLPreElement {
     })
   }
 
+  get value() { return this.textContent }
+  set value(data) {
+    this.textContent = data
+    this.normalize()
+  }
+
   get selectionStart() {
     const p = this.getSelection()
     return p[0] > p[1] ? p[1] : p[0]
@@ -85,12 +92,6 @@ class Editor extends HTMLPreElement {
   get selectionEnd() {
     const p = this.getSelection()
     return p[1] < p[0] ? p[0] : p[1]
-  }
-
-  get value() { return this.innerText }
-  set value(data) {
-    this.innerText = data
-    this.normalize()
   }
 
   getSelection() {

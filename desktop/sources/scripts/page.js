@@ -9,7 +9,7 @@ const EOL = '\n',
       markers = {
         header: { mark: '#', symbol: '◎'},
         subheader: { mark: '##', symbol: '⦿'},
-        comment: { mark: '--', symbol: '▶︎'},
+        comment: { mark: '--', symbol: '⁃'},
       }
 const hash = (data) => crypto.createHash('sha256').update(data).digest('hex')
 
@@ -24,9 +24,6 @@ function Page (text = '', path = null) {
 
   this.name = function () {
     if (!this.path) { return 'Untitled' }
-
-    if (!markdowns.map(e => this.path.endsWith(e)).find(e => e))
-      this.is_markdown = false
 
     const parts = this.path.replace(/\\/g, '/').split('/')
     return parts[parts.length - 1]
@@ -60,7 +57,7 @@ function Page (text = '', path = null) {
 
         if (response === 0) {
           this.commit( new_text )
-          left.reload()
+          this.update_lines()
           return !ret // return false as it was reloaded
         } else if (response === 2)
           this.watchdog = !this.watchdog
@@ -72,7 +69,6 @@ function Page (text = '', path = null) {
   this.commit = function (text = left.editor_el.value) {
     this.digest = hash(text)
     this.text = text
-
     this.update_lines()
   }
 
@@ -87,6 +83,8 @@ function Page (text = '', path = null) {
   this.load = function () {
     if (!this.path) { return }
 
+    if (!markdowns.map(e => this.path.endsWith(e)).find(e => e))
+      this.is_markdown = false
 
     let data
     try {
@@ -103,9 +101,9 @@ function Page (text = '', path = null) {
   this.update_lines =  () => {
     const lines = []
 
-    left.number_el.innerHTML = ''
     if (!this.is_markdown) {
-      for (let n = 0; n < this.text.split(EOL).length; lines.push(++n)) ;
+      for (let n = 1; n <= (this.text.match(/\n/g) || []).length; ++n)
+          lines.push(n)
     } else {
       for (let n = 0, l = this.text.split(EOL); n < l.length; n++) {
         const line = l[n]
@@ -117,14 +115,15 @@ function Page (text = '', path = null) {
       }
     }
 
-    left.number_el.innerHTML = lines.join('\n')
+    left.number_el.innerText = lines.join('\n')
   }
 
   this.markers = function () {
     const a = []
     const lines = this.text.split(EOL)
+
     for (const id in lines) {
-      const line = lines[id].trim()
+      const line = lines[id]
       let marker = []
 
       if (line.startsWith(markers.subheader.mark)) {
@@ -136,14 +135,17 @@ function Page (text = '', path = null) {
       }
 
       if (marker.length) {
+        if (/^(#|-)+[\s\t]*$/.test(line))
+          continue
         a.push({
           id: a.length,
-          text: line.replace(new RegExp(`${marker[1].mark}+`), marker[1].symbol).trim(),
+          text: line.replace(new RegExp(`${marker[1].mark}+`), marker[1].symbol),
           line: parseInt(id),
           type: marker[0]
         })
       }
     }
+
     return a
   }
 }

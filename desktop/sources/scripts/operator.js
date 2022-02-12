@@ -129,7 +129,7 @@ function Operator () {
     }
 
     if (bang && result)
-      left.go.to(result, result + q.length)
+      left.go.to(result, result + q.length, -1)
   }
 
   this.replace = function (q, bang = false) {
@@ -162,12 +162,9 @@ function Operator () {
   this.goto = function (q, bang = false) {
     const target = parseInt(q, 10)
 
-    const linesCount = left.editor_el.value.split(EOL).length - 1
-
-    if (q === '' || target < 1 || target > linesCount || Number.isNaN(target)) {
+    if (q === '' || target < 1 || Number.isNaN(target)) {
       return
     }
-
     if (bang) {
       this.stop()
       left.go.to_line(target)

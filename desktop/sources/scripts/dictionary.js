@@ -72,7 +72,7 @@ function Dictionary () {
 
   this.update = function () {
     const time = performance.now()
-    const words = left.editor_el.innerText.toLowerCase().split(/[^\w-]+/)
+    const words = left.editor_el.value.toLowerCase().split(/[^\w-]+/)
 
     for (const wordID in words) {
       this.add_word(words[wordID])

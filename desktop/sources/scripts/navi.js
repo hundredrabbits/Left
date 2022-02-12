@@ -18,8 +18,9 @@ function Navi () {
       if (!page) { continue }
       html += `<ul class="${left.project.index === parseInt(pid) ? 'active' : ''}">`
       html += this._page(parseInt(pid), page)
-      if (!current) {
+      if (!current || !current.length) {
         const markers = page.markers()
+
         for (const i in markers) {
           const marker = markers[i]
           html += this._marker(pid, current, marker, markers)
@@ -35,7 +36,7 @@ function Navi () {
   }
 
   this._marker = function (pid, current, marker, markers) {
-    return `<li class='marker ${marker.type} ${current && current.line === marker.line ? 'active' : ''}' onclick='left.go.to_page(${pid}, ${marker.line})'><span>${marker.text}</span></li>`
+    return `<li class='marker ${marker.type} ${current && current.line === marker.line ? 'active' : ''}' onclick='left.go.to_page(${pid}, ${marker.line + 1})'><span>${marker.text}</span></li>`
   }
 
   this.next_page = function () {

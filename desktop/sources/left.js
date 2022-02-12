@@ -102,8 +102,6 @@ function Left () {
     this.stats.update()
   }
 
-  //
-
   this.select_autocomplete = () => {
     if (this.selection.word.trim() !== '' && this.suggestion && this.suggestion.toLowerCase() !== this.active_word().toLowerCase()) {
       this.autocomplete()

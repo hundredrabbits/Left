@@ -55,7 +55,7 @@ function Project () {
   this.update = function () {
     if (!this.page()) { console.warn('Missing page'); return }
 
-    this.page().commit(left.editor_el.innerText)
+    this.page().commit(left.editor_el.value)
   }
 
   this.load = function (path) {
@@ -96,13 +96,6 @@ function Project () {
       this.add(paths[id])
 
     setTimeout(() => { left.navi.next_page(); left.update() }, 200)
-  })
-
-  ipcRenderer.on('left-project-execute', async () => {
-    console.log('Execute')
-
-    const path =  await ipcRenderer.invoke('app-path')
-    console.log(path)
   })
 
   ipcRenderer.on('left-project-save', () => {
