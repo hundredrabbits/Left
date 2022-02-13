@@ -122,6 +122,8 @@ function Page (text = '', path = null) {
     const a = []
     const lines = this.text.split(EOL)
 
+    if (!this.is_markdown) return a
+
     for (const id in lines) {
       const line = lines[id]
       let marker = []
