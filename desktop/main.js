@@ -147,6 +147,7 @@ function loadMenu()
   Controller.add('default', 'Navigation', 'Prev Marker', () => { content.send('left-navi-prev-marker') }, 'CmdOrCtrl+[') // FIXME
 
   Controller.add('default', 'View', 'Toggle Navigation', () => { content.send('left-navi-toggle') }, 'CmdOrCtrl+\\')
+  Controller.add('default', 'View', 'Toggle Soft Wrap', () => { content.send('left-editor-toggle-soft-wrap') }, 'CmdOrCtrl+Shift+L')
   Controller.add('default', 'View', 'Previous Font', () => { content.send('left-font-previous-font') }, 'CmdOrCtrl+Shift+,')
   Controller.add('default', 'View', 'Next Font', () => { content.send('left-font-next-font') }, 'CmdOrCtrl+Shift+.')
   Controller.add('default', 'View', 'Decrease Font Size', () => { content.send('left-font-decrease-font-size') }, 'CmdOrCtrl+-')

@@ -4,6 +4,8 @@ class Editor extends HTMLPreElement {
   constructor() {
     super();
 
+    this.soft_wrap = false
+
     this.setAttribute('id', 'editor')
     this.setAttribute('is', 'left-editor')
     this.setAttribute('autocomplete', 'off')
@@ -72,6 +74,11 @@ class Editor extends HTMLPreElement {
         }
         e.preventDefault()
       }
+    })
+
+    ipcRenderer.on('left-editor-toggle-soft-wrap', () => {
+      this.soft_wrap = !this.soft_wrap
+      left.editor_el.style.whiteSpace = (this.soft_wrap ? 'pre-wrap' : '')
     })
   }
 
