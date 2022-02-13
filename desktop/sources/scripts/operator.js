@@ -115,21 +115,22 @@ function Operator () {
     if (results.length < 1) { return }
 
     const from = left.editor_el.selectionStart
-    let result = 0
-    for (const id in results) {
-      result = results[id]
-      if (result > from) { break }
+    let result = []
+    for (const r of results) {
+      result = r
+      if (result[0] > from) { break }
     }
 
     // Found final occurence, start from the top
-    if (result === left.editor_el.selectionStart) {
+    if (result[0] === left.editor_el.selectionStart) {
       left.editor_el.setSelectionRange(0, 0)
       this.find(q, true)
       return
     }
 
-    if (bang && result)
-      left.go.to(result, result + q.length, -1)
+    if (bang && result[0]) {
+      left.go.to(result[0], result[0] + result[1], -1)
+    }
   }
 
   this.replace = function (q, bang = false) {
@@ -146,14 +147,14 @@ function Operator () {
     if (results.length < 1) { return }
 
     const from = left.editor_el.selectionStart
-    let result = 0
-    for (const id in results) {
-      result = results[id]
-      if (result > from) { break }
+    let result = []
+    for (const r of results) {
+      result = r
+      if (result[0] > from) { break }
     }
 
     if (bang) {
-      left.go.to(result, result + a.length)
+      left.go.to(result[0], result[0] + result[1])
       setTimeout(() => { left.replace_selection_with(b) }, 500)
       this.stop()
     }

@@ -32,7 +32,6 @@ function Go () {
   }
 
   this.to = function (from, to, line = 0) {
-    left.editor_el.focus()
     if (line === -1) {
       line = left.editor_el.value.substr(0, to).split(EOL).length + 1
     }

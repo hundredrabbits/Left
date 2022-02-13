@@ -299,18 +299,33 @@ function Left () {
   }
 
   this.find = (word) => {
-    const text = this.editor_el.value.toLowerCase()
-    const parts = text.split(word.toLowerCase())
     const a = []
-    let sum = 0
 
-    for (const id in parts) {
-      const p = parts[id].length
-      a.push(sum + p)
-      sum += p + word.length
+    if (word.startsWith('r/') && word.endsWith('/')) {
+      const rex = word.substr(2, word.length - 3)
+      try {
+        word = new RegExp(rex, 'gi')
+      } catch (e) {
+        console.error(e)
+        return []
+      }
+
+      const matches = left.editor_el.value.matchAll(word)
+      for (const m of matches)
+        a.push([m.index, m[0].length])
+
+    } else {
+      const parts = this.editor_el.value.toLowerCase().split(word.toLowerCase())
+      let sum = 0
+
+      for (const id in parts) {
+        const p = parts[id].length
+        a.push([sum + p, word.length])
+        sum += p + word.length
+      }
+
+      a.splice(-1, 1)
     }
-
-    a.splice(-1, 1)
 
     return a
   }

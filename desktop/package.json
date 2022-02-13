@@ -27,7 +27,7 @@
       "!*.png",
       "!*.ico",
       "!*.icns",
-      "package.json"
+      "!package*.json"
     ],
     "mac": {
       "category": "com.hundredrabbits.left",
