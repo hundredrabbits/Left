@@ -73,14 +73,15 @@ function Project () {
 
   // ========================
 
-  ipcRenderer.on('left-project-new', () => {
+  this.new  = () => {
     console.log('New Page')
 
     this.add()
     left.reload()
 
     setTimeout(() => { left.navi.next_page(); left.editor_el.focus() }, 200)
-  })
+  }
+  ipcRenderer.on('left-project-new', () => this.new())
 
   ipcRenderer.on('left-project-open', async () => {
     console.log('Open Pages')
@@ -112,7 +113,7 @@ function Project () {
     })
   })
 
-  ipcRenderer.on('left-project-save-as', async () => {
+  this.save_as = async () => {
     console.log('Save As Page')
 
     const page = this.page()
@@ -132,10 +133,11 @@ function Project () {
       left.update()
       setTimeout(() => { left.stats.el.innerHTML = `<b>Saved</b> ${page.path}` }, 200)
     })
-  })
+  }
+  ipcRenderer.on('left-project-save-as', async () => this.save_as())
 
   ipcRenderer.on('left-project-close', async () => {
-    if (this.pages.length === 1) { console.warn('Cannot close'); return }
+    //if (this.pages.length === 1) { console.warn('Cannot close'); return }
 
     if (this.page().has_changes()) {
       const path = await ipcRenderer.invoke('app-path')
@@ -158,12 +160,12 @@ function Project () {
   })
 
   this.force_close = function () {
-    if (this.pages.length === 1) { this.quit(); return }
 
     console.log('Closing...')
 
     this.pages.splice(this.index, 1)
-    left.go.to_page(this.index - 1)
+    if (this.pages.length === 0) this.new()
+    else left.go.to_page(this.index - 1)
   }
   ipcRenderer.on('left-project-force-close', () => this.force_close())
 
