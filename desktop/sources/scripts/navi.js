@@ -43,13 +43,13 @@ function Navi () {
     const page = clamp(parseInt(left.project.index) + 1, 0, left.project.pages.length - 1)
     left.go.to_page(page, 0)
   }
-  ipcRenderer.on('left-navi-next-page', () => this.next_page)
+  ipcRenderer.on('left-navi-next-page', () => this.next_page())
 
   this.prev_page = function () {
     const page = clamp(parseInt(left.project.index) - 1, 0, left.project.pages.length - 1)
     left.go.to_page(page, 0)
   }
-  ipcRenderer.on('left-navi-prev-page', () => this.prev_page)
+  ipcRenderer.on('left-navi-prev-page', () => this.prev_page())
 
   this.next_marker = function () {
     const page = clamp(parseInt(left.project.index), 0, left.project.pages.length - 1)
@@ -60,9 +60,9 @@ function Navi () {
     const markers = left.project.page().markers()
     const nextIndex = clamp(marker.id + 1, 0, markers.length - 1)
 
-    left.go.to_page(page, markers[nextIndex].line)
+    left.go.to_page(page, markers[nextIndex].line + 1)
   }
-  ipcRenderer.on('left-navi-next-marker', () => this.next_marker)
+  ipcRenderer.on('left-navi-next-marker', () => this.next_marker())
 
   this.prev_marker = function () {
     const page = clamp(parseInt(left.project.index), 0, left.project.pages.length - 1)
@@ -73,9 +73,9 @@ function Navi () {
     const markers = left.project.page().markers()
     const nextIndex = clamp(marker.id - 1, 0, markers.length - 1)
 
-    left.go.to_page(page, markers[nextIndex].line)
+    left.go.to_page(page, markers[nextIndex].line + 1)
   }
-  ipcRenderer.on('left-navi-prev-marker', () => this.prev_marker)
+  ipcRenderer.on('left-navi-prev-marker', () => this.prev_marker())
 
   this.marker = function () {
     const page = left.project.page()
