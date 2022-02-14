@@ -36,7 +36,7 @@ class Editor extends HTMLPreElement {
     })
 
     this.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') { // avoid injecting DIV
+      if (e.key === 'Enter' && !(e.ctrlKey || e.metaKey)) { // avoid injecting DIV
         document.execCommand('insertHTML', false, '\n')
         e.preventDefault()
         return
