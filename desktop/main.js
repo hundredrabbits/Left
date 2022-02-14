@@ -27,9 +27,7 @@ app.on('ready', () => {
       zoomFactor: 1.0,
       nodeIntegration: true,
       nodeIntegrationWorker: true,
-      contextIsolation: false,
-      backgroundThrottling: false,
-      enableRemoteModule: true,
+      sandbox: true,
     }
   })
 
@@ -117,7 +115,6 @@ function loadMenu()
   Controller.addSpacer('default', 'File', '')
   Controller.add('default', 'File', 'Execute', () => { content.send('left-operator-start', 'execute: ') }, 'CmdOrCtrl+E')
 
-
   for (const i of ['default', 'operator']) {
     Controller.addRole(i, 'Edit', 'undo')
     Controller.addRole(i, 'Edit', 'redo')
@@ -140,6 +137,8 @@ function loadMenu()
   Controller.add('default', 'Select', 'Replace', () => { content.send('left-operator-start', 'replace: a -> b') }, 'CmdOrCtrl+Shift+F')
   Controller.add('default', 'Select', 'Goto', () => { content.send('left-operator-start', 'goto: ') }, 'CmdOrCtrl+G')
   Controller.add('default', 'Select', 'Open Url', () => { content.send('left-open-url') }, 'CmdOrCtrl+B')
+  Controller.add('default', 'Select', 'Evaluate', () => { content.send('left-select-eval') }, 'CmdOrCtrl+Shift+E')
+
 
   Controller.add('default', 'Navigation', 'Next File', () => { content.send('left-navi-next-page') }, 'CmdOrCtrl+Shift+]')
   Controller.add('default', 'Navigation', 'Prev File', () => { content.send('left-navi-prev-page') }, 'CmdOrCtrl+Shift+[') // FIXME

@@ -1,6 +1,7 @@
 'use strict'
 
 const { ipcRenderer } = require('electron')
+const vm = require('vm');
 
 const Editor = require('./scripts/lib/editor')
 const Theme = require('./scripts/lib/theme')
@@ -355,6 +356,18 @@ function Left () {
     const date = new Date()
     return `${date.getHours()}:${('0' + date.getMinutes()).slice(-2)}`
   }
+
+  ipcRenderer.on('left-select-eval', () => {
+    const selection = this.selected()
+    if (selection.length < 1)
+      return
+
+    try {
+      const code = new vm.Script(selection)
+      const output = code.runInThisContext()
+      left.replace_selection_with(output)
+    } catch(e) { console.error(e); return}
+  })
 }
 
 module.exports = Left

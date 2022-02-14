@@ -27,9 +27,16 @@ class Editor extends HTMLPreElement {
       selection.addRange(range)
     }
 
+    this.addEventListener('paste', (e) => { // TODO: handle images
+      e = (e.originalEvent || e)
+
+      const data = e.clipboardData.getData('text/plain')
+      document.execCommand("insertHTML", false, data)
+      e.preventDefault()
+    })
+
     this.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') { // avoid injecting DIV
-        //left.inject('\n');
         document.execCommand('insertHTML', false, '\n')
         e.preventDefault()
         return
@@ -109,7 +116,6 @@ class Editor extends HTMLPreElement {
   normalize() {
     return this.innerHTML = this.innerHTML
       .replace(/<br\/*>/ig, '\n')
-      .replace(/(<([^>]+)>)/ig, '')
   }
 }
 customElements.define('left-editor', Editor, {
