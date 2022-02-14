@@ -27,7 +27,7 @@ app.on('ready', () => {
       zoomFactor: 1.0,
       nodeIntegration: true,
       nodeIntegrationWorker: true,
-      sandbox: true,
+      contextIsolation: false,
     }
   })
 
