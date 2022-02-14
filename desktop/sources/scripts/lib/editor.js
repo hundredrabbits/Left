@@ -76,7 +76,7 @@ class Editor extends HTMLPreElement {
         } else {
           this.setSelectionRange(sels)
           left.inject(chars[0])
-          this.setSelectionRange(sele+1)
+          this.setSelectionRange(sele + 1)
           left.inject(chars[1])
         }
         e.preventDefault()

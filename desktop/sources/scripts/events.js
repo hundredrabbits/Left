@@ -45,19 +45,18 @@ document.onkeydown = function keyDown (e) {
 
 document.onkeyup = (e) => {
   if (e.key === 'Enter' && left.autoindent) { // autoindent
-    let cur_pos = left.editor_el.selectionStart - 2
+    const cur_pos = left.editor_el.selectionStart - 2
 
     // go back until beginning of last line and count spaces/tabs
-    let line = ''
-    for (let pos = cur_pos;
-        pos > 0 &&
-          left.editor_el.value.charAt(pos) != '\n';
-        pos--
-      ){
-      line += left.editor_el.value.charAt(pos)
+    let pos = cur_pos;
+    for (; pos >= 0 && left.editor_el.value.charAt(pos) != '\n'; pos--) {
+      console.log(pos, cur_pos)
     }
 
-    if (/([\s\t]+)$/.test(line))
+    let line = left.editor_el.value.substr(pos + 1, cur_pos)
+    console.log(line)
+
+    if (/^([\s\t]+)/.test(line))
       left.inject(RegExp.$1)
     return
   }

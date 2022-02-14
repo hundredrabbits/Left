@@ -108,6 +108,7 @@ function Project () {
 
     fs.writeFile(page.path, page.text, (err) => {
       if (err) { alert('An error ocurred updating the file' + err.message); console.log(err); return }
+      page.last_modification = page.get_modification_time()
       left.update()
       setTimeout(() => { left.stats.el.innerHTML = `<b>Saved</b> ${page.path}` }, 200)
     })
@@ -130,6 +131,7 @@ function Project () {
       } else if (page.path !== path) {
         left.project.pages.push(new Page(page.text, path))
       }
+      page.last_modification = page.get_modification_time()
       left.update()
       setTimeout(() => { left.stats.el.innerHTML = `<b>Saved</b> ${page.path}` }, 200)
     })
@@ -137,8 +139,6 @@ function Project () {
   ipcRenderer.on('left-project-save-as', async () => this.save_as())
 
   ipcRenderer.on('left-project-close', async () => {
-    //if (this.pages.length === 1) { console.warn('Cannot close'); return }
-
     if (this.page().has_changes()) {
       const path = await ipcRenderer.invoke('app-path')
       const response = await ipcRenderer.invoke(
@@ -160,7 +160,6 @@ function Project () {
   })
 
   this.force_close = function () {
-
     console.log('Closing...')
 
     this.pages.splice(this.index, 1)
