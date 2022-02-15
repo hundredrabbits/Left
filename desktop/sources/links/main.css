@@ -31,7 +31,7 @@ body stats ul { height: 100%; display: inline; overflow: scroll; white-space: no
 body stats li { display: inline; margin-right: 10px; }
 body stats li.active { text-decoration: underline; font-weight: bold; }
 
-body #editor { font-family: var(--font-family); padding: 30px 15px 0; height: calc(100vh - 90px); display: block; width: 73%; position: fixed; left: 26vw; font-size: var(--font-size); line-height: var(--line-height); background: transparent; overflow: auto; max-width: 90%; transition: left 200ms; margin-left:-15px; }
+body #editor { font-family: var(--font-family); padding: 30px 15px 0; height: calc(100vh - 90px); display: block; width: 73%; position: fixed; left: 27vw; font-size: var(--font-size); line-height: var(--line-height); background: transparent; overflow: auto; max-width: 90%; transition: left 200ms; margin-left:-15px; }
 body #number { text-align: center; color: var(--f_med); font-family: var(--font-family); padding: 30px 0 0; height: calc(100vh - 90px); display: block; width: 4ch; position: absolute; left: 25vw; font-size: var(--font-size); line-height: var(--line-height); overflow: hidden; max-width: 90%; transition: left 200ms; margin-left: -30px; }
 body div { left: 25vw; max-width:600px; width:80ch; line-height: var(--line-height); font-family: var(--font-family); font-size: var(--font-size); white-space: pre-wrap; word-wrap:break-word; }
 body drag { display: block;width: 100vw;height: 30px;position: fixed;top: 0px;-webkit-user-select: none;-webkit-app-region: drag; background-color: transparent !important;}
@@ -43,9 +43,9 @@ body #operator.active { bottom:0px; }
 * { background-color: inherit; }
 
 body.mobile navi { opacity:0; transition: opacity 10ms; }
-body.mobile #editor { width: 85%; left: 8%; transition: left 200ms; transition-delay: 20ms; }
+body.mobile #editor { width: 85%; left: 9%; transition: left 200ms; transition-delay: 20ms; }
 body.mobile #number { left: 7%; transition: left 200ms; transition-delay: 20ms; }
-body.mobile stats { width: 85%; left: 8%; transition: left 200ms; transition-delay: 20ms; }
+body.mobile stats { width: 85%; left: 9%; transition: left 200ms; transition-delay: 20ms; }
 body.mobile div { width: 100vw; }
 body.mobile #operator { width: 85%; left: 5%; }
 
