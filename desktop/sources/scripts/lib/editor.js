@@ -38,6 +38,15 @@ class Editor extends HTMLPreElement {
     this.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' && !(e.ctrlKey || e.metaKey)) { // avoid injecting DIV
         document.execCommand('insertHTML', false, '\n')
+
+        // scroll down on last line
+        const editor_height = parseInt(get_style_prop('height').replace('px',''))
+        const line_height = parseInt(get_style_prop('line-height').replace('px',''))
+        const padding_top = parseInt(get_style_prop('padding-top').replace('px',''))
+
+        if ((left.editor_el.scrollHeight - left.editor_el.scrollTop) <= (editor_height + line_height + padding_top))
+          this.scroll(0, left.editor_el.scrollHeight)
+
         e.preventDefault()
         return
       }
@@ -121,5 +130,9 @@ class Editor extends HTMLPreElement {
 customElements.define('left-editor', Editor, {
   extends: 'pre'
 })
+
+const get_style_prop = (property) => {
+    return window.getComputedStyle(left.editor_el).getPropertyValue(property)
+}
 
 module.exports = Editor
