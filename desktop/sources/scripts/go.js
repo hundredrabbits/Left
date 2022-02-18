@@ -1,6 +1,5 @@
 'use strict'
 
-const { ipcRenderer } = require('electron')
 const EOL = '\n'
 
 function Go () {
@@ -19,43 +18,48 @@ function Go () {
   }
 
   this.to_line = function (id) {
-    const nid = parseInt(id)
-    if ((left.editor_el.value.match(new RegExp(EOL, 'g')) || []).length < nid)
-      return
+    const lineArr = left.textarea_el.value.split(EOL, parseInt(id) + 1)
+    const arrJoin = lineArr.join(EOL)
+    const from = arrJoin.length - lineArr[id].length
+    const to = arrJoin.length
 
-    const lineArr = left.editor_el.value.split(EOL, !nid ? 1 : nid)
-    const textUntil = lineArr.join(EOL).length
-
-    this.to(
-      !nid ? 0 : textUntil - lineArr.pop().length,
-      textUntil, id)
+    this.to(from, to)
   }
 
-  this.to = function (from, to, line = 0) {
-    if (line === -1) {
-      line = left.editor_el.value.substr(0, to).split(EOL).length + 1
+  this.to = function (from, to, scroll = true) {
+    if (left.textarea_el.setSelectionRange) {
+      left.textarea_el.setSelectionRange(from, to)
+    } else if (left.textarea_el.createTextRange) {
+      const range = left.textarea_el.createTextRange()
+      range.collapse(true)
+      range.moveEnd('character', to)
+      range.moveStart('character', from)
+      range.select()
     }
-    this.scroll_to_line(line)
-    left.editor_el.setSelectionRange(from, to)
+    left.textarea_el.focus()
+
+    if (scroll) {
+      this.scroll_to(from, to)
+    }
 
     return from === -1 ? null : from
   }
 
-  ipcRenderer.on('left-go-to-next', async (_, str, scroll = true) => {
-    const ta = left.editor_el
+  this.to_next = function (str, scroll = true) {
+    const ta = left.textarea_el
     const text = ta.value
     const range = text.substr(ta.selectionStart, text.length - ta.selectionStart)
     const next = ta.selectionStart + range.indexOf(EOL)
     this.to(next, next, scroll)
-  })
+  }
 
-  this.scroll_to_line = function (line) {
-    const height = parseInt(window.getComputedStyle(left.editor_el, null)
-                        .getPropertyValue('height').replace('px',''))
-    const line_height = parseInt(window.getComputedStyle(left.editor_el, null)
-                        .getPropertyValue('line-height').replace('px',''))
-    const pos = line * line_height
-    animateScrollTo(left.editor_el, pos - (height/2), 200)
+  this.scroll_to = function (from, to) {
+    const textVal = left.textarea_el.value
+    const div = document.createElement('div')
+    div.innerHTML = textVal.slice(0, to)
+    document.body.appendChild(div)
+    animateScrollTo(left.textarea_el, div.offsetHeight - 60, 200)
+    div.remove()
   }
 
   function animateScrollTo (element, to, duration) {

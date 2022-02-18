@@ -1,27 +1,14 @@
 'use strict'
 
-const fs = require('fs'),
-      crypto = require('crypto')
-const { ipcRenderer } = require('electron')
-
-const EOL = '\n',
-      markdowns = ['.md', '.txt', '.log'],
-      markers = {
-        header: { mark: '#', symbol: '◎'},
-        subheader: { mark: '##', symbol: '⦿'},
-        comment: { mark: '--', symbol: '⁃'},
-      }
+const fs = require('fs')
+const { app, dialog } = require('electron').remote
+const EOL = '\n'
 
 function Page (text = '', path = null) {
-  this.hash = (data) => crypto.createHash('sha256').update(data).digest('hex')
-
   this.text = text.replace(/\r?\n/g, '\n')
-  this.digest = this.hash(text)
-  this.last_modification = -1
   this.path = path
-  this.lines = 0
+  this.size = 0
   this.watchdog = true
-  this.is_markdown = true
 
   this.name = function () {
     if (!this.path) { return 'Untitled' }
@@ -30,131 +17,73 @@ function Page (text = '', path = null) {
     return parts[parts.length - 1]
   }
 
-  this.has_changes = () => {
+  this.has_changes = function () {
     if (!this.path) {
       if (this.text && this.text.length > 0) { return true }
       return false
     }
 
-    const prev_modification = this.last_modification
-    const new_text = this.load()
-
-    // file was deleted in fs
-    if (new_text === null)
-      return true
-
-    const changed = this.text === '' ? false : (this.hash(new_text) !== this.digest)
-
+    const last_size = this.size
+    const ret = (this.load() !== this.text)
+    
     // was this change done outside Left?
-    if (prev_modification > 0 && prev_modification < this.last_modification && this.watchdog) {
-      return (async () => {
-        const path = await ipcRenderer.invoke('app-path')
-        const response = await ipcRenderer.invoke(
-          'show-dialog', 'showMessageBoxSync',
-          {
-            type: "question",
-            title: "Confirm",
-            message: "File was modified outside Left. Do you want to reload it?",
-            buttons: ['Yes', 'No', 'Ignore future occurrencies'],
-            icon: `${path}/icon.png`
-          }
-        )
+    if (ret && ( last_size !== this.size && this.watchdog )){
+      const response = dialog.showMessageBoxSync(app.win, {
+        type: "question",
+        title: "Confirm",
+        message: "File was modified outside Left. Do you want to reload it?",
+        buttons: ['Yes', 'No', 'Ignore future occurrencies'],
+        detail: `New size of file is: ${this.size} bytes.`,
+        icon: `${app.getAppPath()}/icon.png`
+      })
 
-        if (response === 0) {
-          left.editor_el.value = new_text
-          this.commit()
-          return false // return false as it was reloaded
-        } else if (response === 2)
-          this.watchdog = !this.watchdog
-      })()
+      if (response === 0) {
+        this.commit( this.load() )
+        left.reload()
+        return !ret // return false as it was reloaded
+      } else if (response === 2)
+        this.watchdog = !this.watchdog
     }
-
-    return changed
+    return ret
   }
 
-  this.commit = function (text = left.editor_el.value) {
+  this.commit = function (text = left.textarea_el.value) {
     this.text = text
-    this.digest = this.hash(text)
-    this.update_lines()
   }
 
-  this.reload = (force = false) => {
+  this.reload = function (force = false) {
     if (!this.path) { return }
 
-    if (force || !this.has_changes()) {
+    if (!this.has_changes() || force) {
       this.commit(this.load())
     }
   }
 
   this.load = function () {
     if (!this.path) { return }
-
-    this.is_markdown = markdowns.map(e => this.path.endsWith(e)).find(e => e)
-
+    let data
     try {
-      const data = fs.readFileSync(this.path, 'utf-8')
-      this.last_modification = this.get_modification_time()
-      return data
+      data = fs.readFileSync(this.path, 'utf-8')
     } catch (err) {
       this.path = null
-      return null
-    }
-  }
-
-  this.update_lines =  () => {
-    const lines = []
-
-    if (!this.is_markdown) {
-      for (let n = 1; n <= (this.text.match(/\n/g) || []).length; ++n)
-          lines.push(n)
-    } else {
-      for (let n = 0, l = this.text.split(EOL); n < l.length; n++) {
-        const line = l[n]
-
-        if (line.startsWith(markers.subheader.mark)) { lines.push(markers.subheader.symbol) }
-        else if (line.startsWith(markers.header.mark)) { lines.push(markers.header.symbol) }
-        else if (line.startsWith(markers.comment.mark)) { lines.push(markers.comment.symbol) }
-        else { lines.push('') }
-      }
+      return
     }
 
-    left.number_el.innerText = lines.join('\n')
+    // update file size
+    this.size = fs.statSync(this.path).size
+
+    return data
   }
 
   this.markers = function () {
     const a = []
     const lines = this.text.split(EOL)
-
-    if (!this.is_markdown) return a
-
     for (const id in lines) {
-      const line = lines[id]
-      let marker = []
-
-      if (line.startsWith(markers.subheader.mark)) {
-        marker = [ 'subheader', markers.subheader ]
-      } else if (line.startsWith(markers.header.mark)) {
-        marker = [ 'header', markers.header ]
-      } else if (line.startsWith(markers.comment.mark)) {
-        marker = [ 'comment', markers.comment ]
-      }
-
-      if (marker.length) {
-        if (/^(#|-)+[\s\t]*$/.test(line))
-          continue
-        a.push({
-          id: a.length,
-          text: line.replace(new RegExp(`${marker[1].mark}+`), marker[1].symbol),
-          line: parseInt(id),
-          type: marker[0]
-        })
-      }
+      const line = lines[id].trim()
+      if (line.substr(0, 2) === '##') { a.push({ id: a.length, text: line.replace('##', '').trim(), line: parseInt(id), type: 'subheader' }) } else if (line.substr(0, 1) === '#') { a.push({ id: a.length, text: line.replace('#', '').trim(), line: parseInt(id), type: 'header' }) } else if (line.substr(0, 2) === '--') { a.push({ id: a.length, text: line.replace('--', '').trim(), line: parseInt(id), type: 'comment' }) }
     }
-
     return a
   }
-
-  this.get_modification_time = () =>  fs.statSync(this.path).mtime.getTime()
 }
 
 module.exports = Page

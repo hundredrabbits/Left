@@ -1,7 +1,8 @@
 'use strict'
 
 const fs = require('fs')
-const { ipcRenderer, dialog } = require('electron')
+const { remote } = require('electron')
+const { app, dialog } = remote
 
 const Page = require('./page')
 const Splash = require('./splash')
@@ -55,7 +56,7 @@ function Project () {
   this.update = function () {
     if (!this.page()) { console.warn('Missing page'); return }
 
-    this.page().commit(left.editor_el.value)
+    this.page().commit(left.textarea_el.value)
   }
 
   this.load = function (path) {
@@ -73,33 +74,32 @@ function Project () {
 
   // ========================
 
-  this.new  = () => {
+  this.new = function () {
     console.log('New Page')
 
     this.add()
     left.reload()
 
-    setTimeout(() => { left.navi.next_page(); left.editor_el.focus() }, 200)
+    setTimeout(() => { left.navi.next_page(); left.textarea_el.focus() }, 200)
   }
-  ipcRenderer.on('left-project-new', () => this.new())
 
-  ipcRenderer.on('left-project-open', async () => {
+  this.open = function () {
     console.log('Open Pages')
 
-    const paths =  await ipcRenderer.invoke(
-      'show-dialog', 'showOpenDialogSync',
-      { properties: ['openFile', 'multiSelections'] }
-    )
+    const paths = dialog.showOpenDialogSync(app.win, { properties: ['openFile', 'multiSelections'] })
 
+    console.log(paths)
     if (!paths) { console.log('Nothing to load'); return }
 
-    for (const id in paths)
+    for (const id in paths) {
+      console.log(id)
       this.add(paths[id])
+    }
 
     setTimeout(() => { left.navi.next_page(); left.update() }, 200)
-  })
+  }
 
-  ipcRenderer.on('left-project-save', () => {
+  this.save = function () {
     console.log('Save Page')
 
     const page = this.page()
@@ -108,19 +108,16 @@ function Project () {
 
     fs.writeFile(page.path, page.text, (err) => {
       if (err) { alert('An error ocurred updating the file' + err.message); console.log(err); return }
-      page.last_modification = page.get_modification_time()
       left.update()
       setTimeout(() => { left.stats.el.innerHTML = `<b>Saved</b> ${page.path}` }, 200)
     })
-  })
+  }
 
-  this.save_as = async () => {
+  this.save_as = function () {
     console.log('Save As Page')
 
     const page = this.page()
-    const path = await ipcRenderer.invoke(
-      'show-dialog', 'showSaveDialogSync'
-    )
+    const path = dialog.showSaveDialogSync(app.win)
 
     if (!path) { console.log('Nothing to save'); return }
 
@@ -131,59 +128,51 @@ function Project () {
       } else if (page.path !== path) {
         left.project.pages.push(new Page(page.text, path))
       }
-      page.last_modification = page.get_modification_time()
       left.update()
       setTimeout(() => { left.stats.el.innerHTML = `<b>Saved</b> ${page.path}` }, 200)
     })
   }
-  ipcRenderer.on('left-project-save-as', async () => this.save_as())
 
-  ipcRenderer.on('left-project-close', async () => {
+  this.close = function () {
+    if (this.pages.length === 1) { console.warn('Cannot close'); return }
+
     if (this.page().has_changes()) {
-      const path = await ipcRenderer.invoke('app-path')
-      const response = await ipcRenderer.invoke(
-        'show-dialog', 'showMessageBoxSync',
-        {
-          type: 'question',
-          buttons: ['Yes', 'No'],
-          title: 'Confirm',
-          message: 'Are you sure you want to discard changes?',
-          icon: `${path}/icon.png`
-        }
-      )
+      const response = dialog.showMessageBoxSync(app.win, {
+        type: 'question',
+        buttons: ['Yes', 'No'],
+        title: 'Confirm',
+        message: 'Are you sure you want to discard changes?',
+        icon: `${app.getAppPath()}/icon.png`
+      })
       if (response !== 0) {
         return
       }
     }
     this.force_close()
     localStorage.setItem('paths', JSON.stringify(this.paths()))
-  })
+  }
 
   this.force_close = function () {
-    console.log('Closing...')
+    if (this.pages.length === 1) { this.quit(); return }
+
+    console.log('Closing..')
 
     this.pages.splice(this.index, 1)
-    if (this.pages.length === 0) this.new()
-    else left.go.to_page(this.index - 1)
+    left.go.to_page(this.index - 1)
   }
-  ipcRenderer.on('left-project-force-close', () => this.force_close())
 
-  ipcRenderer.on('left-project-discard', async () => {
-    const path = await ipcRenderer.invoke('app-path')
-    const response = await ipcRenderer.invoke(
-      'show-dialog', 'showMessageBoxSync',
-      {
-        type: 'question',
-        buttons: ['Yes', 'No'],
-        title: 'Confirm',
-        message: 'Are you sure you want to discard changes?',
-        icon: `${path}/icon.png`
-      }
-    )
+  this.discard = function () {
+    const response = dialog.showMessageBoxSync(app.win, {
+      type: 'question',
+      buttons: ['Yes', 'No'],
+      title: 'Confirm',
+      message: 'Are you sure you want to discard changes?',
+      icon: `${app.getAppPath()}/icon.png`
+    })
     if (response === 0) { // Runs the following if 'Yes' is clicked
       left.reload(true)
     }
-  })
+  }
 
   this.has_changes = function () {
     for (const id in this.pages) {
@@ -192,29 +181,24 @@ function Project () {
     return false
   }
 
-  ipcRenderer.on('left-project-quit', (e) => {
+  this.quit = function () {
     if (this.has_changes()) {
       this.quit_dialog()
     } else {
-      e.sender.send('exit')
+      app.exit()
     }
-  })
+  }
 
-  this.quit_dialog = async function () {
-    const path = await ipcRenderer.invoke('app-path')
-    const response = await ipcRenderer.invoke(
-      'show-dialog',
-      'showMessageBoxSync',
-      {
-        type: 'question',
-        buttons: ['Yes', 'No'],
-        title: 'Confirm',
-        message: 'Unsaved data will be lost. Are you sure you want to quit?',
-        icon: `${path}/icon.png`
-      }
-    )
+  this.quit_dialog = function () {
+    const response = dialog.showMessageBoxSync(app.win, {
+      type: 'question',
+      buttons: ['Yes', 'No'],
+      title: 'Confirm',
+      message: 'Unsaved data will be lost. Are you sure you want to quit?',
+      icon: `${app.getAppPath()}/icon.png`
+    })
     if (response === 0) {
-      ipcRenderer.send('exit')
+      app.exit()
     }
   }
 

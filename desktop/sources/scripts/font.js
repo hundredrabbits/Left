@@ -1,6 +1,3 @@
-
-const { ipcRenderer } = require('electron')
-
 function Font () {
   // Currently, the custom_serif font is Zilla Slab and the custom_sans_serif font is Roboto Condensed. These can be changed by replacing the serif.ttf and sans_serif.ttf fonts in the media/fonts folder.
 
@@ -46,35 +43,35 @@ function Font () {
   }
 
   // Cycles to the previous font in the font list
-  ipcRenderer.on('left-font-previous-font', () => {
+  this.previousFont = function () {
     this.fontIndex--
     if (this.fontIndex < 0) this.fontIndex = this.fonts.length - 1
     this.updateVariables()
-  })
+  }
 
   // Cycles to the next font in the font list
-  ipcRenderer.on('left-font-next-font', () => {
+  this.nextFont = function () {
     this.fontIndex = (this.fontIndex + 1) % this.fonts.length
     this.updateVariables()
-  })
+  }
 
   // Decrease font size by 1 px (also decreases line height)
-  ipcRenderer.on('left-font-decrease-font-size', () => {
+  this.decreaseFontSize = function () {
     this.fontSize--
     this.updateVariables()
-  })
+  }
 
   // Increase font size by 1 px (also increases line height)
-  ipcRenderer.on('left-font-increase-font-size', () => {
+  this.increaseFontSize = function () {
     this.fontSize++
     this.updateVariables()
-  })
+  }
 
   // Reset font size to 12px
-  ipcRenderer.on('left-font-reset-font-size', () => {
+  this.resetFontSize = function () {
     this.fontSize = 12
     this.updateVariables()
-  })
+  }
 
   // Update the CSS variables, save the values to localStorage
   this.updateVariables = function () {
