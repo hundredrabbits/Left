@@ -15,7 +15,7 @@ function Stats () {
       return
     }
 
-    if (left.editor_el.selectionStart !== left.editor_el.selectionEnd) {
+    if (left.textarea_el.selectionStart !== left.textarea_el.selectionEnd) {
       this.el.innerHTML = this._selection()
     } else if (left.synonyms) {
       this.el.innerHTML = ''
@@ -26,15 +26,13 @@ function Stats () {
       this.el.innerHTML = this._url()
     } else {
       this.el.innerHTML = this._default()
-      if (left.clock === false)
-        this._update_clock()
     }
   }
 
   this._default = function () {
     const stats = this.parse(left.selected())
-    const time  = left.time()
-    return `${stats.l}L ${stats.w}W ${stats.v}V ${stats.c}C ${stats.p}% <span ${stats.a}>AI</span> <span class='right' id='clock'>${time}</span>`
+    const date = new Date()
+    return `${stats.l}L ${stats.w}W ${stats.v}V ${stats.c}C ${stats.p}% <span ${stats.a}>AI</span> <span class='right'>${date.getHours()}:${('0' + date.getMinutes()).slice(-2)}</span>`
   }
 
   this.incrementSynonym = function () {
@@ -93,35 +91,25 @@ function Stats () {
   }
 
   this._selection = function () {
-    return `<b>[${left.editor_el.selectionStart},${left.editor_el.selectionEnd}]</b> ${this._default()}`
+    return `<b>[${left.textarea_el.selectionStart},${left.textarea_el.selectionEnd}]</b> ${this._default()}`
   }
 
   this._url = function () {
-    const time  = left.time()
-    return `Open <b>${left.selection.url}</b> with &lt;c-b&gt; <span class='right' id='clock'>${time}</span>`
-  }
-
-  this._update_clock = () => {
-    left.clock = true
-
-    setInterval(function() {
-      let e = document.getElementById('clock')
-      if (e !== null)
-        e.innerHTML = left.time()
-    }, 1000)
+    const date = new Date()
+    return `Open <b>${left.selection.url}</b> with &lt;c-b&gt; <span class='right'>${date.getHours()}:${date.getMinutes()}</span>`
   }
 
   this.on_scroll = function () {
-    const scrollDistance = left.editor_el.scrollTop
-    const scrollMax = left.editor_el.scrollHeight - left.editor_el.offsetHeight
+    const scrollDistance = left.textarea_el.scrollTop
+    const scrollMax = left.textarea_el.scrollHeight - left.textarea_el.offsetHeight
     const ratio = Math.min(1, (scrollMax === 0) ? 0 : (scrollDistance / scrollMax))
     const progress = ['|', '|', '|', '|', '|', '|', '|', '|', '|', '|'].map((v, i) => { return i < ratio * 10 ? '<b>|</b>' : v }).join('')
 
     this.el.innerHTML = `${progress} ${(ratio * 100).toFixed(2)}%`
   }
 
-  this.parse = function (text = left.editor_el.value) {
-    text = text.length > 5 ? text.trim() : left.editor_el.value
+  this.parse = function (text = left.textarea_el.value) {
+    text = text.length > 5 ? text.trim() : left.textarea_el.value
 
     const h = {}
     const words = text.toLowerCase().replace(/[^a-z0-9 ]/g, '').split(' ')
@@ -134,7 +122,7 @@ function Stats () {
     stats.w = text.split(' ').length // words_count
     stats.c = text.length // chars_count
     stats.v = Object.keys(h).length
-    stats.p = stats.c > 0 ? clamp((left.editor_el.selectionEnd / stats.c) * 100, 0, 100).toFixed(2) : 0
+    stats.p = stats.c > 0 ? clamp((left.textarea_el.selectionEnd / stats.c) * 100, 0, 100).toFixed(2) : 0
     stats.a = left.autoindent ? 'class="fh"' : ''
     return stats
   }
