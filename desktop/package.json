@@ -1,27 +1,92 @@
 {
   "name": "Left",
   "productName": "Left",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "main.js",
   "scripts": {
-    "start": "electron . --disable-gpu",
-    "time": "node time.js",
-    "docs": "node ../docs.js",
-    "fix": "standard --fix",
-    "clean": "rm -r ~/Documents/Left-darwin-x64/ ; rm -r ~/Documents/Left-linux-x64/ ; rm -r ~/Documents/Left-win32-x64/ ; echo 'cleaned build location'",
-    "build_osx": "electron-packager . Left --platform=darwin --arch=x64 --out ~/Documents/ --overwrite --icon=icon.icns ; echo 'Built for OSX'",
-    "build_linux": "electron-packager . Left --platform=linux  --arch=x64 --out ~/Documents/ --overwrite --icon=icon.ico ; echo 'Built for LINUX'",
-    "build_win": "electron-packager . Left --platform=win32  --arch=x64 --out ~/Documents/ --overwrite --icon=icon.ico ; echo 'Built for WIN'",
-    "build": "npm run clean ; npm run build_osx ; npm run build_linux ; npm run build_win",
-    "push_osx": "~/Applications/butler push ~/Documents/Left-darwin-x64/ hundredrabbits/left:osx-64",
-    "push_linux": "~/Applications/butler push ~/Documents/Left-linux-x64/ hundredrabbits/left:linux-64",
-    "push_win": "~/Applications/butler push ~/Documents/Left-win32-x64/ hundredrabbits/left:windows-64",
-    "status": "~/Applications/butler status hundredrabbits/left",
-    "push": "npm run build ; npm run push_osx ; npm run push_linux ; npm run push_win ; npm run clean ; npm run status"
+    "start": "electron .",
+    "clean": "rm -r ../builds",
+    "dist": "CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder build --mac --win --linux -p always",
+    "build:linux": "electron-builder build --linux",
+    "build:windows": "electron-builder build --windows",
+    "build:mac": "CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder build --mac"
+  },
+  "build": {
+    "extends": null,
+    "appId": "com.hundredrabbits.left",
+    "asar": true,
+    "copyright": "Copyright © 2017 Hundredrabbits",
+    "directories": {
+      "output": "../builds"
+    },
+    "files": [
+      "main.js",
+      "lib/**/*",
+      "sources/**/*",
+      "node_modules/**/*",
+      "!*.png",
+      "!*.ico",
+      "!*.icns",
+      "!package*.json"
+    ],
+    "mac": {
+      "category": "com.hundredrabbits.left",
+      "icon": "icon.icns",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "category": "Editor",
+      "target": [
+        {
+          "target": "deb",
+          "arch": [
+            "ia32",
+            "x64"
+          ]
+        },
+        {
+          "target": "rpm",
+          "arch": [
+            "ia32",
+            "x64"
+          ]
+        },
+        {
+          "target": "AppImage",
+          "arch": [
+            "ia32",
+            "x64"
+          ]
+        }
+      ]
+    },
+    "win": {
+      "target": [
+        "zip",
+        "nsis"
+      ],
+      "icon": "icon.ico"
+    },
+    "fileAssociations": [
+      {
+        "name": "Document",
+        "description": "Left",
+        "role": "Editor",
+        "ext": "txt"
+      }
+    ]
   },
   "devDependencies": {
-    "electron": "^7.1.12",
-    "electron-packager": "^14.2.1"
+    "electron": "^17.0.0",
+    "electron-builder": "^22.14.13"
   },
   "standard": {
     "globals": [

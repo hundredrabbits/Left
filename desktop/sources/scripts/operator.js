@@ -1,5 +1,9 @@
 'use strict'
 
+const { ipcRenderer } = require('electron')
+const path = require('path'),
+      cp = require('child_process')
+
 const EOL = '\n'
 
 function Operator () {
@@ -14,18 +18,19 @@ function Operator () {
     host.appendChild(this.el)
   }
 
-  this.start = function (f = '') {
+  this.start = (f = '') => {
     console.log('started')
-    left.controller.set('operator')
+    ipcRenderer.invoke('controller-set', 'operator')
     this.is_active = true
 
-    left.textarea_el.blur()
+    left.editor_el.blur()
     this.el.value = f
     this.el.focus()
 
     this.update()
     left.update()
   }
+  ipcRenderer.on('left-operator-start', (_, f = '') => this.start(f))
 
   this.update = function () {
     this.el.className = this.is_active ? 'active' : 'inactive'
@@ -38,23 +43,25 @@ function Operator () {
   this.stop = function () {
     if (!this.is_active) { return }
 
-    console.log('stopped')
-    left.controller.set('default')
+    // console.log('stopped')
+    ipcRenderer.invoke('controller-set', 'default')
     this.is_active = false
 
     this.el.value = ''
     this.el.blur()
-    left.textarea_el.focus()
+    left.editor_el.focus()
 
     this.update()
     left.update()
   }
+  ipcRenderer.on('left-operator-stop', () => this.stop())
 
   this.on_change = function (e, down = false) {
     if (!this.is_active) { return }
 
     if (e.key === 'ArrowUp' && down) {
-      this.el.value = this.prev
+      if (this.prev)
+        this.el.value = this.prev
       e.preventDefault()
       return
     }
@@ -62,6 +69,7 @@ function Operator () {
     if (!down && (e.key === 'Enter' || e.code === 'Enter')) {
       this.active()
       e.preventDefault()
+      e.stopPropagation()
     } else if (!down) {
       this.passive()
     }
@@ -91,13 +99,13 @@ function Operator () {
     this[cmd](params, true)
   }
 
-  this.find_next = function () {
+  ipcRenderer.on('left-operator-find-next', () => {
     if (!this.prev || !this.prev.includes('find:')) { return }
     const word = this.prev.replace('find:', '').trim()
 
     // Find next occurence
     this.find(word, true)
-  }
+  })
 
   this.find = function (q, bang = false) {
     if (q.length < 3) { return }
@@ -106,23 +114,22 @@ function Operator () {
 
     if (results.length < 1) { return }
 
-    const from = left.textarea_el.selectionStart
-    let result = 0
-    for (const id in results) {
-      result = results[id]
-      if (result > from) { break }
+    const from = left.editor_el.selectionStart
+    let result = []
+    for (const r of results) {
+      result = r
+      if (result[0] > from) { break }
     }
 
     // Found final occurence, start from the top
-    if (result === left.textarea_el.selectionStart) {
-      left.textarea_el.setSelectionRange(0, 0)
+    if (result[0] === left.editor_el.selectionStart) {
+      left.editor_el.setSelectionRange(0, 0)
       this.find(q, true)
       return
     }
 
-    if (bang && result) {
-      left.go.to(result, result + q.length)
-      setTimeout(() => { left.operator.stop() }, 250)
+    if (bang && result[0]) {
+      left.go.to(result[0], result[0] + result[1], -1)
     }
   }
 
@@ -139,15 +146,15 @@ function Operator () {
 
     if (results.length < 1) { return }
 
-    const from = left.textarea_el.selectionStart
-    let result = 0
-    for (const id in results) {
-      result = results[id]
-      if (result > from) { break }
+    const from = left.editor_el.selectionStart
+    let result = []
+    for (const r of results) {
+      result = r
+      if (result[0] > from) { break }
     }
 
     if (bang) {
-      left.go.to(result, result + a.length)
+      left.go.to(result[0], result[0] + result[1])
       setTimeout(() => { left.replace_selection_with(b) }, 500)
       this.stop()
     }
@@ -156,15 +163,31 @@ function Operator () {
   this.goto = function (q, bang = false) {
     const target = parseInt(q, 10)
 
-    const linesCount = left.textarea_el.value.split(EOL).length - 1
-
-    if (q === '' || target < 1 || target > linesCount || Number.isNaN(target)) {
+    if (q === '' || target < 1 || Number.isNaN(target)) {
       return
     }
-
     if (bang) {
       this.stop()
       left.go.to_line(target)
+    }
+  }
+
+  this.execute = async (c, bang = false) => {
+    console.log('Execute')
+
+    if (bang) {
+      const cmd = c.split(' ')
+      const page = left.project.page()
+      let cwd = ''
+
+      if (page.path) {
+        cwd = path.dirname(page.path)
+      } else {
+        cwd = await ipcRenderer.invoke('app-path')
+      }
+
+      cp.spawn(cmd[0], cmd.splice(1), {cwd: cwd})
+      this.stop()
     }
   }
 }

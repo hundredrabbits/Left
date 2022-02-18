@@ -45,25 +45,17 @@ document.onkeydown = function keyDown (e) {
 
 document.onkeyup = (e) => {
   if (e.key === 'Enter' && left.autoindent) { // autoindent
-    let cur_pos = left.textarea_el.selectionStart // get new position in textarea
 
     // go back until beginning of last line and count spaces/tabs
-    let indent  = ''
-    let line    = ''
-    for ( let pos = cur_pos - 2; // -2 because of cur and \n
-        pos >= 0 &&
-          left.textarea_el.value.charAt(pos) != '\n';
-        pos--
-      ){
-      line += left.textarea_el.value.charAt(pos)
-    }
+    let pos = left.editor_el.selectionStart - 2,
+        amount = 0;
+    for (; pos >= 0 && left.editor_el.value.charAt(pos) != '\n'; pos--,amount++) ;
 
-    let matches
-    if ( (matches = /^.*?([\s\t]+)$/gm.exec(line)) !== null) { // found indent
-      indent      = matches[1].split('').reverse().join('') // reverse
-      left.textarea_el.selectionStart = cur_pos
-      left.inject(indent)
-    }
+    let line = left.editor_el.value.substr(pos + 1, amount)
+
+    if (/^([\s\t]+)/.test(line))
+      left.inject(RegExp.$1)
+    return
   }
 
   if (e.keyCode === 16) { // Shift
@@ -103,7 +95,7 @@ window.addEventListener('drop', function (e) {
 
 document.onclick = function onClick (e) {
   left.selection.index = 0
-  left.operator.stop()
-  left.reader.stop()
+  if (left.operator.is_active) left.operator.stop()
+  if (left.reader.active) left.reader.stop()
   left.update()
 }
