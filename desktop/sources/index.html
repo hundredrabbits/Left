@@ -11,19 +11,23 @@
     <link rel="stylesheet" href="links/theme.css"/>
 
     <script src="scripts/events.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
   </head>
   <body>
+    <div id="main">
+      
     <script>
       'use strict'
 
       const { shell, remote } = require('electron')
       const Left = require('./left')
+      const Oak = require('./scripts/oak')
       const { app } = remote
       const EOL = '\n'
 
       const left = new Left()
 
-      left.install(document.body)
+      left.install(document.getElementById('main'))
       left.start()
 
       // On Windows: open the file specified in the first argument
@@ -32,10 +36,15 @@
         left.project.add(remote.process.argv[1])
       }
 
+      // Themes
+      const Themes = left.oak.getThemeNames()
+
       // Menu
 
-      left.controller.add('default', '*', 'About', () => { shell.openExternal('https://github.com/hundredrabbits/Left') }, 'CmdOrCtrl+,')
+      const LoadMenu = () => {
+      left.controller.add('default', '*', 'About', () => { shell.openExternal('https://github.com/CrispyBaccoon/Forest') }, 'CmdOrCtrl+,')
       left.controller.add('default', '*', 'Fullscreen', () => { app.toggleFullscreen() }, 'CmdOrCtrl+Enter')
+      left.controller.add('default', '*', 'Toggle Menu Bar', () => { app.toggleMenubar() }, 'Alt+Shift+Enter')
       left.controller.add('default', '*', 'Hide', () => { app.toggleVisible() }, 'CmdOrCtrl+H')
       left.controller.addRole('default', '*', 'reload')
       left.controller.addRole('default', '*', 'forcereload')
@@ -70,8 +79,8 @@
 
       left.controller.add('default', 'Navigation', 'Next File', () => { left.navi.next_page() }, 'CmdOrCtrl+Shift+]')
       left.controller.add('default', 'Navigation', 'Prev File', () => { left.navi.prev_page() }, 'CmdOrCtrl+Shift+[')
-      left.controller.add('default', 'Navigation', 'Next Marker', () => { left.navi.next_marker() }, 'CmdOrCtrl+]')
-      left.controller.add('default', 'Navigation', 'Prev Marker', () => { left.navi.prev_marker() }, 'CmdOrCtrl+[')
+      left.controller.add('default', 'Navigation', 'Next Marker', () => { left.navi.next_marker() }, 'CmdOrCtrl+.')
+      left.controller.add('default', 'Navigation', 'Prev Marker', () => { left.navi.prev_marker() }, 'CmdOrCtrl+,')
 
       left.controller.add('default', 'View', 'Toggle Navigation', () => { left.navi.toggle() }, 'CmdOrCtrl+\\')
       left.controller.add('default', 'View', 'Previous Font', () => { left.font.previousFont() }, 'CmdOrCtrl+Shift+,')
@@ -83,10 +92,12 @@
       left.controller.add('default', 'Mode', 'Reader', () => { left.reader.start() }, 'CmdOrCtrl+K')
       left.controller.add('default', 'Mode', 'Insert', () => { left.insert.start() }, 'CmdOrCtrl+I')
 
+      /* // Theme
       left.controller.add("default","Theme","Open Theme",() => { left.theme.open() },"CmdOrCtrl+Shift+O")
       left.controller.add("default","Theme","Reset Theme",() => { left.theme.reset() },"CmdOrCtrl+Shift+Backspace")
       left.controller.addSpacer('default', 'Theme', 'Download')
       left.controller.add("default","Theme","Download Themes..",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Themes') })
+      */
 
       left.controller.add('reader', '*', 'About', () => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left') }, 'CmdOrCtrl+,')
       left.controller.add('reader', '*', 'Fullscreen', () => { app.toggleFullscreen() }, 'CmdOrCtrl+Enter')
@@ -129,7 +140,78 @@
       left.controller.add('operator', 'Find', 'Find Next', () => { left.operator.find_next() }, 'CmdOrCtrl+N')
       left.controller.add('operator', 'Operator', 'Stop', () => { left.operator.stop() }, 'Esc')
 
+      Themes.map((theme) => {
+        left.controller.add("default", "Themes", theme, () => {
+          console.log(`[Theme]: ${theme}`)
+          var themeData = left.oak.getTheme(theme)
+          left.theme.load(themeData)
+        }, "")
+      })
+      left.controller.addSpacer('default', 'Themes', 'Theme')
+      left.controller.add("default","Themes","Open Theme",() => { left.theme.open() },"CmdOrCtrl+Shift+O")
+      left.controller.add("default","Themes","Reset Theme",() => { left.theme.reset() },"CmdOrCtrl+Shift+Backspace")
+      left.controller.addSpacer('default', 'Themes', 'Download')
+      left.controller.add("default","Themes","Download Themes..",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Themes') })
+
       left.controller.commit()
+      left.branch.setMenu(left.controller.docs())
+      left.branch.start()
+      left.leaf.setMenu(left.controller.docs())
+      left.leaf.start()
+    }
+      LoadMenu();
+
+      const win = remote.getCurrentWindow(); /* Note this is different to the html global `window` variable */
+
+      const handleWindowControls = () => {
+        // Make minimise/maximise/restore/close buttons work when they are clicked
+        document.getElementById('minimize-window').addEventListener("click", event => {
+            win.minimize();
+        });
+
+        document.getElementById('maximize-window').addEventListener("click", event => {
+            win.maximize();
+        });
+
+        document.getElementById('restore-window').addEventListener("click", event => {
+            win.unmaximize();
+        });
+
+        document.getElementById('close-window').addEventListener("click", event => {
+            win.close();
+        });
+
+        // Toggle maximise/restore buttons when maximisation/restoring occurs
+        toggleMaxRestoreButtons();
+        win.on('maximize', toggleMaxRestoreButtons);
+        win.on('unmaximize', toggleMaxRestoreButtons);
+
+        function toggleMaxRestoreButtons() {
+            if (win.isMaximized()) {
+                document.body.classList.add('maximized');
+            } else {
+                document.body.classList.remove('maximized');
+            }
+        }
+      }
+      // When document has loaded, initialise
+      document.onreadystatechange = (event) => {
+          if (document.readyState == "complete") {
+            $(".disable-drag").on("touchstart mousedown click", (e) => {
+              e.stopPropagation()
+            })
+              handleWindowControls();
+          }
+      };
+
+      window.onbeforeunload = (event) => {
+          /* If window is reloaded, remove win event listeners
+          (DOM element listeners get auto garbage collected but not
+          Electron win listeners as the win is not dereferenced unless closed) */
+          win.removeAllListeners();
+      }
     </script>
+    
+  </div>
   </body>
 </html>
