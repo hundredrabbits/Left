@@ -21,6 +21,11 @@ npm start
 
 <img src='https://raw.githubusercontent.com/hundredrabbits/Left/master/PREVIEW.jpg' width="600"/>
 
+
+## Building as an AppImage
+Just use 
+npm run dist to build as an appimage :)
+
 ## Extras
 
 - This application supports the [Ecosystem Theme](https://github.com/hundredrabbits/Themes).
