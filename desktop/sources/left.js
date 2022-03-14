@@ -11,6 +11,7 @@ const Project = require('./scripts/project')
 const Reader = require('./scripts/reader')
 const Insert = require('./scripts/insert')
 const Font = require('./scripts/font')
+const Options = require('./scripts/options')
 
 const EOL = '\n'
 
@@ -18,7 +19,8 @@ function Left () {
   this.theme = new Theme({ background: '#222', f_high: '#eee', f_med: '#888', f_low: '#666', f_inv: '#00f', b_high: '#f9a', b_med: '#a9f', b_low: '#000', b_inv: '#af9' })
   this.controller = new Controller()
   this.dictionary = new Dictionary()
-  this.operator = new Operator()
+  this.options = new Options()
+  this.operator = new Operator(this.options)
   this.navi = new Navi()
   this.stats = new Stats()
   this.go = new Go()
@@ -78,6 +80,7 @@ function Left () {
     this.font.start()
     this.dictionary.start()
     this.project.start()
+    this.options.start()
 
     this.go.to_page()
 
@@ -328,6 +331,7 @@ function Left () {
   this.reset = () => {
     this.theme.reset()
     this.font.reset()
+    //this.options.reset()
     this.update()
   }
 

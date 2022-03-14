@@ -1,11 +1,14 @@
 'use strict'
 
+const Options = require("./options");
+
 const EOL = '\n'
 
-function Operator () {
+function Operator (options) {
   this.el = document.createElement('input'); this.el.id = 'operator'
   this.is_active = false
   this.index = 0
+  this.Options = options
 
   this.el.addEventListener('keyup', (e) => { left.operator.on_change(e, false) })
   this.el.addEventListener('keydown', (e) => { left.operator.on_change(e, true) })
@@ -166,6 +169,14 @@ function Operator () {
       this.stop()
       left.go.to_line(target)
     }
+  }
+
+  this.setTextAreaColumns = function (size) {
+    if (size.length < 2) { return }
+    console.log("setTextAreaColumns operator: " + size)
+    this.Options.setTAWidth(size)
+
+    return
   }
 }
 
