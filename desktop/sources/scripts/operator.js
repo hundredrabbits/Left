@@ -171,12 +171,13 @@ function Operator (options) {
     }
   }
 
-  this.setTextAreaColumns = function (size) {
+  this.setTextAreaColumns = function (size, bang = false) {
     if (size.length < 2) { return }
-    console.log("setTextAreaColumns operator: " + size)
-    this.Options.setTAWidth(size)
+    this.Options.setTextAreaColumns(size)
 
-    return
+    if (bang) {
+      setTimeout(() => { left.operator.stop() }, 250)
+    }
   }
 }
 
