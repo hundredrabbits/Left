@@ -331,7 +331,7 @@ function Left () {
   this.reset = () => {
     this.theme.reset()
     this.font.reset()
-    //this.options.reset()
+    this.options.reset()
     this.update()
   }
 

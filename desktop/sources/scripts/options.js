@@ -4,7 +4,7 @@ function Options () {
   this.electron = require('electron');
   const root = document.documentElement
   this.colWidth = 80
-  this.w = 500
+  this.w = 900
   this.h = 500
 
 
@@ -52,6 +52,14 @@ function Options () {
       w: this.w,
       h: this.h
     }))
+  }
+
+  this.reset = function () {
+    localStorage.removeItem('options')
+    this.colWidth = 80
+    this.w = 900
+    this.h = 500
+    this.updateVariables()
   }
 }
 
