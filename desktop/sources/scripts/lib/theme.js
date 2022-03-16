@@ -76,11 +76,13 @@ function Theme (_default) {
   this.open = function () {
     const fs = require('fs')
     const { dialog, app } = require('electron').remote
-    const paths = dialog.showOpenDialog(app.win, { properties: ['openFile'], filters: [{ name: 'Themes', extensions: ['svg'] }] })
-    if (!paths) { console.log('Nothing to load'); return }
-    fs.readFile(paths[0], 'utf8', function (err, data) {
-      if (err) throw err
-      themer.load(data)
+    dialog.showOpenDialog(app.win, { properties: ['openFile'], filters: [{ name: 'Themes', extensions: ['svg'] }] })
+    .then(function (paths) {
+      if (paths.filePaths.length < 1) { console.log('Nothing to load'); return }
+      fs.readFile(paths.filePaths[0], 'utf8', function (err, data) {
+        if (err) throw err
+        themer.load(data)
+      })
     })
   }
 
