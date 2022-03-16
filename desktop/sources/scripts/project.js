@@ -86,7 +86,7 @@ function Project () {
   this.open = function () {
     console.log('Open Pages')
 
-    const paths = dialog.showOpenDialogSync(app.win, { properties: ['openFile', 'multiSelections'] })
+    const paths = dialog.showOpenDialogSync(app.win, { defaultPath: this.default_path(), properties: ['openFile', 'multiSelections'] })
 
     console.log(paths)
     if (!paths) { console.log('Nothing to load'); return }
@@ -117,7 +117,7 @@ function Project () {
     console.log('Save As Page')
 
     const page = this.page()
-    const path = dialog.showSaveDialogSync(app.win)
+    const path = dialog.showSaveDialogSync(app.win, { defaultPath: this.default_path() })
 
     if (!path) { console.log('Nothing to save'); return }
 
@@ -219,6 +219,21 @@ function Project () {
       if (page.path) { a.push(page.path) }
     }
     return a
+  }
+
+  this.default_path = function () {
+    const path = require('path')
+    const page = this.page()
+    const paths = this.paths()
+
+    // If active page has a path use it as default path
+    if (page.path) { return path.dirname(page.path) }
+
+    // Fallback 1: use path of last opened page as default path
+    if (paths.length > 0) { return path.dirname(paths[paths.length - 1]) }
+    
+    // Fallback 2: return an empty string, Left install dir will be default path
+    return ''
   }
 
   function isJSON (text) { try { JSON.parse(text); return true } catch (error) { return false } }
