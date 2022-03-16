@@ -107,7 +107,7 @@ function Left () {
     if (this.selection.word.trim() !== '' && this.suggestion && this.suggestion.toLowerCase() !== this.active_word().toLowerCase()) {
       this.autocomplete()
     } else {
-      this.inject('\u00a0\u00a0')
+      this.inject('\t')
     }
   }
 
