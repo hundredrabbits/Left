@@ -3,6 +3,10 @@
   "productName": "Left",
   "version": "0.1.0",
   "main": "main.js",
+  "engines": {
+    "npm": "6.10.x",
+    "node": "12.8.x"
+  },
   "scripts": {
     "start": "electron . --disable-gpu",
     "time": "node time.js",
