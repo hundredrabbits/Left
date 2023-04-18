@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "electron": "^7.1.12",
-    "electron-packager": "^14.2.1"
+    "electron-packager": "^17.1.1"
   },
   "standard": {
     "globals": [
