@@ -26,9 +26,9 @@
       left.install(document.body)
       left.start()
 
-      // On Windows: open the file specified in the first argument
-      // (allows Open With and file associations on Windows)
-      if (process.platform === 'win32' && remote.process.argv.length > 1) {
+      // open the file specified in the first argument
+      // (allows Open With and file associations)
+      if (remote.process.argv.length > 1) {
         left.project.add(remote.process.argv[1])
       }
 
