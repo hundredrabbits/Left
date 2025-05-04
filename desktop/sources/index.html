@@ -88,6 +88,9 @@
       left.controller.addSpacer('default', 'Theme', 'Download')
       left.controller.add("default","Theme","Download Themes..",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Themes') })
 
+      left.controller.add("default","Options","Set Text Area Width",() => { left.operator.start('setTextAreaColumns: ')})
+      left.controller.add("default","Options","Save Window Size",() => { left.options.setDimensions()})
+
       left.controller.add('reader', '*', 'About', () => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Left') }, 'CmdOrCtrl+,')
       left.controller.add('reader', '*', 'Fullscreen', () => { app.toggleFullscreen() }, 'CmdOrCtrl+Enter')
       left.controller.add('reader', '*', 'Hide', () => { app.toggleVisible() }, 'CmdOrCtrl+H')
@@ -128,6 +131,8 @@
       left.controller.add('operator', 'Find', 'Find', () => { left.operator.start('find: ') }, 'CmdOrCtrl+F')
       left.controller.add('operator', 'Find', 'Find Next', () => { left.operator.find_next() }, 'CmdOrCtrl+N')
       left.controller.add('operator', 'Operator', 'Stop', () => { left.operator.stop() }, 'Esc')
+
+      left.controller.add('operator', 'Options', 'setTextAreaColumns', () => { left.operator.start('setTextAreaColumns: ') })
 
       left.controller.commit()
     </script>
