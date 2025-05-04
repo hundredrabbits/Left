@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Left
+GenericName=Text Editor
+Comment=Edit text files
+Exec=/opt/left-linux-x64/left
+Terminal=false
+Type=Application
+Keywords=Text;Editor;
+Icon=/opt/left-linux-x64/resources/app/icon.png
+Categories=Utility;TextEditor;
+StartupNotify=false
+MimeType=text/plain;
