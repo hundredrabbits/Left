@@ -117,7 +117,11 @@ function Project () {
     console.log('Save As Page')
 
     const page = this.page()
-    const path = dialog.showSaveDialogSync(app.win)
+    const path = dialog.showSaveDialogSync(app.win, {
+      filters: [
+        { name: 'Text Documents (*.txt)', extensions: ['txt'] },
+        { name: 'All Files', extensions: ['*'] }]
+      })
 
     if (!path) { console.log('Nothing to save'); return }
 
