@@ -1,0 +1,59 @@
+{
+  "name": "Left",
+  "productName": "Left",
+  "version": "0.1.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron . --disable-gpu",
+    "time": "node time.js",
+    "docs": "node ../docs.js",
+    "fix": "standard --fix",
+    "clean": "rm -r ~/Documents/Left-darwin-x64/ ; rm -r ~/Documents/Left-linux-x64/ ; rm -r ~/Documents/Left-win32-x64/ ; echo 'cleaned build location'",
+    "build_osx": "electron-packager . Left --platform=darwin --arch=x64 --out ~/Documents/ --overwrite --icon=icon.icns ; echo 'Built for OSX'",
+    "build_linux": "electron-packager . Left --platform=linux  --arch=x64 --out ~/Documents/ --overwrite --icon=icon.ico ; echo 'Built for LINUX'",
+    "build_win": "electron-packager . Left --platform=win32  --arch=x64 --out ~/Documents/ --overwrite --icon=icon.ico ; echo 'Built for WIN'",
+    "build": "npm run clean ; npm run build_osx ; npm run build_linux ; npm run build_win",
+    "push_osx": "~/Applications/butler push ~/Documents/Left-darwin-x64/ hundredrabbits/left:osx-64",
+    "push_linux": "~/Applications/butler push ~/Documents/Left-linux-x64/ hundredrabbits/left:linux-64",
+    "push_win": "~/Applications/butler push ~/Documents/Left-win32-x64/ hundredrabbits/left:windows-64",
+    "status": "~/Applications/butler status hundredrabbits/left",
+    "push": "npm run build ; npm run push_osx ; npm run push_linux ; npm run push_win ; npm run clean ; npm run status",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^7.1.12",
+    "electron-packager": "^14.2.1",
+    "electron-builder": "^22.10.5"
+  },
+  "standard": {
+    "globals": [
+      "terminal",
+      "localStorage",
+      "DOMParser",
+      "onMessage",
+      "postMessage",
+      "FileReader",
+      "performance",
+      "Worker"
+    ],
+    "ignore": [
+      "/node_modules/*"
+    ]
+  },
+  "build": {
+    "appId": "left",
+    "mac": {
+      "category": "Games"
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+}
+}
+}
